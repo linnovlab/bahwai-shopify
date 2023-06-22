@@ -139,8 +139,10 @@
       "bh-header": {
         "type": "bh-header",
         "settings": {
-          "menu": "main-menu",
-          "logo_bahwai": "shopify:\/\/shop_images\/icon_bahwai.svg"
+          "annonce": "Profitez de -50% pour votre première commande",
+          "menu": "footer",
+          "logo_bahwai": "shopify:\/\/shop_images\/icon_bahwai.svg",
+          "video_url": ""
         }
       }
     },
