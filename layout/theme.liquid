@@ -54,6 +54,9 @@
     <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
     <script src="{{ 'app.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
 
     {%- unless settings.type_body_font.system? -%}
       <link
@@ -110,9 +113,7 @@
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}
       </li>
     </ul>
-    <script src="{{ 'swiper.js' | asset_url }}" async></script>
-    <script src="{{ 'jquery.js' | asset_url}}" async></script>
-    <script src="{{ 'script.js' |asset_url }}" async></script>
+
     {% render 'footer-scripts' %}
 
     <!--{%- if settings.predictive_search_enabled -%}

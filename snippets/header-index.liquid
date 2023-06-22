@@ -14,6 +14,7 @@
   <div class="bup py-2 bg-_orange_color">
     <p class="text-center sm:text-base text-[13px] text-white">Profitez de -20% pour votre première commande</p>
   </div>
+
   <div class="header-1  bg-_main_color_light">
     <div class="desktop-width flex flex-row items-center justify-between  py-1 px-4 sm:px-8">
       <div class="bars block sm:hidden">
@@ -114,61 +115,65 @@
       </div>
     </div>
   </div>
+
   <nav id="nav-header" class="bg-_main_color_dark py-2 hidden sm:block">
     <ul class="flex justify-center gap-4 text-white">
+
+      {% for link in section.settings.menu.links %}
+        {% if link.links.size > 0 %}
+          <li class="accordions relative">
+            <a
+              class="hover-nav-item"
+              id="btn-accordion"
+              href="{{ link.url }}"
+              title="{{ link.title }}">
+              <span>{{ link.title }}</span>
+              <i class="fa-sharp fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="panel hidden absolute top-8 left-1 bg-_main_color_dark w-[7rem]">
+              <ul class="text-white flex flex-col ps-2">
+                {% for sublink in link.links %}
+                  <li>
+                    <a href="{{ sublink.url }}" title="{{ sublink.title }}">{{ sublink.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+        {% else %}
+          <li>
+            <a
+              class="hover-nav-item"
+              href="{{ link.url }}"
+              title="{{ link.title }}">{{ link.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+      <!--li class="accordions relative">
+      <a
+      class="hover-nav-item"
+      id="btn-accordion"
+      href="#"
+      title="Autres">
+      <span>Autres</span>
+      <i class="fa-sharp fa-solid fa-chevron-down"></i>
+      </a>
+      <div class="panel hidden absolute top-8 left-1 bg-_main_color_dark w-[7rem]">
+      <ul class="text-white flex flex-col ps-2">
       <li>
-        <a
-          class="hover-nav-item"
-          href="#"
-          title="Canettes">Canettes</a>
+      <a href="#">like</a>
       </li>
       <li>
-        <a
-          class="hover-nav-item"
-          href="#"
-          title="Chocolats">Chocolats</a>
+      <a href="#">like</a>
       </li>
       <li>
-        <a
-          class="hover-nav-item"
-          href="#"
-          title="Packs">Packs</a>
+      <a href="#">like</a>
       </li>
-      <li>
-        <a
-          class="hover-nav-item"
-          href="#"
-          title="Offres du moment">Offres du moment</a>
-      </li>
-      <li>
-        <a
-          class="hover-nav-item"
-          href="./nous contacter.html"
-          title="Nous contacter">Nous contacter</a>
-      </li>
-      <li class="accordions relative">
-        <a
-          class="hover-nav-item"
-          id="btn-accordion"
-          href="#"
-          title="Autres">
-          <span>Autres</span>
-          <i class="fa-sharp fa-solid fa-chevron-down"></i>
-        </a>
-        <div class="panel hidden absolute top-8 left-1 bg-_main_color_dark w-[7rem]">
-          <ul class="text-white flex flex-col ps-2">
-            <li>
-              <a href="#">like</a>
-            </li>
-            <li>
-              <a href="#">like</a>
-            </li>
-            <li>
-              <a href="#">like</a>
-            </li>
-          </ul>
-        </div>
-      </li>
+      </ul>
+      </div>
+      </li-->
     </ul>
   </nav>
+
 </header>
