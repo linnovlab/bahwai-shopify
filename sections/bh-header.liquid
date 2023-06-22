@@ -1,6 +1,9 @@
-<header>
-Hello World !
-</header>
+{% if template.name != "index" %}
+{% render 'header-autre' %}
+{% else %}
+{% render 'header-index' %}
+{% endif %}
+
 {% javascript %}
 {% endjavascript %}
 

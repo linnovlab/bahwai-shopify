@@ -92,14 +92,9 @@
     {% section 'header' %}
     {% render 'cart-drawer' %}
     {% endcomment %}
-    {% if template.name == "index" %}
-      {% section 'bh-header-index' %}
-      {% comment %}
-      {% render 'header-index' %}
-      {% endcomment %}
-    {% else %}
-      {% render 'header-autre' %}
-    {% endif %}
+
+    {% section 'bh-header' %}
+
 
     <main
       id="MainContent"
