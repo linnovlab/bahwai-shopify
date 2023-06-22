@@ -135,8 +135,18 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "bh-header": {
+        "type": "bh-header",
+        "settings": {
+          "menu": "main-menu",
+          "logo_bahwai": "shopify:\/\/shop_images\/icon_bahwai.svg"
+        }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
