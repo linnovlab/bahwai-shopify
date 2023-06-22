@@ -93,7 +93,10 @@
     {% render 'cart-drawer' %}
     {% endcomment %}
     {% if template.name == "index" %}
+      {% section 'bh-header-index' %}
+      {% comment %}
       {% render 'header-index' %}
+      {% endcomment %}
     {% else %}
       {% render 'header-autre' %}
     {% endif %}
