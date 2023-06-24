@@ -104,6 +104,7 @@
     
     <header class="relative">
       {% section 'bh-header' %}
+      {% render 'bh-menu-bars' %}
     </header>
     
     <main id="MainContent" role="main"  tabindex="-1">
@@ -122,6 +123,20 @@
       </section>
 
       {% render 'bh-nouvautes' %}
+      {% render 'bh-site-info' %}
+      {% render 'bh-categories' %}
+      {% render 'bh-pour-un-monde' %}
+      {% render 'bh-map' %}
+      {% render 'bh-newsletter' %}
+      {% render 'bh-faq' %}
+      {% render 'bh-avis' %}
+      {% render 'bh-rejoignez-nous' %}
+      {% render 'bh-actualites' %}
+      {% render 'bh-partenaire' %}
+
+      {% render 'bh-search-modal' %}
+      {% render 'bh-panier-modal' %}
+
     </main>
 
     {% if template.name != "index" %}
@@ -135,6 +150,7 @@
 
     {% render 'footer-scripts' %}
 
+    {% render 'bh-footer-complet' %}
     <!--{%- if settings.predictive_search_enabled -%}
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}-->
