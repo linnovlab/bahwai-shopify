@@ -7,6 +7,12 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
       rel="preconnect"
       href="https://cdn.shopify.com"
       crossorigin>
@@ -95,16 +101,29 @@
     {% section 'header' %}
     {% render 'cart-drawer' %}
     {% endcomment %}
-
-    {% section 'bh-header' %}
-
-
-    <main
-      id="MainContent"
-      role="main"
-      tabindex="-1">
+    
+    <header class="relative">
+      {% section 'bh-header' %}
+    </header>
+    
+    <main id="MainContent" role="main"  tabindex="-1">
       {{ content_for_layout }}
+
+      <section class="banner relative sm:h-[30rem] h-[20rem] flex justify-center items-center">
+          <div class="banner-content text-white flex justify-center flex-col items-center gap-2">
+              <h1 class="font-litle text-[32px] text-center">Quand grignoter est sans limite...</h1>
+              <p class="text-center">Atteignez vos objectifs tout en prenant du plaisir avec nos snacks riches en protéines </p>
+              <p class="pt-[3rem]">
+                  <a href="./categories.html" class="btn block text-center font-semibold">Je veux découvrir</a>
+              </p>
+          </div>
+          <div class="waves absolute sm:bottom-[17px] bottom-[-46px] sm:bg-[url('./img/Vague-desktop.svg')] bg-[url('./img/Vague-Mobile.svg')] img-center bg-no-repeat h-[27px] w-full">
+          </div>
+      </section>
+
+      {% render 'bh-nouvautes' %}
     </main>
+
     {% if template.name != "index" %}
       {% section 'footer' %}
     {% endif %}
@@ -118,5 +137,6 @@
 
     <!--{%- if settings.predictive_search_enabled -%}
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}--></body>
+    {%- endif -%}-->
+  </body>
 </html>
