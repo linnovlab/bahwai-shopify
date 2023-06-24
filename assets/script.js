@@ -42,7 +42,7 @@ $(document).ready(() => {
     $('#search-section').fadeIn();
     $('#input-popup-search').focus();
     $('body').css('overflow', 'hidden');
-    console.log('hey');
+    console.log($('#search-section'));
   });
   $('#search-icon').on('click', (e) => {
     e.preventDefault();
