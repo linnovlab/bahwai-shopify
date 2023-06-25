@@ -4,25 +4,12 @@
         <div class="cats-navigation mt-8 max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
             <nav class="text-_main_color_dark mt-2 z-50 sm:w-full w-[40rem]">
                 <ul class="flex justify-center gap-[20px] font-bold mb-1">
-                    <li>
-                        <a href="#" title="Nouveautés" class="cats-hover hover:border-_red_color active">Nouveautés</a>
-                    </li>
-                    
-                    <li>
-                        <a href="#" title="Boissons" id="boissons" class="cats-hover hover:border-_red_color">Boissons</a>
-                    </li>
-                    
-                    <li>
-                        <a href="#" title="Chocolats" class="cats-hover hover:border-_red_color">Chocolats</a>
-                    </li>
-                    
-                    <li>
-                        <a href="#" title="Accessoires" class="cats-hover hover:border-_red_color">Accessoires</a>
-                    </li>
-                    
-                    <li>
-                        <a href="#" title="Offres du moment" class="cats-hover hover:border-_red_color">Offres du moment</a>
-                    </li>
+                    {{ section.settings.cats_links }}
+                    {% for link in section.settings.cats_links %}
+                        <li>
+                            <a href="{{ link.url }}" title="{{ link.title }}" class="cats-hover hover:border-_red_color active">{{ link.title }}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
                 <hr class="bg-[#DCDCDC] h-[2px] w-[100%] z-0">
             </nav>

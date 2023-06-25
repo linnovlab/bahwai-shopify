@@ -125,8 +125,8 @@
         <div class="waves absolute sm:bottom-[17px] bottom-[-46px] sm:bg-[url('./img/Vague-desktop.svg')] bg-[url('./img/Vague-Mobile.svg')] img-center bg-no-repeat h-[27px] w-full"></div>
       </section>
 
-      {% if condition %}
-        {% render 'bh-nouvautes' %}
+      {% if template.name == 'index' %}
+        {% section 'bh-categories-links' %}
         {% render 'bh-site-info' %}
         {% render 'bh-categories' %}
         {% render 'bh-pour-un-monde' %}
