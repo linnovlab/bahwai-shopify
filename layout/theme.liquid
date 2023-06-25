@@ -101,38 +101,43 @@
     {% section 'header' %}
     {% render 'cart-drawer' %}
     {% endcomment %}
-    
+
     <header class="relative">
       {% section 'bh-header' %}
       {% render 'bh-menu-bars' %}
     </header>
-    
-    <main id="MainContent" role="main"  tabindex="-1">
+
+    <main
+      id="MainContent"
+      role="main"
+      tabindex="-1">
       {{ content_for_layout }}
 
       <section class="banner relative sm:h-[30rem] h-[20rem] flex justify-center items-center">
-          <div class="banner-content text-white flex justify-center flex-col items-center gap-2">
-              <h1 class="font-litle text-[32px] text-center">Quand grignoter est sans limite...</h1>
-              <p class="text-center">Atteignez vos objectifs tout en prenant du plaisir avec nos snacks riches en protéines </p>
-              <p class="pt-[3rem]">
-                  <a href="{{ collections.all.url }}" class="btn block text-center font-semibold">Je veux découvrir</a>
-              </p>
-          </div>
-          <div class="waves absolute sm:bottom-[17px] bottom-[-46px] sm:bg-[url('./img/Vague-desktop.svg')] bg-[url('./img/Vague-Mobile.svg')] img-center bg-no-repeat h-[27px] w-full">
-          </div>
+        <div class="banner-content text-white flex justify-center flex-col items-center gap-2">
+          <h1 class="font-litle text-[32px] text-center">Quand grignoter est sans limite...</h1>
+          <p class="text-center">Atteignez vos objectifs tout en prenant du plaisir avec nos snacks riches en protéines
+          </p>
+          <p class="pt-[3rem]">
+            <a href="{{ collections.all.url }}" class="btn block text-center font-semibold">Je veux découvrir</a>
+          </p>
+        </div>
+        <div class="waves absolute sm:bottom-[17px] bottom-[-46px] sm:bg-[url('./img/Vague-desktop.svg')] bg-[url('./img/Vague-Mobile.svg')] img-center bg-no-repeat h-[27px] w-full"></div>
       </section>
 
-      {% render 'bh-nouvautes' %}
-      {% render 'bh-site-info' %}
-      {% render 'bh-categories' %}
-      {% render 'bh-pour-un-monde' %}
-      {% render 'bh-map' %}
-      {% render 'bh-newsletter' %}
-      {% render 'bh-faq' %}
-      {% render 'bh-avis' %}
-      {% render 'bh-rejoignez-nous' %}
-      {% render 'bh-actualites' %}
-      {% render 'bh-partenaire' %}
+      {% if template.name == 'index' %}
+        {% section 'bh-categories-links' %}
+        {% render 'bh-site-info' %}
+        {% render 'bh-categories' %}
+        {% render 'bh-pour-un-monde' %}
+        {% render 'bh-map' %}
+        {% render 'bh-newsletter' %}
+        {% render 'bh-faq' %}
+        {% render 'bh-avis' %}
+        {% render 'bh-rejoignez-nous' %}
+        {% render 'bh-actualites' %}
+        {% render 'bh-partenaire' %}
+      {% endif %}
 
       {% render 'bh-search-modal' %}
       {% render 'bh-panier-modal' %}
@@ -153,6 +158,5 @@
     {% render 'bh-footer-complet' %}
     <!--{%- if settings.predictive_search_enabled -%}
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}-->
-  </body>
+    {%- endif -%}--></body>
 </html>
