@@ -4,7 +4,7 @@
     <div class="cats-navigation mt-8 max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
       <nav class="text-_main_color_dark mt-2 z-50 sm:w-full w-[40rem]">
         <ul class="flex justify-center gap-[20px] font-bold mb-1">
-          {% for link in section.settings.cats_links.links %}
+          {% for link in linklists['liens-categories'].links %}
             <li>
               <a
                 href="{{ link.url }}" 
