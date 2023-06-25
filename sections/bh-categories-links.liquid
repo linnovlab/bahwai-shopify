@@ -1,0 +1,22 @@
+{% render 'bh-nouvautes' %}
+
+{% schema %}
+  {
+    "name": "Liens des Categories",
+    "class": "cats-links",
+    "max_blocks": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "annonce",
+        "label": "Annonce",
+        "default": "Profitez de -50% pour votre première commande"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      }
+    ]
+  }
+{% endschema %}
