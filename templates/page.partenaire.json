@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
+      "type": "page-partenaire",
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
@@ -11,8 +11,4 @@
   "order": [
     "main"
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 79b6477401320eff4c7d6cd401ffb07e91a495e7
