@@ -113,19 +113,22 @@
       tabindex="-1">
       {{ content_for_layout }}
 
-      <section class="banner relative sm:h-[30rem] h-[20rem] flex justify-center items-center">
-        <div class="banner-content text-white flex justify-center flex-col items-center gap-2">
-          <h1 class="font-litle text-[32px] text-center">Quand grignoter est sans limite...</h1>
-          <p class="text-center">Atteignez vos objectifs tout en prenant du plaisir avec nos snacks riches en protéines
-          </p>
-          <p class="pt-[3rem]">
-            <a href="{{ collections.all.url }}" class="btn block text-center font-semibold">Je veux découvrir</a>
-          </p>
-        </div>
-        <div class="waves absolute sm:bottom-[17px] bottom-[-46px] sm:bg-[url('./img/Vague-desktop.svg')] bg-[url('./img/Vague-Mobile.svg')] img-center bg-no-repeat h-[27px] w-full"></div>
-      </section>
+      {% comment %} <p class="text-2xl text-re">
+      {{ template.name }}</p> {% endcomment %}
 
       {% if template.name == 'index' %}
+        <section class="banner relative sm:h-[30rem] h-[20rem] flex justify-center items-center">
+          <div class="banner-content text-white flex justify-center flex-col items-center gap-2">
+            <h1 class="font-litle text-[32px] text-center">Quand grignoter est sans limite...</h1>
+            <p class="text-center">Atteignez vos objectifs tout en prenant du plaisir avec nos snacks riches en protéines
+            </p>
+            <p class="pt-[3rem]">
+              <a href="{{ collections.all.url }}" class="btn block text-center font-semibold">Je veux découvrir</a>
+            </p>
+          </div>
+          <div class="waves absolute sm:bottom-[17px] bottom-[-46px] sm:bg-[url('./img/Vague-desktop.svg')] bg-[url('./img/Vague-Mobile.svg')] img-center bg-no-repeat h-[27px] w-full"></div>
+        </section>
+
         {% render 'bh-nouvautes' %}
         {% render 'bh-site-info' %}
         {% render 'bh-categories' %}
@@ -139,14 +142,14 @@
         {% render 'bh-partenaire' %}
       {% endif %}
 
+      {%- if template.name == 'collection' -%}
+        {%- section 'bh-filter-modal' -%}
+      {%- endif -%}
+
       {% render 'bh-search-modal' %}
       {% render 'bh-panier-modal' %}
 
     </main>
-
-    {% if template.name != "index" %}
-      {% section 'footer' %}
-    {% endif %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}

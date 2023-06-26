@@ -1,12 +1,14 @@
-<div>
-  <video
-    src="{{ 'video_test.mp4' | asset_url }}"
-    class="object-fill absolute top-0 left-0 w-full sm:h-[630px] h-[400px] z-[-1]"
-    autoplay=""
-    loop=""
-    muted=""
-    type="video/mp4"></video>
-</div>
+{%- if template.name == 'index' -%}
+  <div>
+    <video
+      src="{{ 'video_test.mp4' | asset_url }}"
+      class="object-fill absolute top-0 left-0 w-full sm:h-[630px] h-[400px] z-[-1]"
+      autoplay=""
+      loop=""
+      muted=""
+      type="video/mp4"></video>
+  </div>
+{%- endif -%}
 
 <div class="bup py-2 bg-_orange_color">
   <p class="text-center sm:text-base text-[13px] text-white">{{ section.settings.annonce }}</p>
