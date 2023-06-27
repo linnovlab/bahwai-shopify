@@ -4,8 +4,8 @@
 <script type="application/ld+json">
   {
   "@context": "http://schema.org",
-      "@type": "Organization",
-      "name": {{ shop.name | json }},
+        "@type": "Organization",
+        "name": {{ shop.name | json }},
   {% if settings.logo %}
     "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
   {% endif %}
@@ -29,14 +29,14 @@
   <script type="application/ld+json">
     {
     "@context": "http://schema.org",
-          "@type": "WebSite",
-          "name": {{ shop.name | json }},
+              "@type": "WebSite",
+              "name": {{ shop.name | json }},
     "potentialAction": {
-            "@type": "SearchAction",
-            "target": {{ potential_action_target | json }},
+                "@type": "SearchAction",
+                "target": {{ potential_action_target | json }},
     "query-input": "required name=search_term_string"
-          },
-          "url": {{ request.origin | append: page.url | json }}
+              },
+              "url": {{ request.origin | append: page.url | json }}
     }
   </script>
 {%- endif -%}

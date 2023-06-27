@@ -159,10 +159,14 @@
 
     {% render 'footer-scripts' %}
 
-    {% if template.name == 'index' or template.name == 'collection' or template.name == 'article' %}
-      {% render 'bh-footer-complet' %}
+    {% if template.name != 'login' %}
+      {% if template.name == 'index' or template.name == 'collection' or template.name == 'article' %}
+        {% render 'bh-footer-complet' %}
+      {% else %}
+        {% render 'bh-footer-autre' %}
+      {% endif %}
     {% else %}
-      {% render 'bh-footer-autre' %}
+      {% render 'bh-footer-login' %}
     {% endif %}
 
     <!--{%- if settings.predictive_search_enabled -%}

@@ -1,13 +1,12 @@
 <style>
   @media screen and (max-width: 640px) {
     .banner-contact {
-      background-image: {{ 'bannerblogsm.png' | asset_url }}
-      ;
+      background-image: url('{{ 'bannerblogsm.png' |asset_url }}');
     }
   }
 </style>
 <div class="main">
-  <div style="background-image: {{ 'bannerblogsm.png' | asset_url }};" class="banner-contact img-center sm:h-[25rem] h-[17rem]"></div>
+  <div style="background-image: url('{{ 'bannerblog.png' |asset_url }}');" class="banner-contact img-center sm:h-[25rem] h-[17rem]"></div>
 
   <!-- faq -->
   <section class="faq mt-4 mb-4 desktop-width">
@@ -85,12 +84,18 @@
       </div>
     </div>
   </section>
-
-  <section class="contact relative z-50 h-[20rem] sm:h-[27rem] xl:h-[40rem]  text-white flex flex-col justify-center items-center gap-6 bg-[url('./img/Mobile/Orange-Curvy.png')] sm:bg-[url('./img/Desktop/Orange-Curvy.png')] img-center py-8">
+  <style>
+    @media screen and (max-width: 640px) {
+      .contact-partenaire {
+        background-image: url('{{ 'Orange-Curvysm.png' |asset_url }}');
+      }
+    }
+  </style>
+  <section style="background-image: url('{{ 'DS_Orange-Curvy.png' |asset_url }}');" class="contact-partenaire relative z-50 h-[20rem] sm:h-[27rem] xl:h-[40rem]  text-white flex flex-col justify-center items-center gap-6 img-center py-8">
     <h2 class="title text-center">Devenir partenaire ?
     </h2>
     <p class="text-center">Envie de rejoindre l’aventure Bahwai ? Remplissez le formulaire !</p>
-    <button type="button" class="btn px-20 py-2">S'inscrire</button>
+    <a href="{{ pages.partenaire.url }}" class="btn px-20 py-2">S'inscrire</a>
   </section>
 
   <section class="py-20 -mt-16 sm:px-4">
@@ -98,10 +103,7 @@
       <h5 class="title">Encore besoin d’aide ?</h5>
       <p class="text-_main_color_dark text-center">Nous ferons le maximum pour vous répondre au plus vite !
       </p>
-      <button
-        id="btn-contact"
-        type="button"
-        class="btn mt-8 px-10 py-2 text-white">Contactez nous</button>
+      <a href="{{ pages.contact.url }}"id="btn-contact"class="btn mt-8 px-10 py-2 text-white">Contactez nous</a>
     </div>
     <div id="form-contact" class="form-contact hidden mt-8 mx-4">
       <form

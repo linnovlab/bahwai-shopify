@@ -1,138 +1,197 @@
-<div class="banner bg-[url('./img/bannerblogsm.png')] sm:bg-[url('./img/bannerblog.png')] img-center sm:h-screen h-[14rem]">
-  </div>
+<style>
+  @media screen and (max-width: 640px) {
+    .banner-blog {
+      background-image: url('{{ 'bannerblogsm.png' |asset_url }}');
+    }
+  }
+</style>
+<div style="background-image: url('{{ 'bannerblog.png' |asset_url }}');" class="banner-blog img-center sm:h-screen h-[14rem]"></div>
 
-  <div class="actualites-header flex flex-col justify-center items-center mb-6 mt-8 desktop-width">
-      <h2 class="title text-2xl text-center">Nos actualités</h2>
-      <p class="text-center mb-4 text-_main_color_dark">Vivez toute l’actualité Bahwai</p>
-      <div class="cats-navigation  max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
-          <nav id="nav-actualites" class="text-_main_color_dark mt-2 z-50 sm:w-full w-[40rem]">
-              <ul class="flex justify-center gap-8 font-bold mb-1">
-                  <li>
-                      <a href="#" title="Nouveautés" class="cats-hover hover:border-_red_color active">Tous</a>
-                  </li>
-                  
-                  <li>
-                      <a href="#" title="Boissons" class="cats-hover hover:border-_red_color">Actualité</a>
-                  </li>
-                  
-                  <li>
-                      <a href="#" title="Chocolats" class="cats-hover hover:border-_red_color">Collaboration</a>
-                  </li>
-                  
-                  <li>
-                      <a href="#" title="Accessoires" class="cats-hover hover:border-_red_color">Nutrition</a>
-                  </li>
-                  
-                  <li>
-                      <a href="#" title="Offres du moment" class="cats-hover hover:border-_red_color">Entrainement</a>
-                  </li>
-              </ul>
-              <hr class="bg-gray-500 h-[2px] w-[100%] z-0">
-          </nav>
-      </div>
-  </div>
+<div class="actualites-header flex flex-col justify-center items-center mb-6 mt-8 desktop-width">
+  <h2 class="title text-2xl text-center">Nos actualités</h2>
+  <p class="text-center mb-4 text-_main_color_dark">Vivez toute l’actualité Bahwai</p>
+  <div class="cats-navigation  max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
+    <nav id="nav-actualites" class="text-_main_color_dark mt-2 z-50 sm:w-full w-[40rem]">
+      <ul class="flex justify-center gap-8 font-bold mb-1">
+        <li>
+          <a
+            href="#"
+            title="Nouveautés"
+            class="cats-hover hover:border-_red_color active">Tous</a>
+        </li>
 
-  <div class="actu-container flex justify-around flex-wrap gap-8 mx-4 ">
-      <div class="actu-item sm:max-w-[17rem]">
-          <div class="img bg-[url('./img/actu.png')] img-center flex items-end mb-4 h-[10rem]">
-              <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
-                  <p>01 avril 2023</p>
-                  <p>Partenariat</p>
-              </div>
-          </div>
-          <div class="desc text-sm">
-              <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
-              <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
-                  Avec notre expertise professionnelle en matière de sa</p>
-              <a href="./article.html" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
-                  <span class=" font-bold">Lire le blog</span>
-                  <img src="./img/icons/arrow-right.svg" alt="" class="mb-4">
-              </a>
-          </div>
-      </div>
-      <div class="actu-item sm:max-w-[17rem]">
-          <div class="img bg-[url('./img/actu.png')] img-center flex items-end mb-4 h-[10rem]">
-              <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
-                  <p>01 avril 2023</p>
-                  <p>Partenariat</p>
-              </div>
-          </div>
-          <div class="desc text-sm">
-              <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
-              <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
-                  Avec notre expertise professionnelle en matière de sa</p>
-              <a href="./article.html" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
-                  <span class=" font-bold">Lire le blog</span>
-                  <img src="./img/icons/arrow-right.svg" alt="" class="mb-4">
-              </a>
-          </div>
-      </div>
-      <div class="actu-item sm:max-w-[17rem]">
-          <div class="img bg-[url('./img/actu.png')] img-center flex items-end mb-4 h-[10rem]">
-              <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
-                  <p>01 avril 2023</p>
-                  <p>Partenariat</p>
-              </div>
-          </div>
-          <div class="desc text-sm">
-              <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
-              <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
-                  Avec notre expertise professionnelle en matière de sa</p>
-              <a href="./article.html" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
-                  <span class=" font-bold">Lire le blog</span>
-                  <img src="./img/icons/arrow-right.svg" alt="" class="mb-4">
-              </a>
-          </div>
-      </div>
-      <div class="actu-item sm:max-w-[17rem]">
-          <div class="img bg-[url('./img/actu.png')] img-center flex items-end mb-4 h-[10rem]">
-              <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
-                  <p>01 avril 2023</p>
-                  <p>Partenariat</p>
-              </div>
-          </div>
-          <div class="desc text-sm">
-              <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
-              <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
-                  Avec notre expertise professionnelle en matière de sa</p>
-              <a href="./article.html" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
-                  <span class=" font-bold">Lire le blog</span>
-                  <img src="./img/icons/arrow-right.svg" alt="" class="mb-4">
-              </a>
-          </div>
-      </div>
-      <div class="actu-item sm:max-w-[17rem]">
-          <div class="img bg-[url('./img/actu.png')] img-center flex items-end mb-4 h-[10rem]">
-              <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
-                  <p>01 avril 2023</p>
-                  <p>Partenariat</p>
-              </div>
-          </div>
-          <div class="desc text-sm">
-              <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
-              <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
-                  Avec notre expertise professionnelle en matière de sa</p>
-              <a href="./article.html" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
-                  <span class=" font-bold">Lire le blog</span>
-                  <img src="./img/icons/arrow-right.svg" alt="" class="mb-4">
-              </a>
-          </div>
-      </div>
-      <div class="actu-item sm:max-w-[17rem]">
-          <div class="img bg-[url('./img/actu.png')] img-center flex items-end mb-4 h-[10rem]">
-              <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
-                  <p>01 avril 2023</p>
-                  <p>Partenariat</p>
-              </div>
-          </div>
-          <div class="desc text-sm">
-              <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
-              <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
-                  Avec notre expertise professionnelle en matière de sa</p>
-              <a href="./article.html" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
-                  <span class=" font-bold">Lire le blog</span>
-                  <img src="./img/icons/arrow-right.svg" alt="" class="mb-4">
-              </a>
-          </div>
-      </div>
+        <li>
+          <a
+            href="#"
+            title="Boissons"
+            class="cats-hover hover:border-_red_color">Actualité</a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            title="Chocolats"
+            class="cats-hover hover:border-_red_color">Collaboration</a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            title="Accessoires"
+            class="cats-hover hover:border-_red_color">Nutrition</a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            title="Offres du moment"
+            class="cats-hover hover:border-_red_color">Entrainement</a>
+        </li>
+      </ul>
+      <hr class="bg-gray-500 h-[2px] w-[100%] z-0">
+    </nav>
   </div>
+</div>
+
+<div class="actu-container flex justify-around flex-wrap gap-8 mx-4 ">
+  <div class="actu-item sm:max-w-[17rem]">
+    <div style="background-image: url('{{ 'actu.png' |asset_url }}');" class="img img-center flex items-end mb-4 h-[10rem]">
+      <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
+        <p>01 avril 2023</p>
+        <p>Partenariat</p>
+      </div>
+    </div>
+    <div class="desc text-sm">
+      <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
+      <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
+        Avec notre expertise professionnelle en matière de sa</p>
+      <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
+        <span class=" font-bold">Lire le blog</span>
+        <img
+          src="{{ 'arrow-right.svg' |asset_url }}"
+          alt=""
+          class="mb-4">
+      </a>
+    </div>
+  </div>
+  <div class="actu-item sm:max-w-[17rem]">
+    <div style="background-image: url('{{ 'actu.png' |asset_url }}');" class="img img-center flex items-end mb-4 h-[10rem]">
+      <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
+        <p>01 avril 2023</p>
+        <p>Partenariat</p>
+      </div>
+    </div>
+    <div class="desc text-sm">
+      <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
+      <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
+        Avec notre expertise professionnelle en matière de sa</p>
+      <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
+        <span class=" font-bold">Lire le blog</span>
+        <img
+          src="{{ 'arrow-right.svg' |asset_url }}"
+          alt=""
+          class="mb-4">
+      </a>
+    </div>
+  </div>
+  <div class="actu-item sm:max-w-[17rem]">
+    <div style="background-image: url('{{ 'actu.png' |asset_url }}');" class="img img-center flex items-end mb-4 h-[10rem]">
+      <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
+        <p>01 avril 2023</p>
+        <p>Partenariat</p>
+      </div>
+    </div>
+    <div class="desc text-sm">
+      <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
+      <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
+        Avec notre expertise professionnelle en matière de sa</p>
+      <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
+        <span class=" font-bold">Lire le blog</span>
+        <img
+          src="{{ 'arrow-right.svg' |asset_url }}"
+          alt=""
+          class="mb-4">
+      </a>
+    </div>
+  </div>
+  <div class="actu-item sm:max-w-[17rem]">
+    <div style="background-image: url('{{ 'actu.png' |asset_url }}');" class="img img-center flex items-end mb-4 h-[10rem]">
+      <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
+        <p>01 avril 2023</p>
+        <p>Partenariat</p>
+      </div>
+    </div>
+    <div class="desc text-sm">
+      <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
+      <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
+        Avec notre expertise professionnelle en matière de sa</p>
+      <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
+        <span class=" font-bold">Lire le blog</span>
+        <img
+          src="{{ 'arrow-right.svg' |asset_url }}"
+          alt=""
+          class="mb-4">
+      </a>
+    </div>
+  </div>
+  <div class="actu-item sm:max-w-[17rem]">
+    <div style="background-image: url('{{ 'actu.png' |asset_url }}');" class="img img-center flex items-end mb-4 h-[10rem]">
+      <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
+        <p>01 avril 2023</p>
+        <p>Partenariat</p>
+      </div>
+    </div>
+    <div class="desc text-sm">
+      <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
+      <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
+        Avec notre expertise professionnelle en matière de sa</p>
+      <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
+        <span class=" font-bold">Lire le blog</span>
+        <img
+          src="{{ 'arrow-right.svg' |asset_url }}"
+          alt=""
+          class="mb-4">
+      </a>
+    </div>
+  </div>
+  <div class="actu-item sm:max-w-[17rem]">
+    <div style="background-image: url('{{ 'actu.png' |asset_url }}');" class="img img-center flex items-end mb-4 h-[10rem]">
+      <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
+        <p>01 avril 2023</p>
+        <p>Partenariat</p>
+      </div>
+    </div>
+    <div class="desc text-sm">
+      <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
+      <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
+        Avec notre expertise professionnelle en matière de sa</p>
+      <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
+        <span class=" font-bold">Lire le blog</span>
+        <img
+          src="{{ 'arrow-right.svg' |asset_url }}"
+          alt=""
+          class="mb-4">
+      </a>
+    </div>
+  </div>
+  <div class="actu-item sm:max-w-[17rem]">
+    <div style="background-image: url('{{ 'actu.png' |asset_url }}');" class="img img-center flex items-end mb-4 h-[10rem]">
+      <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
+        <p>01 avril 2023</p>
+        <p>Partenariat</p>
+      </div>
+    </div>
+    <div class="desc text-sm">
+      <h5 class="font-bold text-_main_color_dark text-base">Intermarché, partenaire de Bahwai</h5>
+      <p class="text-gray-400">Vous cherchez une collation délicieuse et à la fois saine ? Essayez les snacks Bahwai !
+        Avec notre expertise professionnelle en matière de sa</p>
+      <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
+        <span class=" font-bold">Lire le blog</span>
+        <img
+          src="{{ 'arrow-right.svg' |asset_url }}"
+          alt=""
+          class="mb-4">
+      </a>
+    </div>
+  </div>
+</div>

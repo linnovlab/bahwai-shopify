@@ -1,0 +1,51 @@
+<div class="mt-20 text-_main_color_dark">
+  <div class="content sm:max-w-[25rem] max-w-[100%] mx-8 sm:mx-auto">
+    <h1 class="title mb-8">Mon compte</h1>
+    <form
+      action="#"
+      method="post"
+      id="form-connexion"
+      class="w-full  flex flex-col items-center gap-4">
+      <div class="item w-full">
+        <input
+          class="input focus:border-_orange_color transition-all duration-300"
+          type="email"
+          placeholder="Adresse mail"
+          name="email"
+          required>
+      </div>
+      <div class="item w-full relative">
+        <input
+          id="input-password"
+          class="input focus:border-_orange_color transition-all duration-300"
+          type="password"
+          placeholder="Mot de passe"
+          name="password"
+          required>
+        <i class="fas fa-eye absolute hover:cursor-pointer" id="eye-password"></i>
+      </div>
+      <div class="flex flex-col items-center mt-8">
+        <button type="submit" class="btn mb-4 py-2 text-white">Se connecter</button>
+        <p class="text-_main_color_dark border-b border-_main_color_dark hover:border-_orange_color">
+          <a href="#" class="hover:text-_orange_color transition-all duration-300">Mot de passe oublié ?</a>
+        </p>
+      </div>
+    </form>
+  </div>
+  <style>
+    @media screen and (max-width: 640px) {
+      .inscription-section {
+        background-image: url('{{ 'imageconnexionsm.png' |asset_url }}');
+      }
+    }
+  </style>
+  <section style="background-image: url('{{ 'imageconnexion.png' |asset_url }}');" class="inscription-section relative z-50 sm:h-[40rem] h-[27rem] text-_main_color_dark flex flex-col justify-center items-center gap-6 img-center mt-8 py-8">
+    <h2 class="title">Nouveau chez Bahwai ?
+    </h2>
+    <p class="text-center ">Profitez de codes promo et de produits réservés aux membres en étant membre Bahwai</p>
+    <p>
+      <a href="{{ routes.account_register_url }}" class="btn">Créer mon compte
+      </a>
+    </p>
+  </section>
+</div>

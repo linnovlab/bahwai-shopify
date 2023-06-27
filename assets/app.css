@@ -935,6 +935,10 @@ html {
   height: 100%;
 }
 
+.h-\[27rem\]{
+  height: 27rem;
+}
+
 .max-h-\[8rem\]{
   max-height: 8rem;
 }
@@ -1292,6 +1296,10 @@ html {
   background-image: url('./img/Mobile/Orange-Curvy.png');
 }
 
+.bg-\[url\(\'\.\/img\/imageconnexionsm\.png\'\)\]{
+  background-image: url('./img/imageconnexionsm.png');
+}
+
 .bg-contain{
   background-size: contain;
 }
@@ -1403,6 +1411,11 @@ html {
 .py-20{
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .\!pe-8{
@@ -2256,6 +2269,11 @@ footer .items li{
   border-color: rgb(234 64 56 / var(--tw-border-opacity));
 }
 
+.hover\:border-_orange_color:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 121 37 / var(--tw-border-opacity));
+}
+
 .hover\:text-_orange_color:hover{
   --tw-text-opacity: 1;
   color: rgb(255 121 37 / var(--tw-text-opacity));
@@ -2363,6 +2381,10 @@ footer .items li{
     height: 27rem;
   }
 
+  .sm\:h-\[40rem\]{
+    height: 40rem;
+  }
+
   .sm\:w-\[11rem\]{
     width: 11rem;
   }
@@ -2411,6 +2433,10 @@ footer .items li{
     max-width: 40rem;
   }
 
+  .sm\:max-w-\[25rem\]{
+    max-width: 25rem;
+  }
+
   .sm\:flex-row{
     flex-direction: row;
   }
@@ -2441,6 +2467,10 @@ footer .items li{
 
   .sm\:bg-\[url\(\'\.\/img\/Desktop\/Orange-Curvy\.png\'\)\]{
     background-image: url('./img/Desktop/Orange-Curvy.png');
+  }
+
+  .sm\:bg-\[url\(\'\.\/img\/imageconnexion\.png\'\)\]{
+    background-image: url('./img/imageconnexion.png');
   }
 
   .sm\:p-8{
