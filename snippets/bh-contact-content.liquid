@@ -1,0 +1,203 @@
+<style>
+  @media screen and (max-width: 640px) {
+    .banner-contact {
+      background-image: {{ 'bannerblogsm.png' | asset_url }}
+      ;
+    }
+  }
+</style>
+<div class="main">
+  <div style="background-image: {{ 'bannerblogsm.png' | asset_url }};" class="banner-contact img-center sm:h-[25rem] h-[17rem]"></div>
+
+  <!-- faq -->
+  <section class="faq mt-4 mb-4 desktop-width">
+    <h2 class="title mb-8">F.A.Q</h2>
+    <div id="faq-links" class="menu-list flex items-center flex-wrap justify-center gap-2 text-white">
+      <a href="#" class="faq-link active py-[11px] screen300:w-[9rem]">Commande & Livraison</a>
+      <a href="#" class="faq-link py-6 screen300:w-[9rem]">Nos produits</a>
+      <a href="#" class="faq-link py-6 screen300:w-[9rem]">Santé & Nutrition</a>
+      <a href="#" class="faq-link py-6 screen300:w-[9rem]">Ambassadeurs</a>
+    </div>
+    <div class="accordions text-_main_color_dark flex flex-col mt-4 mb-16 sm:mx-auto sm:max-w-[30rem] w-full">
+      <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-2">
+        <button
+          type="button"
+          id="btn-accordion"
+          class="text-start px-4 font-bold flex justify-between w-full">
+          <span>Comment modifier ma commande ?
+          </span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel px-4 pt-2 hidden">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, libero.</p>
+        </div>
+      </div>
+      <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-4">
+        <button
+          type="button"
+          id="btn-accordion"
+          class="text-start px-4 font-bold w-full flex justify-between">
+          <span>Je me suis trompé d’adresse de livraison
+          </span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel px-4 pt-2 hidden">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, libero.</p>
+        </div>
+      </div>
+      <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-4">
+        <button
+          type="button"
+          id="btn-accordion"
+          class="text-start px-4 font-bold w-full flex justify-between">
+          <span>Il me manque un produit dans ma commande</span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel px-4 pt-2 hidden">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, libero.</p>
+        </div>
+      </div>
+      <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-4">
+        <button
+          type="button"
+          id="btn-accordion"
+          class=" text-start px-4 font-bold w-full flex justify-between">
+          <span>Je n’ai pas reçu ma commande</span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel px-4 pt-2 hidden">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, libero.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-4">
+        <button
+          type="button"
+          id="btn-accordion"
+          class=" text-start px-4 font-bold w-full flex justify-between">
+          <span>Où est ma commande ?
+          </span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel px-4 pt-2 hidden">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, libero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact relative z-50 h-[20rem] sm:h-[27rem] xl:h-[40rem]  text-white flex flex-col justify-center items-center gap-6 bg-[url('./img/Mobile/Orange-Curvy.png')] sm:bg-[url('./img/Desktop/Orange-Curvy.png')] img-center py-8">
+    <h2 class="title text-center">Devenir partenaire ?
+    </h2>
+    <p class="text-center">Envie de rejoindre l’aventure Bahwai ? Remplissez le formulaire !</p>
+    <button type="button" class="btn px-20 py-2">S'inscrire</button>
+  </section>
+
+  <section class="py-20 -mt-16 sm:px-4">
+    <div class="flex flex-col justify-center items-center gap-2 mt-4">
+      <h5 class="title">Encore besoin d’aide ?</h5>
+      <p class="text-_main_color_dark text-center">Nous ferons le maximum pour vous répondre au plus vite !
+      </p>
+      <button
+        id="btn-contact"
+        type="button"
+        class="btn mt-8 px-10 py-2 text-white">Contactez nous</button>
+    </div>
+    <div id="form-contact" class="form-contact hidden mt-8 mx-4">
+      <form
+        action="#"
+        method="post"
+        class="sm:max-w-[40rem] max-w-[100%] mx-auto w-full flex flex-col items-center gap-6">
+        <div class="flex justify-end mb-8 w-full">
+          <p id="close-form-contact" class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
+            <i class="fas fa-xmark text-[1.5rem]"></i>
+            <span>Fermer</span>
+          </p>
+        </div>
+        <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
+          <div class="item w-full">
+            <input
+              class="input focus:border-_orange_color transition-all duration-300"
+              type="text"
+              placeholder="Nom*"
+              name="nom"
+              required>
+          </div>
+          <div class="item w-full">
+            <input
+              class="input focus:border-_orange_color transition-all duration-300"
+              type="text"
+              placeholder="Prénom*"
+              name="prenom"
+              required>
+          </div>
+        </div>
+        <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
+          <div class="item w-full">
+            <input
+              class="input focus:border-_orange_color transition-all duration-300"
+              type="email"
+              placeholder="Adresse mail"
+              name="email"
+              required>
+          </div>
+          <div class="item w-full">
+            <input
+              class="input focus:border-_orange_color transition-all duration-300"
+              type="tel"
+              placeholder="Numéro de téléphone"
+              name="tel"
+              required>
+          </div>
+        </div>
+        <div class="flex flex-wrap sm:flex-nowrap gap-4 w-full">
+          <div class="item w-full">
+            <input
+              class="input focus:border-_orange_color transition-all duration-300"
+              type="text"
+              placeholder="Numéro de commande"
+              name="vile"
+              required>
+          </div>
+          <div class="item w-full">
+            <div class="item">
+              <div class="accordions">
+                <button
+                  type="button"
+                  id="btn-accordion"
+                  class="rounded-[5px] px-3 ps-2 h-10 w-[20rem] border border-gray-500 flex justify-between items-center">
+                  <span id="layout">Choisissez un sujet
+                  </span>
+                  <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="panel panel-selected hidden" id="panel-partenaire">
+                  <ul>
+                    <li class="selected" data-value="Colis toujours pas reçu">Colis toujours pas reçu</li>
+                    <li data-value="Proposition de partenariat">Proposition de partenariat</li>
+                    <li data-value="Remarques ou Suggestions">Remarques ou Suggestions</li>
+                    <li data-value="Autre">Autre</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item w-full mt-8">
+          <textarea
+            class="border rounded-[5px] border-gray-500 w-full -mt-4 ps-4"
+            name="description"
+            id=""
+            rows="10"
+            placeholder="Dites nous tout !  "></textarea>
+        </div>
+        <div class="flex flex-col items-center">
+          <button
+            id="btn-partenaire"
+            type="submit"
+            class="btn mb-4 py-2 px-[5rem] text-white">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

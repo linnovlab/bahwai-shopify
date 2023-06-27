@@ -1284,6 +1284,14 @@ html {
   background-image: url('./img/bannerblogsm.png');
 }
 
+.bg-\[url\(\'\.\/img\/Desktop\/\'\)\]{
+  background-image: url('./img/Desktop/');
+}
+
+.bg-\[url\(\'\.\/img\/Mobile\/Orange-Curvy\.png\'\)\]{
+  background-image: url('./img/Mobile/Orange-Curvy.png');
+}
+
 .bg-contain{
   background-size: contain;
 }
@@ -1370,6 +1378,31 @@ html {
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.py-6{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.py-\[11px\]{
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-20{
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .\!pe-8{
@@ -2326,6 +2359,10 @@ footer .items li{
     height: 100vh;
   }
 
+  .sm\:h-\[27rem\]{
+    height: 27rem;
+  }
+
   .sm\:w-\[11rem\]{
     width: 11rem;
   }
@@ -2402,6 +2439,10 @@ footer .items li{
     background-image: url('./img/bannerblog.png');
   }
 
+  .sm\:bg-\[url\(\'\.\/img\/Desktop\/Orange-Curvy\.png\'\)\]{
+    background-image: url('./img/Desktop/Orange-Curvy.png');
+  }
+
   .sm\:p-8{
     padding: 2rem;
   }
@@ -2463,6 +2504,10 @@ footer .items li{
 @media (min-width: 1280px){
   .xl\:h-\[38rem\]{
     height: 38rem;
+  }
+
+  .xl\:h-\[40rem\]{
+    height: 40rem;
   }
 }
 
