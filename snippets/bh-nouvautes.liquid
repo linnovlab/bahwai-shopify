@@ -1,17 +1,27 @@
 <section class="nouveautes desktop-width">
-  <div class="nouveautes-header flex flex-col justify-center items-center mb-6 mt-8">
+  <div class="nouveautes-header flex flex-col justify-center items-center mb-6 mt-16">
     <h2 class="title text-2xl text-center mx-4 sm:mt-0 mt-12">Nos nouveautés surprenantes</h2>
     <div class="cats-navigation mt-8 max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
       <nav class="text-_main_color_dark mt-2 z-50 sm:w-full w-[40rem]">
         <ul class="flex justify-center gap-[20px] font-bold mb-1">
           {% for link in linklists['liens-categories'].links %}
-            <li>
-              <a
-                href="{{ link.url }}" 
-                title="{{ link.title }}"
-                class="cats-hover hover:border-_red_color">{{ link.title }}
-              </a>
-            </li>
+            {% if link.title == 'Boissons' %}
+              <li>
+                <a
+                  href="{{ link.url }}" 
+                  title="{{ link.title }}"
+                  class="cats-hover hover:border-_red_color active">{{ link.title }}
+                </a>
+              </li>
+            {% else %}
+              <li>
+                <a
+                  href="{{ link.url }}" 
+                  title="{{ link.title }}"
+                  class="cats-hover hover:border-_red_color">{{ link.title }}
+                </a>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
         <hr class="bg-[#DCDCDC] h-[2px] w-[100%] z-0">

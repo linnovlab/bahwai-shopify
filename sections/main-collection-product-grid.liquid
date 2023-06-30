@@ -369,3 +369,9 @@
   </section>
 
 </main>
+
+{% for product in collection.products %}
+  <a href="{{ product.url }}">
+    <h3>{{ product.title }}</h3>
+  </a>
+{% endfor %}

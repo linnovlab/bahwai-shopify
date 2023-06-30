@@ -118,7 +118,7 @@
 
 
       {% if template.name == 'index' %}
-        <section class="banner relative sm:h-[30rem] h-[20rem] flex justify-center items-center">
+        <section class="banner relative sm:h-[25rem] h-[20rem] flex justify-center items-center">
           <div class="banner-content text-white flex justify-center flex-col items-center gap-2">
             <h1 class="font-litle text-[32px] text-center">Quand grignoter est sans limite...</h1>
             <p class="text-center">Atteignez vos objectifs tout en prenant du plaisir avec nos snacks riches en protéines
@@ -127,7 +127,14 @@
               <a href="{{ collections.all.url }}" class="btn block text-center font-semibold">Je veux découvrir</a>
             </p>
           </div>
-          <div class="waves absolute sm:bottom-[17px] bottom-[-46px] sm:bg-[url('./img/Vague-desktop.svg')] bg-[url('./img/Vague-Mobile.svg')] img-center bg-no-repeat h-[27px] w-full"></div>
+          <style>
+            @media screen and (max-width: 640px) {
+              .wave-index{
+                background-image: url('{{ 'Vague-Mobile.svg' |asset_url }}');
+              }
+            }
+          </style>
+          <div style="background-image: url('{{ 'Vague-desktop.svg' |asset_url }}');" class="wave-index absolute sm:bottom-[-16px] bottom-[-46px] img-center bg-no-repeat h-[27px] w-full"></div>
         </section>
 
         {% render 'bh-nouvautes' %}
@@ -173,14 +180,5 @@
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}-->
 
-    
-  <script>
-    fetch(window.Shopify.routes.root + "recommendations/products.json?product_id=8412652699927&intent=related")
-    .then(response => response.json())
-    .then(({ products }) => {
-      console.log(products)
-    }
-  );
-  </script>
   </body>
 </html>
