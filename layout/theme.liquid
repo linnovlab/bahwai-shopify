@@ -104,8 +104,20 @@
 
     {% comment %} <p class="text-2xl text-re">{{ page.url }}</p>  {% endcomment %}
 
-    <header class="relative">
-      {% section 'bh-header' %}
+    {% comment %} {% for collection in collections %}
+    {{ collection.title }}
+    {% endfor %} {% endcomment %}
+
+    {% for product in collections['cannettes'].products %}
+    <!-- Output product details --><h2>
+    {{ product.title }}
+    </h2>
+    </p>
+    <!-- Add more product fields as needed -->
+    {% endfor %}
+
+
+      <header class="relative"> {% section 'bh-header' %}
       {% render 'bh-menu-bars' %}
     </header>
 
@@ -114,7 +126,6 @@
       role="main"
       tabindex="-1">
       {{ content_for_layout }}
-
 
 
       {% if template.name == 'index' %}
@@ -165,6 +176,8 @@
     </ul>
 
     {% render 'footer-scripts' %}
+
+
 
     {% if template.name != 'login' %}
       {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
