@@ -129,7 +129,7 @@
           </div>
           <style>
             @media screen and (max-width: 640px) {
-              .wave-index{
+              .wave-index {
                 background-image: url('{{ 'Vague-Mobile.svg' |asset_url }}');
               }
             }
@@ -167,7 +167,7 @@
     {% render 'footer-scripts' %}
 
     {% if template.name != 'login' %}
-      {% if template.name == 'index' or template.name == 'collection' or template.name == 'article' %}
+      {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
         {% render 'bh-footer-complet' %}
       {% else %}
         {% render 'bh-footer-autre' %}

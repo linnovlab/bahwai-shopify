@@ -2,21 +2,22 @@
   <div class="left lg:mr-16 mx-auto lg:mb-0 mb-16">
     <div class="imgs flex flex-col gap-4">
       <div class="lg:w-[460px] w-full">
-        <img src="{{ 'img prod.png' |asset_url }}" alt="produit">
+        <img src="{{ product |image_url: width: 600, height: 600 }}" alt="produit">
       </div>
       <div class="flex justify-center gap-3">
-        <img
-          class="w-[61px]"
-          src="{{ 'item 2.png' |asset_url }}"
-          alt="produit">
-        <img
-          class="w-[61px]"
-          src="{{ 'item 2.png' |asset_url }}"
-          alt="produit">
-        <img
-          class="w-[61px]"
-          src="{{ 'item 2.png' |asset_url }}"
-          alt="produit">
+        {% if product.images.size > 1 %}
+          {% for img in product.images %}
+            <img
+              class="w-[61px]"
+              src="{{ img |image_url: width: 60, height: 60 }}"
+              alt="produit">
+          {% endfor %}
+        {% else %}
+          <img
+            class="w-[61px]"
+            src="{{ product |image_url: width: 60, height: 60 }}"
+            alt="produit">
+        {% endif %}
       </div>
     </div>
   </div>
@@ -24,11 +25,13 @@
   <div class="right  sm:mx-0 mx-4">
     <div class="head flex justify-between">
       <div class="">
-        <h1 class="font-bold text-_main_color_dark sm:text-[24px] text-base sm:mb-3">Booster Kiwi Citron vert
+        <h1 class="font-bold text-_main_color_dark sm:text-[24px] text-base sm:mb-3">
+          {{ product.title }}
         </h1>
         <div class="price sm:hidden gap-3 flex">
-          <p class="text-_main_color_dark font-medium text-lg mb-1">2,10 €</p>
-          <span class="text-[#999999]">l’unité</span>
+          <p class="text-_main_color_dark font-medium text-lg mb-1">{{ product.price }}
+          </p>
+          <span class="text-[#999999] text-base">l’unité</span>
         </div>
         <div class="avis flex gap-2 h-[1.1rem] mb-4">
           <div class="stars flex text-_main_color_dark">
@@ -49,9 +52,10 @@
       </div>
     </div>
     <div class="desc">
-      <p class="text-[#565656] sm:text-base text-sm">Les boissons énergisantes sont devenues une option populaire pour les personnes qui cherchent à stimuler leur énergie et leur concentration. Ces boissons contiennent souvent des ingrédients tels que la caféine, la taurine, le guarana et le ginseng, qui sont connus pour leurs effets stimulants sur le corps.</p>
+      <p class="text-[#565656] sm:text-base text-sm">{{ product.description }}
+      </p>
     </div>
-    <div class="w-[16rem] my-4 font-medium" id="btn-produit-desc">
+    <div class="w-[18rem] my-4 font-medium" id="btn-produit-desc">
       <p class="text-_main_color_dark flex items-center border-b border-_main_color_dark hover:cursor-pointer">
         <span class="text-2xl me-2">+</span>
         <span>En savoir plus sur le produit</span>
@@ -276,3 +280,44 @@
     </div>
   </div>
 </section>
+
+<!-- description produit -->
+<div class="hidden fixed top-0 w-full" id="produit-desc">
+  <div class="content max-w-[62rem] w-full mx-auto p-4 bg-white max-h-screen overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
+    <div class="flex justify-end w-full mx-auto">
+      <p id="close-produit-desc" class="text-end font-bold border-b-2 text-_main_color_dark border-_main_color_dark cursor-pointer">
+        <i class="fas fa-xmark text-[18px] me-2"></i>
+        <span>Fermer</span>
+      </p>
+    </div>
+    <div class="item-1 text-_main_color_dark mb-12">
+      <h5 class="font-medium mb-3">Description :
+      </h5>
+      <div class="content ps-4">
+        <p>
+          {{ product.description }}
+        </p>
+      </div>
+    </div>
+    <div class="item-1 text-_main_color_dark">
+      <h5 class="font-medium mb-3">Description :
+      </h5>
+      <div class="content">
+        <ul id="produit-ul-desc" class="ps-8">
+          <li>
+            Stimule l'énergie : La Power Up est conçue pour augmenter l'énergie et la vitalité, en donnant un coup de pouce pour surmonter la fatigue et la somnolence.
+          </li>
+          <li>
+            Améliore la concentration : Les ingrédients de la Power Up aident à améliorer la concentration, la vigilance et la mémoire, ce qui est utile pour les activités nécessitant de la concentration, de la créativité ou de la résolution de problèmes.
+          </li>
+          <li>
+            Renforce la performance physique : La Power Up aide à réduire la fatigue, ce qui peut améliorer la performance physique pendant l'exercice ou les activités sportives.
+          </li>
+          <li>
+            Aide à réduire le stress : Les ingrédients de la Power Up, en particulier le ginseng, peuvent aider à réduire le stress et l'anxiété.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -877,6 +877,10 @@ html {
   margin-top: 14px;
 }
 
+.mb-12{
+  margin-bottom: 3rem;
+}
+
 .block{
   display: block;
 }
@@ -1041,6 +1045,10 @@ html {
   width: 16rem;
 }
 
+.w-\[18rem\]{
+  width: 18rem;
+}
+
 .max-w-\[100\%\]{
   max-width: 100%;
 }
@@ -1083,6 +1091,10 @@ html {
 
 .max-w-\[144px\]{
   max-width: 144px;
+}
+
+.max-w-\[62rem\]{
+  max-width: 62rem;
 }
 
 .transform{
@@ -1324,6 +1336,11 @@ html {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-red-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\/img\/Desktop\/Orange\.png\'\)\]{
