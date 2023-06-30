@@ -108,13 +108,13 @@
     {{ collection.title }}
     {% endfor %} {% endcomment %}
 
-    {% for product in collections['cannettes'].products %}
+    {% comment %} {% for product in collections['Chocalats'].products %}
     <!-- Output product details --><h2>
     {{ product.title }}
     </h2>
     </p>
     <!-- Add more product fields as needed -->
-    {% endfor %}
+    {% endfor %} {% endcomment %}
 
 
       <header class="relative"> {% section 'bh-header' %}
@@ -149,7 +149,7 @@
         </section>
 
         {% render 'bh-nouvautes' %}
-        {% render 'bh-site-info' %}
+        {% section 'bh-site-info' %}
         {% render 'bh-categories' %}
         {% render 'bh-pour-un-monde' %}
         {% render 'bh-map' %}

@@ -1359,6 +1359,14 @@ html {
   background-image: url('./img/Vague-Mobile.svg');
 }
 
+.bg-\[url\(\'\.\/img\/Desktop\/violet\.png\'\)\]{
+  background-image: url('./img/Desktop/violet.png');
+}
+
+.bg-\[url\(\'\.\/img\/bannerblogsm\.png\'\)\]{
+  background-image: url('./img/bannerblogsm.png');
+}
+
 .bg-contain{
   background-size: contain;
 }
@@ -2496,6 +2504,10 @@ footer .items li{
     height: 655px;
   }
 
+  .sm\:h-\[20rem\]{
+    height: 20rem;
+  }
+
   .sm\:w-\[11rem\]{
     width: 11rem;
   }
@@ -2584,6 +2596,10 @@ footer .items li{
 
   .sm\:bg-\[url\(\'\.\/img\/Vague-desktop\.svg\'\)\]{
     background-image: url('./img/Vague-desktop.svg');
+  }
+
+  .sm\:bg-\[url\(\'\.\/img\/bannerblog\.png\'\)\]{
+    background-image: url('./img/bannerblog.png');
   }
 
   .sm\:p-8{
