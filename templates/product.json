@@ -3,15 +3,6 @@
     "main": {
       "type": "main-product",
       "settings": {
-        "enable_sticky_info": true,
-        "media_size": "large",
-        "constrain_to_viewport": true,
-        "gallery_layout": "stacked",
-        "mobile_thumbnails": "hide",
-        "hide_variants": true,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
       }
     }
   },
