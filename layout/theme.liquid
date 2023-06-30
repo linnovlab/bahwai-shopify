@@ -172,5 +172,15 @@
     <!--{%- if settings.predictive_search_enabled -%}
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}-->
+
+    
+  <script>
+    fetch(window.Shopify.routes.root + "recommendations/products.json?product_id=8412652699927&intent=related")
+    .then(response => response.json())
+    .then(({ products }) => {
+      console.log(products)
+    }
+  );
+  </script>
   </body>
 </html>

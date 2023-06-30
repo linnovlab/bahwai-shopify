@@ -717,6 +717,10 @@ html {
   margin-top: -4rem;
 }
 
+.-mt-4{
+  margin-top: -1rem;
+}
+
 .-mt-\[8rem\]{
   margin-top: -8rem;
 }
@@ -731,6 +735,10 @@ html {
 
 .mb-2{
   margin-bottom: 0.5rem;
+}
+
+.mb-3{
+  margin-bottom: 0.75rem;
 }
 
 .mb-4{
@@ -847,14 +855,6 @@ html {
   margin-top: 2rem;
 }
 
-.-mt-4{
-  margin-top: -1rem;
-}
-
-.mb-3{
-  margin-bottom: 0.75rem;
-}
-
 .block{
   display: block;
 }
@@ -907,6 +907,10 @@ html {
   height: 27px;
 }
 
+.h-\[27rem\]{
+  height: 27rem;
+}
+
 .h-\[2px\]{
   height: 2px;
 }
@@ -933,10 +937,6 @@ html {
 
 .h-full{
   height: 100%;
-}
-
-.h-\[27rem\]{
-  height: 27rem;
 }
 
 .max-h-\[8rem\]{
@@ -979,6 +979,10 @@ html {
   width: 17rem;
 }
 
+.w-\[20rem\]{
+  width: 20rem;
+}
+
 .w-\[298px\]{
   width: 298px;
 }
@@ -1011,8 +1015,8 @@ html {
   width: 100%;
 }
 
-.w-\[20rem\]{
-  width: 20rem;
+.max-w-\[100\%\]{
+  max-width: 100%;
 }
 
 .max-w-\[143px\]{
@@ -1045,10 +1049,6 @@ html {
 
 .max-w-\[85px\]{
   max-width: 85px;
-}
-
-.max-w-\[100\%\]{
-  max-width: 100%;
 }
 
 .transform{
@@ -1280,26 +1280,6 @@ html {
   background-image: url('./img/Vague-Mobile.svg');
 }
 
-.bg-\[url\(\'\.\/img\/actu\.png\'\)\]{
-  background-image: url('./img/actu.png');
-}
-
-.bg-\[url\(\'\.\/img\/bannerblogsm\.png\'\)\]{
-  background-image: url('./img/bannerblogsm.png');
-}
-
-.bg-\[url\(\'\.\/img\/Desktop\/\'\)\]{
-  background-image: url('./img/Desktop/');
-}
-
-.bg-\[url\(\'\.\/img\/Mobile\/Orange-Curvy\.png\'\)\]{
-  background-image: url('./img/Mobile/Orange-Curvy.png');
-}
-
-.bg-\[url\(\'\.\/img\/imageconnexionsm\.png\'\)\]{
-  background-image: url('./img/imageconnexionsm.png');
-}
-
 .bg-contain{
   background-size: contain;
 }
@@ -1331,6 +1311,26 @@ html {
 
 .p-\[5px\]{
   padding: 5px;
+}
+
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-20{
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .px-4{
@@ -1373,6 +1373,16 @@ html {
   padding-bottom: 0.5rem;
 }
 
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.py-6{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1383,39 +1393,9 @@ html {
   padding-bottom: 0.8rem;
 }
 
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.py-6{
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .py-\[11px\]{
   padding-top: 11px;
   padding-bottom: 11px;
-}
-
-.px-10{
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-.px-20{
-  padding-left: 5rem;
-  padding-right: 5rem;
-}
-
-.py-20{
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.px-2{
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .\!pe-8{
@@ -1437,6 +1417,10 @@ html {
 
 .pb-\[10px\]{
   padding-bottom: 10px;
+}
+
+.pb-\[10rem\]{
+  padding-bottom: 10rem;
 }
 
 .ps-2{
@@ -1477,10 +1461,6 @@ html {
 
 .pt-\[9rem\]{
   padding-top: 9rem;
-}
-
-.pb-\[10rem\]{
-  padding-bottom: 10rem;
 }
 
 .text-center{
@@ -1666,12 +1646,12 @@ html {
   transition-duration: 150ms;
 }
 
-.duration-500{
-  transition-duration: 500ms;
-}
-
 .duration-300{
   transition-duration: 300ms;
+}
+
+.duration-500{
+  transition-duration: 500ms;
 }
 
 body{
@@ -2264,14 +2244,14 @@ footer .items li{
   cursor: pointer;
 }
 
-.hover\:border-_red_color:hover{
-  --tw-border-opacity: 1;
-  border-color: rgb(234 64 56 / var(--tw-border-opacity));
-}
-
 .hover\:border-_orange_color:hover{
   --tw-border-opacity: 1;
   border-color: rgb(255 121 37 / var(--tw-border-opacity));
+}
+
+.hover\:border-_red_color:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(234 64 56 / var(--tw-border-opacity));
 }
 
 .hover\:text-_orange_color:hover{
@@ -2313,14 +2293,14 @@ footer .items li{
     margin-right: 7rem;
   }
 
-  .sm\:mx-auto{
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .sm\:mx-\[8rem\]{
     margin-left: 8rem;
     margin-right: 8rem;
+  }
+
+  .sm\:mx-auto{
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .sm\:me-8{
@@ -2361,8 +2341,16 @@ footer .items li{
     height: 25rem;
   }
 
+  .sm\:h-\[27rem\]{
+    height: 27rem;
+  }
+
   .sm\:h-\[30rem\]{
     height: 30rem;
+  }
+
+  .sm\:h-\[40rem\]{
+    height: 40rem;
   }
 
   .sm\:h-\[630px\]{
@@ -2375,14 +2363,6 @@ footer .items li{
 
   .sm\:h-screen{
     height: 100vh;
-  }
-
-  .sm\:h-\[27rem\]{
-    height: 27rem;
-  }
-
-  .sm\:h-\[40rem\]{
-    height: 40rem;
   }
 
   .sm\:w-\[11rem\]{
@@ -2413,6 +2393,10 @@ footer .items li{
     max-width: 20rem;
   }
 
+  .sm\:max-w-\[25rem\]{
+    max-width: 25rem;
+  }
+
   .sm\:max-w-\[306px\]{
     max-width: 306px;
   }
@@ -2421,20 +2405,16 @@ footer .items li{
     max-width: 30rem;
   }
 
+  .sm\:max-w-\[40rem\]{
+    max-width: 40rem;
+  }
+
   .sm\:max-w-\[455px\]{
     max-width: 455px;
   }
 
   .sm\:max-w-none{
     max-width: none;
-  }
-
-  .sm\:max-w-\[40rem\]{
-    max-width: 40rem;
-  }
-
-  .sm\:max-w-\[25rem\]{
-    max-width: 25rem;
   }
 
   .sm\:flex-row{
@@ -2459,18 +2439,6 @@ footer .items li{
 
   .sm\:bg-\[url\(\'\.\/img\/Vague-desktop\.svg\'\)\]{
     background-image: url('./img/Vague-desktop.svg');
-  }
-
-  .sm\:bg-\[url\(\'\.\/img\/bannerblog\.png\'\)\]{
-    background-image: url('./img/bannerblog.png');
-  }
-
-  .sm\:bg-\[url\(\'\.\/img\/Desktop\/Orange-Curvy\.png\'\)\]{
-    background-image: url('./img/Desktop/Orange-Curvy.png');
-  }
-
-  .sm\:bg-\[url\(\'\.\/img\/imageconnexion\.png\'\)\]{
-    background-image: url('./img/imageconnexion.png');
   }
 
   .sm\:p-8{
