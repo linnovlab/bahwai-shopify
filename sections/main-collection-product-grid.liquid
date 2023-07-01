@@ -133,7 +133,7 @@
 
     <div class="right-side w-full flex flex-col gap-4 sm:me-8 me-0">
       <div class="sm:px-0 px-[20px]">
-        <h1 class="title text-center">Nos boissons</h1>
+        <h1 class="title text-center">{{ collection.title }}</h1>
         <p class="text-center mb-8">Boostez votre journée avec notre canette énergisante naturelle et saine !</p>
         <div class="flex justify-end sm:hidden mb-4">
           <p id="open-filter-modal" class="flex gap-4 border-b text-_main_color_dark border-_main_color_dark hover:cursor-pointer">
@@ -142,144 +142,31 @@
           </p>
         </div>
         <div class="cats-content flex justify-around flex-wrap sm:gap-8 gap-2 items-center">
-          <div class="content-item sm:w-auto w-[9rem] text-sm">
-            <a href="#" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-              <div class="img w-full">
-                <img
-                  src="{{ 'item 1.png' | asset_url }}"
-                  alt="La gourmande aux noisettes"
-                  class="w-full">
-              </div>
-              <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="stars flex text-_main_color_dark text-sm">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+          {% for product in collection.products %}
+            <div class="content-item sm:w-auto w-[9rem] text-sm">
+              <a href="{{ product.url }}" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+                <div class="img w-full">
+                  <img
+                    src="{{ product |image_url: width: 600, height: 600 }}"
+                    alt="La gourmande aux noisettes"
+                    class="w-full">
                 </div>
-                <span class="border-_main_color_dark border-b-2 ">26 avis</span>
-              </div>
-              <p class="font-medium">À partir de 2,10€
-              </p>
-            </a>
-          </div>
-          <div class="content-item sm:w-auto w-[9rem] text-sm">
-            <a href="#" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-              <div class="img w-full">
-                <img
-                  src="{{ 'item 1.png' | asset_url }}"
-                  alt="La gourmande aux noisettes"
-                  class="w-full">
-              </div>
-              <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="stars flex text-_main_color_dark text-sm">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
+                <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                  <div class="stars flex text-_main_color_dark text-sm">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="border-_main_color_dark border-b-2 ">26 avis</span>
                 </div>
-                <span class="border-_main_color_dark border-b-2 ">26 avis</span>
-              </div>
-              <p class="font-medium">À partir de 2,10€
-              </p>
-            </a>
-          </div>
-          <div class="content-item sm:w-auto w-[9rem] text-sm">
-            <a href="#" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-              <div class="img w-full">
-                <img
-                  src="{{ 'item 1.png' | asset_url }}"
-                  alt="La gourmande aux noisettes"
-                  class="w-full">
-              </div>
-              <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="stars flex text-_main_color_dark text-sm">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <span class="border-_main_color_dark border-b-2 ">26 avis</span>
-              </div>
-              <p class="font-medium">À partir de 2,10€
-              </p>
-            </a>
-          </div>
-          <div class="content-item sm:w-auto w-[9rem] text-sm">
-            <a href="#" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-              <div class="img w-full">
-                <img
-                  src="{{ 'item 1.png' | asset_url }}"
-                  alt="La gourmande aux noisettes"
-                  class="w-full">
-              </div>
-              <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="stars flex text-_main_color_dark text-sm">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <span class="border-_main_color_dark border-b-2 ">26 avis</span>
-              </div>
-              <p class="font-medium">À partir de 2,10€
-              </p>
-            </a>
-          </div>
-          <div class="content-item sm:w-auto w-[9rem] text-sm">
-            <a href="#" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-              <div class="img w-full">
-                <img
-                  src="{{ 'item 1.png' | asset_url }}"
-                  alt="La gourmande aux noisettes"
-                  class="w-full">
-              </div>
-              <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="stars flex text-_main_color_dark text-sm">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <span class="border-_main_color_dark border-b-2 ">26 avis</span>
-              </div>
-              <p class="font-medium">À partir de 2,10€
-              </p>
-            </a>
-          </div>
-          <div class="content-item sm:w-auto w-[9rem] text-sm">
-            <a href="#" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-              <div class="img w-full">
-                <img
-                  src="{{ 'item 1.png' | asset_url }}"
-                  alt="La gourmande aux noisettes"
-                  class="w-full">
-              </div>
-              <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="stars flex text-_main_color_dark text-sm">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <span class="border-_main_color_dark border-b-2 ">26 avis</span>
-              </div>
-              <p class="font-medium">À partir de 2,10€
-              </p>
-            </a>
-          </div>
+                <p class="font-medium">À partir de {{ product.price }} €
+                </p>
+              </a>
+            </div>
+          {% endfor %}
         </div>
 
         <div class="desc text-sm text-[rgb(86,86,86)] mt-8">
@@ -369,9 +256,3 @@
   </section>
 
 </main>
-
-{% for product in collection.products %}
-  <a href="{{ product.url }}">
-    <h3>{{ product.title }}</h3>
-  </a>
-{% endfor %}
