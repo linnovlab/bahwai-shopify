@@ -1,1 +1,338 @@
-{% render 'bh-produit-content' %}
+<section class="text-_main_color_dark flex lg:flex-nowrap flex-wrap sm:mt-12 mt-0 desktop-width sm:mx-8 mx-0">
+  <div class="left lg:mr-16 mx-auto lg:mb-0 mb-16">
+    <div class="imgs flex flex-col gap-4">
+      <div class="lg:w-[460px] w-full">
+        <img src="{{ product |image_url: width: 600, height: 600 }}" alt="produit">
+      </div>
+      <div class="flex justify-center gap-3">
+        {% if product.images.size > 1 %}
+          {% for img in product.images %}
+            <img
+              class="w-[61px]"
+              src="{{ img |image_url: width: 60, height: 60 }}"
+              alt="produit">
+          {% endfor %}
+        {% else %}
+          <img
+            class="w-[61px]"
+            src="{{ product |image_url: width: 60, height: 60 }}"
+            alt="produit">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="right  sm:mx-0 mx-4">
+    <div class="head flex justify-between">
+      <div class="">
+        <h1 class="font-bold text-_main_color_dark sm:text-[24px] text-base sm:mb-3">
+          {{ product.title }}
+        </h1>
+        <div class="price sm:hidden gap-3 flex">
+          <p class="text-_main_color_dark font-medium text-lg mb-1">{{ product.price }}
+          </p>
+          <span class="text-[#999999] text-base">l’unité</span>
+        </div>
+        <div class="avis flex gap-2 h-[1.1rem] mb-4">
+          <div class="stars flex text-_main_color_dark">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
+        </div>
+      </div>
+      <div class="hover:cursor-pointer">
+        <img
+          src="{{ 'Partager.svg' |asset_url }}"
+          alt="partager"
+          title="Partager">
+      </div>
+    </div>
+    <div class="desc">
+      <p class="text-[#565656] sm:text-base text-sm">{{ product.description }}
+      </p>
+    </div>
+    <div class="w-[18rem] my-4 font-medium" id="btn-produit-desc">
+      <p class="text-_main_color_dark flex items-center border-b border-_main_color_dark hover:cursor-pointer">
+        <span class="text-2xl me-2">+</span>
+        <span>En savoir plus sur le produit</span>
+      </p>
+    </div>
+    <form action="#" class="sm:hidden flex gap-4 sm:w-auto w-full my-8">
+      <p class="font-medium text-_main_color_dark mt-2">Quantité</p>
+      <div class="flex justify-center mb-4 ">
+        <button type="button" id="down">-</button>
+        <input
+          type="number"
+          id="input-produit"
+          min="1"
+          max="20"
+          value="1">
+        <button type="button" id="up">+</button>
+      </div>
+    </form>
+
+    <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-between gap-4 lg:flex-row flex-col items-center">
+      <div class="left lg:max-w-[388px] w-full">
+        <div class="item-1 p-4 border border-[#999999] rounded-t-md rounded-b-none sm:bg-white bg-_orange_color">
+          <h5 class="font-bold mb-4">Type d’achat</h5>
+          <form action="#" id="form-type-achat">
+            <div class="flex items-center gap-4">
+              <input
+                type="checkbox"
+                class="checkbox-round sm:checked:bg-_main_color_light checked:bg-white"
+                name="h_abonnement"
+                id="hors">
+              <label for="hors" class="cursor-pointer font-medium text-_main_color_dark ">Hors abonnement</label>
+            </div>
+            <div class="flex items-center gap-4 mt-3">
+              <input
+                type="checkbox"
+                class="checkbox-round sm:checked:bg-_main_color_light checked:bg-white"
+                name="h_abonnement"
+                id="moins"
+                checked>
+              <label for="moins" class="cursor-pointer flex items-center gap-4 sm:text-_main_color_dark text-white ">
+                <span class="font-medium ">S’abonner</span>
+                <span class="px-[8px] py-[4px] sm:bg-_orange_color bg-_main_color_light rounded-md text-white text-12px">15% moins cher</span>
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="item-2 p-4 border border-[#999999] rounded-t-none rounded-b-md">
+          <div class="accordions text-_main_color_dark">
+            <div class="accordion-item">
+              <button
+                type="button"
+                id="btn-accordion"
+                class="p-[6px] max-w-[270px] flex justify-between w-full border border-[#999999] rounded-md">
+                <span class="text-sm font-medium">Livraison :
+                  <span class="text-[12px] font-normal">Une fois par semaine</span>
+                </span>
+                <i class="fas fa-chevron-down transition-transform duration-500"></i>
+              </button>
+              <div class="panel px-4 pt-2 hidden">
+                <p class="ps-2">Lorem ipsum dolor sit amet.</p>
+              </div>
+              <ul class="font-medium list-disc ms-6">
+                <li class="text-sm mt-[14px] mb-2">
+                  <span>15% de réduction à chaque commande</span>
+                </li>
+                <li class="text-sm mb-1">
+                  <span>Pas de durée d’engagement
+                  </span>
+                </li>
+              </ul>
+              <p class="text-[12px] font-medium -mt-1">Annulez votre abonnement quand vous voulez</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right flex flex-col items-center sm:w-auto w-full">
+        <div class="price sm:flex gap-3 mb-4 hidden">
+          <p class="text-_main_color_dark font-medium text-lg">2,10 €</p>
+          <span class="text-[#999999]">l’unité</span>
+        </div>
+        <form
+          action="#"
+          id="form-command"
+          class="flex flex-col sm:w-auto w-full">
+          <div class="hidden sm:flex justify-center mb-4 ">
+            <button type="button" id="down">-</button>
+            <input
+              type="number"
+              id="input-produit"
+              min="1"
+              max="20"
+              value="1">
+            <button type="button" id="up">+</button>
+          </div>
+          <button
+            id="btn-ajout-panier"
+            class="h-[44px] sm:w-[344px] w-full btn-red-panier"
+            type="submit">Ajouter au panier</button>
+          <button id="btn-acheter" class="h-[44px] sm:w-[344px] w-full btn-white-panier">Acheter maintenant</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="footer text-_main_color_dark mt-12 sm:mx-8 mx-4 desktop-width">
+  <h2 class="font-medium text-lg">Vous aimeriez également</h2>
+  <div class="content flex justify-around flex-wrap items-center sm:gap-8 gap-2 text-sm mt-2">
+    <div class="item max-w-[144px] w-full">
+      <a href="{{ product.url }}" class="item w-full m-1 flex items-center flex-col text-[12px]">
+        <div class="img w-full">
+          <img
+            src="{{ 'pub search.png' |asset_url }}"
+            alt="La gourmande aux noisettes"
+            class="w-full">
+        </div>
+        <p class="font-bold text-center px-2 mt-1">La gourmande aux noisettes</p>
+        <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
+          <div class="stars flex text-black">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
+        </div>
+        <p class="font-medium">À partir de 2,10€
+        </p>
+      </a>
+    </div>
+    <div class="item max-w-[144px] w-full">
+      <a href="{{ product.url }}" class="item w-full m-1 flex items-center flex-col text-[12px]">
+        <div class="img w-full">
+          <img
+            src="{{ 'pub search.png' |asset_url }}"
+            alt="La gourmande aux noisettes"
+            class="w-full">
+        </div>
+        <p class="font-bold text-center px-2 mt-1">La gourmande aux noisettes</p>
+        <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
+          <div class="stars flex text-black">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
+        </div>
+        <p class="font-medium">À partir de 2,10€
+        </p>
+      </a>
+    </div>
+    <div class="item max-w-[144px] w-full">
+      <a href="{{ product.url }}" class="item w-full m-1 flex items-center flex-col text-[12px]">
+        <div class="img w-full">
+          <img
+            src="{{ 'pub search.png' |asset_url }}"
+            alt="La gourmande aux noisettes"
+            class="w-full">
+        </div>
+        <p class="font-bold text-center px-2 mt-1">La gourmande aux noisettes</p>
+        <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
+          <div class="stars flex text-black">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
+        </div>
+        <p class="font-medium">À partir de 2,10€
+        </p>
+      </a>
+    </div>
+    <div class="item max-w-[144px] w-full">
+      <a href="{{ product.url }}" class="item w-full m-1 flex items-center flex-col text-[12px]">
+        <div class="img w-full">
+          <img
+            src="{{ 'pub search.png' |asset_url }}"
+            alt="La gourmande aux noisettes"
+            class="w-full">
+        </div>
+        <p class="font-bold text-center px-2 mt-1">La gourmande aux noisettes</p>
+        <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
+          <div class="stars flex text-black">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
+        </div>
+        <p class="font-medium">À partir de 2,10€
+        </p>
+      </a>
+    </div>
+    <div class="item max-w-[144px] w-full">
+      <a href="{{ product.url }}" class="item w-full m-1 flex items-center flex-col text-[12px]">
+        <div class="img w-full">
+          <img
+            src="{{ 'pub search.png' |asset_url }}"
+            alt="La gourmande aux noisettes"
+            class="w-full">
+        </div>
+        <p class="font-bold text-center px-2 mt-1">La gourmande aux noisettes</p>
+        <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
+          <div class="stars flex text-black">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
+        </div>
+        <p class="font-medium">À partir de 2,10€
+        </p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- description produit -->
+<div class="hidden fixed top-0 w-full" id="produit-desc">
+  <div class="content max-w-[62rem] w-full mx-auto p-4 bg-white max-h-screen overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
+    <div class="flex justify-end w-full mx-auto">
+      <p id="close-produit-desc" class="text-end font-bold border-b-2 text-_main_color_dark border-_main_color_dark cursor-pointer">
+        <i class="fas fa-xmark text-[18px] me-2"></i>
+        <span>Fermer</span>
+      </p>
+    </div>
+    <div class="item-1 text-_main_color_dark mb-12">
+      <h5 class="font-medium mb-3">Description :
+      </h5>
+      <div class="content ps-4">
+        <p>
+          {{ product.description }}
+        </p>
+      </div>
+    </div>
+    <div class="item-1 text-_main_color_dark">
+      <h5 class="font-medium mb-3">Description :
+      </h5>
+      <div class="content">
+        <ul id="produit-ul-desc" class="ps-8">
+          <li>
+            Stimule l'énergie : La Power Up est conçue pour augmenter l'énergie et la vitalité, en donnant un coup de pouce pour surmonter la fatigue et la somnolence.
+          </li>
+          <li>
+            Améliore la concentration : Les ingrédients de la Power Up aident à améliorer la concentration, la vigilance et la mémoire, ce qui est utile pour les activités nécessitant de la concentration, de la créativité ou de la résolution de problèmes.
+          </li>
+          <li>
+            Renforce la performance physique : La Power Up aide à réduire la fatigue, ce qui peut améliorer la performance physique pendant l'exercice ou les activités sportives.
+          </li>
+          <li>
+            Aide à réduire le stress : Les ingrédients de la Power Up, en particulier le ginseng, peuvent aider à réduire le stress et l'anxiété.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section produit",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "titre",
+        "label": "Titre",
+        "default": ""
+      }
+    ]
+  }
+{% endschema %}

@@ -969,6 +969,10 @@ html {
   height: 200px;
 }
 
+.h-\[220px\]{
+  height: 220px;
+}
+
 .max-h-\[8rem\]{
   max-height: 8rem;
 }
@@ -1360,6 +1364,11 @@ html {
 
 .bg-no-repeat{
   background-repeat: no-repeat;
+}
+
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .object-fill{

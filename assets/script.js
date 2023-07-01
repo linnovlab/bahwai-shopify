@@ -305,7 +305,7 @@ $(document).ready(() => {
                     <img
                       src="${product.images[0].src}"
                       alt="${product.title}"
-                      class="w-full h-[200px]" 
+                      class="w-full object-cover h-[220px]" 
                       >
                   </div>
                   <p class="font-semibold w-[10rem] text-center mt-2">${product.title}</p>
@@ -327,6 +327,41 @@ $(document).ready(() => {
             )
           });
 
+          // reinitialize the swiper for it recalculate sizes
+          var swipperNouveautes = new Swiper('.swiper-nouveautes', {
+            slidesPerView: 1,
+            centeredSlides: false,
+            slidesPerGroupSkip: 2,
+            grabCursor: false,
+            // autoplay: {
+            //   delay: 10000,
+            //   disableOnInteraction: false,
+            // },
+            keyboard: {
+              enabled: true,
+            },
+            breakpoints: {
+              // responsivity
+              330: {
+                slidesPerView: 2,
+              },
+              780: {
+                slidesPerView: 3,
+              },
+              1000: {
+                slidesPerView: 5,
+              },
+              1200: {
+                slidesPerView: 6,
+              },
+            },
+            navigation: false,
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+          });
+
         }
       });
 
@@ -343,7 +378,7 @@ try {
     slidesPerGroupSkip: 2,
     grabCursor: false,
     autoplay: {
-      delay: 5500,
+      delay: 10000,
       disableOnInteraction: false,
     },
     keyboard: {
@@ -377,10 +412,10 @@ try {
     slidesPerGroupSkip: 2,
     grabCursor: false,
     // spaceBetween: 30,
-    // autoplay: {
-    //   delay: 5500,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 10000,
+      disableOnInteraction: false,
+    },
     keyboard: {
       enabled: true,
     },
@@ -416,10 +451,10 @@ try {
     slidesPerGroupSkip: 2,
     grabCursor: false,
     // spaceBetween: 30,
-    // autoplay: {
-    //   delay: 5500,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 10000,
+      disableOnInteraction: false,
+    },
     keyboard: {
       enabled: true,
     },
