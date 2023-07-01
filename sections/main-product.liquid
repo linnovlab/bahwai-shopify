@@ -164,9 +164,9 @@
 <section class="footer text-_main_color_dark mt-12 sm:mx-8 mx-4 desktop-width">
   <h2 class="font-medium text-lg">Vous aimeriez également</h2>
   <div class="content flex justify-around flex-wrap items-center sm:gap-8 gap-2 text-sm mt-2">
-    {% if recommendations.performed %}
-      {{ recommendations.products_count }}
-    {% endif %}
+    
+    {{ recommendations.products_count }}
+    
     {% for product in recommendations.products %}
       {{ product.title }}
       <div class="item max-w-[144px] w-full">
