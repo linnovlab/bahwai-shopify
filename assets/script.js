@@ -280,8 +280,19 @@ $(document).ready(() => {
           $(a).removeClass('active')
         }
       })
-
       $(this).addClass('active')
+      var name = $(this).data('name')
+      console.log(name)
+      // ajax
+      $.ajax({
+        type: "GET",
+        url: "/collections/cannettes.json",
+        dataType: "JSON",
+        success: function (response) {
+          console.log(response);
+        }
+      });
+
     })
 
   })

@@ -107,8 +107,9 @@
     {% comment %} {% for collection in collections %}
     {{ collection.title }}
     {% endfor %} {% endcomment %}
+    {% comment %} {{ collections['Offres du moment'].products.size }} {% endcomment %}
 
-    {% comment %} {% for product in collections['Chocalats'].products %}
+    {% comment %} {% for product in collections['offres-du-moment'].products %}
     <!-- Output product details --><h2>
     {{ product.title }}
     </h2>
