@@ -973,6 +973,10 @@ html {
   height: 220px;
 }
 
+.h-\[143px\]{
+  height: 143px;
+}
+
 .max-h-\[8rem\]{
   max-height: 8rem;
 }
@@ -1099,6 +1103,10 @@ html {
 
 .max-w-\[85px\]{
   max-width: 85px;
+}
+
+.max-w-\[16\.5rem\]{
+  max-width: 16.5rem;
 }
 
 .transform{
@@ -1630,6 +1638,10 @@ html {
   line-height: 1.75rem;
 }
 
+.text-\[4rem\]{
+  font-size: 4rem;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -1720,6 +1732,11 @@ html {
 .text-yellow-300{
   --tw-text-opacity: 1;
   color: rgb(253 224 71 / var(--tw-text-opacity));
+}
+
+.text-red-700{
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
 .outline-none{

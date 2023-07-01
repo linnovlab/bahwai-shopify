@@ -118,9 +118,11 @@
     {% endfor %} {% endcomment %}
 
 
+    {% if template.name != '404' %}
       <header class="relative"> {% section 'bh-header' %}
-      {% render 'bh-menu-bars' %}
-    </header>
+        {% render 'bh-menu-bars' %}
+      </header>
+    {% endif %}
 
     <main
       id="MainContent"
@@ -180,14 +182,16 @@
 
 
 
-    {% if template.name != 'login' %}
-      {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
-        {% render 'bh-footer-complet' %}
+    {% if template.name != '404' %}
+      {% if template.name != 'login' %}
+        {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
+          {% render 'bh-footer-complet' %}
+        {% else %}
+          {% render 'bh-footer-autre' %}
+        {% endif %}
       {% else %}
-        {% render 'bh-footer-autre' %}
+        {% render 'bh-footer-login' %}
       {% endif %}
-    {% else %}
-      {% render 'bh-footer-login' %}
     {% endif %}
 
     <!--{%- if settings.predictive_search_enabled -%}

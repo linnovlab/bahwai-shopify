@@ -1,88 +1,88 @@
 <div class="mt-20">
   <div class="content pb-[10rem] mx-8">
     <h1 class="title mb-8">Créer un compte Bahwai</h1>
-    <form
-      action="#"
-      method="post"
-      id="form-connexion"
-      class="sm:max-w-[25rem] max-w-[100%] mx-auto w-full  flex flex-col items-center gap-4">
-      <div class="item w-full">
-        <input
-          class="input focus:border-_orange_color transition-all duration-300"
-          type="text"
-          placeholder="Nom*"
-          name="nom"
-          required>
-      </div>
-      <div class="item w-full">
-        <input
-          class="input focus:border-_orange_color transition-all duration-300"
-          type="text"
-          placeholder="Prénom*"
-          name="prenom"
-          required>
-      </div>
-      <div class="item w-full">
-        <input
-          class="input focus:border-_orange_color transition-all duration-300"
-          type="tel"
-          placeholder="Numéro de téléphone*"
-          name="tel"
-          required>
-      </div>
-      <div class="item w-full">
-        <input
-          class="input focus:border-_orange_color transition-all duration-300"
-          type="email"
-          placeholder="Adresse mail*"
-          name="email"
-          required>
-      </div>
-      <div class="item w-full relative">
-        <input
-          id="input-password"
-          class="input focus:border-_orange_color transition-all duration-300"
-          type="password"
-          placeholder="Mot de passe"
-          name="password"
-          required>
-        <i class="fas fa-eye absolute hover:cursor-pointer" id="eye-password"></i>
-      </div>
-      <div class="item w-full">
-        <input
-          class="input focus:border-_orange_color transition-all duration-300"
-          type="text"
-          placeholder="Code de parrainage"
-          name="code_p"
-          required>
-      </div>
-      <div class="item w-full">
-        <div class="accordions">
-          <button
-            type="button"
-            id="btn-accordion"
-            class="flex justify-between rounded-t-[5px] py-2 px-2 h-10 w-full border border-gray-500">
-            <span id="layout">Comment vous nous avez connu ?</span>
-            <i class="fa-sharp fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="panel panel-selected hidden" id="panel-inscription">
-            <ul>
-              <li class="selected" data-value="Publicité Internet">Publicité Internet</li>
-              <li data-value="Instagram">Instagram</li>
-              <li data-value="Tiktok">Tiktok</li>
-              <li data-value="Recherche internet">Recherche internet</li>
-              <li data-value="Salon">Salon</li>
-              <li data-value="Par mail">Par mail</li>
-              <li data-value="Bouche à oreille">Bouche à oreille</li>
-              <li data-value="Autre" class="rounded-b-[5px]">Autre</li>
-            </ul>
+    {% form 'create_customer', return_to: routes.root_url %}
+      {{ form.errors | default_errors }}
+      <div id="form-connexion" class="sm:max-w-[25rem] max-w-[100%] mx-auto w-full  flex flex-col items-center gap-4">
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="text"
+            placeholder="Nom*"
+            name="customer[last_name]"
+            required>
+        </div>
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="text"
+            placeholder="Prénom*"
+            name="customer[first_name]"
+            required>
+        </div>
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="tel"
+            placeholder="Numéro de téléphone*"
+            name="tel"
+            required>
+        </div>
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="email"
+            placeholder="Adresse mail*"
+            name="customer[email]"
+            required>
+        </div>
+        <div class="item w-full relative">
+          <input
+            id="input-password"
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="password"
+            placeholder="Mot de passe"
+            name="customer[password]"
+            required>
+          <i class="fas fa-eye absolute hover:cursor-pointer" id="eye-password"></i>
+        </div>
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="text"
+            placeholder="Code de parrainage"
+            name="code_p"
+            required>
+        </div>
+        <div class="item w-full">
+          <div class="accordions">
+            <button
+              type="button"
+              id="btn-accordion"
+              class="flex justify-between rounded-t-[5px] py-2 px-2 h-10 w-full border border-gray-500">
+              <span id="layout">Comment vous nous avez connu ?</span>
+              <i class="fa-sharp fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="panel panel-selected hidden" id="panel-inscription">
+              <ul>
+                <li class="selected" data-value="Publicité Internet">Publicité Internet</li>
+                <li data-value="Instagram">Instagram</li>
+                <li data-value="Tiktok">Tiktok</li>
+                <li data-value="Recherche internet">Recherche internet</li>
+                <li data-value="Salon">Salon</li>
+                <li data-value="Par mail">Par mail</li>
+                <li data-value="Bouche à oreille">Bouche à oreille</li>
+                <li data-value="Autre" class="rounded-b-[5px]">Autre</li>
+              </ul>
+            </div>
           </div>
         </div>
+        <div class="flex flex-col items-center mt-8">
+          <button type="submit" class="btn mb-4 py-2 px-4 text-white">S’inscrire</button>
+        </div>
       </div>
-      <div class="flex flex-col items-center mt-8">
-        <button type="submit" class="btn mb-4 py-2 px-4 text-white">S’inscrire</button>
-      </div>
-    </form>
+    {% endform %}
+
     <p class="mt-8 text-center text-[#565656] font-semibold text-[12px]">En poursuivant, vous acceptez toutes les conditions générales d’utilisations et notre politique de confidentialité</p>
   </div>
 </div>

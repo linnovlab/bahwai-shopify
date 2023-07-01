@@ -125,15 +125,19 @@ $(document).ready(() => {
   $('.filter-item i').on('click', function (e) {
     if ($(this).next().css('background-color') === 'rgba(0, 0, 0, 0)') {
       $(this).next().css('background-color', '#EA4038');
+      $(this).next().prop("checked", true);
     } else {
       $(this).next().css('background-color', 'rgba(0, 0, 0, 0)');
+      $(this).next().prop("checked", false);
     }
   });
   $('.filter-item label').on('click', function (e) {
     if ($(this).prev().css('background-color') === 'rgba(0, 0, 0, 0)') {
       $(this).prev().css('background-color', '#EA4038');
+      $(this).next().prop("checked", true);
     } else {
       $(this).prev().css('background-color', 'rgba(0, 0, 0, 0)');
+      $(this).next().prop("checked", false);
     }
   });
 
@@ -200,7 +204,7 @@ $(document).ready(() => {
    */
   $('#form-type-achat input').each((i, item) => {
     $(item).on('click', function () {
-      console.log('click');
+
       if ($(window).width() <= 750) {
         if ($(item).is(':checked')) {
           $(this).css('border-color', 'white');

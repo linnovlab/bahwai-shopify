@@ -162,38 +162,8 @@
 </section>
 
 <section class="footer text-_main_color_dark mt-12 sm:mx-8 mx-4 desktop-width">
-  <h2 class="font-medium text-lg">Vous aimeriez également</h2>
-  <div class="content flex justify-around flex-wrap items-center sm:gap-8 gap-2 text-sm mt-2">
-    
-    {{ recommendations.products_count }}
-    
-    {% for product in recommendations.products %}
-      {{ product.title }}
-      <div class="item max-w-[144px] w-full">
-        <a href="{{ product.url }}" class="item w-full m-1 flex items-center flex-col text-[12px]">
-          <div class="img w-full">
-            <img
-              src="{{ 'pub search.png' |asset_url }}"
-              alt="La gourmande aux noisettes"
-              class="w-full">
-          </div>
-          <p class="font-bold text-center px-2 mt-1">La gourmande aux noisettes</p>
-          <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
-            <div class="stars flex text-_main_color_dark">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
-          </div>
-          <p class="font-medium">À partir de 2,10€
-          </p>
-        </a>
-      </div>
-    {% endfor %}
-  </div>
+  <h2 class="font-medium text-lg mb-6">Vous aimeriez également</h2>
+  <div id="related-products" class="content flex justify-around sm:justify-normal flex-wrap items-center sm:gap-8 gap-2 text-sm mt-2"></div>
 </section>
 
 <!-- description produit -->
@@ -251,3 +221,46 @@
     ]
   }
 {% endschema %}
+
+<script>
+  const container = document.getElementById('related-products');
+  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => response.json()).then(({products}) => {
+    var content = '';
+    if (products.length > 0) {
+      products.forEach(product => {
+        content += `
+        <div class="item max-w-[144px] w-full">
+            <a href="/products/${
+          product.handle
+        }
+        " class="item w-full m-1 flex items-center flex-col text-[12px]">
+                <div class="img w-full">
+                <img
+                    src="${
+          product.featured_image
+        }"
+                    alt="La gourmande aux noisettes"
+                    class="w-full h-[143px] object-cover ">
+                </div>
+                <p class="font-bold text-center px-2 mt-1">La gourmande aux noisettes</p>
+                <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
+                <div class="stars flex text-_main_color_dark">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
+                </div>
+                <p class="font-medium">À partir de ${
+          product.variants[0].price
+        } €
+                </p>
+            </a>
+        </div> `;
+      })
+      container.innerHTML = content
+    }
+  });
+</script>

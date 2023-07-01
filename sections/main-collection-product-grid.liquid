@@ -1,133 +1,41 @@
 <main class="main-cats">
   <div style="background-image: url({{ 'bannercategories.png' |asset_url }});" class="banner img-center sm:h-[25rem] h-[17rem]"></div>
   <section class="text-_main_color_dark flex mt-12 desktop-width">
-    <div class="left-side sm:flex flex-col gap-4 max-w-[16rem] w-full me-[3rem] ps-8 hidden">
+    <div class="left-side sm:flex flex-col gap-4 max-w-[16.5rem] w-full me-[3rem] ps-8 hidden">
+
       <form
-        action="#"
-        method="get"
-        id="form-filtre">
+        class="filter-form"
+        id="form-filtre"
+        method="get">
         <div class="content flex flex-col gap-3 mb-8">
           <h4 class="font-extrabold text-lg border-b border-gray-500">Objectifs</h4>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="perte_poids"
-              id="perte"
-              class="checkbox">
-            <label for="perte" class="hover:cursor-pointer">Perte de poids (2)</label>
-          </div>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="prise_masse"
-              id="masse"
-              class="checkbox">
-            <label for="masse" class="hover:cursor-pointer">Prise de masse (1)
-            </label>
-          </div>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="controle_poids"
-              id="control"
-              class="checkbox">
-            <label for="control" class="hover:cursor-pointer">Contrôle du poids (2)</label>
-          </div>
+          {%- for filter in collection.filters -%}
+            {% if filter.label == 'Framboise' %}
+              <h4 class="font-extrabold text-lg border-b border-gray-500 mt-4">Saveurs</h4>
+            {% elsif filter.label == 'Matin' %}
+              <h4 class="font-extrabold text-lg border-b border-gray-500 mt-4">À quel moment ?</h4>
+            {% endif %}
+            {%- for filter_value in filter.values -%}
+              <div class="filter-item relative flex gap-4">
+                <i class="fa-solid fa-check"></i>
+                <input
+                  type="checkbox"
+                  class="checkbox"
+                  name="{{ filter_value.param_name }}"
+                  value="{{ filter_value.value }}"
+                  id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                  {% if filter_value.active -%}checked{%- endif %}
+                  {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}>
+                <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label }}
+                  {%- if filter.active_values.size > 0 -%}
+                    ({{ filter.active_values.size }})
+                  {%- endif -%}
+                </label>
+              </div>
+            {%- endfor -%}
+          {%- endfor -%}
         </div>
-        <div class="content flex flex-col gap-3 mb-8">
-          <h4 class="font-extrabold text-lg border-b border-gray-500">Saveurs</h4>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="perte_poids"
-              id="framboise"
-              class="checkbox">
-            <label for="framboise" class="hover:cursor-pointer">Framboise (1)</label>
-          </div>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="prise_masse"
-              id="kiwi"
-              class="checkbox">
-            <label for="kiwi" class="hover:cursor-pointer">Kiwi (1)
-            </label>
-          </div>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="citron_vert"
-              id="citron"
-              class="checkbox">
-            <label for="citron" class="hover:cursor-pointer">Citron vert (2)</label>
-          </div>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="Fruit"
-              id="Fruit"
-              class="checkbox">
-            <label for="Fruit" class="hover:cursor-pointer">Fruit du dragon (1)
-            </label>
-          </div>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="CBD"
-              id="CBD"
-              class="checkbox">
-            <label for="CBD" class="hover:cursor-pointer">CBD (1)</label>
-          </div>
-        </div>
-        <div class="content flex flex-col gap-3">
-          <h4 class="font-extrabold text-lg border-b border-gray-500">À quel moment ?</h4>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="perte_poids"
-              id="framboise"
-              class="checkbox">
-            <label for="framboise" class="hover:cursor-pointer">Matin (1)</label>
-          </div>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="Collation"
-              id="Collation"
-              class="checkbox">
-            <label for="Collation" class="hover:cursor-pointer">Collation (1)
-            </label>
-          </div>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="gouter"
-              id="gouter"
-              class="checkbox">
-            <label for="gouter" class="hover:cursor-pointer">Goûter (2)</label>
-          </div>
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input
-              type="checkbox"
-              name="Soir"
-              id="Soir"
-              class="checkbox">
-            <label for="Soir" class="hover:cursor-pointer">Soir (1)
-            </label>
-          </div>
-        </div>
+        <button class="btn" type="submit">valider</button>
       </form>
     </div>
 
