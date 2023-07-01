@@ -33,7 +33,7 @@
       <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
         {% for recommendation in recommendations.products %}
           <li class="grid__item">
-            {% render 'card-product'
+            {% render 'card-product' 
              , card_product: recommendation,
              media_aspect_ratio: section.settings.image_ratio,
              image_shape: section.settings.image_shape,
