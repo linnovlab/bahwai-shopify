@@ -281,15 +281,52 @@ $(document).ready(() => {
         }
       })
       $(this).addClass('active')
-      var name = $(this).data('name')
-      console.log(name)
+      var handle = $(this).data('handle')
+      const container = $('div.nouveautes-content .swiper-wrapper'),
+        btn = $('#btn-nouveautes');
+
+      btn.prop('href', `/collections/${handle}`)
+
       // ajax
       $.ajax({
         type: "GET",
-        url: "/collections/cannettes.json",
+        url: `/collections/${handle}/products.json`,
         dataType: "JSON",
         success: function (response) {
-          console.log(response);
+          var products = response.products
+          container.html('')
+
+          products.forEach(product => {
+            container.append(
+              `
+              <div class="swiper-slide">
+                <a href="/products/${product.handle}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+                  <div class="img w-full">
+                    <img
+                      src="${product.images[0].src}"
+                      alt="${product.title}"
+                      class="w-full h-[200px]" 
+                      >
+                  </div>
+                  <p class="font-semibold w-[10rem] text-center mt-2">${product.title}</p>
+                  <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                    <div class="stars flex text-sm">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
+                  </div>
+                  <p class="font-medium">À partir de ${product.variants[0].price} €
+                  </p>
+                </a>
+              </div>
+              `
+            )
+          });
+
         }
       });
 
@@ -300,7 +337,7 @@ $(document).ready(() => {
 });
 
 try {
-  var swiperNouveautes = new Swiper('.swiper-nouveautes', {
+  new Swiper('.swiper-nouveautes', {
     slidesPerView: 1,
     centeredSlides: false,
     slidesPerGroupSkip: 2,
@@ -334,7 +371,7 @@ try {
     },
   });
 
-  var swiperAvis = new Swiper('.swiper-avis', {
+  new Swiper('.swiper-avis', {
     slidesPerView: 1,
     centeredSlides: false,
     slidesPerGroupSkip: 2,
@@ -373,7 +410,7 @@ try {
     },
   });
 
-  var swiperActu = new Swiper('.swiper-actu', {
+  new Swiper('.swiper-actu', {
     slidesPerView: 1,
     centeredSlides: false, // true il centre le 1er element (swiper-slide)
     slidesPerGroupSkip: 2,

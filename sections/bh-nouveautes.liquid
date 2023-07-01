@@ -6,10 +6,10 @@
       <nav class="text-_main_color_dark mt-2 z-50 sm:w-full w-[40rem]">
         <ul id="nouveautes-links" class="flex justify-center gap-[20px] font-bold mb-1">
           {% for link in linklists['liens-categories'].links %}
-            {% if link.title == 'Boissons' %}
+            {% if link.title == 'Nouveautés' %}
               <li>
                 <span
-                  data-name="{{ link.title }}"
+                  data-handle="{{ link.handle }}"
                   role="button"
                   title="{{ link.title }}"
                   class="cats-hover hover:border-_red_color active">{{ link.title }}
@@ -18,7 +18,7 @@
             {% else %}
               <li>
                 <span
-                  data-name="{{ link.title }}"
+                  data-handle="{{ link.handle }}"
                   role="button"
                   title="{{ link.title }}"
                   class="cats-hover hover:border-_red_color">{{ link.title }}
@@ -35,7 +35,7 @@
   <div class="nouveautes-content p-0 m-0 sm:p-8 sm:m-8">
     <div class="swiper swiper-nouveautes relative sm:px-8">
       <div class="swiper-wrapper items text-_main_color_dark">
-        {% for product in collections['accessoires'].products %}
+        {% for product in collections['nouveautes'].products %}
           <div class="swiper-slide">
             <a href="{{ product.url }}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
               <div class="img w-full">
@@ -55,7 +55,7 @@
                 </div>
                 <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
               </div>
-              <p class="font-medium">À partir de {{ product.price }}
+              <p class="font-medium">À partir de {{ product.price }} €
               </p>
             </a>
           </div>
@@ -66,7 +66,10 @@
   </div>
 
   <p class="text-center my-8">
-    <a href="{{ collections.all.url }}" class="btn mx-auto">Voir plus</a>
+    <a
+      id="btn-nouveautes"
+      href="{{ collections['nouveautes'].url }}"
+      class="btn mx-auto">Voir plus</a>
   </p>
 </section>
 
