@@ -8,19 +8,21 @@
           {% for link in linklists['liens-categories'].links %}
             {% if link.title == 'Boissons' %}
               <li>
-                <a
-                  href="{{ link.url }}"
+                <span
+                  data-name="{{ link.title }}"
+                  role="button"
                   title="{{ link.title }}"
                   class="cats-hover hover:border-_red_color active">{{ link.title }}
-                </a>
+                </span>
               </li>
             {% else %}
               <li>
-                <a
-                  href="{{ link.url }}"
+                <span
+                  data-name="{{ link.title }}"
+                  role="button"
                   title="{{ link.title }}"
                   class="cats-hover hover:border-_red_color">{{ link.title }}
-                </a>
+                </span>
               </li>
             {% endif %}
           {% endfor %}
@@ -33,121 +35,32 @@
   <div class="nouveautes-content p-0 m-0 sm:p-8 sm:m-8">
     <div class="swiper swiper-nouveautes relative sm:px-8">
       <div class="swiper-wrapper items text-_main_color_dark">
-        <div class="swiper-slide">
-          <a href="./produit.html" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{'item 1.png' | asset_url}}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-sm">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+        {% for product in collections['Boissons'].products %}
+          <div class="swiper-slide">
+            <a href="{{ product.url }}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+              <div class="img w-full">
+                <img
+                  src="{{ product |image_url: width: 600, height: 600 }} "
+                  alt="{{ product.title }}"
+                  class="w-full">
               </div>
-              <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
-            </div>
-            <p class="font-medium">À partir de 2,10€
-            </p>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="./produit.html" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{'item 1.png' | asset_url}}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-sm">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+              <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
+              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                <div class="stars flex text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
               </div>
-              <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
-            </div>
-            <p class="font-medium">À partir de 2,10€
-            </p>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="./produit.html" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{'item 1.png' | asset_url}}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-sm">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
-            </div>
-            <p class="font-medium">À partir de 2,10€
-            </p>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="./produit.html" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{'item 1.png' | asset_url}}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-sm">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
-            </div>
-            <p class="font-medium">À partir de 2,10€
-            </p>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="./produit.html" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{'item 1.png' | asset_url}}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center mt-2">La gourmande aux noisettes</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-sm">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
-            </div>
-            <p class="font-medium">À partir de 2,10€
-            </p>
-          </a>
-        </div>
+              <p class="font-medium">À partir de {{ product.price }}
+              </p>
+            </a>
+          </div>
+        {% endfor %}
+
       </div>
     </div>
   </div>

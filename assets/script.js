@@ -273,11 +273,18 @@ $(document).ready(() => {
   /**
    * Nouvautes links feat
    */
-  $('#nouveautes-links a').each((i, link) => {
-    console.log(link)
-  })
+  $('#nouveautes-links span').each((i, link) => {
+    $(link).on('click', function (e) {
+      $('#nouveautes-links span').each((i, a) => {
+        if ($(a).hasClass('active')) {
+          $(a).removeClass('active')
+        }
+      })
 
-  console.log($('#nouveautes-links'))
+      $(this).addClass('active')
+    })
+
+  })
 
 });
 

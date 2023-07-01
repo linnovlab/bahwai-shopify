@@ -152,8 +152,8 @@ body{
 }
 
 
-.cats-navigation a.active{
-  border-bottom: 2px solid var(--red-color);
+.cats-navigation span.active{
+  border-bottom: 3px solid var(--red-color);
 }
 /* // */
 #form-etre-prevenu .form-item{

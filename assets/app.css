@@ -658,6 +658,11 @@ html {
   margin: 1rem;
 }
 
+.mx-0{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .mx-3{
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -708,14 +713,13 @@ html {
   margin-bottom: 2rem;
 }
 
-.mx-0{
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
 .-ms-8{
   -webkit-margin-start: -2rem;
           margin-inline-start: -2rem;
+}
+
+.-mt-1{
+  margin-top: -0.25rem;
 }
 
 .-mt-16{
@@ -732,6 +736,10 @@ html {
 
 .mb-1{
   margin-bottom: 0.25rem;
+}
+
+.mb-12{
+  margin-bottom: 3rem;
 }
 
 .mb-16{
@@ -814,6 +822,11 @@ html {
           margin-inline-start: 0.75rem;
 }
 
+.ms-6{
+  -webkit-margin-start: 1.5rem;
+          margin-inline-start: 1.5rem;
+}
+
 .ms-8{
   -webkit-margin-start: 2rem;
           margin-inline-start: 2rem;
@@ -822,6 +835,10 @@ html {
 .ms-auto{
   -webkit-margin-start: auto;
           margin-inline-start: auto;
+}
+
+.mt-0{
+  margin-top: 0px;
 }
 
 .mt-1{
@@ -860,25 +877,8 @@ html {
   margin-top: 2rem;
 }
 
-.-mt-1{
-  margin-top: -0.25rem;
-}
-
-.ms-6{
-  -webkit-margin-start: 1.5rem;
-          margin-inline-start: 1.5rem;
-}
-
-.mt-0{
-  margin-top: 0px;
-}
-
 .mt-\[14px\]{
   margin-top: 14px;
-}
-
-.mb-12{
-  margin-bottom: 3rem;
 }
 
 .block{
@@ -1005,6 +1005,10 @@ html {
   width: 17rem;
 }
 
+.w-\[18rem\]{
+  width: 18rem;
+}
+
 .w-\[20rem\]{
   width: 20rem;
 }
@@ -1041,20 +1045,16 @@ html {
   width: 100%;
 }
 
-.w-\[16rem\]{
-  width: 16rem;
-}
-
-.w-\[18rem\]{
-  width: 18rem;
-}
-
 .max-w-\[100\%\]{
   max-width: 100%;
 }
 
 .max-w-\[143px\]{
   max-width: 143px;
+}
+
+.max-w-\[144px\]{
+  max-width: 144px;
 }
 
 .max-w-\[16rem\]{
@@ -1069,6 +1069,10 @@ html {
   max-width: 230px;
 }
 
+.max-w-\[270px\]{
+  max-width: 270px;
+}
+
 .max-w-\[37rem\]{
   max-width: 37rem;
 }
@@ -1081,20 +1085,12 @@ html {
   max-width: 50rem;
 }
 
-.max-w-\[85px\]{
-  max-width: 85px;
-}
-
-.max-w-\[270px\]{
-  max-width: 270px;
-}
-
-.max-w-\[144px\]{
-  max-width: 144px;
-}
-
 .max-w-\[62rem\]{
   max-width: 62rem;
+}
+
+.max-w-\[85px\]{
+  max-width: 85px;
 }
 
 .transform{
@@ -1224,11 +1220,6 @@ html {
   border-bottom-left-radius: 5px;
 }
 
-.rounded-t-\[5px\]{
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
 .rounded-b-md{
   border-bottom-right-radius: 0.375rem;
   border-bottom-left-radius: 0.375rem;
@@ -1237,6 +1228,11 @@ html {
 .rounded-b-none{
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+
+.rounded-t-\[5px\]{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .rounded-t-md{
@@ -1338,11 +1334,6 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-red-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
 .bg-\[url\(\'\.\/img\/Desktop\/Orange\.png\'\)\]{
   background-image: url('./img/Desktop/Orange.png');
 }
@@ -1353,18 +1344,6 @@ html {
 
 .bg-\[url\(\'\.\/img\/Desktop\/blanc\.png\'\)\]{
   background-image: url('./img/Desktop/blanc.png');
-}
-
-.bg-\[url\(\'\.\/img\/Vague-Mobile\.svg\'\)\]{
-  background-image: url('./img/Vague-Mobile.svg');
-}
-
-.bg-\[url\(\'\.\/img\/Desktop\/violet\.png\'\)\]{
-  background-image: url('./img/Desktop/violet.png');
-}
-
-.bg-\[url\(\'\.\/img\/bannerblogsm\.png\'\)\]{
-  background-image: url('./img/bannerblogsm.png');
 }
 
 .bg-contain{
@@ -1454,6 +1433,11 @@ html {
   padding-right: 5rem;
 }
 
+.px-\[8px\]{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1487,11 +1471,6 @@ html {
 .py-\[11px\]{
   padding-top: 11px;
   padding-bottom: 11px;
-}
-
-.px-\[8px\]{
-  padding-left: 8px;
-  padding-right: 8px;
 }
 
 .py-\[4px\]{
@@ -1606,6 +1585,10 @@ html {
   font-size: 13px;
 }
 
+.text-\[14px\]{
+  font-size: 14px;
+}
+
 .text-\[18px\]{
   font-size: 18px;
 }
@@ -1634,10 +1617,6 @@ html {
   line-height: 1.75rem;
 }
 
-.text-\[14px\]{
-  font-size: 14px;
-}
-
 .font-bold{
   font-weight: 700;
 }
@@ -1650,12 +1629,12 @@ html {
   font-weight: 500;
 }
 
-.font-semibold{
-  font-weight: 600;
-}
-
 .font-normal{
   font-weight: 400;
+}
+
+.font-semibold{
+  font-weight: 600;
 }
 
 .uppercase{
@@ -2074,8 +2053,8 @@ body{
   scrollbar-width: 5px;
 }
 
-.cats-navigation a.active{
-  border-bottom: 2px solid var(--red-color);
+.cats-navigation span.active{
+  border-bottom: 3px solid var(--red-color);
 }
 
 /* // */
@@ -2385,14 +2364,6 @@ footer .items li{
 }
 
 @media (min-width: 640px){
-  .sm\:bottom-\[17px\]{
-    bottom: 17px;
-  }
-
-  .sm\:bottom-\[8px\]{
-    bottom: 8px;
-  }
-
   .sm\:bottom-\[-16px\]{
     bottom: -16px;
   }
@@ -2410,6 +2381,11 @@ footer .items li{
     margin-right: 0px;
   }
 
+  .sm\:mx-8{
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .sm\:mx-\[7rem\]{
     margin-left: 7rem;
     margin-right: 7rem;
@@ -2425,9 +2401,8 @@ footer .items li{
     margin-right: auto;
   }
 
-  .sm\:mx-8{
-    margin-left: 2rem;
-    margin-right: 2rem;
+  .sm\:mb-3{
+    margin-bottom: 0.75rem;
   }
 
   .sm\:me-8{
@@ -2444,16 +2419,12 @@ footer .items li{
     margin-top: 0px;
   }
 
-  .sm\:mt-4{
-    margin-top: 1rem;
-  }
-
-  .sm\:mb-3{
-    margin-bottom: 0.75rem;
-  }
-
   .sm\:mt-12{
     margin-top: 3rem;
+  }
+
+  .sm\:mt-4{
+    margin-top: 1rem;
   }
 
   .sm\:block{
@@ -2472,6 +2443,10 @@ footer .items li{
     height: 208px;
   }
 
+  .sm\:h-\[20rem\]{
+    height: 20rem;
+  }
+
   .sm\:h-\[25rem\]{
     height: 25rem;
   }
@@ -2480,16 +2455,12 @@ footer .items li{
     height: 27rem;
   }
 
-  .sm\:h-\[30rem\]{
-    height: 30rem;
-  }
-
   .sm\:h-\[40rem\]{
     height: 40rem;
   }
 
-  .sm\:h-\[630px\]{
-    height: 630px;
+  .sm\:h-\[655px\]{
+    height: 655px;
   }
 
   .sm\:h-auto{
@@ -2498,14 +2469,6 @@ footer .items li{
 
   .sm\:h-screen{
     height: 100vh;
-  }
-
-  .sm\:h-\[655px\]{
-    height: 655px;
-  }
-
-  .sm\:h-\[20rem\]{
-    height: 20rem;
   }
 
   .sm\:w-\[11rem\]{
@@ -2592,14 +2555,6 @@ footer .items li{
   .sm\:bg-white{
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-
-  .sm\:bg-\[url\(\'\.\/img\/Vague-desktop\.svg\'\)\]{
-    background-image: url('./img/Vague-desktop.svg');
-  }
-
-  .sm\:bg-\[url\(\'\.\/img\/bannerblog\.png\'\)\]{
-    background-image: url('./img/bannerblog.png');
   }
 
   .sm\:p-8{
