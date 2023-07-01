@@ -269,6 +269,16 @@ $(document).ready(() => {
       e.preventDefault();
     });
   });
+
+  /**
+   * Nouvautes links feat
+   */
+  $('#nouveautes-links a').each((i, link) => {
+    console.log(link)
+  })
+
+  console.log($('#nouveautes-links'))
+
 });
 
 try {
