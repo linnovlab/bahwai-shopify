@@ -3,7 +3,7 @@
     "4c406203-0222-4949-b50a-4f64aef75d8d": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "Mon review est : {{product.metafields.reviews.rating}}",
+        "custom_liquid": "Mon review est : {{product.metafields.reviews.rating.value}}.\navec {{product.metafields.reviews.rating_count}}",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
