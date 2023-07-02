@@ -3,10 +3,33 @@
     "main": {
       "type": "main-product",
       "settings": {
+        "titre": "titre rek"
+      }
+    },
+    "16883169510a0509e0": {
+      "type": "apps",
+      "blocks": {
+        "c5fe8c7a-a51f-4842-b62a-62554f892fae": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+            "stars_fill_color": "#240343",
+            "star_size": 15,
+            "text_align": "center",
+            "product": "{{product}}",
+            "stars_text_empty": "No reviews"
+          }
+        }
+      },
+      "block_order": [
+        "c5fe8c7a-a51f-4842-b62a-62554f892fae"
+      ],
+      "settings": {
+        "include_margins": true
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "16883169510a0509e0"
   ]
 }
