@@ -1197,6 +1197,10 @@ html {
   align-self: flex-start;
 }
 
+.overflow-scroll{
+  overflow: scroll;
+}
+
 .overflow-x-hidden{
   overflow-x: hidden;
 }

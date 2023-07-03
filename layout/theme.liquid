@@ -97,7 +97,7 @@
     </a>
 
 
-    {% if template.name != '404'%}
+    {% if template.name != '404' %}
       <header class="relative">
         {% section 'bh-header' %}
         {% render 'bh-menu-bars' %}
@@ -144,10 +144,6 @@
         {% render 'bh-partenaire' %}
       {% endif %}
 
-      {%- if template.name == 'collection' -%}
-        {%- section 'bh-filter-modal' -%}
-      {%- endif -%}
-
       {% render 'bh-search-modal' %}
       {% render 'bh-panier-modal' %}
 
@@ -162,7 +158,7 @@
 
 
 
-    {% if template.name != '404'%}
+    {% if template.name != '404' %}
       {% if template.name != 'login' %}
         {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
           {% render 'bh-footer-complet' %}
