@@ -1,0 +1,203 @@
+<!-- filter modale -->
+<div id="filter-modal" class="fixed top-0 w-full h-full z-50 bg-white hidden overflow-scroll">
+  <div class="flex justify-between sm:hidden m-3">
+    <p id="close-filter-modal" class="hover:cursor-pointer text-end text-_main_color_dark">
+      <i class="fas fa-xmark text-[18px] me-2"></i>
+      <span class="font-medium sm:text-base text-sm">Fermer</span>
+    </p>
+    <p class="flex gap-4 text-_main_color_dark hover:cursor-pointer border-b border-_main_color_dark">
+      <img src="{{ 'Filtrer.svg' |asset_url }}" alt="">
+      <span class="font-medium sm:text-base text-sm">Filtrer</span>
+    </p>
+  </div>
+  <hr class="bg-gray-500 mb-[20px]">
+  <form
+    class="filter-form"
+    id="form-filtre-modal"
+    method="get">
+    <div class="accordions text-_main_color_dark">
+      <div class="accordion-item my-2">
+        <button
+          type="button"
+          id="btn-accordion"
+          class="mb-4 border-b border-gray-500 px-4 font-bold flex justify-between w-full">
+          <span>Objectifs</span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel hidden p-3">
+          <div class="content flex flex-col gap-3">
+            {%- for filter in collection.filters -%}
+              {% if filter.label == 'Perte de poids' or filter.label == 'Prise de masse' or filter.label == 'Contrôle du poids' %}
+                {%- for filter_value in filter.values -%}
+                  <div class="filter-item relative flex gap-4">
+                    <i class="fa-solid fa-check"></i>
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="{{ filter_value.param_name }}"
+                      value="{{ filter_value.value }}"
+                      id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                      {% if filter_value.active -%}checked{%- endif %}
+                      {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}>
+                    <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label }}
+                      {%- if filter.active_values.size > 0 -%}
+                        ({{ filter.active_values.size }})
+                      {%- endif -%}
+                    </label>
+                  </div>
+                {%- endfor -%}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item my-2">
+        <button
+          type="button"
+          id="btn-accordion"
+          class="mb-4 border-b border-gray-500 px-4 font-bold flex justify-between w-full">
+          <span>Saveurs</span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel hidden p-3">
+          <div class="content flex flex-col gap-3">
+            {%- for filter in collection.filters -%}
+              {% if filter.label == 'Framboise' or filter.label == 'Kiwi' or filter.label == 'Citron vert' or filter.label == 'Fruit du dragon' or filter.label == 'CBD' %}
+                {%- for filter_value in filter.values -%}
+                  <div class="filter-item relative flex gap-4">
+                    <i class="fa-solid fa-check"></i>
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="{{ filter_value.param_name }}"
+                      value="{{ filter_value.value }}"
+                      id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                      {% if filter_value.active -%}checked{%- endif %}
+                      {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}>
+                    <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label }}
+                      {%- if filter.active_values.size > 0 -%}
+                        ({{ filter.active_values.size }})
+                      {%- endif -%}
+                    </label>
+                  </div>
+                {%- endfor -%}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item my-2">
+        <button
+          type="button"
+          id="btn-accordion"
+          class="mb-4 border-b border-gray-500 px-4 font-bold flex justify-between w-full">
+          <span>Régime</span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel hidden p-3">
+          <div class="content flex flex-col gap-3">
+            {%- for filter in collection.filters -%}
+              {% if filter.label == 'Perte de poids' or filter.label == 'Prise de masse' or filter.label == 'Contrôle du poids' %}
+                {%- for filter_value in filter.values -%}
+                  <div class="filter-item relative flex gap-4">
+                    <i class="fa-solid fa-check"></i>
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="{{ filter_value.param_name }}"
+                      value="{{ filter_value.value }}"
+                      id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                      {% if filter_value.active -%}checked{%- endif %}
+                      {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}>
+                    <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label }}
+                      {%- if filter.active_values.size > 0 -%}
+                        ({{ filter.active_values.size }})
+                      {%- endif -%}
+                    </label>
+                  </div>
+                {%- endfor -%}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item my-2">
+        <button
+          type="button"
+          id="btn-accordion"
+          class="mb-4 border-b border-gray-500 px-4 font-bold flex justify-between w-full">
+          <span>À quel moment ?</span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel hidden p-3">
+          <div class="content flex flex-col gap-3">
+            {%- for filter in collection.filters -%}
+              {% if filter.label == 'Matin' or filter.label == 'Collation' or filter.label == 'Goûter' or filter.label == 'Soir' %}
+                {%- for filter_value in filter.values -%}
+                  <div class="filter-item relative flex gap-4">
+                    <i class="fa-solid fa-check"></i>
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="{{ filter_value.param_name }}"
+                      value="{{ filter_value.value }}"
+                      id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                      {% if filter_value.active -%}checked{%- endif %}
+                      {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}>
+                    <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label }}
+                      {%- if filter.active_values.size > 0 -%}
+                        ({{ filter.active_values.size }})
+                      {%- endif -%}
+                    </label>
+                  </div>
+                {%- endfor -%}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item my-2">
+        <button
+          type="button"
+          id="btn-accordion"
+          class="mb-4 border-b border-gray-500 px-4 font-bold flex justify-between w-full">
+          <span>Espace Pro</span>
+          <i class="fas fa-chevron-down transition-transform duration-500"></i>
+        </button>
+        <div class="panel hidden p-3">
+          <div class="content flex flex-col gap-3">
+            {%- for filter in collection.filters -%}
+              {% if filter.label == 'Perte de poids' or filter.label == 'Prise de masse' or filter.label == 'Contrôle du poids' %}
+                {%- for filter_value in filter.values -%}
+                  <div class="filter-item relative flex gap-4">
+                    <i class="fa-solid fa-check"></i>
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="{{ filter_value.param_name }}"
+                      value="{{ filter_value.value }}"
+                      id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                      {% if filter_value.active -%}checked{%- endif %}
+                      {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}>
+                    <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label }}
+                      {%- if filter.active_values.size > 0 -%}
+                        ({{ filter.active_values.size }})
+                      {%- endif -%}
+                    </label>
+                  </div>
+                {%- endfor -%}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center mt-12">
+      <button class="btn !pt-0" type="submit">Appliquer</button>
+    </div>
+  </form>
+</div>
