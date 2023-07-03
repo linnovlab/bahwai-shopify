@@ -1,7 +1,7 @@
 <section class="avis my-4 sm:px-8 p-0 desktop-width">
   <h2 class="title">{{ section.settings.titre }}
   </h2>
-  <div class="avis-container flex justify-around gap-4 mt-8 mb-16">
+  <div class="avis-container flex justify-around gap-4 mt-8 mb-16 ">
     <div id="swiper-avis" class="swiper swiper-avis relative">
       <div class="swiper-wrapper sm:ps-0">
         {% for block in section.blocks %}
@@ -14,8 +14,10 @@
                   class="rounded-[50%] me-2 w-12 h-auto">
                 <div class="flex justify-between w-full">
                   <div class="">
-                    <h5 class="font-bold text-black">Cristopher Teyssier</h5>
-                    <p class="text-gray-500 text-sm">6. juin, 2022.</p>
+                    <h5 class="font-bold text-black">{{ block.settings.autheur }}
+                    </h5>
+                    <p class="text-gray-500 text-sm">{{ block.settings.date }}
+                    </p>
                   </div>
                   <img
                     src="{{ block.settings.logo_google }}"
@@ -31,8 +33,8 @@
                 <i class="fas fa-star text-yellow-300"></i>
               </div>
               <div class="comment max-h-[8rem] h-full overflow-y-scroll scrolbar-thin">
-                <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi soluta 
-                  inventore perspiciatis cupiditate mollitia laudantium unde                                                                                                                                      adipisci cum aspernatur ad.</p>
+                <p class="text-base">
+                  {{ block.settings.message }}</p>
               </div>
             </div>
           </div>
@@ -67,10 +69,28 @@
             "type": "image_picker",
             "id": "user_img",
             "label": "profile imgae"
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "logo_google",
             "label": "Google logo"
+          },
+          {
+            "type": "text",
+            "id": "message",
+            "label": "Message",
+            "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi soluta inventore perspiciatis cupiditate mollitia laudantium unde"
+          },
+          {
+            "type": "text",
+            "id": "autheur",
+            "label": "Autheur",
+            "default": "Cristopher Teyssier"
+          }, {
+            "type": "text",
+            "id": "date",
+            "label": "Date publication",
+            "default": "6. juin, 2022."
           }
         ]
       }
