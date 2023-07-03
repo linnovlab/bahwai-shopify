@@ -144,6 +144,35 @@
           "logo_bahwai": "shopify:\/\/shop_images\/icon_bahwai.svg",
           "video_url": ""
         }
+      },
+      "bh-nouveautes": {
+        "type": "bh-nouveautes",
+        "settings": {
+          "titre": "Nos nouveautés surprenantes"
+        }
+      },
+      "site-info-section": {
+        "type": "site-info-section",
+        "settings": {
+          "titre": "C’est quoi Bahwai ?"
+        }
+      },
+      "bh-avis": {
+        "type": "bh-avis",
+        "blocks": {
+          "2772879e-ecfd-48ff-a0bb-d3b83a09e43d": {
+            "type": "announcement",
+            "settings": {
+              "heading": "mon premier block"
+            }
+          }
+        },
+        "block_order": [
+          "2772879e-ecfd-48ff-a0bb-d3b83a09e43d"
+        ],
+        "settings": {
+          "title": ""
+        }
       }
     },
     "content_for_index": [
