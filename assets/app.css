@@ -754,6 +754,10 @@ html {
   margin-bottom: 0.5rem;
 }
 
+.mb-24{
+  margin-bottom: 6rem;
+}
+
 .mb-3{
   margin-bottom: 0.75rem;
 }
@@ -885,10 +889,6 @@ html {
   margin-top: 14px;
 }
 
-.mb-24{
-  margin-bottom: 6rem;
-}
-
 .block{
   display: block;
 }
@@ -937,6 +937,10 @@ html {
   height: 20rem;
 }
 
+.h-\[220px\]{
+  height: 220px;
+}
+
 .h-\[250px\]{
   height: 250px;
 }
@@ -975,10 +979,6 @@ html {
 
 .h-full{
   height: 100%;
-}
-
-.h-\[220px\]{
-  height: 220px;
 }
 
 .max-h-\[8rem\]{
@@ -1033,6 +1033,10 @@ html {
   width: 298px;
 }
 
+.w-\[35rem\]{
+  width: 35rem;
+}
+
 .w-\[40rem\]{
   width: 40rem;
 }
@@ -1059,10 +1063,6 @@ html {
 
 .w-full{
   width: 100%;
-}
-
-.w-\[35rem\]{
-  width: 35rem;
 }
 
 .max-w-\[100\%\]{

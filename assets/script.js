@@ -55,12 +55,12 @@ $(document).ready(() => {
   });
 
   // suggestions search hide/show
-  $('#input-popup-search').on('keyup', function () {
-    $('#propositons').fadeIn();
-    if ($(this).val() == '') {
-      $('#propositons').fadeOut();
-    }
-  });
+  // $('#input-popup-search').on('keyup', function () {
+  //   $('#propositons').fadeIn();
+  //   if ($(this).val() == '') {
+  //     $('#propositons').fadeOut();
+  //   }
+  // });
 
   /**
    * hide/show password

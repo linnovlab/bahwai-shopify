@@ -3,7 +3,7 @@ class PredictiveSearch extends HTMLElement {
     super();
 
     this.input = this.querySelector('input[type="search"]');
-    this.predictiveSearchResults = this.querySelector('#predictive-search');
+    this.predictiveSearchResults = $('#predictive-search');
 
     this.input.addEventListener('input', this.debounce((event) => {
       this.onChange(event);
@@ -22,7 +22,7 @@ class PredictiveSearch extends HTMLElement {
   }
 
   getSearchResults(searchTerm) {
-    fetch(`/search/suggest?q=${searchTerm}&section_id=predictive-search`)
+    fetch(`/search/suggest?q=${searchTerm}&section_id=predictive-search&format=json`)
       .then((response) => {
         if (!response.ok) {
           var error = new Error(response.status);
@@ -30,11 +30,78 @@ class PredictiveSearch extends HTMLElement {
           throw error;
         }
 
-        return response.text();
+        return response.json();
       })
-      .then((text) => {
-        const resultsMarkup = new DOMParser().parseFromString(text, 'text/html').querySelector('#shopify-section-predictive-search').innerHTML;
-        this.predictiveSearchResults.innerHTML = resultsMarkup;
+      .then((result) => {
+        // const resultsMarkup = new DOMParser().parseFromString(text, 'text/html').querySelector('#shopify-section-predictive-search').innerHTML;
+        // this.predictiveSearchResults.innerHTML = resultsMarkup;
+        const products = result.resources.results.products,
+          collections = result.resources.results.collections,
+          colContainer = $("#sug-col-container"),
+          prodContainer = $("#sug-prod-container");
+        var colContent = '';
+        var prodContent = ''
+        console.log(products)
+        collections.forEach(item => {
+          colContent += `
+          <li>
+            <a href="${item.url}">${item.title}</a>
+            </li>`
+        });
+
+        products.forEach(product => {
+          prodContent += `
+          <div class="item w-[9rem] sm:w-[11rem]">
+            <a href="${product.url}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+              <div class="img w-full">
+                <img
+                  src="${product.image}"
+                  alt="${product.title}"
+                  class="w-full object-cover h-[220px]" 
+                  >
+              </div>
+              <p class="font-semibold w-[10rem] text-center mt-2">${product.title}</p>
+              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                <div class="stars flex text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
+              </div>
+              <p class="font-medium">À partir de ${product.price}€
+              </p>
+            </a>
+          </div>
+          `
+        })
+
+        if (collections.length > 0) {
+          colContainer.html(`
+              <h2 class="text-gray-500 text-[1.2rem]">Collections</h2>
+              <ul id="sug-col-container" class="flex flex-col gap-1">
+                ${colContent}
+              </ul>
+          `)
+
+        } else {
+          colContainer.html('')
+        }
+
+        if (products.length > 0) {
+          prodContainer.html(`
+            <h2 class="text-gray-500 text-[1.2rem] mt-4">Produits</h2>
+            <div class="content flex justify-around sm:justify-normal flex-wrap gap-4 sm:gap-8 mt-2">
+              ${prodContent}
+            </div>
+          `)
+        } else {
+          prodContainer.html('')
+        }
+
+        // this.clearconsole()
         this.open();
       })
       .catch((error) => {
@@ -43,12 +110,19 @@ class PredictiveSearch extends HTMLElement {
       });
   }
 
+  clearconsole() {
+    console.log(window.console);
+    if (window.console || window.console.firebug) {
+      console.clear();
+    }
+  }
+
   open() {
-    this.predictiveSearchResults.style.display = 'block';
+    this.predictiveSearchResults.slideDown();
   }
 
   close() {
-    this.predictiveSearchResults.style.display = 'none';
+    this.predictiveSearchResults.slideUp();
   }
 
   debounce(fn, wait) {
