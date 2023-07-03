@@ -41,12 +41,13 @@ class PredictiveSearch extends HTMLElement {
           prodContainer = $("#sug-prod-container");
         var colContent = '';
         var prodContent = ''
-        console.log(products)
         collections.forEach(item => {
-          colContent += `
+          if (item.handle != 'suggestions' && item.handle != 'pourrait-vous-plaire') {
+            colContent += `
           <li>
             <a href="${item.url}">${item.title}</a>
             </li>`
+          }
         });
 
         products.forEach(product => {
