@@ -1,12 +1,12 @@
 <div>
   {% for block in section.blocks %}
-    <div class="slide">
-      <p>{{ block.settings.heading }}</p>
-    </div>
+    {{ block.settings. }}
+    {{ block.settings.text }}
+
   {% endfor %}
 </div>
 <section class="avis my-4 sm:px-8 p-0 desktop-width">
-  <h2 class="title">Leurs avis</h2>
+  <h2 class="title">{{ section.settings.title }}</h2>
   <div class="avis-container flex justify-around gap-4 mt-8 mb-16">
     <div id="swiper-avis" class="swiper swiper-avis relative">
       <div class="swiper-wrapper sm:ps-0">
@@ -87,7 +87,8 @@
       {
         "type": "text",
         "id": "title",
-        "label": "Titre"
+        "label": "Titre",
+        "default": "Leurs avis"
       }
     ],
     "max_blocks": 5,
@@ -101,6 +102,11 @@
             "id": "heading",
             "default": "Welcome to our store",
             "label": "Heading"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "mon text",
+            "default": "aliou"
           }
         ]
       }
