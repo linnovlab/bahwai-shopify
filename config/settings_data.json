@@ -163,15 +163,34 @@
           "2772879e-ecfd-48ff-a0bb-d3b83a09e43d": {
             "type": "announcement",
             "settings": {
-              "heading": "mon premier block"
+              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_156207d7-5a91-42fd-be8f-15ee2040412a.jpg",
+              "logo_google": "shopify:\/\/shop_images\/pubsearch2.png"
+            }
+          },
+          "10729d2d-8561-48c0-a298-5ef59e9805cb": {
+            "type": "announcement",
+            "settings": {
+            }
+          },
+          "2a794cfb-5b3d-4b25-a4e8-e610f85c165f": {
+            "type": "announcement",
+            "settings": {
+            }
+          },
+          "fd0c0195-2580-47de-8193-96c928f6f018": {
+            "type": "announcement",
+            "settings": {
             }
           }
         },
         "block_order": [
-          "2772879e-ecfd-48ff-a0bb-d3b83a09e43d"
+          "2772879e-ecfd-48ff-a0bb-d3b83a09e43d",
+          "10729d2d-8561-48c0-a298-5ef59e9805cb",
+          "2a794cfb-5b3d-4b25-a4e8-e610f85c165f",
+          "fd0c0195-2580-47de-8193-96c928f6f018"
         ],
         "settings": {
-          "title": ""
+          "titre": "Leurs avis"
         }
       }
     },
