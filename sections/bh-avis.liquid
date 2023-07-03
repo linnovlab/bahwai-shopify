@@ -43,37 +43,3 @@
   </div>
   <div></div>
 </section>
-
-{% schema %}
-  {
-    "name": "Avis clients",
-    "tag": "section",
-    "class": "section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "titre",
-        "label": "Titre",
-        "default": "Leurs avis"
-      }
-    ],
-    "max_blocks": 7,
-    "blocks": [
-      {
-        "name": "Avis",
-        "type": "block_avis",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "user_img",
-            "label": "profile imgae"
-          }, {
-            "type": "image_picker",
-            "id": "logo_google",
-            "label": "Google logo"
-          }
-        ]
-      }
-    ]
-  }
-{% endschema %}
