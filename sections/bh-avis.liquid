@@ -1,7 +1,7 @@
 <div>
   {% for block in section.blocks %}
-    <div class="slide" {{ block.shopify_attributes }}>
-      {{ block.settings.image | image_url: width: 2048 | image_tag }}
+    <div class="slide">
+      <p>{{ block.settings.heading }}</p>
     </div>
   {% endfor %}
 </div>
@@ -93,13 +93,14 @@
     "max_blocks": 5,
     "blocks": [
       {
-        "name": "Slide",
-        "type": "slide",
+        "name": "Announcement",
+        "type": "announcement",
         "settings": [
           {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
+            "type": "text",
+            "id": "heading",
+            "default": "Welcome to our store",
+            "label": "Heading"
           }
         ]
       }
