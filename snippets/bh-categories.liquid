@@ -1,25 +1,35 @@
 <section class="categories text-white my-12 sm:mx-[7rem] mx-3 desktop-width">
-    <h2 class="title text-center text-_main_color_light mb-4">Nos catégories</h2>
-    <div class="categories-items flex sm:gap-4 gap-2 sm:h-auto h-[20rem]">
-        <div class="cat-item flex flex-col sm:gap-4 gap-2 w-full">
-            <div style="background-image: url('{{ 'cat_Boisson.png' | asset_url}}');" class="img h-[250px] img-center flex justify-center items-center">
-                <h2 class="sm:text-[24px] font-bold">Boissons</h2>
-            </div>
-            <div style="background-image: url('{{ 'cat_Gummies.png' | asset_url}}');" class="img h-[250px] img-center flex justify-center items-center">
-                <h2 class="sm:text-[24px] font-bold">Gummies</h2>
-            </div>
-        </div>
-        <div class="cat-item flex flex-col sm:gap-4 gap-2 w-full">
-            <div style="background-image: url('{{ 'cat_Petite_faim.png' | asset_url }}');" class="img h-full w-full img-center flex flex-col gap-4 justify-center items-center">
-                <h2 class="sm:text-[24px] font-bold text-center">Petites faims</h2>
-                <button type="button" class="btn-cat sm:px-8 sm:py-2 p-[5px]">Arrive bientôt !</button>
-            </div>
-        </div>
+  <h2 class="title text-center text-_main_color_light mb-4">Nos catégories</h2>
+  <div class="categories-items flex sm:gap-4 gap-2 sm:h-auto h-[20rem]">
+    <div class="cat-item flex flex-col sm:gap-4 gap-2 w-full">
+      <div style="background-image: url('{{ 'cat_Boisson.png' | asset_url}}');" class="img h-[250px] img-center flex justify-center items-center">
+        <h2 class="sm:text-[24px] font-bold">
+          <a href="{{ collections['boissons'].url }}" class="text-white">Boissons</a>
+        </h2>
+      </div>
+      <div style="background-image: url('{{ 'cat_Gummies.png' | asset_url}}');" class="img h-[250px] img-center flex justify-center items-center">
+        <h2 class="sm:text-[24px] font-bold">
+          <a href="{{ collections['gummies'].url }}" class="text-white">Gummies</a>
+        </h2>
+      </div>
     </div>
-    <div style="background-image: url('{{ 'cat_Petite_faim.png' | asset_url}}');" class="cat-item h-[10rem] sm:h-[208px] img-center sm:mt-4 mt-2 flex justify-center items-center">
-        <div class="img flex items-center flex-col gap-2 ">
-            <h2 class="sm:text-[24px] font-bold">Barres</h2>
-            <button type="button" class="btn-cat sm:px-8 sm:py-2 p-[5px]">Arrive bientôt !</button>
-        </div>
+    <div class="cat-item flex flex-col sm:gap-4 gap-2 w-full">
+      <div style="background-image: url('{{ 'cat_Petite_faim.png' | asset_url }}');" class="img h-full w-full img-center flex flex-col gap-4 justify-center items-center">
+        <h2 class="sm:text-[24px] font-bold text-center">Petites faims</h2>
+        <a
+          href="{{ collections['arrive-bientot'].url }}"
+          role="button"
+          class="btn-cat sm:px-8 sm:py-2 p-[5px]">Arrive bientôt !</a>
+      </div>
     </div>
+  </div>
+  <div style="background-image: url('{{ 'cat_Petite_faim.png' | asset_url}}');" class="cat-item h-[10rem] sm:h-[208px] img-center sm:mt-4 mt-2 flex justify-center items-center">
+    <div class="img flex items-center flex-col gap-2 ">
+      <h2 class="sm:text-[24px] font-bold">Barres</h2>
+      <a
+        href="{{ collections['arrive-bientot'].url }}"
+        role="button"
+        class="btn-cat sm:px-8 sm:py-2 p-[5px]">Arrive bientôt !</a>
+    </div>
+  </div>
 </section>
