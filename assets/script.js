@@ -42,7 +42,6 @@ $(document).ready(() => {
     $('#search-section').fadeIn();
     $('#input-popup-search').focus();
     $('body').css('overflow', 'hidden');
-    console.log($('#search-section'));
   });
   $('#search-icon').on('click', (e) => {
     e.preventDefault();
@@ -373,7 +372,18 @@ $(document).ready(() => {
 
   })
 
+
+  /**
+   * Ajax for filter product
+   */
+  $('#form-filtre i').each((i, input) => {
+    $(input).on('click', (e) => {
+      $("#btn-valider-filter").trigger('click')
+    })
+  })
+
 });
+
 
 try {
   new Swiper('.swiper-nouveautes', {

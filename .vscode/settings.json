@@ -1,4 +1,4 @@
 {
   "editor.formatOnSave": true,
-  "liquid.format.enable": false
+  "liquid.format.enable": true
 }

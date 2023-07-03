@@ -59,7 +59,6 @@
 
     <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
-    <script src="{{ 'app.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
@@ -96,30 +95,11 @@
     <a class="skip-to-content-link button sr-only" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
-    {% comment %}  
-    {% section 'announcement-bar' %}
-    {% section 'header' %}
-    {% render 'cart-drawer' %}
-    {% endcomment %}
-
-    {% comment %} <p class="text-2xl text-re">{{ page.url }}</p>  {% endcomment %}
-
-    {% comment %} {% for collection in collections %}
-    {{ collection.title }}
-    {% endfor %} {% endcomment %}
-    {% comment %} {{ collections['Offres du moment'].products.size }} {% endcomment %}
-
-    {% comment %} {% for product in collections['offres-du-moment'].products %}
-    <!-- Output product details --><h2>
-    {{ product.title }}
-    </h2>
-    </p>
-    <!-- Add more product fields as needed -->
-    {% endfor %} {% endcomment %}
 
 
-    {% if template.name != '404' %}
-      <header class="relative"> {% section 'bh-header' %}
+    {% if template.name != '404'%}
+      <header class="relative">
+        {% section 'bh-header' %}
         {% render 'bh-menu-bars' %}
       </header>
     {% endif %}
@@ -182,7 +162,7 @@
 
 
 
-    {% if template.name != '404' %}
+    {% if template.name != '404'%}
       {% if template.name != 'login' %}
         {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
           {% render 'bh-footer-complet' %}

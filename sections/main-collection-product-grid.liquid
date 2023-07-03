@@ -2,7 +2,6 @@
   <div style="background-image: url({{ 'bannercategories.png' |asset_url }});" class="banner img-center sm:h-[25rem] h-[17rem]"></div>
   <section class="text-_main_color_dark flex mt-12 desktop-width">
     <div class="left-side sm:flex flex-col gap-4 max-w-[16.5rem] w-full me-[3rem] ps-8 hidden">
-
       <form
         class="filter-form"
         id="form-filtre"
@@ -35,7 +34,10 @@
             {%- endfor -%}
           {%- endfor -%}
         </div>
-        <button class="btn" type="submit">valider</button>
+        <button
+          id="btn-valider-filter"
+          class="btn invisible"
+          type="submit">valider</button>
       </form>
     </div>
 
@@ -49,7 +51,7 @@
             <span class="font-medium sm:text-base text-sm">Filtrer</span>
           </p>
         </div>
-        <div class="cats-content flex justify-around flex-wrap sm:gap-8 gap-2 items-center">
+        <div id="collection-products-container" class="flex justify-around flex-wrap sm:gap-8 gap-2 items-center">
           {% for product in collection.products %}
             <div class="content-item sm:w-auto w-[9rem] text-sm">
               <a href="{{ product.url }}" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
