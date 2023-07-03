@@ -1,7 +1,7 @@
 <section class="avis my-4 sm:px-8 p-0 desktop-width">
   <h2 class="title">{{ section.settings.titre }}
   </h2>
-  <div class="avis-container flex justify-around gap-4 mt-8 mb-16  ">
+  <div class="avis-container flex justify-around gap-4 mt-8 mb-16">
     <div id="swiper-avis" class="swiper swiper-avis relative">
       <div class="swiper-wrapper sm:ps-0">
         {% for block in section.blocks %}
@@ -18,7 +18,7 @@
                     <p class="text-gray-500 text-sm">6. juin, 2022.</p>
                   </div>
                   <img
-                    src="{{ block.settings.google_img }}"
+                    src="{{ block.settings.logo_google }}"
                     alt="google"
                     class="w-6 self-start">
                 </div>
@@ -57,21 +57,19 @@
         "default": "Leurs avis"
       }
     ],
-    "max_blocks": 10,
+    "max_blocks": 7,
     "blocks": [
       {
-        "name": "avis",
+        "name": "Avis",
         "type": "block_avis",
         "settings": [
           {
             "type": "image_picker",
             "id": "user_img",
-            "default": "{{ 'happy-gb91b7054f_640.jpg' | asset_url }}",
             "label": "profile imgae"
           }, {
             "type": "image_picker",
-            "id": "google_img",
-            "default": "{{ 'google.svg' | asset_url }}",
+            "id": "logo_google",
             "label": "Google logo"
           }
         ]
