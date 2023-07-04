@@ -3,10 +3,10 @@
   </h2>
   <div class="avis-container flex justify-around gap-4 mt-8 mb-16 ">
     <div id="swiper-avis" class="swiper swiper-avis relative">
-      <div class="swiper-wrapper sm:ps-0">
+      <div class="swiper-wrapper sm:ps-0 ">
         {% for block in section.blocks %}
           <div class="swiper-slide">
-            <div class="avis-item flex flex-col gap-2 sm:max-w-[306px] w-full rounded-sm">
+            <div class="avis-item flex flex-col gap-2 sm:max-w-[306px] w-full rounded-sm p-2">
               <div class="flex">
                 <img
                   src="{{ block.settings.user_img }}"

@@ -61,19 +61,7 @@
         <span>En savoir plus sur le produit</span>
       </p>
     </div>
-    <form action="#" class="sm:hidden flex gap-4 sm:w-auto w-full my-8">
-      <p class="font-medium text-_main_color_dark mt-2">Quantité</p>
-      <div class="flex justify-center mb-4 ">
-        <button type="button" id="down">-</button>
-        <input
-          type="number"
-          id="input-produit"
-          min="1"
-          max="20"
-          value="1">
-        <button type="button" id="up">+</button>
-      </div>
-    </form>
+
 
     <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-between gap-4 lg:flex-row flex-col items-center">
       <div class="left lg:max-w-[388px] w-full">
@@ -133,18 +121,23 @@
       </div>
       <div class="right flex flex-col items-center sm:w-auto w-full">
         <div class="price sm:flex gap-3 mb-4 hidden">
-          <p class="text-_main_color_dark font-medium text-lg">2,10 €</p>
+          <p class="text-_main_color_dark font-medium text-lg">{{ product.price }} €</p>
           <span class="text-[#999999]">l’unité</span>
         </div>
-        <form
-          action="#"
-          id="form-command"
-          class="flex flex-col sm:w-auto w-full">
-          <div class="hidden sm:flex justify-center mb-4 ">
+        {%- form 'product', product, id: "form-command", class: "flex flex-col sm:w-auto w-full" -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}">
+          {{ form | payment_terms }}
+
+          <div class="flex justify-center mb-4 ">
             <button type="button" id="down">-</button>
             <input
               type="number"
+              name="quantity"
               id="input-produit"
+              data-product_id="{{ product.id }}"
               min="1"
               max="20"
               value="1">
@@ -152,10 +145,14 @@
           </div>
           <button
             id="btn-ajout-panier"
+
             class="h-[44px] sm:w-[344px] w-full btn-red-panier"
             type="submit">Ajouter au panier</button>
-          <button id="btn-acheter" class="h-[44px] sm:w-[344px] w-full btn-white-panier">Acheter maintenant</button>
-        </form>
+          <button
+            id="btn-acheter"
+            class="h-[44px] sm:w-[344px] w-full btn-white-panier"
+            name="checkout">Acheter maintenant</button>
+        {%- endform -%}
       </div>
     </div>
   </div>
@@ -263,4 +260,9 @@
       container.innerHTML = content
     }
   });
+
+// -----------------------------------------
+
+
+// jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
 </script>

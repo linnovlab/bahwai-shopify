@@ -1,103 +1,111 @@
 <div class="panier fixed top-0 w-full hidden z-50" id="panier">
-    <div class="content sm:max-w-[455px] w-full ms-auto me-0 bg-white max-h-screen h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
-        <div class="flex justify-end w-full mx-auto px-4 pt-6 pb-4">
-            <p id="close-panier" class="flex items-center font-medium text-_main_color_dark hover:cursor-pointer">
-                <i class="fas fa-xmark text-[18px] me-2"></i>
-                <span class="text-sm">Fermer</span>
-            </p>
-        </div>
-        <hr class="border-[#999999]">
-        <div class="items text-_main_color_dark">
-            <div class="item">
-                <h2 class="font-medium my-4 px-5">Vous avez ajouté :</h2>
-                <div class="prod flex px-5">
-                    <img class="h-[61px] w-[61px] me-3" src="{{ 'item 2.png' |asset_url }}" alt="produit">
-                    <div class="desc">
-                        <p class="font-medium text-_main_color_dark">Booster Kiwi Citron vert</p>
-                        <p class="text-[12px] font-medium text-_main_color_dark mt-1">2,10€ l’unité</p>
-                    </div>
-                </div>
-                <form action="" id="form-panier" class="mt-4">
-                    <div class="flex mb-4 px-5">
-                        <input class="w-16 ms-12" type="text" id="input-produit" min="1" max="20" value="1 x">
-                        <button class="me-8" type="button" id="down">-</button>
-                        <button type="button" id="up">+</button>
-                    </div>
-                    <hr class="border-[#999999] mt-8">
-                    <div class="total flex justify-between items-center px-5 mt-4">
-                        <div>
-                            <p class="font-medium">Sous-total €</p>
-                            <p class="text-[#999999]">1 article dans votre parnier</p>
-                        </div>
-                        <p class="font-medium">2,10 €</p>
-                    </div>
-                    <div class="flex flex-col items-center justify-center mt-8">
-                        <button id="btn-paiement" class="h-[44px] sm:w-[344px] w-[90%] mx-5 btn-red-panier"  type="submit">Procéder au paiement</button>
-                        <button id="btn-continuer" class="h-[44px] sm:w-[344px] w-[90%] mx-5 btn-white-panier">Continuer mes achats</button>
-                    </div>
-                </form>
-            </div>
-            
-        </div>
-        
-        <div class="footer text-_main_color_dark ps-5 my-8">
-            <p class="font-medium text-_main_color_dark mt-3">D’autres ont aussi achetés :</p>
-            <div class="items flex gap-6 mt-5">
-                <div class="item">
-                    <a href="./produit.html" class="item text-[12px] max-w-[85px] w-full m-1 flex items-center flex-col gap-1">
-                        <div class="img w-full">
-                            <img src="{{'pub search.png ' | asset_url}}" alt="La gourmande aux noisettes" class="w-full">
-                        </div>
-                        <p class="font-semibold w-[10rem] text-center">La gourmand...</p>
-                        <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                            <div class="stars flex text-black text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="font-medium text-center">À partir de 2,10€ </p>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="./produit.html" class="item text-[12px] max-w-[85px] w-full m-1 flex items-center flex-col gap-1">
-                        <div class="img w-full">
-                            <img src="{{'pub search 2.png ' | asset_url}}" alt="La gourmande aux noisettes" class="w-full">
-                        </div>
-                        <p class="font-semibold w-[10rem] text-center">La gourmand...</p>
-                        <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                            <div class="stars flex text-black text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="font-medium text-center">À partir de 2,10€ </p>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="./produit.html" class="item text-[12px] max-w-[85px] w-full m-1 flex items-center flex-col gap-1">
-                        <div class="img w-full">
-                            <img src="{{'pub search.png ' | asset_url}}" alt="La gourmande aux noisettes" class="w-full">
-                        </div>
-                        <p class="font-semibold w-[10rem] text-center">La gourmand...</p>
-                        <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                            <div class="stars flex text-black text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="font-medium text-center">À partir de 2,10€ </p>
-                    </a>
-                </div>
-            </div>
-        </div>
+  <div class="content sm:max-w-[455px] w-full ms-auto me-0 bg-white max-h-screen h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
+    <div class="flex justify-end w-full mx-auto px-4 pt-6 pb-4">
+      <p id="close-panier" class="flex items-center font-medium text-_main_color_dark hover:cursor-pointer">
+        <i class="fas fa-xmark text-[18px] me-2"></i>
+        <span class="text-sm">Fermer</span>
+      </p>
     </div>
+    <hr class="border-[#999999]">
+    <div class="items text-_main_color_dark">
+      <h2 class="font-medium my-4 px-5">Vous avez ajouté :</h2>
+      <div id="panier-items-container">{% comment %} items content {% endcomment %}
+      </div>
+      <div class="mt-4">
+        <hr class="border-[#999999] mt-8">
+        <div class="total flex justify-between items-center px-5 mt-4">
+          <div>
+            <p class="font-medium">Sous-total €</p>
+            <p class="text-[#999999]">
+              <span id="qty-items-panier">1</span>
+              article dans votre parnier</p>
+          </div>
+          <p id="total-price-panier" class="font-medium">2,10 €</p>
+        </div>
+        <div class="flex flex-col items-center justify-center mt-8">
+          <form action="{{ routes.cart_url }}" method="post">
+            <button
+              id="btn-paiement"
+              type="submit"
+              name="checkout"
+              class="h-[44px] sm:w-[344px] w-[90%] mx-5 btn-red-panier">Procéder au paiement</button>
+          </form>
+          <button id="btn-continuer" class="h-[44px] sm:w-[344px] w-[90%] mx-5 btn-white-panier">Continuer mes achats</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer text-_main_color_dark ps-5 my-8">
+      <p class="font-medium text-_main_color_dark mt-3">D’autres ont aussi achetés :</p>
+      <div class="items flex gap-6 mt-5">
+        <div class="item">
+          <a href="./produit.html" class="item text-[12px] max-w-[85px] w-full m-1 flex items-center flex-col gap-1">
+            <div class="img w-full">
+              <img
+                src="{{'pub search.png ' | asset_url}}"
+                alt="La gourmande aux noisettes"
+                class="w-full">
+            </div>
+            <p class="font-semibold w-[10rem] text-center">La gourmand...</p>
+            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+              <div class="stars flex text-black text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="font-medium text-center">À partir de 2,10€
+            </p>
+          </a>
+        </div>
+        <div class="item">
+          <a href="./produit.html" class="item text-[12px] max-w-[85px] w-full m-1 flex items-center flex-col gap-1">
+            <div class="img w-full">
+              <img
+                src="{{'pub search 2.png ' | asset_url}}"
+                alt="La gourmande aux noisettes"
+                class="w-full">
+            </div>
+            <p class="font-semibold w-[10rem] text-center">La gourmand...</p>
+            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+              <div class="stars flex text-black text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="font-medium text-center">À partir de 2,10€
+            </p>
+          </a>
+        </div>
+        <div class="item">
+          <a href="./produit.html" class="item text-[12px] max-w-[85px] w-full m-1 flex items-center flex-col gap-1">
+            <div class="img w-full">
+              <img
+                src="{{'pub search.png ' | asset_url}}"
+                alt="La gourmande aux noisettes"
+                class="w-full">
+            </div>
+            <p class="font-semibold w-[10rem] text-center">La gourmand...</p>
+            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+              <div class="stars flex text-black text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="font-medium text-center">À partir de 2,10€
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
