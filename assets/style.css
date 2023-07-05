@@ -150,6 +150,14 @@ body{
   scrollbar-width: 5px;
 }
 
+/* css reviews feat */
+#shopify-product-reviews{
+  background-color: red;
+}
+.spr-header-title{
+  display: none !important;
+}
+
 
 .cats-navigation span.active{
   border-bottom: 3px solid var(--red-color);

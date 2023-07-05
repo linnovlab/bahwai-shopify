@@ -516,15 +516,9 @@ $(document).ready(() => {
 		});
 	})
 
-	// update du panier des le chargement de la page
-	$.ajax({
-		type: "GET",
-		url: `${location.origin}/cart.json`,
-		dataType: "json",
-		success: function (response) {
-			updatePanier(response)
-		}
-	});
+
+	// feat for rating products
+
 });
 
 

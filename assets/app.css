@@ -874,16 +874,6 @@ html {
   margin-top: 14px;
 }
 
-.me-8{
-  -webkit-margin-end: 2rem;
-          margin-inline-end: 2rem;
-}
-
-.me-3{
-  -webkit-margin-end: 0.75rem;
-          margin-inline-end: 0.75rem;
-}
-
 .block{
   display: block;
 }
@@ -970,10 +960,6 @@ html {
 
 .h-full{
   height: 100%;
-}
-
-.h-\[61px\]{
-  height: 61px;
 }
 
 .max-h-\[8rem\]{
@@ -2089,6 +2075,16 @@ body{
   scrollbar-color: rgba(110, 110, 110, 0.802);
   /* ascensseur bleu sur fond blanc */
   scrollbar-width: 5px;
+}
+
+/* css reviews feat */
+
+#shopify-product-reviews{
+  background-color: red;
+}
+
+.spr-header-title{
+  display: none !important;
 }
 
 .cats-navigation span.active{
