@@ -33,8 +33,7 @@ class PredictiveSearch extends HTMLElement {
         return response.json();
       })
       .then((result) => {
-        // const resultsMarkup = new DOMParser().parseFromString(text, 'text/html').querySelector('#shopify-section-predictive-search').innerHTML;
-        // this.predictiveSearchResults.innerHTML = resultsMarkup;
+        // feat for searchbar fonctionality
         const products = result.resources.results.products,
           collections = result.resources.results.collections,
           colContainer = $("#sug-col-container"),

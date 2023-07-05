@@ -243,6 +243,24 @@ div.spr-review-content p{
 div.spr-review-footer a{
   @apply text-_main_color_dark;
 }
+div.spr-header a.spr-summary-actions-newreview{
+  @apply border-b-2 border-_main_color_dark font-medium text-sm hidden !float-none max-w-[13rem] w-full text-center mx-auto;
+}
+div.spr-summary .spr-starrating, div.spr-summary .spr-summary-caption{
+  display: none;
+}
+
+@media screen and (max-width: 641px) {
+  div.spr-header a.spr-summary-actions-newreview{
+    @apply block;
+  }
+  div.spr-form{
+    display: none;
+  }
+  
+}
+
+
 /* -------------------------- */
 .cats-navigation span.active{
   border-bottom: 3px solid var(--red-color);

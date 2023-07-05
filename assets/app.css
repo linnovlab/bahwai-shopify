@@ -717,6 +717,10 @@ html {
   margin-bottom: 2rem;
 }
 
+.-mb-10{
+  margin-bottom: -2.5rem;
+}
+
 .-ms-8{
   -webkit-margin-start: -2rem;
           margin-inline-start: -2rem;
@@ -2200,6 +2204,36 @@ div.spr-review-content p{
 div.spr-review-footer a{
   --tw-text-opacity: 1;
   color: rgb(36 3 67 / var(--tw-text-opacity));
+}
+
+div.spr-header a.spr-summary-actions-newreview{
+  float: none !important;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  width: 100%;
+  max-width: 13rem;
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(36 3 67 / var(--tw-border-opacity));
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+div.spr-summary .spr-starrating, div.spr-summary .spr-summary-caption{
+  display: none;
+}
+
+@media screen and (max-width: 641px) {
+  div.spr-header a.spr-summary-actions-newreview{
+    display: block;
+  }
+
+  div.spr-form{
+    display: none;
+  }
 }
 
 /* -------------------------- */
