@@ -73,6 +73,9 @@ body{
 .btn-etre-prevenu{
   @apply hover:cursor-pointer mb-4 sm:text-sm text-_main_color_dark font-bold text-center border-b-2 border-_red_color w-[21rem] text-[12px] sm:w-[25rem] m-auto;
 }
+.star-empty{
+  @apply text-white;
+}
 
 /* header */
 
@@ -222,6 +225,14 @@ fieldset.spr-form-actions input{
 div.spr-form-review-body label{
   display: none;
 }
+div.spr-summary-starrating{
+  display: none !important;
+}
+#prod-stars-container svg{
+  margin-right: 3px;
+  width: 20px !important;
+  height: 20px !important;
+}
 
 /* reviews list css */
 div.spr-review-header{
@@ -244,7 +255,7 @@ div.spr-review-footer a{
   @apply text-_main_color_dark;
 }
 div.spr-header a.spr-summary-actions-newreview{
-  @apply border-b-2 border-_main_color_dark font-medium text-sm hidden !float-none max-w-[13rem] w-full text-center mx-auto;
+  @apply border-b-2 mt-4 border-_main_color_dark font-medium text-sm max-w-[13rem] w-full text-center ;
 }
 div.spr-summary .spr-starrating, div.spr-summary .spr-summary-caption{
   display: none;
@@ -252,10 +263,7 @@ div.spr-summary .spr-starrating, div.spr-summary .spr-summary-caption{
 
 @media screen and (max-width: 641px) {
   div.spr-header a.spr-summary-actions-newreview{
-    @apply block;
-  }
-  div.spr-form{
-    display: none;
+    @apply !float-none mx-auto;
   }
   
 }

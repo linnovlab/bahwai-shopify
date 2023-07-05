@@ -800,6 +800,16 @@ html {
           margin-inline-end: 0.5rem;
 }
 
+.me-3{
+  -webkit-margin-end: 0.75rem;
+          margin-inline-end: 0.75rem;
+}
+
+.me-8{
+  -webkit-margin-end: 2rem;
+          margin-inline-end: 2rem;
+}
+
 .me-\[3rem\]{
   -webkit-margin-end: 3rem;
           margin-inline-end: 3rem;
@@ -958,6 +968,10 @@ html {
   height: 44px;
 }
 
+.h-\[61px\]{
+  height: 61px;
+}
+
 .h-auto{
   height: auto;
 }
@@ -1050,6 +1064,10 @@ html {
   max-width: 100%;
 }
 
+.max-w-\[120px\]{
+  max-width: 120px;
+}
+
 .max-w-\[143px\]{
   max-width: 143px;
 }
@@ -1088,10 +1106,6 @@ html {
 
 .max-w-\[62rem\]{
   max-width: 62rem;
-}
-
-.max-w-\[85px\]{
-  max-width: 85px;
 }
 
 .transform{
@@ -1591,6 +1605,10 @@ html {
   font-size: 1.5rem;
 }
 
+.text-\[10px\]{
+  font-size: 10px;
+}
+
 .text-\[12px\]{
   font-size: 12px;
 }
@@ -1988,6 +2006,11 @@ body{
   }
 }
 
+.star-empty{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 /* header */
 
 /* swiper */
@@ -2172,6 +2195,16 @@ div.spr-form-review-body label{
   display: none;
 }
 
+div.spr-summary-starrating{
+  display: none !important;
+}
+
+#prod-stars-container svg{
+  margin-right: 3px;
+  width: 20px !important;
+  height: 20px !important;
+}
+
 /* reviews list css */
 
 div.spr-review-header{
@@ -2207,10 +2240,7 @@ div.spr-review-footer a{
 }
 
 div.spr-header a.spr-summary-actions-newreview{
-  float: none !important;
-  margin-left: auto;
-  margin-right: auto;
-  display: none;
+  margin-top: 1rem;
   width: 100%;
   max-width: 13rem;
   border-bottom-width: 2px;
@@ -2228,11 +2258,9 @@ div.spr-summary .spr-starrating, div.spr-summary .spr-summary-caption{
 
 @media screen and (max-width: 641px) {
   div.spr-header a.spr-summary-actions-newreview{
-    display: block;
-  }
-
-  div.spr-form{
-    display: none;
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

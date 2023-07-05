@@ -1,3 +1,4 @@
+<p class="h-[61px] w-[61px] me-3 me-8 hidden"></p>
 <div class="panier fixed top-0 w-full hidden z-50" id="panier">
   <div class="content sm:max-w-[455px] w-full ms-auto me-0 bg-white max-h-screen h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
     <div class="flex justify-end w-full mx-auto px-4 pt-6 pb-4">
@@ -9,7 +10,8 @@
     <hr class="border-[#999999]">
     <div class="items text-_main_color_dark">
       <h2 class="font-medium my-4 px-5">Vous avez ajouté :</h2>
-      <div id="panier-items-container">{% comment %} items content {% endcomment %}
+      <div id="panier-items-container">
+        {% comment %} items content {% endcomment %}
       </div>
       <div class="mt-4">
         <hr class="border-[#999999] mt-8">
@@ -36,75 +38,51 @@
 
     </div>
 
-    <div class="footer text-_main_color_dark ps-5 my-8">
-      <p class="font-medium text-_main_color_dark mt-3">D’autres ont aussi achetés :</p>
-      <div class="items flex gap-6 mt-5">
-        <div class="item">
-          <a href="./produit.html" class="item text-[12px] max-w-[85px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{'pub search.png ' | asset_url}}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center">La gourmand...</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-black text-sm">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+    <div class="footer text-_main_color_dark px-2 my-8">
+      <p class="font-medium text-_main_color_dark mt-3 ps-5">D’autres ont aussi achetés :</p>
+      <div class="items flex gap-6 mt-5 justify-around">
+        {%- for product in collections['suggestions-panier'].products -%}
+          {% comment %} getting rating value {% endcomment %}
+          {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
+          {%- assign n = rates | first | plus:0 -%} 
+
+          <div class="item">
+            <a href="{{ product.url }}" class="item text-[12px] max-w-[120px] w-full m-1 flex items-center flex-col gap-1">
+              <div class="img w-full">
+                <img
+                  src="{{ product |image_url: width: 600, height: 600 }}"
+                  alt="La gourmande aux noisettes"
+                  class="w-full">
               </div>
-            </div>
-            <p class="font-medium text-center">À partir de 2,10€
-            </p>
-          </a>
-        </div>
-        <div class="item">
-          <a href="./produit.html" class="item text-[12px] max-w-[85px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{'pub search 2.png ' | asset_url}}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center">La gourmand...</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-black text-sm">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-            <p class="font-medium text-center">À partir de 2,10€
-            </p>
-          </a>
-        </div>
-        <div class="item">
-          <a href="./produit.html" class="item text-[12px] max-w-[85px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{'pub search.png ' | asset_url}}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center">La gourmand...</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-black text-sm">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-            <p class="font-medium text-center">À partir de 2,10€
-            </p>
-          </a>
-        </div>
+              <p class="font-semibold text-center ">{{ product.title }}</p>
+              {% if product.metafields.reviews.rating_count != null %}
+                <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                  <div class="stars flex text-black text-sm">
+                    
+                        {%- for i in (1..5) -%}
+                          {%- if i <= n -%}
+                            <i class="fas fa-star"></i>
+                            {%- else -%}
+                            <i class="fa-regular fa-star"></i>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      
+                  </div>
+                </div>
+              {%- endif -%}
+              <span class="border-_main_color_dark border-b-2 text-[10px] mb-2">
+                {% if product.metafields.reviews.rating_count == null %}
+                  Soyez le 1er à noter!
+                {% else %}
+                  {{ product.metafields.reviews.rating_count }} avis
+                {% endif %} 
+              </span>
+              <p class="font-medium text-center">À partir de 2,10€
+              </p>
+            </a>
+          </div>
+        {%- endfor -%}
+        
       </div>
     </div>
   </div>
