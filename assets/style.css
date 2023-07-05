@@ -223,6 +223,26 @@ div.spr-form-review-body label{
   display: none;
 }
 
+/* reviews list css */
+div.spr-review-header{
+  @apply text-_main_color_dark;
+}
+div.spr-review-header i{
+  margin-right: 3px;
+}
+div.spr-review-header i::before{
+  color: var(--main-color-dark) !important;
+}
+div.spr-review-header .spr-review-header-byline strong, div.spr-review-header h3, div.spr-review-header .spr-review-header-byline{
+  @apply font-medium text-_main_color_dark;
+  font-style: normal;
+}
+div.spr-review-content p{
+  @apply text-_main_color_dark text-sm;
+}
+div.spr-review-footer a{
+  @apply text-_main_color_dark;
+}
 /* -------------------------- */
 .cats-navigation span.active{
   border-bottom: 3px solid var(--red-color);

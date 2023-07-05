@@ -2168,6 +2168,40 @@ div.spr-form-review-body label{
   display: none;
 }
 
+/* reviews list css */
+
+div.spr-review-header{
+  --tw-text-opacity: 1;
+  color: rgb(36 3 67 / var(--tw-text-opacity));
+}
+
+div.spr-review-header i{
+  margin-right: 3px;
+}
+
+div.spr-review-header i::before{
+  color: var(--main-color-dark) !important;
+}
+
+div.spr-review-header .spr-review-header-byline strong, div.spr-review-header h3, div.spr-review-header .spr-review-header-byline{
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(36 3 67 / var(--tw-text-opacity));
+  font-style: normal;
+}
+
+div.spr-review-content p{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(36 3 67 / var(--tw-text-opacity));
+}
+
+div.spr-review-footer a{
+  --tw-text-opacity: 1;
+  color: rgb(36 3 67 / var(--tw-text-opacity));
+}
+
 /* -------------------------- */
 
 .cats-navigation span.active{
