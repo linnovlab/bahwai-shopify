@@ -198,22 +198,15 @@ $(document).ready(() => {
 	decrement($('#form-command #down'), $('#input-produit'));
 
 	/**
-	   * form type d'achat
-	   */
+	 * form type d'achat
+	 */
 	$('#form-type-achat input').each((i, item) => {
 		$(item).on('click', function () {
+			$('#form-type-achat input').each((i, input) => {
+				$(input).prop('checked', '')
+			})
+			$(this).prop('checked', true)
 
-			if ($(window).width() <= 750) {
-				if ($(item).is(':checked')) {
-					$(this).css('border-color', 'white');
-					$(this).next().css('color', 'white');
-				} else {
-					$(this).next().css('color', '#240343');
-					$(this).css('border-color', '#240343');
-				}
-			} else {
-				$(this).next().css('color', '#240343');
-			}
 		});
 	});
 
@@ -468,7 +461,6 @@ $(document).ready(() => {
 	 */
 	const updateProduct = () => {
 		$('#panier-items-container #form-panier').each((i, form) => {
-			console.log(form)
 			var variant_id = $(form).children('input[type="hidden"]').val()
 			var up = $(form).children('#up')
 			var down = $(form).children('#down')
@@ -495,7 +487,6 @@ $(document).ready(() => {
 	 * @param {string} data 
 	 */
 	const updateQtyProduct = (data, input, qty) => {
-		console.log("up")
 		$.ajax({
 			type: "POST",
 			headers: { 'Content-Type': 'application/json' },
@@ -532,7 +523,6 @@ $(document).ready(() => {
 		dataType: "json",
 		success: function (response) {
 			updatePanier(response)
-			console.log(response)
 		}
 	});
 });

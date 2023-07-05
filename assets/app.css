@@ -796,16 +796,6 @@ html {
           margin-inline-end: 0.5rem;
 }
 
-.me-3{
-  -webkit-margin-end: 0.75rem;
-          margin-inline-end: 0.75rem;
-}
-
-.me-8{
-  -webkit-margin-end: 2rem;
-          margin-inline-end: 2rem;
-}
-
 .me-\[3rem\]{
   -webkit-margin-end: 3rem;
           margin-inline-end: 3rem;
@@ -813,11 +803,6 @@ html {
 
 .mr-2{
   margin-right: 0.5rem;
-}
-
-.ms-12{
-  -webkit-margin-start: 3rem;
-          margin-inline-start: 3rem;
 }
 
 .ms-2{
@@ -969,10 +954,6 @@ html {
   height: 44px;
 }
 
-.h-\[61px\]{
-  height: 61px;
-}
-
 .h-auto{
   height: auto;
 }
@@ -991,10 +972,6 @@ html {
 
 .w-12{
   width: 3rem;
-}
-
-.w-16{
-  width: 4rem;
 }
 
 .w-20{
@@ -1396,6 +1373,10 @@ html {
   padding: 0px;
 }
 
+.p-2{
+  padding: 0.5rem;
+}
+
 .p-3{
   padding: 0.75rem;
 }
@@ -1410,10 +1391,6 @@ html {
 
 .p-\[6px\]{
   padding: 6px;
-}
-
-.p-2{
-  padding: 0.5rem;
 }
 
 .px-10{
@@ -2200,11 +2177,12 @@ body{
   }
 
   .checkbox-round:checked{
-    background-color: var(--main-color-light);
+    background-color: white;
+    border-color: white;
   }
 
-  #moins:checked{
-    border-color: white;
+  .checkbox-round:checked + label{
+    color: white;
   }
 
   /* produit section */
@@ -2373,11 +2351,6 @@ footer .items li{
 
 #nav-actualites a.active{
   border-bottom: 2px solid var(--red-color);
-}
-
-.checked\:bg-white:checked{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .hover\:cursor-pointer:hover{
@@ -2654,11 +2627,6 @@ footer .items li{
   .sm\:text-_main_color_dark{
     --tw-text-opacity: 1;
     color: rgb(36 3 67 / var(--tw-text-opacity));
-  }
-
-  .sm\:checked\:bg-_main_color_light:checked{
-    --tw-bg-opacity: 1;
-    background-color: rgb(86 17 149 / var(--tw-bg-opacity));
   }
 }
 

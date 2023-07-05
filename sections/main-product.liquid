@@ -71,7 +71,7 @@
             <div class="flex items-center gap-4">
               <input
                 type="checkbox"
-                class="checkbox-round sm:checked:bg-_main_color_light checked:bg-white"
+                class="checkbox-round"
                 name="h_abonnement"
                 id="hors">
               <label for="hors" class="cursor-pointer font-medium text-_main_color_dark ">Hors abonnement</label>
@@ -79,11 +79,11 @@
             <div class="flex items-center gap-4 mt-3">
               <input
                 type="checkbox"
-                class="checkbox-round sm:checked:bg-_main_color_light checked:bg-white"
+                class="checkbox-round"
                 name="h_abonnement"
                 id="moins"
                 checked>
-              <label for="moins" class="cursor-pointer flex items-center gap-4 sm:text-_main_color_dark text-white ">
+              <label for="moins" class="cursor-pointer flex items-center gap-4 sm:text-_main_color_dark ">
                 <span class="font-medium ">S’abonner</span>
                 <span class="px-[8px] py-[4px] sm:bg-_orange_color bg-_main_color_light rounded-md text-white text-12px">15% moins cher</span>
               </label>
@@ -145,14 +145,20 @@
           </div>
           <button
             id="btn-ajout-panier"
-
             class="h-[44px] sm:w-[344px] w-full btn-red-panier"
             type="submit">Ajouter au panier</button>
+
+        {%- endform -%}
+        <form
+          action="{{ routes.cart_url }}"
+          method="post"
+          class="w-full">
           <button
             id="btn-acheter"
+            name="checkout"
             class="h-[44px] sm:w-[344px] w-full btn-white-panier"
             name="checkout">Acheter maintenant</button>
-        {%- endform -%}
+        </form>
       </div>
     </div>
   </div>

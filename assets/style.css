@@ -74,7 +74,6 @@ body{
   @apply hover:cursor-pointer mb-4 sm:text-sm text-_main_color_dark font-bold text-center border-b-2 border-_red_color w-[21rem] text-[12px] sm:w-[25rem] m-auto;
 }
 
-
 /* header */
 
 
@@ -234,10 +233,11 @@ body{
     border: 1px solid var(--main-color-light);
   }
   .checkbox-round:checked{
-    background-color: var(--main-color-light);
-  }
-  #moins:checked{
+    background-color: white;
     border-color: white;
+  }
+  .checkbox-round:checked + label{
+    color: white;
   }
   /* produit section */
   .main-prod .footer .right{
