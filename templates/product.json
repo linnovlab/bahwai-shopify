@@ -20,7 +20,6 @@
       "blocks": {
         "c5fe8c7a-a51f-4842-b62a-62554f892fae": {
           "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
-          "disabled": true,
           "settings": {
             "stars_fill_color": "#240343",
             "star_size": 15,
