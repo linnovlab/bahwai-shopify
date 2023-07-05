@@ -280,6 +280,7 @@ $(document).ready(() => {
 				dataType: "JSON",
 				success: function (response) {
 					var products = response.products
+					console.log(products)
 					container.html('')
 
 					products.forEach(product => {
@@ -510,7 +511,12 @@ $(document).ready(() => {
 
 
 	// feat for rating products
-
+	const productStarsSetUp = () => {
+		const stars = $('div.spr-stars span')
+		stars.addClass('flex text-_main_color_dark')
+		$('#prod-stars-container').html(stars)
+	}
+	productStarsSetUp()
 });
 
 

@@ -1,4 +1,3 @@
-<h1>{{ product.metafields.reviews.rating.value }}</h1>
 <section class="text-_main_color_dark flex lg:flex-nowrap flex-wrap sm:mt-12 mt-0 desktop-width sm:mx-8 mx-0">
   <div class="left lg:mr-16 mx-auto lg:mb-0 mb-16">
     <div class="imgs flex flex-col gap-4">
@@ -26,23 +25,28 @@
   <div class="right sm:mx-0 mx-4 w-full">
     <div class="head flex justify-between">
       <div class="">
-        <h1 class="font-bold text-_main_color_dark sm:text-[24px] text-base sm:mb-3">
+        <h1 class="font-bold text-_main_color_dark sm:text-[24px] text-base sm:mb-3 capitalize">
           {{ product.title }}
         </h1>
         <div class="price sm:hidden gap-3 flex">
-          <p class="text-_main_color_dark font-medium text-lg mb-1">{{ product.price }}
+          <p class="text-_main_color_dark font-medium text-lg mb-1">{{ product.variants.price  }}
           </p>
           <span class="text-[#999999] text-base">l’unité</span>
         </div>
         <div class="avis flex gap-2 h-[1.1rem] mb-4">
-          <div class="stars flex text-_main_color_dark">
+          <div id="prod-stars-container" class="stars flex text-_main_color_dark">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
+          <span class="border-_main_color_dark border-b-2 text-[14px]">
+            {%- if product.metafields.reviews.rating_count != null -%}
+              {{ product.metafields.reviews.rating_count }}  avis
+            {%- endif -%}
+            
+          </span>
         </div>
       </div>
       <div class="hover:cursor-pointer">
@@ -228,6 +232,11 @@
   }
 {% endschema %}
 
+{% comment %} getting rating value {% endcomment %}
+{%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
+{% comment %} convertion string en integer {% endcomment %}
+{%- assign n = rates | first | plus:0 -%} 
+
 <script>
   const container = document.getElementById('related-products');
   fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => response.json()).then(({products}) => {
@@ -250,14 +259,24 @@
                 </div>
                 <p class="font-bold text-center px-2 mt-1">La gourmande aux noisettes</p>
                 <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
-                <div class="stars flex text-_main_color_dark">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <span class="border-_main_color_dark border-b-2 text-[14px]">26 avis</span>
+                  <div class="stars flex text-_main_color_dark">
+                    {% if product.metafields.reviews.rating_count != null %}
+                      {%- for i in (1..5) -%}
+                        {%- if i <= n -%}
+                          <i class="fas fa-star"></i>
+                          {%- else -%}
+                          <i class="fa-regular fa-star"></i>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {% endif %} 
+                  </div>
+                  <span class="border-_main_color_dark border-b-2 text-[14px]">
+                    {% if product.metafields.reviews.rating_count == null %}
+                      Soyez le 1er à noter!
+                    {% else %}
+                      {{ product.metafields.reviews.rating_count }} avis
+                    {% endif %} 
+                  </span>
                 </div>
                 <p class="font-medium">À partir de ${
           product.variants[0].price

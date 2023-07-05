@@ -36,26 +36,40 @@
     <div class="swiper swiper-nouveautes relative sm:px-8">
       <div class="swiper-wrapper items text-_main_color_dark">
         {% for product in collections['nouveautes'].products %}
+          {% comment %} getting rating value {% endcomment %}
+          {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
+          {%- assign n = rates | first | plus:0 -%} 
+
           <div class="swiper-slide">
             <a href="{{ product.url }}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
               <div class="img w-full">
                 <img
-                  src="{{ product |image_url: width: 600, height: 600 }} "
+                  src="{{ product |image_url: width: 600, height: 600 }}"
                   alt="{{ product.title }}"
                   class="w-full object-cover">
               </div>
               <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
               <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="stars flex text-sm">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
+                  <div class="stars flex text-sm">
+                    {% if product.metafields.reviews.rating_count != null %}
+                      {%- for i in (1..5) -%}
+                        {%- if i <= n -%}
+                          <i class="fas fa-star"></i>
+                          {%- else -%}
+                          <i class="fa-regular fa-star"></i>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+                  </div>
+                  <span class="border-_main_color_dark border-b text-_main_color_dark ">
+                    {% if product.metafields.reviews.rating_count == null %}
+                      Soyez le 1er à noter!
+                    {% else %}
+                      {{ product.metafields.reviews.rating_count }} avis
+                    {% endif %} 
+                  </span>
               </div>
-              <p class="font-medium">À partir de {{ product.price }} €
+              <p class="font-medium">À partir de {{ product.variants.price }} €
               </p>
             </a>
           </div>

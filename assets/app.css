@@ -878,6 +878,16 @@ html {
   margin-top: 14px;
 }
 
+.me-3{
+  -webkit-margin-end: 0.75rem;
+          margin-inline-end: 0.75rem;
+}
+
+.me-8{
+  -webkit-margin-end: 2rem;
+          margin-inline-end: 2rem;
+}
+
 .block{
   display: block;
 }
@@ -964,6 +974,10 @@ html {
 
 .h-full{
   height: 100%;
+}
+
+.h-\[61px\]{
+  height: 61px;
 }
 
 .max-h-\[8rem\]{
@@ -1988,6 +2002,11 @@ body{
   }
 }
 
+.star-empty{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 /* header */
 
 /* swiper */
@@ -2172,6 +2191,16 @@ div.spr-form-review-body label{
   display: none;
 }
 
+div.spr-summary-starrating{
+  display: none !important;
+}
+
+#prod-stars-container svg{
+  margin-right: 3px;
+  width: 20px !important;
+  height: 20px !important;
+}
+
 /* reviews list css */
 
 div.spr-review-header{
@@ -2207,10 +2236,7 @@ div.spr-review-footer a{
 }
 
 div.spr-header a.spr-summary-actions-newreview{
-  float: none !important;
-  margin-left: auto;
-  margin-right: auto;
-  display: none;
+  margin-top: 1rem;
   width: 100%;
   max-width: 13rem;
   border-bottom-width: 2px;
@@ -2228,11 +2254,9 @@ div.spr-summary .spr-starrating, div.spr-summary .spr-summary-caption{
 
 @media screen and (max-width: 641px) {
   div.spr-header a.spr-summary-actions-newreview{
-    display: block;
-  }
-
-  div.spr-form{
-    display: none;
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
