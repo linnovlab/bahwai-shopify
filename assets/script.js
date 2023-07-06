@@ -361,8 +361,8 @@ $(document).ready(() => {
 
 
 	/**
-	   * Ajax for filter product
-	   */
+	 * Ajax for filter product
+	 */
 	$('#form-filtre i').each((i, input) => {
 		$(input).on('click', (e) => {
 			$("#btn-valider-filter").trigger('click')
@@ -370,9 +370,8 @@ $(document).ready(() => {
 	})
 
 	/**
-	   * Ajax to add product in a cart
-	   */
-
+	 * Ajax to add product in a cart
+	 */
 	$(`form[action="/cart/add"]`).on('submit', (e) => {
 		e.preventDefault()
 	})
@@ -487,8 +486,11 @@ $(document).ready(() => {
 			url: window.Shopify.routes.root + 'cart/change.js',
 			dataType: "json",
 			success: function (response) {
-				// update the qty in 
+				// update panier inforamations
 				$(input).val(qty + ' x')
+				$('#qty-items-panier').text(response.item_count)
+				$('#total-price-panier').text(response.total_price)
+				// console.log(response)
 			}
 		});
 	}

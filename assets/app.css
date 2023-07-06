@@ -888,16 +888,6 @@ html {
   margin-top: 14px;
 }
 
-.me-3{
-  -webkit-margin-end: 0.75rem;
-          margin-inline-end: 0.75rem;
-}
-
-.me-8{
-  -webkit-margin-end: 2rem;
-          margin-inline-end: 2rem;
-}
-
 .block{
   display: block;
 }
@@ -988,10 +978,6 @@ html {
 
 .h-full{
   height: 100%;
-}
-
-.h-\[61px\]{
-  height: 61px;
 }
 
 .max-h-\[8rem\]{
@@ -1665,6 +1651,10 @@ html {
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-\[11px\]{
+  font-size: 11px;
 }
 
 .font-bold{

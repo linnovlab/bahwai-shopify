@@ -68,15 +68,15 @@
                         {%- endfor -%}
                       
                   </div>
+                  <span class="border-_main_color_dark border-b-2 text-[10px] mb-2">
+                    {% if product.metafields.reviews.rating_count == null %}
+                      Soyez le 1er à noter!
+                    {% else %}
+                      {{ product.metafields.reviews.rating_count }} avis
+                    {% endif %} 
+                  </span>
                 </div>
               {%- endif -%}
-              <span class="border-_main_color_dark border-b-2 text-[10px] mb-2">
-                {% if product.metafields.reviews.rating_count == null %}
-                  Soyez le 1er à noter!
-                {% else %}
-                  {{ product.metafields.reviews.rating_count }} avis
-                {% endif %} 
-              </span>
               <p class="font-medium text-center">À partir de 2,10€
               </p>
             </a>
