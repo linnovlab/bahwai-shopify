@@ -1,7 +1,7 @@
 <div class="mt-20">
   <div class="content pb-[10rem] mx-8">
     <h1 class="title mb-8">Créer un compte Bahwai</h1>
-    {% form 'create_customer', return_to: routes.root_url %}
+    {% form 'create_customer', novalidate: 'novalidate', return_to: routes.root_url %}
       {{ form.errors | default_errors }}
       <div id="form-connexion" class="sm:max-w-[25rem] max-w-[100%] mx-auto w-full  flex flex-col items-center gap-4">
         <div class="item w-full">
