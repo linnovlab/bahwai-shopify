@@ -100,7 +100,8 @@ $(document).ready(() => {
 	/**
 	   * popup contactez-nous hide/show
 	   */
-	$('#btn-contact').on('click', function () {
+	$('#btn-contact').on('click', function (e) {
+		e.preventDefault()
 		$(this).fadeOut();
 		$('#form-contact').fadeIn();
 	});
