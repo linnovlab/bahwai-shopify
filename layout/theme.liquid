@@ -134,9 +134,9 @@
         {% section 'bh-nouveautes' %}
         {% section 'site-info-section' %}
         {% render 'bh-categories' %}
-        {% render 'bh-pour-un-monde' %}
-        {% render 'bh-map' %}
-        {% render 'bh-newsletter' %}
+        {% section 'bh-pour-un-monde' %}
+        {% section 'bh-map' %}
+        {% section 'bh-newsletter' %}
         {% render 'bh-faq' %}
         {% section 'bh-avis' %}
         {% render 'bh-rejoignez-nous' %}
@@ -156,8 +156,6 @@
 
     {% render 'footer-scripts' %}
 
-
-
     {% if template.name != '404' %}
       {% if template.name != 'login' %}
         {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
@@ -169,10 +167,7 @@
         {% render 'bh-footer-login' %}
       {% endif %}
     {% endif %}
-
-    <!--{%- if settings.predictive_search_enabled -%}
+    
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}-->
-
   </body>
 </html>

@@ -1,0 +1,28 @@
+<div style="background-image: url('{{ 'blanc.png' |asset_url }}');" class="p-4 my-8 img-center">
+    <div class="desktop-width flex flex-col gap-8 items-center">
+        <h2 class="title text-3xl text-center">{{ section.settings.title }} </h2>
+        <div class="content">
+            <p class="text-center text-_main_color_dark sm:text-base text-sm font-medium">Chez Bahwai, nous fabriquons
+                des produits respectueux de votre corps et de l'environnement, en utilisant des matériaux d'emballage
+                recyclables à l'infini et en sourçant nos ingrédients auprès d'agriculteurs éco-responsables.</p>
+        </div>
+        <a href="{{ collections[engagements].url }}" class="btn text-center">Découvrir comment</a>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Section",
+        "tag": "section",
+        "class": "section",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Titre",
+                "default": "Pour un monde meilleur"
+            }
+
+        ]
+    }
+{% endschema %}
