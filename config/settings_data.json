@@ -182,6 +182,8 @@
           "2a794cfb-5b3d-4b25-a4e8-e610f85c165f": {
             "type": "announcement",
             "settings": {
+              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_100x100_97fd4c2a-0c10-48d3-bc51-a8570bc92e09.webp",
+              "logo_google": "shopify:\/\/shop_images\/review.jpg",
               "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi soluta inventore perspiciatis cupiditate mollitia laudantium unde",
               "autheur": "Cristopher Teyssier",
               "date": "6. juin, 2022."
@@ -190,6 +192,8 @@
           "fd0c0195-2580-47de-8193-96c928f6f018": {
             "type": "announcement",
             "settings": {
+              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_100x100_97fd4c2a-0c10-48d3-bc51-a8570bc92e09.webp",
+              "logo_google": "shopify:\/\/shop_images\/review.jpg",
               "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi soluta inventore perspiciatis cupiditate mollitia laudantium unde",
               "autheur": "Cristopher Teyssier",
               "date": "6. juin, 2022."
