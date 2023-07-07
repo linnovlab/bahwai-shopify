@@ -69,7 +69,7 @@
                     {% endif %} 
                   </span>
               </div>
-              <p class="font-medium">À partir de {{ product.variants.price }} €
+              <p class="font-medium">À partir de {{ product.price | divided_by: 100 }} €
               </p>
             </a>
           </div>
