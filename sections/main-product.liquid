@@ -239,7 +239,9 @@
 
 <script>
   const container = document.getElementById('related-products');
-  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => response.json()).then(({products}) => {
+  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`)
+  .then(response => { response.json()} )
+  .then(({products}) => {
     var content = '';
     if (products.length > 0) {
       products.forEach(product => {
@@ -279,7 +281,7 @@
                   </span>
                 </div>
                 <p class="font-medium">À partir de ${
-          product.variants[0].price
+          product.price / 100
         } €
                 </p>
             </a>

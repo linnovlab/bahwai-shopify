@@ -465,7 +465,6 @@ $(document).ready(() => {
 			up.on('click', (e) => {
 				qty++
 				updateQtyProduct(JSON.stringify({ id: variant_id, quantity: qty }), input, qty)
-
 			})
 			down.on('click', (e) => {
 				qty--

@@ -9,7 +9,7 @@
             <div class="avis-item flex flex-col gap-2 sm:max-w-[306px] w-full rounded-sm p-2">
               <div class="flex">
                 <img
-                  src="{{ block.settings.user_img }}"
+                  src="{{ block.settings.user_img | img_url: '100x100' }}"
                   alt="profile"
                   class="rounded-[50%] me-2 w-12 h-auto">
                 <div class="flex justify-between w-full">
@@ -20,7 +20,7 @@
                     </p>
                   </div>
                   <img
-                    src="{{ block.settings.logo_google }}"
+                    src="{{ block.settings.logo_google | img_url: '100x100' }}"
                     alt="google"
                     class="w-6 self-start">
                 </div>
