@@ -2556,7 +2556,7 @@ footer .items li{
 /* actualites page */
 
 #nav-actualites a.active{
-  border-bottom: 2px solid var(--red-color);
+  border-bottom: 3px solid var(--red-color);
 }
 
 .hover\:cursor-pointer:hover{

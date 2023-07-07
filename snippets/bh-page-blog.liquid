@@ -6,10 +6,7 @@
   }
 </style>
 <div style="background-image: url('{{ 'bannerblog.png' |asset_url }}');" class="banner-blog img-center sm:h-screen h-[14rem]"></div>
-{% for article in blogs.news.articles %}
-  <h1>{{ article.title }}</h1>
-  {{ article.title | link_to: article.url }}
-{% endfor %}
+
 <div class="actualites-header flex flex-col justify-center items-center mb-6 mt-8 desktop-width">
   <h2 class="title text-2xl text-center">Nos actualités</h2>
   <p class="text-center mb-4 text-_main_color_dark">Vivez toute l’actualité Bahwai</p>
@@ -67,7 +64,7 @@
       </div>
       <div class="desc text-sm">
         <h5 class="font-bold text-_main_color_dark text-base">{{ article.title }}</h5>
-        <p class="text-gray-400">{{ article.content | newline_to_br }}</p>
+        <p class="text-gray-400">{{ article.content | escape }}</p>
         <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
           <span class="font-bold">Lire le blog</span>
           <img

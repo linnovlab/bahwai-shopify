@@ -541,6 +541,22 @@ $(document).ready(() => {
 	}
 
 
+	try {
+		$('#nav-actualites a').each((i, link) => {
+			$(link).on('click', function (e) {
+				$('#nav-actualites a').each((i, a) => {
+					if ($(a).hasClass('active')) {
+						$(a).removeClass('active')
+					}
+				})
+				e.preventDefault()
+				$(this).addClass('active')
+			})
+		})
+
+	} catch (e) {
+
+	}
 
 
 });
