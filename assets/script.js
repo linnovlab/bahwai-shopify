@@ -408,45 +408,57 @@ $(document).ready(() => {
 	const updatePanier = (cart) => {
 		const items = cart.items
 		var content = ''
-
-		items.forEach((item) => {
-			content += `
-			<div class="prod flex px-5">
-			<a href="${item.url}" class="flex">
-				<img
-				class="h-[61px] w-[61px] me-3"
-				src="${item.image}"
-				alt="produit">
-				<div class="desc">
-				<p class="font-medium text-_main_color_dark">${item.title}</p>
-				<p class="text-[12px] font-medium text-_main_color_dark mt-1">${item.price}€ l’unité</p>
+		if (items.length > 0) {
+			items.forEach((item) => {
+				content += `
+				<div class="prod flex px-5">
+				<a href="${item.url}" class="flex">
+					<img
+					class="h-[61px] w-[61px] me-3"
+					src="${item.image}"
+					alt="produit">
+					<div class="desc">
+					<p class="font-medium text-_main_color_dark">${item.title}</p>
+					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${item.price}€ l’unité</p>
+					</div>
+				</a>
 				</div>
-			</a>
-			</div>
 
-			<form action="/cart" method="POST" class="flex mb-4 px-5 mt-4" id="form-panier">
-				<input id="prod-variant-id" type="hidden" value="${item.variant_id}">
-				<input
-					class="w-16 ms-12"
-					name="quantity"
-					type="text"
-					id="input-produit"
-					min="1"
-					max="20"
-					value="${item.quantity} x">
-				<button
-					class="me-8"
-					type="button"
-					id="down">-</button>
-				<button type="button" id="up">+</button>
-			</form>
-      	`})
+				<form action="/cart" method="POST" class="flex mb-4 px-5 mt-4" id="form-panier">
+					<input id="prod-variant-id" type="hidden" value="${item.variant_id}">
+					<input
+						class="w-16 ms-12"
+						name="quantity"
+						type="text"
+						id="input-produit"
+						min="1"
+						max="20"
+						value="${item.quantity} x">
+					<button
+						class="me-8"
+						type="button"
+						id="down">-</button>
+					<button type="button" id="up">+</button>
+				</form>
+			`})
+		} else {
+			content = '<p class="text-center mt-8 text-gray-500 text-lg">Votre panier est vide</p>'
+			hidePayement()
+		}
 
 		$('#panier-items-container').html(content)
 		$('#qty-items-panier').text(cart.item_count)
 		$('#total-price-panier').text(cart.total_price)
 
 		updateProduct()
+	}
+
+	/**
+	 * hide the payement btns
+	 */
+	const hidePayement = () => {
+		$('#payment-div').fadeOut(0)
+		$('#payment-div').prev().prev('h2').fadeOut(0)
 	}
 
 	/**
@@ -487,7 +499,12 @@ $(document).ready(() => {
 			dataType: "json",
 			success: function (response) {
 				// update panier inforamations
-				$(input).val(qty + ' x')
+				if (qty <= 0) {
+					$('#panier-items-container').html('<p class="text-center mt-8 text-gray-500 text-lg">Votre panier est vide</p>')
+					hidePayement()
+				} else {
+					$(input).val(qty + ' x')
+				}
 				$('#qty-items-panier').text(response.item_count)
 				$('#total-price-panier').text(response.total_price)
 				// console.log(response)
