@@ -520,6 +520,29 @@ $(document).ready(() => {
 		$('#prod-stars-container').html(stars)
 	}
 	productStarsSetUp()
+
+	/**
+	 * Form Compte recover feat hide/show
+	 */
+
+	try {
+		$('#recover').on('click', (e) => {
+			e.preventDefault()
+			$('#form-recover').fadeIn(0)
+			$('#form-login').fadeOut(0)
+		})
+		$('#cancel').on('click', (e) => {
+			e.preventDefault()
+			$('#form-recover').fadeOut(0)
+			$('#form-login').fadeIn(0)
+		})
+	} catch (e) {
+		console.log(e)
+	}
+
+
+
+
 });
 
 
