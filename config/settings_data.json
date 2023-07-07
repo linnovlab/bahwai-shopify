@@ -141,7 +141,6 @@
         "settings": {
           "annonce": "Profitez de -20% pour votre première commande",
           "menu": "main-menu",
-          "logo_bahwai": "shopify:\/\/shop_images\/icon_bahwai.svg",
           "video_url": ""
         }
       },
@@ -163,8 +162,8 @@
           "2772879e-ecfd-48ff-a0bb-d3b83a09e43d": {
             "type": "announcement",
             "settings": {
-              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_156207d7-5a91-42fd-be8f-15ee2040412a.jpg",
-              "logo_google": "shopify:\/\/shop_images\/pubsearch2.png",
+              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_100x100_97fd4c2a-0c10-48d3-bc51-a8570bc92e09.webp",
+              "logo_google": "shopify:\/\/shop_images\/review.jpg",
               "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi soluta inventore perspiciatis cupiditate mollitia laudantium unde",
               "autheur": "Cristopher Teyssier",
               "date": "6. juin, 2022."
@@ -173,6 +172,8 @@
           "10729d2d-8561-48c0-a298-5ef59e9805cb": {
             "type": "announcement",
             "settings": {
+              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_100x100_97fd4c2a-0c10-48d3-bc51-a8570bc92e09.webp",
+              "logo_google": "shopify:\/\/shop_images\/review.jpg",
               "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi soluta inventore perspiciatis cupiditate mollitia laudantium unde",
               "autheur": "Cristopher Teyssier",
               "date": "6. juin, 2022."
@@ -203,6 +204,26 @@
         ],
         "settings": {
           "titre": "Leurs avis"
+        }
+      },
+      "bh-pour-un-monde": {
+        "type": "bh-pour-un-monde",
+        "settings": {
+          "title": "Pour un monde meilleur"
+        }
+      },
+      "bh-map": {
+        "type": "bh-map",
+        "settings": {
+          "title": "Trouvez le magasin le plus proche de chez vous",
+          "map": "<iframe class=\"w-full\" src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d30870.723463074584!2d-17.513293145502004!3d14.721611847124374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec16d52737c340b%3A0x3f7058593d413bed!2sOuakam%2C%20Dakar!5e0!3m2!1sfr!2ssn!4v1686314742194!5m2!1sfr!2ssn\" height=\"450\" style=\"border:0;\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+        }
+      },
+      "bh-newsletter": {
+        "type": "bh-newsletter",
+        "settings": {
+          "title": "Je souhaite être prévenu des prochaines ouvertures +",
+          "form": ""
         }
       }
     },
