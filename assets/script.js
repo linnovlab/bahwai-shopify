@@ -16,7 +16,6 @@ $(document).ready(() => {
   $('#open-bars').on('click', () => {
     $('#menu-bars').slideDown();
     $('body').css('overflow', 'hidden');
-    console.log($('#menu-bars'));
   });
   $('#close-bars').on('click', () => {
     $('#menu-bars').slideUp();
@@ -569,7 +568,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) {}
+  } catch (e) { }
 });
 
 try {

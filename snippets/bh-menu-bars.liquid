@@ -1,4 +1,4 @@
-<div role="navigation" id="menu-bars" class="absolute z-[100] top-0 left-0 w-full h-full bg-white hidden">
+<div role="navigation" id="menu-bars" class="absolute z-[100] top-0 left-0 w-full h-screen bg-white hidden">
     <p class="text-_main_color_dark my-4 mx-4 w-28 font-bold flex items-center gap-4">
         <i class="fas fa-xmark text-[1.5rem] hover:cursor-pointer" id="close-bars"></i>
         <span>Menu</span>
@@ -12,21 +12,13 @@
             </button>
             <div class="panel hidden pb-4">
                 <ul class="ps-4">
-                    <li class="pb-[10px]">
-                        <a href="#" title="Boissons" class="border-b border-_main_color_dark">Boissons</a>
-                    </li>
-                    <li class="pb-[10px]">
-                        <a href="#" title="Chocolats" class="border-b border-_main_color_dark">Chocolats</a>
-                    </li>
-                    <li class="pb-[10px]">
-                        <a href="#" title="Accessoires" class="border-b border-_main_color_dark">Accessoires </a>
-                    </li>
-                    <li class="pb-[10px]">
-                        <a href="#" title="Offres du moment" class="border-b border-_main_color_dark">Offres du moment </a>
-                    </li>
-                    <li class="pb-[10px]">
-                        <a href="#" title="Nouveautés" class="border-b border-_main_color_dark">Nouveautés</a>
-                    </li>
+                    {% for link in linklists['liens-categories'].links %}
+                        {% if link.title != 'Autres' %}
+                            <li class="pb-[10px]">
+                                <a href="{{ link.url }}" title="{{ link.title }}" data-handle="{{ link.handle }}" class="border-b border-_main_color_dark">{{ link.title }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
         </div>
