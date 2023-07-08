@@ -626,6 +626,10 @@ html {
   top: 14rem;
 }
 
+.bottom-\[-63px\]{
+  bottom: -63px;
+}
+
 .isolate{
   isolation: isolate;
 }
@@ -991,6 +995,10 @@ html {
 
 .h-screen{
   height: 100vh;
+}
+
+.h-\[520px\]{
+  height: 520px;
 }
 
 .max-h-\[8rem\]{
