@@ -241,7 +241,7 @@
         "type": "bh-partenaire",
         "settings": {
           "title": "Rejoint la famille",
-          "description": "<p>tu souhaites proposer nos produits ou devenir notre égérie ? <em>BahWai <\/em>laisses nous un message avec tes coordonnées et ton projet. Nous te recontacterons dans les 48h <\/p>",
+          "description": "<p>tu souhaites proposer nos produits ou devenir notre égérie ? <em>BahWai <\/em>laisses nous un message avec tes coordonnées et ton projet. <\/p><p>Nous te recontacterons dans les 48h <\/p>",
           "btn_text": "Remplir le formulaire"
         }
       }
