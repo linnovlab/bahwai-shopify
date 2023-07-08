@@ -687,16 +687,17 @@ try {
 }
 
 const mapFinder = () => {
-  let key = 'AIzaSyC_ltV0bno5e_SGphz9nSYy1hAqZdKj7Ys';
-  $.ajax({
-    type: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-    url:
-      'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=' +
-      key,
-    dataType: 'json',
-    success: function (response) {
-      console.log(response);
-    },
-  });
+  const key = 'AIzaSyC_ltV0bno5e_SGphz9nSYy1hAqZdKj7Ys';
+  const url =
+    'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=%2B16502530000&inputtype=phonenumber&key=' +
+    key;
+
+  axios
+    .get(url)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 };
