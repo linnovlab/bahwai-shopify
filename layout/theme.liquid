@@ -122,13 +122,18 @@
             </p>
           </div>
           <style>
-            @media screen and (max-width: 640px) {
+            @media screen and (max-width: 641px) {
               .wave-index {
                 background-image: url('{{ 'Vague-Mobile.svg' |asset_url }}');
               }
             }
+            @media screen and (min-width: 641px) {
+              .wave-index {
+                background-image: url('{{ 'Vague-desktop.svg' |asset_url }}');
+              }
+            }
           </style>
-          <div style="background-image: url('{{ 'Vague-desktop.svg' |asset_url }}');" class="wave-index absolute sm:bottom-[-16px] bottom-[-63px] img-center bg-no-repeat h-[27px] w-full"></div>
+          <div class="wave-index absolute sm:bottom-[-16px] bottom-[-63px] img-center bg-no-repeat h-[27px] w-full"></div>
         </section>
 
         {% section 'bh-nouveautes' %}
