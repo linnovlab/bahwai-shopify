@@ -723,6 +723,11 @@ html {
   margin-bottom: 2rem;
 }
 
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .-mb-10 {
   margin-bottom: -2.5rem;
 }
@@ -1791,6 +1796,10 @@ html {
 .text-yellow-300 {
   --tw-text-opacity: 1;
   color: rgb(253 224 71 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .outline-none {
@@ -2874,6 +2883,21 @@ footer .items li {
 }
 
 @media (min-width: 768px) {
+  .md\:mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+
+  .md\:mx-20 {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .md\:mx-10 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -2884,6 +2908,11 @@ footer .items li {
 
   .md\:h-\[30rem\] {
     height: 30rem;
+  }
+
+  .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .md\:text-base {
