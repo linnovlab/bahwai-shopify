@@ -220,7 +220,7 @@
         "type": "bh-map",
         "settings": {
           "title": "Trouvez le magasin le plus proche de chez vous",
-          "map": "<iframe class=\"w-full\" src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d30870.723463074584!2d-17.513293145502004!3d14.721611847124374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec16d52737c340b%3A0x3f7058593d413bed!2sOuakam%2C%20Dakar!5e0!3m2!1sfr!2ssn!4v1686314742194!5m2!1sfr!2ssn\" height=\"450\" style=\"border:0;\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+          "map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d987.0616735681457!2d2.059129358055656!3d48.76384206987419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e680c31dc1b69f%3A0xf9ae5d2d31ac9864!2s26%20Av.%20Ren%C3%A9%20Duguay%20Trouin%2C%2078960%20Voisins-le-Bretonneux!5e0!3m2!1sfr!2sfr!4v1688780105846!5m2!1sfr!2sfr\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
         }
       },
       "bh-newsletter": {
