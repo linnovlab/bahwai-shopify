@@ -990,6 +990,10 @@ html {
   height: 100%;
 }
 
+.h-\[40rem\] {
+  height: 40rem;
+}
+
 .max-h-\[8rem\] {
   max-height: 8rem;
 }
@@ -1676,6 +1680,10 @@ html {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[8px\] {
+  font-size: 8px;
 }
 
 .font-bold {
@@ -2674,6 +2682,10 @@ footer .items li {
     margin-top: 1rem;
   }
 
+  .sm\:mt-8 {
+    margin-top: 2rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -2842,6 +2854,10 @@ footer .items li {
     padding-inline-start: 0px;
   }
 
+  .sm\:pt-8 {
+    padding-top: 2rem;
+  }
+
   .sm\:text-\[24px\] {
     font-size: 24px;
   }
@@ -2864,6 +2880,20 @@ footer .items li {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-\[30rem\] {
+    height: 30rem;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
