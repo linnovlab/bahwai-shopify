@@ -2727,6 +2727,10 @@ footer .items li{
     height: 100vh;
   }
 
+  .sm\:h-\[23rem\]{
+    height: 23rem;
+  }
+
   .sm\:w-\[11rem\]{
     width: 11rem;
   }
@@ -2882,6 +2886,10 @@ footer .items li{
 
   .md\:h-\[30rem\]{
     height: 30rem;
+  }
+
+  .md\:h-\[38rem\]{
+    height: 38rem;
   }
 
   .md\:text-sm{
