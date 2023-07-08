@@ -8,9 +8,16 @@
         </h2>
       </div>
       <div style="background-image: url('{{ 'cat_Gummies.png' | asset_url}}');" class="img h-[250px] img-center flex justify-center items-center">
-        <h2 class="sm:text-[24px] font-bold">
-          <a href="{{ collections['gummies'].url }}" class="text-white">Gummies</a>
-        </h2>
+        <!--h2 class="sm:text-[24px] font-bold">
+        <a href="{{ collections['gummies'].url }}" class="text-white">Gummies</a>
+        </h2-->
+        <div class="img flex items-center flex-col gap-2 ">
+          <h2 class="sm:text-[24px] font-bold">Gummies</h2>
+          <a
+            href="{{ collections['gummies'].url }}"
+            role="button"
+            class="btn-cat sm:px-8 sm:py-2 p-[5px]">Arrive bientôt !</a>
+        </div>
       </div>
     </div>
     <div class="cat-item flex flex-col sm:gap-4 gap-2 w-full">
