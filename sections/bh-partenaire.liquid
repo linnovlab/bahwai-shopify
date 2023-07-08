@@ -1,29 +1,33 @@
 <section style="background-image: url('{{ 'Orange.png' |asset_url}}');" class="partenaire text-white flex flex-col justify-center items-center gap-6 img-center my-8 py-8">
   <h2 class="title-white">{{ section.settings.title }}</h2>
-  <p class="text-center sm:text-base text-sm">Vous avez envie de rejoindre l’aventure Bahwai ?  Faites confiance à notre expertise</p>
+  <p class="text-center sm:text-base text-sm">{{ section.settings.description }}</p>
   <p>
     <a href="{{ pages.partenaire.url }}" class="btn">{{ section.settings.btn_text }}</a>
   </p>
 </section>
 
 {% schema %}
-    {
-        "name": "Section",
-        "tag": "section",
-        "class": "section",
-        "settings": [
-            {
-                "type": "text",
-                "id": "title",
-                "label": "Titre",
-                "default": "Devenir Partenaire"
-            },
-            {
-              "type": "text",
-              "id": "btn_text",
-              "label": "Button",
-              "default": "Remplir le formulaire "
-            }
-        ]
-    }
+  {
+    "name": "Section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre",
+        "default": "Rejoint la famille"
+      }, {
+        "type": "text",
+        "id": "description",
+        "label": "Description",
+        "default": "Vous avez envie de rejoindre l’aventure Bahwai ?  Faites confiance à notre expertise"
+      }, {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button",
+        "default": "Remplir le formulaire "
+      }
+    ]
+  }
 {% endschema %}
