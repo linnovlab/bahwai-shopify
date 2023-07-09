@@ -263,7 +263,7 @@ div.spr-summary .spr-starrating, div.spr-summary .spr-summary-caption{
 
 @media screen and (max-width: 641px) {
   div.spr-header a.spr-summary-actions-newreview{
-    @apply !float-none mx-auto;
+    /* @apply !float-none mx-auto; */
   }
   
 }

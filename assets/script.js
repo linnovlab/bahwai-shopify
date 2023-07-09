@@ -279,86 +279,48 @@ $(document).ready(() => {
       $(this).addClass('active');
       var handle = $(this).data('handle');
       const container = $('div.nouveautes-content .swiper-wrapper'),
-        btn = $('#btn-nouveautes');
+        btn = $('#btn-nouveautes'),
+        mainSwipper = $('#main-swipper');
 
       btn.prop('href', `/collections/${handle}`);
 
-      // ajax
-      $.ajax({
-        type: 'GET',
-        url: `/collections/${handle}/products.json`,
-        dataType: 'JSON',
-        success: function (response) {
-          var products = response.products;
-          console.log(products);
-          container.html('');
-
-          products.forEach((product) => {
-            container.append(`
-              <div class="swiper-slide">
-                <a href="/products/${product.handle}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-                  <div class="img w-full">
-                    <img
-                      src="${product.images[0].src}"
-                      alt="${product.title}"
-                      class="w-full object-cover h-[220px]" 
-                      >
-                  </div>
-                  <p class="font-semibold w-[10rem] text-center mt-2">${product.title}</p>
-                  <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                    <div class="stars flex text-sm">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
-                  </div>
-                  <p class="font-medium">À partir de ${product.variants[0].price} €
-                  </p>
-                </a>
-              </div>
-              `);
-          });
-
-          // reinitialize the swiper for it recalculate sizes
-          var swipperNouveautes = new Swiper('.swiper-nouveautes', {
-            slidesPerView: 1,
-            centeredSlides: false,
-            slidesPerGroupSkip: 2,
-            grabCursor: false,
-
-            // autoplay: {
-            // delay: 10000,
-            // disableOnInteraction: false,
-            // },
-            keyboard: {
-              enabled: true,
-            },
-            breakpoints: {
-              // responsivity
-              330: {
-                slidesPerView: 2,
-              },
-              780: {
-                slidesPerView: 3,
-              },
-              1000: {
-                slidesPerView: 5,
-              },
-              1200: {
-                slidesPerView: 6,
-              },
-            },
-            navigation: false,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-          });
+      // swipers wrappers content
+      mainSwipper.html($('#' + handle).html())
+      // renitialisation de swipper
+      new Swiper('.swiper-nouveautes', {
+        slidesPerView: 1,
+        centeredSlides: false,
+        slidesPerGroupSkip: 2,
+        grabCursor: false,
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false,
+        },
+        keyboard: {
+          enabled: true,
+        },
+        breakpoints: {
+          // responsivity
+          330: {
+            slidesPerView: 2,
+          },
+          780: {
+            slidesPerView: 3,
+          },
+          1000: {
+            slidesPerView: 5,
+          },
+          1200: {
+            slidesPerView: 6,
+          },
+        },
+        navigation: false,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
         },
       });
+
     });
   });
 
@@ -421,8 +383,7 @@ $(document).ready(() => {
 					alt="produit">
 					<div class="desc">
 					<p class="font-medium text-_main_color_dark">${item.title}</p>
-					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${
-            item.price / 100
+					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${item.price / 100
           }€ l’unité</p>
 					</div>
 				</a>
@@ -584,7 +545,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) {}
+  } catch (e) { }
 
   /**
    * newletter feat
