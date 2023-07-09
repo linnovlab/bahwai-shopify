@@ -96,19 +96,37 @@
           </a>
         </li>
         <li>
-          <a
-            href="{{ routes.account_login_url }}"
-            class="flex hover-nav-item"
-            title="Mon compte">
-            <img
-              src="{{'user.svg' | asset_url}}"
-              alt="mon compte"
-              class="mr-2"
-              width="auto"
-              height="auto"
-              loading="lazy">
-            <span class="sm:block hidden">Mon compte</span>
-          </a>
+          {% if shop.customer_accounts_enabled %}
+            {% if customer %}
+              <a
+                href="{{ routes.account_url }}"
+                class="flex hover-nav-item"
+                title="Mon compte">
+                <img
+                  src="{{'user.svg' | asset_url}}"
+                  alt="mon compte"
+                  class="mr-2"
+                  width="auto"
+                  height="auto"
+                  loading="lazy">
+                <span class="sm:block hidden">Mon compte</span>
+              </a>
+            {% else %}
+              <a
+                href="{{ routes.account_login_url }}"
+                class="flex hover-nav-item"
+                title="Mon compte">
+                <img
+                  src="{{'user.svg' | asset_url}}"
+                  alt="mon compte"
+                  class="mr-2"
+                  width="auto"
+                  height="auto"
+                  loading="lazy">
+                <span class="sm:block hidden">Mon compte</span>
+              </a>
+            {% endif %}
+          </li>
         </li>
       </ul>
     </div>
