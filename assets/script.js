@@ -726,6 +726,20 @@ function getUrlParameter(sParam) {
   return false;
 }
 
+function shareProduct(url, title) {
+  // Customize the sharing message as needed
+  var message = 'Check out this product: ' + title + ' - ' + url;
+
+  // Open a new window or tab with the sharing URL
+  window.open(
+    'https://example.com/share?url=' +
+      encodeURIComponent(url) +
+      '&text=' +
+      encodeURIComponent(message),
+    '_blank',
+  );
+}
+
 const mapFinder = () => {
   const key = 'AIzaSyC_ltV0bno5e_SGphz9nSYy1hAqZdKj7Ys';
   const url =

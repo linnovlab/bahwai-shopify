@@ -29,7 +29,7 @@
           {{ product.title }}
         </h1>
         <div class="price sm:hidden gap-3 flex">
-          <p class="text-_main_color_dark font-medium text-lg mb-1">{{ product.variants.price  }}
+          <p class="text-_main_color_dark font-medium text-lg mb-1">{{ product.variants.price }}
           </p>
           <span class="text-[#999999] text-base">l’unité</span>
         </div>
@@ -43,17 +43,22 @@
           </div>
           <span class="border-_main_color_dark border-b-2 text-[14px]">
             {%- if product.metafields.reviews.rating_count != null -%}
-              {{ product.metafields.reviews.rating_count }}  avis
+              {{ product.metafields.reviews.rating_count }} avis
             {%- endif -%}
-            
+
           </span>
         </div>
       </div>
       <div class="hover:cursor-pointer">
-        <img
-          src="{{ 'Partager.svg' |asset_url }}"
-          alt="partager"
-          title="Partager">
+        <a href="#" onclick="shareProduct('{{ product.url }}', '{{ product.title }}')">
+          <img
+            src="{{ 'Partager.svg' | asset_url }}"
+            alt="partager"
+            title="Partager"
+            width="auto"
+            height="auto"
+            loading="lazy">
+        </a>
       </div>
     </div>
     <div class="desc">
@@ -235,13 +240,13 @@
 {% comment %} getting rating value {% endcomment %}
 {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
 {% comment %} convertion string en integer {% endcomment %}
-{%- assign n = rates | first | plus:0 -%} 
+{%- assign n = rates | first | plus: 0 -%}
 
 <script>
   const container = document.getElementById('related-products');
-  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`)
-  .then(response => { response.json()} )
-  .then(({products}) => {
+  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => {
+    response.json()
+  }).then(({products}) => {
     var content = '';
     if (products.length > 0) {
       products.forEach(product => {
