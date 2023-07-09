@@ -131,7 +131,7 @@
       </div>
       <div class="right flex flex-col items-center sm:w-auto w-full">
         <div class="price sm:flex gap-3 mb-4 hidden">
-          <p class="text-_main_color_dark font-medium text-lg">{{ product.price | divided_by: 100 }} €</p>
+          <p class="text-_main_color_dark font-medium text-lg">{{ product.price | divided_by: 100.00 }} €</p>
           <span class="text-[#999999]">l’unité</span>
         </div>
         {%- form 'product', product, id: "form-command", class: "flex flex-col sm:w-auto w-full" -%}
