@@ -71,7 +71,7 @@ body{
   @apply max-h-full h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y fixed top-0 z-50 w-full bg-white sm:px-20 px-4 py-8;
 }
 .btn-etre-prevenu{
-  @apply hover:cursor-pointer mb-4 sm:text-sm text-_main_color_dark font-bold text-center border-b-2 border-_red_color w-[21rem] text-[12px] sm:w-[25rem] m-auto;
+  @apply hover:cursor-pointer mb-4 sm:text-sm text-_main_color_dark font-bold text-center border-b-2 border-_red_color w-[21rem] sm:text-[12px] text-[10px] sm:w-[24rem] m-auto;
 }
 .star-empty{
   @apply text-white;

@@ -1,8 +1,8 @@
-<section class="newsletter-1 ">
+<p class="hidden text-green-700"></p>
+<section class="newsletter-1 mt-12">
     <p id="btn-etre-prevenu" class="btn-etre-prevenu">{{ section.settings.title }}</p>
             
     <div>
-        {{ section.settings.form }}
         <form action="#" method="post" id="form-etre-prevenu" class="hidden flex-col gap-4 align-justify-center">
             <div class="flex justify-end max-w-[20rem] w-full mx-auto">
                 <p id="close-etre-prevenu" class="hover:cursor-pointer text-end font-bold border-b-2 text-_main_color_dark border-_main_color_dark">
@@ -11,18 +11,18 @@
                 </p>
             </div>
             <div class="form-item">
-                <input type="text" name="nom" placeholder="Nom" class="input">
+                <input type="text" name="nom" placeholder="Nom" class="input" required>
             </div>
             <div class="form-item">
-                <input type="tel" name="tel" placeholder="Numéro de téléphone" class="input">
+                <input type="tel" name="tel" placeholder="Numéro de téléphone" class="input" required>
             </div>
             <div class="form-item">
-                <input type="email" name="email" placeholder="Addresse mail" class="input">
+                <input type="email" name="email" placeholder="Addresse mail" class="input" required>
             </div>
             <div class="form-item">
-                <input type="text" name="postal" placeholder="Code postal" class="input">
+                <input type="text" name="postal" placeholder="Code postal" class="input" required>
             </div>
-            <button type="button" class="btn px-[5rem] py-2 text-white">Envoyer</button>
+            <button id="btn-newsletter" type="submit" class="btn px-[5rem] py-2 text-white">Envoyer</button>
         </form> 
     </div>
 </section>
@@ -38,11 +38,6 @@
                 "id": "title",
                 "label": "Titre",
                 "default": "Je souhaite être prévenu des prochaines ouvertures +"
-            },
-            {
-                "type": "html",
-                "id": "form",
-                "label": "Formulaire"
             }
 
         ]

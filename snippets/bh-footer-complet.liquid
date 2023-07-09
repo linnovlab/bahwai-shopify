@@ -1,12 +1,17 @@
 <footer>
   <style>
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 641px) {
       .bg-footer-s1 {
         background-image: url('{{ 'mobile-Rouge-Newsletter.png' |asset_url }}') !important;
       }
     }
+    @media screen and (min-width: 641px) {
+      .bg-footer-s1 {
+        background-image: url('{{ 'DS_Rouge-Newsletter.png' |asset_url }}') !important;
+      }
+    }
   </style>
-  <section style="background-image: url('{{ 'DS_Rouge-Newsletter.png' |asset_url }}');" class="contact bg-footer-s1 relative z-50 h-[40rem] md:h-[38rem] text-white flex flex-col justify-center items-center gap-6 img-center py-8 mt-20">
+  <section class="contact bg-footer-s1 relative z-50 h-[40rem] md:h-[38rem] text-white flex flex-col justify-center items-center gap-6 img-center py-8 mt-20">
     <h2 class="title-white text-center">Gardons contact !</h2>
     <p class="text-center">On est ensemble !</p>
     <p class="text-center sm:text-base text-sm mb-4">Suis nous pour profiter d'une remise immédiate de 15 % sur ta 1ʳᵉ commande et être informé de tous nos bons plans. Rassure-toi, nous aussi, on n'est pas trop pub

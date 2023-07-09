@@ -237,20 +237,24 @@ $(document).ready(() => {
    * faq links switch
    */
   $('#faq-links a').each((i, a) => {
-    $(a).on('click', function () {
+    $(a).on('click', function (e) {
+      e.preventDefault();
+      let href = $(this).attr('href')
+      let content = $(href)
+
+      // links
       $('#faq-links a').each((i, link) => {
         $(link).removeClass('active');
       });
       $(this).addClass('active');
-    });
-  });
 
-  /**
-   * disable faq-links
-   */
-  $('.faq-link').each((i, a) => {
-    $(a).on('click', (e) => {
-      e.preventDefault();
+      // container des questions
+      content.parent().children().each((i, item) => {
+        if ($(item).hasClass('flex')) {
+          $(item).removeClass('flex').addClass('hidden')
+        }
+      })
+      content.removeClass('hidden').addClass('flex')
     });
   });
 
@@ -569,6 +573,15 @@ $(document).ready(() => {
       });
     });
   } catch (e) { }
+
+  /**
+   * newletter feat
+   */
+  $('#form-etre-prevenu').on('submit', function () {
+    $(this).parent().html('<p class="text-center text-green-700">Vous recevrez une notification sur les prochaines ouvertures !</p>')
+  })
+
+
 });
 
 try {

@@ -1785,6 +1785,11 @@ html {
   color: rgb(253 224 71 / var(--tw-text-opacity));
 }
 
+.text-green-700{
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+
 .underline{
   text-decoration-line: underline;
 }
@@ -2022,7 +2027,7 @@ body{
   --tw-border-opacity: 1;
   border-color: rgb(234 64 56 / var(--tw-border-opacity));
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(36 3 67 / var(--tw-text-opacity));
@@ -2034,9 +2039,10 @@ body{
 
 @media (min-width: 640px){
   .btn-etre-prevenu{
-    width: 25rem;
+    width: 24rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
+    font-size: 12px;
   }
 }
 
