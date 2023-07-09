@@ -358,6 +358,7 @@ $(document).ready(() => {
               updatePanier(response);
             },
           });
+          showPayement();
           showPanier();
         }
       });
@@ -426,6 +427,14 @@ $(document).ready(() => {
   const hidePayement = () => {
     $('#payment-div').fadeOut(0);
     $('#payment-div').prev().prev('h2').fadeOut(0);
+  };
+
+  /**
+     * show the payement btns
+     */
+  const showPayement = () => {
+    $('#payment-div').fadeIn(0);
+    $('#payment-div').prev().prev('h2').fadeIn(0);
   };
 
   /**
