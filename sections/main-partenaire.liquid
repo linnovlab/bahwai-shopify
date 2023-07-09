@@ -6,18 +6,15 @@
       remplis ce formulaire (mais non, ce n'est pas une enquête de police) et on revient vers toi dans les 48h !
 
     </p>
-    <form
-      action="#"
-      method="post"
-      id="form-partenaire"
-      class="sm:max-w-[40rem] max-w-[100%] mx-auto w-full  flex flex-col items-center gap-6">
+    {% form 'contact', class: "sm:max-w-[40rem] max-w-[100%] mx-auto w-full  flex flex-col items-center gap-6", id: "form-partenaire" %}
+      {{ form.errors | default_errors }}
       <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
         <div class="item w-full">
           <input
             class="input focus:border-_orange_color transition-all duration-300"
             type="text"
             placeholder="Nom*"
-            name="nom"
+            name="contact[nom]"
             required>
         </div>
         <div class="item w-full">
@@ -25,7 +22,7 @@
             class="input focus:border-_orange_color transition-all duration-300"
             type="text"
             placeholder="Prénom*"
-            name="prenom"
+            name="contact[prenom]"
             required>
         </div>
       </div>
@@ -35,7 +32,7 @@
             class="input focus:border-_orange_color transition-all duration-300"
             type="tel"
             placeholder="Numéro de téléphone*"
-            name="tel"
+            name="contact[tel]"
             required>
         </div>
         <div class="item w-full">
@@ -43,7 +40,7 @@
             class="input focus:border-_orange_color transition-all duration-300"
             type="email"
             placeholder="Adresse mail*"
-            name="email"
+            name="contact[email]"
             required>
         </div>
       </div>
@@ -53,7 +50,7 @@
             class="input focus:border-_orange_color transition-all duration-300"
             type="text"
             placeholder="Ville du local commercial*"
-            name="vile"
+            name="contact[ville]"
             required>
         </div>
         <div class="item w-full">
@@ -61,7 +58,7 @@
             class="input focus:border-_orange_color transition-all duration-300"
             type="text"
             placeholder="Code postal*"
-            name="code_p"
+            name="contact[code_postale]"
             required>
         </div>
       </div>
@@ -89,7 +86,7 @@
       <div class="item w-full">
         <textarea
           class="border rounded-[5px] border-gray-500 w-full -mt-4 ps-4"
-          name="description"
+          name="contact[body]"
           id=""
           rows="10"
           placeholder="Dites nous tout !  "></textarea>
@@ -100,7 +97,12 @@
           type="submit"
           class="btn mb-4 py-2 px-[5rem] text-white">Envoyer</button>
       </div>
-    </form>
+      <input
+        type="hidden"
+        name="contact[objet]"
+        value=""
+        id="sujetFormContact">
+    {% endform %}
     <p class="mt-4 text-center">En poursuivant, vous acceptez toutes les conditions générales d’utilisations et notre politique de confidentialité</p>
   </div>
 
