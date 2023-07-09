@@ -58,7 +58,7 @@
     <div class="actu-item sm:max-w-[17rem]">
       <div style="background-image: url('{{ article.image | image_url: width: 900 }}');" class="img img-center flex items-end mb-4 h-[10rem]">
         <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
-          <p>01 avril 2023</p>
+          <p>{{ article.published_at | date: "%d %b %Y" }}</p>
           <p>Partenariat</p>
         </div>
       </div>
