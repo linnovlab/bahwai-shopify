@@ -25,7 +25,14 @@
         id="input-contact"
         name="email"
         class="w-100 outline-none bg-transparent border border-white ps-2 h-10 w-full">
-      <button type="submit" class="py-2 px-4 bg-white rounded-md"><img src="{{'send.svg' | asset_url}}" alt=""></button>
+      <button type="submit" class="py-2 px-4 bg-white rounded-md">
+        <img
+          src="{{'send.svg' | asset_url }}"
+          alt="send"
+          width="auto"
+          height="auto"
+          loading="lazy">
+      </button>
     </form>
     <p class="text-center text-[8px] md:text-[12px] px-3">
       Vous pouvez vous désabonner de la newsletter à tout moment. En vous inscrivant, vous acceptez les CGV et la déclaration de protection des données. Cette offre n'est pas cumulable avec d'autres réductions et est seulement valable pour les commandes d'une valeur supérieure ou égale à 20€. Les codes de réduction ne sont pas cumulables. Vous pouvez consulter notre politique de confidentialité ici.
@@ -34,28 +41,58 @@
   <section style="background-image: url('{{ 'Violet-Footer.png' |asset_url}}');" class="bg-footer-s2 img-center pt-[9rem] pb-8 -mt-[8rem] sm:px-4">
     <div class="desktop-width">
       <div id="logo-footer" class="logo flex justify-center sm:max-w-[20rem] w-full mb-5">
-        <a href="/"><img src="{{'icon bahwai.svg' | asset_url}}" alt=""></a>
+        <a href="/">
+          <img
+            src="{{'icon bahwai.svg' | asset_url }}"
+            alt="logo"
+            width="auto"
+            height="auto"
+            loading="lazy">
+        </a>
       </div>
       <div id="items-footer" class="items text-white md:flex justify-around flex-wrap gap-6 hidden">
         <div class="item flex flex-col gap-4 items-center">
           <p class="text-_orange_color">Voyager en une bouchée, Bahwai ?</p>
           <div class="flex items-center gap-4 justify-center">
-            <a href="https://www.facebook.com"><img src="{{'facebook-center-square.svg ' | asset_url}}" alt="facebook"></a>
-            <a href="https://www.instagram.com"><img src="{{'Instagram.svg ' | asset_url}}" alt="instagram"></a>
-            <a href="https://www.tiktok.com"><img src="{{'tiktok-square.svg ' | asset_url}}" alt="tiktok"></a>
+            <a href="https://www.facebook.com/profile.php?id=100091959369506">
+              <img
+                src="{{ 'facebook-center-square.svg ' | asset_url }}"
+                alt="facebook"
+                width="auto"
+                height="auto"
+                loading="lazy">
+            </a>
+            <a href="https://instagram.com/bahwai.fr?igshid=MTIzZWMxMTBkOA==">
+              <img
+                src="{{ 'Instagram.svg ' | asset_url }}"
+                alt="instagram"
+                width="auto"
+                height="auto"
+                loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@bahwai.fr?_t=8dqo9b4vRAh&_r=1">
+              <img
+                src="{{ 'tiktok-square.svg ' | asset_url }}"
+                alt="tiktok"
+                width="auto"
+                height="auto"
+                loading="lazy">
+            </a>
           </div>
           <p class="text-white">Développé avec ❤️ par Linnovlab
           </p>
         </div>
         <div class="item">
-          <h4 class="font-bold border-b-2 border-gray-400  mb-4"> On reste en contact !</h4>
+          <h4 class="font-bold border-b-2 border-gray-400  mb-4">
+            On reste en contact !</h4>
           <ul>
             <li><a href="{{ pages.contact.url }}">Nous contacter</a></li>
             <li><a href="{{ pages.partenaire.url }}">Devenir partenaire</a></li>
           </ul>
         </div>
         <div class="item">
-          <h4 class="font-bold border-b-2 border-gray-400  mb-4"> Tu veux en savoir plus ?</h4>
+          <h4 class="font-bold border-b-2 border-gray-400  mb-4">
+            Tu veux en savoir plus ?</h4>
           <ul>
             <li><a href="{{ pages.engagements.url }}">Nos engagements</a></li>
             <li><a href="#">Ils parlent de nous</a></li>
@@ -64,28 +101,37 @@
         <div class="item">
           <h4 class="font-bold border-b-2 border-gray-400  mb-4">Pour les curieux !</h4>
           <ul>
-            <li><a href="#">Une question ?</a></li>
-            <li><a href="#">Politique d’expédition</a></li>
-            <li><a href="#">Charte de confidentialité</a></li>
-            <li><a href="#">Cond. Générale de Vente</a></li>
-            <li><a href="#">Mentions légales</a></li>
+            {% for link in linklists['footer'].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
           </ul>
         </div>
         <div class="item">
           <h4 class="font-bold border-b-2 border-gray-400 mb-4">Moyens de paiement acceptés</h4>
           <div class="imgs flex items-center gap-4">
             <a href="#"><img
-                src="{{'martercard.png' | asset_url}}"
+                src="{{ 'martercard.png' | asset_url }}"
                 alt="martercard"
-                title="martercard"></a>
+                title="martercard"
+                loading="lazy"
+                width="auto"
+                height="auto"></a>
             <a href="#"><img
-                src="{{'visa.png' | asset_url}}"
+                src="{{ 'visa.png' | asset_url }}"
                 alt="visa"
-                title="visa"></a>
+                title="visa"
+                loading="lazy"
+                width="auto"
+                height="auto"></a>
             <a href="#"><img
-                src="{{'paypal.png' | asset_url}}"
+                src="{{ 'paypal.png' | asset_url }}"
                 alt="paypal"
-                title="paypal"></a>
+                title="paypal"
+                loading="lazy"
+                width="auto"
+                height="auto"></a>
           </div>
         </div>
       </div>
@@ -95,9 +141,24 @@
       <div class="flex flex-col gap-4 items-center">
         <p class="text-_orange_color">Voyager en une bouchée, Bahwai ?</p>
         <div class="flex items-center gap-4 justify-center">
-          <a href="https://www.facebook.com"><img src="{{'facebook-center-square.svg ' | asset_url}}" alt="facebook"></a>
-          <a href="https://www.instagram.com"><img src="{{'Instagram.svg ' | asset_url}}" alt="instagram"></a>
-          <a href="https://www.tiktok.com"><img src="{{'tiktok-square.svg ' | asset_url}}" alt="tiktok"></a>
+          <a href="https://www.facebook.com/profile.php?id=100091959369506"><img
+              src="{{ 'facebook-center-square.svg ' | asset_url }}"
+              alt="facebook"
+              loading="lazy"
+              width="auto"
+              height="auto"></a>
+          <a href="https://instagram.com/bahwai.fr?igshid=MTIzZWMxMTBkOA=="><img
+              src="{{ 'Instagram.svg ' | asset_url}}"
+              alt="instagram"
+              loading="lazy"
+              width="auto"
+              height="auto"></a>
+          <a href="https://www.tiktok.com/@bahwai.fr?_t=8dqo9b4vRAh&_r=1"><img
+              src="{{ 'tiktok-square.svg ' | asset_url}}"
+              alt="tiktok"
+              loading="lazy"
+              width="auto"
+              height="auto"></a>
         </div>
       </div>
       <div class="accordions text-white">
@@ -106,7 +167,9 @@
             type="button"
             id="btn-accordion"
             class="px-4 font-bold flex justify-between w-full">
-            <span> On reste en contact ! </span>
+            <span>
+              On reste en contact !
+            </span>
             <i class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
           </button>
           <div class="panel hidden mb-4">
@@ -149,22 +212,11 @@
           </button>
           <div class="panel hidden mb-4">
             <ul class="ps-4">
-              <li>
-                <a href="#">Une question ?
-                </a>
-              </li>
-              <li>
-                <a href="#">Politique d’expédition</a>
-              </li>
-              <li>
-                <a href="#">Charte de confidentialité</a>
-              </li>
-              <li>
-                <a href="#">Cond. Générale de Vente</a>
-              </li>
-              <li>
-                <a href="#">Mentions légales</a>
-              </li>
+              {% for link in linklists['footer'].links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -179,17 +231,26 @@
           <div class="panel hidden my-4">
             <div class="imgs flex items-center gap-4 ps-4">
               <a href="#" target="_blank"><img
-                  src="{{'martercard.png' | asset_url}}"
+                  src="{{ 'martercard.png' | asset_url }}"
                   alt="martercard"
-                  title="martercard"></a>
+                  title="martercard"
+                  loading="lazy"
+                  width="auto"
+                  height="auto"></a>
               <a href="#" target="_blank"><img
-                  src="{{'visa.png' | asset_url}}"
+                  src="{{ 'visa.png' | asset_url }}"
                   alt="visa"
-                  title="visa"></a>
+                  title="visa"
+                  loading="lazy"
+                  width="auto"
+                  height="auto"></a>
               <a href="#" target="_blank"><img
-                  src="{{'paypal.png' | asset_url}}"
+                  src="{{ 'paypal.png' | asset_url }}"
                   alt="paypal"
-                  title="paypal"></a>
+                  title="paypal"
+                  loading="lazy"
+                  width="auto"
+                  height="auto"></a>
             </div>
           </div>
         </div>
