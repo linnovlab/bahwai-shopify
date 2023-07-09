@@ -452,7 +452,7 @@ $(document).ready(() => {
 
     $('#panier-items-container').html(content);
     $('#qty-items-panier').text(cart.item_count);
-    $('#total-price-panier').text(cart.total_price);
+    $('#total-price-panier').text(parseFloat(cart.total_price) / 100);
 
     updateProduct();
   };
@@ -519,7 +519,7 @@ $(document).ready(() => {
           $(input).val(qty + ' x');
         }
         $('#qty-items-panier').text(response.item_count);
-        $('#total-price-panier').text(response.total_price);
+        $('#total-price-panier').text(parseFloat(response.total_price) / 100);
         // console.log(response)
       },
     });
