@@ -1,24 +1,19 @@
-{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
-
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
-    px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
-    px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}
-      px;
-      padding-bottom: {{ section.settings.padding_bottom }}
-      px;
+<style>
+  @media screen and (max-width: 640px) {
+    .banner-blog {
+      background-image: url('{{ 'bannerblogsm.png' |asset_url }}');
     }
   }
-{%- endstyle -%}
+</style>
+<div style="background-image: url('{{ 'bannerblog.png' |asset_url }}');" class="banner-blog  img-center sm:h-[20rem] h-[14rem]"></div>
 
+<section class="engagment mt-8 mb-4">
+  <div class="text-_main_color_dark my-8 mx-8">
+    <h2 class="title mb-8">{{ page.title | escape }}</h2>
 
+  </div>
+  {{ page.content }}
+</section>
 
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
   {% comment %} <h1 class="main-page-title page-title h0">
