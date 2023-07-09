@@ -704,6 +704,38 @@ try {
   console.log('erreur de swiper, non accessible dans cette page');
 }
 
+try {
+  const formContact = document.querySelector('#contact-form');
+} catch (error) {
+  console.log(error);
+}
+// Add an event listener for form submission
+formContact.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Perform any additional form validation or processing here
+
+  // Show the popup notification
+  showPopup();
+
+  // Submit the form
+  form.submit();
+});
+// Function to show the popup
+function showPopup() {
+  var popupContainer = document.querySelector('#popup-container');
+  var popup = document.querySelector('#popup');
+
+  popupContainer.style.display = 'block';
+  popup.style.display = 'block';
+
+  // Hide the popup after a certain duration (e.g., 3 seconds)
+  setTimeout(function () {
+    popupContainer.style.display = 'none';
+    popup.style.display = 'none';
+  }, 3000);
+}
+
 const mapFinder = () => {
   const key = 'AIzaSyC_ltV0bno5e_SGphz9nSYy1hAqZdKj7Ys';
   const url =

@@ -28,7 +28,13 @@
       </p>
     </div>
     <div id="form-contact" class="form-contact hidden mt-8 mx-4">
-      {% form 'contact', class: "sm:max-w-[40rem] max-w-[100%] mx-auto w-full flex flex-col items-center gap-6" %}
+      <div id="popup-container" style="display: none;">
+        <div id="popup" class="popup">
+          <p>Your form has been successfully sent!</p>
+        </div>
+      </div>
+
+      {% form 'contact', class: "sm:max-w-[40rem] max-w-[100%] mx-auto w-full flex flex-col items-center gap-6", id: "formContact" %}
         {{ form.errors | default_errors }}
         <div class="flex justify-end mb-8 w-full">
           <p id="close-form-contact" class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
