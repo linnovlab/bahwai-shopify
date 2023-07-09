@@ -74,7 +74,7 @@
     <div class="right-side w-full flex flex-col gap-4 sm:me-8 me-0">
       <div class="sm:px-0 px-[20px]">
         <h1 class="title text-center">{{ collection.title }}</h1>
-        <p class="text-center mb-8">{{ collection.custom.teasing_title }}</p>
+        <p class="text-center mb-8">{{ collection.metafields.custom.teasing_title }}</p>
         <div class="flex justify-end sm:hidden mb-4">
           <p id="open-filter-modal" class="flex gap-4 border-b text-_main_color_dark border-_main_color_dark hover:cursor-pointer">
             <img
@@ -132,7 +132,7 @@
         </div>
 
         <div class="desc text-sm text-[rgb(86,86,86)] mt-8">
-          <h5 class="text-lg font-bold text-_main_color_dark">{{ collection.custom.title_description_en_bas }}</h5>
+          <h5 class="text-lg font-bold text-_main_color_dark">{{ collection.metafields.custom.title_description_en_bas }}</h5>
           {{ collection.description }}
         </div>
       </div>
