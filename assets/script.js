@@ -421,7 +421,9 @@ $(document).ready(() => {
 					alt="produit">
 					<div class="desc">
 					<p class="font-medium text-_main_color_dark">${item.title}</p>
-					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${item.price}€ l’unité</p>
+					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${
+            item.price / 100
+          }€ l’unité</p>
 					</div>
 				</a>
 				</div>
@@ -452,7 +454,7 @@ $(document).ready(() => {
 
     $('#panier-items-container').html(content);
     $('#qty-items-panier').text(cart.item_count);
-    $('#total-price-panier').text(parseFloat(cart.total_price) / 100);
+    $('#total-price-panier').text(parseFloat(cart.total_price) / 100 + '€');
 
     updateProduct();
   };
@@ -519,7 +521,9 @@ $(document).ready(() => {
           $(input).val(qty + ' x');
         }
         $('#qty-items-panier').text(response.item_count);
-        $('#total-price-panier').text(parseFloat(response.total_price) / 100);
+        $('#total-price-panier').text(
+          parseFloat(response.total_price) / 100 + '€',
+        );
         // console.log(response)
       },
     });
