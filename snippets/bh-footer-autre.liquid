@@ -1,5 +1,10 @@
 <footer class="mt-20">
-  <section style="background-image: url('{{ 'Violet-Footer.png' |asset_url}}');" class="bg-[url('./img/Desktop/Violet-Footer.png')] img-center pt-20 pb-8 -mt-16 sm:px-4">
+  <style>
+    .bg-violet {
+      background-image: url('{{ 'Violet-Footer.png' |asset_url }}');
+    }
+  </style>
+  <section style="background-image: url('{{ 'Violet-Footer.png' |asset_url}}');" class="bg-violet img-center pt-20 pb-8 -mt-16 sm:px-4">
     <div class="desktop-width">
       <div id="logo-footer" class="logo flex justify-center sm:max-w-[20rem] w-full mb-5">
         <a href="/"><img src="{{'icon bahwai.svg' | asset_url}}" alt=""></a>

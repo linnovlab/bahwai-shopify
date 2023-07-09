@@ -105,8 +105,13 @@
   </div>
 
   <!-- notification -->
+  <style>
+    .bg-notif {
+      background-image: url('{{ 'Orange.png' |asset_url }}');
+    }
+  </style>
   <div id="notif-partenaire" class="hidden fixed top-[14rem] w-full">
-    <div class="bg-[url('./img/Desktop/Orange.png')] img-center rounded-md p-4 sm:mx-[8rem] mx-4">
+    <div class="bg-notif img-center rounded-md p-4 sm:mx-[8rem] mx-4">
       <div class="flex justify-end mb-8">
         <p id="close-notif-partenaire" class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
           <i class="fas fa-xmark text-[1.5rem]"></i>
@@ -114,10 +119,11 @@
         </p>
       </div>
 
-      <h2 class="text-white font-bold text-lg">Bahwai family</h2>
-      <p class="text-white">Nous vous remercions d’avoir remplit le formulaire. Nous reviendrons vers vous d’ici quelques jours. 
-        Bien à vous
+
+      <p class="text-white">Super, nous avons bien pris en compte ta demande, on revient vers toi dans les 48h ! (le temps de prendre un café, sortir le chien…) <br><br>
+        Cordialement
       </p>
+      <h2 class="text-white font-bold text-lg">Bahwai family</h2>
     </div>
   </div>
 </div>
