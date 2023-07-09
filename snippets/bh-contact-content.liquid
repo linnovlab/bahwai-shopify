@@ -9,11 +9,11 @@
   <div style="background-image: url('{{ 'bannerblog.png' |asset_url }}');" class="banner-contact img-center sm:h-[25rem] h-[17rem]"></div>
   <!-- contenu -->
   <section class="py-20 -mt-16 sm:px-4" id="smaForm">
-    <div class="flex flex-col justify-center items-center gap-2 mt-4">
+    <div class="flex flex-col justify-center items-center gap-2 mt-4 px-4">
       <h5 class="title">Besoin de nous parler ?</h5>
       <p class="text-_main_color_dark text-center">
         Comment est-ce qu’on peut t’aider ? On est prêts à écouter toutes tes questions, tes idées pour des nouveaux produits ou des nouvelles saveurs démentielles, ou même tes meilleures blagues. Ouais, on adore les blagues !
-        Pour ça, il suffit que tu cliques juste ici 👇.
+        Pour ça, il suffit que tu cliques juste ici 👇
 
       </p>
 
@@ -22,29 +22,28 @@
         id="btn-contact"
         class="btn mt-8 px-10 py-2 text-white">Contactez nous</a>
 
-      <p class="text-_main_color_dark text-center mt-8">
+      <p class="text-_main_color_dark text-center mt-8 px-4">
         Si tu es plutôt contact direct, pas de souci. Tu peux nous joindre directement sur what’s app en cliquant ici 👉
         <a href="https://wa.me/33630139872" class="underline">+33 6 30 13 98 72</a>. On est dispo du lundi au vendredi, de 9h à 18h. Mais attends, ne nous spam pas, hein !
       </p>
     </div>
     <div id="form-contact" class="form-contact hidden mt-8 mx-4">
-      <form
-        action="#"
-        method="post"
-        class="sm:max-w-[40rem] max-w-[100%] mx-auto w-full flex flex-col items-center gap-6">
+      {% form 'contact', class: "sm:max-w-[40rem] max-w-[100%] mx-auto w-full flex flex-col items-center gap-6" %}
+        {{ form.errors | default_errors }}
         <div class="flex justify-end mb-8 w-full">
           <p id="close-form-contact" class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
             <i class="fas fa-xmark text-[1.5rem]"></i>
             <span>Fermer</span>
           </p>
         </div>
+
         <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
           <div class="item w-full">
             <input
               class="input focus:border-_orange_color transition-all duration-300"
               type="text"
               placeholder="Nom*"
-              name="nom"
+              name="contact[nom]"
               required>
           </div>
           <div class="item w-full">
@@ -52,7 +51,7 @@
               class="input focus:border-_orange_color transition-all duration-300"
               type="text"
               placeholder="Prénom*"
-              name="prenom"
+              name="contact[prenom]"
               required>
           </div>
         </div>
@@ -61,16 +60,16 @@
             <input
               class="input focus:border-_orange_color transition-all duration-300"
               type="email"
-              placeholder="Adresse mail"
-              name="email"
+              placeholder="Adresse mail*"
+              name="contact[email]"
               required>
           </div>
           <div class="item w-full">
             <input
               class="input focus:border-_orange_color transition-all duration-300"
               type="tel"
-              placeholder="Numéro de téléphone"
-              name="tel"
+              placeholder="Numéro de téléphone*"
+              name="contact[tel]"
               required>
           </div>
         </div>
@@ -80,8 +79,7 @@
               class="input focus:border-_orange_color transition-all duration-300"
               type="text"
               placeholder="Numéro de commande"
-              name="vile"
-              required>
+              name="contact[numero_commande]">
           </div>
           <div class="item w-full">
             <div class="item">
@@ -96,10 +94,10 @@
                 </button>
                 <div class="panel panel-selected hidden" id="panel-partenaire">
                   <ul>
-                    <li class="selected" data-value="Colis toujours pas reçu">Colis toujours pas reçu</li>
-                    <li data-value="Proposition de partenariat">Proposition de partenariat</li>
-                    <li data-value="Remarques ou Suggestions">Remarques ou Suggestions</li>
-                    <li data-value="Autre">Autre</li>
+                    <li class="sujet_contact selected" data-value="Colis toujours pas reçu">Colis toujours pas reçu</li>
+                    <li class="sujet_contact" data-value="Proposition de partenariat">Proposition de partenariat</li>
+                    <li class="sujet_contact" data-value="Remarques ou Suggestions">Remarques ou Suggestions</li>
+                    <li class="sujet_contact" data-value="Autre">Autre</li>
                   </ul>
                 </div>
               </div>
@@ -110,7 +108,7 @@
         <div class="item w-full mt-8">
           <textarea
             class="border rounded-[5px] border-gray-500 w-full -mt-4 ps-4"
-            name="description"
+            name="contact[body]"
             id=""
             rows="10"
             placeholder="Dites nous tout !  "></textarea>
@@ -121,7 +119,107 @@
             type="submit"
             class="btn mb-4 py-2 px-[5rem] text-white">Envoyer</button>
         </div>
-      </form>
+
+        <input
+          type="hidden"
+          name="contact[objet]"
+          value=""
+          id="sujetFormContact">
+      {% endform %}
+      <!--form
+      action="#"
+      method="post"
+      class="sm:max-w-[40rem] max-w-[100%] mx-auto w-full flex flex-col items-center gap-6">
+      <div class="flex justify-end mb-8 w-full">
+      <p id="close-form-contact" class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
+      <i class="fas fa-xmark text-[1.5rem]"></i>
+      <span>Fermer</span>
+      </p>
+      </div>
+      <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
+      <div class="item w-full">
+      <input
+      class="input focus:border-_orange_color transition-all duration-300"
+      type="text"
+      placeholder="Nom*"
+      name="nom"
+      required>
+      </div>
+      <div class="item w-full">
+      <input
+      class="input focus:border-_orange_color transition-all duration-300"
+      type="text"
+      placeholder="Prénom*"
+      name="prenom"
+      required>
+      </div>
+      </div>
+      <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
+      <div class="item w-full">
+      <input
+      class="input focus:border-_orange_color transition-all duration-300"
+      type="email"
+      placeholder="Adresse mail"
+      name="email"
+      required>
+      </div>
+      <div class="item w-full">
+      <input
+      class="input focus:border-_orange_color transition-all duration-300"
+      type="tel"
+      placeholder="Numéro de téléphone"
+      name="tel"
+      required>
+      </div>
+      </div>
+      <div class="flex flex-wrap sm:flex-nowrap gap-4 w-full">
+      <div class="item w-full">
+      <input
+      class="input focus:border-_orange_color transition-all duration-300"
+      type="text"
+      placeholder="Numéro de commande"
+      name="vile"
+      required>
+      </div>
+      <div class="item w-full">
+      <div class="item">
+      <div class="accordions">
+      <button
+      type="button"
+      id="btn-accordion"
+      class="rounded-[5px] px-3 ps-2 h-10 w-[20rem] border border-gray-500 flex justify-between items-center">
+      <span id="layout">Choisissez un sujet
+      </span>
+      <i class="fa-sharp fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="panel panel-selected hidden" id="panel-partenaire">
+      <ul>
+      <li class="selected" data-value="Colis toujours pas reçu">Colis toujours pas reçu</li>
+      <li data-value="Proposition de partenariat">Proposition de partenariat</li>
+      <li data-value="Remarques ou Suggestions">Remarques ou Suggestions</li>
+      <li data-value="Autre">Autre</li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <div class="item w-full mt-8">
+      <textarea
+      class="border rounded-[5px] border-gray-500 w-full -mt-4 ps-4"
+      name="description"
+      id=""
+      rows="10"
+      placeholder="Dites nous tout !  "></textarea>
+      </div>
+      <div class="flex flex-col items-center">
+      <button
+      id="btn-partenaire"
+      type="submit"
+      class="btn mb-4 py-2 px-[5rem] text-white">Envoyer</button>
+      </div>
+      </form-->
       <p class="mt-4 text-center">En poursuivant, vous acceptez toutes les conditions générales d’utilisations et notre politique de confidentialité</p>
     </div>
   </section>

@@ -88,6 +88,7 @@ $(document).ready(() => {
         });
         $(this).addClass('selected');
         $('.accordions #layout').text($(this).text());
+        $('#sujetFormContact').val($(this).text());
       });
     });
   };
@@ -239,8 +240,8 @@ $(document).ready(() => {
   $('#faq-links a').each((i, a) => {
     $(a).on('click', function (e) {
       e.preventDefault();
-      let href = $(this).attr('href')
-      let content = $(href)
+      let href = $(this).attr('href');
+      let content = $(href);
 
       // links
       $('#faq-links a').each((i, link) => {
@@ -249,12 +250,15 @@ $(document).ready(() => {
       $(this).addClass('active');
 
       // container des questions
-      content.parent().children().each((i, item) => {
-        if ($(item).hasClass('flex')) {
-          $(item).removeClass('flex').addClass('hidden')
-        }
-      })
-      content.removeClass('hidden').addClass('flex')
+      content
+        .parent()
+        .children()
+        .each((i, item) => {
+          if ($(item).hasClass('flex')) {
+            $(item).removeClass('flex').addClass('hidden');
+          }
+        });
+      content.removeClass('hidden').addClass('flex');
     });
   });
 
@@ -572,16 +576,18 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) { }
+  } catch (e) {}
 
   /**
    * newletter feat
    */
   $('#form-etre-prevenu').on('submit', function () {
-    $(this).parent().html('<p class="text-center text-green-700">Vous recevrez une notification sur les prochaines ouvertures !</p>')
-  })
-
-
+    $(this)
+      .parent()
+      .html(
+        '<p class="text-center text-green-700">Vous recevrez une notification sur les prochaines ouvertures !</p>',
+      );
+  });
 });
 
 try {
