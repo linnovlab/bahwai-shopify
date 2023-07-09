@@ -12,16 +12,13 @@
     <h2 class="title mb-8">{{ page.title | escape }}</h2>
 
   </div>
-  {{ page.content }}
-</section>
-
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  {% comment %} <h1 class="main-page-title page-title h0">
-  {{ page.title | escape }}
-  </h1> {% endcomment %}<div class="rte">
+  <div class="text-_main_color_dark my-8 mx-8">
     {{ page.content }}
   </div>
-</div>
+
+</section>
+
+
 
 {% schema %}
   {
