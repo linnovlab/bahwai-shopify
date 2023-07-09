@@ -727,7 +727,7 @@ function getUrlParameter(sParam) {
 }
 
 function shareProduct(url, title) {
-  // Customize the sharing message as needed
+  /*// Customize the sharing message as needed
   var message = 'Check out this product: ' + title + ' - ' + url;
 
   // Open a new window or tab with the sharing URL
@@ -737,7 +737,7 @@ function shareProduct(url, title) {
       '&text=' +
       encodeURIComponent(message),
     '_blank',
-  );
+  );*/
 }
 
 const mapFinder = () => {
