@@ -1,5 +1,10 @@
 <main class="main-cats">
-  <div style="background-image: url({{ 'bannercategories.png' |asset_url }});" class="banner img-center sm:h-[25rem] h-[17rem]"></div>
+  {%- if collection.title == "Products" -%}
+    <div style="background-image: url({{ 'bannercategories.png' | asset_url }});" class="banner object-cover img-center sm:h-[25rem] h-[17rem]"></div>
+  {%- else -%}
+    <div style="background-image: url('{{ collection.image | img_url: width: 1000 }}');" class="banner object-cover img-center sm:h-[25rem] h-[17rem]"></div>  
+  {%- endif -%}
+  
   <section class="text-_main_color_dark flex mt-12 desktop-width">
     <div class="left-side sm:flex flex-col gap-4 max-w-[16.5rem] w-full me-[3rem] ps-8 hidden">
       <form
