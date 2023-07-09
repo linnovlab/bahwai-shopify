@@ -69,10 +69,13 @@ $(document).ready(() => {
   /**
    * notif partenaire hide/show
    */
-  let formPartenaireSubmited = getUrlParameter('technology');
-  $('#btn-partenaire').on('click', () => {
+  let formPartenaireSubmited = getUrlParameter('contact_posted');
+  if (formPartenaireSubmited) {
     $('#notif-partenaire').fadeIn().fadeOut(10000);
-  });
+  }
+  /*$('#btn-partenaire').on('click', () => {
+    $('#notif-partenaire').fadeIn().fadeOut(10000);
+  });*/
   $('#close-notif-partenaire').on('click', () => {
     $('#notif-partenaire').css('display', 'none');
   });
