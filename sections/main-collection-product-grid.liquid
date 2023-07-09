@@ -1,12 +1,12 @@
 <style>
   @media screen and (max-width: 641px) {
     .hero-collection {
-      background-image: url('{{ collection.image | image_url: height: 272  }}');
+      background-image: url('{{ collection.image | image_url: height: 272 }}');
     }
   }
 
   .hero-collection {
-    background-image: url('{{ collection.image | image_url: height: 400  }}');
+    background-image: url('{{ collection.image | image_url: height: 400 }}');
   }
 
   @media screen and (max-width: 641px) {
@@ -24,112 +24,116 @@
 
 <main class="main-cats">
   {%- if collection.title == "Products" -%}
-  <div style="background-image: url({{ 'bannercategories.png' | asset_url }});"
-    class="banner object-cover img-center sm:h-[25rem] h-[17rem]"></div>
+    <div style="background-image: url({{ 'bannercategories.png' | asset_url }});" class="banner object-cover img-center sm:h-[25rem] h-[17rem]"></div>
   {%- else -%}
-  <div class="banner hero-collection object-cover img-center sm:h-[25rem] h-[17rem]"></div>
-  <div class="wave-index img-center sm:-mt-[30px] -mt-[27px] sm:h-[30px] h-[27px] bg-no-repeat w-full"></div>
+    <div class="banner hero-collection object-cover img-center sm:h-[25rem] h-[17rem]"></div>
+    <div class="wave-index img-center sm:-mt-[30px] -mt-[27px] sm:h-[30px] h-[27px] bg-no-repeat w-full"></div>
   {%- endif -%}
 
   <section class="text-_main_color_dark flex mt-12 desktop-width">
     <div class="left-side sm:flex flex-col gap-4 max-w-[16.5rem] w-full me-[3rem] ps-8 hidden">
-      <form class="filter-form" id="form-filtre" method="get">
+      <form
+        class="filter-form"
+        id="form-filtre"
+        method="get">
         <div class="content flex flex-col gap-3 mb-8">
           <h4 class="font-extrabold text-lg border-b border-gray-500">Objectifs</h4>
           {%- for filter in collection.filters -%}
-          {% if filter.label == 'Framboise' %}
-          <h4 class="font-extrabold text-lg border-b border-gray-500 mt-4">Saveurs</h4>
-          {% elsif filter.label == 'Matin' %}
-          <h4 class="font-extrabold text-lg border-b border-gray-500 mt-4">À quel moment ?</h4>
-          {% endif %}
-          {%- for filter_value in filter.values -%}
-          <div class="filter-item relative flex gap-4">
-            <i class="fa-solid fa-check"></i>
-            <input type="checkbox" class="checkbox" name="{{ filter_value.param_name }}"
-              value="{{ filter_value.value }}" id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if
-              filter_value.active -%}checked{%- endif %} {% if filter_value.count==0 and filter_value.active==false
-              -%}disabled{%- endif %}>
-            <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label
-              }}
-              {%- if filter.active_values.size > 0 -%}
-              ({{ filter.active_values.size }})
-              {%- endif -%}
-            </label>
-          </div>
-          {%- endfor -%}
+            {% if filter.label == 'Framboise' %}
+              <h4 class="font-extrabold text-lg border-b border-gray-500 mt-4">Saveurs</h4>
+            {% elsif filter.label == 'Matin' %}
+              <h4 class="font-extrabold text-lg border-b border-gray-500 mt-4">À quel moment ?</h4>
+            {% endif %}
+            {%- for filter_value in filter.values -%}
+              <div class="filter-item relative flex gap-4">
+                <i class="fa-solid fa-check"></i>
+                <input
+                  type="checkbox"
+                  class="checkbox"
+                  name="{{ filter_value.param_name }}"
+                  value="{{ filter_value.value }}"
+                  id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                  {% if filter_value.active -%}checked{%- endif %}
+                  {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}>
+                <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label }}
+                  {%- if filter.active_values.size > 0 -%}
+                    ({{ filter.active_values.size }})
+                  {%- endif -%}
+                </label>
+              </div>
+            {%- endfor -%}
           {%- endfor -%}
         </div>
-        <button id="btn-valider-filter" class="btn invisible" type="submit">valider</button>
+        <button
+          id="btn-valider-filter"
+          class="btn invisible"
+          type="submit">valider</button>
       </form>
     </div>
 
     <div class="right-side w-full flex flex-col gap-4 sm:me-8 me-0">
       <div class="sm:px-0 px-[20px]">
         <h1 class="title text-center">{{ collection.title }}</h1>
-        <p class="text-center mb-8">Boostez votre journée avec notre canette énergisante naturelle et saine !</p>
+        <p class="text-center mb-8">{{ collection.custom.teasing_title }}</p>
         <div class="flex justify-end sm:hidden mb-4">
-          <p id="open-filter-modal"
-            class="flex gap-4 border-b text-_main_color_dark border-_main_color_dark hover:cursor-pointer">
-            <img src="{{ 'Filtrer.svg' |asset_url }}" alt="">
+          <p id="open-filter-modal" class="flex gap-4 border-b text-_main_color_dark border-_main_color_dark hover:cursor-pointer">
+            <img
+              src="{{ 'Filtrer.svg' |asset_url }}"
+              alt="filter"
+              width="auto"
+              height="auto"
+              loading="lazy">
             <span class="font-medium sm:text-base text-sm">Filtrer</span>
           </p>
         </div>
         <div id="collection-products-container" class="flex justify-around flex-wrap sm:gap-8 gap-2 items-center">
           {% for product in collection.products %}
-          {% comment %} getting rating value {% endcomment %}
-          {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
-          {%- assign n = rates | first | plus:0 -%}
+            {% comment %} getting rating value {% endcomment %}
+            {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
+            {%- assign n = rates | first | plus: 0 -%}
 
-          <div class="content-item sm:w-auto w-[9rem] text-sm">
-            <a href="{{ product.url }}"
-              class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-              <div class="img w-full">
-                <img src="{{ product |image_url: width: 600, height: 600 }}" alt="La gourmande aux noisettes"
-                  class="w-full">
-              </div>
-              <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
-              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="stars flex text-_main_color_dark text-sm">
-                  {% if product.metafields.reviews.rating_count != null %}
-                  {%- for i in (1..5) -%}
-                  {%- if i <= n -%} <i class="fas fa-star"></i>
-                    {%- else -%}
-                    <i class="fa-regular fa-star"></i>
-                    {%- endif -%}
-                    {%- endfor -%}
-                    {%- endif -%}
+            <div class="content-item sm:w-auto w-[9rem] text-sm">
+              <a href="{{ product.url }}" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+                <div class="img w-full">
+                  <img
+                    src="{{ product |image_url: width: 600, height: 600 }}"
+                    alt="La gourmande aux noisettes"
+                    class="w-full"
+                    width="auto"
+                    height="auto"
+                    loading="lazy">
                 </div>
-                <span class="border-_main_color_dark border-b-2 text-[11px]">
-                  {% if product.metafields.reviews.rating_count == null %}
-                  Soyez le 1er à noter!
-                  {% else %}
-                  {{ product.metafields.reviews.rating_count }} avis
-                  {% endif %}
-                </span>
-              </div>
-              <p class="font-medium">À partir de {{ product.price }} €
-              </p>
-            </a>
-          </div>
+                <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
+                <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                  <div class="stars flex text-_main_color_dark text-sm">
+                    {% if product.metafields.reviews.rating_count != null %}
+                      {%- for i in (1..5) -%}
+                        {%- if i <= n -%}
+                          <i class="fas fa-star"></i>
+                        {%- else -%}
+                          <i class="fa-regular fa-star"></i>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+                  </div>
+                  <span class="border-_main_color_dark border-b-2 text-[11px]">
+                    {% if product.metafields.reviews.rating_count == null %}
+                      Soyez le 1er à noter!
+                    {% else %}
+                      {{ product.metafields.reviews.rating_count }} avis
+                    {% endif %}
+                  </span>
+                </div>
+                <p class="font-medium">À partir de {{ product.price }} €
+                </p>
+              </a>
+            </div>
           {% endfor %}
         </div>
 
         <div class="desc text-sm text-[rgb(86,86,86)] mt-8">
-          <h5 class="text-lg font-bold text-_main_color_dark">Boissons Bahwai adapté pour tout type d’objectifs et
-            préparées avec des ingrédients Français</h5>
-          <p>Les boissons énergisantes sont devenues une option populaire pour les personnes qui cherchent à stimuler
-            leur énergie et leur concentration. Ces boissons contiennent souvent des ingrédients tels que la caféine, la
-            taurine, le guarana et le ginseng, qui sont connus pour leurs effets stimulants sur le corps.</p>
-          <br>
-          <p>Les boissons énergisantes peuvent être consommées avant une séance d'entraînement pour améliorer les
-            performances sportives ou pour aider à rester alerte pendant les longues journées de travail. Cependant, il
-            est important de noter que ces boissons peuvent également avoir des effets secondaires, tels que l'insomnie,
-            l'anxiété et la déshydratation.</p>
-          <br>
-          <p>Lorsque vous cherchez des boissons énergisantes, assurez-vous de lire les étiquettes attentivement pour
-            connaître les ingrédients et les quantités de chaque ingrédient. Recherchez des produits qui contiennent des
-            ingrédients naturels et évitez les boissons qui contiennent des quantités élevées de sucre ou d'autres
-            additifs.</p>
+          <h5 class="text-lg font-bold text-_main_color_dark">{{ collection.custom.title_description_en_bas }}</h5>
+          {{ collection.description }}
         </div>
       </div>
 
@@ -141,7 +145,10 @@
         </div>
         <div class="accordions text-_main_color_dark flex flex-col mt-4 mb-16 sm:mx-auto sm:max-w-[30rem] w-full">
           <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-2">
-            <button type="button" id="btn-accordion" class="text-start px-4  font-bold flex justify-between w-full">
+            <button
+              type="button"
+              id="btn-accordion"
+              class="text-start px-4  font-bold flex justify-between w-full">
               <span>Comment modifier ma commande ?
               </span>
               <i class="fas fa-chevron-down transition-transform duration-500"></i>
@@ -151,7 +158,10 @@
             </div>
           </div>
           <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-4">
-            <button type="button" id="btn-accordion" class="text-start px-4  font-bold w-full flex justify-between">
+            <button
+              type="button"
+              id="btn-accordion"
+              class="text-start px-4  font-bold w-full flex justify-between">
               <span>Je me suis trompé d’adresse de livraison
               </span>
               <i class="fas fa-chevron-down transition-transform duration-500"></i>
@@ -161,7 +171,10 @@
             </div>
           </div>
           <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-4">
-            <button type="button" id="btn-accordion" class="text-start px-4  font-bold w-full flex justify-between">
+            <button
+              type="button"
+              id="btn-accordion"
+              class="text-start px-4  font-bold w-full flex justify-between">
               <span>Il me manque un produit dans ma commande</span>
               <i class="fas fa-chevron-down transition-transform duration-500"></i>
             </button>
@@ -170,7 +183,10 @@
             </div>
           </div>
           <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-4">
-            <button type="button" id="btn-accordion" class=" text-start px-4  font-bold w-full flex justify-between">
+            <button
+              type="button"
+              id="btn-accordion"
+              class=" text-start px-4  font-bold w-full flex justify-between">
               <span>Je n’ai pas reçu ma commande</span>
               <i class="fas fa-chevron-down transition-transform duration-500"></i>
             </button>
@@ -180,7 +196,10 @@
           </div>
 
           <div class="accordion-item border-b-2 border-gray-300 w-full mx-auto my-4">
-            <button type="button" id="btn-accordion" class=" text-start px-4  font-bold w-full flex justify-between">
+            <button
+              type="button"
+              id="btn-accordion"
+              class=" text-start px-4  font-bold w-full flex justify-between">
               <span>Où est ma commande ?
               </span>
               <i class="fas fa-chevron-down transition-transform duration-500"></i>
