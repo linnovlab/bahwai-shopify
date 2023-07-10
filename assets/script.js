@@ -385,7 +385,7 @@ $(document).ready(() => {
 					<div class="desc">
 					<p class="font-medium text-_main_color_dark">${item.title}</p>
 					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${item.price / 100
-          }€ l’unité</p>
+          }.00 € l’unité</p>
 					</div>
 				</a>
 				</div>

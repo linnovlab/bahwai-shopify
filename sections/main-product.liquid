@@ -29,7 +29,7 @@
           {{ product.title }}
         </h1>
         <div class="price sm:hidden gap-3 flex">
-          <p class="text-_main_color_dark font-medium text-lg mb-1">{{ product.variants.price }}
+          <p class="text-_main_color_dark font-medium text-lg mb-1">{{ product.price | divided_by: 100 | append: '.00€' }}
           </p>
           <span class="text-[#999999] text-base">l’unité</span>
         </div>

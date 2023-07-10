@@ -677,11 +677,6 @@ html {
   margin-right: 1rem;
 }
 
-.mx-5{
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
 .mx-6{
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -843,11 +838,6 @@ html {
           margin-inline-start: 1.5rem;
 }
 
-.ms-8{
-  -webkit-margin-start: 2rem;
-          margin-inline-start: 2rem;
-}
-
 .ms-auto{
   -webkit-margin-start: auto;
           margin-inline-start: auto;
@@ -915,10 +905,6 @@ html {
 
 .grid{
   display: grid;
-}
-
-.\!hidden{
-  display: none !important;
 }
 
 .hidden{
@@ -1083,6 +1069,14 @@ html {
 
 .w-full{
   width: 100%;
+}
+
+.w-\[44rem\]{
+  width: 44rem;
+}
+
+.w-\[43rem\]{
+  width: 43rem;
 }
 
 .max-w-\[100\%\]{
@@ -1457,6 +1451,11 @@ html {
 .px-8{
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.px-\[10px\]{
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .px-\[20px\]{
@@ -2269,8 +2268,12 @@ div.spr-review-footer a{
   color: rgb(36 3 67 / var(--tw-text-opacity));
 }
 
-div.spr-header a.spr-summary-actions-newreview{
+div.spr-header .spr-summary{
   margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+div.spr-header a.spr-summary-actions-newreview{
   width: 100%;
   max-width: 13rem;
   border-bottom-width: 2px;
@@ -2286,11 +2289,12 @@ div.spr-summary .spr-starrating, div.spr-summary .spr-summary-caption{
   display: none;
 }
 
-@media screen and (max-width: 641px) {
+/* @media screen and (max-width: 641px) {
   div.spr-header a.spr-summary-actions-newreview{
-    /* @apply !float-none mx-auto; */
+    /* @apply !float-none mx-auto; 
   }
-}
+  
+} */
 
 /* -------------------------- */
 
@@ -2649,11 +2653,6 @@ footer .items li{
   .sm\:me-8{
     -webkit-margin-end: 2rem;
             margin-inline-end: 2rem;
-  }
-
-  .sm\:ms-0{
-    -webkit-margin-start: 0px;
-            margin-inline-start: 0px;
   }
 
   .sm\:mt-0{

@@ -254,19 +254,22 @@ div.spr-review-content p{
 div.spr-review-footer a{
   @apply text-_main_color_dark;
 }
+div.spr-header .spr-summary{
+  @apply mt-4 mb-4;
+}
 div.spr-header a.spr-summary-actions-newreview{
-  @apply border-b-2 mt-4 border-_main_color_dark font-medium text-sm max-w-[13rem] w-full text-center ;
+  @apply border-b-2  border-_main_color_dark font-medium text-sm max-w-[13rem] w-full text-center ;
 }
 div.spr-summary .spr-starrating, div.spr-summary .spr-summary-caption{
   display: none;
 }
 
-@media screen and (max-width: 641px) {
+/* @media screen and (max-width: 641px) {
   div.spr-header a.spr-summary-actions-newreview{
-    /* @apply !float-none mx-auto; */
+    /* @apply !float-none mx-auto; 
   }
   
-}
+} */
 
 
 /* -------------------------- */

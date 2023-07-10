@@ -24,14 +24,16 @@
           <p id="total-price-panier" class="font-medium">2,10 €</p>
         </div>
         <div class="flex flex-col items-center justify-center mt-8">
-          <form action="{{ routes.cart_url }}" method="post">
+          <form action="{{ routes.cart_url }}" method="post" class="sm:w-[344px] w-[90%]">
             <button
               id="btn-paiement"
               type="submit"
               name="checkout"
-              class="h-[44px] sm:w-[344px] w-[90%] mx-5 btn-red-panier">Procéder au paiement</button>
+              class="h-[44px] w-full btn-red-panier">Procéder au paiement</button>
           </form>
-          <button id="btn-continuer" class="h-[44px] sm:w-[344px] w-[90%] mx-5 btn-white-panier">Continuer mes achats</button>
+          <div class="sm:w-[344px] w-[90%]">
+            <button id="btn-continuer" class="h-[44px] w-full btn-white-panier">Continuer mes achats</button>
+          </div>
         </div>
       </div>
 
