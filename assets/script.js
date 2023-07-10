@@ -566,6 +566,19 @@ $(document).ready(() => {
         '<p class="text-center text-green-700">Vous recevrez une notification sur les prochaines ouvertures !</p>',
       );
   });
+
+  // Close the modals if the user clicks outside of it
+  window.onclick = function (event) {
+    // panier
+    if (event.target.matches('#panier') == true) {
+      $('#panier').fadeOut()
+      $('body').css('overflow', 'initial');
+
+    }
+
+  }
+
+
 });
 
 try {
@@ -685,8 +698,7 @@ try {
 function getUrlParameter(sParam) {
   var sPageURL = window.location.search.substring(1),
     sURLVariables = sPageURL.split('&'),
-    sParameterName,
-    i;
+    sParameterName, i;
 
   for (i = 0; i < sURLVariables.length; i++) {
     sParameterName = sURLVariables[i].split('=');
