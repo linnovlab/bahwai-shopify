@@ -2949,6 +2949,10 @@ footer .items li{
     height: 30rem;
   }
 
+  .md\:h-\[35rem\]{
+    height: 35rem;
+  }
+
   .md\:text-\[12px\]{
     font-size: 12px;
   }

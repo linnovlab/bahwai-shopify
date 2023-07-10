@@ -124,16 +124,17 @@ $(document).ready(() => {
       $(this).next().prop('checked', true);
     } else {
       $(this).next().css('background-color', 'rgba(0, 0, 0, 0)');
-      $(this).next().prop('checked', false);
+      $(this).next().prop('checked', '');
     }
   });
   $('.filter-item label').on('click', function (e) {
+    e.preventDefault()
     if ($(this).prev().css('background-color') === 'rgba(0, 0, 0, 0)') {
       $(this).prev().css('background-color', '#EA4038');
       $(this).next().prop('checked', true);
     } else {
       $(this).prev().css('background-color', 'rgba(0, 0, 0, 0)');
-      $(this).next().prop('checked', false);
+      $(this).next().prop('checked', '');
     }
   });
 
@@ -575,8 +576,61 @@ $(document).ready(() => {
       $('body').css('overflow', 'initial');
 
     }
-
   }
+
+
+  /**
+   * form addresses compte hide/show
+   */
+  $('#btn-open-addresse-form').on('click', function () {
+    $(this).fadeOut(0)
+    $('#form-add-address').fadeIn()
+  })
+  $('#btn-reset').on('click', (e) => {
+    $('#form-add-address').fadeOut(0)
+    $('#btn-open-addresse-form').fadeIn(0)
+  })
+
+  $('#edit-1').on('click', (e) => {
+    $('#form-edit-address-1').fadeIn()
+  })
+  $('#btn-reset-edit-1').on('click', (e) => {
+    $('#form-edit-address-1').fadeOut(0)
+  })
+
+  /**
+   * inputs form addresses feat
+   */
+  $('#form-address input').each((i, input) => {
+    $(input).click(function (e) {
+      $('#form-address input').each((i, item) => {
+        $(item).prop('checked', '')
+      })
+      $(input).prop('checked', true)
+    })
+  })
+
+  /**
+   * checkbox for default address in address page
+   */
+
+  $('#form-add-address .filter-item i').on('click', function (e) {
+    const input = $('#form-add-address .filter-item input')
+    if (input.prop('checked') === true) {
+      input.prop('checked', '')
+    } else {
+      input.prop('checked', true)
+    }
+  })
+  $('#form-add-address .filter-item label').on('click', function (e) {
+    e.preventDefault()
+    if ($(this).prev().prop('checked') === true) {
+      $(this).prev().prop('checked', '')
+      console.log($(this).prev().prop('checked'));
+    } else {
+      $(this).prev().prop('checked', true)
+    }
+  })
 
 
 });
