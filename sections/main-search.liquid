@@ -40,19 +40,19 @@
               <div class="stars flex text-sm">
                 {% if item.metafields.reviews.rating_count != null %}
                   {%- for i in (1..5) -%}
-                    {%- if i <= n -%}
+                    {%- if i <= n -%} 
                       <i class="fas fa-star"></i>
-                      {%- else -%}
+                    {%- else -%}
                       <i class="fa-regular fa-star"></i>
                     {%- endif -%}
                   {%- endfor -%}
                 {%- endif -%}
               </div>
               <span class="border-_main_color_dark border-b text-_main_color_dark ">
-                {% if product.metafields.reviews.rating_count == null %}
+                {% if item.metafields.reviews.rating_count == null %}
                   Soyez le 1er à noter!
                 {% else %}
-                  {{ product.metafields.reviews.rating_count }} avis
+                  {{ item.metafields.reviews.rating_count }} avis
                 {% endif %} 
               </span>
             </div>
