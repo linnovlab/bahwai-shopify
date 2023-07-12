@@ -1,40 +1,79 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+<style>
+  @media screen and (max-width: 641px) {
+    .hero-collection {
+      background-image: url('{{ collection.image | image_url: height: 272 }}');
+    }
+  }
 
-<div class="page-width">
-  <h1 class="title title--primary inline-richtext">{{ section.settings.title }}</h1>
-  {%- liquid
-    case section.settings.sort
-      when 'products_high', 'products_low'
-        assign collections = collections | sort: 'all_products_count'
-      when 'date', 'date_reversed'
-        assign collections = collections | sort: 'published_at'
-    endcase
+  .hero-collection {
+    background-image: url('{{ collection.image | image_url: height: 400 }}');
+  }
 
-    if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
-      assign collections = collections | reverse
-    endif
+  @media screen and (max-width: 641px) {
+    .wave-index {
+      background-image: url('{{ ' Vague-Mobile.svg' |asset_url }}');
+    }
+  }
 
-    assign moduloResult = 28 | modulo: section.settings.columns_desktop
-    assign paginate_by = 30
-    if moduloResult == 0
-      assign paginate_by = 28
-    endif
-  -%}
-  {%- paginate collections by paginate_by -%}
-    <ul class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
+  @media screen and (min-width: 641px) {
+    .wave-index {
+      background-image: url('{{ ' Vague-desktop.svg' |asset_url }}');
+    }
+  }
+</style>
+
+<main
+  class="main-cats">
+
+  <div
+    style="background-image: url({{ 'bannercategories.png' | asset_url }});"
+    class="banner object-cover img-center sm:h-[25rem] h-[17rem]"></div>
+
+
+  <section
+    class="text-_main_color_dark flex flex-col mt-12 desktop-width">
+    <h1
+      class="title text-center mb-5">Découvrez nos collections</h1>
+    <div
+      class="grid sm:grid-cols-3 gap-8 mx-4">
       {%- for collection in collections -%}
-        <li class="collection-list__item grid__item">
-          {% render 'card-collection'
-           , card_collection: collection,
-           media_aspect_ratio: section.settings.image_ratio,
-           columns: 3 %}
-        </li>
+        <a
+          href="{{ collection.url }}"
+          class="rounded-2xl overflow-hidden">
+          <img
+            srcset="
+          {%- if collection.featured_image.width >= 165 -%}
+            {{ collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+          {%- if collection.featured_image.width >= 330 -%}
+            {{ collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
+          {%- if collection.featured_image.width >= 535 -%}
+            {{ collection.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
+          {%- if collection.featured_image.width >= 750 -%}
+            {{ collection.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
+          {%- if collection.featured_image.width >= 1000 -%}
+            {{ collection.featured_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+          {%- if collection.featured_image.width >= 1500 -%}
+            {{ collection.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+          {%- if collection.featured_image.width >= 3000 -%}
+            {{ collection.featured_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+          {{ collection.featured_image | image_url }} {{ collection.featured_image.width }}w"
+          src="{{ collection.featured_image | image_url: width: 1500 }}"
+          sizes="
+                                                                                                                                                  (min-width: 640px) 33.333vw,
+                                                                                                                                                  (min-width: 768px) 25vw,
+                                                                                                                                                  50vw"
+          alt="{{ collection.title }}"
+          loading="lazy"
+          class="rounded-2xl w-full h-auto">
+          <h3
+            class="absolute">{{ collection.handle }}</h3>
+        </a>
       {%- endfor -%}
-    </ul>
-    {% render 'pagination', paginate: paginate %}
-  {%- endpaginate -%}
-</div>
+    </div>
+  </section>
+
+</main>
+
 {% schema %}
   {
     "name": "t:sections.main-list-collections.name",

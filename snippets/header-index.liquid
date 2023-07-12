@@ -10,28 +10,41 @@
   </div>
 {%- endif -%}
 
-<div class="bup py-2 bg-_orange_color">
-  <p class="text-center sm:text-base text-[13px] text-white">{{ section.settings.annonce }}</p>
+<div
+  class="bup py-2 bg-_orange_color">
+  <p
+    class="text-center sm:text-base text-[13px] text-white">{{ section.settings.annonce }}</p>
 </div>
 
-<div class="header-1  bg-_main_color_light">
-  <div class="desktop-width flex flex-row items-center justify-between  py-1 px-4 sm:px-8">
-    <div class="bars block sm:hidden">
-      <div class="content flex items-center gap-3">
-        <i class="fa-solid fa-bars text-white text-xl hover:cursor-pointer" id="open-bars"></i>
-        <a href="/" title="BahWai">
+<div
+  class="header-1  bg-_main_color_light">
+  <div
+    class="desktop-width flex flex-row items-center justify-between  py-1 px-4 sm:px-8">
+    <div
+      class="bars block sm:hidden">
+      <div
+        class="content flex items-center gap-3">
+        <i
+          class="fa-solid fa-bars text-white text-xl hover:cursor-pointer"
+          id="open-bars"></i>
+        <a
+          href="/"
+          title="BahWai">
           <img
-            src="{{ 'icon bahwai sm.svg' | asset_url }}"
+            src="{{ '300DPI.png' | asset_url }}"
             alt="BahWai"
-            class="w-auto"
+            class="w-10"
             loading="lazy"
             width="auto"
             height="auto">
         </a>
       </div>
     </div>
-    <div class="logo hidden sm:block">
-      <a href="/" title="bahwai">
+    <div
+      class="logo hidden sm:block">
+      <a
+        href="/"
+        title="bahwai">
         <img
           src="{{ 'icon bahwai.svg' | asset_url }}"
           alt="BahWai"
@@ -41,7 +54,8 @@
           loading="lazy">
       </a>
     </div>
-    <div class="search hidden sm:block w-[17rem]">
+    <div
+      class="search hidden sm:block w-[17rem]">
       <form
         action="#"
         method="get"
@@ -62,9 +76,13 @@
           class="outline-none  bg-transparent text-white ms-2 w-full">
       </form>
     </div>
-    <div class="info">
-      <ul class="flex gap-4 font-medium text-white">
-        <li id="search-sm" class="border-r-2 block sm:hidden">
+    <div
+      class="info">
+      <ul
+        class="flex gap-4 font-medium text-white">
+        <li
+          id="search-sm"
+          class="border-r-2 block sm:hidden">
           <a
             href=""
             id="search-icon"
@@ -92,7 +110,8 @@
               width="auto"
               height="auto"
               loading="lazy">
-            <span class="sm:block hidden">Panier</span>
+            <span
+              class="sm:block hidden">Panier</span>
           </a>
         </li>
         <li>
@@ -107,7 +126,8 @@
               width="auto"
               height="auto"
               loading="lazy">
-            <span class="sm:block hidden">Mon compte</span>
+            <span
+              class="sm:block hidden">Mon compte</span>
           </a>
         </li>
       </ul>
@@ -115,24 +135,33 @@
   </div>
 </div>
 
-<nav id="nav-header" class="bg-_main_color_dark py-2 hidden sm:block">
-  <ul class="flex justify-center gap-4 text-white">
+<nav
+  id="nav-header"
+  class="bg-_main_color_dark py-2 hidden sm:block">
+  <ul
+    class="flex justify-center gap-4 text-white">
     {% for link in section.settings.menu.links %}
       {% if link.links.size > 0 %}
-        <li class="accordions relative">
+        <li
+          class="accordions relative">
           <a
             class="hover-nav-item"
             id="btn-accordion"
             href="{{ link.url }}"
             title="{{ link.title }}">
             <span>{{ link.title }}</span>
-            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+            <i
+              class="fa-sharp fa-solid fa-chevron-down"></i>
           </a>
-          <div class="panel hidden absolute top-8 left-1 bg-_main_color_dark w-[7rem]">
-            <ul class="text-white flex flex-col ps-2">
+          <div
+            class="panel hidden absolute top-8 left-1 bg-_main_color_dark w-[7rem]">
+            <ul
+              class="text-white flex flex-col ps-2">
               {% for sublink in link.links %}
                 <li>
-                  <a href="{{ sublink.url }}" title="{{ sublink.title }}">{{ sublink.title }}</a>
+                  <a
+                    href="{{ sublink.url }}"
+                    title="{{ sublink.title }}">{{ sublink.title }}</a>
                 </li>
               {% endfor %}
             </ul>
