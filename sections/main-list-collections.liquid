@@ -39,7 +39,7 @@
       {%- for collection in collections -%}
         <a
           href="{{ collection.url }}"
-          class="rounded-2xl overflow-hidden">
+          class="rounded-2xl overflow-hidden my-5">
           <img
             srcset="
           {%- if collection.featured_image.width >= 165 -%}
@@ -59,9 +59,9 @@
           {{ collection.featured_image | image_url }} {{ collection.featured_image.width }}w"
           src="{{ collection.featured_image | image_url: width: 1500 }}"
           sizes="
-                                                                                                                                                  (min-width: 640px) 33.333vw,
-                                                                                                                                                  (min-width: 768px) 25vw,
-                                                                                                                                                  50vw"
+                                                                                                                                                              (min-width: 640px) 33.333vw,
+                                                                                                                                                              (min-width: 768px) 25vw,
+                                                                                                                                                              50vw"
           alt="{{ collection.title }}"
           loading="lazy"
           class="rounded-2xl w-full h-auto">
