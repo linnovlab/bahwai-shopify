@@ -1015,6 +1015,10 @@ html {
   height: 100vh;
 }
 
+.h-\[130px\] {
+  height: 130px;
+}
+
 .max-h-\[8rem\] {
   max-height: 8rem;
 }
@@ -1105,6 +1109,10 @@ html {
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-\[130px\] {
+  width: 130px;
 }
 
 .max-w-\[100\%\] {
