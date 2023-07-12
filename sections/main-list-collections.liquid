@@ -31,7 +31,7 @@
 
 
   <section
-    class="text-_main_color_dark flex flex-col mt-12 desktop-width">
+    class="text-_main_color_dark flex flex-col mt-12 desktop-width mb-12">
     <h1
       class="title text-center mb-5">Découvrez nos collections</h1>
     <div
@@ -59,9 +59,9 @@
           {{ collection.featured_image | image_url }} {{ collection.featured_image.width }}w"
           src="{{ collection.featured_image | image_url: width: 1500 }}"
           sizes="
-                                                                                                                                                              (min-width: 640px) 33.333vw,
-                                                                                                                                                              (min-width: 768px) 25vw,
-                                                                                                                                                              50vw"
+                                                                                                                                                                                      (min-width: 640px) 33.333vw,
+                                                                                                                                                                                      (min-width: 768px) 25vw,
+                                                                                                                                                                                      50vw"
           alt="{{ collection.title }}"
           loading="lazy"
           class="rounded-2xl w-full h-auto">
