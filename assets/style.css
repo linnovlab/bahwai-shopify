@@ -29,7 +29,7 @@ body{
   @apply max-w-[1440px];
 }
 .btn{
-  @apply block outline-none bg-_red_color text-white text-center rounded-lg w-[224px] h-[44px] pt-[10px];
+  @apply font-semibold block outline-none bg-_red_color text-white text-center rounded-lg w-[224px] h-[44px] pt-[10px];
   box-shadow: 1px 4px 8px -3px black;
 }
 .btn-cat{
@@ -53,7 +53,7 @@ body{
   @apply items-center justify-center;
 }
 .input{
-  @apply outline-none ps-2 h-10 w-full border border-gray-500 ;
+  @apply outline-none ps-2 h-10 w-full border border-[#999] ;
 } 
 .title{
   @apply font-litle text-_main_color_light text-[32px] text-center;
@@ -68,7 +68,7 @@ body{
   @apply text-start pe-2 ps-4 font-bold text-[1.2rem] flex justify-between w-full; 
 }
 .search-section{
-  @apply max-h-full h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y fixed top-0 z-50 w-full bg-white sm:px-20 px-4 py-8;
+  @apply max-h-full h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y fixed top-0 z-50 w-full;
 }
 .btn-etre-prevenu{
   @apply hover:cursor-pointer mb-4 sm:text-sm text-_main_color_dark font-bold text-center border-b-2 border-_red_color w-[21rem] sm:text-[12px] text-[10px] sm:w-[24rem] m-auto;
@@ -151,6 +151,12 @@ body{
 .scrolbar-thin{
   scrollbar-color: rgba(110, 110, 110, 0.802); /* ascensseur bleu sur fond blanc */
   scrollbar-width: 5px;
+}
+
+/* imgs rejoignez-nous page */
+#imgs-index img{
+  border-radius: 8px;
+  height: 130px !important;
 }
 
 /* css reviews feat */

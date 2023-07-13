@@ -62,7 +62,7 @@
       </div>
     </div>
     <div class="desc">
-      <p class="text-[#565656] sm:text-base text-sm">{{ product.description }}
+      <p class="text-[#565656] sm:text-base text-sm">{{ product.description | truncate: 300 }}
       </p>
     </div>
     <div class="w-[18rem] my-4 font-medium" id="btn-produit-desc">

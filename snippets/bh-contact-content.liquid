@@ -5,10 +5,23 @@
     }
   }
 </style>
-<div class="main">
-  <div style="background-image: url('{{ 'bannerblog.png' |asset_url }}');" class="banner-contact img-center sm:h-[25rem] h-[17rem]"></div>
+<div class="main ">
+  <div style="background-image: url('{{ 'Banniere-contact-Bahwai.webp' |asset_url }}');" class="banner-contact img-center sm:h-[25rem] h-[17rem]"></div>
+  <style>
+    @media screen and (max-width: 641px) {
+      .wave-index {
+        background-image: url('{{ 'Vague-Mobile.svg' |asset_url }}');
+      }
+    }
+    @media screen and (min-width: 641px) {
+      .wave-index {
+        background-image: url('{{ 'Vague-desktop.svg' |asset_url }}');
+      }
+    }
+  </style>
+  <div class="wave-index sm:mt-[-25px] mt-[-26px] img-center bg-no-repeat h-[27px] w-full"></div>
   <!-- contenu -->
-  <section class="py-20 -mt-16 sm:px-4" id="smaForm">
+  <section class="py-20 -mt-16 sm:px-4 desktop-width" id="smaForm">
     <div class="flex flex-col justify-center items-center gap-2 mt-4 px-4">
       <h5 class="title">Besoin de nous parler ?</h5>
       <p class="text-_main_color_dark text-center">
@@ -27,7 +40,7 @@
         <a href="https://wa.me/33630139872" class="underline">+33 6 30 13 98 72</a>. On est dispo du lundi au vendredi, de 9h à 18h. Mais attends, ne nous spam pas, hein !
       </p>
     </div>
-    <div id="form-contact" class="form-contact hidden mt-8 mx-4">
+    <div id="form-contact" class="form-contact hidden mt-8 mx-4 desktop-width">
       {% form 'contact', class: "sm:max-w-[40rem] max-w-[100%] mx-auto w-full flex flex-col items-center gap-6" %}
         {{ form.errors | default_errors }}
         <div class="flex justify-end mb-8 w-full">
@@ -160,7 +173,7 @@
     }
   </style>
   <section style="background-image: url('{{ 'DS_Orange-Curvy.png' |asset_url }}');" class="contact-partenaire relative z-50 h-[20rem] sm:h-[27rem] xl:h-[40rem]  text-white flex flex-col justify-center items-center gap-6 img-center py-8">
-    <h2 class="title text-center">Devenir partenaire ?
+    <h2 class="title !text-white">Devenir partenaire ?
     </h2>
     <p class="text-center">Envie de rejoindre l’aventure Bahwai ? Remplissez le formulaire !</p>
     <a href="{{ pages.partenaire.url }}" class="btn px-20 py-2">S'inscrire</a>

@@ -1,74 +1,77 @@
-<div class="content sm:mx-[4rem] mx-[20px]">
-  <div>
-    <h1 class="font-outfit text-black sm:text-[60px] text-[40px] font-bold leading-[4rem] mb-[40px]">Bienvenu(e),
-      <br><span class="text-_main_color_light">{{ customer.first_name }} {{ customer.last_name }}</span>
-    </h1>
-  </div>
-
-  <div class="flex font-body justify-between flex-wrap-reverse">
-    <div class="historique sm:block hidden">
-      <h2 class="font-semibold text-_main_color_dark text-[24px] mb-4">Historique des commandes</h2>
-      <table class="historique-table text-[#999] text-sm font-normal">
-        <thead>
-          <tr>
-            <td>Commande</td>
-            <td>Date</td>
-            <td>Statut des paiements</td>
-            <td>Statut des commandes</td>
-            <td>Total €</td>
-          </tr>
-        </thead>
-        <tbody>
-          {%- if customer.orders > 0 -%}
-          {% for order in customer.orders %}
-          <tr>
-            <td><span class="command">{{ order.name }}</span></td>
-            <td>{{ order.created_at | date: '%d %B %Y' }}</td>
-            <td class="vert">{{ order.financial_status }}</td>
-            <td>{{ order.fulfillment_status_label }}</td>
-            <td>{{ order.total_net_amount | append: '€' }}</td>
-          </tr>
-          {% endfor %}
-          {%- else -%}
-          <p>Aucune commande n'a été effectuée pour le moment</p>
-          {%- endif -%}
-        </tbody>
-      </table>
-    </div>
+<div class="sm:mt-20 mt-8">
+  <div class="content sm:mx-[4rem] mx-[20px]">
     <div>
-      <h2 class="font-semibold text-_main_color_dark text-[24px] mb-2">Informations du compte</h2>
-      <div class="content text-[#565656] font-medium text-sm">
-        <p>{{ customer.first_name }} {{ customer.last_name }} </p>
-        <p>{{ customer.phone }}</p>
-        <p>{{ customer.email }}</p>
+      <h1 class="font-outfit text-black sm:text-[60px] text-[40px] font-bold leading-[4rem] mb-[40px]">Bienvenu(e),
+        <br><span class="text-_main_color_light">{{ customer.first_name }} {{ customer.last_name }}</span>
+      </h1>
+    </div>
+  
+    <div class="flex font-body justify-between flex-wrap-reverse">
+      <div class="historique sm:block hidden">
+        <h2 class="font-semibold text-_main_color_dark text-[24px] mb-4">Historique des commandes</h2>
+        <table class="historique-table text-[#999] text-sm font-normal">
+          <thead>
+            <tr>
+              <td>Commande</td>
+              <td>Date</td>
+              <td>Statut des paiements</td>
+              <td>Statut des commandes</td>
+              <td>Total €</td>
+            </tr>
+          </thead>
+          <tbody>
+            {%- if customer.orders > 0 -%}
+            {% for order in customer.orders %}
+            <tr>
+              <td><span class="command">{{ order.name }}</span></td>
+              <td>{{ order.created_at | date: '%d %B %Y' }}</td>
+              <td class="vert">{{ order.financial_status }}</td>
+              <td>{{ order.fulfillment_status_label }}</td>
+              <td>{{ order.total_net_amount | append: '€' }}</td>
+            </tr>
+            {% endfor %}
+            {%- else -%}
+            <p>Aucune commande n'a été effectuée pour le moment</p>
+            {%- endif -%}
+          </tbody>
+        </table>
       </div>
-      <p class="mt-4 mb-6">
-        <a href="{{ routes.account_addresses_url }}" class="font-medium border-b border-_main_color_dark pb-[2px]">Voir
-          les adresses</a>
-      </p>
-    </div>
-  </div>
-
-  <div class="historique-mobile sm:hidden block">
-    <div class="historique-items text-[#999] text-sm">
-      {%- if customer.orders > 0 -%}
-        {% for order in customer.orders %}
-        <div class="item my-4 flex flex-col gap-[6px]">
-          <p>Commande <span class="command">{{ order.name }}</span> <span class="ps-4">{{ order.name }}</span></p>
-          <p>Statut des paiements <span class="vert">{{ order.financial_status }}</span></p>
-          <p>Statut des commandes <span>{{ order.fulfillment_status_label }}</span></p>
-          <p>Total <span>{{ order.total_net_amount | append: '€' }}</span></p>
+      <div>
+        <h2 class="font-semibold text-_main_color_dark text-[24px] mb-2">Informations du compte</h2>
+        <div class="content text-[#565656] font-medium text-sm">
+          <p>{{ customer.first_name }} {{ customer.last_name }} </p>
+          <p>{{ customer.phone }}</p>
+          <p>{{ customer.email }}</p>
         </div>
-        {% endfor %}
-      {%- else -%}
-        <p>Aucune commande n'a été effectuée pour le moment</p>
-      {%- endif -%}
-      <hr class="bg-[#999]">
+        <p class="mt-4 mb-6">
+          <a href="{{ routes.account_addresses_url }}" class="font-medium border-b border-_main_color_dark pb-[2px]">Voir
+            les adresses</a>
+        </p>
+      </div>
     </div>
-  </div>
-
-  <div class="sm:mt-[15rem] mt-16 sm:mb-[10rem] mb-8 flex gap-[5px] items-center">
-    <img src="{{ 'Deconnexion.svg' | asset_url }}" alt="">
-    <a href="{{ routes.account_logout_url }}" class="text-[#EA4038] sm:text-[22px] text-sm font-semibold">Déconnexion</a>
+  
+    <div class="historique-mobile sm:hidden block">
+      <div class="historique-items text-[#999] text-sm">
+        {{ customer.orders }}
+        {%- if customer.orders > 0 -%}
+          {% for order in customer.orders %}
+          <div class="item my-4 flex flex-col gap-[6px]">
+            <p>Commande <span class="command">{{ order.name }}</span> <span class="ps-4">{{ order.name }}</span></p>
+            <p>Statut des paiements <span class="vert">{{ order.financial_status }}</span></p>
+            <p>Statut des commandes <span>{{ order.fulfillment_status_label }}</span></p>
+            <p>Total <span>{{ order.total_net_amount | append: '€' }}</span></p>
+          </div>
+          {% endfor %}
+        {%- else -%}
+          <p>Aucune commande n'a été effectuée pour le moment</p>
+        {%- endif -%}
+        <hr class="bg-[#999]">
+      </div>
+    </div>
+  
+    <div class="sm:mt-[15rem] mt-16 sm:mb-[10rem] mb-8 flex gap-[5px] items-center">
+      <img src="{{ 'Deconnexion.svg' | asset_url }}" alt="">
+      <a href="{{ routes.account_logout_url }}" class="text-[#EA4038] sm:text-[22px] text-sm font-semibold">Déconnexion</a>
+    </div>
   </div>
 </div>

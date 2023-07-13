@@ -1,130 +1,132 @@
 <section id="search-section" class="search-section hidden">
-  <div class="head text-_main_color_dark ">
-    <div class="flex justify-between flex-col-reverse sm:flex-row">
-      <div class="search flex flex-col gap-4">
-        <predictive-search>
-          <form
-            id="form-search"
-            action="{{ routes.search_url }}"
-            role="search"
-            method="get"
-            class="flex border-b-2 border-_main_color_dark">
-            <img src="{{ 'search violet.svg' |asset_url }}" alt="Recherche">
-            <input
-              id="input-popup-search"
-              value="{{ search.terms | escape }}"
-              type="search"
-              title="Rechercher des produits..."
-              name="q"
-              placeholder="Recherche de produits"
-              class="outline-none  bg-transparent ms-2">
-          </form>
-        </predictive-search>
-      </div>
-      <div class="sm:block flex justify-end sm:pb-0 pb-8">
-        <p id="close-popup-search" class="hover:cursor-pointer text-end font-bold border-b-2 border-_main_color_dark">
-          <i class="fas fa-xmark text-[18px] me-2"></i>
-          <span>Fermer</span>
-        </p>
-      </div>
-    </div>
-    {% comment %} result container {% endcomment %}
-    <div
-      id="predictive-search"
-      class="hidden mt-5"
-      tabindex="-1">
-      <div id="sug-col-container"></div>
-      <div id="sug-prod-container"></div>
-    </div>
-  </div>
-
-  <div class="body mt-8">
-    <h2 class="text-gray-600 text-[1.2rem]">Les meilleures suggestions</h2>
-    <div class="content flex justify-around sm:justify-normal flex-wrap gap-4 sm:gap-8 mt-2">
-      {% for product in collections['suggestions'].products %}
-        {% comment %} getting rating value {% endcomment %}
-        {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
-        {%- assign n = rates | first | plus:0 -%} 
-
-        <div class="item w-[9rem] sm:w-[11rem]">
-          <a href="{{ product.url }}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{ product | image_url: width: 550, height: 600 }}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-sm">
-                {% if product.metafields.reviews.rating_count != null %}
-                  {%- for i in (1..5) -%}
-                    {%- if i <= n -%}
-                      <i class="fas fa-star"></i>
-                      {%- else -%}
-                      <i class="fa-regular fa-star"></i>
-                    {%- endif -%}
-                  {%- endfor -%}
-                {%- endif -%}
-              </div>
-              <span class="border-_main_color_dark border-b text-_main_color_dark ">
-                {% if product.metafields.reviews.rating_count == null %}
-                  Soyez le 1er à noter!
-                {% else %}
-                  {{ product.metafields.reviews.rating_count }} avis
-                {% endif %} 
-              </span>
-            </div>
-            <p class="font-medium">À partir de {{ product.price }}€
-            </p>
-          </a>
+  <div class="content max-w-[1456px] w-full ms-auto bg-white sm:px-20 px-4 py-8">
+    <div class="head text-_main_color_dark ">
+      <div class="flex justify-between flex-col-reverse sm:flex-row">
+        <div class="search flex flex-col gap-4">
+          <predictive-search>
+            <form
+              id="form-search"
+              action="{{ routes.search_url }}"
+              role="search"
+              method="get"
+              class="flex border-b-2 border-_main_color_dark">
+              <img src="{{ 'search violet.svg' |asset_url }}" alt="Recherche">
+              <input
+                id="input-popup-search"
+                value="{{ search.terms | escape }}"
+                type="search"
+                title="Rechercher des produits..."
+                name="q"
+                placeholder="Recherche de produits"
+                class="outline-none  bg-transparent ms-2">
+            </form>
+          </predictive-search>
         </div>
-      {% endfor %}
-    </div>
-  </div>
-
-  <div class="footer text-_main_color_dark mt-12">
-    <h2 class="font-bold">Ces produits pourraient vous plaire</h2>
-    <div class="content flex flex-wrap items-center gap-8 text-sm mt-2">
-      {% for product in collections['pourrait-vous-plaire'].products %}
-        {% comment %} getting rating value {% endcomment %}
-        {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
-        {%- assign n = rates | first | plus:0 -%} 
-
-        <div class="item max-w-[143px] w-full">
-          <a href="{{ product.url }}" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{ product | image_url: width: 550, height: 600 }}"
-                alt="La gourmande aux noisettes"
-                class="w-full">
-            </div>
-            <p class="font-semibold w-[10rem] text-center">{{ product.title }}</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-_main_color_dark text-sm">
-                {% if product.metafields.reviews.rating_count != null %}
-                  {%- for i in (1..5) -%}
-                    {%- if i <= n -%}
-                      <i class="fas fa-star"></i>
-                      {%- else -%}
-                      <i class="fa-regular fa-star"></i>
-                    {%- endif -%}
-                  {%- endfor -%}
-                {%- endif -%}
-              </div>
-              <span class="border-_main_color_dark border-b text-_main_color_dark text-[11px]">
-                {% if product.metafields.reviews.rating_count == null %}
-                  Soyez le 1er à noter!
-                {% else %}
-                  {{ product.metafields.reviews.rating_count }} avis
-                {% endif %} 
-              </span>
-            </div>
-            <p class="font-medium">À partir de {{ product.price }}€
-            </p>
-          </a>
+        <div class="sm:block flex justify-end sm:pb-0 pb-8">
+          <p id="close-popup-search" class="hover:cursor-pointer text-end font-bold border-b-2 border-_main_color_dark">
+            <i class="fas fa-xmark text-[18px] me-2"></i>
+            <span>Fermer</span>
+          </p>
         </div>
-      {% endfor %}
+      </div>
+      {% comment %} result container {% endcomment %}
+      <div
+        id="predictive-search"
+        class="hidden mt-5"
+        tabindex="-1">
+        <div id="sug-col-container"></div>
+        <div id="sug-prod-container"></div>
+      </div>
+    </div>
+  
+    <div class="body mt-8">
+      <h2 class="text-gray-600 text-[1.2rem]">Les meilleures suggestions</h2>
+      <div class="content flex justify-around sm:justify-normal flex-wrap gap-4 sm:gap-8 mt-2">
+        {% for product in collections['suggestions'].products %}
+          {% comment %} getting rating value {% endcomment %}
+          {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
+          {%- assign n = rates | first | plus:0 -%} 
+  
+          <div class="item w-[9rem] sm:w-[11rem]">
+            <a href="{{ product.url }}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+              <div class="img w-full">
+                <img
+                  src="{{ product | image_url: width: 550, height: 600 }}"
+                  alt="La gourmande aux noisettes"
+                  class="w-full">
+              </div>
+              <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
+              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                <div class="stars flex text-sm">
+                  {% if product.metafields.reviews.rating_count != null %}
+                    {%- for i in (1..5) -%}
+                      {%- if i <= n -%}
+                        <i class="fas fa-star"></i>
+                        {%- else -%}
+                        <i class="fa-regular fa-star"></i>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endif -%}
+                </div>
+                <span class="border-_main_color_dark border-b text-_main_color_dark ">
+                  {% if product.metafields.reviews.rating_count == null %}
+                    Soyez le 1er à noter!
+                  {% else %}
+                    {{ product.metafields.reviews.rating_count }} avis
+                  {% endif %} 
+                </span>
+              </div>
+              <p class="font-medium">À partir de {{ product.price }}€
+              </p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  
+    <div class="footer text-_main_color_dark mt-12">
+      <h2 class="font-bold">Ces produits pourraient vous plaire</h2>
+      <div class="content flex flex-wrap items-center gap-8 text-sm mt-2">
+        {% for product in collections['pourrait-vous-plaire'].products %}
+          {% comment %} getting rating value {% endcomment %}
+          {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
+          {%- assign n = rates | first | plus:0 -%} 
+  
+          <div class="item max-w-[143px] w-full">
+            <a href="{{ product.url }}" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+              <div class="img w-full">
+                <img
+                  src="{{ product | image_url: width: 550, height: 600 }}"
+                  alt="La gourmande aux noisettes"
+                  class="w-full">
+              </div>
+              <p class="font-semibold w-[10rem] text-center">{{ product.title }}</p>
+              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                <div class="stars flex text-_main_color_dark text-sm">
+                  {% if product.metafields.reviews.rating_count != null %}
+                    {%- for i in (1..5) -%}
+                      {%- if i <= n -%}
+                        <i class="fas fa-star"></i>
+                        {%- else -%}
+                        <i class="fa-regular fa-star"></i>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endif -%}
+                </div>
+                <span class="border-_main_color_dark border-b text-_main_color_dark text-[11px]">
+                  {% if product.metafields.reviews.rating_count == null %}
+                    Soyez le 1er à noter!
+                  {% else %}
+                    {{ product.metafields.reviews.rating_count }} avis
+                  {% endif %} 
+                </span>
+              </div>
+              <p class="font-medium">À partir de {{ product.price }}€
+              </p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
