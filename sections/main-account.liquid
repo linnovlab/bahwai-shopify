@@ -10,30 +10,30 @@
       <div class="historique sm:block hidden">
         <h2 class="font-semibold text-_main_color_dark text-[24px] mb-4">Historique des commandes</h2>
         <table class="historique-table text-[#999] text-sm font-normal">
-          <thead>
-            <tr>
-              <td>Commande</td>
-              <td>Date</td>
-              <td>Statut des paiements</td>
-              <td>Statut des commandes</td>
-              <td>Total €</td>
-            </tr>
-          </thead>
-          <tbody>
-            {%- if customer.orders > 0 -%}
-            {% for order in customer.orders %}
-            <tr>
-              <td><span class="command">{{ order.name }}</span></td>
-              <td>{{ order.created_at | date: '%d %B %Y' }}</td>
-              <td class="vert">{{ order.financial_status }}</td>
-              <td>{{ order.fulfillment_status_label }}</td>
-              <td>{{ order.total_net_amount | append: '€' }}</td>
-            </tr>
-            {% endfor %}
-            {%- else -%}
-            <p>Aucune commande n'a été effectuée pour le moment</p>
-            {%- endif -%}
-          </tbody>
+          {%- if customer.orders > 0 -%}
+            <thead>
+              <tr>
+                <td>Commande</td>
+                <td>Date</td>
+                <td>Statut des paiements</td>
+                <td>Statut des commandes</td>
+                <td>Total €</td>
+              </tr>
+            </thead>
+            <tbody> 
+              {% for order in customer.orders %}
+                <tr>
+                  <td><span class="command">{{ order.name }}</span></td>
+                  <td>{{ order.created_at | date: '%d %B %Y' }}</td>
+                  <td class="vert">{{ order.financial_status }}</td>
+                  <td>{{ order.fulfillment_status_label }}</td>
+                  <td>{{ order.total_net_amount | append: '€' }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          {%- else -%}
+            <p class="text-[#999]">Aucune commande n'a été effectuée pour le moment</p>
+          {%- endif -%}
         </table>
       </div>
       <div>
@@ -52,7 +52,7 @@
   
     <div class="historique-mobile sm:hidden block">
       <div class="historique-items text-[#999] text-sm">
-        {{ customer.orders }}
+        
         {%- if customer.orders > 0 -%}
           {% for order in customer.orders %}
           <div class="item my-4 flex flex-col gap-[6px]">

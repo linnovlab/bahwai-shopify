@@ -504,3 +504,50 @@ footer .items li{
   border-bottom: 3px solid var(--red-color); 
 }
 
+/* compte page */
+table {
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-style: hidden; /* hide standard table (collapsed) border */
+  box-shadow: 0 0 0 1px #999; /* this draws the table border  */ 
+}
+
+thead{
+  border-bottom: 1px solid #999;
+}
+thead td{
+  @apply !font-normal py-[10px] px-[15px] text-center;
+}
+thead td:last-child{
+  padding-right: 30px;
+}
+tbody td{
+  @apply pb-[22px] text-center;
+}
+tbody tr td:last-child{
+  padding-right: 30px;
+}
+tbody tr:first-child td{
+  @apply pt-6;
+}
+tbody tr:last-child td{
+  @apply pb-6;
+}
+.vert{
+  @apply text-[#3F8F00];
+}
+.red{
+  @apply text-[#EA4038];
+}
+.inactive{
+  @apply text-[#999];
+}
+.command{
+  @apply p-1 border border-[#999] shadow rounded-md text-[#3F8F00];
+}
+
+/* addresse compte page */
+.address-shadow{
+  box-shadow: 0px 5px 10px -6px black;
+}
+
