@@ -582,6 +582,7 @@ $(document).ready(() => {
   /**
    * form addresses compte hide/show
    */
+  // form add address
   $('#btn-open-addresse-form').on('click', function () {
     $(this).fadeOut(0)
     $('#form-add-address').fadeIn()
@@ -591,19 +592,31 @@ $(document).ready(() => {
     $('#btn-open-addresse-form').fadeIn(0)
   })
 
-  $('#edit-1').on('click', (e) => {
-    $('#form-edit-address-1').fadeIn()
+  // form edit address
+  const formsContainer = $("#forms-container")
+  $('#address-content form').each((i, form) => {
+    $(form).addClass('hidden')
+    formsContainer.append(form)
   })
-  $('#btn-reset-edit-1').on('click', (e) => {
-    $('#form-edit-address-1').fadeOut(0)
+  $("#address-content #btn-edit").each((i, btn) => {
+    $(btn).click(function () {
+      $("#forms-container").children('form').each((i, form) => {
+        $(form).fadeOut(0)
+      })
+      let id = $(this).data('id')
+      let form = $('#form-edit-address-' + id).parent()
+      form.fadeIn()
+      form.children('div').find('#btn-reset-edit-' + id).click(() => form.fadeOut(0))
+    })
   })
+
 
   /**
    * inputs form addresses feat
    */
-  $('#form-address input').each((i, input) => {
+  $('#address-content input').each((i, input) => {
     $(input).click(function (e) {
-      $('#form-address input').each((i, item) => {
+      $('#address-content input').each((i, item) => {
         $(item).prop('checked', '')
       })
       $(input).prop('checked', true)
@@ -626,7 +639,6 @@ $(document).ready(() => {
     e.preventDefault()
     if ($(this).prev().prop('checked') === true) {
       $(this).prev().prop('checked', '')
-      console.log($(this).prev().prop('checked'));
     } else {
       $(this).prev().prop('checked', true)
     }
