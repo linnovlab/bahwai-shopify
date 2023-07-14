@@ -116,7 +116,11 @@
         </li>
         <li>
           <a
-            href="{{ routes.account_login_url }}"
+            href="{%- if customer -%}
+              {{ routes.account_url }}
+            {%- else -%}
+            {{ routes.account_login_url }}
+            {%- endif -%}"
             class="flex hover-nav-item"
             title="Mon compte">
             <img

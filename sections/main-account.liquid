@@ -10,7 +10,7 @@
       <div class="historique sm:block hidden">
         <h2 class="font-semibold text-_main_color_dark text-[24px] mb-4">Historique des commandes</h2>
         <table class="historique-table text-[#999] text-sm font-normal">
-          {%- if customer.orders > 0 -%}
+          {%- if customer.orders.size > 0 -%}
             <thead>
               <tr>
                 <td>Commande</td>

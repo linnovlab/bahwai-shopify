@@ -83,7 +83,7 @@
                 type="checkbox"
                 class="checkbox-round"
                 name="h_abonnement"
-                id="hors">
+                id="hors" checked>
               <label for="hors" class="cursor-pointer font-medium text-_main_color_dark ">Hors abonnement</label>
             </div>
             <div class="flex items-center gap-4 mt-3">
@@ -91,21 +91,20 @@
                 type="checkbox"
                 class="checkbox-round"
                 name="h_abonnement"
-                id="moins"
-                checked>
+                id="moins" disabled>
               <label for="moins" class="cursor-pointer flex items-center gap-4 sm:text-_main_color_dark ">
-                <span class="font-medium ">S’abonner</span>
-                <span class="px-[8px] py-[4px] sm:bg-_orange_color bg-_main_color_light rounded-md text-white text-12px">15% moins cher</span>
+                <span class="font-medium text-gray-500">S’abonner</span>
+                <span class="px-[8px] py-[4px] sm:bg-_orange_color bg-_main_color_light rounded-md text-white text-12px">Pas encore disponible</span>
               </label>
             </div>
           </form>
         </div>
         <div class="item-2 p-4 border border-[#999999] rounded-t-none rounded-b-md">
           <div class="accordions text-_main_color_dark">
-            <div class="accordion-item">
+            <div class="accordion-item text-gray-500">
               <button
                 type="button"
-                id="btn-accordion"
+                {% comment %} id="btn-accordion" {% endcomment %}
                 class="p-[6px] max-w-[270px] flex justify-between w-full border border-[#999999] rounded-md">
                 <span class="text-sm font-medium">Livraison :
                   <span class="text-[12px] font-normal">Une fois par semaine</span>
