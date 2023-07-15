@@ -27,7 +27,7 @@
                     </div>
                     <div class="flex flex-col gap-3 items-center mb-4 mt-[24px] text-_main_color_dark">
                         <p id="btn-edit" data-id="{{ address.id }}" class="cursor-pointer font-medium border-b border-_main_color_dark pb-[2px] w-[9rem] text-center">Modifier l’adresse</p>
-                        <button type="button" data-target="{{ address.url }}" data-confirm-message="Êtes-vous certain(e) de vouloir supprimer cette adresse ?" aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}" class="font-medium border-b border-_main_color_dark pb-[2px] w-[10.2rem] text-center">
+                        <button type="button" onclick="deleteAdresse({{ address.id }})" data-target="{{ address.url }}" data-confirm-message="Êtes-vous certain(e) de vouloir supprimer cette adresse ?" aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}" class="font-medium border-b border-_main_color_dark pb-[2px] w-[10.2rem] text-center">
 									Supprimer l’adresse
 								</button>
                     </div>

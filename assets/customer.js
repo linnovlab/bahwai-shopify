@@ -106,3 +106,28 @@ class CustomerAddresses {
     }
   };
 }
+
+function deleteAdresse(addressId) {
+  var confirmation = confirm(
+    'Êtes vous sûr de vouloir supprimer cette adresse',
+  );
+
+  if (confirmation) {
+    $.ajax({
+      url: '/account/addresses/' + addressId,
+      type: 'POST',
+      data: {
+        _method: 'delete',
+      },
+      success: function (response) {
+        // Handle success response
+        // For example, you can reload the page or update the address list
+        location.reload();
+      },
+      error: function (xhr, status, error) {
+        // Handle error response
+        console.log(error);
+      },
+    });
+  }
+}
