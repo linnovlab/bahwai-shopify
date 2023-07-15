@@ -128,7 +128,7 @@ $(document).ready(() => {
     }
   });
   $('.filter-item label').on('click', function (e) {
-    e.preventDefault()
+    e.preventDefault();
     if ($(this).prev().css('background-color') === 'rgba(0, 0, 0, 0)') {
       $(this).prev().css('background-color', '#EA4038');
       $(this).next().prop('checked', true);
@@ -286,7 +286,7 @@ $(document).ready(() => {
       btn.prop('href', `/collections/${handle}`);
 
       // swipers wrappers content
-      mainSwipper.html($('#' + handle).html())
+      mainSwipper.html($('#' + handle).html());
       // renitialisation de swipper
       new Swiper('.swiper-nouveautes', {
         slidesPerView: 1,
@@ -321,7 +321,6 @@ $(document).ready(() => {
           clickable: true,
         },
       });
-
     });
   });
 
@@ -385,7 +384,8 @@ $(document).ready(() => {
 					alt="produit">
 					<div class="desc">
 					<p class="font-medium text-_main_color_dark">${item.title}</p>
-					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${item.price / 100
+					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${
+            item.price / 100
           }.00 € l’unité</p>
 					</div>
 				</a>
@@ -431,8 +431,8 @@ $(document).ready(() => {
   };
 
   /**
-     * show the payement btns
-     */
+   * show the payement btns
+   */
   const showPayement = () => {
     $('#payment-div').fadeIn(0);
     $('#payment-div').prev().prev('h2').fadeIn(0);
@@ -555,7 +555,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) { }
+  } catch (e) {}
 
   /**
    * newletter feat
@@ -572,67 +572,79 @@ $(document).ready(() => {
   window.onclick = function (event) {
     // panier
     if (event.target.matches('#panier') == true) {
-      $('#panier').fadeOut()
+      $('#panier').fadeOut();
       $('body').css('overflow', 'initial');
-
     }
-  }
-
+  };
 
   /**
    * form addresses compte hide/show
    */
+  // form add address
   $('#btn-open-addresse-form').on('click', function () {
-    $(this).fadeOut(0)
-    $('#form-add-address').fadeIn()
-  })
+    $(this).fadeOut(0);
+    $('#form-add-address').fadeIn();
+  });
   $('#btn-reset').on('click', (e) => {
-    $('#form-add-address').fadeOut(0)
-    $('#btn-open-addresse-form').fadeIn(0)
-  })
+    $('#form-add-address').fadeOut(0);
+    $('#btn-open-addresse-form').fadeIn(0);
+  });
 
-  $('#edit-1').on('click', (e) => {
-    $('#form-edit-address-1').fadeIn()
-  })
-  $('#btn-reset-edit-1').on('click', (e) => {
-    $('#form-edit-address-1').fadeOut(0)
-  })
+  // form edit address
+  const formsContainer = $('#forms-container');
+  $('#address-content form').each((i, form) => {
+    $(form).addClass('hidden');
+    formsContainer.append(form);
+  });
+  $('#address-content #btn-edit').each((i, btn) => {
+    $(btn).click(function () {
+      $('#forms-container')
+        .children('form')
+        .each((i, form) => {
+          $(form).fadeOut(0);
+        });
+      let id = $(this).data('id');
+      let form = $('#form-edit-address-' + id).parent();
+      form.fadeIn();
+      form
+        .children('div')
+        .find('#btn-reset-edit-' + id)
+        .click(() => form.fadeOut(0));
+    });
+  });
 
   /**
    * inputs form addresses feat
    */
-  $('#form-address input').each((i, input) => {
+  $('#address-content input').each((i, input) => {
     $(input).click(function (e) {
-      $('#form-address input').each((i, item) => {
-        $(item).prop('checked', '')
-      })
-      $(input).prop('checked', true)
-    })
-  })
+      $('#address-content input').each((i, item) => {
+        $(item).prop('checked', '');
+      });
+      $(input).prop('checked', true);
+    });
+  });
 
   /**
    * checkbox for default address in address page
    */
 
   $('#form-add-address .filter-item i').on('click', function (e) {
-    const input = $('#form-add-address .filter-item input')
+    const input = $('#form-add-address .filter-item input');
     if (input.prop('checked') === true) {
-      input.prop('checked', '')
+      input.prop('checked', '');
     } else {
-      input.prop('checked', true)
+      input.prop('checked', true);
     }
-  })
+  });
   $('#form-add-address .filter-item label').on('click', function (e) {
-    e.preventDefault()
+    e.preventDefault();
     if ($(this).prev().prop('checked') === true) {
-      $(this).prev().prop('checked', '')
-      console.log($(this).prev().prop('checked'));
+      $(this).prev().prop('checked', '');
     } else {
-      $(this).prev().prop('checked', true)
+      $(this).prev().prop('checked', true);
     }
-  })
-
-
+  });
 });
 
 try {
@@ -752,7 +764,8 @@ try {
 function getUrlParameter(sParam) {
   var sPageURL = window.location.search.substring(1),
     sURLVariables = sPageURL.split('&'),
-    sParameterName, i;
+    sParameterName,
+    i;
 
   for (i = 0; i < sURLVariables.length; i++) {
     sParameterName = sURLVariables[i].split('=');

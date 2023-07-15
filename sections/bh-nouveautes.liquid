@@ -29,7 +29,7 @@
 
   <div class="nouveautes-content p-0 m-0 sm:p-8 sm:m-8">
     <div id="main-swipper" class="swiper swiper-nouveautes relative sm:px-8">
-      <div id="nouveautes" class="swiper-wrapper items text-_main_color_dark">
+      <div id="nouveautes" class="swiper-wrapper items-center text-_main_color_dark ">
         {% for product in collections['nouveautes'].products %}
         {% comment %} getting rating value {% endcomment %}
         {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
@@ -281,7 +281,7 @@
     </div>
   </div>
 
-  <p class="text-center my-8">
+  <p class="text-center mt-[30px] mb-[100px]">
     <a id="btn-nouveautes" href="{{ collections['nouveautes'].url }}" class="btn mx-auto">Voir plus</a>
   </p>
 </section>
