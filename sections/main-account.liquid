@@ -53,7 +53,7 @@
     <div class="historique-mobile sm:hidden block">
       <div class="historique-items text-[#999] text-sm">
         
-        {%- if customer.orders > 0 -%}
+        {%- if customer.orders.size > 0 -%}
           {% for order in customer.orders %}
           <div class="item my-4 flex flex-col gap-[6px]">
             <p>Commande <span class="command">{{ order.name }}</span> <span class="ps-4">{{ order.name }}</span></p>
