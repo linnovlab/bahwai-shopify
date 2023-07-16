@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="hover:cursor-pointer">
-        <a href="#" onclick="shareProduct('{{ product.url }}', '{{ product.title }}')">
+        <span id="btn-share" onclick="shareProduct('{{ product.url }}', '{{ product.title }}')">
           <img
             src="{{ 'Partager.svg' | asset_url }}"
             alt="partager"
@@ -58,7 +58,7 @@
             width="auto"
             height="auto"
             loading="lazy">
-        </a>
+        </span>
       </div>
     </div>
     <div class="desc">

@@ -323,6 +323,7 @@ $(document).ready(() => {
             dataType: 'json',
             success: function (response) {
               updatePanier(response);
+              $("#panier-count").text(response.item_count);
             },
           });
           showPayement();
@@ -458,6 +459,7 @@ $(document).ready(() => {
           $(input).val(qty + ' x');
         }
         $('#qty-items-panier').text(response.item_count);
+        $('#panier-count').text(response.item_count);
         $('#total-price-panier').text(
           parseFloat(response.total_price) / 100 + '€',
         );
@@ -639,6 +641,19 @@ $(document).ready(() => {
       input.css('background-color', '#EA4038');
     }
   });
+
+  /**
+   * copie and paste - partage product feat
+   */
+  $("#btn-share").click(() => {
+    navigator.clipboard.writeText(location.href).then(() => {
+      alert("Url copié !")
+    })
+  })
+
+
+
+
 });
 
 try {
