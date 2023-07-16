@@ -929,6 +929,11 @@ html {
   margin-top: 80px;
 }
 
+.ms-\[32px\]{
+  -webkit-margin-start: 32px;
+          margin-inline-start: 32px;
+}
+
 .block{
   display: block;
 }
@@ -1279,6 +1284,10 @@ html {
 
 .gap-\[6px\]{
   gap: 6px;
+}
+
+.gap-\[25px\]{
+  gap: 25px;
 }
 
 .self-start{
@@ -2944,6 +2953,11 @@ tbody tr:last-child td{
 
   .sm\:mt-\[15rem\]{
     margin-top: 15rem;
+  }
+
+  .sm\:ms-0{
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
   }
 
   .sm\:block{
