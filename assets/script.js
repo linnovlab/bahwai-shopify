@@ -639,6 +639,19 @@ $(document).ready(() => {
       input.css('background-color', '#EA4038');
     }
   });
+
+  /**
+   * copie and paste - partage product feat
+   */
+  $("#btn-share").click(() => {
+    navigator.clipboard.writeText(location.href).then(() => {
+      alert("Url copié !")
+    })
+  })
+
+
+
+
 });
 
 try {
