@@ -118,7 +118,7 @@ $(document).ready(() => {
    * filter categories filters
    */
 
-  $('.filter-item i').on('click', function (e) {
+  $('#form-filtre .filter-item i').on('click', function (e) {
     if ($(this).next().css('background-color') === 'rgba(0, 0, 0, 0)') {
       $(this).next().css('background-color', '#EA4038');
       $(this).next().prop('checked', true);
@@ -127,7 +127,7 @@ $(document).ready(() => {
       $(this).next().prop('checked', '');
     }
   });
-  $('.filter-item label').on('click', function (e) {
+  $('#form-filtre .filter-item label').on('click', function (e) {
     e.preventDefault();
     if ($(this).prev().css('background-color') === 'rgba(0, 0, 0, 0)') {
       $(this).prev().css('background-color', '#EA4038');
@@ -278,49 +278,16 @@ $(document).ready(() => {
         }
       });
       $(this).addClass('active');
+
       var handle = $(this).data('handle');
-      const container = $('div.nouveautes-content .swiper-wrapper'),
-        btn = $('#btn-nouveautes'),
-        mainSwipper = $('#main-swipper');
+      const btn = $('#btn-collection-link'),
+        mainSwipperCollections = $('#main-swipper-collections');
 
       btn.prop('href', `/collections/${handle}`);
-
-      // swipers wrappers content
-      mainSwipper.html($('#' + handle).html());
-      // renitialisation de swipper
-      new Swiper('.swiper-nouveautes', {
-        slidesPerView: 1,
-        centeredSlides: false,
-        slidesPerGroupSkip: 2,
-        grabCursor: false,
-        autoplay: {
-          delay: 10000,
-          disableOnInteraction: false,
-        },
-        keyboard: {
-          enabled: true,
-        },
-        breakpoints: {
-          // responsivity
-          330: {
-            slidesPerView: 2,
-          },
-          780: {
-            slidesPerView: 3,
-          },
-          1000: {
-            slidesPerView: 5,
-          },
-          1200: {
-            slidesPerView: 6,
-          },
-        },
-        navigation: false,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      });
+      mainSwipperCollections.children().each((i, content) => {
+        $(content).addClass('hidden')
+      })
+      mainSwipperCollections.find('#' + handle).removeClass('hidden')
     });
   });
 
@@ -384,8 +351,7 @@ $(document).ready(() => {
 					alt="produit">
 					<div class="desc">
 					<p class="font-medium text-_main_color_dark">${item.title}</p>
-					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${
-            item.price / 100
+					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${item.price / 100
           }.00 € l’unité</p>
 					</div>
 				</a>
@@ -555,7 +521,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) {}
+  } catch (e) { }
 
   /**
    * newletter feat
@@ -598,27 +564,51 @@ $(document).ready(() => {
   });
   $('#address-content #btn-edit').each((i, btn) => {
     $(btn).click(function () {
-      $('#forms-container')
-        .children('form')
-        .each((i, form) => {
-          $(form).fadeOut(0);
-        });
+      $('#forms-container').children('form').each((i, form) => {
+        $(form).fadeOut(0);
+      });
       let id = $(this).data('id');
       let form = $('#form-edit-address-' + id).parent();
       form.fadeIn();
-      form
-        .children('div')
-        .find('#btn-reset-edit-' + id)
-        .click(() => form.fadeOut(0));
+      form.children('div').find('#btn-reset-edit-' + id).click(() => form.fadeOut(0));
     });
   });
 
   /**
+   * checked inputs for defaults address in inputs container
+   */
+  $('#forms-container i').each((i, icon) => {
+    $(icon).click(function (e) {
+      let input = $(this).next()
+      if (input.prop('checked') === true) {
+        input.prop('checked', '');
+        input.css('background-color', '#FFF');
+      } else {
+        input.prop('checked', true);
+        input.css('background-color', '#EA4038');
+      }
+    })
+  })
+  $('#forms-container label').each((i, label) => {
+    $(label).click(function (e) {
+      e.preventDefault()
+      let input = $(this).prev()
+      if (input.prop('checked') === true) {
+        input.prop('checked', '');
+        input.css('background-color', '#FFF');
+      } else {
+        input.prop('checked', true);
+        input.css('background-color', '#EA4038');
+      }
+    })
+  })
+
+  /**
    * inputs form addresses feat
    */
-  $('#address-content input').each((i, input) => {
+  $('#address-content .address-items input').each((i, input) => {
     $(input).click(function (e) {
-      $('#address-content input').each((i, item) => {
+      $('#address-content .address-items input').each((i, item) => {
         $(item).prop('checked', '');
       });
       $(input).prop('checked', true);
@@ -628,21 +618,25 @@ $(document).ready(() => {
   /**
    * checkbox for default address in address page
    */
-
   $('#form-add-address .filter-item i').on('click', function (e) {
-    const input = $('#form-add-address .filter-item input');
+    let input = $(this).next()
     if (input.prop('checked') === true) {
       input.prop('checked', '');
+      input.css('background-color', '#FFF');
     } else {
       input.prop('checked', true);
+      input.css('background-color', '#EA4038');
     }
   });
   $('#form-add-address .filter-item label').on('click', function (e) {
     e.preventDefault();
-    if ($(this).prev().prop('checked') === true) {
-      $(this).prev().prop('checked', '');
+    let input = $(this).prev()
+    if (input.prop('checked') === true) {
+      input.prop('checked', '');
+      input.css('background-color', '#FFF');
     } else {
-      $(this).prev().prop('checked', true);
+      input.prop('checked', true);
+      input.css('background-color', '#EA4038');
     }
   });
 });

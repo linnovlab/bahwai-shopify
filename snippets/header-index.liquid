@@ -82,18 +82,18 @@
           <a
             href="{{ routes.cart_url }}"
             id="icon-panier"
-            class="flex hover-nav-item"
+            class="flex hover-nav-item relative"
             title="panier">
 
             <img
               src="{{' panier.svg' | asset_url }}"
               alt="panier"
-              class="mr-2"
+              class="mr-2 "
               width="auto"
               height="auto"
               loading="lazy">
             <span class="sm:block hidden">Panier</span>
-            <span class="relative">{{ cart.item_count }}</span>
+            <div class="panier-count"><span>{{ cart.item_count }}</span></div>
           </a>
         </li>
         <li>

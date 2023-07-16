@@ -76,6 +76,9 @@ body {
 .star-empty {
   @apply text-white;
 }
+.panier-count{
+  @apply absolute top-[-11px] left-[6px] flex justify-center items-center text-xs text-white rounded-full bg-_orange_color w-[1.2rem] h-[1.2rem];
+}
 
 /* header */
 

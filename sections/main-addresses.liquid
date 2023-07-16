@@ -4,20 +4,20 @@
 <div class="mt-20">
   <div class="content sm:mx-[4rem] mx-[20px] mb-[7rem]">
     <div>
-        <h1 class="font-outfit text-black sm:text-[60px] text-[40px] font-bold sm:leading-[4rem] leading-[3rem] mb-[40px]">Bienvenu(e), <br><span class="text-_main_color_light">{{ customer.first_name }} {{ customer.last_name }}</span></h1>
+        <h1 class="font-outfit text-black sm:text-[60px] text-[40px] font-bold sm:leading-[4rem] leading-[3rem] mb-[40px]">Bienvenu(e), <br><span class="text-_main_color_light capitalize">{{ customer.first_name }} {{ customer.last_name }}</span></h1>
     </div>
 
     <div class="address">
         <h2 class="font-semibold text-_main_color_dark text-[24px] mb-4">Adresses </h2>
         <div id="address-content" class="form-address">
-            <div class="address-items text-[#565656] text-sm font-medium flex flex-wrap gap-4 sm:justify-normal justify-center">
+            <div class="address-items text-[#565656] text-sm font-medium flex items-stretch flex-wrap gap-4 sm:justify-normal justify-center">
               {%- for address in customer.addresses -%}
                 <div class="address-item">
                     <div class="item-content flex items-center gap-2">
                         <input type="checkbox" class="checkbox-round checked:!bg-_orange_color !border-_orange_color" id="item-{{ address.id }}" {% if address == customer.default_address  %}
                           checked
                         {% endif %} >
-                        <label for="item-{{ address.id }}" class="text-[#565656] flex flex-col gap-1 max-w-[12rem] p-2 address-shadow cursor-pointer rounded-md">
+                        <label for="item-{{ address.id }}" class="!text-[#565656] flex flex-col gap-1 max-w-[12rem] p-2 address-shadow cursor-pointer rounded-md">
                             <p class="capitalize">{{ customer.first_name }} {{ customer.last_name }} </p>
                             <p>{{ address.address1 }} </p>
                             <p>{{ address.address1 }}</p>
@@ -28,8 +28,8 @@
                     <div class="flex flex-col gap-3 items-center mb-4 mt-[24px] text-_main_color_dark">
                         <p id="btn-edit" data-id="{{ address.id }}" class="cursor-pointer font-medium border-b border-_main_color_dark pb-[2px] w-[9rem] text-center">Modifier l’adresse</p>
                         <button type="button" onclick="deleteAdresse({{ address.id }})" data-target="{{ address.url }}" data-confirm-message="Êtes-vous certain(e) de vouloir supprimer cette adresse ?" aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}" class="font-medium border-b border-_main_color_dark pb-[2px] w-[10.2rem] text-center">
-									Supprimer l’adresse
-								</button>
+                            Supprimer l’adresse
+                        </button>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
                           </div>
                           <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
                               <div class="item w-full">
-                                  <input value="{{ form.address2 }}" class="input focus:border-_orange_color transition-all duration-300" type="text" placeholder="Complément d’adresse" name="address[address2]" required>
+                                  <input value="{{ form.address2 }}" class="input focus:border-_orange_color transition-all duration-300" type="text" placeholder="Complément d’adresse" name="address[address2]">
                               </div>
                               <div class="item w-full">
                                   <input value="{{ form.city }}" class="input focus:border-_orange_color transition-all duration-300" type="text" placeholder="Ville*" name="address[city]" required>
@@ -79,11 +79,12 @@
                               </div>
                               <div class="item w-full"></div>
                           </div>
-								  <div class="filter-item relative flex gap-4 w-full">
-										<i class="fa-solid fa-check"></i>
-										<input type="checkbox" name="address[default]" id="default" class="checkbox">
-										<label for="default" class="hover:cursor-pointer">Définir comme adresse par défaut</label>
-									</div>
+								  
+                            <div class="filter-item relative flex gap-4 w-full">
+                                <i class="fa-solid fa-check"></i>
+                                <input type="checkbox" name="address[default]" id="default-{{ address.id }}" class="checkbox">
+                                <label for="default-{{ address.id }}" class="hover:cursor-pointer">Définir comme adresse par défaut</label>
+                            </div>
                           <div class="w-full flex gap-[10px] justify-around mt-[80px] mb-[5rem]">
                               <button type="submit" class="btn !p-0">Continuer</button>
                               <button type="reset" id="btn-reset-edit-{{ address.id }}" class="btn !p-0">Annuler</button>
@@ -120,7 +121,7 @@
               </div>
               <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
                   <div class="item w-full">
-                      <input  value="{{ form.address2 }}" class="input focus:border-_orange_color transition-all duration-300" type="text" placeholder="Complément d’adresse" name="address[address2]" required>
+                      <input  value="{{ form.address2 }}" class="input focus:border-_orange_color transition-all duration-300" type="text" placeholder="Complément d’adresse" name="address[address2]">
                   </div>
                   <div class="item w-full">
                       <input  value="{{ form.city }}" class="input focus:border-_orange_color transition-all duration-300" type="text" placeholder="Ville*" name="address[city]" required>
@@ -133,17 +134,17 @@
                   <div class="item w-full">
                       <input value="{{ form.zip }}" class="input focus:border-_orange_color transition-all duration-300" type="text" placeholder="Code postal*" name="address[zip]" required>
                   </div>
-						<div class="item w-full">
-							<select
-									class="px-3 ps-2 h-10 w-full border border-[#999] outline-none text-[#999]"
-									id="AddressCountryNew"
-									name="address[country]"
-									data-default="{{ form.country }}"
-									autocomplete="country"
-									>
-									{{ all_country_option_tags }}
-							</select>
-						</div>
+                    <div class="item w-full">
+                        <select
+                                class="px-3 ps-2 h-10 w-full border border-[#999] outline-none text-[#999]"
+                                id="AddressCountryNew"
+                                name="address[country]"
+                                data-default="{{ form.country }}"
+                                autocomplete="country"
+                                >
+                                {{ all_country_option_tags }}
+                        </select>
+                    </div>
               </div>
 
               <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
@@ -154,7 +155,7 @@
               </div>
               <div class="filter-item relative flex gap-4 w-full">
                   <i class="fa-solid fa-check"></i>
-                  <input type="checkbox" name="address[default]" id="default" class="checkbox">
+                  <input type="checkbox" name="address[default]" id="default" class="checkbox" checked>
                   <label for="default" class="hover:cursor-pointer">Définir comme adresse par défaut</label>
               </div>
               <div class="w-full flex gap-[10px] justify-around mt-[80px] mb-[5rem]">
