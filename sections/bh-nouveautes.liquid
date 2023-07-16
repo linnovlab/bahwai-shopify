@@ -38,7 +38,7 @@
         {% assign categ = link.handle %}
         <div id="{{ categ }}"  class="{%- if forloop.first == false -%} hidden {%- endif -%} ">
           <div class="swiper swiper-nouveautes relative sm:px-8">
-              <div class="swiper-wrapper items-stretch justify-center text-_main_color_dark ">
+              <div class="swiper-wrapper items-stretch sm:justify-center text-_main_color_dark ">
                 {% for product in collections[categ].products %}
                   {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
                   {%- assign n = rates | first | plus: 0 -%}
