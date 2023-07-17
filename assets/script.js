@@ -647,7 +647,7 @@ $(document).ready(() => {
    */
   $("#btn-share").click(() => {
     navigator.clipboard.writeText(location.href).then(() => {
-      alert("Url copié !")
+      $('#msg-share').fadeIn().fadeOut(5000)
     })
   })
 

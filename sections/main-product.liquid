@@ -49,10 +49,17 @@
           </span>
         </div>
       </div>
-      <div class="hover:cursor-pointer">
+      <div class="relative">
+        <div class="hidden" id="msg-share">
+          <div class="flex items-center absolute left-[-124px] top-[-1px] text-center">
+            <span class="text-sm text-white w-[7rem] p-[8px] bg-gray-900 rounded-md">Url copié !</span>
+            <i class="fa-solid fa-caret-right text-[18px]"></i>
+          </div>
+        </div>
         <span id="btn-share" onclick="shareProduct('{{ product.url }}', '{{ product.title }}')">
           <img
             src="{{ 'Partager.svg' | asset_url }}"
+            class="hover:cursor-pointer"
             alt="partager"
             title="Partager"
             width="auto"
@@ -273,9 +280,11 @@
 
 <script>
   const container = document.getElementById('related-products');
-  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => {
+  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`)
+  .then(response => {
     response.json()
   }).then(({products}) => {
+    console.log(products)
     var content = '';
     if (products.length > 0) {
       products.forEach(product => {
