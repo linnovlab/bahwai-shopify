@@ -90,9 +90,11 @@ $(document).ready(() => {
         $(items).each((i, li) => {
           $(li).removeClass('selected');
         });
-        $(this).addClass('selected');
+        $(this).addClass('selected')
         $('.accordions #layout').text($(this).text());
         $('#sujetFormContact').val($(this).text());
+        $(this).parent().parent().fadeOut()
+        $(this).parent().parent().prev().removeClass('active')
       });
     });
   };

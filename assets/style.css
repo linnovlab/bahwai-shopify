@@ -298,6 +298,9 @@ div.spr-summary .spr-summary-caption {
 }
 
 /* accordions */
+#btn-accordion.active > i{
+  transition: all .4s;
+}
 #btn-accordion.active > i {
   transform: rotate(180deg);
 }
