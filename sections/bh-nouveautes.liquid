@@ -4,7 +4,7 @@
     </h2>
     <div class="cats-navigation mt-8 max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
       <nav class="text-_main_color_dark mt-2 z-50 sm:w-full w-[43rem]">
-        <ul id="nouveautes-links" class="flex justify-center sm:items-start gap-[20px] font-bold mb-1">
+        <ul id="nouveautes-links" class="flex justify-start mx-2 sm:justify-center sm:mx-0 gap-[20px] font-bold mb-1">
           {% for link in linklists['liens-categories'].links %}
             {% if link.title == 'Nouveautés' %}
               <li>
