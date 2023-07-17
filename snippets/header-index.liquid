@@ -1,11 +1,21 @@
 {%- if template.name == 'index' -%}
   <div>
+    {% comment %}  
+    <video
+    src="{{ 'banner_canonly.mp4' | asset_url }}"
+    class="object-cover absolute top-0 left-0 w-full sm:h-[655px] h-[520px] z-[-1]"
+    autoplay=""
+    loop=""
+    muted=""
+    type="video/mp4"></video>
+    {% endcomment %}
     <video
       src="{{ 'banner_canonly.mp4' | asset_url }}"
       class="object-cover absolute top-0 left-0 w-full sm:h-[655px] h-[520px] z-[-1]"
-      autoplay=""
-      loop=""
-      muted=""
+      playsinline
+      autoplay
+      muted
+      loop
       type="video/mp4"></video>
   </div>
 {%- endif -%}
@@ -93,7 +103,9 @@
               height="auto"
               loading="lazy">
             <span class="sm:block hidden">Panier</span>
-            <div id="panier-count" class="panier-count"><span>{{ cart.item_count }}</span></div>
+            <div id="panier-count" class="panier-count">
+              <span>{{ cart.item_count }}</span>
+            </div>
           </a>
         </li>
         <li>

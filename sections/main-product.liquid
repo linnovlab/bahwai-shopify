@@ -90,7 +90,8 @@
                 type="checkbox"
                 class="checkbox-round"
                 name="h_abonnement"
-                id="hors" checked>
+                id="hors"
+                checked>
               <label for="hors" class="cursor-pointer font-medium text-_main_color_dark ">Hors abonnement</label>
             </div>
             <div class="flex items-center gap-4 mt-3">
@@ -98,7 +99,8 @@
                 type="checkbox"
                 class="checkbox-round sm:!border-gray-500 !border-gray-500"
                 name="h_abonnement"
-                id="moins" disabled>
+                id="moins"
+                disabled>
               <label for="moins" class="cursor-pointer flex items-center gap-4 sm:text-_main_color_dark ">
                 <span class="font-medium text-gray-500">S’abonner</span>
                 <span class="px-[8px] py-[4px] sm:bg-_orange_color bg-_main_color_light rounded-md text-white text-12px">Pas encore disponible</span>
@@ -111,7 +113,9 @@
             <div class="accordion-item text-gray-500">
               <button
                 type="button"
-                {% comment %} id="btn-accordion" {% endcomment %}
+                {% comment %}
+                id="btn-accordion"
+                {% endcomment %}
                 class="p-[6px] max-w-[270px] flex justify-between w-full border border-[#999999] rounded-md">
                 <span class="text-sm font-medium">Livraison :
                   <span class="text-[12px] font-normal">Une fois par semaine</span>
@@ -183,7 +187,8 @@
 
 <section class="footer text-_main_color_dark mt-12 sm:mx-8 mx-4 desktop-width">
   <h2 class="font-medium text-lg mb-6">Vous aimeriez également</h2>
-  <div id="related-products" class="content flex justify-around sm:justify-normal flex-wrap items-center sm:gap-8 gap-2 text-sm mt-2"></div>
+  <div id="related-products" class="content flex justify-around sm:justify-normal flex-wrap items-center sm:gap-8 gap-2 text-sm mt-2">{% comment %}  {{ product.metafields.shopify--discovery--product_recommendation.related_products }} {% endcomment %}
+  </div>
 </section>
 
 <h4 class="font-medium text-_main_color_dark text-lg sm:mx-8 mx-4 mt-8 -mb-10">L'avis des kings</h4>
@@ -280,27 +285,21 @@
 
 <script>
   const container = document.getElementById('related-products');
-  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`)
-  .then(response => {
-    response.json()
-  }).then(({products}) => {
-    console.log(products)
+  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => response.json()).then(({products}) => {
+
+// console.log(products);
     var content = '';
     if (products.length > 0) {
       products.forEach(product => {
         content += `
-        <div class="item max-w-[144px] w-full">
-            <a href="/products/${
+            <div class="item max-w-[144px] w-full">
+              <a href="/products/${
           product.handle
-        }
-        " class="item w-full m-1 flex items-center flex-col text-[12px]">
+        }" class="item w-full m-1 flex items-center flex-col text-[12px]">
                 <div class="img w-full">
-                <img
-                    src="${
+                  <img src="${
           product.featured_image
-        }"
-                    alt="La gourmande aux noisettes"
-                    class="w-full h-[143px] object-cover ">
+        }" alt="La gourmande aux noisettes" class="w-full h-[143px] object-cover">
                 </div>
                 <p class="font-bold text-center px-2 mt-1">La gourmande aux noisettes</p>
                 <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
@@ -309,28 +308,27 @@
                       {%- for i in (1..5) -%}
                         {%- if i <= n -%}
                           <i class="fas fa-star"></i>
-                          {%- else -%}
+                        {%- else -%}
                           <i class="fa-regular fa-star"></i>
                         {%- endif -%}
                       {%- endfor -%}
-                    {% endif %} 
+                    {% endif %}
                   </div>
                   <span class="border-_main_color_dark border-b-2 text-[11px]">
                     {% if product.metafields.reviews.rating_count == null %}
                       Soyez le 1er à noter!
                     {% else %}
                       {{ product.metafields.reviews.rating_count }} avis
-                    {% endif %} 
+                    {% endif %}
                   </span>
                 </div>
                 <p class="font-medium">À partir de ${
-          product.price / 100
-        } €
-                </p>
-            </a>
-        </div> `;
-      })
-      container.innerHTML = content
+          (product.price / 100).toFixed(2)
+        } €</p>
+              </a>
+            </div>`;
+      });
+      container.innerHTML = content;
     }
   });
 
