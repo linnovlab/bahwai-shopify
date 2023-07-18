@@ -12,12 +12,21 @@
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+    <link type="image/png" rel="shortcut icon" href="{{ '300DPI.png' | asset_url }}" type="image/x-icon">
+    <meta name="description" content="Chez Bahwai, nous fabriquons des produits respectueux de votre corps et de l'environnement, en utilisant des matériaux d'emballage recyclables à l'infini et en sourçant nos ingrédients auprès d'agriculteurs éco-responsables.">
+    <meta property="og:site_name" content="BAHWAI">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="BAH WAI">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Chez Bahwai, nous fabriquons des produits respectueux de votre corps et de l'environnement, en utilisant des matériaux d'emballage recyclables à l'infini et en sourçant nos ingrédients auprès d'agriculteurs éco-responsables.">
+    <meta property="og:image" content="">
+    <link rel="canonical" href="https://example.com"/>
     <link
       rel="preconnect"
       href="https://cdn.shopify.com"
       crossorigin>
 
-    {%- if settings.favicon != blank -%}
+    {% comment %} {%- if settings.favicon != blank -%}
       <link
         rel="icon"
         type="image/png"
@@ -29,7 +38,7 @@
         rel="preconnect"
         href="https://fonts.shopifycdn.com"
         crossorigin>
-    {%- endunless -%}
+    {%- endunless -%} {% endcomment %}
 
     <title>
       {{ page_title }}
