@@ -3131,6 +3131,10 @@ tbody tr:last-child td{
     max-width: none;
   }
 
+  .sm\:max-w-\[80\%\]{
+    max-width: 80%;
+  }
+
   .sm\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
