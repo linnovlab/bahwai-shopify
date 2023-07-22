@@ -38,11 +38,11 @@
         <div class="item">
           <h4 class="font-bold border-b-2 border-gray-400  mb-4">Pour les curieux !</h4>
           <ul>
-            <li><a href="#">Une question ?</a></li>
-            <li><a href="#">Politique d’expédition</a></li>
-            <li><a href="#">Charte de confidentialité</a></li>
-            <li><a href="#">Cond. Générale de Vente</a></li>
-            <li><a href="#">Mentions légales</a></li>
+            {% for link in linklists['footer'].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
           </ul>
         </div>
         <div class="item">
@@ -136,22 +136,11 @@
           </button>
           <div class="panel hidden mb-4">
             <ul class="ps-4">
-              <li>
-                <a href="#">Une question ?
-                </a>
-              </li>
-              <li>
-                <a href="#">Politique d’expédition</a>
-              </li>
-              <li>
-                <a href="#">Charte de confidentialité</a>
-              </li>
-              <li>
-                <a href="#">Cond. Générale de Vente</a>
-              </li>
-              <li>
-                <a href="#">Mentions légales</a>
-              </li>
+              {% for link in linklists['footer'].links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
