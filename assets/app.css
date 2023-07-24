@@ -1103,6 +1103,10 @@ html {
   width: 22rem;
 }
 
+.w-\[278px\]{
+  width: 278px;
+}
+
 .w-\[298px\]{
   width: 298px;
 }
@@ -1149,10 +1153,6 @@ html {
 
 .w-full{
   width: 100%;
-}
-
-.w-\[278px\]{
-  width: 278px;
 }
 
 .max-w-\[100\%\]{
@@ -2253,7 +2253,6 @@ body {
 
 .ul-engagements{
   width: 100%;
-  max-width: 50%;
   list-style-position: inside;
   list-style-type: disc;
   border-radius: 0.375rem;
@@ -2262,13 +2261,24 @@ body {
   padding: 0.5rem;
 }
 
+@media (min-width: 640px){
+  .ul-engagements{
+    max-width: 50%;
+  }
+}
+
 .div-engagements{
   width: 100%;
-  max-width: 50%;
   border-radius: 0.375rem;
   border-width: 1px;
   border-color: #9999;
   padding: 0.5rem;
+}
+
+@media (min-width: 640px){
+  .div-engagements{
+    max-width: 50%;
+  }
 }
 
 .titre-engagements{
@@ -2945,10 +2955,6 @@ tbody tr:last-child td{
 }
 
 @media (min-width: 300px){
-  .screen300\:w-\[9rem\]{
-    width: 9rem;
-  }
-
   .screen300\:w-\[11\.5rem\]{
     width: 11.5rem;
   }
@@ -3095,6 +3101,10 @@ tbody tr:last-child td{
     width: 11rem;
   }
 
+  .sm\:w-\[341px\]{
+    width: 341px;
+  }
+
   .sm\:w-\[344px\]{
     width: 344px;
   }
@@ -3109,10 +3119,6 @@ tbody tr:last-child td{
 
   .sm\:w-full{
     width: 100%;
-  }
-
-  .sm\:w-\[341px\]{
-    width: 341px;
   }
 
   .sm\:max-w-\[17rem\]{
