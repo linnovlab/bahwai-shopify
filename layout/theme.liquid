@@ -12,21 +12,17 @@
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
-    <link type="image/png" rel="shortcut icon" href="{{ '300DPI.png' | asset_url }}" type="image/x-icon">
-    <meta name="description" content="Chez Bahwai, nous fabriquons des produits respectueux de votre corps et de l'environnement, en utilisant des matériaux d'emballage recyclables à l'infini et en sourçant nos ingrédients auprès d'agriculteurs éco-responsables.">
-    <meta property="og:site_name" content="BAHWAI">
-    <meta property="og:url" content="">
-    <meta property="og:title" content="BAH WAI">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Chez Bahwai, nous fabriquons des produits respectueux de votre corps et de l'environnement, en utilisant des matériaux d'emballage recyclables à l'infini et en sourçant nos ingrédients auprès d'agriculteurs éco-responsables.">
-    <meta property="og:image" content="">
-    <link rel="canonical" href="https://example.com"/>
+    <link
+      type="image/png"
+      rel="shortcut icon"
+      href="{{ '300DPI.png' | asset_url }}"
+      type="image/x-icon">
     <link
       rel="preconnect"
       href="https://cdn.shopify.com"
       crossorigin>
 
-    {% comment %} {%- if settings.favicon != blank -%}
+    {%- if settings.favicon != blank -%}
       <link
         rel="icon"
         type="image/png"
@@ -38,7 +34,7 @@
         rel="preconnect"
         href="https://fonts.shopifycdn.com"
         crossorigin>
-    {%- endunless -%} {% endcomment %}
+    {%- endunless -%}
 
     <title>
       {{ page_title }}
@@ -123,7 +119,8 @@
       {% if template.name == 'index' %}
         <section class="banner relative sm:h-[25rem] h-[20rem] flex justify-center items-center">
           <div class="banner-content text-white flex justify-center flex-col items-center gap-2">
-            <h1 class="font-litle text-[32px] text-center">Des délicieuses boissons pétillantes au CBD </h1>
+            <h1 class="font-litle text-[32px] text-center">Des délicieuses boissons pétillantes au CBD
+            </h1>
             <p class="text-center">Détendez-vous avec un Max de Goût et zero sucre !
             </p>
             <p class="pt-[3rem]">
