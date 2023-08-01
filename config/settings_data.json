@@ -148,11 +148,14 @@
       "bh-nouveautes": {
         "type": "bh-nouveautes",
         "settings": {
-          "titre": "Nos nouveautés surprenantes"
+          "titre": "Nos nouveautés rafraichissantes"
         }
       },
       "site-info-section": {
         "type": "site-info-section",
+        "custom_css": [
+
+        ],
         "settings": {
           "titre": "C’est quoi Bahwai ?"
         }
