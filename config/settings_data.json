@@ -141,6 +141,7 @@
         "settings": {
           "annonce": "Profitez de -20% pour votre première commande",
           "menu": "main-menu",
+          "logo_width": 100,
           "video_url": ""
         }
       },
@@ -213,7 +214,7 @@
       "bh-pour-un-monde": {
         "type": "bh-pour-un-monde",
         "settings": {
-          "title": "Pour un monde meilleur"
+          "title": "Pour une Best Life"
         }
       },
       "bh-map": {
@@ -226,8 +227,7 @@
       "bh-newsletter": {
         "type": "bh-newsletter",
         "settings": {
-          "title": "Je souhaite être prévenu des prochaines ouvertures +",
-          "form": ""
+          "title": "Je souhaite être prévenu des prochaines ouvertures +"
         }
       },
       "bh-actualites": {
