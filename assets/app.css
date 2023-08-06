@@ -1733,6 +1733,10 @@ html {
   padding-top: 5rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1890,6 +1894,10 @@ html {
 
 .leading-\[4rem\] {
   line-height: 4rem;
+}
+
+.leading-\[82\%\] {
+  line-height: 82%;
 }
 
 .\!text-\[\#565656\] {
