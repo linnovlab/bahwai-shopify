@@ -180,7 +180,7 @@
           href="{{ link.url }}#nous-trouver"
           title="{{ link.title }}">nous trouver</a>
       </li>
-      {% for link in section.settings.menu_side.links %}
+      {% for link in linklists['links-side'].links %}
         {% if link.title == 'Nous trouver' %}
           <li>
             <a
