@@ -134,37 +134,70 @@
 </div>
 
 <nav id="nav-header" class="bg-_main_color_dark py-2 hidden sm:block">
-  <ul class="flex justify-center gap-4 text-white">
-    {% for link in section.settings.menu.links %}
-      {% if link.links.size > 0 %}
-        <li class="accordions relative">
-          <a
-            class="hover-nav-item"
-            id="btn-accordion"
-            href="{{ link.url }}"
-            title="{{ link.title }}">
-            <span>{{ link.title }}</span>
-            <i class="fa-sharp fa-solid fa-chevron-down"></i>
-          </a>
-          <div class="panel hidden absolute top-8 left-1 bg-_main_color_dark w-[7rem]">
-            <ul class="text-white flex flex-col ps-2">
-              {% for sublink in link.links %}
-                <li>
-                  <a href="{{ sublink.url }}" title="{{ sublink.title }}">{{ sublink.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </li>
-      {% else %}
-        <li>
-          <a
-            class="hover-nav-item"
-            href="{{ link.url }}"
-            title="{{ link.title }}">{{ link.title }}</a>
-        </li>
-      {% endif %}
-    {% endfor %}
-
+  <ul class="flex text-white">
+    <div class="left-links flex justify-center gap-4 max-w-[75%] w-full">
+      {% for link in section.settings.menu.links %}
+        {% if link.links.size > 0 %}
+          <li class="accordions relative">
+            <a
+              class="hover-nav-item"
+              id="btn-accordion"
+              href="{{ link.url }}"
+              title="{{ link.title }}">
+              <span>{{ link.title }}</span>
+              <i class="fa-sharp fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="panel hidden absolute top-8 left-1 bg-_main_color_dark w-[7rem]">
+              <ul class="text-white flex flex-col ps-2">
+                {% for sublink in link.links %}
+                  <li>
+                    <a href="{{ sublink.url }}" title="{{ sublink.title }}">{{ sublink.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+        {% else %}
+          <li>
+            <a
+              class="hover-nav-item"
+              href="{{ link.url }}"
+              title="{{ link.title }}">{{ link.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="right-links flex justify-center gap-4">
+      <li>
+        <a
+          class="hover-nav-item"
+          href="{{ link.url }}#nous-trouver"
+          title="{{ link.title }}">nous contacter</a>
+      </li>
+      <li>
+        <a
+          class="hover-nav-item"
+          href="{{ link.url }}#nous-trouver"
+          title="{{ link.title }}">nous trouver</a>
+      </li>
+      {% for link in section.settings.menu_side.links %}
+        {% if link.title == 'Nous trouver' %}
+          <li>
+            <a
+              class="hover-nav-item"
+              href="{{ link.url }}#nous-trouver"
+              title="{{ link.title }}">{{ link.title }}</a>
+          </li>
+        {% else %}
+          <li>
+            <a
+              class="hover-nav-item"
+              href="{{ link.url }}"
+              title="{{ link.title }}">{{ link.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </div>
   </ul>
+
 </nav>
