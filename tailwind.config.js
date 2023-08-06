@@ -314,7 +314,7 @@ module.exports = {
     },
     fontFamily: {
       body: ['Poppins'],
-      litle: ['Permanent Marker'],
+      litle: ['Rubik'],
       sans: [
         'ui-sans-serif',
         'system-ui',
