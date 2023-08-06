@@ -1,0 +1,135 @@
+<div class="aricle-main text-_main_color_dark mt-20">
+  <div class="content pb-[10rem] mx-8">
+    <h1 class="title mb-3">L'aventure BahWai</h1>
+    <p class="text-center  text-sm mb-8">
+      Tu apprécies l’équipe et tu veux en être ? tu as des idées incroyables d’évènements ou de collab' (plus c’est fou, plus on aime ça) ? tu veux devenir ambassadeur de Bahwai ou simplement revendre nos produits ? tu as frappé à la bonne porte !
+      remplis ce formulaire (mais non, ce n'est pas une enquête de police) et on revient vers toi dans les 48h !
+
+    </p>
+    {% form 'contact', class: "sm:max-w-[40rem] max-w-[100%] mx-auto w-full  flex flex-col items-center gap-6", id: "form-partenaire" %}
+      {{ form.errors | default_errors }}
+      <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="text"
+            placeholder="Nom*"
+            name="contact[nom]"
+            required>
+        </div>
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="text"
+            placeholder="Prénom*"
+            name="contact[prenom]"
+            required>
+        </div>
+      </div>
+      <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="tel"
+            placeholder="Numéro de téléphone*"
+            name="contact[tel]"
+            required>
+        </div>
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="email"
+            placeholder="Adresse mail*"
+            name="contact[email]"
+            required>
+        </div>
+      </div>
+      <div class="flex flex-wrap sm:flex-nowrap gap-4 w-full">
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="text"
+            placeholder="Ville du local commercial*"
+            name="contact[ville]"
+            required>
+        </div>
+        <div class="item w-full">
+          <input
+            class="input focus:border-_orange_color transition-all duration-300"
+            type="text"
+            placeholder="Code postal*"
+            name="contact[code_postale]"
+            required>
+        </div>
+      </div>
+      <div class="item self-start mt-8">
+        <div class="accordions">
+          <button
+            type="button"
+            id="btn-accordion"
+            class="rounded-t-[5px] px-3 ps-2 h-10 w-[22rem] border border-[#999] flex justify-between items-center">
+            <span id="layout" class="text-[#999]">Choisissez un sujet*
+            </span>
+            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="panel panel-selected hidden" id="panel-partenaire">
+            <ul>
+              <li data-value="Devenir ambassadeur">Devenir ambassadeur</li>
+              <li data-value="Communication et relation presse">Communication / Relation presse</li>
+              <li data-value="Proposer un évènement ou une collaboration">Proposer un évènement / une collab’</li>
+              <li class="selected" data-value="Devenir revendeur">Devenir revendeur</li>
+              <li data-value="Autre" class="rounded-b-[5px]">Autre</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="item w-full">
+        <textarea
+          class="border rounded-[5px] border-[#999] w-full -mt-4 ps-4"
+          name="contact[body]"
+          id=""
+          rows="10"
+          placeholder="Dites nous tout !  "></textarea>
+      </div>
+      <div class="flex flex-col items-center">
+        <button
+          id="btn-partenaire"
+          type="submit"
+          class="btn mb-4 py-2 px-[5rem] text-white">Envoyer</button>
+      </div>
+      <input
+        type="hidden"
+        name="contact[objet]"
+        value=""
+        id="sujetFormContact">
+    {% endform %}
+    <p class="mt-4 text-center text-[#565656]">En poursuivant, vous acceptez toutes les conditions générales d’utilisations et notre politique de confidentialité</p>
+  </div>
+
+  <!-- notification -->
+  <style>
+    .bg-notif {
+      background-image: url('{{ 'Orange.png' |asset_url }}');
+    }
+  </style>
+  <div id="notif-partenaire" class="hidden fixed top-[14rem] w-full">
+    <div class="bg-notif img-center rounded-md p-4 sm:mx-[8rem] mx-4">
+      <div class="flex justify-end mb-8">
+        <p id="close-notif-partenaire" class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
+          <i class="fas fa-xmark text-[1.5rem]"></i>
+          <span>Fermer</span>
+        </p>
+      </div>
+
+
+      <p class="text-white">Super, nous avons bien pris en compte ta demande, on revient vers toi dans les 48h ! (le temps de prendre un café, sortir le chien…) <br><br>
+        Cordialement
+      </p>
+      <h2 class="text-white font-bold text-lg">Bahwai family</h2>
+    </div>
+  </div>
+</div>
+
+<div class="rte">
+  {{ page.content }}
+</div>

@@ -49,7 +49,7 @@
           <h4 class="font-bold border-b-2 border-gray-400 mb-4">Moyens de paiement acceptés</h4>
           <div class="imgs flex items-center gap-4">
             <span><img
-              class="w-[4rem]"
+                class="w-[4rem]"
                 src="{{ 'mastercard.png' | asset_url }}"
                 alt="martercard"
                 title="martercard"
@@ -57,14 +57,14 @@
                 width="auto"
                 height="auto"></span>
             <span><img
-              class="w-[4rem]"
+                class="w-[4rem]"
                 src="{{ 'visa.png' | asset_url }}"
                 alt="visa"
                 title="visa"
                 loading="lazy"
                 width="auto"
                 height="auto"></span>
-            <span ><img
+            <span><img
                 src="{{ 'paypal.png' | asset_url }}"
                 class="w-[4rem]"
                 alt="paypal"
@@ -98,13 +98,16 @@
           <div class="panel hidden mb-4">
             <ul class="ps-4">
               <li>
-                <a href="./nous contacter.html">Nous contacter</a>
+                <a href="{{ pages.contact.url }}">Nous contacter</a>
               </li>
               <li>
-                <a href="./devenir partenaire.html">Devenir partenaire</a>
+                <a href="{{ pages.partenaire.url }}">Devenir partenaire</a>
               </li>
-              <li><a href="https://wa.me/33630139872" class="underline">+33 6 30 13 98 72</a></li>
+              <li>
+                <a href="https://wa.me/33630139872" class="underline">+33 6 30 13 98 72</a>
+              </li>
             </ul>
+
           </div>
         </div>
         <div class="accordion-item border-b-2 border-gray-400  w-full mx-auto mt-2 mb-4">
@@ -112,13 +115,14 @@
             type="button"
             id="btn-accordion"
             class="px-4 font-bold flex justify-between w-full">
-            <span> Tu veux en savoir plus ?</span>
+            <span>
+              Tu veux en savoir plus ?</span>
             <i class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
           </button>
           <div class="panel hidden mb-4">
             <ul class="ps-4">
               <li>
-                <a href="./nos engagements.html">Nos engagements</a>
+                <a href="{{ pages.engagements.url }}">Nos engagements</a>
               </li>
               <li>
                 <a href="#">Ils parlent de nous</a>
@@ -155,7 +159,7 @@
           <div class="panel hidden my-4">
             <div class="imgs flex items-center gap-4 ps-4">
               <span><img
-                class="w-[4rem]"
+                  class="w-[4rem]"
                   src="{{ 'mastercard.png' | asset_url }}"
                   alt="martercard"
                   title="martercard"
@@ -163,14 +167,14 @@
                   width="auto"
                   height="auto"></span>
               <span><img
-                class="w-[4rem]"
+                  class="w-[4rem]"
                   src="{{ 'visa.png' | asset_url }}"
                   alt="visa"
                   title="visa"
                   loading="lazy"
                   width="auto"
                   height="auto"></span>
-              <span ><img
+              <span><img
                   src="{{ 'paypal.png' | asset_url }}"
                   class="w-[4rem]"
                   alt="paypal"
