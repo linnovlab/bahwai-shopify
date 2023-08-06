@@ -168,19 +168,7 @@
       {% endfor %}
     </div>
     <div class="right-links flex justify-center gap-4">
-      <li>
-        <a
-          class="hover-nav-item"
-          href="{{ link.url }}#nous-trouver"
-          title="{{ link.title }}">nous contacter</a>
-      </li>
-      <li>
-        <a
-          class="hover-nav-item"
-          href="{{ link.url }}#nous-trouver"
-          title="{{ link.title }}">nous trouver</a>
-      </li>
-      {% for link in linklists['links-side'].links %}
+      {% for link in linklists['menu-side'].links %}
         {% if link.title == 'Nous trouver' %}
           <li>
             <a
