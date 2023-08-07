@@ -170,11 +170,19 @@
 
     {% if template.name != '404' %}
       {% if template.name != 'login' %}
+
         {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
           {% render 'bh-footer-complet' %}
         {% else %}
-          {% render 'bh-footer-autre' %}
+
+          {% if page.handle == 'laventure-bahwai' %}
+            {% render 'bh-footer-aventure' %}
+          {% else %}
+            {% render 'bh-footer-autre' %}
+          {% endif %}
+
         {% endif %}
+
       {% else %}
         {% render 'bh-footer-login' %}
       {% endif %}

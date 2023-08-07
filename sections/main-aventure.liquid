@@ -1,33 +1,148 @@
-<div class="aricle-main text-_main_color_dark mt-20">
-  <div class="content pb-[10rem] mx-8">
-    <h1 class="title mb-3">L'aventure BahWai</h1>
-
-  </div>
-
-  <!-- notification -->
-  <style>
-    .bg-notif {
-      background-image: url('{{ 'Orange.png' |asset_url }}');
+<style>
+  .hero-aventure {
+    background-image: url('{{ 'baniere-aventure.png' |asset_url }}');
+  }
+  .naissance-section {
+    background-image: url('{{ 'wave-violet-aventure.png' |asset_url }}');
+  }
+  .section-equipe {
+    background-image: url('{{ 'wave-orange-aventure.png' |asset_url }}');
+    height: 26.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  @media screen and (max-width: 641px) {
+    .hero-aventure {
+      background-image: url('{{ 'baniere-aventure-sm.png' |asset_url }}');
     }
-  </style>
-  <div id="notif-partenaire" class="hidden fixed top-[14rem] w-full">
-    <div class="bg-notif img-center rounded-md p-4 sm:mx-[8rem] mx-4">
-      <div class="flex justify-end mb-8">
-        <p id="close-notif-partenaire" class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
-          <i class="fas fa-xmark text-[1.5rem]"></i>
-          <span>Fermer</span>
+    .naissance-section {
+      background-image: url('{{ 'wave-violet-aventure-sm.png' |asset_url }}');
+    }
+    .section-equipe {
+      background-image: url('{{ 'wave-orange-aventure-sm.png' |asset_url }}');
+      height: 80rem;
+    }
+  }
+  .left-intro-section {
+    max-width: 66%;
+  }
+  @media screen and (max-width: 1167px) {
+    .img-aventure-1 {
+      display: none;
+    }
+    .img-aventure-1-sm {
+      display: block;
+    }
+    .img-aventure-2 {
+      display: none;
+    }
+    .img-aventure-2-sm {
+      display: block;
+    }
+    .left-intro-section {
+      max-width: none;
+      width: 100%;
+    }
+    .naissance-section {
+      height: auto;
+    }
+  }
+</style>
+<section class="aricle-main text-_main_color_dark">
+  <div class="hero-aventure h-[500px] mb-[40px] img-center"></div>
+  <div class="content mx-[40px] ">
+    <h1 class="title mb-3">L'aventure BahWai</h1>
+    <div class="intro-section flex gap-[5rem] mb-[80px] desktop-width">
+      <div class="left-intro-section flex flex-col items-center text-_main_color_dark font-normal sm">
+        <p class="mb-[30px]">
+          L'aventure Bahwai a débuté sous le nom de Nutrigems, avec une vision claire en tête : offrir des solutions pratiques pour améliorer la santé et le bien-être de nos clients grâce à une nutrition équilibrée et des produits de qualité supérieure. Nous avons travaillé dur pour développer des produits nutritionnels innovants, conçus pour apporter des bienfaits réels à la santé.
+        </p>
+        <img
+          class="hidden img-aventure-1-sm"
+          src="{{ 'img-aventure-1.png' |asset_url }}"
+          alt="image cannette bahwai">
+        <p class="mt-[30px]">
+          Au fil du temps, nous avons reçu de précieux retours de nos clients, qui ont été ravis de la qualité et des bienfaits de nos produits, mais qui ont exprimé un souhait commun : ils souhaitaient que notre gamme de produits soit encore plus gourmande et savoureuse, sans compromettre les bienfaits pour la santé. Vos commentaires sincères et passionnés ont été la source d'inspiration qui nous a poussés à aller plus loin.
         </p>
       </div>
-
-
-      <p class="text-white">Super, nous avons bien pris en compte ta demande, on revient vers toi dans les 48h ! (le temps de prendre un café, sortir le chien…) <br><br>
-        Cordialement
-      </p>
-      <h2 class="text-white font-bold text-lg">Bahwai family</h2>
+      <div class="right img-aventure-1">
+        <img
+          class=""
+          src="{{ 'img-aventure-1.png' |asset_url }}"
+          alt="image nutrigems">
+      </div>
     </div>
   </div>
-</div>
 
-<div class="rte">
-  {{ page.content }}
-</div>
+  <div class="naissance-section img-center h-[50rem] py-[100px] px-[40px] mb-[-7rem]">
+    <h2 class="title-white mb-[40px]">La naissance de Bahwai</h2>
+    <div class="content flex gap-3 items-center desktop-width">
+      <img
+        class="img-aventure-2 me-[100px] block"
+        src="{{ 'img-aventure-2.png' |asset_url }}"
+        alt="image cannette bahwai">
+      <div class="right flex flex-col items-center text-white font-normal">
+        <p class="mb-[30px]">
+          C'est ainsi qu'est née Bahwai ! Forts de vos retours et désireux de répondre à vos attentes, nous avons décidé de réinventer notre marque pour vous proposer des produits toujours aussi nutritifs, mais également incroyablement gourmands et savoureux. Nous avons conservé notre objectif initial d'améliorer la santé et le bien-être, mais nous avons ajouté une touche de gourmandise pour vous offrir une expérience gustative inégalée.
+        </p>
+        <img
+          class="hidden img-aventure-2-sm"
+          src="{{ 'img-aventure-2.png' |asset_url }}"
+          alt="image cannette bahwai">
+        <p class="mt-[30px] mb-12">
+          Malgré notre nouvelle orientation gourmande, nous n'avons pas fait de compromis sur la qualité de nos ingrédients et de nos processus de fabrication. Nous continuons de choisir les meilleurs ingrédients, d'adopter des pratiques éthiques et responsables, et de nous engager envers votre santé et votre bien-être.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-equipe relative z-[100]">
+    <h2 class="title-white pt-[40px]">L’équipe Bahwai</h2>
+    <div class="items flex gap-[80px] flex-wrap justify-center text-white desktop-width">
+      <div class="item flex flex-col gap-3 items-center">
+        <div class="img">
+          <img
+            src="{{ 'profile.jpg' |asset_url }}"
+            class="rounded-full w-[130px] h-[130px]"
+            alt="profile">
+        </div>
+        <h3 class="font-medium text-2xl">Mamadou</h3>
+        <p class="italic">paste</p>
+      </div>
+      <div class="item flex flex-col gap-3 items-center">
+        <div class="img">
+          <img
+            src="{{ 'profile.jpg' |asset_url }}"
+            class="rounded-full w-[130px] h-[130px]"
+            alt="profile">
+        </div>
+        <h3 class="font-medium text-2xl">Mamadou</h3>
+        <p class="italic">paste</p>
+      </div>
+      <div class="item flex flex-col gap-3 items-center">
+        <div class="img">
+          <img
+            src="{{ 'profile.jpg' |asset_url }}"
+            class="rounded-full w-[130px] h-[130px]"
+            alt="profile">
+        </div>
+        <h3 class="font-medium text-2xl">Mamadou</h3>
+        <p class="italic">paste</p>
+      </div>
+      <div class="item flex flex-col gap-3 items-center">
+        <div class="img">
+          <img
+            src="{{ 'profile.jpg' |asset_url }}"
+            class="rounded-full w-[130px] h-[130px]"
+            alt="profile">
+        </div>
+        <h3 class="font-medium text-2xl">Mamadou</h3>
+        <p class="italic">paste</p>
+      </div>
+
+    </div>
+  </div>
+</section>

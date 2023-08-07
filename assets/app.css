@@ -754,6 +754,11 @@ html {
   margin-bottom: 2rem;
 }
 
+.mx-\[40px\]{
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 .-mb-10{
   margin-bottom: -2.5rem;
 }
@@ -841,6 +846,10 @@ html {
 
 .mb-\[7rem\]{
   margin-bottom: 7rem;
+}
+
+.mb-\[80px\]{
+  margin-bottom: 80px;
 }
 
 .mb-\[8px\]{
@@ -961,6 +970,27 @@ html {
   margin-top: 80px;
 }
 
+.mb-\[60px\]{
+  margin-bottom: 60px;
+}
+
+.mb-\[30px\]{
+  margin-bottom: 30px;
+}
+
+.me-\[100px\]{
+  -webkit-margin-end: 100px;
+          margin-inline-end: 100px;
+}
+
+.-mt-8{
+  margin-top: -2rem;
+}
+
+.mb-\[-7rem\]{
+  margin-bottom: -7rem;
+}
+
 .block{
   display: block;
 }
@@ -995,6 +1025,10 @@ html {
 
 .h-\[10rem\]{
   height: 10rem;
+}
+
+.h-\[130px\]{
+  height: 130px;
 }
 
 .h-\[143px\]{
@@ -1061,12 +1095,24 @@ html {
   height: 100vh;
 }
 
+.h-\[500px\]{
+  height: 500px;
+}
+
+.h-\[50rem\]{
+  height: 50rem;
+}
+
 .max-h-\[8rem\]{
   max-height: 8rem;
 }
 
 .max-h-screen{
   max-height: 100vh;
+}
+
+.max-h-\[50rem\]{
+  max-height: 50rem;
 }
 
 .w-10{
@@ -1099,6 +1145,10 @@ html {
 
 .w-\[10rem\]{
   width: 10rem;
+}
+
+.w-\[130px\]{
+  width: 130px;
 }
 
 .w-\[17rem\]{
@@ -1225,12 +1275,16 @@ html {
   max-width: 62rem;
 }
 
+.max-w-\[75\%\]{
+  max-width: 75%;
+}
+
 .max-w-\[80\%\]{
   max-width: 80%;
 }
 
-.max-w-\[75\%\]{
-  max-width: 75%;
+.max-w-\[66\%\]{
+  max-width: 66%;
 }
 
 .transform{
@@ -1345,6 +1399,14 @@ html {
   gap: 6px;
 }
 
+.gap-\[80px\]{
+  gap: 80px;
+}
+
+.gap-\[5rem\]{
+  gap: 5rem;
+}
+
 .self-start{
   align-self: flex-start;
 }
@@ -1389,6 +1451,10 @@ html {
 
 .rounded-\[5px\]{
   border-radius: 5px;
+}
+
+.rounded-full{
+  border-radius: 9999px;
 }
 
 .rounded-md{
@@ -1682,6 +1748,16 @@ html {
   padding-bottom: 4px;
 }
 
+.px-\[40px\]{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.py-\[100px\]{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 .\!pe-8{
   -webkit-padding-end: 2rem !important;
           padding-inline-end: 2rem !important;
@@ -1757,6 +1833,10 @@ html {
 
 .pt-\[9rem\]{
   padding-top: 9rem;
+}
+
+.pt-\[40px\]{
+  padding-top: 40px;
 }
 
 .text-center{
