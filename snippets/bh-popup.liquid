@@ -1,0 +1,28 @@
+<section id="home-popup" class="hidden absolute top-0 w-full">
+  <div class="content p-6 text-_main_color_dark bg-white w-[948px] mx-auto">
+    <div class="flex justify-end w-full mx-auto">
+      <p id="close-home-popup" class="text-end font-medium text-sm border-b-2 text-_main_color_dark border-_main_color_dark cursor-pointer">
+        <i class="fas fa-xmark text-[18px] me-2"></i>
+        <span>Fermer</span>
+      </p>
+    </div>
+    <h2 class="font-medium">Recevez notre E-book par mail !</h2>
+    <p class="mt-3">
+      Ne manquez pas nos précieux conseils sportifs pour vous aider à maintenir un mode de vie sain et équilibré et des astuces pour rester hydraté pendant l'exercice aux idées de collations énergétiques.
+    </p>
+    <div class="pubs flex justify-center gap-8 mt-[24px] mb-[40px]">
+      <div class="bg-[#D9D9D9] w-[220px] h-[300px]"></div>
+      <div class="bg-[#D9D9D9] w-[220px] h-[300px]"></div>
+    </div>
+
+    {% form 'customer', class: "flex flex-col items-center gap-[40px] max-w-[40rem] w-full px-4 mx-auto" %}
+      <input
+        type="text"
+        placeholder="Adresse mail*"
+        id="input-contact-popup"
+        name="contact[email]"
+        class="w-100 outline-none bg-transparent border border-[#999999] ps-2 h-10 w-full">
+      <button type="submit" class="btn !pt-0">Recevoir le E-book</button>
+    {% endform %}
+  </div>
+</section>

@@ -481,6 +481,15 @@ footer .items li {
   color: white;
 }
 
+#input-contact-popup::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #999999;
+  opacity: 1; /* Firefox */
+}
+#input-contact-popup:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #999999;
+}
 #input-popup-search::-ms-input-placeholder {
   /* Microsoft Edge */
   color: var(--main-color-dark);
