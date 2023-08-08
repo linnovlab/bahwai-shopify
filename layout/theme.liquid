@@ -185,6 +185,10 @@
 
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer="defer"></script>
+    {% if template.name == 'index' %}
+      <script src="{{ 'googlemap.js' | asset_url }}" defer="defer"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaunCobZvtIMnUIImtFTtfmpJ7fLl3JTY&libraries=places,geometry" defer="defer"></script>
 
+    {% endif %}
   </body>
 </html>

@@ -11,6 +11,11 @@
       <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
         <div class="item w-full">
           <input
+            type="hidden"
+            name="contact[objet]"
+            value=""
+            id="sujetFormContact">
+          <input
             class="input focus:border-_orange_color transition-all duration-300"
             type="text"
             placeholder="Nom*"
@@ -97,11 +102,7 @@
           type="submit"
           class="btn mb-4 py-2 px-[5rem] text-white">Envoyer</button>
       </div>
-      <input
-        type="hidden"
-        name="contact[objet]"
-        value=""
-        id="sujetFormContact">
+
     {% endform %}
     <p class="mt-4 text-center text-[#565656]">En poursuivant, vous acceptez toutes les conditions générales d’utilisations et notre politique de confidentialité</p>
   </div>

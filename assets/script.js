@@ -80,6 +80,15 @@ $(document).ready(() => {
     $('#notif-partenaire').css('display', 'none');
   });
 
+  $('#close-notif-subscription').on('click', () => {
+    $('#notif-subscription').css('display', 'none');
+  });
+
+  let subsriptionSubmited = getUrlParameter('contact_form');
+  console.log(subsriptionSubmited);
+  if (subsriptionSubmited) {
+    $('#notif-subscription').fadeIn().fadeOut(10000);
+  }
   /**
    * select accordions feature
    * @param {string} items
@@ -90,11 +99,11 @@ $(document).ready(() => {
         $(items).each((i, li) => {
           $(li).removeClass('selected');
         });
-        $(this).addClass('selected')
+        $(this).addClass('selected');
         $('.accordions #layout').text($(this).text());
         $('#sujetFormContact').val($(this).text());
-        $(this).parent().parent().fadeOut()
-        $(this).parent().parent().prev().removeClass('active')
+        $(this).parent().parent().fadeOut();
+        $(this).parent().parent().prev().removeClass('active');
       });
     });
   };
@@ -287,9 +296,9 @@ $(document).ready(() => {
 
       btn.prop('href', `/collections/${handle}`);
       mainSwipperCollections.children().each((i, content) => {
-        $(content).addClass('hidden')
-      })
-      mainSwipperCollections.find('#' + handle).removeClass('hidden')
+        $(content).addClass('hidden');
+      });
+      mainSwipperCollections.find('#' + handle).removeClass('hidden');
     });
   });
 
@@ -325,7 +334,7 @@ $(document).ready(() => {
             dataType: 'json',
             success: function (response) {
               updatePanier(response);
-              $("#panier-count").text(response.item_count);
+              $('#panier-count').text(response.item_count);
             },
           });
           showPayement();
@@ -354,7 +363,8 @@ $(document).ready(() => {
 					alt="produit">
 					<div class="desc">
 					<p class="font-medium text-_main_color_dark">${item.title}</p>
-					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${item.price / 100
+					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${
+            item.price / 100
           }.00 € l’unité</p>
 					</div>
 				</a>
@@ -525,18 +535,18 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) { }
+  } catch (e) {}
 
   /**
    * newletter feat
    */
-  $('#form-etre-prevenu').on('submit', function () {
+  /*$('#form-etre-prevenu').on('submit', function () {
     $(this)
       .parent()
       .html(
         '<p class="text-center text-green-700">Vous recevrez une notification sur les prochaines ouvertures !</p>',
       );
-  });
+  });*/
 
   // Close the modals if the user clicks outside of it
   window.onclick = function (event) {
@@ -568,13 +578,18 @@ $(document).ready(() => {
   });
   $('#address-content #btn-edit').each((i, btn) => {
     $(btn).click(function () {
-      $('#forms-container').children('form').each((i, form) => {
-        $(form).fadeOut(0);
-      });
+      $('#forms-container')
+        .children('form')
+        .each((i, form) => {
+          $(form).fadeOut(0);
+        });
       let id = $(this).data('id');
       let form = $('#form-edit-address-' + id).parent();
       form.fadeIn();
-      form.children('div').find('#btn-reset-edit-' + id).click(() => form.fadeOut(0));
+      form
+        .children('div')
+        .find('#btn-reset-edit-' + id)
+        .click(() => form.fadeOut(0));
     });
   });
 
@@ -583,7 +598,7 @@ $(document).ready(() => {
    */
   $('#forms-container i').each((i, icon) => {
     $(icon).click(function (e) {
-      let input = $(this).next()
+      let input = $(this).next();
       if (input.prop('checked') === true) {
         input.prop('checked', '');
         input.css('background-color', '#FFF');
@@ -591,12 +606,12 @@ $(document).ready(() => {
         input.prop('checked', true);
         input.css('background-color', '#EA4038');
       }
-    })
-  })
+    });
+  });
   $('#forms-container label').each((i, label) => {
     $(label).click(function (e) {
-      e.preventDefault()
-      let input = $(this).prev()
+      e.preventDefault();
+      let input = $(this).prev();
       if (input.prop('checked') === true) {
         input.prop('checked', '');
         input.css('background-color', '#FFF');
@@ -604,8 +619,8 @@ $(document).ready(() => {
         input.prop('checked', true);
         input.css('background-color', '#EA4038');
       }
-    })
-  })
+    });
+  });
 
   /**
    * inputs form addresses feat
@@ -623,7 +638,7 @@ $(document).ready(() => {
    * checkbox for default address in address page
    */
   $('#form-add-address .filter-item i').on('click', function (e) {
-    let input = $(this).next()
+    let input = $(this).next();
     if (input.prop('checked') === true) {
       input.prop('checked', '');
       input.css('background-color', '#FFF');
@@ -634,7 +649,7 @@ $(document).ready(() => {
   });
   $('#form-add-address .filter-item label').on('click', function (e) {
     e.preventDefault();
-    let input = $(this).prev()
+    let input = $(this).prev();
     if (input.prop('checked') === true) {
       input.prop('checked', '');
       input.css('background-color', '#FFF');
@@ -647,26 +662,27 @@ $(document).ready(() => {
   /**
    * copie and paste - partage product feat
    */
-  $("#btn-share").click(() => {
+  $('#btn-share').click(() => {
     navigator.clipboard.writeText(location.href).then(() => {
-      $('#msg-share').fadeIn().fadeOut(5000)
-    })
-  })
+      $('#msg-share').fadeIn().fadeOut(5000);
+    });
+  });
 
   /**
    * showing popup when page finish load
    */
-  if (location.pathname == '/') [
+  if (location.pathname == '/') {
     setTimeout(() => {
-      $('#home-popup').fadeIn()
-    }, 2000)
-  ]
+      if (!hasSeenPopup()) {
+        $('#home-popup').fadeIn();
+        setPopupSeenCookie();
+      }
+    }, 2000);
+  }
+
   $('#close-home-popup').click(function () {
-    $('#home-popup').fadeOut()
-  })
-
-
-
+    $('#home-popup').fadeOut();
+  });
 });
 
 try {
@@ -815,18 +831,15 @@ function shareProduct(url, title) {
   );*/
 }
 
-const mapFinder = () => {
-  const key = 'AIzaSyC_ltV0bno5e_SGphz9nSYy1hAqZdKj7Ys';
-  const url =
-    'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=%2B16502530000&inputtype=phonenumber&key=' +
-    key;
+// Check if the user has already seen the popup
+function hasSeenPopup() {
+  return document.cookie.includes('popup_seen=true');
+}
 
-  axios
-    .get(url)
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-};
+// Set a cookie to indicate that the popup has been seen
+function setPopupSeenCookie() {
+  var expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + 30); // Cookie will expire in 30 days
+  document.cookie =
+    'popup_seen=true; expires=' + expirationDate.toUTCString() + '; path=/';
+}

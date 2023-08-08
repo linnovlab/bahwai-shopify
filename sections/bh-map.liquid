@@ -46,11 +46,13 @@
       type="search"
       name="map_search"
       placeholder="Adresse, Ville, Code postal"
-      class="input">
-    <i class="fas fa-search px-6 py-[0.8rem] bg-_red_color text-white rounded-[5px] ms-3" onclick="mapFinder()"></i>
+      class="input"
+      id="userAddress">
+    <i class="fas fa-search px-6 py-[0.8rem] bg-_red_color text-white rounded-[5px] ms-3" onclick="initMap()"></i>
   </form>
-  <div class="w-full sm:w-[600px]">
-    {{ section.settings.map }}
+  <div class="w-full sm:w-[600px] h-[450px]">
+    <div id="staticMap">{{ section.settings.map }}</div>
+    <div id="map" class="hidden"></div>
   </div>
 </section>
 

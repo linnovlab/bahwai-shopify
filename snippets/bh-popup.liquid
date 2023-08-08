@@ -17,6 +17,10 @@
 
     {% form 'customer', class: "flex flex-col items-center gap-[40px] max-w-[40rem] w-full px-4 mx-auto" %}
       <input
+        type="hidden"
+        name="contact[objet]"
+        value="Je souhaite recevoir votre E-book.">
+      <input
         type="text"
         placeholder="Adresse mail*"
         id="input-contact-popup"

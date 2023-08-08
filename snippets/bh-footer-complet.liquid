@@ -30,7 +30,7 @@
           height="auto"
           loading="lazy">
       </button>
-		{% endform %}
+    {% endform %}
     <p class="text-center text-[8px] md:text-[12px] px-3">
       Vous pouvez vous désabonner de la newsletter à tout moment. En vous inscrivant, vous acceptez les CGV et la déclaration de protection des données. Cette offre n'est pas cumulable avec d'autres réductions et est seulement valable pour les commandes d'une valeur supérieure ou égale à 20€. Les codes de réduction ne sont pas cumulables. Vous pouvez consulter notre politique de confidentialité ici.
     </p>
@@ -110,7 +110,7 @@
           <h4 class="font-bold border-b-2 border-gray-400 mb-4">Moyens de paiement acceptés</h4>
           <div class="imgs flex items-center gap-4">
             <span><img
-              class="w-[4rem]"
+                class="w-[4rem]"
                 src="{{ 'mastercard.png' | asset_url }}"
                 alt="martercard"
                 title="martercard"
@@ -118,14 +118,14 @@
                 width="auto"
                 height="auto"></span>
             <span><img
-              class="w-[4rem]"
+                class="w-[4rem]"
                 src="{{ 'visa.png' | asset_url }}"
                 alt="visa"
                 title="visa"
                 loading="lazy"
                 width="auto"
                 height="auto"></span>
-            <span ><img
+            <span><img
                 src="{{ 'paypal.png' | asset_url }}"
                 class="w-[4rem]"
                 alt="paypal"
@@ -140,7 +140,8 @@
     <!-- footer mobile -->
     <div class="footer-mobile md:hidden">
       <div class="flex flex-col gap-4 items-center">
-        <p class="text-_orange_color">ça cool de source ! </p>
+        <p class="text-_orange_color">ça cool de source !
+        </p>
         <div class="flex items-center gap-4 justify-center">
           <a href="https://www.facebook.com/profile.php?id=100091959369506"><img
               src="{{ 'facebook-center-square.svg ' | asset_url }}"
@@ -181,7 +182,9 @@
               <li>
                 <a href="{{ pages.partenaire.url }}">Devenir partenaire</a>
               </li>
-              <li><a href="https://wa.me/33630139872" class="underline">+33 6 30 13 98 72</a></li>
+              <li>
+                <a href="https://wa.me/33630139872" class="underline">+33 6 30 13 98 72</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -233,7 +236,7 @@
           <div class="panel hidden my-4">
             <div class="imgs flex items-center gap-4 ps-4">
               <span><img
-                class="w-[4rem]"
+                  class="w-[4rem]"
                   src="{{ 'mastercard.png' | asset_url }}"
                   alt="martercard"
                   title="martercard"
@@ -241,14 +244,14 @@
                   width="auto"
                   height="auto"></span>
               <span><img
-                class="w-[4rem]"
+                  class="w-[4rem]"
                   src="{{ 'visa.png' | asset_url }}"
                   alt="visa"
                   title="visa"
                   loading="lazy"
                   width="auto"
                   height="auto"></span>
-              <span ><img
+              <span><img
                   src="{{ 'paypal.png' | asset_url }}"
                   class="w-[4rem]"
                   alt="paypal"
@@ -264,3 +267,26 @@
     </div>
   </section>
 </footer>
+
+<!-- notification -->
+<style>
+  .bg-notif {
+    background-image: url('{{ 'Orange.png' |asset_url }}');
+  }
+</style>
+<div id="notif-subscription" class="hidden fixed top-[14rem] w-full">
+  <div class="bg-notif img-center rounded-md p-4 sm:mx-[8rem] mx-4">
+    <div class="flex justify-end mb-8">
+      <p id="close-notif-subscription" class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
+        <i class="fas fa-xmark text-[1.5rem]"></i>
+        <span>Fermer</span>
+      </p>
+    </div>
+
+
+    <p class="text-white">Super, nous avons bien pris en compte votre inscription à notre Newsletter. Merci !!! <br><br>
+      Cordialement
+    </p>
+    <h2 class="text-white font-bold text-lg">Bahwai family</h2>
+  </div>
+</div>
