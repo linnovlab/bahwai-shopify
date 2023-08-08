@@ -656,9 +656,11 @@ $(document).ready(() => {
   /**
    * showing popup when page finish load
    */
-  setTimeout(() => {
-    $('#home-popup').fadeIn()
-  }, 2000)
+  if (location.pathname == '/') [
+    setTimeout(() => {
+      $('#home-popup').fadeIn()
+    }, 2000)
+  ]
   $('#close-home-popup').click(function () {
     $('#home-popup').fadeOut()
   })

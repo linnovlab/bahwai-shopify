@@ -2,34 +2,19 @@
   .hero-aventure {
     background-image: url('{{ 'baniere-aventure.png' |asset_url }}');
   }
-  .naissance-section {
-    background-image: url('{{ 'wave-violet-aventure.png' |asset_url }}');
-  }
-  .section-equipe {
-    background-image: url('{{ 'wave-orange-aventure.png' |asset_url }}');
-    height: 26.9rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-  }
   @media screen and (max-width: 641px) {
     .hero-aventure {
       background-image: url('{{ 'baniere-aventure-sm.png' |asset_url }}');
-    }
-    .naissance-section {
-      background-image: url('{{ 'wave-violet-aventure-sm.png' |asset_url }}');
-    }
-    .section-equipe {
-      background-image: url('{{ 'wave-orange-aventure-sm.png' |asset_url }}');
-      height: 80rem;
     }
   }
   .left-intro-section {
     max-width: 66%;
   }
   @media screen and (max-width: 1167px) {
+    .left-intro-section {
+      max-width: none;
+      width: 100%;
+    }
     .img-aventure-1 {
       display: none;
     }
@@ -41,13 +26,6 @@
     }
     .img-aventure-2-sm {
       display: block;
-    }
-    .left-intro-section {
-      max-width: none;
-      width: 100%;
-    }
-    .naissance-section {
-      height: auto;
     }
   }
 </style>
@@ -76,8 +54,16 @@
       </div>
     </div>
   </div>
+  <img
+    src="{{ 'vague-desktop-violet.svg' |asset_url }}"
+    class="w-full img-center object-cover sm:block hidden mb-[-2px]"
+    alt="">
+  <img
+    src="{{ 'Vague-Mobile-violet.svg' |asset_url }}"
+    class="w-full img-center object-cover sm:hidden block mb-[-2px]"
+    alt="">
 
-  <div class="naissance-section img-center h-[50rem] py-[100px] px-[40px] mb-[-7rem]">
+  <div class="naissance-section img-center pt-[100px] pb-[6rem] mb-[-2rem] px-[40px] bg-_main_color_light">
     <h2 class="title-white mb-[40px]">La naissance de Bahwai</h2>
     <div class="content flex gap-3 items-center desktop-width">
       <img
@@ -99,8 +85,16 @@
     </div>
   </div>
 
-  <div class="section-equipe relative z-[100]">
-    <h2 class="title-white pt-[40px]">L’équipe Bahwai</h2>
+  <img
+    src="{{ 'vague-desktop-red.svg' |asset_url }}"
+    class="w-full img-center object-cover sm:block hidden mb-[-2px]"
+    alt="">
+  <img
+    src="{{ 'Vague-Mobile-red.svg' |asset_url }}"
+    class=" w-full img-center object-cover sm:hidden block mb-[-2px]"
+    alt="">
+  <div class="section-equipe bg-_red_color pb-16 mb-[-3rem]">
+    <h2 class="title-white py-[40px]">L’équipe Bahwai</h2>
     <div class="items flex gap-[80px] flex-wrap justify-center text-white desktop-width">
       <div class="item flex flex-col gap-3 items-center">
         <div class="img">
@@ -146,3 +140,11 @@
     </div>
   </div>
 </section>
+<img
+  src="{{ 'vague-desktop-violet.svg' |asset_url }}"
+  class="w-full img-center object-cover sm:block hidden mb-[-2px]"
+  alt="">
+<img
+  src="{{ 'Vague-Mobile-violet.svg' |asset_url }}"
+  class="w-full img-center object-cover sm:hidden block mb-[-2px]"
+  alt="">

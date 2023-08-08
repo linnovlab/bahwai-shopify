@@ -175,13 +175,7 @@
         {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
           {% render 'bh-footer-complet' %}
         {% else %}
-
-          {% if page.handle == 'laventure-bahwai' %}
-            {% render 'bh-footer-aventure' %}
-          {% else %}
-            {% render 'bh-footer-autre' %}
-          {% endif %}
-
+          {% render 'bh-footer-autre' %}
         {% endif %}
 
       {% else %}
