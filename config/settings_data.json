@@ -1,6 +1,8 @@
 {
   "current": {
+    "logo": "shopify:\/\/shop_images\/70dPI.png",
     "logo_width": 90,
+    "favicon": "shopify:\/\/shop_images\/70dPI.png",
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
     "gradient_accent_1": "",
@@ -121,8 +123,8 @@
     "currency_code_enabled": true,
     "cart_type": "notification",
     "show_vendor": false,
-    "show_cart_note": false,
-    "cart_drawer_collection": "",
+    "show_cart_note": true,
+    "cart_drawer_collection": "nouveautes",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
