@@ -363,8 +363,9 @@ $(document).ready(() => {
 					alt="produit">
 					<div class="desc">
 					<p class="font-medium text-_main_color_dark">${item.title}</p>
-					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${item.price / 100
-          }00 € l’unité</p>
+					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${(
+            item.price / 100
+          ).toFixed(2)}€ l’unité</p>
 					</div>
 				</a>
 				</div>
@@ -534,7 +535,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) { }
+  } catch (e) {}
 
   /**
    * newletter feat

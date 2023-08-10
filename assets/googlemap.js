@@ -205,10 +205,17 @@ function removeAllMarkers() {
 }
 
 function addMarker(shop) {
+  // Construct the URL to your marker image
+
+  var markerImage = {
+    url: markerImageUrl,
+    scaledSize: new google.maps.Size(40, 40),
+  };
   var marker = new google.maps.Marker({
     map: map,
     position: shop.location,
     title: shop.name,
+    icon: markerImage,
   });
 
   // Add click event listener to display info window when a user clicks on the marker

@@ -1,63 +1,73 @@
-<div role="navigation" id="menu-bars" class="absolute z-[100] top-0 left-0 w-full h-screen bg-white hidden">
-    <p class="text-_main_color_dark my-4 mx-4 w-28 font-bold flex items-center gap-4">
-        <i class="fas fa-xmark text-[1.5rem] hover:cursor-pointer" id="close-bars"></i>
-        <span>Menu</span>
-    </p>
-    <hr class="border border-gray-300">
-    <div class="accordions text-_main_color_dark">
-        <div class="accordion-item w-full mx-auto my-2">
-            <button type="button" id="btn-accordion" class="btn-accordion-header my-4 border-b-2 border-gray-300">
-                <span>Catégories </span>
-                <i class="fas fa-chevron-down transition-transform duration-500"></i>
-            </button>
-            <div class="panel hidden pb-4">
-                <ul class="ps-4">
-                    {% for link in linklists['liens-categories'].links %}
-                    {% if link.title != 'Autres' %}
-                    <li class="pb-[10px]">
-                        <a href="{{ link.url }}" title="{{ link.title }}" data-handle="{{ link.handle }}"
-                            class="border-b border-_main_color_dark">{{ link.title }}</a>
-                    </li>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        <div class="accordion-item  w-full mx-auto my-2">
-            <a href="{{ pages.engagements.url }}">
-                <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
-                    <span>Nos engagements </span>
-                </button>
-            </a>
-        </div>
-        <div class="accordion-item  w-full mx-auto my-2">
-            <a href="{{ pages.partenaire.url }}">
-                <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
-                    <span>Devenir partenaire ? </span>
-                </button>
-            </a>
-        </div>
-        <div class="accordion-item  w-full mx-auto my-2">
-            <a href="{{ pages.contact.url }}">
-                <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
-                    <span>Nous contacter </span>
-                </button>
-            </a>
-        </div>
-        <div class="accordion-item  w-full mx-auto my-2">
-            <a href="#">
-                <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
-                    <span>Espace pro</span>
-                </button>
-            </a>
-        </div>
+<div
+  role="navigation"
+  id="menu-bars"
+  class="absolute z-[100] top-0 left-0 w-full h-screen bg-white hidden">
+  <p class="text-_main_color_dark my-4 mx-4 w-28 font-bold flex items-center gap-4">
+    <i class="fas fa-xmark text-[1.5rem] hover:cursor-pointer" id="close-bars"></i>
+    <span>Menu</span>
+  </p>
+  <hr class="border border-gray-300">
+  <div class="accordions text-_main_color_dark">
+    <div class="accordion-item w-full mx-auto my-2">
+      <button
+        type="button"
+        id="btn-accordion"
+        class="btn-accordion-header my-4 border-b-2 border-gray-300">
+        <span>Catégories
+        </span>
+        <i class="fas fa-chevron-down transition-transform duration-500"></i>
+      </button>
+      <div class="panel hidden pb-4">
+        <ul class="ps-4">
+          {% for link in linklists['liens-categories'].links %}
+            {% if link.title != 'Autres' %}
+              <li class="pb-[10px]">
+                <a
+                  href="{{ link.url }}"
+                  title="{{ link.title }}"
+                  data-handle="{{ link.handle }}"
+                  class="border-b border-_main_color_dark">{{ link.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
     </div>
-    <div class="flex items-center gap-4 mt-8 ps-4">
-        <a href="https://www.facebook.com" title="facebook"><img
-                src="{{ 'facebook-center-square-violet.svg' |asset_url }}" alt="facebook"></a>
-        <a href="https://www.instagram.com" title="instagram"><img src="{{ 'Instagram-violet.svg' | asset_url }}"
-                alt="instagram"></a>
-        <a href="https://www.tiktok.com" title="tiktok"><img src="{{ 'tiktok-square-violet.svg' |asset_url }}"
-                alt="tiktok"></a>
+    <div class="accordion-item  w-full mx-auto my-2">
+      <a href="{{ pages.engagements.url }}">
+        <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
+          <span>Nos engagements
+          </span>
+        </button>
+      </a>
     </div>
+    <div class="accordion-item  w-full mx-auto my-2">
+      <a href="{{ pages.partenaire.url }}">
+        <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
+          <span>Devenir partenaire ?
+          </span>
+        </button>
+      </a>
+    </div>
+    <div class="accordion-item  w-full mx-auto my-2">
+      <a href="{{ pages.contact.url }}">
+        <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
+          <span>Nous contacter
+          </span>
+        </button>
+      </a>
+    </div>
+    <div class="accordion-item  w-full mx-auto my-2">
+      <a href="#">
+        <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
+          <span>Espace pro</span>
+        </button>
+      </a>
+    </div>
+  </div>
+  <div class="flex items-center gap-4 mt-8 ps-4">
+    <a href="https://www.facebook.com" title="facebook"><img src="{{ 'facebook-center-square-violet.svg' |asset_url }}" alt="facebook"></a>
+    <a href="https://www.instagram.com" title="instagram"><img src="{{ 'Instagram-violet.svg' | asset_url }}" alt="instagram"></a>
+    <a href="https://www.tiktok.com/@bahwai.fr?_t=8dqo9b4vRAh&_r=1" title="tiktok"><img src="{{ 'tiktok-square-violet.svg' |asset_url }}" alt="tiktok"></a>
+  </div>
 </div>

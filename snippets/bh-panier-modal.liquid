@@ -24,7 +24,10 @@
           <p id="total-price-panier" class="font-medium">2,10 €</p>
         </div>
         <div class="flex flex-col items-center justify-center mt-8">
-          <form action="{{ routes.cart_url }}" method="post" class="sm:w-[344px] w-[90%]">
+          <form
+            action="{{ routes.cart_url }}"
+            method="post"
+            class="sm:w-[344px] w-[90%]">
             <button
               id="btn-paiement"
               type="submit"
@@ -78,7 +81,7 @@
                   </span>
                 </div>
               {%- endif -%}
-              <p class="font-medium text-center">À partir de 2,10€
+              <p class="font-medium text-center">À partir de {{ product.price | divided_by: 100.00 }}€
               </p>
             </a>
           </div>
