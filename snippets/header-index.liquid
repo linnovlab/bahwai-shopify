@@ -134,7 +134,7 @@
 </div>
 
 <nav id="nav-header" class="bg-_main_color_dark py-2 hidden sm:block">
-  <ul class="flex text-white">
+  <ul class="flex text-white justify-center">
     <div class="left-links flex justify-center gap-4 max-w-[75%] w-full">
       {% for link in section.settings.menu.links %}
         {% if link.links.size > 0 %}
@@ -166,8 +166,6 @@
           </li>
         {% endif %}
       {% endfor %}
-    </div>
-    <div class="right-links flex justify-center gap-4">
       {% for link in linklists['menu-side'].links %}
         {% if link.title == 'Nous trouver' %}
           <li>
@@ -176,7 +174,18 @@
               href="{{ link.url }}#nous-trouver"
               title="{{ link.title }}">{{ link.title }}</a>
           </li>
-
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="right-links flex justify-center items-end gap-4">
+      {% for link in linklists['menu-side'].links %}
+        {% if link.title != 'Nous trouver' %}
+          <li class="text-_orange_color px-2">
+            <a
+              class="hover-nav-item"
+              href="{{ link.url }}"
+              title="{{ link.title }}">{{ link.title }}</a>
+          </li>
         {% endif %}
       {% endfor %}
     </div>
