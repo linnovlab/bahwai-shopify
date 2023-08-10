@@ -61,10 +61,10 @@ body {
   @apply outline-none ps-2 h-10 w-full border border-[#999];
 }
 .title {
-  @apply font-litle text-_main_color_light text-[32px] text-center font-extrabold;
+  @apply font-litle text-_main_color_light text-[32px] text-center font-extrabold italic;
 }
 .title-white {
-  @apply font-litle text-white sm:text-[32px] text-[28px] text-center font-extrabold;
+  @apply font-litle text-white sm:text-[32px] text-[28px] text-center font-extrabold italic;
 }
 .faq-link {
   @apply text-center w-[10rem] h-[70px] rounded-md flex items-center justify-center bg-_red_color hover:bg-_orange_color transition-all duration-500;
