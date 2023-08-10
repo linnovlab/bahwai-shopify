@@ -1,3 +1,16 @@
+{% assign collection_handle = 'goodies' %}
+{% assign collection = collections[collection_handle] %}
+
+{% assign montant1 = 5000 %}
+{% assign montant2 = 10000 %}
+{% assign montant3 = 15000 %}
+
+{% if collection.products.size > 0 %}
+  {% assign first_product = collection.products[2] %}
+  {% assign second_product = collection.products[1] %}
+  {% assign third_product = collection.products[0] %}
+{% endif %}
+
 <p class="h-[61px] w-[61px] me-3 me-8 hidden"></p>
 <div class="panier fixed top-0 w-full hidden z-50" id="panier">
   <div class="content sm:max-w-[455px] w-full ms-auto me-0 bg-white max-h-screen h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
@@ -6,6 +19,24 @@
         <i class="fas fa-xmark text-[18px] me-2"></i>
         <span class="text-sm">Fermer</span>
       </p>
+    </div>
+    <!-- Zone d'affichage des messages d'incitation -->
+    <div class="h-12 bg-_orange_color text-white p-2 text-sm flex justify-center items-center" id="ZoneIncitation">
+      {% if cart.total_price > 0 and cart.total_price < montant1 %}
+        {% assign resultat = montant1 | minus: cart.total_price %}
+        Dépensez {{ resultat | divided_by: 100.0 }}€ de plus et obtenez une {{ first_product.title }}
+      {% elsif cart.total_price >= montant1 and cart.total_price < montant2 %}
+        {% assign resultat = montant2 | minus: cart.total_price %}
+        Dépensez {{ resultat | divided_by: 100.0 }}€ de plus et obtenez une {{ second_product.title }}
+      {% elsif cart.total_price >= montant2 and cart.total_price < montant3 %}
+        {% assign resultat = montant3 | minus: cart.total_price %}
+        Dépensez {{ resultat | divided_by: 100.0 }}€ de plus et obtenez une {{ third_product.title }}
+        {{ cart.total_price }}
+      {% elsif cart.total_price > montant3 %}
+        {{ cart.total_price }}
+      {% else %}
+        Profitez de nos récompenses!
+      {% endif %}
     </div>
     <hr class="border-[#999999]">
     <div class="items text-_main_color_dark">
@@ -41,6 +72,9 @@
       </div>
 
     </div>
+    <!-- Zone d'affichage des produits de promo à gagner-->
+    <hr class="border-[#999999] px-2 my-8">
+    <div id="product_to_win"></div>
 
     <div class="footer text-_main_color_dark px-2 my-8">
       <p class="font-medium text-_main_color_dark mt-3 ps-5">D’autres ont aussi achetés :</p>
@@ -89,5 +123,7 @@
 
       </div>
     </div>
+
+
   </div>
 </div>

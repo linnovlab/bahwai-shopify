@@ -1108,6 +1108,10 @@ html {
   height: 100vh;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .max-h-\[8rem\] {
   max-height: 8rem;
 }
