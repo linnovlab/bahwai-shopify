@@ -535,7 +535,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) {}
+  } catch (e) { }
 
   /**
    * newletter feat
@@ -843,3 +843,6 @@ function setPopupSeenCookie() {
   document.cookie =
     'popup_seen=true; expires=' + expirationDate.toUTCString() + '; path=/';
 }
+
+
+
