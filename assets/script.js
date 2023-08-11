@@ -397,10 +397,69 @@ $(document).ready(() => {
     $('#panier-items-container').html(content);
     $('#qty-items-panier').text(cart.item_count);
     $('#total-price-panier').text(parseFloat(cart.total_price) / 100 + '€');
-
     updateProduct();
   };
 
+  const updateIncitation = (total_panier) => {
+    document.getElementById('ZoneIncitation').innerHTML = '';
+    let montant1 = 5000;
+    let montant2 = 10000;
+    let montant3 = 15000;
+    let restant = 50;
+    let phrase = '';
+    let pourcentage = 0;
+    let ctn = ``;
+    if (total_panier > 0 && total_panier < montant1) {
+      restant = ((montant1 - total_panier) / 100).toFixed(2);
+      pourcentage = ((montant1 - total_panier) / montant1) * 100;
+      ctn +=
+        `
+      <div class="flex w-11/12 mb-1 gap-1" id="progressBar">
+        <div class="relative w-1/3 h-6 bg-white rounded">
+          <div class="bg-_main_color_dark h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: ` +
+        pourcentage +
+        `%"></div>
+          <span class="absolute top-0 right-0 mt-1 mr-1 text-_main_color_dark font-extrabold">` +
+        montant1 / 100 +
+        `€</span>
+          <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_dark font-extrabold">
+            <img
+              class=""
+              src="https://cdn.shopify.com/s/files/1/0747/8430/9521/files/king.svg?v=1691796016"
+              alt="king"
+              loading="lazy"
+              width="auto"
+              height="auto">
+          </span>
+        </div>
+
+        <div class="relative w-1/3 h-6 bg-white rounded">
+          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 0%"></div>
+          <span class="absolute top-0 right-0 mt-1 mr-1 text-_main_color_dark font-extrabold">` +
+        montant2 / 100 +
+        `€</span>
+        </div>
+
+        <div class="relative w-1/3 h-6 bg-white rounded">
+          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 0%"></div>
+          <span class="absolute top-0 right-0 mt-1 mr-1 text-_main_color_dark font-extrabold">` +
+        montant3 / 100 +
+        `€</span>
+        </div>
+      </div>
+      <p id="phrase">
+         Dépensez ` +
+        restant +
+        `€ de plus et obtenez une ` +
+        $('#panier').attr('data-product1') +
+        `</p>`;
+    } else if (total_panier >= montant1 && total_panier < montant2) {
+    } else if (total_panier >= montant2 && total_panier < montant3) {
+    } else if (total_panier >= montant3) {
+    } else {
+    }
+    document.getElementById('ZoneIncitation').innerHTML = ctn;
+  };
   /**
    * hide the payement btns
    */
@@ -475,6 +534,7 @@ $(document).ready(() => {
         $('#total-price-panier').text(
           parseFloat(response.total_price) / 100 + '€',
         );
+        updateIncitation(parseFloat(response.total_price));
         // console.log(response)
       },
     });
@@ -535,7 +595,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) { }
+  } catch (e) {}
 
   /**
    * newletter feat
@@ -843,6 +903,3 @@ function setPopupSeenCookie() {
   document.cookie =
     'popup_seen=true; expires=' + expirationDate.toUTCString() + '; path=/';
 }
-
-
-

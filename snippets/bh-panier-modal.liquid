@@ -11,8 +11,35 @@
   {% assign third_product = collection.products[0] %}
 {% endif %}
 
+{% if cart.total_price > 0 and cart.total_price < montant1 %}
+  {% assign resultat = montant1 | minus: cart.total_price | divided_by: 100.0 %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: first_product.title %}
+{% elsif cart.total_price >= montant1 and cart.total_price < montant2 %}
+  {% assign resultat = montant2 | minus: cart.total_price | divided_by: 100.0 %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: second_product.title %}
+{% elsif cart.total_price >= montant2 and cart.total_price < montant3 %}
+  {% assign resultat = montant3 | minus: cart.total_price | divided_by: 100.0 %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: third_product.title %}
+{% elsif cart.total_price >= montant3 %}
+  {% assign phrase = "Vous avez obtenue une " | append: third_product.title | append: " gratuitement" %}
+{% else %}
+  {% assign resultat = montant1 | divided_by: 100.0 %}
+  {% assign phrase = "A partir de " | append: resultat | append: "€ d'achat, on vous offre une " | append: first_product.title %}
+{% endif %}
+
+<style>
+  .bg_king {
+    background-image: url('{{ 'king.svg' | asset_url }}');
+    width: 30px;
+  }
+</style>
 <p class="h-[61px] w-[61px] me-3 me-8 hidden"></p>
-<div class="panier fixed top-0 w-full hidden z-50" id="panier">
+<div
+  class="panier fixed top-0 w-full hidden z-50"
+  id="panier"
+  data-product1="{{ first_product.title }}"
+  data-product2="{{ second_product.title }}"
+  data-product3="{{ third_product.title }}">
   <div class="content sm:max-w-[455px] w-full ms-auto me-0 bg-white max-h-screen h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
     <div class="flex justify-end w-full mx-auto px-4 pt-6 pb-4">
       <p id="close-panier" class="flex items-center font-medium text-_main_color_dark hover:cursor-pointer">
@@ -21,24 +48,53 @@
       </p>
     </div>
     <!-- Zone d'affichage des messages d'incitation -->
-    <div class="h-12 bg-_orange_color text-white p-2 text-sm flex justify-center items-center" id="ZoneIncitation">
-      {% if cart.total_price > 0 and cart.total_price < montant1 %}
-        {% assign resultat = montant1 | minus: cart.total_price %}
-        Dépensez {{ resultat | divided_by: 100.0 }}€ de plus et obtenez une {{ first_product.title }}
-      {% elsif cart.total_price >= montant1 and cart.total_price < montant2 %}
-        {% assign resultat = montant2 | minus: cart.total_price %}
-        Dépensez {{ resultat | divided_by: 100.0 }}€ de plus et obtenez une {{ second_product.title }}
-      {% elsif cart.total_price >= montant2 and cart.total_price < montant3 %}
-        {% assign resultat = montant3 | minus: cart.total_price %}
-        Dépensez {{ resultat | divided_by: 100.0 }}€ de plus et obtenez une {{ third_product.title }}
-        {{ cart.total_price }}
-      {% elsif cart.total_price > montant3 %}
-        {{ cart.total_price }}
-      {% else %}
-        Profitez de nos récompenses!
-      {% endif %}
+
+    <div class="{% if cart.total_price > 0 %}min-h-[88px] bg-_orange_color {% endif %} text-white p-2 text-sm flex flex-col justify-center items-center" id="ZoneIncitation"><!--div class="flex w-11/12 mb-1 gap-1" id="progressBar">
+      <div class="relative w-1/3 h-6 bg-white rounded">
+      <div class="bg-_main_color_dark h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 60%"></div>
+      <span class="absolute top-0 right-0 mt-1 mr-1 text-_main_color_dark font-extrabold">50€</span>
+      <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_dark font-extrabold">
+      <img
+      class=""
+      src="{{ 'king.svg' | asset_url }}"
+      alt="king"
+      loading="lazy"
+      width="auto"
+      height="auto">
+      </span>
+      </div>
+
+      <div class="relative w-1/3 h-6 bg-white rounded">
+      <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 0%"></div>
+      <span class="absolute top-0 right-0 mt-1 mr-1 text-_main_color_dark font-extrabold">100€</span>
+      <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_dark font-extrabold hidden">
+      <img
+      class=""
+      src="{{ 'king.svg' | asset_url }}"
+      alt="king"
+      loading="lazy"
+      width="auto"
+      height="auto">
+      </span>
+      </div>
+
+      <div class="relative w-1/3 h-6 bg-white rounded">
+      <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 0%"></div>
+      <span class="absolute top-0 right-0 mt-1 mr-1 text-_main_color_dark font-extrabold">150€</span>
+      <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_dark font-extrabold hidden">
+      <img
+      class=""
+      src="{{ 'king.svg' | asset_url }}"
+      alt="king"
+      loading="lazy"
+      width="auto"
+      height="auto">
+      </span>
+      </div>
+      </div>
+      <p id="phrase">{{ phrase }}</p-->
     </div>
-    <hr class="border-[#999999]">
+
     <div class="items text-_main_color_dark">
       <h2 class="font-medium my-4 px-5">Vous avez ajouté :</h2>
       <div id="panier-items-container">{% comment %} items content {% endcomment %}
@@ -88,9 +144,12 @@
             <a href="{{ product.url }}" class="item text-[12px] max-w-[120px] w-full m-1 flex items-center flex-col gap-1">
               <div class="img w-full">
                 <img
-                  src="{{ product |image_url: width: 600, height: 600 }}"
+                  src="{{ product | image_url: width: 600, height: 600 }}"
                   alt="La gourmande aux noisettes"
-                  class="w-full">
+                  class="w-full"
+                  loading="lazy"
+                  width="auto"
+                  height="auto">
               </div>
               <p class="font-semibold text-center ">{{ product.title }}</p>
               {% if product.metafields.reviews.rating_count != null %}
