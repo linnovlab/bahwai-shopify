@@ -11,8 +11,41 @@
   {% assign third_product = collection.products[0] %}
 {% endif %}
 
+{% if cart.total_price > 0 and cart.total_price < montant1 %}
+  {% assign resultat = montant1 | minus: cart.total_price | divided_by: 100.0 %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: first_product.title %}
+{% elsif cart.total_price >= montant1 and cart.total_price < montant2 %}
+  {% assign resultat = montant2 | minus: cart.total_price | divided_by: 100.0 %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: second_product.title %}
+{% elsif cart.total_price >= montant2 and cart.total_price < montant3 %}
+  {% assign resultat = montant3 | minus: cart.total_price | divided_by: 100.0 %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: third_product.title %}
+{% elsif cart.total_price >= montant3 %}
+  {% assign phrase = "Vous avez obtenue une " | append: third_product.title | append: " gratuitement" %}
+{% else %}
+  {% assign resultat = montant1 | divided_by: 100.0 %}
+  {% assign phrase = "A partir de " | append: resultat | append: "€ d'achat, on vous offre une " | append: first_product.title %}
+{% endif %}
+
+<style>
+  .bg_king {
+    background-image: url('{{ 'king.svg' | asset_url }}');
+    width: 30px;
+  }
+</style>
 <p class="h-[61px] w-[61px] me-3 me-8 hidden"></p>
-<div class="panier fixed top-0 w-full hidden z-50" id="panier">
+<div
+  class="panier fixed top-0 w-full hidden z-50"
+  id="panier"
+  data-product1_id="{{ first_product.id }}"
+  data-product2_id="{{ second_product.id }}"
+  data-product3_id="{{ third_product.id }}"
+  data-product1="{{ first_product.title }}"
+  data-product2="{{ second_product.title }}"
+  data-product3="{{ third_product.title }}"
+  data-product1_img="{{ first_product | image_url }}"
+  data-product2_img="{{ second_product | image_url }}"
+  data-product3_img="{{ third_product | image_url }}">
   <div class="content sm:max-w-[455px] w-full ms-auto me-0 bg-white max-h-screen h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
     <div class="flex justify-end w-full mx-auto px-4 pt-6 pb-4">
       <p id="close-panier" class="flex items-center font-medium text-_main_color_dark hover:cursor-pointer">
@@ -21,28 +54,14 @@
       </p>
     </div>
     <!-- Zone d'affichage des messages d'incitation -->
-    <div class="h-12 bg-_orange_color text-white p-2 text-sm flex justify-center items-center" id="ZoneIncitation">
-      {% if cart.total_price > 0 and cart.total_price < montant1 %}
-        {% assign resultat = montant1 | minus: cart.total_price %}
-        Dépensez {{ resultat | divided_by: 100.0 }}€ de plus et obtenez une {{ first_product.title }}
-      {% elsif cart.total_price >= montant1 and cart.total_price < montant2 %}
-        {% assign resultat = montant2 | minus: cart.total_price %}
-        Dépensez {{ resultat | divided_by: 100.0 }}€ de plus et obtenez une {{ second_product.title }}
-      {% elsif cart.total_price >= montant2 and cart.total_price < montant3 %}
-        {% assign resultat = montant3 | minus: cart.total_price %}
-        Dépensez {{ resultat | divided_by: 100.0 }}€ de plus et obtenez une {{ third_product.title }}
-        {{ cart.total_price }}
-      {% elsif cart.total_price > montant3 %}
-        {{ cart.total_price }}
-      {% else %}
-        Profitez de nos récompenses!
-      {% endif %}
-    </div>
-    <hr class="border-[#999999]">
+
+    <div class="min-h-[88px] px-4 bg-_orange_color text-white p-2 pt-[35px] text-sm flex flex-col justify-center items-center" id="ZoneIncitation"></div>
+
     <div class="items text-_main_color_dark">
       <h2 class="font-medium my-4 px-5">Vous avez ajouté :</h2>
       <div id="panier-items-container">{% comment %} items content {% endcomment %}
       </div>
+      <div id="zoneRecompense"></div>
       <div id="payment-div" class="mt-4">
         <hr class="border-[#999999] mt-8">
         <div class="total flex justify-between items-center px-5 mt-4">
@@ -72,9 +91,7 @@
       </div>
 
     </div>
-    <!-- Zone d'affichage des produits de promo à gagner-->
-    <hr class="border-[#999999] px-2 my-8">
-    <div id="product_to_win"></div>
+
 
     <div class="footer text-_main_color_dark px-2 my-8">
       <p class="font-medium text-_main_color_dark mt-3 ps-5">D’autres ont aussi achetés :</p>
@@ -88,9 +105,12 @@
             <a href="{{ product.url }}" class="item text-[12px] max-w-[120px] w-full m-1 flex items-center flex-col gap-1">
               <div class="img w-full">
                 <img
-                  src="{{ product |image_url: width: 600, height: 600 }}"
+                  src="{{ product | image_url: width: 600, height: 600 }}"
                   alt="La gourmande aux noisettes"
-                  class="w-full">
+                  class="w-full"
+                  loading="lazy"
+                  width="auto"
+                  height="auto">
               </div>
               <p class="font-semibold text-center ">{{ product.title }}</p>
               {% if product.metafields.reviews.rating_count != null %}
