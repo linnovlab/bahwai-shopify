@@ -415,7 +415,7 @@ $(document).ready(() => {
     let ctn = ``;
     if (total_panier > 0 && total_panier < montant1) {
       restant = ((montant1 - total_panier) / 100).toFixed(2);
-      pourcentage = ((montant1 - total_panier) / montant1) * 100;
+      pourcentage = (total_panier / montant1) * 100;
       ctn +=
         `<div class="flex w-full mb-1 gap-1" id="progressBar">
         <div class="relative w-1/3 h-6 bg-white rounded">
