@@ -358,6 +358,8 @@ $(document).ready(() => {
    * @param {object} cart contient les donnees du pannier
    */
   const updatePanier = (cart) => {
+    $('#ZoneIncitation').show();
+    $('#vous_avez_ajoute').show();
     updateIncitation(parseFloat(cart.total_price));
     const items = cart.items;
     var content = '';
@@ -401,6 +403,8 @@ $(document).ready(() => {
       content =
         '<p class="text-center mt-8 text-gray-500 text-lg">Votre panier est vide</p>';
       hidePayement();
+      $('#ZoneIncitation').hide();
+      $('#vous_avez_ajoute').hide();
     }
 
     $('#panier-items-container').html(content);
@@ -409,6 +413,10 @@ $(document).ready(() => {
     updateProduct();
   };
 
+  /**
+   * Met à jour les informations du panier relatives aux récompenses
+   * @param {*} total_panier
+   */
   const updateIncitation = (total_panier) => {
     document.getElementById('ZoneIncitation').innerHTML = '';
 
@@ -621,6 +629,34 @@ $(document).ready(() => {
     document.getElementById('zoneRecompense').innerHTML = recompense_zone;
   };
   /**
+   * Permet de rajouter la récompense au panier avant paiement
+   */
+  $('#btn-paiement').on('click', function (e) {
+    e.preventDefault();
+    //console.log(selectedGoodies);
+    // Use the Shopify AJAX API to add the product to the cart
+    if (selectedGoodies) {
+      $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: {
+          quantity: 1, // Adjust quantity as needed
+          id: eval(selectedGoodies),
+        },
+        dataType: 'json',
+        success: function () {
+          // Redirect to the checkout page
+          window.location.href = '/checkout';
+        },
+        error: function (response) {
+          console.error('Error adding product to cart: ', response);
+        },
+      });
+    } else {
+      window.location.href = '/checkout';
+    }
+  });
+  /**
    * hide the payement btns
    */
   const hidePayement = () => {
@@ -681,7 +717,7 @@ $(document).ready(() => {
       dataType: 'json',
       success: function (response) {
         // update panier inforamations
-        if (qty <= 0) {
+        /*if (qty <= 0) {
           $('#panier-items-container').html(
             '<p class="text-center mt-8 text-gray-500 text-lg">Votre panier est vide</p>',
           );
@@ -694,7 +730,8 @@ $(document).ready(() => {
         $('#total-price-panier').text(
           parseFloat(response.total_price) / 100 + '€',
         );
-        updateIncitation(parseFloat(response.total_price));
+        updateIncitation(parseFloat(response.total_price));*/
+        updatePanier(response);
         // console.log(response)
       },
     });

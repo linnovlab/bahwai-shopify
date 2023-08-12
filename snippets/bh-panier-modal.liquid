@@ -62,9 +62,9 @@
   data-product1="{{ first_product.title }}"
   data-product2="{{ second_product.title }}"
   data-product3="{{ third_product.title }}"
-  data-product1_id="{{ first_product.id }}"
-  data-product2_id="{{ second_product.id }}"
-  data-product3_id="{{ third_product.id }}"
+  data-product1_id="{{ first_product.selected_or_first_available_variant.id }}"
+  data-product2_id="{{ second_product.selected_or_first_available_variant.id }}"
+  data-product3_id="{{ third_product.selected_or_first_available_variant.id }}"
   data-product1="{{ first_product.title }}"
   data-product2="{{ second_product.title }}"
   data-product3="{{ third_product.title }}"
@@ -112,7 +112,7 @@
     </div>
 
     <div class="items text-_main_color_dark">
-      <h2 class="font-medium my-4 px-5">Vous avez ajouté :</h2>
+      <h2 class="font-medium my-4 px-5" id="vous_avez_ajoute">Vous avez ajouté :</h2>
       <div id="panier-items-container">{% comment %} items content {% endcomment %}
       </div>
       <div id="zoneRecompense"></div>

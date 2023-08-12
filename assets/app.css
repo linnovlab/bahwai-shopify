@@ -626,6 +626,10 @@ html {
   left: -140px;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -640,10 +644,6 @@ html {
 
 .top-\[14rem\] {
   top: 14rem;
-}
-
-.right-0 {
-  right: 0px;
 }
 
 .isolate {
@@ -907,6 +907,14 @@ html {
   margin-inline-end: 3rem;
 }
 
+.mr-0 {
+  margin-right: 0px;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -1000,14 +1008,6 @@ html {
   margin-top: 90px;
 }
 
-.mr-0 {
-  margin-right: 0px;
-}
-
-.mr-1 {
-  margin-right: 0.25rem;
-}
-
 .block {
   display: block;
 }
@@ -1034,6 +1034,10 @@ html {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-6 {
+  height: 1.5rem;
 }
 
 .h-\[1\.1rem\] {
@@ -1124,10 +1128,6 @@ html {
   height: 100vh;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
 .max-h-\[8rem\] {
   max-height: 8rem;
 }
@@ -1138,6 +1138,10 @@ html {
 
 .min-h-\[88px\] {
   min-height: 88px;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
 }
 
 .w-10 {
@@ -1246,10 +1250,6 @@ html {
 
 .w-full {
   width: 100%;
-}
-
-.w-1\/3 {
-  width: 33.333333%;
 }
 
 .max-w-\[100\%\] {
@@ -1492,6 +1492,10 @@ html {
   white-space: nowrap;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -1514,10 +1518,6 @@ html {
 
 .rounded-sm {
   border-radius: 0.125rem;
-}
-
-.rounded {
-  border-radius: 0.25rem;
 }
 
 .rounded-b-\[5px\] {
@@ -1694,6 +1694,10 @@ html {
   padding: 0px;
 }
 
+.p-0\.5 {
+  padding: 0.125rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -1720,10 +1724,6 @@ html {
 
 .p-\[8px\] {
   padding: 8px;
-}
-
-.p-0\.5 {
-  padding: 0.125rem;
 }
 
 .px-10 {
@@ -2152,6 +2152,11 @@ html {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-blue-100 {
+  --tw-text-opacity: 1;
+  color: rgb(219 234 254 / var(--tw-text-opacity));
+}
+
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -2190,11 +2195,6 @@ html {
 .text-yellow-300 {
   --tw-text-opacity: 1;
   color: rgb(253 224 71 / var(--tw-text-opacity));
-}
-
-.text-blue-100 {
-  --tw-text-opacity: 1;
-  color: rgb(219 234 254 / var(--tw-text-opacity));
 }
 
 .underline {
