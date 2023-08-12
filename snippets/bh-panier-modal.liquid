@@ -33,10 +33,35 @@
     width: 30px;
   }
 </style>
+{% if cart.total_price > 0 and cart.total_price < montant1 %}
+  {% assign resultat = montant1 | minus: cart.total_price | divided_by: 100.0 %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: first_product.title %}
+{% elsif cart.total_price >= montant1 and cart.total_price < montant2 %}
+  {% assign resultat = montant2 | minus: cart.total_price | divided_by: 100.0 %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: second_product.title %}
+{% elsif cart.total_price >= montant2 and cart.total_price < montant3 %}
+  {% assign resultat = montant3 | minus: cart.total_price | divided_by: 100.0 %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: third_product.title %}
+{% elsif cart.total_price >= montant3 %}
+  {% assign phrase = "Vous avez obtenue une " | append: third_product.title | append: " gratuitement" %}
+{% else %}
+  {% assign resultat = montant1 | divided_by: 100.0 %}
+  {% assign phrase = "A partir de " | append: resultat | append: "€ d'achat, on vous offre une " | append: first_product.title %}
+{% endif %}
+
+<style>
+  .bg_king {
+    background-image: url('{{ 'king.svg' | asset_url }}');
+    width: 30px;
+  }
+</style>
 <p class="h-[61px] w-[61px] me-3 me-8 hidden"></p>
 <div
   class="panier fixed top-0 w-full hidden z-50"
   id="panier"
+  data-product1="{{ first_product.title }}"
+  data-product2="{{ second_product.title }}"
+  data-product3="{{ third_product.title }}"
   data-product1_id="{{ first_product.id }}"
   data-product2_id="{{ second_product.id }}"
   data-product3_id="{{ third_product.id }}"
