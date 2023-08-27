@@ -13,7 +13,7 @@
 
   </div>
   <div class="text-_main_color_dark my-8 mx-8">
-    {{ page.content }}
+    {{ page.content | replace: "<p>", "<p class='mb-4 leading-normal text-[16px]'>" | replace: "<h2>", "<h2 class='text-[24px] font-bold mb-4'>" | replace: "<li>", "<li class='list-disc'>" }}
   </div>
 
 </section>
