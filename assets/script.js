@@ -376,7 +376,7 @@ $(document).ready(() => {
 					<p class="font-medium text-_main_color_dark">${item.title}</p>
 					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${(
             item.price / 100
-          ).toFixed(2)}€ l’unité</p>
+          ).toFixed(2)}€ le pack</p>
 					</div>
 				</a>
 				</div>
@@ -422,18 +422,21 @@ $(document).ready(() => {
 
     let ctn = ``;
     if (total_panier > 0 && total_panier < montant1) {
-      restant = ((montant1 - total_panier) / 100).toFixed(2);
+      restant =
+        `<span class='font-bold'>` +
+        ((montant1 - total_panier) / 100).toFixed(2) +
+        `</span>`;
       pourcentage = (total_panier / montant1) * 100;
       ctn +=
         `<div class="flex w-full mb-1 gap-1" id="progressBar">
-        <div class="relative w-1/3 h-6 bg-white rounded">
-          <div class="bg-_main_color_dark h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: ` +
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-_main_color_light h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width: ` +
         pourcentage +
         `%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
         montant1 / 100 +
         `€</span>
-          <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_dark font-extrabold">
+          <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_light font-extrabold">
             <img
               class=""
               src="https://cdn.shopify.com/s/files/1/0747/8430/9521/files/king.svg?v=1691796016"
@@ -444,15 +447,15 @@ $(document).ready(() => {
           </span>
         </div>
 
-        <div class="relative w-1/3 h-6 bg-white rounded">
-          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 0%"></div>
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width: 0%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
         montant2 / 100 +
         `€</span>
         </div>
 
-        <div class="relative w-1/3 h-6 bg-white rounded">
-          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 0%"></div>
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width: 0%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
         montant3 / 100 +
         `€</span>
@@ -461,32 +464,33 @@ $(document).ready(() => {
       <p id="phrase">
          Dépensez ` +
         restant +
-        `€ de plus et obtenez une ` +
-        $('#panier').attr('data-product1') +
-        `</p>`;
+        `€ de plus et obtenez la livraison gratuite</p>`;
       recompense_zone = '';
       selectedGoodies = null;
     } else if (total_panier >= montant1 && total_panier < montant2) {
-      restant = ((montant2 - total_panier) / 100).toFixed(2);
+      restant =
+        `<span class='font-bold'>` +
+        ((montant2 - total_panier) / 100).toFixed(2) +
+        `</span>`;
       pourcentage = (total_panier / montant2) * 100;
       ctn +=
         `<div class="flex w-full mb-1 gap-1" id="progressBar">
-        <div class="relative w-1/3 h-6 bg-white rounded">
-          <div class="bg-_main_color_dark h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 100%"></div>
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-_main_color_light h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width: 100%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
         montant1 / 100 +
         `€</span>
          
         </div>
 
-        <div class="relative w-1/3 h-6 bg-white rounded">
-          <div class="bg-_main_color_dark h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width:` +
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-_main_color_light h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width:` +
         pourcentage +
         `%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
         montant2 / 100 +
         `€</span>
-        <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_dark font-extrabold">
+        <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_light font-extrabold">
         <img
           class=""
           src="https://cdn.shopify.com/s/files/1/0747/8430/9521/files/king.svg?v=1691796016"
@@ -497,8 +501,8 @@ $(document).ready(() => {
       </span>
         </div>
 
-        <div class="relative w-1/3 h-6 bg-white rounded">
-          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 0%"></div>
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width: 0%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
         montant3 / 100 +
         `€</span>
@@ -510,55 +514,53 @@ $(document).ready(() => {
         `€ de plus et obtenez une ` +
         $('#panier').attr('data-product2') +
         `</p>`;
-      recompense_zone =
-        `
+      recompense_zone = `
         <div class="prod flex px-5">
           <div class="flex">
           <img
           class="h-[61px] w-[61px] me-3"
-          src="` +
-        $('#panier').attr('data-product1_img') +
-        `"
+          src="https://cdn.shopify.com/s/files/1/0747/8430/9521/files/livraison-gratuite.png?v=1693156594"
           alt="produit">
           <div class="desc">
-          <p class="font-medium text-_main_color_dark">Récompense : ` +
-        $('#panier').attr('data-product1') +
-        `</p>
+          <p class="font-medium text-_main_color_dark">Récompense : Livraison</p>
           <p class="text-[12px] font-medium text-_main_color_dark mt-1">OFFERT</p>
           </div>
         </div>
         </div>
       `;
-      selectedGoodies = $('#panier').attr('data-product1_id');
+      /*selectedGoodies = $('#panier').attr('data-product1_id');*/
     } else if (total_panier >= montant2 && total_panier < montant3) {
-      restant = ((montant3 - total_panier) / 100).toFixed(2);
+      restant =
+        `<span class='font-bold'>` +
+        ((montant3 - total_panier) / 100).toFixed(2) +
+        `</span>`;
       pourcentage = (total_panier / montant3) * 100;
       ctn +=
         `<div class="flex w-full mb-1 gap-1" id="progressBar">
-        <div class="relative w-1/3 h-6 bg-white rounded">
-          <div class="bg-_main_color_dark h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: 100%"></div>
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-_main_color_light h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width: 100%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
         montant1 / 100 +
         `€</span>
          
         </div>
 
-        <div class="relative w-1/3 h-6 bg-white rounded">
-          <div class="bg-_main_color_dark h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width:100%"></div>
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-_main_color_light h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width:100%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
         montant2 / 100 +
         `€</span>
         
         </div>
 
-        <div class="relative w-1/3 h-6 bg-white rounded">
-          <div class="bg-_main_color_dark h-full text-xs font-medium text-blue-100 p-0.5 leading-none rounded" style="width: ` +
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-_main_color_light h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width: ` +
         pourcentage +
         `%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
         montant3 / 100 +
         `€</span>
-        <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_dark font-extrabold">
+        <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_light font-extrabold">
         <img
           class=""
           src="https://cdn.shopify.com/s/files/1/0747/8430/9521/files/king.svg?v=1691796016"
@@ -588,7 +590,7 @@ $(document).ready(() => {
           <div class="desc">
           <p class="font-medium text-_main_color_dark">Récompense : ` +
         $('#panier').attr('data-product2') +
-        `</p>
+        ` + Livraison</p>
           <p class="text-[12px] font-medium text-_main_color_dark mt-1">OFFERT</p>
           </div>
         </div>
@@ -599,7 +601,7 @@ $(document).ready(() => {
       ctn =
         `Vous obtenez une ` +
         $('#panier').attr('data-product3') +
-        ` gratuitement`;
+        ` gratuitement et la livraison offerte`;
       recompense_zone =
         `
         <div class="prod flex px-5">
@@ -613,7 +615,7 @@ $(document).ready(() => {
           <div class="desc">
           <p class="font-medium text-_main_color_dark">Récompense : ` +
         $('#panier').attr('data-product3') +
-        `</p>
+        ` + Livraison</p>
           <p class="text-[12px] font-medium text-_main_color_dark mt-1">OFFERT</p>
           </div>
         </div>

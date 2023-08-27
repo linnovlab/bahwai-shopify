@@ -18,7 +18,7 @@
                 title="Rechercher des produits..."
                 name="q"
                 placeholder="Recherche de produits"
-                class="outline-none  bg-transparent ms-2">
+                class="outline-none  bg-transparent ms-2 w-full">
             </form>
           </predictive-search>
         </div>
@@ -38,15 +38,15 @@
         <div id="sug-prod-container"></div>
       </div>
     </div>
-  
+
     <div class="body mt-8">
       <h2 class="text-gray-600 text-[1.2rem]">Les meilleures suggestions</h2>
       <div class="content flex justify-around sm:justify-normal flex-wrap gap-4 sm:gap-8 mt-2">
         {% for product in collections['suggestions'].products %}
           {% comment %} getting rating value {% endcomment %}
           {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
-          {%- assign n = rates | first | plus:0 -%} 
-  
+          {%- assign n = rates | first | plus: 0 -%}
+
           <div class="item w-[9rem] sm:w-[11rem]">
             <a href="{{ product.url }}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
               <div class="img w-full">
@@ -62,7 +62,7 @@
                     {%- for i in (1..5) -%}
                       {%- if i <= n -%}
                         <i class="fas fa-star"></i>
-                        {%- else -%}
+                      {%- else -%}
                         <i class="fa-regular fa-star"></i>
                       {%- endif -%}
                     {%- endfor -%}
@@ -73,25 +73,25 @@
                     Soyez le 1er à noter!
                   {% else %}
                     {{ product.metafields.reviews.rating_count }} avis
-                  {% endif %} 
+                  {% endif %}
                 </span>
               </div>
-              <p class="font-medium">À partir de {{ product.price }}€
+              <p class="font-medium">{{ product.price | money_without_currency }}€ le pack
               </p>
             </a>
           </div>
         {% endfor %}
       </div>
     </div>
-  
+
     <div class="footer text-_main_color_dark mt-12">
       <h2 class="font-bold">Ces produits pourraient vous plaire</h2>
       <div class="content flex flex-wrap items-center gap-8 text-sm mt-2">
         {% for product in collections['pourrait-vous-plaire'].products %}
           {% comment %} getting rating value {% endcomment %}
           {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
-          {%- assign n = rates | first | plus:0 -%} 
-  
+          {%- assign n = rates | first | plus: 0 -%}
+
           <div class="item max-w-[143px] w-full">
             <a href="{{ product.url }}" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
               <div class="img w-full">
@@ -107,7 +107,7 @@
                     {%- for i in (1..5) -%}
                       {%- if i <= n -%}
                         <i class="fas fa-star"></i>
-                        {%- else -%}
+                      {%- else -%}
                         <i class="fa-regular fa-star"></i>
                       {%- endif -%}
                     {%- endfor -%}
@@ -118,10 +118,10 @@
                     Soyez le 1er à noter!
                   {% else %}
                     {{ product.metafields.reviews.rating_count }} avis
-                  {% endif %} 
+                  {% endif %}
                 </span>
               </div>
-              <p class="font-medium">À partir de {{ product.price }}€
+              <p class="font-medium">{{ product.price | money_without_currency }}€ le pack
               </p>
             </a>
           </div>

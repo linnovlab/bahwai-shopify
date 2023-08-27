@@ -5,9 +5,12 @@ class PredictiveSearch extends HTMLElement {
     this.input = this.querySelector('input[type="search"]');
     this.predictiveSearchResults = $('#predictive-search');
 
-    this.input.addEventListener('input', this.debounce((event) => {
-      this.onChange(event);
-    }, 300).bind(this));
+    this.input.addEventListener(
+      'input',
+      this.debounce((event) => {
+        this.onChange(event);
+      }, 300).bind(this),
+    );
   }
 
   onChange() {
@@ -22,7 +25,9 @@ class PredictiveSearch extends HTMLElement {
   }
 
   getSearchResults(searchTerm) {
-    fetch(`/search/suggest?q=${searchTerm}&section_id=predictive-search&format=json`)
+    fetch(
+      `/search/suggest?q=${searchTerm}&section_id=predictive-search&format=json`,
+    )
       .then((response) => {
         if (!response.ok) {
           var error = new Error(response.status);
@@ -36,24 +41,30 @@ class PredictiveSearch extends HTMLElement {
         // feat for searchbar fonctionality
         const products = result.resources.results.products,
           collections = result.resources.results.collections,
-          colContainer = $("#sug-col-container"),
-          prodContainer = $("#sug-prod-container");
+          colContainer = $('#sug-col-container'),
+          prodContainer = $('#sug-prod-container');
         var colContent = '';
-        var prodContent = ''
+        var prodContent = '';
         // console.log(products)
-        collections.forEach(item => {
-          if (item.handle != 'suggestions' && item.handle != 'pourrait-vous-plaire' && item.handle != 'suggestions-panier') {
+        collections.forEach((item) => {
+          if (
+            item.handle != 'suggestions' &&
+            item.handle != 'pourrait-vous-plaire' &&
+            item.handle != 'suggestions-panier'
+          ) {
             colContent += `
           <li>
             <a href="${item.url}">${item.title}</a>
-            </li>`
+            </li>`;
           }
         });
 
-        products.forEach(product => {
+        products.forEach((product) => {
           prodContent += `
           <div class="item w-[9rem] sm:w-[11rem]">
-            <a href="${product.url}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+            <a href="${
+              product.url
+            }" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
               <div class="img w-full">
                 <img
                   src="${product.image}"
@@ -61,7 +72,9 @@ class PredictiveSearch extends HTMLElement {
                   class="w-full object-cover h-[220px]" 
                   >
               </div>
-              <p class="font-semibold w-[10rem] text-center mt-2">${product.title}</p>
+              <p class="font-semibold w-[10rem] text-center mt-2">${
+                product.title
+              }</p>
               <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
                 <div class="stars flex text-sm">
                   <i class="fas fa-star"></i>
@@ -72,12 +85,14 @@ class PredictiveSearch extends HTMLElement {
                 </div>
                 <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
               </div>
-              <p class="font-medium">À partir de ${product.price}€
+              <p class="font-medium">${(product.price / 100).toFixed(
+                2,
+              )}€ le pack
               </p>
             </a>
           </div>
-          `
-        })
+          `;
+        });
 
         if (collections.length > 0) {
           colContainer.html(`
@@ -85,10 +100,9 @@ class PredictiveSearch extends HTMLElement {
               <ul id="sug-col-container" class="flex flex-col gap-1">
                 ${colContent}
               </ul>
-          `)
-
+          `);
         } else {
-          colContainer.html('')
+          colContainer.html('');
         }
 
         if (products.length > 0) {
@@ -97,9 +111,9 @@ class PredictiveSearch extends HTMLElement {
             <div class="content flex justify-around sm:justify-normal flex-wrap gap-4 sm:gap-8 mt-2">
               ${prodContent}
             </div>
-          `)
+          `);
         } else {
-          prodContainer.html('')
+          prodContainer.html('');
         }
 
         // this.clearconsole()

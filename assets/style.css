@@ -6,7 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   html {
     font-family: 'Poppins', system-ui, sans-serif;
@@ -589,4 +588,8 @@ tbody tr:last-child td {
 /* addresse compte page */
 .address-shadow {
   box-shadow: 0px 5px 10px -6px black;
+}
+
+#phrase {
+  @apply text-_main_color_dark mt-3;
 }

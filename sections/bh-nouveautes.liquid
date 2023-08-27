@@ -74,7 +74,15 @@
                       {% endif %}
                     </span>
                   </div>
-                  <p class="font-medium">À partir de {{ product.price | divided_by: 100.00 }} €
+                  <p class="font-medium flex flex-col">
+                    <span>
+                      {{ product.price | money_without_currency }}€ le pack
+                    </span>
+                    <span class="text-[0.6rem]">
+                      {% if product.variants.first.unit_price %}
+                        soit {{ product.variants.first.unit_price | money_without_currency }}€/unité
+                      {% endif %}
+                    </span>
                   </p>
                 </a>
               </div>
@@ -88,7 +96,8 @@
 
 
 
-  <p class="text-center mt-[30px] mb-[100px]">
+  <p
+    class="text-center mt-[30px] mb-[100px]">
     <a
       id="btn-collection-link"
       href="{{ collections['nouveautes'].url }}"
