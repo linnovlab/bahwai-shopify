@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "charte": {
+      "type": "main-charte",
+      "settings": {}
+    }
+  },
+  "order": [
+    "charte"
+  ]
+}
