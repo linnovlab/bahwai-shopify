@@ -23,7 +23,7 @@
   <div class="article-content flex flex-col gap-4 px-8 desktop-width">
     <div class="">
       <p class="text-sm text-black">
-        {{ article.content }}
+        {{ article.content | replace: "<p>", "<p class='mb-4 leading-normal text-[16px]'>" | replace: "<h2>", "<h2 class='text-[24px] font-bold mb-4'>" }}
       </p>
     </div>
 

@@ -9,11 +9,11 @@
               <div style="background-image: url('{{ article.image | image_url: width: 900 }}');" class="img img-center flex items-end mb-4 h-[10rem]">
                 <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
                   <p>{{ article.published_at | date: "%d %b %Y" }}</p>
-                  <p>Partenariat</p>
+                  <p>Actualité</p>
                 </div>
               </div>
               <div class="desc text-sm">
-                <h5 class="font-bold text-_main_color_dark text-base">{{ article.title }}</h5>
+                <h5 class="font-bold text-_main_color_dark text-base">{{ article.title | strip_html | truncatewords: 8 }}</h5>
                 <p class="text-gray-400">{{ article.content | strip_html | truncatewords: 30 }}</p>
                 <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
                   <span class="font-bold">Lire le blog</span>
