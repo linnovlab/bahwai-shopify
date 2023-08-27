@@ -21,12 +21,7 @@
     <p class="text-center mb-4">Article publié le {{ article.published_at | date: '%d %B %Y' }}</p>
   </div>
   <div class="article-content flex flex-col gap-4 px-8 desktop-width">
-
-
-    {{ article.content | replace: "<p>", "<p class='mb-4 leading-normal text-[16px]'>" | replace: "<h2>", "<h2 class='text-[24px] font-bold mb-4'>" }}
-
-
-
+    {{ article.content | replace: "<p>", "<p class='mb-4 leading-normal text-[16px]'>" | replace: "<h2>", "<h2 class='text-[24px] font-bold mb-4'>" | replace: "<li>", "<li class='list-disc'>" }}
   </div>
 </div>
 
