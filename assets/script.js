@@ -930,14 +930,14 @@ $(document).ready(() => {
   /**
    * showing popup when page finish load
    */
-  if (location.pathname == '/') {
+  /*if (location.pathname == '/') {
     setTimeout(() => {
       if (!hasSeenPopup()) {
         $('#home-popup').fadeIn();
         setPopupSeenCookie();
       }
     }, 2000);
-  }
+  }*/
 
   $('#close-home-popup').click(function () {
     $('#home-popup').fadeOut();

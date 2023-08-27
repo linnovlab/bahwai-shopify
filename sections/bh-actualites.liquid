@@ -14,7 +14,7 @@
               </div>
               <div class="desc text-sm">
                 <h5 class="font-bold text-_main_color_dark text-base">{{ article.title }}</h5>
-                <p class="text-gray-400">{{ article.content | escape }}</p>
+                <p class="text-gray-400">{{ article.content | strip_html | truncatewords: 30 }}</p>
                 <a href="{{ article.url }}" class="flex gap-2 mt-8 text-_main_color_dark hover:text-_orange_color transition-all duration-500">
                   <span class="font-bold">Lire le blog</span>
                   <img

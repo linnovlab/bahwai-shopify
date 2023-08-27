@@ -1340,6 +1340,10 @@ html {
   max-width: 948px;
 }
 
+.max-w-\[958px\] {
+  max-width: 958px;
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y))
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
@@ -1502,10 +1506,6 @@ html {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.rounded {
-  border-radius: 0.25rem;
 }
 
 .rounded-2xl {
@@ -3421,6 +3421,10 @@ tbody tr:last-child td {
 
   .sm\:w-full {
     width: 100%;
+  }
+
+  .sm\:w-\[300px\] {
+    width: 300px;
   }
 
   .sm\:max-w-\[17rem\] {
