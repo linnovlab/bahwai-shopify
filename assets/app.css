@@ -907,6 +907,14 @@ html {
   margin-inline-end: 3rem;
 }
 
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
 .mr-0 {
   margin-right: 0px;
 }
@@ -1010,14 +1018,6 @@ html {
 
 .mt-\[90px\] {
   margin-top: 90px;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
 }
 
 .block {
@@ -1290,10 +1290,6 @@ html {
 
 .max-w-\[144px\] {
   max-width: 144px;
-}
-
-.max-w-\[1456px\] {
-  max-width: 1456px;
 }
 
 .max-w-\[16\.5rem\] {
@@ -1912,6 +1908,10 @@ html {
 
 .pb-\[6rem\] {
   padding-bottom: 6rem;
+}
+
+.pr-8 {
+  padding-right: 2rem;
 }
 
 .ps-2 {
@@ -2694,10 +2694,40 @@ body {
 
 #shopify-product-reviews fieldset div {
   width: 100% !important;
+  max-width: 1440px;
+}
+
+@media screen and (min-width: 1440px) {
+  #shopify-product-reviews fieldset div {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 640px) {
+  #shopify-product-reviews fieldset div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .spr-container {
   border: none !important;
+  max-width: 1440px;
+}
+
+@media screen and (min-width: 1440px) {
+  .spr-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 640px) {
+  .spr-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .spr-header-title {
@@ -3415,6 +3445,10 @@ tbody tr:last-child td {
     width: 11rem;
   }
 
+  .sm\:w-\[300px\] {
+    width: 300px;
+  }
+
   .sm\:w-\[341px\] {
     width: 341px;
   }
@@ -3433,10 +3467,6 @@ tbody tr:last-child td {
 
   .sm\:w-full {
     width: 100%;
-  }
-
-  .sm\:w-\[300px\] {
-    width: 300px;
   }
 
   .sm\:max-w-\[17rem\] {

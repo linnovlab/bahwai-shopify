@@ -182,9 +182,11 @@ body {
 /* css reviews feat */
 #shopify-product-reviews fieldset div {
   width: 100% !important;
+  @apply desktop-width sm:px-8;
 }
 .spr-container {
   border: none !important;
+  @apply desktop-width sm:px-8;
 }
 .spr-header-title {
   display: none !important;
