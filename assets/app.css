@@ -1012,6 +1012,14 @@ html {
   margin-top: 90px;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -1960,6 +1968,10 @@ html {
 
 .pt-\[9rem\] {
   padding-top: 9rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
