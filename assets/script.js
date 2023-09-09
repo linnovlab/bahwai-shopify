@@ -794,7 +794,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) {}
+  } catch (e) { }
 
   /**
    * newletter feat
@@ -808,7 +808,10 @@ $(document).ready(() => {
   });*/
 
   // Close the modals if the user clicks outside of it
-  window.onclick = function (event) {
+  window.onclick = functio
+
+
+  n(event) {
     // panier
     if (event.target.matches('#panier') == true) {
       $('#panier').fadeOut();

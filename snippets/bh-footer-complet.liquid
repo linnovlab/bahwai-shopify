@@ -11,12 +11,9 @@
       }
     }
   </style>
-  <section
-    class="contact bg-footer-s1 relative z-50 h-[26rem] md:h-[35rem] text-white flex flex-col justify-center items-center gap-6 img-center py-8 px-[10px] mt-20">
-    <h2
-      class="title-white text-center desktop-width sm:px-8">On est ensemble !</h2>
-    <p
-      class="text-center sm:text-base text-sm mb-4 desktop-width sm:px-8">Suis nous pour profiter d'une remise immédiate de 20% sur ta 1ʳᵉ commande et être informé de tous nos bons plans. Rassure-toi, nous aussi, on n'est pas trop pub
+  <section class="contact bg-footer-s1 relative z-50 h-[26rem] md:h-[35rem] text-white flex flex-col justify-center items-center gap-6 img-center py-8 px-[10px] mt-20">
+    <h2 class="title-white text-center desktop-width sm:px-8">On est ensemble !</h2>
+    <p class="text-center sm:text-base text-sm mb-4 desktop-width sm:px-8">Suis nous pour profiter d'une remise immédiate de 20% sur ta 1ʳᵉ commande et être informé de tous nos bons plans. Rassure-toi, nous aussi, on n'est pas trop pub
     </p>
     {% form 'customer', class: "flex gap-4 max-w-[40rem] w-full px-4 " %}
       <input
@@ -25,9 +22,7 @@
         id="input-contact"
         name="contact[email]"
         class="w-100 outline-none bg-transparent border border-white ps-2 h-10 w-full">
-      <button
-        type="submit"
-        class="py-2 px-4 bg-white rounded-md">
+      <button type="submit" class="py-2 px-4 bg-white rounded-md">
         <img
           src="{{'send.svg' | asset_url }}"
           alt="send"
@@ -36,21 +31,14 @@
           loading="lazy">
       </button>
     {% endform %}
-    <p
-      class="text-center text-[8px] md:text-[12px] px-3 desktop-width sm:px-8">
+    <p class="text-center text-[8px] md:text-[12px] px-3 desktop-width sm:px-8">
       Vous pouvez vous désabonner de la newsletter à tout moment. En vous inscrivant, vous acceptez les CGV et la déclaration de protection des données. Cette offre n'est pas cumulable avec d'autres réductions et est seulement valable pour les commandes d'une valeur supérieure ou égale à 20€. Les codes de réduction ne sont pas cumulables. Vous pouvez consulter notre politique de confidentialité ici.
     </p>
   </section>
-  <section
-    style="background-image: url('{{ 'Violet-Footer.png' |asset_url}}');"
-    class="bg-footer-s2 img-center pt-[9rem] pb-8 -mt-[8rem] sm:px-4">
-    <div
-      class="desktop-width sm:px-8">
-      <div
-        id="logo-footer"
-        class="logo flex justify-center sm:max-w-[20rem] w-full mb-5">
-        <a
-          href="/">
+  <section style="background-image: url('{{ 'Violet-Footer.png' |asset_url}}');" class="bg-footer-s2 img-center pt-[9rem] pb-8 -mt-[8rem] sm:px-4">
+    <div class="desktop-width sm:px-8">
+      <div id="logo-footer" class="logo flex justify-center sm:max-w-[20rem] w-full mb-5">
+        <a href="/">
           <img
             src="{{'icon bahwai.svg' | asset_url }}"
             alt="logo"
@@ -59,17 +47,11 @@
             loading="lazy">
         </a>
       </div>
-      <div
-        id="items-footer"
-        class="items text-white md:flex justify-around flex-wrap gap-6 hidden">
-        <div
-          class="item flex flex-col gap-4 items-center">
-          <p
-            class="text-_orange_color">ça cool de source !</p>
-          <div
-            class="flex items-center gap-4 justify-center">
-            <a
-              href="https://www.facebook.com/profile.php?id=100091959369506">
+      <div id="items-footer" class="items text-white md:flex justify-around flex-wrap gap-6 hidden">
+        <div class="item flex flex-col gap-4 items-center">
+          <p class="text-_orange_color">ça cool de source !</p>
+          <div class="flex items-center gap-4 justify-center">
+            <a href="https://www.facebook.com/profile.php?id=100091959369506">
               <img
                 src="{{ 'facebook-center-square.svg ' | asset_url }}"
                 alt="facebook"
@@ -77,8 +59,7 @@
                 height="auto"
                 loading="lazy">
             </a>
-            <a
-              href="https://instagram.com/bahwai.fr?igshid=MTIzZWMxMTBkOA==">
+            <a href="https://instagram.com/bahwai.fr?igshid=MTIzZWMxMTBkOA==">
               <img
                 src="{{ 'Instagram.svg ' | asset_url }}"
                 alt="instagram"
@@ -86,8 +67,7 @@
                 height="auto"
                 loading="lazy">
             </a>
-            <a
-              href="https://www.tiktok.com/@bahwai.fr?_t=8dqo9b4vRAh&_r=1/@bahwai.fr?_t=8dqo9b4vRAh&_r=1">
+            <a href="https://www.tiktok.com/@bahwai.fr?_t=8dqo9b4vRAh&_r=1/@bahwai.fr?_t=8dqo9b4vRAh&_r=1">
               <img
                 src="{{ 'tiktok-square.svg ' | asset_url }}"
                 alt="tiktok"
@@ -96,14 +76,11 @@
                 loading="lazy">
             </a>
           </div>
-          <p
-            class="text-white">Développé avec ❤️ par Linnovlab
+          <p class="text-white">Développé avec ❤️ par Linnovlab
           </p>
         </div>
-        <div
-          class="item">
-          <h4
-            class="font-bold border-b-2 border-gray-400  mb-4">
+        <div class="item">
+          <h4 class="font-bold border-b-2 border-gray-400  mb-4">
             On reste en contact !</h4>
           <ul>
             <li><a href="{{ pages.contact.url }}">Nous contacter</a></li>
@@ -111,35 +88,28 @@
             <li><a href="https://wa.me/33630139872" class="underline">+33 6 30 13 98 72</a></li>
           </ul>
         </div>
-        <div
-          class="item">
-          <h4
-            class="font-bold border-b-2 border-gray-400  mb-4">
+        <div class="item">
+          <h4 class="font-bold border-b-2 border-gray-400  mb-4">
             Tu veux en savoir plus ?</h4>
           <ul>
             <li><a href="{{ pages.engagements.url }}">Nos engagements</a></li>
             <li><a href="#">Ils parlent de nous</a></li>
+            <li><a href="{{ pages.laventure-bahwai.url }}">Notre histoire</a></li>
           </ul>
         </div>
-        <div
-          class="item">
-          <h4
-            class="font-bold border-b-2 border-gray-400  mb-4">Pour les curieux !</h4>
+        <div class="item">
+          <h4 class="font-bold border-b-2 border-gray-400  mb-4">Pour les curieux !</h4>
           <ul>
             {% for link in linklists['footer'].links %}
               <li>
-                <a
-                  href="{{ link.url }}">{{ link.title }}</a>
+                <a href="{{ link.url }}">{{ link.title }}</a>
               </li>
             {% endfor %}
           </ul>
         </div>
-        <div
-          class="item">
-          <h4
-            class="font-bold border-b-2 border-gray-400 mb-4">Moyens de paiement acceptés</h4>
-          <div
-            class="imgs flex items-center gap-4">
+        <div class="item">
+          <h4 class="font-bold border-b-2 border-gray-400 mb-4">Moyens de paiement acceptés</h4>
+          <div class="imgs flex items-center gap-4">
             <span><img
                 class="w-[4rem]"
                 src="{{ 'mastercard.png' | asset_url }}"
@@ -169,31 +139,24 @@
       </div>
     </div>
     <!-- footer mobile -->
-    <div
-      class="footer-mobile md:hidden">
-      <div
-        class="flex flex-col gap-4 items-center">
-        <p
-          class="text-_orange_color">ça cool de source !
+    <div class="footer-mobile md:hidden">
+      <div class="flex flex-col gap-4 items-center">
+        <p class="text-_orange_color">ça cool de source !
         </p>
-        <div
-          class="flex items-center gap-4 justify-center">
-          <a
-            href="https://www.facebook.com/profile.php?id=100091959369506"><img
+        <div class="flex items-center gap-4 justify-center">
+          <a href="https://www.facebook.com/profile.php?id=100091959369506"><img
               src="{{ 'facebook-center-square.svg ' | asset_url }}"
               alt="facebook"
               loading="lazy"
               width="auto"
               height="auto"></a>
-          <a
-            href="https://instagram.com/bahwai.fr?igshid=MTIzZWMxMTBkOA=="><img
+          <a href="https://instagram.com/bahwai.fr?igshid=MTIzZWMxMTBkOA=="><img
               src="{{ 'Instagram.svg ' | asset_url}}"
               alt="instagram"
               loading="lazy"
               width="auto"
               height="auto"></a>
-          <a
-            href="https://www.tiktok.com/@bahwai.fr?_t=8dqo9b4vRAh&_r=1/@bahwai.fr?_t=8dqo9b4vRAh&_r=1"><img
+          <a href="https://www.tiktok.com/@bahwai.fr?_t=8dqo9b4vRAh&_r=1/@bahwai.fr?_t=8dqo9b4vRAh&_r=1"><img
               src="{{ 'tiktok-square.svg ' | asset_url}}"
               alt="tiktok"
               loading="lazy"
@@ -201,10 +164,8 @@
               height="auto"></a>
         </div>
       </div>
-      <div
-        class="accordions text-white">
-        <div
-          class="accordion-item border-b-2 border-gray-400  w-full mx-auto mt-2 mb-4">
+      <div class="accordions text-white">
+        <div class="accordion-item border-b-2 border-gray-400  w-full mx-auto mt-2 mb-4">
           <button
             type="button"
             id="btn-accordion"
@@ -212,91 +173,69 @@
             <span>
               On reste en contact !
             </span>
-            <i
-              class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
+            <i class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
           </button>
-          <div
-            class="panel hidden mb-4">
-            <ul
-              class="ps-4">
+          <div class="panel hidden mb-4">
+            <ul class="ps-4">
               <li>
-                <a
-                  href="{{ pages.contact.url }}">Nous contacter</a>
+                <a href="{{ pages.contact.url }}">Nous contacter</a>
               </li>
               <li>
-                <a
-                  href="{{ pages.partenaire.url }}">Devenir partenaire</a>
+                <a href="{{ pages.partenaire.url }}">Devenir partenaire</a>
               </li>
               <li>
-                <a
-                  href="https://wa.me/33630139872"
-                  class="underline">+33 6 30 13 98 72</a>
+                <a href="https://wa.me/33630139872" class="underline">+33 6 30 13 98 72</a>
               </li>
             </ul>
           </div>
         </div>
-        <div
-          class="accordion-item border-b-2 border-gray-400  w-full mx-auto mt-2 mb-4">
+        <div class="accordion-item border-b-2 border-gray-400  w-full mx-auto mt-2 mb-4">
           <button
             type="button"
             id="btn-accordion"
             class="px-4 font-bold flex justify-between w-full">
             <span>Tu veux en savoir plus ?</span>
-            <i
-              class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
+            <i class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
           </button>
-          <div
-            class="panel hidden mb-4">
-            <ul
-              class="ps-4">
+          <div class="panel hidden mb-4">
+            <ul class="ps-4">
               <li>
-                <a
-                  href="{{ pages.engagements.url }}">Nos engagements</a>
+                <a href="{{ pages.engagements.url }}">Nos engagements</a>
               </li>
               <li>
-                <a
-                  href="#">Ils parlent de nous</a>
+                <a href="#">Ils parlent de nous</a>
               </li>
             </ul>
           </div>
         </div>
-        <div
-          class="accordion-item border-b-2 border-gray-400  w-full mx-auto mt-2 mb-4">
+        <div class="accordion-item border-b-2 border-gray-400  w-full mx-auto mt-2 mb-4">
           <button
             type="button"
             id="btn-accordion"
             class="px-4 font-bold flex justify-between w-full">
             <span>Pour les curieux !</span>
-            <i
-              class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
+            <i class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
           </button>
-          <div
-            class="panel hidden mb-4">
-            <ul
-              class="ps-4">
+          <div class="panel hidden mb-4">
+            <ul class="ps-4">
               {% for link in linklists['footer'].links %}
                 <li>
-                  <a
-                    href="{{ link.url }}">{{ link.title }}</a>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
                 </li>
               {% endfor %}
             </ul>
           </div>
         </div>
-        <div
-          class="accordion-item border-b-2 border-gray-400  w-full mx-auto mt-2 mb-4">
+        <div class="accordion-item border-b-2 border-gray-400  w-full mx-auto mt-2 mb-4">
           <button
             type="button"
             id="btn-accordion"
             class="px-4 font-bold flex justify-between w-full">
             <span>Moyens de paiement acceptés</span>
-            <i
-              class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
+            <i class="fas fa-chevron-down transition-transform duration-500 me-2"></i>
           </button>
-          <div
-            class="panel hidden my-4">
-            <div
-              class="imgs flex items-center gap-4 ps-4">
+          <div class="panel hidden my-4">
+            <div class="imgs flex items-center gap-4 ps-4">
               <span><img
                   class="w-[4rem]"
                   src="{{ 'mastercard.png' | asset_url }}"
@@ -325,8 +264,7 @@
           </div>
         </div>
       </div>
-      <p
-        class="mt-8 text-center text-white">Développé avec ❤️ par Linnovlab</p>
+      <p class="mt-8 text-center text-white">Développé avec ❤️ par Linnovlab</p>
     </div>
   </section>
 </footer>
@@ -337,28 +275,19 @@
     background-image: url('{{ 'Orange.png' |asset_url }}');
   }
 </style>
-<div
-  id="notif-subscription"
-  class="hidden fixed top-[14rem] w-full">
-  <div
-    class="bg-notif img-center rounded-md p-4 sm:mx-[8rem] mx-4">
-    <div
-      class="flex justify-end mb-8">
-      <p
-        id="close-notif-subscription"
-        class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
-        <i
-          class="fas fa-xmark text-[1.5rem]"></i>
+<div id="notif-subscription" class="hidden fixed top-[14rem] w-full">
+  <div class="bg-notif img-center rounded-md p-4 sm:mx-[8rem] mx-4">
+    <div class="flex justify-end mb-8">
+      <p id="close-notif-subscription" class="text-end font-bold hover:cursor-pointer border-b-2 border-_main_color_dark">
+        <i class="fas fa-xmark text-[1.5rem]"></i>
         <span>Fermer</span>
       </p>
     </div>
 
 
-    <p
-      class="text-white">Super, nous avons bien pris en compte votre inscription à notre Newsletter. Merci !!! <br><br>
+    <p class="text-white">Super, nous avons bien pris en compte votre inscription à notre Newsletter. Merci !!! <br><br>
       Cordialement
     </p>
-    <h2
-      class="text-white font-bold text-lg">Bahwai family</h2>
+    <h2 class="text-white font-bold text-lg">Bahwai family</h2>
   </div>
 </div>
