@@ -808,10 +808,7 @@ $(document).ready(() => {
   });*/
 
   // Close the modals if the user clicks outside of it
-  window.onclick = functio
-
-
-  n(event) {
+  window.onclick = function (event) {
     // panier
     if (event.target.matches('#panier') == true) {
       $('#panier').fadeOut();
@@ -945,6 +942,27 @@ $(document).ready(() => {
   $('#close-home-popup').click(function () {
     $('#home-popup').fadeOut();
   });
+
+  // popup pour form on est ensemble
+  $('#form-on-est-ensemble').submit(() => {
+    $('#popup-on-est-ensemble').fadeIn(1000).fadeOut(5000)
+  })
+
+  // gestion formulaire contact, input tel
+  $('#form-contact form').submit(function (e) {
+    e.preventDefault()
+    const result = $('#input-tel-contact').val().match('^[0-9]{10}$')
+    if (result !== null) {
+      $.post($(this).attr('action'), $(this).serialize())
+        .done((res) => {
+          window.location.reload()
+        })
+        .catch((e) => console.log(e))
+    } else {
+      $('#input-tel-contact').css('border-color', 'red')
+    }
+  })
+
 });
 
 try {
