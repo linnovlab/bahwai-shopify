@@ -93,7 +93,6 @@ $(document).ready(() => {
   });
 
   let subsriptionSubmited = getUrlParameter('contact_form');
-  console.log(subsriptionSubmited);
   if (subsriptionSubmited) {
     $('#notif-subscription').fadeIn().fadeOut(10000);
   }
@@ -962,6 +961,17 @@ $(document).ready(() => {
       $('#input-tel-contact').css('border-color', 'red')
     }
   })
+
+  // gestion du formulaire de registration et affichage d'un popup
+  $('#form-register').submit(function (e) {
+    e.preventDefault()
+    window.location.href = '/?registred=1'
+  })
+
+  // check pour afficher le popup de bienvenue apres registration
+  if (window.location.href.match('/?registred=1')) {
+    $('#popup-welcom').fadeIn().fadeOut(7000)
+  }
 
 });
 

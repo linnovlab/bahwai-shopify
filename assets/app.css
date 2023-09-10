@@ -652,12 +652,8 @@ html {
   top: 14rem;
 }
 
-.top-\[50\%\]{
-  top: 50%;
-}
-
-.top-\[40\%\]{
-  top: 40%;
+.top-\[5rem\]{
+  top: 5rem;
 }
 
 .isolate{
@@ -1747,6 +1743,10 @@ html {
   padding: 1rem;
 }
 
+.p-5{
+  padding: 1.25rem;
+}
+
 .p-6{
   padding: 1.5rem;
 }
@@ -1761,10 +1761,6 @@ html {
 
 .p-\[8px\]{
   padding: 8px;
-}
-
-.p-5{
-  padding: 1.25rem;
 }
 
 .px-10{
@@ -3599,6 +3595,11 @@ tbody tr:last-child td{
   .sm\:px-\[52px\]{
     padding-left: 52px;
     padding-right: 52px;
+  }
+
+  .sm\:px-\[7rem\]{
+    padding-left: 7rem;
+    padding-right: 7rem;
   }
 
   .sm\:py-2{
