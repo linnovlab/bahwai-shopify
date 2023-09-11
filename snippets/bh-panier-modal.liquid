@@ -55,8 +55,7 @@
     width: 30px;
   }
 </style>
-<p
-  class="h-[61px] w-[61px] me-3 me-8 hidden"></p>
+<p class="h-[61px] w-[61px] me-3 me-8 text-[37px] ms-8 text-red-600 sm:w-auto w-[50%] hidden"></p>
 <div
   class="panier fixed top-0 w-full hidden z-50 bg-white bg-opacity-50"
   id="panier"
@@ -73,37 +72,22 @@
   data-product2_img="{{ second_product | image_url }}"
   data-product3_img="{{ third_product | image_url }}">
 
-  <div
-    class="content sm:max-w-[455px] w-full ms-auto me-0 bg-[#FFFDF9] max-h-screen h-screen overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
-    <div
-      class="flex justify-end w-full mx-auto px-4 pt-6 pb-4">
-      <p
-        id="close-panier"
-        class="flex items-center font-medium text-_main_color_dark hover:cursor-pointer">
-        <i
-          class="fas fa-xmark text-[18px] me-2"></i>
-        <span
-          class="text-sm">Fermer</span>
+  <div class="content sm:max-w-[455px] w-full ms-auto me-0 bg-[#FFFDF9] max-h-screen h-screen overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
+    <div class="flex justify-end w-full mx-auto px-4 pt-6 pb-4">
+      <p id="close-panier" class="flex items-center font-medium text-_main_color_dark hover:cursor-pointer">
+        <i class="fas fa-xmark text-[18px] me-2"></i>
+        <span class="text-sm">Fermer</span>
       </p>
     </div>
     <!-- Zone d'affichage des messages d'incitation -->
 
-    <div
-      class="min-h-[88px] px-4 bg-_orange_color text-white p-2 pt-[35px] text-sm flex flex-col justify-center items-center"
-      id="ZoneIncitation">
-      `<div
-        class="flex w-full mb-1 gap-1"
-        id="progressBar">
-        <div
-          class="relative w-1/3 h-6 bg-white">
-          <div
-            class="bg-_main_color_light h-full text-xs font-medium text-blue-100 p-0.5 leading-none"
-            style="width: 50%"></div>
-          <span
-            class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
+    <div class="min-h-[88px] px-4 bg-_orange_color text-white p-2 pt-[35px] text-sm flex flex-col justify-center items-center" id="ZoneIncitation">
+      `<div class="flex w-full mb-1 gap-1" id="progressBar">
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-_main_color_light h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width: 50%"></div>
+          <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold">` +
           </span>
-          <span
-            class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_light font-extrabold">
+          <span class="absolute top-0 right-0 -mt-8 mr-0 text-_main_color_light font-extrabold">
             <img
               class=""
               src="https://cdn.shopify.com/s/files/1/0747/8430/9521/files/king.svg?v=1691796016"
@@ -114,58 +98,36 @@
           </span>
         </div>
 
-        <div
-          class="relative w-1/3 h-6 bg-white">
-          <div
-            class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none "
-            style="width: 0%"></div>
-          <span
-            class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold"></span>
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none " style="width: 0%"></div>
+          <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold"></span>
         </div>
 
-        <div
-          class="relative w-1/3 h-6 bg-white">
-          <div
-            class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none"
-            style="width: 0%"></div>
-          <span
-            class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold"></span>
+        <div class="relative w-1/3 h-6 bg-white">
+          <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none" style="width: 0%"></div>
+          <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold"></span>
         </div>
       </div>
 
     </div>
 
-    <div
-      class="items text-_main_color_dark">
-      <h2
-        class="font-medium my-4 px-5"
-        id="vous_avez_ajoute">Vous avez ajouté :</h2>
+    <div class="items text-_main_color_dark">
+      <h2 class="font-medium my-4 px-5" id="vous_avez_ajoute">Vous avez ajouté :</h2>
       <div id="panier-items-container">{% comment %} items content {% endcomment %}
       </div>
-      <div
-        id="zoneRecompense"></div>
-      <div
-        id="payment-div"
-        class="mt-4">
-        <hr
-          class="border-[#999999] mt-8">
-        <div
-          class="total flex justify-between items-center px-5 mt-4">
+      <div id="zoneRecompense"></div>
+      <div id="payment-div" class="mt-4">
+        <hr class="border-[#999999] mt-8">
+        <div class="total flex justify-between items-center px-5 mt-4">
           <div>
-            <p
-              class="font-medium">Sous-total</p>
-            <p
-              class="text-[#999999]">
-              <span
-                id="qty-items-panier">1</span>
+            <p class="font-medium">Sous-total</p>
+            <p class="text-[#999999]">
+              <span id="qty-items-panier">1</span>
               article dans votre parnier</p>
           </div>
-          <p
-            id="total-price-panier"
-            class="font-medium">2,10 €</p>
+          <p id="total-price-panier" class="font-medium">2,10 €</p>
         </div>
-        <div
-          class="flex flex-col items-center justify-center mt-8">
+        <div class="flex flex-col items-center justify-center mt-8">
           <form
             action="{{ routes.cart_url }}"
             method="post"
@@ -176,11 +138,8 @@
               name="checkout"
               class="h-[44px] w-full btn-red-panier">Procéder au paiement</button>
           </form>
-          <div
-            class="sm:w-[344px] w-[90%]">
-            <button
-              id="btn-continuer"
-              class="h-[44px] w-full btn-white-panier">Continuer mes achats</button>
+          <div class="sm:w-[344px] w-[90%]">
+            <button id="btn-continuer" class="h-[44px] w-full btn-white-panier">Continuer mes achats</button>
           </div>
         </div>
       </div>
@@ -188,24 +147,17 @@
     </div>
 
 
-    <div
-      class="footer text-_main_color_dark px-2 my-8">
-      <p
-        class="font-medium text-_main_color_dark mt-3 ps-5">D’autres ont aussi achetés :</p>
-      <div
-        class="items flex gap-6 mt-5 justify-around">
+    <div class="footer text-_main_color_dark px-2 my-8">
+      <p class="font-medium text-_main_color_dark mt-3 ps-5">D’autres ont aussi achetés :</p>
+      <div class="items flex gap-6 mt-5 justify-around">
         {%- for product in collections['suggestions-panier'].products -%}
           {% comment %} getting rating value {% endcomment %}
           {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
           {%- assign n = rates | first | plus: 0 -%}
 
-          <div
-            class="item">
-            <a
-              href="{{ product.url }}"
-              class="item text-[12px] max-w-[120px] w-full m-1 flex items-center flex-col gap-1">
-              <div
-                class="img w-full">
+          <div class="item">
+            <a href="{{ product.url }}" class="item text-[12px] max-w-[120px] w-full m-1 flex items-center flex-col gap-1">
+              <div class="img w-full">
                 <img
                   src="{{ product | image_url: width: 600, height: 600 }}"
                   alt="La gourmande aux noisettes"
@@ -214,27 +166,21 @@
                   width="auto"
                   height="auto">
               </div>
-              <p
-                class="font-semibold text-center ">{{ product.title }}</p>
+              <p class="font-semibold text-center ">{{ product.title }}</p>
               {% if product.metafields.reviews.rating_count != null %}
-                <div
-                  class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                  <div
-                    class="stars flex text-black text-sm">
+                <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                  <div class="stars flex text-black text-sm">
 
                     {%- for i in (1..5) -%}
                       {%- if i <= n -%}
-                        <i
-                          class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                       {%- else -%}
-                        <i
-                          class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
                       {%- endif -%}
                     {%- endfor -%}
 
                   </div>
-                  <span
-                    class="border-_main_color_dark border-b-2 text-[10px] mb-2">
+                  <span class="border-_main_color_dark border-b-2 text-[10px] mb-2">
                     {% if product.metafields.reviews.rating_count == null %}
                       Soyez le 1er à noter!
                     {% else %}
@@ -243,8 +189,7 @@
                   </span>
                 </div>
               {%- endif -%}
-              <p
-                class="font-medium text-center">{{ product.price | money_without_currency }}€ le pack
+              <p class="font-medium text-center">{{ product.price | money_without_currency }}€ le pack
               </p>
             </a>
           </div>

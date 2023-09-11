@@ -272,6 +272,7 @@
   </div>
 </div>
 
+
 {% schema %}
   {
     "name": "Section produit",
@@ -293,8 +294,32 @@
 {%- assign n = rates | first | plus: 0 -%}
 
 <script>
+  const getMetafields = async (product) => {
+    const metafieldsResponse = await fetch(`/admin/api/2021-07/products/${
+      product.id
+    }/metafields.json`).then(res => res.json()).then((metafields) => {
+      console.log(metafields)
+    })
+  }
   const container = document.getElementById('related-products');
-  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => response.json()).then(({products}) => {
+
+/*fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => {
+    return response.json()
+  }).then(({products}) => {
+    let product = products[0]
+    getMetafields(product)
+    document.getElementById('test-section').innerHTML = html;
+  }) */
+
+/*
+  .then((responseText) => {
+    const html = new DOMParser().parseFromString(responseText, 'text/html')
+    document.getElementById('recommendations').innerHTML = html
+    console.log(responseText)
+  }) */
+
+/*
+  .then(({products}) => {
 
 // console.log(products);
     var content = '';
@@ -344,7 +369,7 @@
       container.innerHTML = content;
     }
   });
-
+*/
 // -----------------------------------------
 
 

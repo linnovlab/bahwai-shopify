@@ -341,16 +341,54 @@ $(document).ready(() => {
             dataType: 'json',
             success: function (response) {
               updatePanier(response);
+              deleteProduct()
               $('#panier-count').text(response.item_count);
-            },
+            }
           });
           showPayement();
           showPanier();
+
+
         }
       });
     });
   };
   addToCart($('#btn-ajout-panier'));
+
+  /**
+   * delete product in the cart
+   */
+  const deleteProduct = async () => {
+    $('#panier-items-container #btn-delete-product').each((i, btn) => {
+      $(btn).click(function () {
+        let product_id = $(this).data('product_id')
+        $.post(window.Shopify.routes.root + 'cart/update.js', {
+          updates: {
+            [product_id]: 0
+          }
+        }, (cart) => {
+          if (cart.item_count !== 0) {
+            $(this).parents('.product_item').remove()
+          } else {
+            hidePanier()
+          }
+
+          $('#panier-count').text(cart.item_count);
+          $('#qty-items-panier').text(cart.item_count);
+          $('#total-price-panier').text(parseFloat(cart.total_price) / 100 + '€');
+        }, "json")
+          .catch((error) => {
+            console.log(error)
+          })
+
+      })
+
+    })
+
+  }
+
+
+
 
   /**
    * update les produits du panier
@@ -363,39 +401,43 @@ $(document).ready(() => {
     const items = cart.items;
     var content = '';
     if (items.length > 0) {
+      // function de suppression de produit lancer lorsqu'il ya update du panier
+      deleteProduct()
       items.forEach((item) => {
         content += `
-				<div class="prod flex px-5">
-				<a href="${item.url}" class="flex">
-					<img
-					class="h-[61px] w-[61px] me-3"
-					src="${item.image}"
-					alt="produit">
-					<div class="desc">
-					<p class="font-medium text-_main_color_dark">${item.title}</p>
-					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${(
+        <div class='product_item'> 
+          <div class="prod flex px-5">
+            <a href="${item.url}" class="flex">
+              <img
+              class="h-[61px] w-[61px] me-3"
+              src="${item.image}"
+              alt="produit">
+              <div class="desc">
+              <p class="font-medium text-_main_color_dark">${item.title}</p>
+              <p class="text-[12px] font-medium text-_main_color_dark mt-1">${(
             item.price / 100
           ).toFixed(2)}€ le pack</p>
-					</div>
-				</a>
-				</div>
-
-				<form action="/cart" method="POST" class="flex mb-4 px-5 mt-4" id="form-panier">
-					<input id="prod-variant-id" type="hidden" value="${item.variant_id}">
-					<input
-						class="w-16 ms-12"
-						name="quantity"
-						type="text"
-						id="input-produit"
-						min="1"
-						max="20"
-						value="${item.quantity} x">
-					<button
-						class="me-8"
-						type="button"
-						id="down">-</button>
-					<button type="button" id="up">+</button>
-				</form>
+              </div>
+            </a>
+          </div>
+          <form action="/cart" method="POST" class="flex items-center mb-4 px-5 mt-4" id="form-panier">
+            <input id="prod-variant-id" type="hidden" value="${item.variant_id}">
+            <input
+              class="ms-12 sm:w-auto w-[50%]"
+              name="quantity"
+              type="text"
+              id="input-produit"
+              min="1"
+              max="20"
+              value="${item.quantity} x">
+            <button
+              class="me-8"
+              type="button"
+              id="down">-</button>
+            <button type="button" id="up">+</button>
+              <i data-product_id=${item.id} id='btn-delete-product' class="fa-solid fa-trash text-[37px] ms-8 text-red-600 cursor-pointer"></i>
+          </form>
+        </div>
 			`;
       });
     } else {
@@ -718,20 +760,6 @@ $(document).ready(() => {
       dataType: 'json',
       success: function (response) {
         // update panier inforamations
-        /*if (qty <= 0) {
-          $('#panier-items-container').html(
-            '<p class="text-center mt-8 text-gray-500 text-lg">Votre panier est vide</p>',
-          );
-          hidePayement();
-        } else {
-          $(input).val(qty + ' x');
-        }
-        $('#qty-items-panier').text(response.item_count);
-        $('#panier-count').text(response.item_count);
-        $('#total-price-panier').text(
-          parseFloat(response.total_price) / 100 + '€',
-        );
-        updateIncitation(parseFloat(response.total_price));*/
         updatePanier(response);
         // console.log(response)
       },
@@ -750,6 +778,7 @@ $(document).ready(() => {
       success: function (response) {
         updatePanier(response);
         showPanier();
+        deleteProduct()
       },
     });
   });
@@ -972,6 +1001,7 @@ $(document).ready(() => {
   if (window.location.href.match('/?registred=1')) {
     $('#popup-welcom').fadeIn().fadeOut(7000)
   }
+
 
 });
 

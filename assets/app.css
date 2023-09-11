@@ -1030,6 +1030,11 @@ html {
   margin-top: 90px;
 }
 
+.ms-8{
+  -webkit-margin-start: 2rem;
+          margin-inline-start: 2rem;
+}
+
 .block{
   display: block;
 }
@@ -1280,6 +1285,10 @@ html {
 
 .w-full{
   width: 100%;
+}
+
+.w-\[50\%\]{
+  width: 50%;
 }
 
 .max-w-\[100\%\]{
@@ -2099,6 +2108,10 @@ html {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[37px\]{
+  font-size: 37px;
 }
 
 .font-bold{
@@ -3595,6 +3608,11 @@ tbody tr:last-child td{
   .sm\:px-\[52px\]{
     padding-left: 52px;
     padding-right: 52px;
+  }
+
+  .sm\:px-\[5rem\]{
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .sm\:px-\[7rem\]{
