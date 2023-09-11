@@ -1367,6 +1367,10 @@ html {
   max-width: 958px;
 }
 
+.max-w-\[15rem\]{
+  max-width: 15rem;
+}
+
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1489,6 +1493,10 @@ html {
 
 .gap-\[80px\]{
   gap: 80px;
+}
+
+.gap-\[60px\]{
+  gap: 60px;
 }
 
 .self-start{
