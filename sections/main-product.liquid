@@ -1,21 +1,29 @@
+{% comment %} images popup {% endcomment %}
+<div id="image-product-popup" class="bg-[#000000ad] absolute top-0 left-0 w-full h-screen justify-center items-center hidden">
+  <div class=" p-2 border rounded-md relative">
+    <p class="text-end w-full absolute right-[20px] top-[20px]"><i id="close-img-prod-poppup" class="fa fa-xmark text-white text-8 cursor-pointer"></i></p>
+    <span id="img_show_up"></span>
+  </div>
+</div>
 <section class="text-_main_color_dark flex lg:flex-nowrap flex-wrap sm:mt-12 mt-0 desktop-width sm:mx-8 mx-0 sm:px-8">
   <div class="left lg:mr-16 mx-auto lg:mb-0 mb-16">
     <div class="imgs flex flex-col gap-4">
       <div class="lg:w-[460px] w-full">
         <img src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit">
       </div>
-      <div class="flex justify-center gap-3">
+      <div id="product-images" class="flex justify-center gap-3 ">
         {% if product.images.size > 1 %}
-          {% for img in product.images %}
-            <img
-              class="w-[61px]"
-              src="{{ img |image_url: width: 60, height: 60 }}"
-              alt="produit">
-          {% endfor %}
+            {% for img in product.images %}
+              <img
+                data-title="{{ product.title }}"
+                class="w-[61px] cursor-pointer"
+                src="{{ img |image_url: width: 500, height: 500 }}"
+                alt="produit">
+            {% endfor %}
         {% else %}
           <img
-            class="w-[61px]"
-            src="{{ product |image_url: width: 60, height: 60 }}"
+            class="w-[61px] cursor-pointer"
+            src="{{ product |image_url: width: 500, height: 500 }}"
             alt="produit">
         {% endif %}
       </div>
@@ -124,7 +132,7 @@
                 {% endcomment %}
                 class="p-[6px] max-w-[270px] flex justify-between w-full border border-[#999999] rounded-md">
                 <span class="text-sm font-medium">Livraison :
-                  <span class="text-[12px] font-normal">Une fois par semaine</span>
+                  <span class="text-[12px] font-normal">Une fois par mois</span>
                 </span>
                 <i class="fas fa-chevron-down transition-transform duration-500"></i>
               </button>
@@ -205,7 +213,7 @@
 <h4 id="avis-produit" class="font-medium text-_main_color_dark text-lg sm:mx-8 mx-4 mt-8 -mb-10 desktop-width sm:px-8">L'avis des kings</h4>
 
 <!-- description produit -->
-
+<div class="brightness-50"></div>
 <div class="hidden fixed top-0 w-full h-screen bg-white bg-opacity-50" id="produit-desc">
   <div class="content max-w-[62rem] sm:w-full w-[346px] mx-auto mt-24 p-4 h-[562px] rounded-md bg-[#FFFDF9] ring-offset-4 ring-offset-gray-200 shadow-md max-h-screen overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
     <div class="flex justify-end w-full mx-auto">
@@ -288,10 +296,11 @@
   }
 {% endschema %}
 
-{% comment %} getting rating value {% endcomment %}
+{% comment %} getting rating value 
 {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
-{% comment %} convertion string en integer {% endcomment %}
+ convertion string en integer 
 {%- assign n = rates | first | plus: 0 -%}
+{% endcomment %}
 
 <script>
   const getMetafields = async (product) => {
@@ -303,23 +312,9 @@
   }
   const container = document.getElementById('related-products');
 
-/*fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => {
+  fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => {
     return response.json()
   }).then(({products}) => {
-    let product = products[0]
-    getMetafields(product)
-    document.getElementById('test-section').innerHTML = html;
-  }) */
-
-/*
-  .then((responseText) => {
-    const html = new DOMParser().parseFromString(responseText, 'text/html')
-    document.getElementById('recommendations').innerHTML = html
-    console.log(responseText)
-  }) */
-
-/*
-  .then(({products}) => {
 
 // console.log(products);
     var content = '';
@@ -342,22 +337,10 @@
         }</p>
                 <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
                   <div class="stars flex text-_main_color_dark">
-                    {% if product.metafields.reviews.rating_count != null %}
-                      {%- for i in (1..5) -%}
-                        {%- if i <= n -%}
-                          <i class="fas fa-star"></i>
-                        {%- else -%}
-                          <i class="fa-regular fa-star"></i>
-                        {%- endif -%}
-                      {%- endfor -%}
-                    {% endif %}
+                    
                   </div>
                   <span class="border-_main_color_dark border-b-2 text-[11px]">
-                    {% if product.metafields.reviews.rating_count == null %}
                       Soyez le 1er à noter!
-                    {% else %}
-                      {{ product.metafields.reviews.rating_count }} avis
-                    {% endif %}
                   </span>
                 </div>
                 <p class="font-medium"> ${
@@ -369,6 +352,41 @@
       container.innerHTML = content;
     }
   });
+
+  // ----------------------
+  {% comment %} 
+    {% if product.metafields.reviews.rating_count != null %}
+    {%- for i in (1..5) -%}
+      {%- if i <= n -%}
+        <i class="fas fa-star"></i>
+      {%- else -%}
+        <i class="fa-regular fa-star"></i>
+      {%- endif -%}
+    {%- endfor -%}
+  {% endif %}
+
+  {% if product.metafields.reviews.rating_count == null %}
+      Soyez le 1er à noter!
+    {% else %}
+      {{ product.metafields.reviews.rating_count }} avis
+    {% endif %}
+  {% endcomment %}
+
+/*
+
+  .then((responseText) => {
+    const html = new DOMParser().parseFromString(responseText, 'text/html')
+    document.getElementById('recommendations').innerHTML = html
+    console.log(responseText)
+  })
+
+  .then(({products}) => {
+    let product = products[0]
+    getMetafields(product)
+    document.getElementById('test-section').innerHTML = html;
+  })
+
+  
 */
 // -----------------------------------------
 

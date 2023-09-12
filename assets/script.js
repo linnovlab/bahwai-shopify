@@ -1002,6 +1002,25 @@ $(document).ready(() => {
     $('#popup-welcom').fadeIn().fadeOut(7000)
   }
 
+  // feat to display product images
+  const productImgsContainer = $('#product-images')
+
+  if (productImgsContainer.length >= 1) {
+    productImgsContainer.children().each((i, img) => {
+      $(img).click(function () {
+        window.scrollTo(0, 0)
+        var img_tag = $(this).removeClass('cursor-pointer').clone()
+        $('#image-product-popup #img_show_up').html('')
+        $('#image-product-popup #img_show_up').html(img_tag)
+        $('#image-product-popup').css('display', 'flex')
+        // $(document.body).css('overflow', 'hidden')
+      })
+    })
+  }
+  $('#close-img-prod-poppup').click(() => {
+    $('#image-product-popup').fadeOut(700)
+    $(document.body).css('overflow', 'auto')
+  })
 
 });
 

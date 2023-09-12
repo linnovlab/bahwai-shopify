@@ -74,15 +74,10 @@ class PredictiveSearch extends HTMLElement {
               <p class="font-semibold w-[10rem] text-center mt-2">${product.title
             }</p>
               <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="stars flex text-sm">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <span class="border-_main_color_dark border-b text-_main_color_dark ">26 avis</span>
               </div>
+              <span class="border-_main_color_dark border-b text-_main_color_dark ">
+                Soyez le 1er à noter!
+              </span>
               <p class="font-medium">${product.price}€ le pack
               </p>
             </a>
