@@ -672,6 +672,10 @@ html {
   top: 20px;
 }
 
+.bottom-\[-52px\]{
+  bottom: -52px;
+}
+
 .isolate{
   isolation: isolate;
 }
@@ -2142,6 +2146,10 @@ html {
   line-height: 1rem;
 }
 
+.text-\[2rem\]{
+  font-size: 2rem;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -3372,6 +3380,10 @@ tbody tr:last-child td{
 
   .sm\:bottom-\[-28px\]{
     bottom: -28px;
+  }
+
+  .sm\:bottom-\[-52px\]{
+    bottom: -52px;
   }
 
   .sm\:m-4{
