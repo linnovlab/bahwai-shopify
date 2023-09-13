@@ -31,9 +31,11 @@
         <div class="item">
           <h4 class="font-bold border-b-2 border-gray-400  mb-4">Tu veux en savoir plus ?</h4>
           <ul>
-            <li><a href="{{ pages.engagements.url }}">Nos engagements</a></li>
-            <li><a href="#">Ils parlent de nous</a></li>
-            <li><a href="{{ pages.laventure-bahwai.url }}">Notre histoire</a></li>
+            {% for link in linklists['footer-2'].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
           </ul>
         </div>
         <div class="item">
@@ -122,12 +124,11 @@
           </button>
           <div class="panel hidden mb-4">
             <ul class="ps-4">
-              <li>
-                <a href="{{ pages.engagements.url }}">Nos engagements</a>
-              </li>
-              <li>
-                <a href="#">Ils parlent de nous</a>
-              </li>
+              {% for link in linklists['footer-2'].links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
             </ul>
           </div>
         </div>

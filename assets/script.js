@@ -1,7 +1,7 @@
 let montant1 = 5000;
 let montant2 = 10000;
 let montant3 = 15000;
-let restant = 50;
+let restant = 60;
 let pourcentage = 0;
 let recompense_zone = ``;
 let selectedGoodies = null;
@@ -971,9 +971,22 @@ $(document).ready(() => {
     $('#home-popup').fadeOut();
   });
 
-  // popup pour form on est ensemble
-  $('#form-on-est-ensemble').submit(() => {
-    $('#popup-on-est-ensemble').fadeIn(1000).fadeOut(5000)
+  // popup pour form on est ensemble de la newsletter
+  $('#form-on-est-ensemble').submit(function (e) {
+    e.preventDefault()
+
+    const url = $(this).prop('action')
+    $.post(url, $(this).serialize())
+      .then((res) => {
+        if (res.statusText !== 'Bad Request' && res.status !== 404) {
+          $('#popup-on-est-ensemble').fadeIn(1000).fadeOut(5000)
+          $(this).children('input[type="text"]').val('')
+          // send the email
+        }
+      })
+      .catch((er) => {
+        console.log(er)
+      })
   })
 
   // gestion formulaire contact, input tel
@@ -1008,12 +1021,12 @@ $(document).ready(() => {
   if (productImgsContainer.length >= 1) {
     productImgsContainer.children().each((i, img) => {
       $(img).click(function () {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 167)
         var img_tag = $(this).removeClass('cursor-pointer').clone()
         $('#image-product-popup #img_show_up').html('')
         $('#image-product-popup #img_show_up').html(img_tag)
         $('#image-product-popup').css('display', 'flex')
-        // $(document.body).css('overflow', 'hidden')
+        $(document.body).css('overflow', 'hidden')
       })
     })
   }
@@ -1021,6 +1034,9 @@ $(document).ready(() => {
     $('#image-product-popup').fadeOut(700)
     $(document.body).css('overflow', 'auto')
   })
+
+  // 
+  $('#userAddress').bind('keypress', false)
 
 });
 

@@ -616,8 +616,8 @@ html {
   position: sticky;
 }
 
-.bottom-\[-66px\]{
-  bottom: -66px;
+.bottom-\[-76px\]{
+  bottom: -76px;
 }
 
 .left-0{
@@ -636,6 +636,10 @@ html {
   right: 0px;
 }
 
+.right-\[20px\]{
+  right: 20px;
+}
+
 .top-0{
   top: 0px;
 }
@@ -652,28 +656,16 @@ html {
   top: 14rem;
 }
 
-.top-\[5rem\]{
-  top: 5rem;
-}
-
-.top-\[3rem\]{
-  top: 3rem;
-}
-
-.bottom-\[-76px\]{
-  bottom: -76px;
-}
-
-.right-\[20px\]{
-  right: 20px;
-}
-
 .top-\[20px\]{
   top: 20px;
 }
 
-.bottom-\[-52px\]{
-  bottom: -52px;
+.top-\[5rem\]{
+  top: 5rem;
+}
+
+.top-\[167px\]{
+  top: 167px;
 }
 
 .isolate{
@@ -1159,6 +1151,10 @@ html {
   height: 520px;
 }
 
+.h-\[550px\]{
+  height: 550px;
+}
+
 .h-\[562px\]{
   height: 562px;
 }
@@ -1177,10 +1173,6 @@ html {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-\[550px\]{
-  height: 550px;
 }
 
 .max-h-\[8rem\]{
@@ -1672,6 +1664,10 @@ html {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.bg-\[\#000000ad\]{
+  background-color: #000000ad;
+}
+
 .bg-\[\#999\]{
   --tw-bg-opacity: 1;
   background-color: rgb(153 153 153 / var(--tw-bg-opacity));
@@ -1733,10 +1729,6 @@ html {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#000000ad\]{
-  background-color: #000000ad;
 }
 
 .bg-opacity-50{
@@ -2101,6 +2093,10 @@ html {
   font-size: 24px;
 }
 
+.text-\[2rem\]{
+  font-size: 2rem;
+}
+
 .text-\[32px\]{
   font-size: 32px;
 }
@@ -2144,10 +2140,6 @@ html {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[2rem\]{
-  font-size: 2rem;
 }
 
 .font-bold{
@@ -3374,14 +3366,6 @@ tbody tr:last-child td{
 }
 
 @media (min-width: 640px){
-  .sm\:bottom-\[-16px\]{
-    bottom: -16px;
-  }
-
-  .sm\:bottom-\[-28px\]{
-    bottom: -28px;
-  }
-
   .sm\:bottom-\[-52px\]{
     bottom: -52px;
   }
@@ -3514,12 +3498,12 @@ tbody tr:last-child td{
     height: 655px;
   }
 
-  .sm\:h-auto{
-    height: auto;
-  }
-
   .sm\:h-\[690px\]{
     height: 690px;
+  }
+
+  .sm\:h-auto{
+    height: auto;
   }
 
   .sm\:w-\[11rem\]{
