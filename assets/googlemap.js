@@ -158,7 +158,7 @@ function updateMapAndMarkers() {
   var place = autocomplete.getPlace();
 
   if (!place.geometry) {
-    alert("No details available for input: '" + place.name + "'");
+    // alert("No details available for input: '" + place.name + "'");
     return;
   }
 

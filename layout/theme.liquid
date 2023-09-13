@@ -61,7 +61,7 @@
     {{ content_for_header }}
 
     {% render 'head-styles' %}
-
+    {% comment %} <script src="https://smtpjs.com/v3/smtp.js"></script> {% endcomment %}
     <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
@@ -109,7 +109,6 @@
       {{ "accessibility.skip_to_text" | t }}
     </a>
 
-
     {% if template.name != '404' %}
       <header class="relative">
         {% section 'bh-header' %}
@@ -125,11 +124,19 @@
 
 
       {% if template.name == 'index' %}
+        <div id="popup-welcom" class="popup fixed top-[5rem] left-0 w-full z-50 hidden">
+          <p class="bg-_orange_color text-white text-center py-8 sm:px-[7rem] px-[24px] font-semibold">On a bien pris en compte ton inscription, bienvenue dans la famille !! Tu
+            vas bientôt recevoir un email pour confirmer ton inscription et profiter de ton offre de bienvenue
+          </p>
+        </div>
         <section class="banner relative sm:h-[25rem] h-[20rem] flex justify-center items-center">
           <div class="banner-content text-white flex justify-center flex-col items-center gap-2">
-            <h1 class="title-white">Des délicieuses boissons pétillantes au CBD
+            <h1 class="title-white">Une pause gourmande, sans culpabilité !
             </h1>
-            <p class="text-center pt-5">Atteignez vos objectifs tout en prenant du plaisir avec nos snacks riches en protéines
+            <p class="text-center pt-5 sm:px-[5rem] px-4">
+              Vivez l’expérience délicieusement saine avec nos boissons à base de CBD et nos snacks
+              sucrés !
+
             </p>
             <p class="pt-[3rem] flex flex-col gap-4">
               <a href="collections/{{ collection.handle }}" class="btn block text-center">Je veux découvrir</a>
@@ -148,7 +155,7 @@
               }
             }
           </style>
-          <div class="wave-index absolute sm:bottom-[-16px] bottom-[-66px] img-center bg-no-repeat h-[27px] w-full"></div>
+          <div class="wave-index absolute sm:bottom-[-52px] bottom-[-76px] img-center bg-no-repeat h-[27px] w-full"></div>
         </section>
 
         {% section 'bh-nouveautes' %}
@@ -190,6 +197,7 @@
         {% render 'bh-footer-login' %}
       {% endif %}
     {% endif %}
+
 
 
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>

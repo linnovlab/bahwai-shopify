@@ -1,7 +1,7 @@
 let montant1 = 5000;
 let montant2 = 10000;
 let montant3 = 15000;
-let restant = 50;
+let restant = 60;
 let pourcentage = 0;
 let recompense_zone = ``;
 let selectedGoodies = null;
@@ -93,7 +93,6 @@ $(document).ready(() => {
   });
 
   let subsriptionSubmited = getUrlParameter('contact_form');
-  console.log(subsriptionSubmited);
   if (subsriptionSubmited) {
     $('#notif-subscription').fadeIn().fadeOut(10000);
   }
@@ -342,16 +341,54 @@ $(document).ready(() => {
             dataType: 'json',
             success: function (response) {
               updatePanier(response);
+              deleteProduct()
               $('#panier-count').text(response.item_count);
-            },
+            }
           });
           showPayement();
           showPanier();
+
+
         }
       });
     });
   };
   addToCart($('#btn-ajout-panier'));
+
+  /**
+   * delete product in the cart
+   */
+  const deleteProduct = async () => {
+    $('#panier-items-container #btn-delete-product').each((i, btn) => {
+      $(btn).click(function () {
+        let product_id = $(this).data('product_id')
+        $.post(window.Shopify.routes.root + 'cart/update.js', {
+          updates: {
+            [product_id]: 0
+          }
+        }, (cart) => {
+          if (cart.item_count !== 0) {
+            $(this).parents('.product_item').remove()
+          } else {
+            hidePanier()
+          }
+
+          $('#panier-count').text(cart.item_count);
+          $('#qty-items-panier').text(cart.item_count);
+          $('#total-price-panier').text(parseFloat(cart.total_price) / 100 + '€');
+        }, "json")
+          .catch((error) => {
+            console.log(error)
+          })
+
+      })
+
+    })
+
+  }
+
+
+
 
   /**
    * update les produits du panier
@@ -364,39 +401,43 @@ $(document).ready(() => {
     const items = cart.items;
     var content = '';
     if (items.length > 0) {
+      // function de suppression de produit lancer lorsqu'il ya update du panier
+      deleteProduct()
       items.forEach((item) => {
         content += `
-				<div class="prod flex px-5">
-				<a href="${item.url}" class="flex">
-					<img
-					class="h-[61px] w-[61px] me-3"
-					src="${item.image}"
-					alt="produit">
-					<div class="desc">
-					<p class="font-medium text-_main_color_dark">${item.title}</p>
-					<p class="text-[12px] font-medium text-_main_color_dark mt-1">${(
+        <div class='product_item'> 
+          <div class="prod flex px-5">
+            <a href="${item.url}" class="flex">
+              <img
+              class="h-[61px] w-[61px] me-3"
+              src="${item.image}"
+              alt="produit">
+              <div class="desc">
+              <p class="font-medium text-_main_color_dark">${item.title}</p>
+              <p class="text-[12px] font-medium text-_main_color_dark mt-1">${(
             item.price / 100
           ).toFixed(2)}€ le pack</p>
-					</div>
-				</a>
-				</div>
-
-				<form action="/cart" method="POST" class="flex mb-4 px-5 mt-4" id="form-panier">
-					<input id="prod-variant-id" type="hidden" value="${item.variant_id}">
-					<input
-						class="w-16 ms-12"
-						name="quantity"
-						type="text"
-						id="input-produit"
-						min="1"
-						max="20"
-						value="${item.quantity} x">
-					<button
-						class="me-8"
-						type="button"
-						id="down">-</button>
-					<button type="button" id="up">+</button>
-				</form>
+              </div>
+            </a>
+          </div>
+          <form action="/cart" method="POST" class="flex items-center mb-4 px-5 mt-4" id="form-panier">
+            <input id="prod-variant-id" type="hidden" value="${item.variant_id}">
+            <input
+              class="ms-12 sm:w-auto w-[50%]"
+              name="quantity"
+              type="text"
+              id="input-produit"
+              min="1"
+              max="20"
+              value="${item.quantity} x">
+            <button
+              class="me-8"
+              type="button"
+              id="down">-</button>
+            <button type="button" id="up">+</button>
+              <i data-product_id=${item.id} id='btn-delete-product' class="fa-solid fa-trash text-[37px] ms-8 text-red-600 cursor-pointer"></i>
+          </form>
+        </div>
 			`;
       });
     } else {
@@ -719,20 +760,6 @@ $(document).ready(() => {
       dataType: 'json',
       success: function (response) {
         // update panier inforamations
-        /*if (qty <= 0) {
-          $('#panier-items-container').html(
-            '<p class="text-center mt-8 text-gray-500 text-lg">Votre panier est vide</p>',
-          );
-          hidePayement();
-        } else {
-          $(input).val(qty + ' x');
-        }
-        $('#qty-items-panier').text(response.item_count);
-        $('#panier-count').text(response.item_count);
-        $('#total-price-panier').text(
-          parseFloat(response.total_price) / 100 + '€',
-        );
-        updateIncitation(parseFloat(response.total_price));*/
         updatePanier(response);
         // console.log(response)
       },
@@ -751,6 +778,7 @@ $(document).ready(() => {
       success: function (response) {
         updatePanier(response);
         showPanier();
+        deleteProduct()
       },
     });
   });
@@ -794,7 +822,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) {}
+  } catch (e) { }
 
   /**
    * newletter feat
@@ -812,6 +840,12 @@ $(document).ready(() => {
     // panier
     if (event.target.matches('#panier') == true) {
       $('#panier').fadeOut();
+      $('body').css('overflow', 'initial');
+    }
+
+    // popup product image
+    if (event.target.matches('#image-product-popup') === true) {
+      $('#image-product-popup').fadeOut();
       $('body').css('overflow', 'initial');
     }
   };
@@ -942,6 +976,78 @@ $(document).ready(() => {
   $('#close-home-popup').click(function () {
     $('#home-popup').fadeOut();
   });
+
+  // popup pour form on est ensemble de la newsletter
+  $('#form-on-est-ensemble').submit(function (e) {
+    e.preventDefault()
+
+    const url = $(this).prop('action')
+    $.post(url, $(this).serialize())
+      .then((res) => {
+        if (res.statusText !== 'Bad Request' && res.status !== 404) {
+          $('#popup-on-est-ensemble').fadeIn(1000).fadeOut(5000)
+          $(this).children('input[type="text"]').val('')
+          // send the email
+        }
+      })
+      .catch((er) => {
+        console.log(er)
+      })
+  })
+
+  // gestion formulaire contact, input tel
+  $('#form-contact form').submit(function (e) {
+    e.preventDefault()
+    const result = $('#input-tel-contact').val().match('^[0-9]{10}$')
+    if (result !== null) {
+      $.post($(this).attr('action'), $(this).serialize())
+        .done((res) => {
+          window.location.reload()
+        })
+        .catch((e) => console.log(e))
+    } else {
+      $('#input-tel-contact').css('border-color', 'red')
+    }
+  })
+
+  // gestion du formulaire de registration et affichage d'un popup
+  $('#form-register').submit(function (e) {
+    e.preventDefault()
+    window.location.href = '/?registred=1'
+  })
+
+  // check pour afficher le popup de bienvenue apres registration
+  if (window.location.href.match('/?registred=1')) {
+    $('#popup-welcom').fadeIn().fadeOut(7000)
+  }
+
+  // feat to display product images
+  const productImgsContainer = $('#product-images')
+
+  if (productImgsContainer.length >= 1) {
+    productImgsContainer.children().each((i, img) => {
+      $(img).click(function () {
+        window.scrollTo(0, 167)
+        var img_tag = $(this).removeClass('cursor-pointer').clone()
+        $('#image-product-popup #img_show_up').html('')
+        $('#image-product-popup #img_show_up').html(img_tag)
+        $('#image-product-popup').css('display', 'flex')
+        $(document.body).css('overflow', 'hidden')
+      })
+    })
+  }
+  $('#close-img-prod-poppup').click(() => {
+    $('#image-product-popup').fadeOut(700)
+    $(document.body).css('overflow', 'auto')
+  })
+
+  // disabeling the input key enter press to the map section
+  $('#userAddress').on('keypress', (e) => {
+    if (e.key === "Enter") {
+      return false;
+    }
+  })
+
 });
 
 try {
@@ -1102,3 +1208,22 @@ function setPopupSeenCookie() {
   document.cookie =
     'popup_seen=true; expires=' + expirationDate.toUTCString() + '; path=/';
 }
+
+// sending email
+// try {
+//   $('#form_test').on('click', function () {
+//     console.log("btn clicked")
+//     Email.send({
+//       SecureToken: "e4a17db0-df95-4b53-aaf5-1159a2decdd9",
+//       To: 'mamadoualioudeveloppeurweb@gmail.com',
+//       From: "mamadouamamadoucom030@gmail.com",
+//       Subject: "test functionnality email",
+//       Body: "And this is the body of the test functionality email"
+//     }).then((message) => {
+//       alert(message)
+//     });
+//   })
+
+// } catch (error) {
+//   console.log(error)
+// }
