@@ -158,8 +158,9 @@ function updateMapAndMarkers() {
   var place = autocomplete.getPlace();
 
   if (!place.geometry) {
-    alert("No details available for input: '" + place.name + "'");
-    return;
+    // alert("No details available for input: '" + place.name + "'");
+    // return;
+    console.log(place)
   }
 
   var nearestShop = findNearestShop(place.geometry.location);

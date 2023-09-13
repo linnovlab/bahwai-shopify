@@ -842,6 +842,12 @@ $(document).ready(() => {
       $('#panier').fadeOut();
       $('body').css('overflow', 'initial');
     }
+
+    // popup product image
+    if (event.target.matches('#image-product-popup') === true) {
+      $('#image-product-popup').fadeOut();
+      $('body').css('overflow', 'initial');
+    }
   };
 
   /**
@@ -1035,8 +1041,12 @@ $(document).ready(() => {
     $(document.body).css('overflow', 'auto')
   })
 
-  // 
-  $('#userAddress').bind('keypress', false)
+  // disabeling the input key enter press to the map section
+  $('#userAddress').bind('keypress', (e) => {
+    if (e.key === "Enter") {
+      return false;
+    }
+  })
 
 });
 
