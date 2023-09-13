@@ -1042,7 +1042,7 @@ $(document).ready(() => {
   })
 
   // disabeling the input key enter press to the map section
-  $('#userAddress').bind('keypress', (e) => {
+  $('#userAddress').on('keypress', (e) => {
     if (e.key === "Enter") {
       return false;
     }
@@ -1208,3 +1208,22 @@ function setPopupSeenCookie() {
   document.cookie =
     'popup_seen=true; expires=' + expirationDate.toUTCString() + '; path=/';
 }
+
+// sending email
+// try {
+//   $('#form_test').on('click', function () {
+//     console.log("btn clicked")
+//     Email.send({
+//       SecureToken: "e4a17db0-df95-4b53-aaf5-1159a2decdd9",
+//       To: 'mamadoualioudeveloppeurweb@gmail.com',
+//       From: "mamadouamamadoucom030@gmail.com",
+//       Subject: "test functionnality email",
+//       Body: "And this is the body of the test functionality email"
+//     }).then((message) => {
+//       alert(message)
+//     });
+//   })
+
+// } catch (error) {
+//   console.log(error)
+// }

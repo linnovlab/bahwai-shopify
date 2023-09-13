@@ -1731,6 +1731,11 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50{
   --tw-bg-opacity: 0.5;
 }
@@ -1794,6 +1799,10 @@ html {
 
 .p-\[8px\]{
   padding: 8px;
+}
+
+.p-8{
+  padding: 2rem;
 }
 
 .px-10{

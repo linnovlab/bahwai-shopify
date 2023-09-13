@@ -159,8 +159,7 @@ function updateMapAndMarkers() {
 
   if (!place.geometry) {
     // alert("No details available for input: '" + place.name + "'");
-    // return;
-    console.log(place)
+    return;
   }
 
   var nearestShop = findNearestShop(place.geometry.location);

@@ -61,7 +61,7 @@
     {{ content_for_header }}
 
     {% render 'head-styles' %}
-
+    {% comment %} <script src="https://smtpjs.com/v3/smtp.js"></script> {% endcomment %}
     <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
@@ -108,7 +108,6 @@
     <a class="skip-to-content-link button sr-only" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
-
 
     {% if template.name != '404' %}
       <header class="relative">
@@ -198,6 +197,7 @@
         {% render 'bh-footer-login' %}
       {% endif %}
     {% endif %}
+
 
 
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
