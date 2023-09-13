@@ -16,10 +16,10 @@
   {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez la livraison gratuite " %}
 {% elsif cart.total_price >= montant1 and cart.total_price < montant2 %}
   {% assign resultat = montant2 | minus: cart.total_price | divided_by: 100.0 %}
-  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: second_product.title %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez un " | append: second_product.title %}
 {% elsif cart.total_price >= montant2 and cart.total_price < montant3 %}
   {% assign resultat = montant3 | minus: cart.total_price | divided_by: 100.0 %}
-  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: third_product.title %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez un " | append: third_product.title %}
 {% elsif cart.total_price >= montant3 %}
   {% assign phrase = "Vous avez obtenue une " | append: third_product.title | append: " gratuitement" %}
 {% else %}
@@ -38,10 +38,10 @@
   {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez la livraison gratuite" %}
 {% elsif cart.total_price >= montant1 and cart.total_price < montant2 %}
   {% assign resultat = montant2 | minus: cart.total_price | divided_by: 100.0 %}
-  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: second_product.title %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez un " | append: second_product.title %}
 {% elsif cart.total_price >= montant2 and cart.total_price < montant3 %}
   {% assign resultat = montant3 | minus: cart.total_price | divided_by: 100.0 %}
-  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez une " | append: third_product.title %}
+  {% assign phrase = "Dépensez " | append: resultat | append: "€ de plus et obtenez un " | append: third_product.title %}
 {% elsif cart.total_price >= montant3 %}
   {% assign phrase = "Vous avez obtenue une " | append: third_product.title | append: " gratuitement" %}
 {% else %}
@@ -98,8 +98,7 @@
           </span>
         </div>
 
-        <div
-          class="relative w-1/3 h-6 bg-white">
+        <div class="relative w-1/3 h-6 bg-white">
           <div class="bg-white h-full text-xs font-medium text-blue-100 p-0.5 leading-none " style="width: 0%"></div>
           <span class="absolute top-0 right-0 mt-1 mr-1 text-_orange_color font-extrabold"></span>
         </div>

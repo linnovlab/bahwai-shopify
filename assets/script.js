@@ -554,7 +554,7 @@ $(document).ready(() => {
       <p id="phrase">
          Dépensez ` +
         restant +
-        `€ de plus et obtenez une ` +
+        `€ de plus et obtenez un ` +
         $('#panier').attr('data-product2') +
         `</p>`;
       recompense_zone = `
@@ -617,7 +617,7 @@ $(document).ready(() => {
       <p id="phrase">
          Dépensez ` +
         restant +
-        `€ de plus et obtenez une ` +
+        `€ de plus et obtenez un ` +
         $('#panier').attr('data-product3') +
         `</p>`;
       recompense_zone =
@@ -642,7 +642,7 @@ $(document).ready(() => {
       selectedGoodies = $('#panier').attr('data-product2_id');
     } else if (total_panier >= montant3) {
       ctn =
-        `Vous obtenez une ` +
+        `Vous obtenez un ` +
         $('#panier').attr('data-product3') +
         ` gratuitement et la livraison offerte`;
       recompense_zone =
