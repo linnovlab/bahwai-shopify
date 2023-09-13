@@ -37,7 +37,7 @@
 
       <p class="text-_main_color_dark text-center mt-8 px-4">
         Si tu es plutôt contact direct, pas de souci. Tu peux nous joindre directement sur what’s app en cliquant ici 👉
-        <a href="https://wa.me/33630139872" class="underline">+33 6 30 13 98 72</a>. On est dispo du lundi au vendredi, de 9h à 18h. Mais attends, ne nous spam pas, hein !
+        <a href="https://wa.me/33630139872" class="underline">Service Client</a>. On est dispo du lundi au vendredi, de 9h à 18h. Mais attends, ne nous spam pas, hein !
       </p>
     </div>
     <div id="form-contact" class="form-contact hidden mt-8 mx-4 desktop-width">
@@ -83,6 +83,7 @@
               class="input focus:border-_orange_color transition-all duration-300"
               type="tel"
               placeholder="Numéro de téléphone*"
+              pattern="[0-9]{10}"
               name="contact[tel]"
               required>
           </div>
@@ -108,7 +109,7 @@
                 </button>
                 <div class="panel panel-selected hidden" id="panel-partenaire">
                   <ul>
-                    <li class="sujet_contact selected" data-value="Colis toujours pas reçu">Colis toujours pas reçu</li>
+                    <li class="sujet_contact" data-value="Colis toujours pas reçu">Colis toujours pas reçu</li>
                     <li class="sujet_contact" data-value="Proposition de partenariat">Proposition de partenariat</li>
                     <li class="sujet_contact" data-value="Remarques ou Suggestions">Remarques ou Suggestions</li>
                     <li class="sujet_contact" data-value="Autre">Autre</li>

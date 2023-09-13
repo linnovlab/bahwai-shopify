@@ -1,4 +1,4 @@
-let montant1 = 5000;
+let montant1 = 6000;
 let montant2 = 10000;
 let montant3 = 15000;
 let restant = 60;
@@ -341,14 +341,12 @@ $(document).ready(() => {
             dataType: 'json',
             success: function (response) {
               updatePanier(response);
-              deleteProduct()
+              deleteProduct();
               $('#panier-count').text(response.item_count);
-            }
+            },
           });
           showPayement();
           showPanier();
-
-
         }
       });
     });
@@ -361,34 +359,34 @@ $(document).ready(() => {
   const deleteProduct = async () => {
     $('#panier-items-container #btn-delete-product').each((i, btn) => {
       $(btn).click(function () {
-        let product_id = $(this).data('product_id')
-        $.post(window.Shopify.routes.root + 'cart/update.js', {
-          updates: {
-            [product_id]: 0
-          }
-        }, (cart) => {
-          if (cart.item_count !== 0) {
-            $(this).parents('.product_item').remove()
-          } else {
-            hidePanier()
-          }
+        let product_id = $(this).data('product_id');
+        $.post(
+          window.Shopify.routes.root + 'cart/update.js',
+          {
+            updates: {
+              [product_id]: 0,
+            },
+          },
+          (cart) => {
+            if (cart.item_count !== 0) {
+              $(this).parents('.product_item').remove();
+            } else {
+              hidePanier();
+            }
 
-          $('#panier-count').text(cart.item_count);
-          $('#qty-items-panier').text(cart.item_count);
-          $('#total-price-panier').text(parseFloat(cart.total_price) / 100 + '€');
-        }, "json")
-          .catch((error) => {
-            console.log(error)
-          })
-
-      })
-
-    })
-
-  }
-
-
-
+            $('#panier-count').text(cart.item_count);
+            $('#qty-items-panier').text(cart.item_count);
+            $('#total-price-panier').text(
+              parseFloat(cart.total_price) / 100 + '€',
+            );
+          },
+          'json',
+        ).catch((error) => {
+          console.log(error);
+        });
+      });
+    });
+  };
 
   /**
    * update les produits du panier
@@ -402,7 +400,7 @@ $(document).ready(() => {
     var content = '';
     if (items.length > 0) {
       // function de suppression de produit lancer lorsqu'il ya update du panier
-      deleteProduct()
+      deleteProduct();
       items.forEach((item) => {
         content += `
         <div class='product_item'> 
@@ -415,13 +413,15 @@ $(document).ready(() => {
               <div class="desc">
               <p class="font-medium text-_main_color_dark">${item.title}</p>
               <p class="text-[12px] font-medium text-_main_color_dark mt-1">${(
-            item.price / 100
-          ).toFixed(2)}€ le pack</p>
+                item.price / 100
+              ).toFixed(2)}€ le pack</p>
               </div>
             </a>
           </div>
           <form action="/cart" method="POST" class="flex items-center mb-4 px-5 mt-4" id="form-panier">
-            <input id="prod-variant-id" type="hidden" value="${item.variant_id}">
+            <input id="prod-variant-id" type="hidden" value="${
+              item.variant_id
+            }">
             <input
               class="ms-12 sm:w-auto w-[50%]"
               name="quantity"
@@ -435,7 +435,9 @@ $(document).ready(() => {
               type="button"
               id="down">-</button>
             <button type="button" id="up">+</button>
-              <i data-product_id=${item.id} id='btn-delete-product' class="fa-solid fa-trash text-[37px] ms-8 text-red-600 cursor-pointer"></i>
+              <i data-product_id=${
+                item.id
+              } id='btn-delete-product' class="fa-solid fa-trash text-[37px] ms-8 text-red-600 cursor-pointer"></i>
           </form>
         </div>
 			`;
@@ -778,7 +780,7 @@ $(document).ready(() => {
       success: function (response) {
         updatePanier(response);
         showPanier();
-        deleteProduct()
+        deleteProduct();
       },
     });
   });
@@ -822,7 +824,7 @@ $(document).ready(() => {
         $(this).addClass('active');
       });
     });
-  } catch (e) { }
+  } catch (e) {}
 
   /**
    * newletter feat
@@ -979,75 +981,74 @@ $(document).ready(() => {
 
   // popup pour form on est ensemble de la newsletter
   $('#form-on-est-ensemble').submit(function (e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    const url = $(this).prop('action')
+    const url = $(this).prop('action');
     $.post(url, $(this).serialize())
       .then((res) => {
         if (res.statusText !== 'Bad Request' && res.status !== 404) {
-          $('#popup-on-est-ensemble').fadeIn(1000).fadeOut(5000)
-          $(this).children('input[type="text"]').val('')
+          $('#popup-on-est-ensemble').fadeIn(1000).fadeOut(5000);
+          $(this).children('input[type="text"]').val('');
           // send the email
         }
       })
       .catch((er) => {
-        console.log(er)
-      })
-  })
+        console.log(er);
+      });
+  });
 
   // gestion formulaire contact, input tel
   $('#form-contact form').submit(function (e) {
-    e.preventDefault()
-    const result = $('#input-tel-contact').val().match('^[0-9]{10}$')
+    e.preventDefault();
+    const result = $('#input-tel-contact').val().match('^[0-9]{10}$');
     if (result !== null) {
       $.post($(this).attr('action'), $(this).serialize())
         .done((res) => {
-          window.location.reload()
+          window.location.reload();
         })
-        .catch((e) => console.log(e))
+        .catch((e) => console.log(e));
     } else {
-      $('#input-tel-contact').css('border-color', 'red')
+      $('#input-tel-contact').css('border-color', 'red');
     }
-  })
+  });
 
   // gestion du formulaire de registration et affichage d'un popup
   $('#form-register').submit(function (e) {
-    e.preventDefault()
-    window.location.href = '/?registred=1'
-  })
+    e.preventDefault();
+    window.location.href = '/?registred=1';
+  });
 
   // check pour afficher le popup de bienvenue apres registration
   if (window.location.href.match('/?registred=1')) {
-    $('#popup-welcom').fadeIn().fadeOut(7000)
+    $('#popup-welcom').fadeIn().fadeOut(7000);
   }
 
   // feat to display product images
-  const productImgsContainer = $('#product-images')
+  const productImgsContainer = $('#product-images');
 
   if (productImgsContainer.length >= 1) {
     productImgsContainer.children().each((i, img) => {
       $(img).click(function () {
-        window.scrollTo(0, 167)
-        var img_tag = $(this).removeClass('cursor-pointer').clone()
-        $('#image-product-popup #img_show_up').html('')
-        $('#image-product-popup #img_show_up').html(img_tag)
-        $('#image-product-popup').css('display', 'flex')
-        $(document.body).css('overflow', 'hidden')
-      })
-    })
+        window.scrollTo(0, 167);
+        var img_tag = $(this).removeClass('cursor-pointer').clone();
+        $('#image-product-popup #img_show_up').html('');
+        $('#image-product-popup #img_show_up').html(img_tag);
+        $('#image-product-popup').css('display', 'flex');
+        $(document.body).css('overflow', 'hidden');
+      });
+    });
   }
   $('#close-img-prod-poppup').click(() => {
-    $('#image-product-popup').fadeOut(700)
-    $(document.body).css('overflow', 'auto')
-  })
+    $('#image-product-popup').fadeOut(700);
+    $(document.body).css('overflow', 'auto');
+  });
 
   // disabeling the input key enter press to the map section
   $('#userAddress').on('keypress', (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       return false;
     }
-  })
-
+  });
 });
 
 try {
