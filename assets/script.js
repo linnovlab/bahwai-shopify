@@ -88,6 +88,10 @@ $(document).ready(() => {
     $('#notif-partenaire').css('display', 'none');
   });
 
+  $('#close-notif-contact-form').on('click', () => {
+    $('#notif-contact-form').css('display', 'none');
+  });
+
   $('#close-notif-subscription').on('click', () => {
     $('#notif-subscription').css('display', 'none');
   });
@@ -987,7 +991,8 @@ $(document).ready(() => {
     $.post(url, $(this).serialize())
       .then((res) => {
         if (res.statusText !== 'Bad Request' && res.status !== 404) {
-          $('#popup-on-est-ensemble').fadeIn(1000).fadeOut(5000);
+          //$('#popup-on-est-ensemble').fadeIn(1000).fadeOut(15000);
+          $('#notif-subscription').fadeIn(1000).fadeOut(15000);
           $(this).children('input[type="text"]').val('');
           // send the email
         }
@@ -1004,7 +1009,9 @@ $(document).ready(() => {
     if (result !== null) {
       $.post($(this).attr('action'), $(this).serialize())
         .done((res) => {
-          window.location.reload();
+          //window.location.reload();
+          $('#notif-contact-form').fadeIn().fadeOut(15000);
+          // send the email
         })
         .catch((e) => console.log(e));
     } else {
