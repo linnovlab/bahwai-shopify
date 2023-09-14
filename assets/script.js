@@ -79,7 +79,8 @@ $(document).ready(() => {
    */
   let formPartenaireSubmited = getUrlParameter('contact_posted');
   if (formPartenaireSubmited) {
-    $('#notif-partenaire').fadeIn().fadeOut(10000);
+    //$('#notif-partenaire').fadeIn().fadeOut(15000);
+    $('#notif-contact-form').fadeIn().fadeOut(15000);
   }
   /*$('#btn-partenaire').on('click', () => {
     $('#notif-partenaire').fadeIn().fadeOut(10000);
@@ -98,7 +99,7 @@ $(document).ready(() => {
 
   let subsriptionSubmited = getUrlParameter('customer_posted');
   if (subsriptionSubmited) {
-    $('#notif-subscription').fadeIn().fadeOut(10000);
+    $('#notif-subscription').fadeIn().fadeOut(15000);
   }
   /**
    * select accordions feature
@@ -1043,7 +1044,7 @@ $(document).ready(() => {
         .done((res) => {
           console.log(res);
           //window.location.reload();
-          $('#notif-contact-form').fadeIn().fadeOut(15000);
+          //$('#notif-contact-form').fadeIn().fadeOut(15000);
           // send the email
         })
         .catch((e) => console.log(e));
