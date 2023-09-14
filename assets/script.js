@@ -984,7 +984,7 @@ $(document).ready(() => {
   });
 
   // popup pour form on est ensemble de la newsletter
-  $('#form-on-est-ensemble').submit(function (e) {
+  /*$('#form-on-est-ensemble').submit(function (e) {
     e.preventDefault();
 
     const url = $(this).prop('action');
@@ -1001,6 +1001,37 @@ $(document).ready(() => {
       .catch((er) => {
         console.log(er);
       });
+  });*/
+
+  $('#form-on-est-ensemble').submit(function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    const $form = $(this);
+    const email = $form.find('input[name="contact[email]"]').val();
+
+    // Perform AJAX request
+    $.ajax({
+      type: 'POST',
+      url: '/contact#contact_form',
+      data: {
+        'contact[email]': email,
+        form_type: 'customer',
+        utf8: '✓',
+        _method: 'POST',
+        commit: 'Subscribe',
+        'contact[tags]': 'newsletter',
+      },
+      success: function (response) {
+        // Handle a successful subscription (e.g., show a success message)
+        console.log('Subscription successful!', response);
+        $form.trigger('reset'); // Reset the form
+        $('#notif-subscription').fadeIn(1000).fadeOut(15000);
+      },
+      error: function (xhr, status, error) {
+        // Handle subscription errors (e.g., show an error message)
+        console.error('Subscription error:', error);
+      },
+    });
   });
 
   // gestion formulaire contact, input tel
