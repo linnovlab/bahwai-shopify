@@ -204,13 +204,24 @@
               "autheur": "Marie",
               "date": "8. Septembre, 2023."
             }
+          },
+          "459c8fd1-4ae5-4561-b03c-44131dc0e9ee": {
+            "type": "announcement",
+            "settings": {
+              "user_img": "shopify:\/\/shop_images\/IMG_1450.jpg",
+              "logo_google": "shopify:\/\/shop_images\/review.jpg",
+              "message": "Un gout exceptionnel. J'ai adoré vos boissons ! Merci pour le petit cadeau sympa. L'équipe est top!",
+              "autheur": "Anne-Laure",
+              "date": "4. Septembre, 2023"
+            }
           }
         },
         "block_order": [
           "2772879e-ecfd-48ff-a0bb-d3b83a09e43d",
           "10729d2d-8561-48c0-a298-5ef59e9805cb",
           "2a794cfb-5b3d-4b25-a4e8-e610f85c165f",
-          "fd0c0195-2580-47de-8193-96c928f6f018"
+          "fd0c0195-2580-47de-8193-96c928f6f018",
+          "459c8fd1-4ae5-4561-b03c-44131dc0e9ee"
         ],
         "settings": {
           "titre": "Leurs avis"
