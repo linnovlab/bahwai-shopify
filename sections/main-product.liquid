@@ -392,4 +392,46 @@
 
 
 // jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
+
+  // Find the "btn-acheter" button by its ID
+const acheterButton = document.getElementById('btn-acheter');
+
+// Add a click event listener to the button
+acheterButton.addEventListener('click', function (event) {
+  // Prevent the default form submission
+  event.preventDefault();
+
+  // Get the product variant ID and quantity
+  const productId = '{{ product.selected_or_first_available_variant.id }}';
+  const quantity = parseInt(document.getElementById('input-produit').value);//1; // You can adjust the quantity as needed
+
+  // Create a cart object
+  const cart = {
+    items: [
+      {
+        id: productId,
+        quantity: quantity
+      }
+    ]
+  };
+
+  // Use the Shopify AJAX API to add the product to the cart
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(cart)
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Redirect to the checkout page
+    window.location.href = '/checkout';
+  })
+  .catch(error => {
+    console.error('Error adding to cart:', error);
+  });
+});
+
+
 </script>
