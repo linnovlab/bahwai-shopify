@@ -96,7 +96,7 @@ $(document).ready(() => {
     $('#notif-subscription').css('display', 'none');
   });
 
-  let subsriptionSubmited = getUrlParameter('contact_form');
+  let subsriptionSubmited = getUrlParameter('customer_posted');
   if (subsriptionSubmited) {
     $('#notif-subscription').fadeIn().fadeOut(10000);
   }
