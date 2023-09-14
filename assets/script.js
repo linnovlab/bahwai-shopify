@@ -991,6 +991,7 @@ $(document).ready(() => {
     $.post(url, $(this).serialize())
       .then((res) => {
         if (res.statusText !== 'Bad Request' && res.status !== 404) {
+          console.log(res);
           //$('#popup-on-est-ensemble').fadeIn(1000).fadeOut(15000);
           $('#notif-subscription').fadeIn(1000).fadeOut(15000);
           $(this).children('input[type="text"]').val('');
@@ -1009,6 +1010,7 @@ $(document).ready(() => {
     if (result !== null) {
       $.post($(this).attr('action'), $(this).serialize())
         .done((res) => {
+          console.log(res);
           //window.location.reload();
           $('#notif-contact-form').fadeIn().fadeOut(15000);
           // send the email
