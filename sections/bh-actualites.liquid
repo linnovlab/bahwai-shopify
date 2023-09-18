@@ -8,7 +8,7 @@
             <div class="actu-item">
               <div style="background-image: url('{{ article.image | image_url: width: 900 }}');" class="img img-center flex items-end mb-4 h-[10rem]">
                 <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
-                  <p>{{ article.published_at | date: "%d %B %Y" | locale: "fr" }}</p>
+                  <p>{{ article.published_at | date: "%d/%m/%Y" }}</p>
                   <p>Actualité</p>
                 </div>
               </div>
