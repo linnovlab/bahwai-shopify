@@ -188,7 +188,7 @@ var shops = [
     },
     address: "92 rue de charonne, 75011 paris",
     picture:
-      'https://placehold.co/400',
+      'https://canna.buzz/wp-content/plugins/cannabuzz/shopphotos/278_t_5109c8db6eedb2856cebefaa7071858d.jpg',
   },
 ];
 
