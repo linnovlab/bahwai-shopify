@@ -140,6 +140,36 @@ var shops = [
     picture:
       'https://www.guide-cbd.fr/wp-content/uploads/2022/03/Montigny-Le-Bretonneux-cbdshop-llg-cbd-shop-montigny-le-bretonneux.jpeg',
   },
+  {
+    name: "BORGO PARIS",
+    location: {
+      lat: 48.85223388671875,
+      lng: 2.383420467376709,
+    },
+    address: "23 Rue Faidherbe, 75011 Paris",
+    picture:
+      'https://upload.wikimedia.org/wikipedia/commons/0/01/P1020888_Paris_XI_rue_Faidherbe_rwk.JPG',
+  },
+  {
+    name: "KOZYFOOD",
+    location: {
+      lat: 48.81606674194336,
+      lng: 2.3133292198181152,
+    },
+    address: "99 bis Av. Verdier, 92120 Montrouge",
+    picture:
+      'https://placehold.co/400',
+  },
+  {
+    name: "MUST CBD SHOP",
+    location: {
+      lat: 48.826995849609375,
+      lng: 1.9740161895751953,
+    },
+    address: "32 Rue des Dames, 78340 Les Clayes-sous-Bois",
+    picture:
+      'https://www.petitscommerces.fr/wp-content/uploads/listing-uploads/gallery/2022/12/MUSTCBDLESCLAYESOUSBOIS-18-scaled.jpg',
+  },
 ];
 
 $(function () {
