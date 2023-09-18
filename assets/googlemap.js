@@ -180,6 +180,16 @@ var shops = [
     picture:
       'https://placehold.co/400',
   },
+  {
+    name: "LITTLE SHOP CBD",
+    location: {
+      lat: 48.853294372558594,
+      lng: 2.378561019897461,
+    },
+    address: "92 rue de charonne, 75011 paris",
+    picture:
+      'https://placehold.co/400',
+  },
 ];
 
 $(function () {
