@@ -120,6 +120,16 @@ var shops = [
     picture:
       'https://lh3.googleusercontent.com/p/AF1QipO1PlIYuT_6DskpGSlbUjJfIJwwwsaCnGg_ICf4=s1360-w1360-h1020',
   },
+  {
+    name: "Leclerc ACHERES",
+    location: {
+      lat: 48.862725,
+      lng: 2.287592,
+    },
+    address: "3 avenue W.A Mozart, 78260 Achères",
+    picture:
+      'https://www.infonormandie.com/photo/art/grande/8025463-12494107.jpg?v=1436948760',
+  },
 ];
 
 $(function () {
