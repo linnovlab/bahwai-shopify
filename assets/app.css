@@ -610,8 +610,8 @@ html {
   position: sticky;
 }
 
-.bottom-\[-76px\] {
-  bottom: -76px;
+.bottom-\[-78px\] {
+  bottom: -78px;
 }
 
 .left-0 {
@@ -680,10 +680,6 @@ html {
 
 .z-\[100\] {
   z-index: 100;
-}
-
-.-z-50 {
-  z-index: -50;
 }
 
 .m-0 {
