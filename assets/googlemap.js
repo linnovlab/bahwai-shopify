@@ -170,6 +170,16 @@ var shops = [
     picture:
       'https://www.petitscommerces.fr/wp-content/uploads/listing-uploads/gallery/2022/12/MUSTCBDLESCLAYESOUSBOIS-18-scaled.jpg',
   },
+  {
+    name: "DELYGREEN",
+    location: {
+      lat: 49.31084060668945,
+      lng: 3.0451674461364746,
+    },
+    address: "Route de Compiègne, 02600 taillefontaine",
+    picture:
+      'https://placehold.co/400',
+  },
 ];
 
 $(function () {
