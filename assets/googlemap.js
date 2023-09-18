@@ -123,12 +123,22 @@ var shops = [
   {
     name: "Leclerc ACHERES",
     location: {
-      lat: 48.862725,
-      lng: 2.287592,
+      lat: 48.962398529052734,
+      lng: 2.057262420654297,
     },
     address: "3 avenue W.A Mozart, 78260 Achères",
     picture:
       'https://www.infonormandie.com/photo/art/grande/8025463-12494107.jpg?v=1436948760',
+  },
+  {
+    name: "LLG CBD SHOP Montigny le Bretonneux",
+    location: {
+      lat: 48.78114318847656,
+      lng: 2.042955160140991,
+    },
+    address: "10 Pl. Etienne Marcel, 78180 Montigny-le-Bretonneux",
+    picture:
+      'https://www.guide-cbd.fr/wp-content/uploads/2022/03/Montigny-Le-Bretonneux-cbdshop-llg-cbd-shop-montigny-le-bretonneux.jpeg',
   },
 ];
 
