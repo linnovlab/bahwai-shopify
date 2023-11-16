@@ -1,3 +1,4 @@
+{%- assign product_form_id = 'product-form-' | append: section.id -%}
 {% comment %} images popup {% endcomment %}
 <div id="image-product-popup" class="bg-[#000000ad] absolute top-[167px] left-0 w-full h-screen justify-center items-center hidden">
   <div class=" p-2 border rounded-md relative">
@@ -94,16 +95,7 @@
     </div>
 
     <!-- Add variant selection -->
-    <div class="variant-selectors">
-      {% for option in product.options %}
-        <label for="option-{{ option.position }}">{{ option.name }}:</label>
-        <select name="option-{{ option.name | handle }}" id="option-{{ option.position }}">
-          {% for value in option.values %}
-            <option value="{{ value }}">{{ value }}</option>
-          {% endfor %}
-        </select>
-      {% endfor %}
-    </div>
+   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 
 
     <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-between gap-4 lg:flex-row flex-col items-center">
