@@ -95,8 +95,10 @@
     </div>
 
     <!-- Add variant selection -->
-   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-
+    {% comment%}  
+      {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+    {% endcomment %}
+   
 
     <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-between gap-4 lg:flex-row flex-col items-center">
       <div class="left lg:max-w-[388px] w-full">
