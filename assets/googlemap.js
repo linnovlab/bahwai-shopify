@@ -188,6 +188,56 @@ var shops = [
     picture:
       'https://canna.buzz/wp-content/plugins/cannabuzz/shopphotos/278_t_5109c8db6eedb2856cebefaa7071858d.jpg',
   },
+  {
+    name: 'E.Leclerc NANTERRE',
+    location: {
+      lat: 48.883497993873,
+      lng: 2.203968969269,
+    },
+    address: '99 Rue Paul Vaillant Couturier, 92000 Nanterre',
+    picture:
+      'https://cdn.shopify.com/s/files/1/0747/8430/9521/files/nentere.jpg?v=1701557836',
+  },
+  {
+    name: 'E.Leclerc CERGY',
+    location: {
+      lat: 49.053429010815,
+      lng: 2.05636097214,
+    },
+    address: '48 Av. de la Plaine des Sports, 95800 Cergy',
+    picture:
+      'https://cdn.shopify.com/s/files/1/0747/8430/9521/files/cergy.jpg?v=1701558079',
+  },
+  {
+    name: 'E.Leclerc VITRY SUR SEINE',
+    location: {
+      lat: 48.797537401469,
+      lng: 2.415543461213,
+    },
+    address: '43-45 Quai Jules Guesde, 94405 Vitry-sur-Seine',
+    picture:
+      'https://cdn.shopify.com/s/files/1/0747/8430/9521/files/vitry.jpg?v=1701558366',
+  },
+  {
+    name: 'G20',
+    location: {
+      lat: 48.88498200983,
+      lng: 2.333772965862,
+    },
+    address: '17 Rue Lepic, 75018 Paris',
+    picture:
+      'https://cdn.shopify.com/s/files/1/0747/8430/9521/files/g20.jpg?v=1701558507',
+  },
+  {
+    name: 'Intermarché SUPER Elancourt',
+    location: {
+      lat: 48.7751004877,
+      lng: 1.954031774593,
+    },
+    address: 'Rue du Fond des Roches, 78990 Élancourt',
+    picture:
+      'https://cdn.shopify.com/s/files/1/0747/8430/9521/files/elancourt.jpg?v=1701558695',
+  },
 ];
 
 $(function () {
