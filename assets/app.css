@@ -3273,54 +3273,57 @@ tbody tr:last-child td {
   color: rgb(36 3 67 / var(--tw-text-opacity));
 }
 
-.single-option-selector {
-  display: block;
-  width: 100%;
-  border-radius: 0.5rem;
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  -webkit-padding-end: 2.25rem;
-  padding-inline-end: 2.25rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+select {
+  /* Reset Select */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 10px red;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
 }
 
-.single-option-selector:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(59 130 246 / var(--tw-border-opacity));
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+/* Remove IE arrow */
+
+select::-ms-expand {
+  display: none;
 }
 
-.single-option-selector:disabled {
+/* Custom Select wrapper */
+
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+/* Arrow */
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  transition: 0.25s all ease;
   pointer-events: none;
-  opacity: 0.5;
 }
 
-@media (prefers-color-scheme: dark) {
-  .single-option-selector {
-    --tw-border-opacity: 1;
-    border-color: rgb(55 65 81 / var(--tw-border-opacity));
-    --tw-bg-opacity: 1;
-    background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
+/* Transition */
 
-  .single-option-selector:focus {
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
-  }
-}
-
-@media (min-width: 640px) {
-  .single-option-selector {
-    padding: 1rem;
-  }
+.select:hover::after {
+  color: #f39c12;
 }
 
 .checked\:\!bg-_orange_color:checked {
