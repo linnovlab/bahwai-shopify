@@ -103,18 +103,19 @@
       </select>
     </div>
 
-
-   <div id="variant-options" class="mb-4">
-    {% for variant in product.variants %}
-      <input
-        type="radio"
-        id="variant-{{ variant.id }}"
-        name="variant"
-        value="{{ variant.id }}"
-        {% if variant == product.selected_or_first_available_variant %}checked{% endif %}>
-      <label for="variant-{{ variant.id }}">{{ variant.title }} </label><br>
-    {% endfor %}
-  </div>
+      {%  comment  %}  
+        <div id="variant-options" class="mb-4">
+          {% for variant in product.variants %}
+            <input
+              type="radio"
+              id="variant-{{ variant.id }}"
+              name="variant"
+              value="{{ variant.id }}"
+              {% if variant == product.selected_or_first_available_variant %}checked{% endif %}>
+            <label for="variant-{{ variant.id }}">{{ variant.title }} </label><br>
+          {% endfor %}
+        </div>
+      {% endcomment %}
   {% endif %}
 
     <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-between gap-4 lg:flex-row flex-col items-center">
@@ -267,39 +268,6 @@
 {% endcomment %}
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  // Add a click event listener to the variant radio buttons
-  document.querySelectorAll('input[name="variant"]').forEach(function(radioButton) {
-    radioButton.addEventListener('click', function() {
-      // Call your custom function here or perform actions based on the selected variant
-      console.log(this.value);
-      //document.getElementById('product-select').value = this.value;
-      updateUrlParameter('variant', this.value);
-    });
-  });
-
-  // Optional: If you want to pre-select the first variant on page load
-  document.querySelector('input[name="variant"]:checked').click();
-  });
-
-  function updateUrlParameter(key, value) {
-  // Get the current URL
-  var url = window.location.href;
-
-  // Create a regular expression to match the parameter
-  var regex = new RegExp('(' + key + '=)[^&]*');
-
-  // If the parameter exists, replace its value
-  if (regex.test(url)) {
-    url = url.replace(regex, '$1' + encodeURIComponent(value));
-  } else {
-    // If the parameter doesn't exist, add it to the end of the URL
-    url += (url.indexOf('?') !== -1 ? '&' : '?') + key + '=' + encodeURIComponent(value);
-  }
-
-  // Replace the current URL with the updated one
-  window.history.replaceState({}, '', url);
-}
   // Handle Variants
   var selectCallback = function(variant, selector) {
     console.log(variant);
