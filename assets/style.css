@@ -601,4 +601,7 @@ tbody tr:last-child td {
 }
 
 .single-option-selector {
+  width: 18rem;
+  border: 2px solid;
+  margin-bottom: 20px;
 }
