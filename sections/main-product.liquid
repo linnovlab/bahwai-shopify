@@ -38,7 +38,7 @@
         <h1 class="font-bold text-_main_color_dark sm:text-[24px] text-base sm:mb-3 capitalize">
           {{ product.title }}
         </h1>
-        <div class="price sm:hidden gap-3 flex">
+        <div class="price gap-3 flex">
           <p class="text-_main_color_dark font-medium text-lg mb-1 variantPrice">{{ product.price | money_without_currency }}€
           </p>
           <span class="text-[#999999] text-base">le pack</span>
@@ -92,42 +92,35 @@
     </div>
 
     {% if product.variants.size > 1 %}
-    <div>
-     <select id="product-select" name="id" >
 
-        {% for variant in product.variants %}
-          <option value="{{ variant.id }}"
-            {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
-          >
-          </option>
-        {% endfor %}
-      </select>
-    </div>
-
-      {%  comment  %}  
-        <div id="variant-options" class="mb-4">
+        <ul id="variant-options" class="mb-4 grid w-full gap-2 md:grid-cols-2">
           {% for variant in product.variants %}
+          <li>
             <input
+              class="hidden peer"
               type="radio"
               id="variant-{{ variant.id }}"
               name="variant"
               value="{{ variant.id }}"
+              {% if variant.featured_image %}
+                data-image = "{{ variant.featured_image | image_url: width: 600, height: 600 }}"
+              {%  else %}
+                data-image = "{{ product | image_url: width: 600, height: 600 }}"
+              {% endif %}
+              data-price = "{{ variant.price | money_without_currency }}€"
+              data-unitprice = "{% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ {% endif %}"
               {% if variant == product.selected_or_first_available_variant %}checked{% endif %}>
-            <label for="variant-{{ variant.id }}">{{ variant.title }} </label><br>
+            <label for="variant-{{ variant.id }}"
+              class="inline-flex items-center justify-center w-full p-4 text-sm font-medium text-_main_color_dark bg-white border border-_main_color_dark rounded-[5px] cursor-pointer peer-checked:text-white peer-checked:bg-_main_color_dark hover:text-gray-600 hover:bg-gray-100">{{ variant.title }} {% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ l'unité{% endif %}</label><br>
           {% endfor %}
-        </div>
-      {% endcomment %}
+          </li>
+        </ul>
+      
   {% endif %}
 
-    <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-between gap-4 lg:flex-row flex-col items-center">
+    <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-center gap-6 lg:flex-row flex-col items-center">
 
-      <div class="right flex flex-col items-center sm:w-auto w-full">
-        <div class="price sm:flex gap-3 hidden">
-          <p class="text-_main_color_dark font-medium text-lg variantPrice">{{ product.price | money_without_currency }} €</p>
-          <span class="text-[#999999]">le pack</span>
-        </div>
-        
-        
+      <div class="right flex flex-col items-center sm:w-auto w-full"> 
         {%- form 'product', product, id: "form-command", class: "flex flex-col sm:w-auto w-full mt-4 " -%}
           <input
             id="selectedVariant"
@@ -136,7 +129,8 @@
             value="{{ product.selected_or_first_available_variant.id }}">
           {{ form | payment_terms }}
 
-          <div class="flex justify-center mb-4 ">
+          <div class="flex justify-center items-center mb-4 sm:gap-4 gap-2">
+            <p class="font-medium text-base">Quantité</p>
             <button type="button" id="down">-</button>
             <input
               type="number"
@@ -269,29 +263,28 @@
 {% endcomment %}
 
 <script>
-  // Handle Variants
-  var selectCallback = function(variant, selector) {
-    console.log(variant);
-    // On change la valeur du formulaire par celle de l'id du variant selectionné
-    document.getElementById('selectedVariant').value = variant.id;
+  // Get all radio buttons by name
+  var radioButtons = document.getElementsByName('variant');
+  var formInputSelectedVariant = document.getElementById('selectedVariant');
+
+// Add event listener to each radio button
+radioButtons.forEach(function(radioButton) {
+  radioButton.addEventListener('change', function() {
+    // This function will be called when a radio button is selected
+    var selectedValue = radioButton.value;
+    console.log('Selected value:', selectedValue);
+    formInputSelectedVariant.value = selectedValue;
     // On change les prix affichés
     var els = document.getElementsByClassName("variantPrice");
     Array.prototype.forEach.call(els, function(el) {
-        el.innerHTML = (variant.price / 100).toFixed(2)+`€`;
+        el.innerHTML = radioButton.dataset.price;
     });
-    // on change les images si nécessaires
-    if(variant.featured_image){
-      document.getElementById("mainImg").src=variant.featured_image.src;
-    }
-  
-    //document.getElementByClass('variantPrice').innerHTML = "0";//(variant.price / 100).toFixed(2)+`€`;
-  }
-
-  new Shopify.OptionSelectors('product-select', {
-    product: {{ product | json }},
-    onVariantSelected: selectCallback,
-    enableHistoryState: true
+    
+    document.getElementById("mainImg").src=radioButton.dataset.image;
+    
   });
+});
+  
 
   /**************************/
   const getMetafields = async (product) => {
