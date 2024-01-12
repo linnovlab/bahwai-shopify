@@ -1,3 +1,5 @@
+
+
 {% comment %} images popup {% endcomment %}
 <div id="image-product-popup" class="bg-[#000000ad] absolute top-[167px] left-0 w-full h-screen justify-center items-center hidden">
   <div class=" p-2 border rounded-md relative">
@@ -9,7 +11,7 @@
   <div class="left lg:mr-16 mx-auto lg:mb-0 mb-16">
     <div class="imgs flex flex-col gap-4">
       <div class="lg:w-[460px] w-full">
-        <img src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit">
+        <img src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit" id="mainImg">
       </div>
       <div id="product-images" class="flex justify-center gap-3 ">
         {% if product.images.size > 1 %}
@@ -36,16 +38,12 @@
         <h1 class="font-bold text-_main_color_dark sm:text-[24px] text-base sm:mb-3 capitalize">
           {{ product.title }}
         </h1>
-        <div class="price sm:hidden gap-3 flex">
-          <p class="text-_main_color_dark font-medium text-lg mb-1">{{ product.price | money_without_currency }}€
+        <div class="price gap-3 flex">
+          <p class="text-_main_color_dark font-medium text-lg mb-1 variantPrice">{{ product.price | money_without_currency }}€
           </p>
           <span class="text-[#999999] text-base">le pack</span>
         </div>
-        <span class="text-[0.6rem] price sm:hidden flex mb-4">
-          {% if product.variants.first.unit_price %}
-            soit {{ product.variants.first.unit_price | money_without_currency }}€/unité
-          {% endif %}
-        </span>
+
         <div class="avis flex gap-2 h-[1.1rem] mb-4">
           <div id="prod-stars-container" class="stars flex text-_main_color_dark">
             <i class="fas fa-star"></i>
@@ -93,84 +91,46 @@
       </p>
     </div>
 
+    {% if product.variants.size > 1 %}
 
-    <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-between gap-4 lg:flex-row flex-col items-center">
-      <div class="left lg:max-w-[388px] w-full">
-        <div class="item-1 p-4 border border-[#999999] rounded-t-md rounded-b-none sm:bg-white bg-_orange_color">
-          <h5 class="font-bold mb-4">Type d’achat</h5>
-          <form action="#" id="form-type-achat">
-            <div class="flex items-center gap-4">
-              <input
-                type="checkbox"
-                class="checkbox-round"
-                name="h_abonnement"
-                id="hors"
-                checked>
-              <label for="hors" class="cursor-pointer font-medium text-_main_color_dark ">Hors abonnement</label>
-            </div>
-            <div class="flex items-center gap-4 mt-3">
-              <input
-                type="checkbox"
-                class="checkbox-round sm:!border-gray-500 !border-gray-500"
-                name="h_abonnement"
-                id="moins"
-                disabled>
-              <label for="moins" class="cursor-pointer flex items-center gap-4 sm:text-_main_color_dark ">
-                <span class="font-medium text-gray-500">S’abonner</span>
-                <span class="px-[8px] py-[4px] sm:bg-_orange_color bg-_main_color_light rounded-md text-white text-12px">Pas encore disponible</span>
-              </label>
-            </div>
-          </form>
-        </div>
-        <div class="item-2 p-4 border border-[#999999] rounded-t-none rounded-b-md">
-          <div class="accordions text-_main_color_dark">
-            <div class="accordion-item text-gray-500">
-              <button
-                type="button"
-                {% comment %}
-                id="btn-accordion"
-                {% endcomment %}
-                class="p-[6px] max-w-[270px] flex justify-between w-full border border-[#999999] rounded-md">
-                <span class="text-sm font-medium">Livraison :
-                  <span class="text-[12px] font-normal">Une fois par mois</span>
-                </span>
-                <i class="fas fa-chevron-down transition-transform duration-500"></i>
-              </button>
-              <div class="panel px-4 pt-2 hidden">
-                <p class="ps-2"></p>
-              </div>
-              <ul class="font-medium list-disc ms-6">
-                <li class="text-sm mt-[14px] mb-2">
-                  <span>15% de réduction à chaque commande</span>
-                </li>
-                <li class="text-sm mb-1">
-                  <span>Pas de durée d’engagement
-                  </span>
-                </li>
-              </ul>
-              <p class="text-[12px] font-medium -mt-1">Annulez votre abonnement quand vous voulez</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="right flex flex-col items-center sm:w-auto w-full">
-        <div class="price sm:flex gap-3 hidden">
-          <p class="text-_main_color_dark font-medium text-lg">{{ product.price | money_without_currency }} €</p>
-          <span class="text-[#999999]">le pack</span>
-        </div>
-        <span class="text-[0.6rem] price sm:flex hidden">
-          {% if product.variants.first.unit_price %}
-            soit {{ product.variants.first.unit_price | money_without_currency }}€/unité
-          {% endif %}
-        </span>
+        <ul id="variant-options" class="mb-4 grid w-full gap-2 md:grid-cols-2">
+          {% for variant in product.variants %}
+          <li>
+            <input
+              class="hidden peer"
+              type="radio"
+              id="variant-{{ variant.id }}"
+              name="variant"
+              value="{{ variant.id }}"
+              {% if variant.featured_image %}
+                data-image = "{{ variant.featured_image | image_url: width: 600, height: 600 }}"
+              {%  else %}
+                data-image = "{{ product | image_url: width: 600, height: 600 }}"
+              {% endif %}
+              data-price = "{{ variant.price | money_without_currency }}€"
+              data-unitprice = "{% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ {% endif %}"
+              {% if variant == product.selected_or_first_available_variant %}checked{% endif %}>
+            <label for="variant-{{ variant.id }}"
+              class="inline-flex items-center justify-center w-full p-4 text-sm font-medium text-_main_color_dark bg-white border border-_main_color_dark rounded-[5px] cursor-pointer peer-checked:text-white peer-checked:bg-_main_color_dark hover:text-gray-600 hover:bg-gray-100">{{ variant.title }} {% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ l'unité{% endif %}</label><br>
+          {% endfor %}
+          </li>
+        </ul>
+      
+  {% endif %}
+
+    <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-center gap-6 lg:flex-row flex-col items-center">
+
+      <div class="right flex flex-col items-center sm:w-auto w-full"> 
         {%- form 'product', product, id: "form-command", class: "flex flex-col sm:w-auto w-full mt-4 " -%}
           <input
+            id="selectedVariant"
             type="hidden"
             name="id"
             value="{{ product.selected_or_first_available_variant.id }}">
           {{ form | payment_terms }}
 
-          <div class="flex justify-center mb-4 ">
+          <div class="flex justify-center items-center mb-4 sm:gap-4 gap-2">
+            <p class="font-medium text-base">Quantité</p>
             <button type="button" id="down">-</button>
             <input
               type="number"
@@ -178,7 +138,7 @@
               id="input-produit"
               data-product_id="{{ product.id }}"
               min="1"
-              max="20"
+              max="30"
               value="1">
             <button type="button" id="up">+</button>
           </div>
@@ -303,6 +263,30 @@
 {% endcomment %}
 
 <script>
+  // Get all radio buttons by name
+  var radioButtons = document.getElementsByName('variant');
+  var formInputSelectedVariant = document.getElementById('selectedVariant');
+
+// Add event listener to each radio button
+radioButtons.forEach(function(radioButton) {
+  radioButton.addEventListener('change', function() {
+    // This function will be called when a radio button is selected
+    var selectedValue = radioButton.value;
+    console.log('Selected value:', selectedValue);
+    formInputSelectedVariant.value = selectedValue;
+    // On change les prix affichés
+    var els = document.getElementsByClassName("variantPrice");
+    Array.prototype.forEach.call(els, function(el) {
+        el.innerHTML = radioButton.dataset.price;
+    });
+    
+    document.getElementById("mainImg").src=radioButton.dataset.image;
+    
+  });
+});
+  
+
+  /**************************/
   const getMetafields = async (product) => {
     const metafieldsResponse = await fetch(`/admin/api/2021-07/products/${
       product.id
@@ -353,43 +337,48 @@
     }
   });
 
-  // ----------------------
-  {% comment %} 
-    {% if product.metafields.reviews.rating_count != null %}
-    {%- for i in (1..5) -%}
-      {%- if i <= n -%}
-        <i class="fas fa-star"></i>
-      {%- else -%}
-        <i class="fa-regular fa-star"></i>
-      {%- endif -%}
-    {%- endfor -%}
-  {% endif %}
-
-  {% if product.metafields.reviews.rating_count == null %}
-      Soyez le 1er à noter!
-    {% else %}
-      {{ product.metafields.reviews.rating_count }} avis
-    {% endif %}
-  {% endcomment %}
-
-/*
-
-  .then((responseText) => {
-    const html = new DOMParser().parseFromString(responseText, 'text/html')
-    document.getElementById('recommendations').innerHTML = html
-    console.log(responseText)
-  })
-
-  .then(({products}) => {
-    let product = products[0]
-    getMetafields(product)
-    document.getElementById('test-section').innerHTML = html;
-  })
-
   
-*/
-// -----------------------------------------
-
-
 // jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
+
+  // Find the "btn-acheter" button by its ID
+const acheterButton = document.getElementById('btn-acheter');
+
+// Add a click event listener to the button
+acheterButton.addEventListener('click', function (event) {
+  // Prevent the default form submission
+  event.preventDefault();
+
+  // Get the product variant ID and quantity
+  const productId = '{{ product.selected_or_first_available_variant.id }}';
+  const quantity = parseInt(document.getElementById('input-produit').value);//1; // You can adjust the quantity as needed
+
+  // Create a cart object
+  const cart = {
+    items: [
+      {
+        id: productId,
+        quantity: quantity
+      }
+    ]
+  };
+
+  // Use the Shopify AJAX API to add the product to the cart
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(cart)
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Redirect to the checkout page
+    window.location.href = '/checkout';
+  })
+  .catch(error => {
+    console.error('Error adding to cart:', error);
+  });
+});
+
+
 </script>

@@ -1,10 +1,17 @@
-<section class="nouveautes desktop-width">
-  <div class="nouveautes-header flex flex-col justify-center items-center mb-6 mt-16">
-    <h2 class="title text-2xl text-center mx-4 sm:mt-0 mt-12">{{ section.settings.titre }}
+<section
+  class="nouveautes desktop-width">
+  <div
+    class="nouveautes-header flex flex-col justify-center items-center mb-6 mt-16">
+    <h2
+      class="title text-2xl text-center mx-4 sm:mt-0 mt-12">{{ section.settings.titre }}
     </h2>
-    <div class="cats-navigation mt-8 max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
-      <nav class="text-_main_color_dark mt-2 z-50 sm:w-full w-[43rem]">
-        <ul id="nouveautes-links" class="flex justify-start mx-2 sm:justify-center sm:mx-0 gap-[20px] font-bold mb-1">
+    <div
+      class="cats-navigation mt-8 max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
+      <nav
+        class="text-_main_color_dark mt-2 z-50 sm:w-full w-[43rem]">
+        <ul
+          id="nouveautes-links"
+          class="flex justify-start mx-2 sm:justify-center sm:mx-0 gap-[20px] font-bold mb-1">
           {% for link in linklists['liens-categories'].links %}
             {% if link.title == 'Nouveautés' %}
               <li>
@@ -27,24 +34,35 @@
             {% endif %}
           {% endfor %}
         </ul>
-        <hr class="bg-[#DCDCDC] h-[2px] w-[100%] z-0">
+        <hr
+          class="bg-[#DCDCDC] h-[2px] w-[100%] z-0">
       </nav>
     </div>
   </div>
 
-  <div id="main-swipper-collections" class="nouveautes-content p-0 m-0 sm:p-8 sm:m-8">
+  <div
+    id="main-swipper-collections"
+    class="nouveautes-content p-0 m-0 sm:p-8 sm:m-8">
 
     {% for link in linklists['liens-categories'].links %}
       {% assign categ = link.handle %}
-      <div id="{{ categ }}" class="{%- if forloop.first == false -%} hidden {%- endif -%} ">
-        <div class="swiper swiper-nouveautes relative sm:px-8">
-          <div class="swiper-wrapper items-stretch sm:justify-center text-_main_color_dark ">
+      <div
+        id="{{ categ }}"
+        class="{%- if forloop.first == false -%} hidden {%- endif -%} ">
+        <div
+          class="swiper swiper-nouveautes relative sm:px-8">
+          <div
+            class="swiper-wrapper items-stretch sm:justify-center text-_main_color_dark ">
             {% for product in collections[categ].products %}
               {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
               {%- assign n = rates | first | plus: 0 -%}
-              <div class="swiper-slide">
-                <a href="{{ product.url }}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-                  <div class="img w-full">
+              <div
+                class="swiper-slide">
+                <a
+                  href="{{ product.url }}"
+                  class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+                  <div
+                    class="img w-full">
                     <img
                       src="{{ product | image_url: width: 600, height: 600 }}"
                       alt="{{ product.title }}"
@@ -53,20 +71,26 @@
                       height="auto"
                       loading="lazy">
                   </div>
-                  <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
-                  <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                    <div class="stars flex text-sm">
+                  <p
+                    class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
+                  <div
+                    class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                    <div
+                      class="stars flex text-sm">
                       {% if product.metafields.reviews.rating_count != null %}
                         {%- for i in (1..5) -%}
                           {%- if i <= n -%}
-                            <i class="fas fa-star"></i>
+                            <i
+                              class="fas fa-star"></i>
                           {%- else -%}
-                            <i class="fa-regular fa-star"></i>
+                            <i
+                              class="fa-regular fa-star"></i>
                           {%- endif -%}
                         {%- endfor -%}
                       {%- endif -%}
                     </div>
-                    <span class="border-_main_color_dark border-b text-_main_color_dark ">
+                    <span
+                      class="border-_main_color_dark border-b text-_main_color_dark ">
                       {% if product.metafields.reviews.rating_count == null %}
                         Soyez le 1er à noter!
                       {% else %}
@@ -74,11 +98,13 @@
                       {% endif %}
                     </span>
                   </div>
-                  <p class="font-medium flex flex-col">
+                  <p
+                    class="font-medium flex flex-col">
                     <span>
                       {{ product.price | money_without_currency }}€ le pack
                     </span>
-                    <span class="text-[0.6rem]">
+                    <span
+                      class="text-[0.6rem]">
                       {% if product.variants.first.unit_price %}
                         soit {{ product.variants.first.unit_price | money_without_currency }}€/unité
                       {% endif %}

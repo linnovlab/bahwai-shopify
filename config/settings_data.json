@@ -141,7 +141,7 @@
       "bh-header": {
         "type": "bh-header",
         "settings": {
-          "annonce": "Profitez de -20% pour votre première commande avec le code WELCOME",
+          "annonce": "Profitez de -15% pour votre première commande avec le code WELCOME",
           "menu": "main-menu",
           "logo_width": 100,
           "video_url": ""
@@ -168,41 +168,51 @@
           "2772879e-ecfd-48ff-a0bb-d3b83a09e43d": {
             "type": "announcement",
             "settings": {
-              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_100x100_97fd4c2a-0c10-48d3-bc51-a8570bc92e09.webp",
+              "user_img": "shopify:\/\/shop_images\/IMG_2987.jpg",
               "logo_google": "shopify:\/\/shop_images\/review.jpg",
-              "message": "j'ai testé tous les parfums et mon préféré c'est citron citron vert il est vraiment top!",
-              "autheur": "Nicolas",
-              "date": "6. juin, 2022."
+              "message": "Ah mais ces petites boissons, c'est de la frappe !! le citron passe super bien avec un petit rhum",
+              "autheur": "le rappeur RZ",
+              "date": "2. Septembre, 2023."
             }
           },
           "10729d2d-8561-48c0-a298-5ef59e9805cb": {
             "type": "announcement",
             "settings": {
-              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_100x100_97fd4c2a-0c10-48d3-bc51-a8570bc92e09.webp",
+              "user_img": "shopify:\/\/shop_images\/IMG_1594.jpg",
               "logo_google": "shopify:\/\/shop_images\/review.jpg",
-              "message": "Je cherchais une boisson pour récupérer après mes séances de sport et franchement elle est efficace, je me sens bien détendu",
-              "autheur": "Christophe",
-              "date": "6. juin, 2022."
+              "message": "Petite découverte sympa ! j'avais un doute quand j'ai vu le sans sucre mais je me suis laissé tenté et c'est super bon, bravo les gars !",
+              "autheur": "Raibed Tahri",
+              "date": "4. Septembre, 2023."
             }
           },
           "2a794cfb-5b3d-4b25-a4e8-e610f85c165f": {
             "type": "announcement",
             "settings": {
-              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_100x100_97fd4c2a-0c10-48d3-bc51-a8570bc92e09.webp",
+              "user_img": "shopify:\/\/shop_images\/IMG_1474.jpg",
               "logo_google": "shopify:\/\/shop_images\/review.jpg",
               "message": "J'adore me détendre avec cette boisson, mon parfum préféré le ICE TEA",
-              "autheur": "Laetitia",
-              "date": "6. juin, 2022."
+              "autheur": "Lova",
+              "date": "5. Septembre, 2023."
             }
           },
           "fd0c0195-2580-47de-8193-96c928f6f018": {
             "type": "announcement",
             "settings": {
-              "user_img": "shopify:\/\/shop_images\/man-adjusts-blue-tuxedo-bowtie_925x_100x100_97fd4c2a-0c10-48d3-bc51-a8570bc92e09.webp",
+              "user_img": "shopify:\/\/shop_images\/IMG_1447.jpg",
               "logo_google": "shopify:\/\/shop_images\/review.jpg",
-              "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi soluta inventore perspiciatis cupiditate mollitia laudantium unde",
-              "autheur": "Cristopher Teyssier",
-              "date": "6. juin, 2022."
+              "message": "J’ai toujours eu du mal à m’endormir le soir et le lendemain, je me sentais très fatiguée. Grâce aux boissons CBD Bahwai, j’arrive à trouver le sommeil facilement et surtout à bien récupérer et le lendemain je me sens enfin en forme.",
+              "autheur": "Marie",
+              "date": "8. Septembre, 2023."
+            }
+          },
+          "459c8fd1-4ae5-4561-b03c-44131dc0e9ee": {
+            "type": "announcement",
+            "settings": {
+              "user_img": "shopify:\/\/shop_images\/IMG_1450.jpg",
+              "logo_google": "shopify:\/\/shop_images\/review.jpg",
+              "message": "Un gout exceptionnel. J'ai adoré vos boissons ! Merci pour le petit cadeau sympa. L'équipe est top!",
+              "autheur": "Anne-Laure",
+              "date": "4. Septembre, 2023"
             }
           }
         },
@@ -210,7 +220,8 @@
           "2772879e-ecfd-48ff-a0bb-d3b83a09e43d",
           "10729d2d-8561-48c0-a298-5ef59e9805cb",
           "2a794cfb-5b3d-4b25-a4e8-e610f85c165f",
-          "fd0c0195-2580-47de-8193-96c928f6f018"
+          "fd0c0195-2580-47de-8193-96c928f6f018",
+          "459c8fd1-4ae5-4561-b03c-44131dc0e9ee"
         ],
         "settings": {
           "titre": "Leurs avis"

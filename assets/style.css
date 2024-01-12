@@ -94,10 +94,9 @@ body {
   @apply font-bold text-2xl text-center mt-4 mb-5 text-_main_color_dark underline;
 }
 
-#img_show_up img{
+#img_show_up img {
   width: 100%;
 }
-
 
 /* header */
 
@@ -599,4 +598,10 @@ tbody tr:last-child td {
 
 #phrase {
   @apply text-_main_color_dark mt-3;
+}
+
+.single-option-selector {
+  width: 18rem;
+  border: 2px solid;
+  margin-bottom: 20px;
 }
