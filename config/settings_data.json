@@ -260,6 +260,17 @@
           "description": "<p>tu souhaites proposer nos produits ou devenir notre égérie ? <em>BahWai <\/em>laisses nous un message avec tes coordonnées et ton projet. <\/p><p>Nous te recontacterons dans les 48h <\/p>",
           "btn_text": "Remplir le formulaire"
         }
+      },
+      "photos-carousel": {
+        "type": "photos-carousel",
+        "settings": {
+          "titre": "Nos nouveautés raffraichissantes",
+          "image_1": "shopify:\/\/shop_images\/packcanettecola6.png",
+          "image_2": "shopify:\/\/shop_images\/5.png",
+          "image_3": "shopify:\/\/shop_images\/packcanettecoca.png",
+          "image_4": "shopify:\/\/shop_images\/packcanetteBAHWAI_3.png",
+          "image_5": "shopify:\/\/shop_images\/packcanetteBAHWAI_3_2808bbef-9f28-4bcd-bc13-c37b10fe4c47.png"
+        }
       }
     },
     "content_for_index": [
