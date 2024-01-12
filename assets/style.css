@@ -22,7 +22,7 @@ body {
 }
 /* header */
 .hover-nav-item {
-  @apply hover:text-red-600 transition-all duration-200;
+  @apply transition-all duration-200 hover:text-red-600;
 }
 
 .desktop-width {
@@ -37,7 +37,7 @@ body {
   box-shadow: 1px 4px 8px -3px black;
 }
 .btn-cat {
-  @apply outline-none bg-_orange_color rounded-lg;
+  @apply rounded-lg outline-none bg-_orange_color;
 }
 
 .cats-hover {
@@ -72,7 +72,7 @@ body {
   @apply text-start pe-2 ps-4 font-bold text-[1.2rem] flex justify-between w-full;
 }
 .search-section {
-  @apply max-h-full h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y fixed top-0 z-50 w-full;
+  @apply fixed top-0 z-50 w-full h-full max-h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y;
 }
 .btn-etre-prevenu {
   @apply hover:cursor-pointer mb-4 sm:text-sm text-_main_color_dark font-bold text-center border-b-2 border-_red_color w-[21rem] sm:text-[12px] text-[10px] sm:w-[24rem] m-auto;
@@ -91,11 +91,16 @@ body {
   @apply border border-[#9999] p-2 rounded-md sm:max-w-[50%] w-full;
 }
 .titre-engagements {
-  @apply font-bold text-2xl text-center mt-4 mb-5 text-_main_color_dark underline;
+  @apply mt-4 mb-5 text-2xl font-bold text-center underline text-_main_color_dark;
 }
 
 #img_show_up img {
   width: 100%;
+}
+
+/*  style for promo code prooduct */
+#promo-price{
+  @apply font-medium line-through text-_main_color_dark;
 }
 
 /* header */
@@ -285,7 +290,7 @@ div.spr-review-header .spr-review-header-byline {
   font-style: normal;
 }
 div.spr-review-content p {
-  @apply text-_main_color_dark text-sm;
+  @apply text-sm text-_main_color_dark;
 }
 div.spr-review-footer a {
   @apply text-_main_color_dark;
@@ -597,7 +602,7 @@ tbody tr:last-child td {
 }
 
 #phrase {
-  @apply text-_main_color_dark mt-3;
+  @apply mt-3 text-_main_color_dark;
 }
 
 .single-option-selector {

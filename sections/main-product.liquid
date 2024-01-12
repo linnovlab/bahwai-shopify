@@ -1,51 +1,53 @@
-
-
 {% comment %} images popup {% endcomment %}
-<div id="image-product-popup" class="bg-[#000000ad] absolute top-[167px] left-0 w-full h-screen justify-center items-center hidden">
-  <div class=" p-2 border rounded-md relative">
-    <p class="text-end w-full absolute right-[20px] top-[20px]"><i id="close-img-prod-poppup" class="fa fa-xmark text-white text-[2rem] cursor-pointer"></i></p>
+<div id="image-product-popup"
+  class="bg-[#000000ad] absolute top-[167px] left-0 w-full h-screen justify-center items-center hidden">
+  <div class="relative p-2 border rounded-md ">
+    <p class="text-end w-full absolute right-[20px] top-[20px]"><i id="close-img-prod-poppup"
+        class="fa fa-xmark text-white text-[2rem] cursor-pointer"></i></p>
     <span id="img_show_up"></span>
   </div>
 </div>
-<section class="text-_main_color_dark flex lg:flex-nowrap flex-wrap sm:mt-12 mt-0 desktop-width sm:mx-8 mx-0 sm:px-8">
-  <div class="left lg:mr-16 mx-auto lg:mb-0 mb-16">
-    <div class="imgs flex flex-col gap-4">
+<section class="flex flex-wrap mx-0 mt-0 text-_main_color_dark lg:flex-nowrap sm:mt-12 desktop-width sm:mx-8 sm:px-8">
+  <div class="mx-auto mb-16 left lg:mr-16 lg:mb-0">
+    <div class="flex flex-col gap-4 imgs">
       <div class="lg:w-[460px] w-full">
         <img src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit" id="mainImg">
       </div>
       <div id="product-images" class="flex justify-center gap-3 ">
         {% if product.images.size > 1 %}
-            {% for img in product.images %}
-              <img
-                data-title="{{ product.title }}"
-                class="w-[61px] cursor-pointer"
-                src="{{ img |image_url: width: 500, height: 500 }}"
-                alt="produit">
-            {% endfor %}
+        {% for img in product.images %}
+        <img data-title="{{ product.title }}" class="w-[61px] cursor-pointer"
+          src="{{ img |image_url: width: 500, height: 500 }}" alt="produit">
+        {% endfor %}
         {% else %}
-          <img
-            class="w-[61px] cursor-pointer"
-            src="{{ product |image_url: width: 500, height: 500 }}"
-            alt="produit">
+        <img class="w-[61px] cursor-pointer" src="{{ product |image_url: width: 500, height: 500 }}" alt="produit">
         {% endif %}
       </div>
     </div>
   </div>
 
-  <div class="right sm:mx-0 mx-4 w-full">
-    <div class="head flex justify-between">
+
+  <div class="w-full mx-4 right sm:mx-0">
+    <div class="flex justify-between head">
       <div class="">
         <h1 class="font-bold text-_main_color_dark sm:text-[24px] text-base sm:mb-3 capitalize">
           {{ product.title }}
         </h1>
-        <div class="price gap-3 flex">
-          <p class="text-_main_color_dark font-medium text-lg mb-1 variantPrice">{{ product.price | money_without_currency }}€
+        <div class="flex items-center gap-3 mb-2 price">
+          <div id="promo-price">
+            {% if product.compare_at_price %}
+            {{ product.compare_at_price | money_without_currency
+            }}€
+            {% endif %}
+          </div>
+          <p class="text-lg font-medium text-_main_color_dark variantPrice">{{ product.price |
+            money_without_currency }}€
           </p>
           <span class="text-[#999999] text-base">le pack</span>
         </div>
 
         <div class="avis flex gap-2 h-[1.1rem] mb-4">
-          <div id="prod-stars-container" class="stars flex text-_main_color_dark">
+          <div id="prod-stars-container" class="flex stars text-_main_color_dark">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -55,7 +57,7 @@
           <span class="border-_main_color_dark border-b-2 text-[14px]">
             <a href="#avis-produit">
               {%- if product.metafields.reviews.rating_count != null -%}
-                {{ product.metafields.reviews.rating_count }} avis
+              {{ product.metafields.reviews.rating_count }} avis
               {%- endif -%}
             </a>
           </span>
@@ -64,19 +66,14 @@
       <div class="relative">
         <div class="hidden" id="msg-share">
           <div class="flex items-center absolute left-[-140px] top-[-11px] text-center">
-            <span class="text-sm text-center text-white w-[8rem] p-[8px] bg-gray-900 rounded-md">le lien a bien été copié  !</span>
+            <span class="text-sm text-center text-white w-[8rem] p-[8px] bg-gray-900 rounded-md">le lien a bien été
+              copié  !</span>
             <i class="fa-solid fa-caret-right text-[18px]"></i>
           </div>
         </div>
         <span id="btn-share" onclick="shareProduct('{{ product.url }}', '{{ product.title }}')">
-          <img
-            src="{{ 'Partager.svg' | asset_url }}"
-            class="hover:cursor-pointer"
-            alt="partager"
-            title="Partager"
-            width="auto"
-            height="auto"
-            loading="lazy">
+          <img src="{{ 'Partager.svg' | asset_url }}" class="hover:cursor-pointer" alt="partager" title="Partager"
+            width="auto" height="auto" loading="lazy">
         </span>
       </div>
     </div>
@@ -85,7 +82,7 @@
       </p>
     </div>
     <div class="w-[18rem] my-4 font-medium" id="btn-produit-desc">
-      <p class="text-_main_color_dark flex items-center border-b border-_main_color_dark hover:cursor-pointer">
+      <p class="flex items-center border-b text-_main_color_dark border-_main_color_dark hover:cursor-pointer">
         <span class="text-2xl me-2">+</span>
         <span>En savoir plus sur le produit</span>
       </p>
@@ -93,70 +90,47 @@
 
     {% if product.variants.size > 1 %}
 
-        <ul id="variant-options" class="mb-4 grid w-full gap-2 md:grid-cols-2">
-          {% for variant in product.variants %}
-          <li>
-            <input
-              class="hidden peer"
-              type="radio"
-              id="variant-{{ variant.id }}"
-              name="variant"
-              value="{{ variant.id }}"
-              {% if variant.featured_image %}
-                data-image = "{{ variant.featured_image | image_url: width: 600, height: 600 }}"
-              {%  else %}
-                data-image = "{{ product | image_url: width: 600, height: 600 }}"
-              {% endif %}
-              data-price = "{{ variant.price | money_without_currency }}€"
-              data-unitprice = "{% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ {% endif %}"
-              {% if variant == product.selected_or_first_available_variant %}checked{% endif %}>
-            <label for="variant-{{ variant.id }}"
-              class="inline-flex items-center justify-center w-full p-4 text-sm font-medium text-_main_color_dark bg-white border border-_main_color_dark rounded-[5px] cursor-pointer peer-checked:text-white peer-checked:bg-_main_color_dark hover:text-gray-600 hover:bg-gray-100">{{ variant.title }} {% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ l'unité{% endif %}</label><br>
-          {% endfor %}
-          </li>
-        </ul>
-      
-  {% endif %}
+    <ul id="variant-options" class="grid w-full gap-2 mb-4 md:grid-cols-2">
+      {% for variant in product.variants %}
+      <li>
+        <input class="hidden peer" type="radio" id="variant-{{ variant.id }}" name="variant" value="{{ variant.id }}" {%
+          if variant.featured_image %} data-image="{{ variant.featured_image | image_url: width: 600, height: 600 }}" {%
+          else %} data-image="{{ product | image_url: width: 600, height: 600 }}" {% endif %}
+          data-price="{{ variant.price | money_without_currency }}€"
+          data-unitprice="{% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ {% endif %}"
+          {% if variant==product.selected_or_first_available_variant %}checked{% endif %}>
+        <label for="variant-{{ variant.id }}"
+          class="inline-flex items-center justify-center w-full p-4 text-sm font-medium text-_main_color_dark bg-white border border-_main_color_dark rounded-[5px] cursor-pointer peer-checked:text-white peer-checked:bg-_main_color_dark hover:text-gray-600 hover:bg-gray-100">{{
+          variant.title }} {% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ l'unité{%
+          endif %}</label><br>
+        {% endfor %}
+      </li>
+    </ul>
 
-    <div class="footer text-_main_color_dark flex flex-wrap sm:flex-wrap-reverse justify-center gap-6 lg:flex-row flex-col items-center">
+    {% endif %}
 
-      <div class="right flex flex-col items-center sm:w-auto w-full"> 
+    <div
+      class="flex flex-col flex-wrap items-center justify-center gap-6 footer text-_main_color_dark sm:flex-wrap-reverse lg:flex-row">
+
+      <div class="flex flex-col items-center w-full right sm:w-auto">
         {%- form 'product', product, id: "form-command", class: "flex flex-col sm:w-auto w-full mt-4 " -%}
-          <input
-            id="selectedVariant"
-            type="hidden"
-            name="id"
-            value="{{ product.selected_or_first_available_variant.id }}">
-          {{ form | payment_terms }}
+        <input id="selectedVariant" type="hidden" name="id"
+          value="{{ product.selected_or_first_available_variant.id }}">
+        {{ form | payment_terms }}
 
-          <div class="flex justify-center items-center mb-4 sm:gap-4 gap-2">
-            <p class="font-medium text-base">Quantité</p>
-            <button type="button" id="down">-</button>
-            <input
-              type="number"
-              name="quantity"
-              id="input-produit"
-              data-product_id="{{ product.id }}"
-              min="1"
-              max="30"
-              value="1">
-            <button type="button" id="up">+</button>
-          </div>
-          <button
-            id="btn-ajout-panier"
-            class="h-[44px] sm:w-[344px] w-full btn-red-panier"
-            type="submit">Ajouter au panier</button>
+        <div class="flex items-center justify-center gap-2 mb-4 sm:gap-4">
+          <p class="text-base font-medium">Quantité</p>
+          <button type="button" id="down">-</button>
+          <input type="number" name="quantity" id="input-produit" data-product_id="{{ product.id }}" min="1" max="30"
+            value="1">
+          <button type="button" id="up">+</button>
+        </div>
+        <button id="btn-ajout-panier" class="h-[44px] sm:w-[344px] w-full btn-red-panier" type="submit">Ajouter au
+          panier</button>
 
         {%- endform -%}
-        <form
-          action="{{ routes.cart_url }}"
-          method="post"
-          class="w-full">
-          <button
-            type="submit"
-            id="btn-acheter"
-            name="checkout"
-            class="h-[44px] sm:w-[344px] w-full btn-white-panier"
+        <form action="{{ routes.cart_url }}" method="post" class="w-full">
+          <button type="submit" id="btn-acheter" name="checkout" class="h-[44px] sm:w-[344px] w-full btn-white-panier"
             name="checkout">Acheter maintenant</button>
         </form>
       </div>
@@ -164,40 +138,49 @@
   </div>
 </section>
 
-<section class="footer text-_main_color_dark mt-12 sm:mx-8 mx-4  desktop-width sm:px-8">
-  <h2 class="font-medium text-lg mb-6">Vous aimeriez également</h2>
-  <div id="related-products" class="content flex justify-around sm:justify-normal flex-wrap items-stretch sm:gap-8 gap-2 text-sm mt-2">{% comment %}  {{ product.metafields.shopify--discovery--product_recommendation.related_products }} {% endcomment %}
+<section class="mx-4 mt-12 footer text-_main_color_dark sm:mx-8 desktop-width sm:px-8">
+  <h2 class="mb-6 text-lg font-medium">Vous aimeriez également</h2>
+  <div id="related-products"
+    class="flex flex-wrap items-stretch justify-around gap-2 mt-2 text-sm content sm:justify-normal sm:gap-8">{% comment
+    %} {{ product.metafields.shopify--discovery--product_recommendation.related_products }} {% endcomment %}
   </div>
 </section>
 
-<h4 id="avis-produit" class="font-medium text-_main_color_dark text-lg sm:mx-8 mx-4 mt-8 -mb-10 desktop-width sm:px-8">L'avis des kings</h4>
+<h4 id="avis-produit" class="mx-4 mt-8 -mb-10 text-lg font-medium text-_main_color_dark sm:mx-8 desktop-width sm:px-8">
+  L'avis des kings</h4>
 
 <!-- description produit -->
 <div class="brightness-50"></div>
-<div class="hidden fixed top-0 w-full h-screen bg-white bg-opacity-50" id="produit-desc">
-  <div class="content max-w-[62rem] sm:w-full w-[346px] mx-auto mt-24 p-4 h-[562px] rounded-md bg-[#FFFDF9] ring-offset-4 ring-offset-gray-200 shadow-md max-h-screen overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
+<div class="fixed top-0 hidden w-full h-screen bg-white bg-opacity-50" id="produit-desc">
+  <div
+    class="content max-w-[62rem] sm:w-full w-[346px] mx-auto mt-24 p-4 h-[562px] rounded-md bg-[#FFFDF9] ring-offset-4 ring-offset-gray-200 shadow-md max-h-screen overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
     <div class="flex justify-end w-full mx-auto">
-      <p id="close-produit-desc" class="text-end font-bold border-b-2 text-_main_color_dark border-_main_color_dark cursor-pointer">
+      <p id="close-produit-desc"
+        class="font-bold border-b-2 cursor-pointer text-end text-_main_color_dark border-_main_color_dark">
         <i class="fas fa-xmark text-[18px] me-2"></i>
         <span>Fermer</span>
       </p>
     </div>
-    <div class="item-1 text-_main_color_dark mb-12">
-      <h5 class="font-medium mb-3">{{ product.title }}
+    <div class="mb-12 item-1 text-_main_color_dark">
+      <h5 class="mb-3 font-medium">{{ product.title }}
       </h5>
       <div class="content ps-4">
 
-        {{ product.description | replace: "<p>", "<p class='mb-4 leading-normal text-[16px]'>" | replace: "<h2>", "<h2 class='text-[16px] font-bold mb-4'>" }}
+        {{ product.description | replace: "<p>", "
+        <p class='mb-4 leading-normal text-[16px]'>" | replace: "
+        <h2>", "<h2 class='text-[16px] font-bold mb-4'>" }}
 
       </div>
     </div>
     <div class="item-1 text-_main_color_dark">
-      <h5 class="font-medium mb-3">Description :
+      <h5 class="mb-3 font-medium">Description :
       </h5>
-      <div class="content leading-normal">
+      <div class="leading-normal content">
         <p>
-          Découvre la boisson récupération BahWai ! Une boisson revitalisante, sans sucre et un goût  hummmm !!!  Idéal pour récupérer après une bonne séance de sport, une grosse journée de boulot… ou après une grosse soirée !
-          Avec seulement 1 calorie, zéro sucre et 20 mg de CBD par canette, c’est la boisson idéale pour te rafraichir et te détendre.<br><br>
+          Découvre la boisson récupération BahWai ! Une boisson revitalisante, sans sucre et un goût hummmm !!! Idéal
+          pour récupérer après une bonne séance de sport, une grosse journée de boulot… ou après une grosse soirée !
+          Avec seulement 1 calorie, zéro sucre et 20 mg de CBD par canette, c’est la boisson idéale pour te rafraichir
+          et te détendre.<br><br>
         </p>
         <p class="mt-4">
           On adore :
@@ -207,28 +190,32 @@
             C’est vegan et français !
           </li>
           <li class="mt-4">
-            <span class="text-_main_color_light font-bold">Bye bye les courbatures :
+            <span class="font-bold text-_main_color_light">Bye bye les courbatures :
             </span>grâce aux vertues myorelaxante du CBD, tes muscles sont détendus et moins lourds
           </li>
           <li class="mt-4">
-            <span class="text-_main_color_light font-bold">Récupération musculaire :
-            </span>le CBD contribue à améliorer la vitesse et la qualité de récupération de tes muscles. De quoi repartir rapidement au charbon !
+            <span class="font-bold text-_main_color_light">Récupération musculaire :
+            </span>le CBD contribue à améliorer la vitesse et la qualité de récupération de tes muscles. De quoi
+            repartir rapidement au charbon !
           </li>
           <li class="mt-4">
-            <span class="text-_main_color_light font-bold">Moins de douleurs musculaires :
-            </span>les ingrédients contenus dans notre boisson contribuent à réduire les sensations de douleurs musculaires, souvent ressenti après une grosse séance ou encore à force de rester assis derrière ton bureau !
+            <span class="font-bold text-_main_color_light">Moins de douleurs musculaires :
+            </span>les ingrédients contenus dans notre boisson contribuent à réduire les sensations de douleurs
+            musculaires, souvent ressenti après une grosse séance ou encore à force de rester assis derrière ton bureau
+            !
           </li>
           <li class="mt-4">
-            <span class="text-_main_color_light font-bold">Niveau de stress = Zéro  :
+            <span class="font-bold text-_main_color_light">Niveau de stress = Zéro :
             </span>le CBD aide à réduire le stress à l’origine de l’oxydation des cellules et d’une peau terne
           </li>
           <li class="mt-4">
-            <span class="text-_main_color_light font-bold">Sommeil Récupérateur pour un réveil frais
+            <span class="font-bold text-_main_color_light">Sommeil Récupérateur pour un réveil frais
             </span>et une énergie à 100 % … toute la journée !
           </li>
         </ul>
         <p class="mt-8">
-          Disponible en 5 saveurs incroyables : Citron/Citron vert, Fraise/Fruit du dragon, Pomme/Kiwi, Ice tea Pêche et Fruits rouge
+          Disponible en 5 saveurs incroyables : Citron/Citron vert, Fraise/Fruit du dragon, Pomme/Kiwi, Ice tea Pêche et
+          Fruits rouge
         </p>
         <ul id="produit-ul-desc" class="ps-8">
           <li class="mt-4">
@@ -242,23 +229,23 @@
 
 
 {% schema %}
-  {
-    "name": "Section produit",
-    "class": "section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "titre",
-        "label": "Titre",
-        "default": "titre rek"
-      }
-    ]
-  }
+{
+"name": "Section produit",
+"class": "section",
+"settings": [
+{
+"type": "text",
+"id": "titre",
+"label": "Titre",
+"default": "titre rek"
+}
+]
+}
 {% endschema %}
 
-{% comment %} getting rating value 
+{% comment %} getting rating value
 {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
- convertion string en integer 
+convertion string en integer
 {%- assign n = rates | first | plus: 0 -%}
 {% endcomment %}
 
@@ -267,69 +254,63 @@
   var radioButtons = document.getElementsByName('variant');
   var formInputSelectedVariant = document.getElementById('selectedVariant');
 
-// Add event listener to each radio button
-radioButtons.forEach(function(radioButton) {
-  radioButton.addEventListener('change', function() {
-    // This function will be called when a radio button is selected
-    var selectedValue = radioButton.value;
-    console.log('Selected value:', selectedValue);
-    formInputSelectedVariant.value = selectedValue;
-    // On change les prix affichés
-    var els = document.getElementsByClassName("variantPrice");
-    Array.prototype.forEach.call(els, function(el) {
+  // Add event listener to each radio button
+  radioButtons.forEach(function (radioButton) {
+    radioButton.addEventListener('change', function () {
+      // This function will be called when a radio button is selected
+      var selectedValue = radioButton.value;
+      console.log('Selected value:', selectedValue);
+      formInputSelectedVariant.value = selectedValue;
+      // On change les prix affichés
+      var els = document.getElementsByClassName("variantPrice");
+      Array.prototype.forEach.call(els, function (el) {
         el.innerHTML = radioButton.dataset.price;
+      });
+
+      document.getElementById("mainImg").src = radioButton.dataset.image;
+
     });
-    
-    document.getElementById("mainImg").src=radioButton.dataset.image;
-    
   });
-});
-  
+
 
   /**************************/
   const getMetafields = async (product) => {
-    const metafieldsResponse = await fetch(`/admin/api/2021-07/products/${
-      product.id
-    }/metafields.json`).then(res => res.json()).then((metafields) => {
-      console.log(metafields)
-    })
+    const metafieldsResponse = await fetch(`/admin/api/2021-07/products/${product.id
+      }/metafields.json`).then(res => res.json()).then((metafields) => {
+        console.log(metafields)
+      })
   }
   const container = document.getElementById('related-products');
 
   fetch(window.Shopify.routes.root + `recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related`).then(response => {
     return response.json()
-  }).then(({products}) => {
+  }).then(({ products }) => {
 
-// console.log(products);
+    // console.log(products);
     var content = '';
     if (products.length > 0) {
       products.forEach(product => {
         content += `
             <div class="item max-w-[144px] w-full">
-              <a href="/products/${
-          product.handle
-        }" class="item w-full m-1 flex items-center flex-col text-[12px]">
-                <div class="img w-full">
-                  <img src="${
-          product.featured_image
-        }" alt="${
-          product.title
-        }" class="w-full h-[143px] object-cover">
+              <a href="/products/${product.handle
+          }" class="item w-full m-1 flex items-center flex-col text-[12px]">
+                <div class="w-full img">
+                  <img src="${product.featured_image
+          }" alt="${product.title
+          }" class="w-full h-[143px] object-cover">
                 </div>
-                <p class="font-bold text-center px-2 mt-1">${
-          product.title
-        }</p>
+                <p class="px-2 mt-1 font-bold text-center">${product.title
+          }</p>
                 <div class="avis flex items-center gap-2 h-[1.1rem] mb-3 mt-2">
-                  <div class="stars flex text-_main_color_dark">
+                  <div class="flex stars text-_main_color_dark">
                     
                   </div>
                   <span class="border-_main_color_dark border-b-2 text-[11px]">
                       Soyez le 1er à noter!
                   </span>
                 </div>
-                <p class="font-medium"> ${
-          (product.price / 100).toFixed(2)
-        }€ le pack</p>
+                <p class="font-medium"> ${(product.price / 100).toFixed(2)
+          }€ le pack</p>
               </a>
             </div>`;
       });
@@ -337,48 +318,48 @@ radioButtons.forEach(function(radioButton) {
     }
   });
 
-  
-// jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
+
+  // jQuery.post(window.Shopify.routes.root + 'cart/add.js', $('form[action$="/cart/add"]').serialize());
 
   // Find the "btn-acheter" button by its ID
-const acheterButton = document.getElementById('btn-acheter');
+  const acheterButton = document.getElementById('btn-acheter');
 
-// Add a click event listener to the button
-acheterButton.addEventListener('click', function (event) {
-  // Prevent the default form submission
-  event.preventDefault();
+  // Add a click event listener to the button
+  acheterButton.addEventListener('click', function (event) {
+    // Prevent the default form submission
+    event.preventDefault();
 
-  // Get the product variant ID and quantity
-  const productId = '{{ product.selected_or_first_available_variant.id }}';
-  const quantity = parseInt(document.getElementById('input-produit').value);//1; // You can adjust the quantity as needed
+    // Get the product variant ID and quantity
+    const productId = '{{ product.selected_or_first_available_variant.id }}';
+    const quantity = parseInt(document.getElementById('input-produit').value);//1; // You can adjust the quantity as needed
 
-  // Create a cart object
-  const cart = {
-    items: [
-      {
-        id: productId,
-        quantity: quantity
-      }
-    ]
-  };
+    // Create a cart object
+    const cart = {
+      items: [
+        {
+          id: productId,
+          quantity: quantity
+        }
+      ]
+    };
 
-  // Use the Shopify AJAX API to add the product to the cart
-  fetch('/cart/add.js', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(cart)
-  })
-  .then(response => response.json())
-  .then(data => {
-    // Redirect to the checkout page
-    window.location.href = '/checkout';
-  })
-  .catch(error => {
-    console.error('Error adding to cart:', error);
+    // Use the Shopify AJAX API to add the product to the cart
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(cart)
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Redirect to the checkout page
+        window.location.href = '/checkout';
+      })
+      .catch(error => {
+        console.error('Error adding to cart:', error);
+      });
   });
-});
 
 
 </script>
