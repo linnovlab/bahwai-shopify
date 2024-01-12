@@ -23,117 +23,108 @@
 </style>
 <main class="main-cats">
   {%- if collection.title == "Products" -%}
-    <div style="background-image: url({{ 'bannerblog.png' | asset_url }});" class="banner object-cover img-center sm:h-[25rem] h-[17rem]"></div>
+  <div style="background-image: url({{ 'bannerblog.png' | asset_url }});"
+    class="banner object-cover img-center sm:h-[25rem] h-[17rem]"></div>
   {%- else -%}
-    <div class="banner hero-collection object-cover img-center sm:h-[25rem] h-[17rem]"></div>
-    <div class="wave-index img-center sm:-mt-[30px] -mt-[27px] sm:h-[30px] h-[27px] bg-no-repeat w-full"></div>
+  <div class="banner hero-collection object-cover img-center sm:h-[25rem] h-[17rem]"></div>
+  <div class="wave-index img-center sm:-mt-[30px] -mt-[27px] sm:h-[30px] h-[27px] bg-no-repeat w-full"></div>
   {%- endif -%}
 
-  <section class="text-_main_color_dark flex mt-12 desktop-width">
-    {% comment %}  
+  <section class="flex mt-12 text-_main_color_dark desktop-width">
+    {% comment %}
     <div class="left-side sm:flex flex-col gap-4 max-w-[16.5rem] w-full me-[3rem] ps-8 hidden">
-    <form
-    class="filter-form"
-    id="form-filtre"
-    method="get">
-    <div class="content flex flex-col gap-3 mb-8">
-    <h4 class="font-extrabold text-lg border-b border-gray-500">Objectifs</h4>
-    {%- for filter in collection.filters -%}
-    {% if filter.label == 'Framboise' %}
-    <h4 class="font-extrabold text-lg border-b border-gray-500 mt-4">Saveurs</h4>
-    {% elsif filter.label == 'Matin' %}
-    <h4 class="font-extrabold text-lg border-b border-gray-500 mt-4">À quel moment ?</h4>
-    {% endif %}
-    {%- for filter_value in filter.values -%}
-    <div class="filter-item relative flex gap-4">
-    <i class="fa-solid fa-check"></i>
-    <input
-    type="checkbox"
-    class="checkbox"
-    name="{{ filter_value.param_name }}"
-    value="{{ filter_value.value }}"
-    id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
-    {% if filter_value.active -%}checked{%- endif %}
-    {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}>
-    <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label }}
-    {%- if filter.active_values.size > 0 -%}
-    ({{ filter.active_values.size }})
-    {%- endif -%}
-    </label>
-    </div>
-    {%- endfor -%}
-    {%- endfor -%}
-    </div>
-    <button
-    id="btn-valider-filter"
-    class="btn invisible"
-    type="submit">valider</button>
-    </form>
+      <form class="filter-form" id="form-filtre" method="get">
+        <div class="flex flex-col gap-3 mb-8 content">
+          <h4 class="text-lg font-extrabold border-b border-gray-500">Objectifs</h4>
+          {%- for filter in collection.filters -%}
+          {% if filter.label == 'Framboise' %}
+          <h4 class="mt-4 text-lg font-extrabold border-b border-gray-500">Saveurs</h4>
+          {% elsif filter.label == 'Matin' %}
+          <h4 class="mt-4 text-lg font-extrabold border-b border-gray-500">À quel moment ?</h4>
+          {% endif %}
+          {%- for filter_value in filter.values -%}
+          <div class="relative flex gap-4 filter-item">
+            <i class="fa-solid fa-check"></i>
+            <input type="checkbox" class="checkbox" name="{{ filter_value.param_name }}"
+              value="{{ filter_value.value }}" id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if
+              filter_value.active -%}checked{%- endif %} {% if filter_value.count==0 and filter_value.active==false
+              -%}disabled{%- endif %}>
+            <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label
+              }}
+              {%- if filter.active_values.size > 0 -%}
+              ({{ filter.active_values.size }})
+              {%- endif -%}
+            </label>
+          </div>
+          {%- endfor -%}
+          {%- endfor -%}
+        </div>
+        <button id="btn-valider-filter" class="invisible btn" type="submit">valider</button>
+      </form>
     </div>
     {% endcomment %}
-    <div class="right-side w-full flex flex-col gap-4 sm:me-8 me-0">
+    <div class="flex flex-col w-full gap-4 right-side sm:me-8 me-0">
       <div class="sm:px-0 px-[20px]">
-        <h1 class="title text-center">{{ collection.title }}</h1>
-        <p class="text-center mb-8">{{ collection.metafields.custom.teasing_title }}</p>
-        <div class="flex justify-end sm:hidden mb-4">{% comment %}  
-          <p id="open-filter-modal" class="flex gap-4 border-b text-_main_color_dark border-_main_color_dark hover:cursor-pointer">
-          <img
-          src="{{ 'Filtrer.svg' |asset_url }}"
-          alt="filter"
-          width="auto"
-          height="auto"
-          loading="lazy">
-          <span class="font-medium sm:text-base text-sm">Filtrer</span>
+        <h1 class="text-center title">{{ collection.title }}</h1>
+        <p class="mb-8 text-center">{{ collection.metafields.custom.teasing_title }}</p>
+        <div class="flex justify-end mb-4 sm:hidden">{% comment %}
+          <p id="open-filter-modal"
+            class="flex gap-4 border-b text-_main_color_dark border-_main_color_dark hover:cursor-pointer">
+            <img src="{{ 'Filtrer.svg' |asset_url }}" alt="filter" width="auto" height="auto" loading="lazy">
+            <span class="text-sm font-medium sm:text-base">Filtrer</span>
           </p>
           {% endcomment %}
         </div>
-        <div id="collection-products-container" class="flex justify-around flex-wrap sm:gap-8 gap-2 items-center">
+        <div id="collection-products-container" class="flex flex-wrap items-center justify-around gap-2 sm:gap-8">
           {% for product in collection.products %}
-            {% comment %} getting rating value {% endcomment %}
-            {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
-            {%- assign n = rates | first | plus: 0 -%}
+          {% comment %} getting rating value {% endcomment %}
+          {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
+          {%- assign n = rates | first | plus: 0 -%}
 
-            <div class="content-item sm:w-auto w-[9rem] text-sm">
-              <a href="{{ product.url }}" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-                <div class="img w-full">
-                  <img
-                    src="{{ product |image_url: width: 600, height: 600 }}"
-                    alt="La gourmande aux noisettes"
-                    class="w-full"
-                    width="auto"
-                    height="auto"
-                    loading="lazy">
-                </div>
-                <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
-                <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                  <div class="stars flex text-_main_color_dark text-sm">
-                    {% if product.metafields.reviews.rating_count != null %}
-                      {%- for i in (1..5) -%}
-                        {%- if i <= n -%}
-                          <i class="fas fa-star"></i>
-                        {%- else -%}
-                          <i class="fa-regular fa-star"></i>
-                        {%- endif -%}
-                      {%- endfor -%}
+          <div class="content-item sm:w-auto w-[9rem] text-sm">
+            <a href="{{ product.url }}"
+              class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+              <div class="w-full img">
+                <img src="{{ product |image_url: width: 600, height: 600 }}" alt="La gourmande aux noisettes"
+                  class="w-full" width="auto" height="auto" loading="lazy">
+              </div>
+              <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
+              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                <div class="flex text-sm stars text-_main_color_dark">
+                  {% if product.metafields.reviews.rating_count != null %}
+                  {%- for i in (1..5) -%}
+                  {%- if i <= n -%} <i class="fas fa-star"></i>
+                    {%- else -%}
+                    <i class="fa-regular fa-star"></i>
                     {%- endif -%}
-                  </div>
-                  <span class="border-_main_color_dark border-b-2 text-[11px]">
-                    {% if product.metafields.reviews.rating_count == null %}
-                      Soyez le 1er à noter!
-                    {% else %}
-                      {{ product.metafields.reviews.rating_count }} avis
-                    {% endif %}
-                  </span>
+                    {%- endfor -%}
+                    {%- endif -%}
                 </div>
-                <p class="font-medium">À partir de {{ product.price | divided_by: 100.00 }} €
-                </p>
-              </a>
-            </div>
+                <span class="border-_main_color_dark border-b-2 text-[11px]">
+                  {% if product.metafields.reviews.rating_count == null %}
+                  Soyez le 1er à noter!
+                  {% else %}
+                  {{ product.metafields.reviews.rating_count }} avis
+                  {% endif %}
+                </span>
+              </div>
+              <p class="font-medium">
+                {% if product.compare_at_price %}
+                <span id="promo-price" class="pe-[7px]">
+                  {{ product.compare_at_price | money_without_currency
+                  }}€
+                </span>
+                {% endif %}
+                <span>À partir de {{ product.price | divided_by: 100.00 }} €</span>
+              </p>
+            </a>
+          </div>
           {% endfor %}
         </div>
 
         <div class="desc text-sm text-[rgb(86,86,86)] mt-8">
-          <h5 class="text-lg font-bold text-_main_color_dark">{{ collection.metafields.custom.title_description_en_bas }}</h5>
+          <h5 class="text-lg font-bold text-_main_color_dark">{{ collection.metafields.custom.title_description_en_bas
+            }}</h5>
           {{ collection.description }}
         </div>
       </div>

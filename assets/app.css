@@ -1903,6 +1903,11 @@ html {
   padding-bottom: 6rem;
 }
 
+.pe-\[7px\]{
+  -webkit-padding-end: 7px;
+          padding-inline-end: 7px;
+}
+
 .pr-8{
   padding-right: 2rem;
 }

@@ -1,147 +1,115 @@
-<section
-  class="nouveautes desktop-width">
-  <div
-    class="nouveautes-header flex flex-col justify-center items-center mb-6 mt-16">
-    <h2
-      class="title text-2xl text-center mx-4 sm:mt-0 mt-12">{{ section.settings.titre }}
+<section class="nouveautes desktop-width">
+  <div class="flex flex-col items-center justify-center mt-16 mb-6 nouveautes-header">
+    <h2 class="mx-4 mt-12 text-2xl text-center title sm:mt-0">{{ section.settings.titre }}
     </h2>
     <div
       class="cats-navigation mt-8 max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
-      <nav
-        class="text-_main_color_dark mt-2 z-50 sm:w-full w-[43rem]">
-        <ul
-          id="nouveautes-links"
-          class="flex justify-start mx-2 sm:justify-center sm:mx-0 gap-[20px] font-bold mb-1">
+      <nav class="text-_main_color_dark mt-2 z-50 sm:w-full w-[43rem]">
+        <ul id="nouveautes-links" class="flex justify-start mx-2 sm:justify-center sm:mx-0 gap-[20px] font-bold mb-1">
           {% for link in linklists['liens-categories'].links %}
-            {% if link.title == 'Nouveautés' %}
-              <li>
-                <span
-                  data-handle="{{ link.handle }}"
-                  role="button"
-                  title="{{ link.title }}"
-                  class="cats-hover hover:border-_red_color active">{{ link.title }}
-                </span>
-              </li>
-            {% else %}
-              <li>
-                <span
-                  data-handle="{{ link.handle }}"
-                  role="button"
-                  title="{{ link.title }}"
-                  class="cats-hover hover:border-_red_color">{{ link.title }}
-                </span>
-              </li>
-            {% endif %}
+          {% if link.title == 'Nouveautés' %}
+          <li>
+            <span data-handle="{{ link.handle }}" role="button" title="{{ link.title }}"
+              class="cats-hover hover:border-_red_color active">{{ link.title }}
+            </span>
+          </li>
+          {% else %}
+          <li>
+            <span data-handle="{{ link.handle }}" role="button" title="{{ link.title }}"
+              class="cats-hover hover:border-_red_color">{{ link.title }}
+            </span>
+          </li>
+          {% endif %}
           {% endfor %}
         </ul>
-        <hr
-          class="bg-[#DCDCDC] h-[2px] w-[100%] z-0">
+        <hr class="bg-[#DCDCDC] h-[2px] w-[100%] z-0">
       </nav>
     </div>
   </div>
 
-  <div
-    id="main-swipper-collections"
-    class="nouveautes-content p-0 m-0 sm:p-8 sm:m-8">
+  <div id="main-swipper-collections" class="p-0 m-0 nouveautes-content sm:p-8 sm:m-8">
 
     {% for link in linklists['liens-categories'].links %}
-      {% assign categ = link.handle %}
-      <div
-        id="{{ categ }}"
-        class="{%- if forloop.first == false -%} hidden {%- endif -%} ">
-        <div
-          class="swiper swiper-nouveautes relative sm:px-8">
-          <div
-            class="swiper-wrapper items-stretch sm:justify-center text-_main_color_dark ">
-            {% for product in collections[categ].products %}
-              {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
-              {%- assign n = rates | first | plus: 0 -%}
-              <div
-                class="swiper-slide">
-                <a
-                  href="{{ product.url }}"
-                  class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-                  <div
-                    class="img w-full">
-                    <img
-                      src="{{ product | image_url: width: 600, height: 600 }}"
-                      alt="{{ product.title }}"
-                      class="w-full object-cover"
-                      width="auto"
-                      height="auto"
-                      loading="lazy">
-                  </div>
-                  <p
-                    class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
-                  <div
-                    class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                    <div
-                      class="stars flex text-sm">
-                      {% if product.metafields.reviews.rating_count != null %}
-                        {%- for i in (1..5) -%}
-                          {%- if i <= n -%}
-                            <i
-                              class="fas fa-star"></i>
-                          {%- else -%}
-                            <i
-                              class="fa-regular fa-star"></i>
-                          {%- endif -%}
-                        {%- endfor -%}
-                      {%- endif -%}
-                    </div>
-                    <span
-                      class="border-_main_color_dark border-b text-_main_color_dark ">
-                      {% if product.metafields.reviews.rating_count == null %}
-                        Soyez le 1er à noter!
-                      {% else %}
-                        {{ product.metafields.reviews.rating_count }} avis
-                      {% endif %}
-                    </span>
-                  </div>
-                  <p
-                    class="font-medium flex flex-col">
-                    <span>
-                      {{ product.price | money_without_currency }}€ le pack
-                    </span>
-                    <span
-                      class="text-[0.6rem]">
-                      {% if product.variants.first.unit_price %}
-                        soit {{ product.variants.first.unit_price | money_without_currency }}€/unité
-                      {% endif %}
-                    </span>
-                  </p>
-                </a>
+    {% assign categ = link.handle %}
+    <div id="{{ categ }}" class="{%- if forloop.first == false -%} hidden {%- endif -%} ">
+      <div class="relative swiper swiper-nouveautes sm:px-8">
+        <div class="items-stretch swiper-wrapper sm:justify-center text-_main_color_dark ">
+          {% for product in collections[categ].products %}
+          {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
+          {%- assign n = rates | first | plus: 0 -%}
+          <div class="swiper-slide">
+            <a href="{{ product.url }}"
+              class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+              <div class="w-full img">
+                <img src="{{ product | image_url: width: 600, height: 600 }}" alt="{{ product.title }}"
+                  class="object-cover w-full" width="auto" height="auto" loading="lazy">
               </div>
-            {% endfor %}
+              <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
+              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+                <div class="flex text-sm stars">
+                  {% if product.metafields.reviews.rating_count != null %}
+                  {%- for i in (1..5) -%}
+                  {%- if i <= n -%} <i class="fas fa-star"></i>
+                    {%- else -%}
+                    <i class="fa-regular fa-star"></i>
+                    {%- endif -%}
+                    {%- endfor -%}
+                    {%- endif -%}
+                </div>
+                <span class="border-b border-_main_color_dark text-_main_color_dark ">
+                  {% if product.metafields.reviews.rating_count == null %}
+                  Soyez le 1er à noter!
+                  {% else %}
+                  {{ product.metafields.reviews.rating_count }} avis
+                  {% endif %}
+                </span>
+              </div>
+              <p class="flex flex-col font-medium">
+                <div>
+                  {% if product.compare_at_price %}
+                  <span id="promo-price" class="pe-[7px]">
+                    {{ product.compare_at_price | money_without_currency
+                    }}€
+                  </span>
+                  {% endif %}
+                  <span>
+                    {{ product.price | money_without_currency }}€ le pack
+                  </span>
+                </div>
+                <span class="text-[0.6rem]">
+                  {% if product.variants.first.unit_price %}
+                  soit {{ product.variants.first.unit_price | money_without_currency }}€/unité
+                  {% endif %}
+                </span>
+              </p>
+            </a>
           </div>
+          {% endfor %}
         </div>
       </div>
+    </div>
     {% endfor %}
 
   </div>
 
 
 
-  <p
-    class="text-center mt-[30px] mb-[100px]">
-    <a
-      id="btn-collection-link"
-      href="{{ collections['nouveautes'].url }}"
-      class="btn mx-auto">Voir plus</a>
+  <p class="text-center mt-[30px] mb-[100px]">
+    <a id="btn-collection-link" href="{{ collections['nouveautes'].url }}" class="mx-auto btn">Voir plus</a>
   </p>
 </section>
 
 {% schema %}
-  {
-    "name": "Section Nouveautés",
-    "class": "section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "titre",
-        "label": "Titre de la section",
-        "default": "Nos nouveautés raffraichissantes"
-      }
-    ]
-  }
+{
+"name": "Section Nouveautés",
+"class": "section",
+"settings": [
+{
+"type": "text",
+"id": "titre",
+"label": "Titre de la section",
+"default": "Nos nouveautés raffraichissantes"
+}
+]
+}
 {% endschema %}
