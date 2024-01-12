@@ -2,69 +2,67 @@
 
 
 {% if search.performed %}
-  <h1 class="title !text-_main_color_dark w-[35rem] mx-auto mt-12 mb-4">
-    Recherche avancée dans la catalogue
-    {{ search.results_count }} résultats pour “{{ search.terms }}”
-  </h1>
+<h1 class="title !text-_main_color_dark w-[35rem] mx-auto mt-12 mb-4">
+  Recherche avancée dans la catalogue
+  {{ search.results_count }} résultats pour “{{ search.terms }}”
+</h1>
 {% else %}
-  <h1 class="title !text-_main_color_dark w-[35rem] mx-auto mt-12 mb-4">
-    Faites une recherche sur la bar de recherche
-  </h1>
+<h1 class="title !text-_main_color_dark w-[35rem] mx-auto mt-12 mb-4">
+  Faites une recherche sur la bar de recherche
+</h1>
 {% endif %}
 
 {%- paginate search.results by 10 -%}
-  <div class="content flex justify-around flex-wrap gap-4 sm:gap-8 mt-2 px-20 mb-24" role="list">
+<div class="flex flex-wrap justify-around gap-4 px-20 mt-2 mb-24 content sm:gap-8" role="list">
 
-    {%- for item in search.results -%}
-      {% assign lazy_load = false %}
-      {%- if forloop.index > 2 -%}
-        {%- assign lazy_load = true -%}
-      {%- endif -%}
-
-      <div class="item w-[9rem] sm:w-[11rem]">
-        {%- case item.object_type -%}
-          {%- when 'product' -%}
-            {% comment %} getting rating value {% endcomment %}
-          {%- assign rates = item.metafields.reviews.rating.value | split: '.' -%}
-          {%- assign n = rates | first | plus:0 -%} 
-
-          <a href="{{ item.url }}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-            <div class="img w-full">
-              <img
-                src="{{ item | image_url: width: 800 }}"
-                alt="La gourmande aux noisettes"
-                class="w-full object-cover h-[220px]">
-            </div>
-            <p class="font-semibold w-[10rem] text-center mt-2">{{ item.title | escape }}</p>
-            <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-              <div class="stars flex text-sm">
-                {% if item.metafields.reviews.rating_count != null %}
-                  {%- for i in (1..5) -%}
-                    {%- if i <= n -%} 
-                      <i class="fas fa-star"></i>
-                    {%- else -%}
-                      <i class="fa-regular fa-star"></i>
-                    {%- endif -%}
-                  {%- endfor -%}
-                {%- endif -%}
-              </div>
-              <span class="border-_main_color_dark border-b text-_main_color_dark ">
-                {% if item.metafields.reviews.rating_count == null %}
-                  Soyez le 1er à noter!
-                {% else %}
-                  {{ item.metafields.reviews.rating_count }} avis
-                {% endif %} 
-              </span>
-            </div>
-            <p class="font-medium">À partir de {{ item.price }}€
-            </p>
-          </a>
-        {%- endcase -%}
-      </div>
-    {%- endfor -%}
-
-  </div>
-  {%- if paginate.pages > 1 -%}
-    {% render 'pagination', paginate: paginate %}
+  {%- for item in search.results -%}
+  {% assign lazy_load = false %}
+  {%- if forloop.index > 2 -%}
+  {%- assign lazy_load = true -%}
   {%- endif -%}
+
+  <div class="item w-[9rem] sm:w-[11rem]">
+    {%- case item.object_type -%}
+    {%- when 'product' -%}
+    {% comment %} getting rating value {% endcomment %}
+    {%- assign rates = item.metafields.reviews.rating.value | split: '.' -%}
+    {%- assign n = rates | first | plus:0 -%}
+
+    <a href="{{ item.url }}"
+      class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
+      <div class="w-full img">
+        <img src="{{ item | image_url: width: 800 }}" alt="La gourmande aux noisettes"
+          class="w-full object-cover h-[220px]">
+      </div>
+      <p class="font-semibold w-[10rem] text-center mt-2">{{ item.title | escape }}</p>
+      <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
+        <div class="flex text-sm stars">
+          {% if item.metafields.reviews.rating_count != null %}
+          {%- for i in (1..5) -%}
+          {%- if i <= n -%} <i class="fas fa-star"></i>
+            {%- else -%}
+            <i class="fa-regular fa-star"></i>
+            {%- endif -%}
+            {%- endfor -%}
+            {%- endif -%}
+        </div>
+        <span class="border-b border-_main_color_dark text-_main_color_dark ">
+          {% if item.metafields.reviews.rating_count == null %}
+          Soyez le 1er à noter!
+          {% else %}
+          {{ item.metafields.reviews.rating_count }} avis
+          {% endif %}
+        </span>
+      </div>
+      <p class="font-medium">À partir de {{ item.price }}€
+      </p>
+    </a>
+    {%- endcase -%}
+  </div>
+  {%- endfor -%}
+
+</div>
+{%- if paginate.pages > 1 -%}
+{% render 'pagination', paginate: paginate %}
+{%- endif -%}
 {% endpaginate %}
