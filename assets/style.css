@@ -98,7 +98,6 @@ body {
   width: 100%;
 }
 
-
 /*  style for promo code prooduct */
 #promo-price{
   @apply font-medium line-through text-_main_color_dark;
