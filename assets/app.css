@@ -616,8 +616,8 @@ html {
   position: sticky;
 }
 
-.bottom-\[-78px\]{
-  bottom: -78px;
+.bottom-\[-98px\]{
+  bottom: -98px;
 }
 
 .left-0{
@@ -650,6 +650,10 @@ html {
 
 .top-\[-11px\]{
   top: -11px;
+}
+
+.top-\[101px\]{
+  top: 101px;
 }
 
 .top-\[14rem\]{
@@ -1118,6 +1122,10 @@ html {
   height: 27rem;
 }
 
+.h-\[29rem\]{
+  height: 29rem;
+}
+
 .h-\[2px\]{
   height: 2px;
 }
@@ -1136,10 +1144,6 @@ html {
 
 .h-\[500px\]{
   height: 500px;
-}
-
-.h-\[520px\]{
-  height: 520px;
 }
 
 .h-\[550px\]{
@@ -1216,6 +1220,10 @@ html {
 
 .w-\[130px\]{
   width: 130px;
+}
+
+.w-\[170px\]{
+  width: 170px;
 }
 
 .w-\[17rem\]{
@@ -3354,8 +3362,12 @@ tbody tr:last-child td{
 }
 
 @media (min-width: 640px){
-  .sm\:bottom-\[-52px\]{
-    bottom: -52px;
+  .sm\:bottom-\[-25px\]{
+    bottom: -25px;
+  }
+
+  .sm\:top-\[168px\]{
+    top: 168px;
   }
 
   .sm\:m-4{
@@ -3478,12 +3490,12 @@ tbody tr:last-child td{
     height: 30px;
   }
 
-  .sm\:h-\[40rem\]{
-    height: 40rem;
+  .sm\:h-\[31rem\]{
+    height: 31rem;
   }
 
-  .sm\:h-\[655px\]{
-    height: 655px;
+  .sm\:h-\[40rem\]{
+    height: 40rem;
   }
 
   .sm\:h-\[690px\]{

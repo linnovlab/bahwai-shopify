@@ -1095,6 +1095,22 @@ $(document).ready(() => {
 });
 
 try {
+
+  new Swiper('.swiper-photos', {
+    slidesPerView: 1,
+    centeredSlides: false,
+    slidesPerGroupSkip: 2,
+    grabCursor: false,
+    keyboard: {
+      enabled: true,
+    },
+    navigation: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+
   new Swiper('.swiper-nouveautes', {
     slidesPerView: 1,
     centeredSlides: false,
