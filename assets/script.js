@@ -1102,7 +1102,7 @@ try {
     slidesPerGroupSkip: 2,
     grabCursor: false,
     autoplay: {
-      delay: 10000,
+      delay: 5000,
       disableOnInteraction: false,
     },
     keyboard: {
