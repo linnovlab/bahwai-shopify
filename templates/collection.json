@@ -4,7 +4,7 @@
       "type": "image-with-text",
       "settings": {
         "image": "shopify:\/\/shop_images\/Plandetravail1.png",
-        "height": "small",
+        "height": "large",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "middle",
