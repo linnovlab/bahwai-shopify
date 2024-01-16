@@ -1,192 +1,221 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="">
-  <link rel="canonical" href="{{ canonical_url }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link type="image/png" rel="shortcut icon" href="{{ '300DPI.png' | asset_url }}" type="image/x-icon">
-  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      type="image/png"
+      rel="shortcut icon"
+      href="{{ '300DPI.png' | asset_url }}"
+      type="image/x-icon">
+    <link
+      rel="preconnect"
+      href="https://cdn.shopify.com"
+      crossorigin>
 
-  {%- if settings.favicon != blank -%}
-  <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32 }}">
-  {%- endif -%}
+    {%- if settings.favicon != blank -%}
+      <link
+        rel="icon"
+        type="image/png"
+        href="{{ settings.favicon | image_url: width: 32 }}">
+    {%- endif -%}
 
-  {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-  {%- endunless -%}
+    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+      <link
+        rel="preconnect"
+        href="https://fonts.shopifycdn.com"
+        crossorigin>
+    {%- endunless -%}
 
-  <title>
-    {{ page_title }}
-    {%- if current_tags %}
-    &ndash; tagged "{{ current_tags | join: ', ' }}
-    "{% endif -%}
-    {%- if current_page != 1 %}
-    &ndash; Page
-    {{ current_page }}
-    {% endif -%}
-    {%- unless page_title contains shop.name %}
-    &ndash;
-    {{ shop.name }}
-    {% endunless -%}
-  </title>
+    <title>
+      {{ page_title }}
+      {%- if current_tags %}
+        &ndash; tagged "{{ current_tags | join: ', ' }}
+        "{% endif -%}
+      {%- if current_page != 1 %}
+        &ndash; Page
+        {{ current_page }}
+      {% endif -%}
+      {%- unless page_title contains shop.name %}
+        &ndash;
+        {{ shop.name }}
+      {% endunless -%}
+    </title>
 
-  {% if page_description %}
-  <meta name="description" content="{{ page_description | escape }}">
-  {% endif %}
-
-  {% render 'meta-tags' %}
-
-  <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-  {% # theme-check-disable ParserBlockingScriptTag %}
-  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
-  {% # theme-check-enable ParserBlockingScriptTag %}
-
-
-  {{ content_for_header }}
-
-  {% render 'head-styles' %}
-  {% comment %}
-  <script src="https://smtpjs.com/v3/smtp.js"></script> {% endcomment %}
-  <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
-  <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
-  <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
-
-  {%- unless settings.type_body_font.system? -%}
-  <link rel="preload_tag" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
-  {%- endunless -%}
-  {%- unless settings.type_header_font.system? -%}
-  <link rel="preload_tag" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
-  {%- endunless -%}
-
-
-
-  <script>
-    // redirection from from cart to home
-    if (window.location.pathname === '/cart') {
-      window.location.href = '/';
-
-    }
-
-    // --------
-    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-    if (Shopify.designMode) {
-      document.documentElement.classList.add('shopify-design-mode');
-    }
-    var markerImageUrl = '{{ "70dPI.png" | asset_url }}';
-  </script>
-
-</head>
-
-<body class="overflow-x-hidden">
-  <a class="sr-only skip-to-content-link button" href="#MainContent">
-    {{ "accessibility.skip_to_text" | t }}
-  </a>
-
-  {% if template.name != '404' %}
-  <header class="relative">
-    {% section 'bh-header' %}
-    {% render 'bh-menu-bars' %}
-  </header>
-  {% endif %}
-
-  <main id="MainContent" role="main" tabindex="-1">
-    {{ content_for_layout }}
-
-
-    {% if template.name == 'index' %}
-    <div id="popup-welcom" class="popup fixed top-[5rem] left-0 w-full z-50 hidden">
-      <p class="bg-_orange_color text-white text-center py-8 sm:px-[7rem] px-[24px] font-semibold">On a bien pris en
-        compte ton inscription, bienvenue dans la famille !! Tu
-        vas bientôt recevoir un email pour confirmer ton inscription et profiter de ton offre de bienvenue
-      </p>
-    </div>
-    <section class="banner relative sm:h-[25rem] h-[20rem] flex justify-center items-center">
-      <div class="flex flex-col items-center justify-center gap-2 text-white banner-content">
-        <h1 class="title-white">Une pause gourmande, sans culpabilité !
-        </h1>
-        <p class="text-center pt-5 sm:px-[5rem] px-4">
-          Vivez l’expérience délicieusement saine avec nos boissons à base de CBD et nos snacks
-          sucrés !
-        </p>
-        <p class="pt-[3rem] flex flex-col gap-4">
-          <a href="collections/{{ collection.handle }}" class="block text-center btn">Je veux découvrir</a>
-          <a href="{{ pages.laventure-bahwai.url }}" class="block text-center btn-secondaire">L'aventure Bahwai</a>
-        </p>
-      </div>
-      <style>
-        @media screen and (max-width: 641px) {
-          .wave-index {
-            background-image: url('{{ ' Vague-Mobile.svg' |asset_url }}');
-          }
-        }
-
-        @media screen and (min-width: 641px) {
-          .wave-index {
-            background-image: url('{{ ' Vague-desktop.svg' |asset_url }}');
-          }
-        }
-      </style>
-      <div class="wave-index absolute sm:bottom-[-25px] bottom-[-92px] img-center bg-no-repeat h-[27px] w-full"></div>
-    </section>
-
-    {% section 'bh-nouveautes' %}
-    {% section 'site-info-section' %}
-    {% render 'bh-categories' %}
-    {% section 'bh-pour-un-monde' %}
-    {% section 'bh-map' %}
-    {% section 'bh-newsletter' %}
-    {% render 'bh-faq' %}
-    {% section 'bh-avis' %}
-    {% render 'bh-rejoignez-nous' %}
-    {% section 'bh-actualites' %}
-    {% section 'bh-partenaire' %}
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
-    {% render 'bh-search-modal' %}
-    {% render 'bh-panier-modal' %}
-    {% render 'bh-popup' %}
+    {% render 'meta-tags' %}
 
-  </main>
-
-  <ul hidden>
-    <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}
-    </li>
-  </ul>
-
-  {% render 'footer-scripts' %}
-
-  {% if template.name != '404' %}
-  {% if template.name != 'login' %}
-
-  {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
-  {% render 'bh-footer-complet' %}
-  {% else %}
-  {% render 'bh-footer-autre' %}
-  {% endif %}
-
-  {% else %}
-  {% render 'bh-footer-login' %}
-  {% endif %}
-  {% endif %}
+    <script src="{{ 'global.js' | asset_url }}" defer="defer">
+  </script>
+    {% # theme-check-disable ParserBlockingScriptTag %}
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+    {% # theme-check-enable ParserBlockingScriptTag %}
 
 
+    {{ content_for_header }}
 
-  <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer="defer"></script>
-  {% if template.name == 'index' %}
-  <script src="{{ 'googlemap.js' | asset_url }}" defer="defer"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaunCobZvtIMnUIImtFTtfmpJ7fLl3JTY&libraries=places,geometry"
-    defer="defer"></script>
-  {% endif %}
-</body>
+    {% render 'head-styles' %}
+    {% comment %} 
+            <script src="https://smtpjs.com/v3/smtp.js"></script>
+        {% endcomment %}
+    <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
+    <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
+
+    {%- unless settings.type_body_font.system? -%}
+      <link
+        rel="preload_tag"
+        as="font"
+        href="{{ settings.type_body_font | font_url }}"
+        type="font/woff2"
+        crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_header_font.system? -%}
+      <link
+        rel="preload_tag"
+        as="font"
+        href="{{ settings.type_header_font | font_url }}"
+        type="font/woff2"
+        crossorigin>
+    {%- endunless -%}
+
+
+    <script>
+          // redirection from from cart to home
+          if (window.location.pathname === '/cart') {
+      window.location.href = '/';
+      
+          }
+      
+          // --------
+          document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+          if (Shopify.designMode) {
+      document.documentElement.classList.add('shopify-design-mode');
+          }
+          var markerImageUrl = '{{ "70dPI.png" | asset_url }}';
+    </script>
+
+  </head>
+
+  <body class="overflow-x-hidden">
+    <a class="sr-only skip-to-content-link button" href="#MainContent">
+      {{ "accessibility.skip_to_text" | t }}
+    </a>
+
+    {% if template.name != '404' %}
+      <header class="relative">
+        {% section 'bh-header' %}
+        {% render 'bh-menu-bars' %}
+      </header>
+    {% endif %}
+
+    <main
+      id="MainContent"
+      role="main"
+      tabindex="-1">
+      {{ content_for_layout }}
+
+
+      {% if template.name == 'index' %}
+        <div id="popup-welcom" class="popup fixed top-[5rem] left-0 w-full z-50 hidden">
+          <p class="bg-_orange_color text-white text-center py-8 sm:px-[7rem] px-[24px] font-semibold">On a bien pris en
+ 
+        compte ton inscription, bienvenue dans la famille !! Tu
+        vas bientôt recevoir un email pour confirmer ton inscription et profiter de ton offre de bienvenue
+          </p>
+        </div>
+        <section class="banner relative sm:h-[25rem] h-[20rem] flex justify-center items-center">
+          <div class="flex flex-col items-center justify-center gap-2 text-white banner-content">
+            <h1 class="title-white">Une pause gourmande, sans culpabilité !
+            </h1>
+            <p class="text-center pt-5 sm:px-[5rem] px-4">
+              Vivez l’expérience délicieusement saine avec nos boissons à base de CBD et nos snacks
+ 
+ 
+          sucrés !
+            </p>
+            <p class="pt-[3rem] flex flex-col gap-4">
+              <a href="collections/{{ collection.handle }}" class="block text-center btn">Je veux découvrir</a>
+              <a href="{{ pages.laventure-bahwai.url }}" class="block text-center btn-secondaire">L'aventure Bahwai</a>
+            </p>
+          </div>
+          <style>
+            @media screen and (max-width: 641px) {
+              .wave-index {
+                background-image: url('{{ ' Vague-Mobile.svg' |asset_url }}');
+              }
+            }
+
+            @media screen and (min-width: 641px) {
+              .wave-index {
+                background-image: url('{{ ' Vague-desktop.svg' |asset_url }}');
+              }
+            }
+          </style>
+          <div class="wave-index absolute sm:bottom-[-25px] bottom-[-92px] img-center bg-no-repeat h-[27px] w-full"></div>
+        </section>
+
+        {% section 'bh-nouveautes' %}
+        {% section 'site-info-section' %}
+        {% render 'bh-categories' %}
+        {% section 'bh-pour-un-monde' %}
+        {% section 'bh-map' %}
+        {% section 'bh-newsletter' %}
+        {% render 'bh-faq' %}
+        {% section 'bh-avis' %}
+        {% render 'bh-rejoignez-nous' %}
+        {% section 'bh-actualites' %}
+        {% section 'bh-partenaire' %}
+      {% endif %}
+
+      {% render 'bh-search-modal' %}
+      {% render 'bh-panier-modal' %}
+      {% render 'bh-popup' %}
+
+    </main>
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+    </ul>
+
+    {% render 'footer-scripts' %}
+
+    {% if template.name != '404' %}
+      {% if template.name != 'login' %}
+
+        {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
+          {% render 'bh-footer-complet' %}
+        {% else %}
+          {% render 'bh-footer-autre' %}
+        {% endif %}
+
+      {% else %}
+        {% render 'bh-footer-login' %}
+      {% endif %}
+    {% endif %}
+
+
+    <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer="defer"></script>
+    {% if template.name == 'index' %}
+      <script src="{{ 'googlemap.js' | asset_url }}" defer="defer"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaunCobZvtIMnUIImtFTtfmpJ7fLl3JTY&libraries=places,geometry" defer="defer"></script>
+    {% endif %}
+  </body>
 
 </html>

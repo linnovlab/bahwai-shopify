@@ -105,10 +105,36 @@
 "label": "Image 5"
 }
 ],
-"blocks": [
-{
-"type": "@app"
-}
-]
+"max_blocks": 5,
+    "blocks": [
+      {
+        "name": "Carousel du hero",
+        "type": "announcement",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "hero_img",
+            "label": "image hero"
+          },
+          {
+            "type": "text",
+            "id": "message",
+            "label": "Message",
+            "default": " je me sens enfin en forme"
+          },
+          {
+            "type": "text",
+            "id": "autheur",
+            "label": "Autheur",
+            "default": "Marie"
+          }, {
+            "type": "text",
+            "id": "date",
+            "label": "Date publication",
+            "default": "6. juin, 2022."
+          }
+        ]
+      }
+    ]
 }
 {% endschema %}
