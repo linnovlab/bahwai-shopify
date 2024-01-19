@@ -3,138 +3,82 @@
 
 <script type="application/ld+json">
   {
-  "@context": "http://schema.org",
-                                            "@type": "Organization",
-                                            "name": {{ shop.name | json }},
-  {% if settings.logo %}
-    "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
-  {% endif %}
-  "sameAs": [
-  {{ settings.social_twitter_link | json }},
-  {{ settings.social_facebook_link | json }},
-  {{ settings.social_pinterest_link | json }},
-  {{ settings.social_instagram_link | json }},
-  {{ settings.social_tiktok_link | json }},
-  {{ settings.social_tumblr_link | json }},
-  {{ settings.social_snapchat_link | json }},
-  {{ settings.social_youtube_link | json }},
-  {{ settings.social_vimeo_link | json }}
-  ],
-  "url": {{ request.origin | append: page.url | json }}
-  }
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": {{ shop.name | json }},
+      {% if settings.logo %}
+      "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
+      {% endif %}
+      "sameAs": [
+        {{ settings.social_twitter_link | json }},
+        {{ settings.social_facebook_link | json }},
+        {{ settings.social_pinterest_link | json }},
+        {{ settings.social_instagram_link | json }},
+        {{ settings.social_tiktok_link | json }},
+        {{ settings.social_tumblr_link | json }},
+        {{ settings.social_snapchat_link | json }},
+        {{ settings.social_youtube_link | json }},
+        {{ settings.social_vimeo_link | json }}
+      ],
+      "url": {{ request.origin | append: page.url | json }}
+    }
 </script>
 
 {%- if request.page_type == 'index' -%}
-{% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
-<script type="application/ld+json">
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
+  <script type="application/ld+json">
     {
-    "@context": "http://schema.org",
-                                                                                      "@type": "WebSite",
-                                                                                      "name": {{ shop.name | json }},
-    "potentialAction": {
-                                                                                        "@type": "SearchAction",
-                                                                                        "target": {{ potential_action_target | json }},
-    "query-input": "required name=search_term_string"
-                                                                                      },
-                                                                                      "url": {{ request.origin | append: page.url | json }}
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      },
+      "url": {{ request.origin | append: page.url | json }}
     }
   </script>
 {%- endif -%}
 
 
 {% schema %}
-{
-"name": "Bahwai Menu",
-"class": "section-header",
-"settings": [
-{
-"type": "text",
-"id": "annonce",
-"label": "Annonce",
-"default": "Profitez de -15% pour votre première commande avec le code WELCOME"
-},
-{
-"type": "link_list",
-"id": "menu",
-"default": "main-menu",
-"label": "Menu principale"
-},
-{
-"type": "image_picker",
-"id": "logo",
-"label": "Logo"
-},
-{
-"type": "range",
-"id": "logo_width",
-"min": 50,
-"max": 250,
-"step": 10,
-"default": 100,
-"unit": "px",
-"label": "largeur"
-},
-{
-"type": "url",
-"id": "video_url",
-"label": "Vidéo du hero"
-},
-{
-"type": "image_picker",
-"id": "image_1",
-"label": "Image 1"
-},
-{
-"type": "image_picker",
-"id": "image_2",
-"label": "Image 2"
-},
-{
-"type": "image_picker",
-"id": "image_3",
-"label": "Image 3"
-},
-{
-"type": "image_picker",
-"id": "image_4",
-"label": "Image 4"
-},
-{
-"type": "image_picker",
-"id": "image_5",
-"label": "Image 5"
-}
-],
-"max_blocks": 5,
-    "blocks": [
+  {
+    "name": "Bahwai Menu",
+    "class": "section-header",
+    "settings": [
       {
-        "name": "Carousel du hero",
-        "type": "announcement",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "hero_img",
-            "label": "image hero"
-          },
-          {
-            "type": "text",
-            "id": "message",
-            "label": "Message",
-            "default": " je me sens enfin en forme"
-          },
-          {
-            "type": "text",
-            "id": "autheur",
-            "label": "Autheur",
-            "default": "Marie"
-          }, {
-            "type": "text",
-            "id": "date",
-            "label": "Date publication",
-            "default": "6. juin, 2022."
-          }
-        ]
+        "type": "text",
+        "id": "annonce",
+        "label": "Annonce",
+        "default": "Profitez de -15% pour votre première commande avec le code WELCOME"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "default": "main-menu",
+        "label": "Menu principale"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 50,
+        "max": 250,
+        "step": 10,
+        "default": 100,
+        "unit": "px",
+        "label": "largeur"
+      },
+      {
+        "type": "url",
+        "id": "video_url",
+        "label": "Vidéo du hero"
       }
     ]
-}
+  }
 {% endschema %}

@@ -1,0 +1,50 @@
+<div>
+  {% render 'photos-carousel' %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Bahwai Hero",
+    "class": "section-header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1"
+      }
+    ],
+    "max_blocks": 5,
+    "blocks": [
+      {
+        "name": "Carousel du hero",
+        "type": "announcement",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "hero_img",
+            "label": "image hero"
+          },
+          {
+            "type": "text",
+            "id": "titre_1",
+            "label": "Titre 1",
+            "default": "Une pause gourmande, sans culpabilité !"
+          },
+          {
+            "type": "text",
+            "id": "titre_2",
+            "label": "Titre 2",
+            "default": "Vivez l’expérience délicieusement saine avec nos boissons à base de CBD et nos snacks sucrés !"
+          },
+          {
+            "type": "text",
+            "id": "link",
+            "label": "lien de la collection",
+            "default": "/collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

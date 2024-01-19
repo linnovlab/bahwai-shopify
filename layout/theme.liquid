@@ -69,8 +69,8 @@
 
     {% render 'head-styles' %}
     {% comment %} 
-            <script src="https://smtpjs.com/v3/smtp.js"></script>
-        {% endcomment %}
+                                                <script src="https://smtpjs.com/v3/smtp.js"></script>
+                                {% endcomment %}
     <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
@@ -133,43 +133,12 @@
 
       {% if template.name == 'index' %}
         <div id="popup-welcom" class="popup fixed top-[5rem] left-0 w-full z-50 hidden">
-          <p class="bg-_orange_color text-white text-center py-8 sm:px-[7rem] px-[24px] font-semibold">On a bien pris en
- 
-        compte ton inscription, bienvenue dans la famille !! Tu
-        vas bientôt recevoir un email pour confirmer ton inscription et profiter de ton offre de bienvenue
+          <p class="bg-_orange_color text-white text-center py-8 sm:px-[7rem] px-[24px] font-semibold">
+            On a bien pris en compte ton inscription, bienvenue dans la famille !! Tu vas bientôt recevoir un email pour confirmer ton inscription et profiter de ton offre de bienvenue
           </p>
         </div>
-        <section class="banner relative sm:h-[25rem] h-[20rem] flex justify-center items-center">
-          <div class="flex flex-col items-center justify-center gap-2 text-white banner-content">
-            <h1 class="title-white">Une pause gourmande, sans culpabilité !
-            </h1>
-            <p class="text-center pt-5 sm:px-[5rem] px-4">
-              Vivez l’expérience délicieusement saine avec nos boissons à base de CBD et nos snacks
- 
- 
-          sucrés !
-            </p>
-            <p class="pt-[3rem] flex flex-col gap-4">
-              <a href="collections/{{ collection.handle }}" class="block text-center btn">Je veux découvrir</a>
-              <a href="{{ pages.laventure-bahwai.url }}" class="block text-center btn-secondaire">L'aventure Bahwai</a>
-            </p>
-          </div>
-          <style>
-            @media screen and (max-width: 641px) {
-              .wave-index {
-                background-image: url('{{ ' Vague-Mobile.svg' |asset_url }}');
-              }
-            }
 
-            @media screen and (min-width: 641px) {
-              .wave-index {
-                background-image: url('{{ ' Vague-desktop.svg' |asset_url }}');
-              }
-            }
-          </style>
-          <div class="wave-index absolute sm:bottom-[-25px] bottom-[-92px] img-center bg-no-repeat h-[27px] w-full"></div>
-        </section>
-
+        {% section 'bh-hero' %}
         {% section 'bh-nouveautes' %}
         {% section 'site-info-section' %}
         {% render 'bh-categories' %}
