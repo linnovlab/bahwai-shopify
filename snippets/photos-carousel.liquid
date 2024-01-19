@@ -1,47 +1,35 @@
 <div id="photo-carousel" class=" sm:top-[168px] top-[101px] left-0 w-full z-[-1]">
   <div class="swiper swiper-photos sm:px-8">
     <div class="items-stretch swiper-wrapper text-_main_color_dark ">
-      {% for block in section.blocks %}
-        <div class="swiper-slide !p-0">
-          <div class="img">
-              {% comment %} <img
-                                                                                                              class="w-full sm:h-[31rem] h-[29rem] object-cover"
-                                                                                                              src="{{ section.settings.image_1| image_url: width: 500  }}"
-                                                                                                  alt="image carousel"> {% endcomment %}
-            <img
-              class="w-full sm:h-[31rem] h-[29rem] object-cover"
-              src="{{ 'instagram 2'| asset_url: width: 500  }}"
-              alt="image carousel">
-            <p>{{ block.settings.titre_1 }}</p>
-          </div>
-        {% comment %} <section class="banner relative sm:h-[25rem] h-[20rem] flex justify-center items-center">
-                                          <div class="flex flex-col items-center justify-center gap-2 text-white banner-content">
-                                            <h1 class="title-white">{{ section.settings.block.titre_1 }}</h1>
-                                            <p class="text-center pt-5 sm:px-[5rem] px-4">
-                                              Vivez l’expérience délicieusement saine avec nos boissons à base de CBD et nos snacks sucrés !
-                                            </p>
-                                            <p class="pt-[3rem] flex flex-col gap-4">
-                                              <a href="collections/{{ collection.handle }}" class="block text-center btn">Je veux découvrir</a>
-                                              <a href="{{ pages.laventure-bahwai.url }}" class="block text-center btn-secondaire">L'aventure Bahwai</a>
-                                            </p>
-                                          </div>
-                                          <style>
-                                            @media screen and (max-width: 641px) {
-                                              .wave-index {
-                                                background-image: url('{{ ' Vague-Mobile.svg' |asset_url }}');
-                                              }
-                                            }
-      
-                                            @media screen and (min-width: 641px) {
-                                              .wave-index {
-                                                background-image: url('{{ ' Vague-desktop.svg' |asset_url }}');
-                                              }
-                                            }
-                                          </style>
-                                          <div class="wave-index absolute sm:bottom-[-25px] bottom-[-92px] img-center bg-no-repeat h-[27px] w-full"></div>
-                                  </section> {% endcomment %}
+      {% comment %} <div class="swiper-slide !p-0">
+                                                                                                                                                                <div class="img">
+                                                                                                                                                                  <img
+                                                                                                                                                                    class="w-full sm:h-[31rem] h-[29rem] object-cover"
+                                                                                                                                                                    src="{{ section.settings.image_1| image_url: width: 500  }}"
+                                                                                                                                                                    alt="image carousel">
+                                                                                                                                                                </div>
+                                                                                                                        </div> {% endcomment %}
+      <div class="swiper-slide !p-0">
+        <div class="img">
+          <img
+            class="w-full sm:h-[31rem] h-[29rem] object-cover"
+            src="{{ 'instagram 2.png'| asset_url  }}"
+            alt="image carousel">
         </div>
-      {% endfor %}
+        <section class="banner w-full absolute top-0 sm:h-[25rem] h-[20rem] flex justify-center items-center">
+          <div class="flex flex-col items-center justify-center gap-2 text-white banner-content">
+            <h1 class="title-white">Une pause gourmande, sans culpabilité !</h1>
+            <p class="text-center pt-5 sm:px-[5rem] px-4">
+              Vivez l’expérience délicieusement saine avec nos boissons à base de CBD et nos snacks sucrés !
+            </p>
+            <p class="pt-[3rem] flex flex-col gap-4">
+              <a href="collections/{{ collection.handle }}" class="block text-center btn">Je veux découvrir</a>
+              <a href="{{ pages.laventure-bahwai.url }}" class="block text-center btn-secondaire">L'aventure Bahwai</a>
+            </p>
+          </div>
+        </section>
+      </div>
+
     </div>
   </div>
 </div>

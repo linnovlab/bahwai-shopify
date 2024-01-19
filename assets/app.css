@@ -6,7 +6,7 @@
 
 /* fonts */
 
-/* ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -38,9 +38,11 @@
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
 6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
 */
 
-html {
+html,
+:host {
   line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -56,6 +58,8 @@ html {
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
 }
 
 /*
@@ -127,8 +131,10 @@ strong {
 }
 
 /*
-1. Use the user's configured `mono` font family by default.
-2. Correct the odd `em` font sizing in all browsers.
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
 */
 
 code,
@@ -137,8 +143,12 @@ samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
-  font-size: 1em;
+  font-feature-settings: normal;
   /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
 }
 
 /*
@@ -616,10 +626,6 @@ html {
   position: sticky;
 }
 
-.bottom-\[-92px\]{
-  bottom: -92px;
-}
-
 .left-0{
   left: 0px;
 }
@@ -672,6 +678,22 @@ html {
   top: 5rem;
 }
 
+.top-\[\]{
+  top: ;
+}
+
+.left-full{
+  left: 100%;
+}
+
+.top-\[-26px\]{
+  top: -26px;
+}
+
+.top-\[-25px\]{
+  top: -25px;
+}
+
 .isolate{
   isolation: isolate;
 }
@@ -690,6 +712,10 @@ html {
 
 .z-\[100\]{
   z-index: 100;
+}
+
+.z-\[1\]{
+  z-index: 1;
 }
 
 .m-0{
@@ -783,8 +809,7 @@ html {
 }
 
 .-ms-8{
-  -webkit-margin-start: -2rem;
-          margin-inline-start: -2rem;
+  margin-inline-start: -2rem;
 }
 
 .-mt-16{
@@ -900,33 +925,27 @@ html {
 }
 
 .me-0{
-  -webkit-margin-end: 0px;
-          margin-inline-end: 0px;
+  margin-inline-end: 0px;
 }
 
 .me-2{
-  -webkit-margin-end: 0.5rem;
-          margin-inline-end: 0.5rem;
+  margin-inline-end: 0.5rem;
 }
 
 .me-3{
-  -webkit-margin-end: 0.75rem;
-          margin-inline-end: 0.75rem;
+  margin-inline-end: 0.75rem;
 }
 
 .me-8{
-  -webkit-margin-end: 2rem;
-          margin-inline-end: 2rem;
+  margin-inline-end: 2rem;
 }
 
 .me-\[100px\]{
-  -webkit-margin-end: 100px;
-          margin-inline-end: 100px;
+  margin-inline-end: 100px;
 }
 
 .me-\[3rem\]{
-  -webkit-margin-end: 3rem;
-          margin-inline-end: 3rem;
+  margin-inline-end: 3rem;
 }
 
 .ml-8{
@@ -950,28 +969,23 @@ html {
 }
 
 .ms-2{
-  -webkit-margin-start: 0.5rem;
-          margin-inline-start: 0.5rem;
+  margin-inline-start: 0.5rem;
 }
 
 .ms-3{
-  -webkit-margin-start: 0.75rem;
-          margin-inline-start: 0.75rem;
+  margin-inline-start: 0.75rem;
 }
 
 .ms-8{
-  -webkit-margin-start: 2rem;
-          margin-inline-start: 2rem;
+  margin-inline-start: 2rem;
 }
 
 .ms-\[10px\]{
-  -webkit-margin-start: 10px;
-          margin-inline-start: 10px;
+  margin-inline-start: 10px;
 }
 
 .ms-auto{
-  -webkit-margin-start: auto;
-          margin-inline-start: auto;
+  margin-inline-start: auto;
 }
 
 .mt-0{
@@ -1146,10 +1160,6 @@ html {
   height: 500px;
 }
 
-.h-\[550px\]{
-  height: 550px;
-}
-
 .h-\[562px\]{
   height: 562px;
 }
@@ -1220,10 +1230,6 @@ html {
 
 .w-\[130px\]{
   width: 130px;
-}
-
-.w-\[170px\]{
-  width: 170px;
 }
 
 .w-\[17rem\]{
@@ -1863,8 +1869,7 @@ html {
 }
 
 .\!pe-8{
-  -webkit-padding-end: 2rem !important;
-          padding-inline-end: 2rem !important;
+  padding-inline-end: 2rem !important;
 }
 
 .\!pt-0{
@@ -1912,8 +1917,7 @@ html {
 }
 
 .pe-\[7px\]{
-  -webkit-padding-end: 7px;
-          padding-inline-end: 7px;
+  padding-inline-end: 7px;
 }
 
 .pr-8{
@@ -1921,23 +1925,19 @@ html {
 }
 
 .ps-2{
-  -webkit-padding-start: 0.5rem;
-          padding-inline-start: 0.5rem;
+  padding-inline-start: 0.5rem;
 }
 
 .ps-4{
-  -webkit-padding-start: 1rem;
-          padding-inline-start: 1rem;
+  padding-inline-start: 1rem;
 }
 
 .ps-5{
-  -webkit-padding-start: 1.25rem;
-          padding-inline-start: 1.25rem;
+  padding-inline-start: 1.25rem;
 }
 
 .ps-8{
-  -webkit-padding-start: 2rem;
-          padding-inline-start: 2rem;
+  padding-inline-start: 2rem;
 }
 
 .pt-2{
@@ -2432,8 +2432,7 @@ body {
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(153 153 153 / var(--tw-border-opacity));
-  -webkit-padding-start: 0.5rem;
-          padding-inline-start: 0.5rem;
+  padding-inline-start: 0.5rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
@@ -2488,10 +2487,8 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  -webkit-padding-end: 0.5rem;
-          padding-inline-end: 0.5rem;
-  -webkit-padding-start: 1rem;
-          padding-inline-start: 1rem;
+  padding-inline-end: 0.5rem;
+  padding-inline-start: 1rem;
   text-align: start;
   font-size: 1.2rem;
   font-weight: 700;
@@ -3362,12 +3359,12 @@ tbody tr:last-child td{
 }
 
 @media (min-width: 640px){
-  .sm\:bottom-\[-25px\]{
-    bottom: -25px;
-  }
-
   .sm\:top-\[168px\]{
     top: 168px;
+  }
+
+  .sm\:top-\[-26px\]{
+    top: -26px;
   }
 
   .sm\:m-4{
@@ -3421,13 +3418,11 @@ tbody tr:last-child td{
   }
 
   .sm\:me-8{
-    -webkit-margin-end: 2rem;
-            margin-inline-end: 2rem;
+    margin-inline-end: 2rem;
   }
 
   .sm\:ms-0{
-    -webkit-margin-start: 0px;
-            margin-inline-start: 0px;
+    margin-inline-start: 0px;
   }
 
   .sm\:mt-0{
@@ -3496,10 +3491,6 @@ tbody tr:last-child td{
 
   .sm\:h-\[40rem\]{
     height: 40rem;
-  }
-
-  .sm\:h-\[690px\]{
-    height: 690px;
   }
 
   .sm\:h-auto{
@@ -3652,8 +3643,7 @@ tbody tr:last-child td{
   }
 
   .sm\:\!pe-0{
-    -webkit-padding-end: 0px !important;
-            padding-inline-end: 0px !important;
+    padding-inline-end: 0px !important;
   }
 
   .sm\:pb-0{
@@ -3661,8 +3651,7 @@ tbody tr:last-child td{
   }
 
   .sm\:ps-0{
-    -webkit-padding-start: 0px;
-            padding-inline-start: 0px;
+    padding-inline-start: 0px;
   }
 
   .sm\:text-\[22px\]{

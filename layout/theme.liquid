@@ -69,8 +69,8 @@
 
     {% render 'head-styles' %}
     {% comment %} 
-                                                <script src="https://smtpjs.com/v3/smtp.js"></script>
-                                {% endcomment %}
+                                                                                                            <script src="https://smtpjs.com/v3/smtp.js"></script>
+                                                                        {% endcomment %}
     <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
@@ -128,7 +128,7 @@
       id="MainContent"
       role="main"
       tabindex="-1">
-      {{ content_for_layout }}
+      {% comment %} {{ content_for_layout }} {% endcomment %}
 
 
       {% if template.name == 'index' %}
@@ -139,6 +139,22 @@
         </div>
 
         {% section 'bh-hero' %}
+        <section class="wave-section relative">
+          <style>
+            @media screen and (max-width: 641px) {
+              .wave-index {
+                background-image: url('{{ ' Vague-Mobile.svg' |asset_url }}');
+              }
+            }
+
+            @media screen and (min-width: 641px) {
+              .wave-index {
+                background-image: url('{{ ' Vague-desktop.svg' |asset_url }}');
+              }
+            }
+          </style>
+          <div class="wave-index absolute sm:top-[-26px] top-[-25px] z-[1] img-center bg-no-repeat h-[27px] w-full"></div>
+        </section>
         {% section 'bh-nouveautes' %}
         {% section 'site-info-section' %}
         {% render 'bh-categories' %}

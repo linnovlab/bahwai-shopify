@@ -1101,10 +1101,10 @@ try {
     centeredSlides: false,
     slidesPerGroupSkip: 2,
     grabCursor: false,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
     keyboard: {
       enabled: true,
     },
