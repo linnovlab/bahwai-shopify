@@ -128,6 +128,7 @@
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
+        "disabled": true,
         "settings": {
           "color_scheme": "background-1"
         }
