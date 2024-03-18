@@ -48,7 +48,12 @@
                 </div>
             </div>
         </div>
-        <div class="foot bg-[url('{{'BG-Desktop.png'|asset_url }}')] img-center">
+        <style>
+            .foot-one-page {
+              background-image: url('{{ 'BG-Desktop.png'|asset_url }}');
+            }
+        </style>
+        <div class="foot-one-page img-center">
             <div class="content sm:px-[159px] px-8 desktop-width">
                 <h3 class="text-white sm:text-[48px] text-[23px] text-center my-[48px]">Retrouvez-nous</h3>
                 <div class="foot-content text-_main_color_dark flex flex-wrap gap-[75px] items-stretch">
