@@ -1050,6 +1050,10 @@ html {
   margin-top: 90px;
 }
 
+.ms-6{
+  margin-inline-start: 1.5rem;
+}
+
 .block{
   display: block;
 }
