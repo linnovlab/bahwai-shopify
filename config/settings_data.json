@@ -128,6 +128,7 @@
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
+        "disabled": true,
         "settings": {
           "color_scheme": "background-1"
         }
@@ -135,7 +136,7 @@
       "main-password-footer": {
         "type": "main-password-footer",
         "settings": {
-          "color_scheme": "background-1"
+          "color_scheme": "accent-1"
         }
       },
       "bh-header": {
@@ -145,8 +146,8 @@
           "menu": "main-menu",
           "logo_width": 100,
           "video_url": "",
-          "image_1": "shopify:\/\/shop_images\/5.png",
-          "image_2": "shopify:\/\/shop_images\/packcanettecoca.png",
+          "image_1": "shopify:\/\/shop_images\/photopackde4citroncitronvert.jpg",
+          "image_2": "shopify:\/\/shop_images\/Banniere_cola_cbd_640_x_430_mm_PNG.png",
           "image_3": "shopify:\/\/shop_images\/packcanetteBAHWAI_3_2808bbef-9f28-4bcd-bc13-c37b10fe4c47.png",
           "image_4": "shopify:\/\/shop_images\/packcanettecola6.png",
           "image_5": "shopify:\/\/shop_images\/packcanetteBAHWAI_3.png"

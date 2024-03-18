@@ -1,4 +1,5 @@
 {% comment %} images popup {% endcomment %}
+
 <div id="image-product-popup"
   class="bg-[#000000ad] absolute top-[167px] left-0 w-full h-screen justify-center items-center hidden">
   <div class="relative p-2 border rounded-md ">
@@ -172,58 +173,67 @@
 
       </div>
     </div>
-    <div class="item-1 text-_main_color_dark">
-      <h5 class="mb-3 font-medium">Description :
-      </h5>
-      <div class="leading-normal content">
-        <p>
-          Découvre la boisson récupération BahWai ! Une boisson revitalisante, sans sucre et un goût hummmm !!! Idéal
-          pour récupérer après une bonne séance de sport, une grosse journée de boulot… ou après une grosse soirée !
-          Avec seulement 1 calorie, zéro sucre et 20 mg de CBD par canette, c’est la boisson idéale pour te rafraichir
-          et te détendre.<br><br>
-        </p>
-        <p class="mt-4">
-          On adore :
-        </p>
-        <ul id="produit-ul-desc" class="ps-8">
-          <li class="mt-4">
-            C’est vegan et français !
-          </li>
-          <li class="mt-4">
-            <span class="font-bold text-_main_color_light">Bye bye les courbatures :
-            </span>grâce aux vertues myorelaxante du CBD, tes muscles sont détendus et moins lourds
-          </li>
-          <li class="mt-4">
-            <span class="font-bold text-_main_color_light">Récupération musculaire :
-            </span>le CBD contribue à améliorer la vitesse et la qualité de récupération de tes muscles. De quoi
-            repartir rapidement au charbon !
-          </li>
-          <li class="mt-4">
-            <span class="font-bold text-_main_color_light">Moins de douleurs musculaires :
-            </span>les ingrédients contenus dans notre boisson contribuent à réduire les sensations de douleurs
-            musculaires, souvent ressenti après une grosse séance ou encore à force de rester assis derrière ton bureau
-            !
-          </li>
-          <li class="mt-4">
-            <span class="font-bold text-_main_color_light">Niveau de stress = Zéro :
-            </span>le CBD aide à réduire le stress à l’origine de l’oxydation des cellules et d’une peau terne
-          </li>
-          <li class="mt-4">
-            <span class="font-bold text-_main_color_light">Sommeil Récupérateur pour un réveil frais
-            </span>et une énergie à 100 % … toute la journée !
-          </li>
-        </ul>
-        <p class="mt-8">
-          Disponible en 5 saveurs incroyables : Citron/Citron vert, Fraise/Fruit du dragon, Pomme/Kiwi, Ice tea Pêche et
-          Fruits rouge
-        </p>
-        <ul id="produit-ul-desc" class="ps-8">
-          <li class="mt-4">
-            vendu en pack de 6
-          </li>
-        </ul>
+    {% assign boissons = false %}
+    {% for collection in product.collections %}
+      {% if collection.handle == "boissons" %}
+        {% assign boissons = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% if boissons %}
+      <div class="item-1 text-_main_color_dark">
+        <h5 class="mb-3 font-medium">Description :
+        </h5>
+        <div class="leading-normal content">
+          <p>
+            Découvre la boisson récupération BahWai ! Une boisson revitalisante, sans sucre et un goût hummmm !!! Idéal
+            pour récupérer après une bonne séance de sport, une grosse journée de boulot… ou après une grosse soirée !
+            Avec seulement 1 calorie, zéro sucre et 20 mg de CBD par canette, c’est la boisson idéale pour te rafraichir
+            et te détendre.<br><br>
+          </p>
+          <p class="mt-4">
+            On adore :
+          </p>
+          <ul id="produit-ul-desc" class="ps-8">
+            <li class="mt-4">
+              C’est vegan et français !
+            </li>
+            <li class="mt-4">
+              <span class="font-bold text-_main_color_light">Bye bye les courbatures :
+              </span>grâce aux vertues myorelaxante du CBD, tes muscles sont détendus et moins lourds
+            </li>
+            <li class="mt-4">
+              <span class="font-bold text-_main_color_light">Récupération musculaire :
+              </span>le CBD contribue à améliorer la vitesse et la qualité de récupération de tes muscles. De quoi
+              repartir rapidement au charbon !
+            </li>
+            <li class="mt-4">
+              <span class="font-bold text-_main_color_light">Moins de douleurs musculaires :
+              </span>les ingrédients contenus dans notre boisson contribuent à réduire les sensations de douleurs
+              musculaires, souvent ressenti après une grosse séance ou encore à force de rester assis derrière ton bureau
+              !
+            </li>
+            <li class="mt-4">
+              <span class="font-bold text-_main_color_light">Niveau de stress = Zéro :
+              </span>le CBD aide à réduire le stress à l’origine de l’oxydation des cellules et d’une peau terne
+            </li>
+            <li class="mt-4">
+              <span class="font-bold text-_main_color_light">Sommeil Récupérateur pour un réveil frais
+              </span>et une énergie à 100 % … toute la journée !
+            </li>
+          </ul>
+          <p class="mt-8">
+            Disponible en 5 saveurs incroyables : Citron/Citron vert, Fraise/Fruit du dragon, Pomme/Kiwi, Ice tea Pêche et
+            Fruits rouge
+          </p>
+          <ul id="produit-ul-desc" class="ps-8">
+            <li class="mt-4">
+              vendu en pack de 6
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    {% endif %}
   </div>
 </div>
 
