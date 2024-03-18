@@ -128,7 +128,7 @@
       id="MainContent"
       role="main"
       tabindex="-1">
-      {% comment %} {{ content_for_layout }} {% endcomment %}
+      {{ content_for_layout }}
 
 
       {% if template.name == 'index' %}
@@ -143,13 +143,13 @@
           <style>
             @media screen and (max-width: 641px) {
               .wave-index {
-                background-image: url('{{ ' Vague-Mobile.svg' |asset_url }}');
+                background-image: url('{{ 'Vague-Mobile.svg' |asset_url }}');
               }
             }
 
             @media screen and (min-width: 641px) {
               .wave-index {
-                background-image: url('{{ ' Vague-desktop.svg' |asset_url }}');
+                background-image: url('{{ 'Vague-desktop.svg' |asset_url }}');
               }
             }
           </style>
