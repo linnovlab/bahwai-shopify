@@ -788,14 +788,14 @@ html {
   margin-bottom: 2rem;
 }
 
-.my-\[80px\]{
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
 .my-\[48px\]{
   margin-top: 48px;
   margin-bottom: 48px;
+}
+
+.my-\[80px\]{
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .-mb-10{
@@ -884,6 +884,10 @@ html {
 
 .mb-\[110px\]{
   margin-bottom: 110px;
+}
+
+.mb-\[18px\]{
+  margin-bottom: 18px;
 }
 
 .mb-\[20px\]{
@@ -1044,10 +1048,6 @@ html {
 
 .mt-\[90px\]{
   margin-top: 90px;
-}
-
-.mb-\[18px\]{
-  margin-bottom: 18px;
 }
 
 .block{
@@ -1294,6 +1294,10 @@ html {
   width: 50%;
 }
 
+.w-\[54px\]{
+  width: 54px;
+}
+
 .w-\[61px\]{
   width: 61px;
 }
@@ -1316,10 +1320,6 @@ html {
 
 .w-full{
   width: 100%;
-}
-
-.w-\[54px\]{
-  width: 54px;
 }
 
 .max-w-\[100\%\]{
@@ -1396,6 +1396,10 @@ html {
 
 .max-w-\[958px\]{
   max-width: 958px;
+}
+
+.flex-shrink-0{
+  flex-shrink: 0;
 }
 
 .transform{
@@ -1520,6 +1524,10 @@ html {
 
 .gap-\[6px\]{
   gap: 6px;
+}
+
+.gap-\[75px\]{
+  gap: 75px;
 }
 
 .self-start{
@@ -1843,6 +1851,11 @@ html {
   padding-right: 5rem;
 }
 
+.px-\[7px\]{
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1856,6 +1869,11 @@ html {
 .py-20{
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-8{
@@ -1876,16 +1894,6 @@ html {
 .py-\[40px\]{
   padding-top: 40px;
   padding-bottom: 40px;
-}
-
-.py-3{
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.px-\[7px\]{
-  padding-left: 7px;
-  padding-right: 7px;
 }
 
 .\!pe-8{
@@ -2070,6 +2078,10 @@ html {
   font-size: 18px;
 }
 
+.text-\[23px\]{
+  font-size: 23px;
+}
+
 .text-\[24px\]{
   font-size: 24px;
 }
@@ -2123,24 +2135,16 @@ html {
   line-height: 1rem;
 }
 
-.text-\[80px\]{
-  font-size: 80px;
-}
-
-.text-\[48px\]{
-  font-size: 48px;
-}
-
-.text-\[23px\]{
-  font-size: 23px;
-}
-
 .font-bold{
   font-weight: 700;
 }
 
 .font-extrabold{
   font-weight: 800;
+}
+
+.font-light{
+  font-weight: 300;
 }
 
 .font-medium{
@@ -2153,10 +2157,6 @@ html {
 
 .font-semibold{
   font-weight: 600;
-}
-
-.font-light{
-  font-weight: 300;
 }
 
 .uppercase{
@@ -2200,6 +2200,11 @@ html {
 .\!text-white{
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.text-\[\#1F1F1F\]{
+  --tw-text-opacity: 1;
+  color: rgb(31 31 31 / var(--tw-text-opacity));
 }
 
 .text-\[\#565656\]{
@@ -2290,11 +2295,6 @@ html {
 .text-yellow-300{
   --tw-text-opacity: 1;
   color: rgb(253 224 71 / var(--tw-text-opacity));
-}
-
-.text-\[\#1F1F1F\]{
-  --tw-text-opacity: 1;
-  color: rgb(31 31 31 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -3667,6 +3667,11 @@ tbody tr:last-child td{
     padding-right: 40px;
   }
 
+  .sm\:px-\[48px\]{
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
   .sm\:px-\[52px\]{
     padding-left: 52px;
     padding-right: 52px;
@@ -3687,9 +3692,9 @@ tbody tr:last-child td{
     padding-bottom: 0.5rem;
   }
 
-  .sm\:px-\[48px\]{
-    padding-left: 48px;
-    padding-right: 48px;
+  .sm\:px-\[159px\]{
+    padding-left: 159px;
+    padding-right: 159px;
   }
 
   .sm\:\!pe-0{
@@ -3712,21 +3717,21 @@ tbody tr:last-child td{
     font-size: 24px;
   }
 
-  .sm\:text-\[60px\]{
-    font-size: 60px;
+  .sm\:text-\[48px\]{
+    font-size: 48px;
   }
 
-  .sm\:text-base{
-    font-size: 1rem;
-    line-height: 1.5rem;
+  .sm\:text-\[60px\]{
+    font-size: 60px;
   }
 
   .sm\:text-\[80px\]{
     font-size: 80px;
   }
 
-  .sm\:text-\[48px\]{
-    font-size: 48px;
+  .sm\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .sm\:leading-\[4rem\]{
