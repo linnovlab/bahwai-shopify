@@ -92,8 +92,8 @@
 
   {% if template.name != '404' %}
   <header class="relative">
-    {% section 'bh-header' %}
-    {% render 'bh-menu-bars' %}
+    {% comment %} {% section 'bh-header' %}
+    {% render 'bh-menu-bars' %} {% endcomment %}
   </header>
   {% endif %}
 
@@ -151,9 +151,9 @@
       {% section 'bh-partenaire' %} {% endcomment %}
     {% endif %}
 
-    {% render 'bh-search-modal' %}
+    {% comment %} {% render 'bh-search-modal' %}
     {% render 'bh-panier-modal' %}
-    {% render 'bh-popup' %}
+    {% render 'bh-popup' %} {% endcomment %}
 
   </main>
 
@@ -164,7 +164,7 @@
 
   {% render 'footer-scripts' %}
 
-  {% if template.name != '404' %}
+  {% comment %} {% if template.name != '404' %}
   {% if template.name != 'login' %}
 
   {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
@@ -176,7 +176,7 @@
   {% else %}
   {% render 'bh-footer-login' %}
   {% endif %}
-  {% endif %}
+  {% endif %} {% endcomment %}
 
 
 
