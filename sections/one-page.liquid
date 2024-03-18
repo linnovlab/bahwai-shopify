@@ -49,8 +49,17 @@
             </div>
         </div>
         <style>
-            .foot-one-page {
-              background-image: url('{{ 'BG-Desktop.png'|asset_url }}');
+            
+            @media screen and (max-width: 641px) {
+                .foot-one-page {
+                    background-image: url('{{ 'BG-Mobile.png'|asset_url }}');
+                }
+            }
+
+            @media screen and (min-width: 641px) {
+                .foot-one-page {
+                    background-image: url('{{ 'BG-Desktop.png'|asset_url }}');
+                }
             }
         </style>
         <div class="foot-one-page img-center">

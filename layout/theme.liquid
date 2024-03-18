@@ -92,8 +92,8 @@
 
   {% if template.name != '404' %}
   <header class="relative">
-    {% comment %} {% section 'bh-header' %}
-    {% render 'bh-menu-bars' %} {% endcomment %}
+    {% section 'bh-header' %}
+    {% render 'bh-menu-bars' %}
   </header>
   {% endif %}
 
@@ -102,8 +102,10 @@
 
 
     {% if template.name == 'index' %}
-      {% section 'one-page' %}
-      {% comment %} <div id="popup-welcom" class="popup fixed top-[5rem] left-0 w-full z-50 hidden">
+
+      {% comment %} {% section 'one-page' %} {% endcomment %}
+
+      <div id="popup-welcom" class="popup fixed top-[5rem] left-0 w-full z-50 hidden">
         <p class="bg-_orange_color text-white text-center py-8 sm:px-[7rem] px-[24px] font-semibold">On a bien pris en
           compte ton inscription, bienvenue dans la famille !! Tu
           vas bientôt recevoir un email pour confirmer ton inscription et profiter de ton offre de bienvenue
@@ -151,9 +153,9 @@
       {% section 'bh-partenaire' %} {% endcomment %}
     {% endif %}
 
-    {% comment %} {% render 'bh-search-modal' %}
+    {% render 'bh-search-modal' %}
     {% render 'bh-panier-modal' %}
-    {% render 'bh-popup' %} {% endcomment %}
+    {% render 'bh-popup' %} 
 
   </main>
 
@@ -164,7 +166,7 @@
 
   {% render 'footer-scripts' %}
 
-  {% comment %} {% if template.name != '404' %}
+  {% if template.name != '404' %}
   {% if template.name != 'login' %}
 
   {% if template.name == 'index' or template.name == 'collection' or template.name == 'product' %}
@@ -176,7 +178,7 @@
   {% else %}
   {% render 'bh-footer-login' %}
   {% endif %}
-  {% endif %} {% endcomment %}
+  {% endif %} 
 
 
 
