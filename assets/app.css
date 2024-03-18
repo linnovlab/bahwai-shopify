@@ -1896,6 +1896,16 @@ html {
   padding-bottom: 40px;
 }
 
+.py-\[48px\]{
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.px-\[11px\]{
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
 .\!pe-8{
   padding-inline-end: 2rem !important;
 }
@@ -2002,6 +2012,10 @@ html {
 
 .pt-\[9rem\]{
   padding-top: 9rem;
+}
+
+.pb-\[48px\]{
+  padding-bottom: 48px;
 }
 
 .text-left{
@@ -3695,6 +3709,11 @@ tbody tr:last-child td{
   .sm\:px-\[159px\]{
     padding-left: 159px;
     padding-right: 159px;
+  }
+
+  .sm\:px-\[140px\]{
+    padding-left: 140px;
+    padding-right: 140px;
   }
 
   .sm\:\!pe-0{
