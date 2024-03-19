@@ -89,13 +89,14 @@
   <a class="sr-only skip-to-content-link button" href="#MainContent">
     {{ "accessibility.skip_to_text" | t }}
   </a>
-
+{% comment %} 
   {% if template.name != '404' %}
   <header class="relative">
     {% section 'bh-header' %}
     {% render 'bh-menu-bars' %}
   </header>
-  {% endif %}
+  {% endif %} 
+{% endcomment %}
 
   <main id="MainContent" role="main" tabindex="-1">
     {{ content_for_layout }}
@@ -103,8 +104,8 @@
 
     {% if template.name == 'index' %}
 
-      {% comment %} {% section 'one-page' %} {% endcomment %}
-
+     {% section 'one-page' %} 
+ {% comment %} 
       <div id="popup-welcom" class="popup fixed top-[5rem] left-0 w-full z-50 hidden">
         <p class="bg-_orange_color text-white text-center py-8 sm:px-[7rem] px-[24px] font-semibold">On a bien pris en
           compte ton inscription, bienvenue dans la famille !! Tu
@@ -156,7 +157,7 @@
     {% render 'bh-search-modal' %}
     {% render 'bh-panier-modal' %}
     {% render 'bh-popup' %} 
-
+ {% endcomment %}
   </main>
 
   <ul hidden>
@@ -165,7 +166,7 @@
   </ul>
 
   {% render 'footer-scripts' %}
-
+{% comment %} 
   {% if template.name != '404' %}
   {% if template.name != 'login' %}
 
@@ -179,7 +180,7 @@
   {% render 'bh-footer-login' %}
   {% endif %}
   {% endif %} 
-
+ {% endcomment %}
 
 
   <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
