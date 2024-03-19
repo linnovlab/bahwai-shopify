@@ -102,10 +102,10 @@
     {{ content_for_layout }}
 
 
-    {% if template.name == 'index' %}
+    {% comment %} {% if template.name == 'index' %} {% endcomment %}
 
      {% section 'one-page' %} 
-     
+
  {% comment %} 
       <div id="popup-welcom" class="popup fixed top-[5rem] left-0 w-full z-50 hidden">
         <p class="bg-_orange_color text-white text-center py-8 sm:px-[7rem] px-[24px] font-semibold">On a bien pris en
