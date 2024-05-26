@@ -20,6 +20,8 @@
     }
   },
   "order": [
-    "multicolumn"
+    "header",
+    "categories",
+    "footer"
   ]
 }

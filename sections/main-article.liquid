@@ -1,5 +1,5 @@
 <style>
-  @media screen and (max-width: 641px) {
+  /* @media screen and (max-width: 641px) {
     .wave-index {
       background-image: url('{{ ' Vague-Mobile.svg' |asset_url }}');
     }
@@ -9,7 +9,7 @@
     .wave-index {
       background-image: url('{{ ' Vague-desktop.svg' |asset_url }}');
     }
-  }
+  } */
 </style>
 <div class="aricle-main text-_main_color_dark pb-20 relative">
   <div style="background-image: url('{{ article.image | image_url: width: 1000 }}');" class="banner object-cover img-center sm:h-[23rem] h-[14rem]"></div>
@@ -24,20 +24,3 @@
     {{ article.content | replace: "<p>", "<p class='mb-4 leading-normal text-[16px]'>" | replace: "<h2>", "<h2 class='text-[24px] font-bold mb-4'>" | replace: "<li>", "<li class='list-disc'>" }}
   </div>
 </div>
-
-{% comment %}
-<div class="">
-<h5 class="text-_main_color_dark font-bold mb-1">Bahwai lance sa canette faite à base d’herbe </h5>
-<p class="text-sm text-black">
-Notre eau pétillante pour la récupération est la boisson idéale pour tout les sportifs qui souhaitent se
-réhydrater et chiller tout en profitant des bienfaits naturels pour la récupération musculaire,
-bénéficier d’un
-vrai sommeil réparateur et d’un réveil frais.Issue des sources de nos montagnes françaises, cette eau
-pétillante
-est naturellement pauvre en calories et sans sucre. Son goût frais et rafraîchissant de citron/citron
-vert en
-fait la boisson parfaite pour se désaltérer tout en profitant de ses bienfaits pour le corps.
-A boire très frais pour un maximum de goût !
-</p>
-</div>
-{% endcomment %}
