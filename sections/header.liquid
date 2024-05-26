@@ -1,54 +1,57 @@
-{% comment %} {% render 'header-index' %} {% endcomment %}
 
-{%- if template.name == 'index' -%}
-  <div>
-    {% comment %} <video src="{{ 'banner_canonly.mp4' | asset_url }}"
-      class="object-cover absolute top-0 left-0 w-full sm:h-[690px] h-[550px] z-[-1]" playsinline autoplay muted loop
-      type="video/mp4"></video> {% endcomment %}
-    {% render 'photos-carousel' %}
-  
-  </div>
-  {%- endif -%}
-  
-  <div class="py-2 bup bg-_orange_color">
+  <div class="py-2 bup bg-_main_color_light">
     <p class="text-center sm:text-base text-[13px] text-white">{{ section.settings.annonce }}</p>
   </div>
   
-  <div class="header-1 bg-_main_color_light">
-    <div class="flex flex-row items-center justify-between px-4 py-1 desktop-width sm:px-8">
+  <div class="header-1 bg-_main_color_light p-4 rounded-md mt-[21px] desktop-width">
+    <div class="flex flex-row items-center justify-between px-4 py-1  sm:px-8">
       <div class="block bars sm:hidden">
         <div class="flex items-center gap-3 content">
           <i class="text-xl text-white fa-solid fa-bars hover:cursor-pointer" id="open-bars"></i>
           <a href="/" title="BahWai">
-            <img src="{{ '300DPI.png' | asset_url }}" alt="BahWai" class="w-10" loading="lazy" width="auto" height="auto">
+            <img src="{{ 'logo.svg' | asset_url }}" alt="BahWai" class="w-[45px]" loading="lazy" width="auto" height="auto">
           </a>
         </div>
       </div>
-      <div class="hidden logo sm:block">
-        <a href="/" title="bahwai">
-          <img src="{{ 'icon bahwai.svg' | asset_url }}" alt="BahWai" class="w-20" width="auto" height="auto"
-            loading="lazy">
-        </a>
-      </div>
-      <div class="search hidden sm:block w-[17rem]">
-        <form action="#" method="get" class="flex border-b-2">
-          <img src="{{'search.svg' | asset_url }}" alt="Recherche" width="auto" height="auto" loading="lazy">
-          <input id="input-homepage-search" type="text" autocomplete="off" title="Rechercher des produits..."
-            name="search" placeholder="Recherche de produits" class="w-full text-white bg-transparent outline-none ms-2">
-        </form>
+      <div class="hidden sm:flex gap-6 items-center">
+        <div>
+          <a href="/" title="bahwai">
+            <img src="{{ 'logo.svg' | asset_url }}" alt="BahWai" class="w-[45px]" width="auto" height="auto"
+              loading="lazy">
+          </a>
+        </div>
+        <div class="nav-links-header">
+          <ul class="content flex gap-8">
+            <li>
+              <a href="#" class="nav-link-header">Shop</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link-header">La vrai story</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link-header">Où nous trouver</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link-header">Blog</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link-header">Devenez revendeur</a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="info">
-        <ul class="flex gap-4 font-medium text-white">
-          <li id="search-sm" class="block border-r-2 sm:hidden">
-            <a href="" id="search-icon" title="Rechercher">
-              <img src="{{' search.svg' | asset_url }}" alt="search" class="mr-2" width="auto" height="auto"
+        <ul class="flex sm:gap-[40px] gap-6 font-medium text-white">
+          <li class="sm:border-none border-r-2">
+            <a href="#" id="search-icon" title="Rechercher">
+              <img src="{{'search.svg' | asset_url }}" alt="search" class="mr-2" width="auto" height="auto"
                 loading="lazy">
             </a>
           </li>
           <li>
             <a href="{{ routes.cart_url }}" id="icon-panier" class="relative flex hover-nav-item" title="panier">
   
-              <img src="{{' panier.svg' | asset_url }}" alt="panier" class="mr-2 " width="auto" height="auto"
+              <img src="{{'cart.svg' | asset_url }}" alt="panier" class="mr-2 " width="auto" height="auto"
                 loading="lazy">
               <span class="hidden sm:block">Panier</span>
               <div id="panier-count" class="panier-count">
@@ -73,7 +76,7 @@
     </div>
   </div>
   
-  <nav id="nav-header" class="hidden py-2 bg-_main_color_dark sm:block">
+  {% comment %} <nav id="nav-header" class="hidden py-2 bg-_main_color_dark sm:block">
     <ul class="flex justify-center text-white desktop-width">
       <div class="left-links flex justify-center gap-4 max-w-[75%] w-full ml-auto">
         {% for link in section.settings.menu.links %}
@@ -118,7 +121,7 @@
       </div>
     </ul>
   
-  </nav>
+  </nav> {% endcomment %}
 
 
 <script type="application/ld+json">
@@ -158,9 +161,8 @@
                                                                                       },
                                                                                       "url": {{ request.origin | append: page.url | json }}
     }
-  </script>
+</script>  
 {%- endif -%}
-
 
 {% schema %}
 {
@@ -172,7 +174,7 @@
 "type": "text",
 "id": "annonce",
 "label": "Annonce",
-"default": "Profitez de -15% pour votre première commande avec le code WELCOME"
+"default": "Livraison offerte à partir de 20€"
 },
 {
 "type": "link_list",

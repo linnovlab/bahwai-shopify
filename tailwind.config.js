@@ -315,6 +315,7 @@ module.exports = {
     fontFamily: {
       body: ['Poppins'],
       litle: ['Rubik'],
+      fontLuck: ['Luckiest Guy'],
       sans: [
         'ui-sans-serif',
         'system-ui',
