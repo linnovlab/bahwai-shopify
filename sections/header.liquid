@@ -1,80 +1,84 @@
 
-  <div class="py-2 bup bg-_main_color_light">
-    <p class="text-center sm:text-base text-[13px] text-_red_color">{{ section.settings.annonce }}</p>
-  </div>
-  
-  <div class="header-1 bg-_main_color_light p-4 rounded-md mt-[21px] desktop-width">
-    <div class="flex flex-row items-center justify-between px-4 py-1  sm:px-8">
-      <div class="block bars sm:hidden">
-        <div class="flex items-center gap-3 content">
-          <i class="text-xl text-white fa-solid fa-bars hover:cursor-pointer" id="open-bars"></i>
-          <a href="/" title="BahWai">
-            <img src="{{ 'logo.svg' | asset_url }}" alt="BahWai" class="w-[45px]" loading="lazy" width="auto" height="auto">
-          </a>
+  <div class="content relative z-20">
+    <div class="py-2 bup bg-_main_color_dark">
+      <p class="text-center sm:text-base text-[13px] text-_red_color">{{ section.settings.annonce }}</p>
+    </div>
+    
+    <div class="header-1 relative z-20 bg-_main_color_dark p-4 rounded-md mt-[21px] desktop-width">
+      <div class="flex flex-row items-center justify-between px-4 py-1  sm:px-8">
+        <div class="block bars sm:hidden">
+          <div class="flex items-center gap-3 content">
+            <i class="text-xl text-white fa-solid fa-bars hover:cursor-pointer" id="open-bars"></i>
+            <a href="/" title="BahWai">
+              <img src="{{ 'logo.svg' | asset_url }}" alt="BahWai" class="w-[45px]" loading="lazy" width="auto" height="auto">
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="hidden sm:flex gap-6 items-center">
-        <div>
-          <a href="/" title="bahwai">
-            <img src="{{ 'logo.svg' | asset_url }}" alt="BahWai" class="w-[45px]" width="auto" height="auto"
-              loading="lazy">
-          </a>
+        <div class="hidden sm:flex gap-6 items-center">
+          <div>
+            <a href="/" title="bahwai">
+              <img src="{{ 'logo.svg' | asset_url }}" alt="BahWai" class="w-[45px]" width="auto" height="auto"
+                loading="lazy">
+            </a>
+          </div>
+          <div class="nav-links-header">
+            <ul class="content flex gap-8">
+              <li>
+                <a href="#" class="nav-link-header active" title="Shop">Shop</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link-header active" title="La vrai story">La vrai story</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link-header active" title="Où nous trouver">Où nous trouver</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link-header" title="Blog">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link-header" title="Devenez revendeur">Devenez revendeur</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="nav-links-header">
-          <ul class="content flex gap-8">
-            <li>
-              <a href="#" class="nav-link-header">Shop</a>
+        <div class="info">
+          <ul class="flex sm:gap-[40px] gap-6 font-medium text-white">
+            <li class="sm:border-none border-r-2">
+              <a href="#" id="search-icon" title="Rechercher">
+                <img src="{{'search.svg' | asset_url }}" alt="search" class="mr-2" width="auto" height="auto"
+                  loading="lazy">
+              </a>
             </li>
             <li>
-              <a href="#" class="nav-link-header">La vrai story</a>
+              <a href="{{ routes.cart_url }}" id="icon-panier" class="relative flex hover-nav-item" title="panier">
+    
+                <img src="{{'cart.svg' | asset_url }}" alt="panier" class="mr-2 " width="auto" height="auto"
+                  loading="lazy">
+                <span class="hidden sm:block">Panier</span>
+                <div id="panier-count" class="panier-count">
+                  <span>{{ cart.item_count }}</span>
+                </div>
+              </a>
             </li>
             <li>
-              <a href="#" class="nav-link-header">Où nous trouver</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link-header">Blog</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link-header">Devenez revendeur</a>
+              <a href="
+                {%- if customer -%}
+                  {{ routes.account_url }}
+                {%- else -%}
+                  {{ routes.account_login_url }}
+                {%- endif -%}" class="flex hover-nav-item" title="Mon compte">
+                <img src="{{'user.svg' | asset_url}}" alt="mon compte" class="mr-2" width="auto" height="auto"
+                  loading="lazy">
+                <span class="hidden sm:block">Mon compte</span>
+              </a>
             </li>
           </ul>
         </div>
       </div>
-      <div class="info">
-        <ul class="flex sm:gap-[40px] gap-6 font-medium text-white">
-          <li class="sm:border-none border-r-2">
-            <a href="#" id="search-icon" title="Rechercher">
-              <img src="{{'search.svg' | asset_url }}" alt="search" class="mr-2" width="auto" height="auto"
-                loading="lazy">
-            </a>
-          </li>
-          <li>
-            <a href="{{ routes.cart_url }}" id="icon-panier" class="relative flex hover-nav-item" title="panier">
-  
-              <img src="{{'cart.svg' | asset_url }}" alt="panier" class="mr-2 " width="auto" height="auto"
-                loading="lazy">
-              <span class="hidden sm:block">Panier</span>
-              <div id="panier-count" class="panier-count">
-                <span>{{ cart.item_count }}</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="
-              {%- if customer -%}
-                {{ routes.account_url }}
-              {%- else -%}
-                {{ routes.account_login_url }}
-              {%- endif -%}" class="flex hover-nav-item" title="Mon compte">
-              <img src="{{'user.svg' | asset_url}}" alt="mon compte" class="mr-2" width="auto" height="auto"
-                loading="lazy">
-              <span class="hidden sm:block">Mon compte</span>
-            </a>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
+
+  {% render 'bh-search-modal' %}
   
   {% comment %} <nav id="nav-header" class="hidden py-2 bg-_main_color_dark sm:block">
     <ul class="flex justify-center text-white desktop-width">
@@ -166,8 +170,8 @@
 
 {% schema %}
 {
-"name": "Bahwai Menu",
-"class": "section-header",
+"name": "Bahwai header",
+"class": "header-section",
 "tag": "section",
 "settings": [
 {

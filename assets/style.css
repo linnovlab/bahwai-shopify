@@ -1,19 +1,21 @@
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://db.onlinewebfonts.com/c/7cc6719bd5f0310be3150ba33418e72e?family=Comic+Sans+MS');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    font-family: 'Poppins', system-ui, sans-serif;
+    font-family: 'Comic Sans MS', system-ui, sans-serif;
   }
 }
 body {
-  font-family: 'Poppins', system-ui, sans-serif;
+  font-family: 'Comic Sans MS', system-ui, sans-serif;
 }
 :root {
   --main-color-light: #561195;
@@ -21,7 +23,16 @@ body {
   --orange-color: #ff7925;
   --red-color: #ea4038;
 }
+
+
 /* header */
+.nav-link-header{
+  @apply border-2 border-white px-3 py-2 text-white rounded-md;
+}
+.nav-link-header.active{
+  @apply bg-_red_color border-_red_color ;
+}
+
 .hover-nav-item {
   @apply transition-all duration-200 hover:text-red-600;
 }
@@ -30,7 +41,7 @@ body {
   @apply max-w-[1440px];
 }
 .btn {
-  @apply font-semibold block outline-none bg-_red_color text-white text-center rounded-lg w-[224px] h-[44px] pt-[10px];
+  @apply font-normal block outline-none bg-_orange_color text-white text-center rounded-md w-[224px] h-[44px] pt-[10px];
   box-shadow: 1px 4px 8px -3px black;
 }
 .btn-secondaire {
@@ -64,7 +75,7 @@ body {
   @apply font-litle text-_main_color_light text-[32px] text-center font-extrabold italic;
 }
 .title-white {
-  @apply font-litle text-white sm:text-[32px] text-[28px] text-center font-extrabold italic;
+  @apply font-litle text-white sm:text-[32px] text-[28px] text-center font-normal;
 }
 .faq-link {
   @apply text-center w-[10rem] h-[70px] rounded-md flex items-center justify-center bg-_red_color hover:bg-_orange_color transition-all duration-500;
@@ -99,6 +110,13 @@ body {
   width: 100%;
 }
 
+/* home page */
+#img-chocolat{
+  background-image: url("chocolat-long.png");
+  height: 200px;
+  width: 100%;
+}
+
 /* css one page  */
 .foot-one-page .foot-item{
   @apply flex flex-col gap-4;
@@ -109,13 +127,6 @@ body {
   @apply font-medium line-through text-_main_color_dark;
 }
 
-/* header */
-.nav-link-header{
-  @apply border border-white px-3 py-2 text-white rounded-md;
-}
-.nav-link-header.active{
-  @apply bg-_red_color border-_red_color ;
-}
 
 
 /* swiper */

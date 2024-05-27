@@ -141,8 +141,8 @@ module.exports = {
     caretColor: ({ theme }) => theme('colors'),
     colors: ({ colors }) => ({
       _red_color: '#EA4038',
-      _main_color_light: '#561195',
-      _main_color_dark: '#240343',
+      _main_color_light: '#8325DB',
+      _main_color_dark: '#561195',
       _orange_color: '#FF7925',
       inherit: colors.inherit,
       current: colors.current,
@@ -313,9 +313,9 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
-      body: ['Poppins'],
-      litle: ['Rubik'],
-      fontLuck: ['Luckiest Guy'],
+      body: ['Comic Sans MS'],
+      litle: ['Luckiest Guy'],
+      rubik: ["Rubik Mono One"],
       sans: [
         'ui-sans-serif',
         'system-ui',

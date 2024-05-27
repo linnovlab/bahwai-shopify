@@ -1,0 +1,93 @@
+<div class="content mt-[-9rem] relative -z-0 bg-_main_color_light">
+    <style>
+        .choc-img-item{
+            /* background-image: url("{{ 'chocolat_long.png' |  asset_url }}"); */
+            margin-right: -1px;
+        }
+        .bulle_1{
+            position: absolute;
+            left: 50px;
+            bottom: -21px;
+        }
+        .bulle_2{
+            position: absolute;
+            bottom: 2px;
+            left: 205px;
+        }
+        .bulle_3{
+            position: absolute;
+            bottom: 96px;
+            left: 212px;
+        }
+        .bulle_4{
+            position: absolute;
+            bottom: 92px;
+            left: 265px;
+        }
+    </style>
+    <div class="relative img-chocolat ">
+        <div class="flex h-[240px] relative z-10">
+            <div class="choc-img-item">
+                <img src="{{ 'chocolat_court.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
+                <img src="{{ 'chocolat_long.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
+            </div>
+            <div class="choc-img-item">
+                <img src="{{ 'chocolat_court.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
+                <img src="{{ 'chocolat_long.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
+            </div>
+            <div class="choc-img-item">
+                <img src="{{ 'chocolat_court.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
+                <img src="{{ 'chocolat_long.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
+            </div>
+            <div class="choc-img-item">
+                <img src="{{ 'chocolat_court.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
+                <img src="{{ 'chocolat_long.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
+            </div>
+        </div>
+        <div class="absolute top-[42px] left-[-13px] -z-0">
+            <img src="{{ 'sachet_chocolat.png' |  asset_url }}" alt="" height="auto" width="auto">
+            <img class="bulle_1" src="{{ 'bulle_1.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
+            <img class="bulle_2" src="{{ 'bulle_2.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
+            <img class="bulle_3" src="{{ 'bulle_3.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
+            <img class="bulle_4" src="{{ 'bulle_4.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
+        </div>
+    </div>
+
+    <div class="text-content mt-[5rem] flex justify-center">
+        <div class="w-[342px] relative">
+            <h1 class="title-white relative z-20">
+                Le Sain, <br>
+                Le Goût, <br>
+                Et c’est tout <br>
+            </h1>
+            <img class="quote absolute top-[40%] right-0" src="{{ 'quote.svg' |  asset_url }}" alt="quote" width="auto" height="auto">
+            <span class="h-[25px] w-full bg-_red_color absolute bottom-[5px] left-0 z-10"></span>
+        </div>
+    </div>
+    <div class="btn-content flex justify-center mt-[42px] pb-[28px]">
+        <a href="#" class="btn">Viens tester !</a>
+    </div>
+    <div class="marqui-text">
+        <marquee class="flex gap-[12px] font-rubik text-lg font-normal text-_red_color bg-white pt-[4px]">
+            <span>Riche en fibre diététique</span>
+            <span>Riche en fibre diététique 2</span>
+            <span>Riche en fibre diététique 3</span>
+        </marquee>
+    </div>
+    <div class="wave-hero absolute bottom-0 right-0 -z-10">
+        <img class="w-full" src="{{ 'wave_hero.svg' |  asset_url }} " alt="wave-hero" height="auto" width="auto">
+    </div>
+</div>
+
+
+
+{% schema %}
+    {
+      "name": "Hero section",
+      "tag": "section",
+      "class": "hero-section",
+      "settings": [
+        
+      ]
+    }
+{% endschema %}

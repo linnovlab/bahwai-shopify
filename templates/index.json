@@ -6,6 +6,12 @@
         "title": "header"
       }
     },
+    "hero-section": {
+      "type": "hero-section",
+      "settings": {
+        "title": "hero-section"
+      }
+    },
     "categories": {
       "type": "categories",
       "settings": {
@@ -21,6 +27,7 @@
   },
   "order": [
     "header",
+    "hero-section",
     "categories",
     "footer"
   ]
