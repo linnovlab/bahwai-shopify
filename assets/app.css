@@ -2060,12 +2060,12 @@ html {
   padding-top: 3px;
 }
 
-.pt-\[9rem\]{
-  padding-top: 9rem;
-}
-
 .pt-\[4px\]{
   padding-top: 4px;
+}
+
+.pt-\[9rem\]{
+  padding-top: 9rem;
 }
 
 .text-left{
@@ -3842,6 +3842,10 @@ tbody tr:last-child td{
 }
 
 @media (min-width: 768px){
+  .md\:block{
+    display: block;
+  }
+
   .md\:flex{
     display: flex;
   }
@@ -3870,6 +3874,10 @@ tbody tr:last-child td{
 
   .lg\:mr-16{
     margin-right: 4rem;
+  }
+
+  .lg\:block{
+    display: block;
   }
 
   .lg\:w-\[460px\]{

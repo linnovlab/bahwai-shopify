@@ -23,13 +23,13 @@
           </div>
           <div class="nav-links-header">
             <ul class="content flex gap-8">
-              <li>
+              <li class="md:block hidden">
                 <a href="#" class="nav-link-header active" title="Shop">Shop</a>
               </li>
-              <li>
+              <li class="md:block hidden">
                 <a href="#" class="nav-link-header active" title="La vrai story">La vrai story</a>
               </li>
-              <li>
+              <li class="md:block hidden">
                 <a href="#" class="nav-link-header active" title="Où nous trouver">Où nous trouver</a>
               </li>
               <li>
@@ -54,7 +54,7 @@
     
                 <img src="{{'cart.svg' | asset_url }}" alt="panier" class="mr-2 " width="auto" height="auto"
                   loading="lazy">
-                <span class="hidden sm:block">Panier</span>
+                <span class="hidden md:block">Panier</span>
                 <div id="panier-count" class="panier-count">
                   <span>{{ cart.item_count }}</span>
                 </div>
@@ -69,7 +69,7 @@
                 {%- endif -%}" class="flex hover-nav-item" title="Mon compte">
                 <img src="{{'user.svg' | asset_url}}" alt="mon compte" class="mr-2" width="auto" height="auto"
                   loading="lazy">
-                <span class="hidden sm:block">Mon compte</span>
+                <span class="hidden md:block">Mon compte</span>
               </a>
             </li>
           </ul>
