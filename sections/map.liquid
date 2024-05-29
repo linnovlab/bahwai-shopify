@@ -1,0 +1,94 @@
+<style>
+  #map {
+    height: 100%;
+  }
+  .controls {
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    height: 29px;
+    margin-left: 17px;
+    margin-top: 10px;
+    outline: none;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+  }
+
+  .controls:focus {
+    border-color: #4d90fe;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  #infowindow-content {
+    display: none;
+  }
+
+  #map #infowindow-content {
+    display: inline;
+  }
+</style>
+<section id="nous-trouver" class="map flex flex-col align-justify-center gap-4 mt-16 mx-4 sm:mx-0">
+  <h2 class="title-white">{{ section.settings.title }}</h2>
+  <div class="form-content w-full sm:w-[388px] ">
+    <form
+      id="form-map-google"
+      action="#"
+      method="post"
+      class="relative flex items-center justify-between">
+      <input
+        type="search"
+        name="map_search"
+        placeholder="Adresse, Ville, Code postal"
+        class="input-map-section"
+        id="userAddress">
+        <div class="search absolute right-[13px] top-[33%]">
+            <img src="{{'search.svg' | asset_url }}" alt="search" class=" text-white text-[20px] font-light" width="auto" height="auto"
+                  loading="lazy" onclick="initMap()">
+        </div>
+    </form>
+    <div class="h-[450px] mt-4">
+      <div id="staticMap">{{ section.settings.map }}</div>
+      <div id="map" class="hidden"></div>
+    </div>
+  </div>
+
+  <div class="marqui-text w-full">
+    <marquee class="flex gap-[12px] font-rubik text-lg font-normal text-_red_color bg-white pt-[4px]">
+        <span>Riche en fibre diététique</span>
+        <span>Riche en fibre diététique 2</span>
+        <span>Riche en fibre diététique 3</span>
+    </marquee>
+  </div>
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "Section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre",
+        "default": "OÙ NOUS TROUVER ?"
+      }, {
+        "type": "html",
+        "id": "map",
+        "label": "Iframe map",
+        "default": "<iframe class='w-full' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30870.723463074584!2d-17.513293145502004!3d14.721611847124374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec16d52737c340b%3A0x3f7058593d413bed!2sOuakam%2C%20Dakar!5e0!3m2!1sfr!2ssn!4v1686314742194!5m2!1sfr!2ssn' height='450' style='border:0;'' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
+      }
+    ]
+  }
+{% endschema %}

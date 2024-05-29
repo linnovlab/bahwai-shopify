@@ -1,0 +1,19 @@
+<style>
+  .content-image{
+    background-image: url('{{ 'image.jfif' |  asset_url }}');
+  }
+</style>
+<div class="content-image img-center sm:h-[360px] h-[215px] w-full">
+</div>
+
+
+{% schema %}
+    {
+      "name": "Image section",
+      "tag": "section",
+      "class": "image-section",
+      "settings": [
+        
+      ]
+    }
+{% endschema %}

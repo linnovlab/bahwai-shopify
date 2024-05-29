@@ -140,10 +140,13 @@ module.exports = {
     },
     caretColor: ({ theme }) => theme('colors'),
     colors: ({ colors }) => ({
-      _red_color: '#EA4038',
+      _red_color: '#FF3131', 
       _main_color_light: '#8325DB',
       _main_color_dark: '#561195',
-      _orange_color: '#FF7925',
+      _main_color_darker: '#240343',
+      _orange_color: '#FF6200',
+      _chocolat_dark: '#6E412C',
+      _chocolat_light: '#863C2C',
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
@@ -316,6 +319,7 @@ module.exports = {
       body: ['Comic Sans MS'],
       litle: ['Luckiest Guy'],
       rubik: ["Rubik Mono One"],
+      poetsen: ['Poetsen One'],
       sans: [
         'ui-sans-serif',
         'system-ui',

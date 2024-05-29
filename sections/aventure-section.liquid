@@ -1,0 +1,34 @@
+<div class="aventure-section-content bg-_orange_color">
+    <h1 class="pt-[40px] pb-[24px] text-center leading-[1]">
+        <span class="title-white block">Viens suivre l’aventure</span>
+        <span class="title !text-_main_color_darker block">@BahWAI.fr</span>
+    </h1>
+    <div class="imgs-content flex justify-center mb-6">
+        <img class="sm:w-[223px] w-[140px]" src="{{ "aventure1.png" |  asset_url }}" alt="aventure" width="100%" height="auto">
+        <img class="sm:w-[223px] w-[140px]" src="{{ "aventure2.png" |  asset_url }}" alt="aventure" width="100%" height="auto">
+        <img class="sm:w-[223px] w-[140px]" src="{{ "aventure3.png" |  asset_url }}" alt="aventure" width="100%" height="auto">
+    </div>
+    <div class="btns-content flex justify-center gap-6 text-white pb-6">
+        <a href="#" class="btn-aventure">
+            <img src="{{ "tiktok.svg" |  asset_url }}" alt="tiktok" width="auto" height="auto">
+            <span>Tiktok</span>
+        </a>
+        <a href="#" class="btn-aventure">
+            <img src="{{ "insta.svg" |  asset_url }}" alt="instagram" width="auto" height="auto">
+            <span>Instagram</span>
+        </a>
+    </div>
+</div>
+
+
+
+{% schema %}
+    {
+      "name": "aventure section",
+      "tag": "section",
+      "class": "aventure-section",
+      "settings": [
+        
+      ]
+    }
+{% endschema %}

@@ -18,6 +18,38 @@
         "title": "categories"
       }
     },
+    "image-section": {
+      "type": "image-section",
+      "settings": {
+        "title": "image-section"
+      }
+    },
+    "what-else": {
+      "type": "what-else",
+      "settings": {
+        "title": "what-else-section"
+      }
+    },
+    "qui-sommes-nous": {
+      "type": "qui-sommes-nous",
+      "settings": {
+        "title": "qui-sommes-nous-section"
+      }
+    },
+    "aventure-section": {
+      "type": "aventure-section",
+      "settings": {
+        "title": "aventure-section"
+      }
+    },
+    "map": {
+      "type": "map",
+      "settings": {
+      }
+    },
+    "faq": {
+      "type": "faq"
+    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -29,6 +61,13 @@
     "header",
     "hero-section",
     "categories",
+    "image-section",
+    "what-else",
+    "qui-sommes-nous",
+    "aventure-section",
+    "map",
+    "faq",
     "footer"
   ]
 }
+
