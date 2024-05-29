@@ -24,25 +24,17 @@
             bottom: 92px;
             left: 265px;
         }
+        .chocolat_court{
+            background-image: url('{{ 'chocolat_court.png' |  asset_url }}');
+        }
+        .chocolat_long{
+            background-image: url('{{ 'chocolat_long.png' |  asset_url }}');
+        }
     </style>
     <div class="relative img-chocolat ">
-        <div class="flex h-[240px] relative z-10">
-            <div class="choc-img-item">
-                <img src="{{ 'chocolat_court.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
-                <img src="{{ 'chocolat_long.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
-            </div>
-            <div class="choc-img-item">
-                <img src="{{ 'chocolat_court.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
-                <img src="{{ 'chocolat_long.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
-            </div>
-            <div class="choc-img-item">
-                <img src="{{ 'chocolat_court.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
-                <img src="{{ 'chocolat_long.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
-            </div>
-            <div class="choc-img-item">
-                <img src="{{ 'chocolat_court.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
-                <img src="{{ 'chocolat_long.png' |  asset_url }}" alt="chocolat_img" height="auto" width="auto">
-            </div>
+        <div class=" relative z-10">
+            <div class="chocolat_court h-[106px] w-full"></div>
+            <div class="chocolat_long h-[240px] w-full"></div>
         </div>
         <div class="absolute top-[42px] left-[-13px] -z-0">
             <img src="{{ 'sachet_chocolat.png' |  asset_url }}" alt="" height="auto" width="auto">
@@ -53,7 +45,7 @@
         </div>
     </div>
 
-    <div class="text-content mt-[5rem] flex justify-center">
+    <div class="text-content flex justify-center">
         <div class="w-[342px] relative">
             <h1 class="title-white relative z-20">
                 Le Sain, <br>

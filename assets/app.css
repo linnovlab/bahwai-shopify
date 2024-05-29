@@ -1297,6 +1297,10 @@ html {
   height: 100vh;
 }
 
+.h-\[106px\]{
+  height: 106px;
+}
+
 .max-h-\[8rem\]{
   max-height: 8rem;
 }
@@ -2115,6 +2119,10 @@ html {
   padding-bottom: 2px;
 }
 
+.pb-\[40px\]{
+  padding-bottom: 40px;
+}
+
 .pb-\[42px\]{
   padding-bottom: 42px;
 }
@@ -2183,6 +2191,10 @@ html {
   padding-top: 100px;
 }
 
+.pt-\[28px\]{
+  padding-top: 28px;
+}
+
 .pt-\[35px\]{
   padding-top: 35px;
 }
@@ -2209,14 +2221,6 @@ html {
 
 .pt-\[9rem\]{
   padding-top: 9rem;
-}
-
-.pb-\[40px\]{
-  padding-bottom: 40px;
-}
-
-.pt-\[28px\]{
-  padding-top: 28px;
 }
 
 .text-left{
