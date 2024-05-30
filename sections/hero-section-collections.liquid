@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="text-content flex justify-center mb-[172px]">
+    <div class="text-content flex justify-center sm:mb-[172px] mb-[76px]">
         <h1 class="title-white">
             Nos catégories
         </h1>
@@ -75,7 +75,8 @@
         </marquee>
     </div>
     <div class="wave-hero absolute bottom-0 right-0 -z-10">
-        <img class="w-full" src="{{ 'wave_hero.svg' |  asset_url }} " alt="wave-hero" height="auto" width="auto">
+        <img class="w-full sm:block hidden" src="{{ 'wave_hero.svg' |  asset_url }} " alt="wave-hero" height="auto" width="auto">
+        <img class="w-full sm:hidden block" src="{{ 'wave_hero_mobile.svg' |  asset_url }} " alt="wave-hero" height="auto" width="auto">
     </div>
 </div>
 

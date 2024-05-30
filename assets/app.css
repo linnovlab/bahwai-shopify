@@ -1149,6 +1149,14 @@ html {
   margin-top: 90px;
 }
 
+.mb-0{
+  margin-bottom: 0px;
+}
+
+.mb-\[76px\]{
+  margin-bottom: 76px;
+}
+
 .block{
   display: block;
 }
@@ -3913,6 +3921,10 @@ tbody tr:last-child td{
     margin-top: 48px;
   }
 
+  .sm\:mb-\[172px\]{
+    margin-bottom: 172px;
+  }
+
   .sm\:block{
     display: block;
   }
@@ -4148,6 +4160,10 @@ tbody tr:last-child td{
 
   .sm\:ps-0{
     padding-inline-start: 0px;
+  }
+
+  .sm\:pb-\[159px\]{
+    padding-bottom: 159px;
   }
 
   .sm\:text-\[22px\]{
