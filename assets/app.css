@@ -2090,6 +2090,11 @@ html {
   padding-right: 1.5rem;
 }
 
+.px-\[5px\]{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .\!pe-8{
   padding-inline-end: 2rem !important;
 }
@@ -2403,6 +2408,10 @@ html {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[28px\]{
+  font-size: 28px;
 }
 
 .font-bold{

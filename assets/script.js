@@ -22,6 +22,7 @@ $(document).ready(() => {
    *
    */
   $('#open-bars').on('click', () => {
+    console.log($('#menu-bars'))
     $('#menu-bars').slideDown();
     $('body').css('overflow', 'hidden');
   });
