@@ -1,5 +1,15 @@
 {
   "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+      }
+    },
+    "hero-section-collections": {
+      "type": "hero-section-collections",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-list-collections",
       "settings": {
@@ -7,9 +17,17 @@
         "sort": "alphabetical",
         "image_ratio": "square"
       }
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "header",
+    "hero-section-collections",
+    "main",
+    "footer"
   ]
 }

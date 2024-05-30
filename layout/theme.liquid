@@ -89,14 +89,6 @@
   <a class="sr-only skip-to-content-link button" href="#MainContent">
     {{ "accessibility.skip_to_text" | t }}
   </a>
-{% comment %} 
-  {% if template.name != '404' %}
-  <header class="relative">
-    {% section 'bh-header' %}
-    {% render 'bh-menu-bars' %}
-  </header>
-  {% endif %} 
-{% endcomment %}
 
   <main id="MainContent" role="main" tabindex="-1">
     {{ content_for_layout }}

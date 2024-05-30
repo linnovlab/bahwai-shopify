@@ -116,7 +116,7 @@ body {
   height: 200px;
   width: 100%;
 }
-.categories-content-section .cat-item{
+.cat-item{
   @apply sm:w-[345px] w-full flex flex-col justify-start sm:ps-[24px] ps-4 sm:pb-[34px] pb-[21px] pt-[44px] rounded-lg mx-[5px];
 }
 .btn-aventure{
