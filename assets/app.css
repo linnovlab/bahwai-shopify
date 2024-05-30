@@ -678,16 +678,8 @@ html {
   right: 0px;
 }
 
-.right-\[-35px\]{
-  right: -35px;
-}
-
-.right-\[-40px\]{
-  right: -40px;
-}
-
-.right-\[-9px\]{
-  right: -9px;
+.right-\[-13px\]{
+  right: -13px;
 }
 
 .right-\[13px\]{
@@ -718,16 +710,16 @@ html {
   top: -43px;
 }
 
+.top-\[-4px\]{
+  top: -4px;
+}
+
 .top-\[101px\]{
   top: 101px;
 }
 
 .top-\[14rem\]{
   top: 14rem;
-}
-
-.top-\[15px\]{
-  top: 15px;
 }
 
 .top-\[167px\]{
@@ -748,6 +740,14 @@ html {
 
 .top-\[42px\]{
   top: 42px;
+}
+
+.bottom-\[-103px\]{
+  bottom: -103px;
+}
+
+.left-\[31\%\]{
+  left: 31%;
 }
 
 .isolate{
@@ -1049,6 +1049,10 @@ html {
   margin-right: 0.5rem;
 }
 
+.mr-\[44px\]{
+  margin-right: 44px;
+}
+
 .ms-2{
   margin-inline-start: 0.5rem;
 }
@@ -1117,12 +1121,8 @@ html {
   margin-top: -26px;
 }
 
-.mt-\[-9rem\]{
-  margin-top: -9rem;
-}
-
-.mt-\[21px\]{
-  margin-top: 21px;
+.mt-\[-6rem\]{
+  margin-top: -6rem;
 }
 
 .mt-\[24px\]{
@@ -1145,16 +1145,16 @@ html {
   margin-top: 50px;
 }
 
-.mt-\[5rem\]{
-  margin-top: 5rem;
-}
-
 .mt-\[80px\]{
   margin-top: 80px;
 }
 
 .mt-\[90px\]{
   margin-top: 90px;
+}
+
+.mt-\[32px\]{
+  margin-top: 32px;
 }
 
 .block{
@@ -1195,6 +1195,10 @@ html {
 
 .h-\[1\.1rem\]{
   height: 1.1rem;
+}
+
+.h-\[106px\]{
+  height: 106px;
 }
 
 .h-\[10rem\]{
@@ -1297,10 +1301,6 @@ html {
   height: 100vh;
 }
 
-.h-\[106px\]{
-  height: 106px;
-}
-
 .max-h-\[8rem\]{
   max-height: 8rem;
 }
@@ -1341,12 +1341,20 @@ html {
   width: 10rem;
 }
 
+.w-\[11rem\]{
+  width: 11rem;
+}
+
 .w-\[130px\]{
   width: 130px;
 }
 
 .w-\[140px\]{
   width: 140px;
+}
+
+.w-\[147px\]{
+  width: 147px;
 }
 
 .w-\[170px\]{
@@ -1401,10 +1409,6 @@ html {
   width: 40rem;
 }
 
-.w-\[428px\]{
-  width: 428px;
-}
-
 .w-\[43rem\]{
   width: 43rem;
 }
@@ -1451,6 +1455,10 @@ html {
 
 .w-full{
   width: 100%;
+}
+
+.w-\[65px\]{
+  width: 65px;
 }
 
 .max-w-\[100\%\]{
@@ -1545,6 +1553,10 @@ html {
   flex-direction: row;
 }
 
+.flex-row-reverse{
+  flex-direction: row-reverse;
+}
+
 .flex-col{
   flex-direction: column;
 }
@@ -1571,6 +1583,10 @@ html {
 
 .items-stretch{
   align-items: stretch;
+}
+
+.justify-normal{
+  justify-content: normal;
 }
 
 .justify-start{
@@ -1949,6 +1965,11 @@ html {
   padding: 8px;
 }
 
+.px-1{
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -2004,6 +2025,11 @@ html {
   padding-right: 24px;
 }
 
+.px-\[30px\]{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .px-\[40px\]{
   padding-left: 40px;
   padding-right: 40px;
@@ -2057,6 +2083,11 @@ html {
 .py-\[48px\]{
   padding-top: 48px;
   padding-bottom: 48px;
+}
+
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .\!pe-8{
@@ -2221,6 +2252,14 @@ html {
 
 .pt-\[9rem\]{
   padding-top: 9rem;
+}
+
+.pb-\[100px\]{
+  padding-bottom: 100px;
+}
+
+.pt-4{
+  padding-top: 1rem;
 }
 
 .text-left{
@@ -2612,6 +2651,7 @@ body {
   font-family: 'Comic Sans MS', system-ui, sans-serif;
   --tw-bg-opacity: 1;
   background-color: rgb(131 37 219 / var(--tw-bg-opacity));
+  /* overflow-x: hidden !important; */
 }
 
 :root {
@@ -3758,12 +3798,28 @@ tbody tr:last-child td{
     right: -131px;
   }
 
+  .sm\:right-\[-35px\]{
+    right: -35px;
+  }
+
   .sm\:right-\[-97px\]{
     right: -97px;
   }
 
+  .sm\:top-\[15px\]{
+    top: 15px;
+  }
+
   .sm\:top-\[168px\]{
     top: 168px;
+  }
+
+  .sm\:bottom-\[-142px\]{
+    bottom: -142px;
+  }
+
+  .sm\:left-\[42\%\]{
+    left: 42%;
   }
 
   .sm\:m-4{
@@ -3820,6 +3876,10 @@ tbody tr:last-child td{
     margin-inline-end: 2rem;
   }
 
+  .sm\:mr-0{
+    margin-right: 0px;
+  }
+
   .sm\:ms-0{
     margin-inline-start: 0px;
   }
@@ -3844,8 +3904,20 @@ tbody tr:last-child td{
     margin-top: -25px;
   }
 
+  .sm\:mt-\[-9rem\]{
+    margin-top: -9rem;
+  }
+
   .sm\:mt-\[15rem\]{
     margin-top: 15rem;
+  }
+
+  .sm\:mt-\[21px\]{
+    margin-top: 21px;
+  }
+
+  .sm\:mt-\[48px\]{
+    margin-top: 48px;
   }
 
   .sm\:block{
@@ -3912,10 +3984,6 @@ tbody tr:last-child td{
     width: 300px;
   }
 
-  .sm\:w-\[313px\]{
-    width: 313px;
-  }
-
   .sm\:w-\[341px\]{
     width: 341px;
   }
@@ -3926,6 +3994,10 @@ tbody tr:last-child td{
 
   .sm\:w-\[388px\]{
     width: 388px;
+  }
+
+  .sm\:w-\[428px\]{
+    width: 428px;
   }
 
   .sm\:w-auto{

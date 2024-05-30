@@ -1,4 +1,4 @@
-<div class="content mt-[-9rem] relative -z-0 bg-_main_color_light">
+<div class="content sm:mt-[-9rem] mt-[-6rem] relative -z-0 bg-_main_color_light">
     <style>
         .choc-img-item{
             /* background-image: url("{{ 'chocolat_long.png' |  asset_url }}"); */
@@ -30,14 +30,31 @@
         .chocolat_long{
             background-image: url('{{ 'chocolat_long.png' |  asset_url }}');
         }
+        .chocolat_mobile{
+            background-image: url('{{ 'chocolat_mobile.png' |  asset_url }}');
+        }
+        @media screen and (max-width: 768px) {
+            .bulle_1{
+                left: -10px;
+                bottom: -87px;
+            }
+            .bulle_3{
+                bottom: 65px;
+                left: 141px;
+            }
+            .bulle_2, .bulle_4{
+                display: none;
+            }
+        }
     </style>
     <div class="relative img-chocolat ">
         <div class=" relative z-10">
-            <div class="chocolat_court h-[106px] w-full"></div>
-            <div class="chocolat_long h-[240px] w-full"></div>
+            <div class="chocolat_court h-[106px] w-full sm:block hidden"></div>
+            <div class="chocolat_long h-[240px] w-full sm:block hidden"></div>
+            <div class="chocolat_mobile h-[240px] w-full sm:hidden block"></div>
         </div>
         <div class="absolute top-[42px] left-[-13px] -z-0">
-            <img src="{{ 'sachet_chocolat.png' |  asset_url }}" alt="" height="auto" width="auto">
+            <img class="sm:w-full w-[11rem]" src="{{ 'sachet_chocolat.png' |  asset_url }}" alt="" height="auto" width="auto">
             <img class="bulle_1" src="{{ 'bulle_1.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
             <img class="bulle_2" src="{{ 'bulle_2.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
             <img class="bulle_3" src="{{ 'bulle_3.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
