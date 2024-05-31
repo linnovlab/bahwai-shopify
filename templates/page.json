@@ -1,14 +1,22 @@
 {
   "sections": {
+    "header":{
+      "type": "header"
+    },
     "main": {
       "type": "main-page",
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "footer":{
+      "type": "footer"
     }
   },
   "order": [
-    "main"
+    "header",
+    "main",
+    "footer"
   ]
 }
