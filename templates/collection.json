@@ -1,12 +1,24 @@
 {
   "sections": {
+    "header": {
+      "type": "header"
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
       }
+    },
+    "faq":{
+      "type": "faq"
+    },
+    "footer":{
+      "type": "footer"
     }
   },
   "order": [
-    "product-grid"
+    "header",
+    "product-grid",
+    "faq",
+    "footer"
   ]
 }

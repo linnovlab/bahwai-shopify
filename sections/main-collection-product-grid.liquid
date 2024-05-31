@@ -1,136 +1,88 @@
 <style>
-  @media screen and (max-width: 641px) {
-    .hero-collection {
-      background-image: url('{{ collection.image | image_url: height: 272 }}');
-    }
-  }
-
-  .hero-collection {
-    background-image: url('{{ collection.image | image_url: height: 400 }}');
-  }
-
-  @media screen and (max-width: 641px) {
-    .wave-index {
-      background-image: url('{{ ' Vague-Mobile.svg' |asset_url }}');
-    }
-  }
-
-  @media screen and (min-width: 641px) {
-    .wave-index {
-      background-image: url('{{ ' Vague-desktop.svg' |asset_url }}');
-    }
+  body{
+    background-color: white !important;
   }
 </style>
-<main class="main-cats">
-  {%- if collection.title == "Products" -%}
-  <div style="background-image: url({{ 'bannerblog.png' | asset_url }});"
-    class="banner object-cover img-center sm:h-[25rem] h-[17rem]"></div>
-  {%- else -%}
-  <div class="banner hero-collection object-cover img-center sm:h-[25rem] h-[17rem]"></div>
-  <div class="wave-index img-center sm:-mt-[30px] -mt-[27px] sm:h-[30px] h-[27px] bg-no-repeat w-full"></div>
-  {%- endif -%}
+<section class="main-cats">
 
-  <section class="flex mt-12 text-_main_color_dark desktop-width">
-    {% comment %}
-    <div class="left-side sm:flex flex-col gap-4 max-w-[16.5rem] w-full me-[3rem] ps-8 hidden">
-      <form class="filter-form" id="form-filtre" method="get">
-        <div class="flex flex-col gap-3 mb-8 content">
-          <h4 class="text-lg font-extrabold border-b border-gray-500">Objectifs</h4>
-          {%- for filter in collection.filters -%}
-          {% if filter.label == 'Framboise' %}
-          <h4 class="mt-4 text-lg font-extrabold border-b border-gray-500">Saveurs</h4>
-          {% elsif filter.label == 'Matin' %}
-          <h4 class="mt-4 text-lg font-extrabold border-b border-gray-500">À quel moment ?</h4>
-          {% endif %}
-          {%- for filter_value in filter.values -%}
-          <div class="relative flex gap-4 filter-item">
-            <i class="fa-solid fa-check"></i>
-            <input type="checkbox" class="checkbox" name="{{ filter_value.param_name }}"
-              value="{{ filter_value.value }}" id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if
-              filter_value.active -%}checked{%- endif %} {% if filter_value.count==0 and filter_value.active==false
-              -%}disabled{%- endif %}>
-            <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="hover:cursor-pointer">{{ filter.label
-              }}
-              {%- if filter.active_values.size > 0 -%}
-              ({{ filter.active_values.size }})
-              {%- endif -%}
-            </label>
-          </div>
-          {%- endfor -%}
-          {%- endfor -%}
-        </div>
-        <button id="btn-valider-filter" class="invisible btn" type="submit">valider</button>
-      </form>
-    </div>
-    {% endcomment %}
+  <section class="flex mt-12 text-_main_color_dark mb-[80px] desktop-width">
     <div class="flex flex-col w-full gap-4 right-side sm:me-8 me-0">
       <div class="sm:px-0 px-[20px]">
-        <h1 class="text-center title">{{ collection.title }}</h1>
-        <p class="mb-8 text-center">{{ collection.metafields.custom.teasing_title }}</p>
-        <div class="flex justify-end mb-4 sm:hidden">{% comment %}
-          <p id="open-filter-modal"
-            class="flex gap-4 border-b text-_main_color_dark border-_main_color_dark hover:cursor-pointer">
-            <img src="{{ 'Filtrer.svg' |asset_url }}" alt="filter" width="auto" height="auto" loading="lazy">
-            <span class="text-sm font-medium sm:text-base">Filtrer</span>
-          </p>
-          {% endcomment %}
-        </div>
-        <div id="collection-products-container" class="flex flex-wrap items-center justify-around gap-2 sm:gap-8">
-          {% for product in collection.products %}
-          {% comment %} getting rating value {% endcomment %}
-          {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
-          {%- assign n = rates | first | plus: 0 -%}
+        <h1 class="title !text-start">{{ collection.title }}</h1>
+        <p class="mb-8">{{ collection.metafields.custom.teasing_title }}</p>
+        {%- paginate collection.products by section.settings.products_per_page -%}
+          <div id="collection-products-container" class="flex flex-wrap items-center justify-around gap-2 sm:gap-8">
+            {% for product in collection.products %}
+            {% comment %} getting rating value {% endcomment %}
+            {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
+            {%- assign n = rates | first | plus: 0 -%}
 
-          <div class="content-item sm:w-auto w-[9rem] text-sm">
-            <a href="{{ product.url }}"
-              class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
-              <div class="w-full img">
-                <img src="{{ product |image_url: width: 600, height: 600 }}" alt="La gourmande aux noisettes"
-                  class="w-full" width="auto" height="auto" loading="lazy">
-              </div>
-              <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
-              <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
-                <div class="flex text-sm stars text-_main_color_dark">
-                  {% if product.metafields.reviews.rating_count != null %}
-                  {%- for i in (1..5) -%}
-                  {%- if i <= n -%} <i class="fas fa-star"></i>
-                    {%- else -%}
-                    <i class="fa-regular fa-star"></i>
-                    {%- endif -%}
-                    {%- endfor -%}
-                    {%- endif -%}
+            <div class="content-item sm:w-auto w-[9rem] text-sm">
+              <a href="{{ product.url }}"
+                class="item text-[12px] max-w-[230px] w-full m-1 flex flex-col gap-1">
+                <div class="w-full img">
+                  <img src="{{ product |image_url: width: 600, height: 600 }}" alt="La gourmande aux noisettes"
+                    class="w-full" width="auto" height="auto" loading="lazy">
                 </div>
-                <span class="border-_main_color_dark border-b-2 text-[11px]">
-                  {% if product.metafields.reviews.rating_count == null %}
-                  Soyez le 1er à noter!
-                  {% else %}
-                  {{ product.metafields.reviews.rating_count }} avis
+                <p class="font-semibold w-[10rem] mt-2">{{ product.title }}</p>
+                <div class="avis flex gap-2 h-[1.1rem] mb-2">
+                  <div class="flex text-sm stars text-_main_color_dark">
+                    {% if product.metafields.reviews.rating_count != null %}
+                    {%- for i in (1..5) -%}
+                    {%- if i <= n -%} <i class="fas fa-star"></i>
+                      {%- else -%}
+                      <i class="fa-regular fa-star"></i>
+                      {%- endif -%}
+                      {%- endfor -%}
+                      {%- endif -%}
+                  </div>
+                  <span class="border-_main_color_dark border-b-2 text-[11px]">
+                    {% if product.metafields.reviews.rating_count == null %}
+                    Soyez le 1er à noter!
+                    {% else %}
+                    {{ product.metafields.reviews.rating_count }} avis
+                    {% endif %}
+                  </span>
+                </div>
+                <p class="font-medium">
+                  {% if product.compare_at_price %}
+                  <span id="promo-price" class="pe-[7px]">
+                    {{ product.compare_at_price | money_without_currency
+                    }}€
+                  </span>
                   {% endif %}
-                </span>
-              </div>
-              <p class="font-medium">
-                {% if product.compare_at_price %}
-                <span id="promo-price" class="pe-[7px]">
-                  {{ product.compare_at_price | money_without_currency
-                  }}€
-                </span>
-                {% endif %}
-                <span>À partir de {{ product.price | divided_by: 100.00 }} €</span>
-              </p>
-            </a>
+                  <span>À partir de {{ product.price | divided_by: 100.00 }} €</span>
+                </p>
+              </a>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
-        </div>
 
-        <div class="desc text-sm text-[rgb(86,86,86)] mt-8">
-          <h5 class="text-lg font-bold text-_main_color_dark">{{ collection.metafields.custom.title_description_en_bas
-            }}</h5>
-          {{ collection.description }}
-        </div>
+          <div class="pagination">
+            {%- if paginate.pages > 1 -%}
+              {% render 'pagination', paginate: paginate, anchor: '' %}
+            {%- endif -%}
+          </div>
+        {%- endpaginate -%}
       </div>
-
     </div>
   </section>
 
   {% render 'bh-filter-modal' %}
-</main>
+</section>
+
+{% schema %}
+  {
+    "name": "Main collections",
+    "tag": "section",
+    "class": "main-collections-products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "products_per_page",
+        "label": "Products per page",
+        "default": "5"
+      }
+    ]
+  }
+{% endschema %}
