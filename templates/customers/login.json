@@ -1,10 +1,22 @@
 {
   "sections": {
+    "header": {
+      "type": "header"
+    },
     "main": {
       "type": "main-login"
+    },
+    "newsletter":{
+      "type": "newsletter-section"
+    },
+    "footer": {
+      "type": "footer"
     }
   },
   "order": [
-    "main"
+    "header",
+    "main",
+    "newsletter",
+    "footer"
   ]
 }

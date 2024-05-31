@@ -2021,6 +2021,11 @@ html {
   padding-right: 11px;
 }
 
+.px-\[18px\]{
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
 .px-\[20px\]{
   padding-left: 20px;
   padding-right: 20px;
@@ -2612,6 +2617,15 @@ html {
   color: rgb(253 224 71 / var(--tw-text-opacity));
 }
 
+.text-\[\]{
+  color: ;
+}
+
+.text-\[\#456073\]{
+  --tw-text-opacity: 1;
+  color: rgb(69 96 115 / var(--tw-text-opacity));
+}
+
 .underline{
   text-decoration-line: underline;
 }
@@ -2837,6 +2851,8 @@ body {
   --tw-border-opacity: 1;
   border-color: rgb(153 153 153 / var(--tw-border-opacity));
   padding-inline-start: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(69 96 115 / var(--tw-text-opacity));
   outline: 2px solid transparent;
@@ -3450,7 +3466,7 @@ div.spr-summary .spr-summary-caption {
 /* connexion page */
 
 #eye-password {
-  top: 10px;
+  top: 25px;
   right: 10px;
 }
 
@@ -3809,11 +3825,6 @@ tbody tr:last-child td{
   cursor: pointer;
 }
 
-.hover\:border-_orange_color:hover{
-  --tw-border-opacity: 1;
-  border-color: rgb(255 98 0 / var(--tw-border-opacity));
-}
-
 .hover\:border-_red_color:hover{
   --tw-border-opacity: 1;
   border-color: rgb(255 49 49 / var(--tw-border-opacity));
@@ -3827,6 +3838,11 @@ tbody tr:last-child td{
 .hover\:text-_orange_color:hover{
   --tw-text-opacity: 1;
   color: rgb(255 98 0 / var(--tw-text-opacity));
+}
+
+.hover\:text-_red_color:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 49 49 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-600:hover{
@@ -4158,6 +4174,10 @@ tbody tr:last-child td{
     gap: 192px;
   }
 
+  .sm\:gap-\[30px\]{
+    gap: 30px;
+  }
+
   .sm\:gap-\[40px\]{
     gap: 40px;
   }
@@ -4166,12 +4186,13 @@ tbody tr:last-child td{
     gap: 60px;
   }
 
-  .sm\:gap-\[30px\]{
-    gap: 30px;
-  }
-
   .sm\:border-none{
     border-style: none;
+  }
+
+  .sm\:bg-_red_color{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 49 49 / var(--tw-bg-opacity));
   }
 
   .sm\:p-8{
@@ -4226,6 +4247,11 @@ tbody tr:last-child td{
   .sm\:py-2{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .sm\:py-\[40px\]{
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .sm\:\!pe-0{

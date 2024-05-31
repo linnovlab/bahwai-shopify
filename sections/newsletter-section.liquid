@@ -1,0 +1,42 @@
+<section class="contact mt-[-6rem] pb-8 pt-[9rem] px-[10px] bg-_main_color_darker relative z-1 text-white flex flex-col justify-center items-center gap-6 img-center ">
+    <h2 class="title-white text-center desktop-width sm:px-8">Gardons contact !</h2>
+    <p class="text-center sm:text-base text-sm mb-4 desktop-width sm:px-8">
+        Inscrivez vous à la newsletter et soyez au courant de l’actualité de votre marque préférée 
+    </p>
+    {% form 'customer', class: "flex gap-4 max-w-[40rem] w-full px-4 mb-[50px] ", id: "form-on-est-ensemble" %}
+      <input
+        type="text"
+        placeholder="Votre adresse e-mail"
+        required
+        id="input-contact"
+        name="contact[email]"
+        class="w-100 outline-none bg-transparent border border-white ps-2 h-10 w-full">
+      <button type="submit" class="py-2 px-5 sm:bg-_red_color bg-white rounded-md">
+        <img
+          src="{{'send_white.svg' | asset_url }}"
+          class="sm:block hidden"
+          alt="send"
+          width="auto"
+          height="auto"
+          loading="lazy">
+        <img
+          src="{{'send.svg' | asset_url }}"
+          class="sm:hidden block"
+          alt="send"
+          width="auto"
+          height="auto"
+          loading="lazy">
+      </button>
+    {% endform %}
+</section>
+
+{% schema %}
+    {
+        "name": "Newsletter",
+        "class": "newsletter-section",
+        "tag": "section",
+        "settings": [
+            
+        ]
+    }
+{% endschema %}

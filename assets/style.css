@@ -73,7 +73,7 @@ body {
   @apply items-center justify-center;
 }
 .input {
-  @apply outline-none ps-2 h-[3rem] w-full border border-[#999] mt-2 rounded-md text-[#456073];
+  @apply text-sm outline-none ps-2 h-[3rem] w-full border border-[#999] mt-2 rounded-md text-[#456073];
 }
 .input::placeholder{
   @apply text-[#456073;]
@@ -388,7 +388,7 @@ div.spr-summary .spr-summary-caption {
 
 /* connexion page */
 #eye-password {
-  top: 10px;
+  top: 25px;
   right: 10px;
 }
 

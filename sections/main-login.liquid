@@ -1,3 +1,12 @@
+<style>
+	body{
+		background-color: white !important;
+	}
+	#form-login{
+		box-shadow: 4px 4px 3px 0px rgba(86, 17, 149, 0.15);
+	}
+</style>
+
 <div class="mt-20 text-_main_color_dark">
 
 	<div id="form-recover" class="content hidden sm:max-w-[25rem] max-w-[100%] mx-8 sm:mx-auto">
@@ -25,24 +34,26 @@
 		{%- endform -%}
 	</div>
 
-	<div id="form-login" class="content sm:max-w-[25rem] max-w-[100%] mx-8 sm:mx-auto">
+	<div id="form-login" class="content sm:max-w-[25rem] max-w-[100%] mx-8 sm:mx-auto rounded-md sm:px-[40px] px-[18px] sm:py-[40px] py-8">
 		<h1 class="title mb-8">Mon compte</h1>
 		{% form 'customer_login', novalidate: 'novalidate' %}
 		{{ form.errors | default_errors }}
 		<div id="form-connexion" class="w-full  flex flex-col items-center gap-4">
 			<div class="item w-full">
-				<input class="input focus:border-_orange_color transition-all duration-300" type="email"
-					placeholder="{{ 'customer.login_page.email' | t }}" name="customer[email]" required>
+				<label for="email" class="text-xs text-[#456073]">Adresse mail</label>
+				<input id="email" class="input focus:border-_orange_color transition-all duration-300" type="email"
+					placeholder="Adresse mail" name="customer[email]" required>
 			</div>
 			<div class="item w-full relative">
+				<label for="input-password" class="text-xs text-[#456073]">Mot de passe</label>
 				<input id="input-password" class="input focus:border-_orange_color transition-all duration-300"
 					type="password" placeholder="Mot de passe" name="customer[password]" required>
 				<i class="fas fa-eye absolute hover:cursor-pointer" id="eye-password"></i>
 			</div>
 			<div class="flex flex-col items-center mt-8">
-				<button type="submit" class="btn mb-4 py-2 text-white">Se connecter</button>
-				<p class="text-_main_color_dark border-b border-_main_color_dark hover:border-_orange_color">
-					<a id="recover" href="#recover" class="hover:text-_orange_color transition-all duration-300">Mot de
+				<button type="submit" class="btn-red mb-4 py-2 text-white">Se connecter</button>
+				<p class="text-_main_color_dark border-b border-_main_color_dark hover:border-_red_color">
+					<a id="recover" href="#recover" class="hover:text-_red_color transition-all duration-300">Mot de
 						passe oublié ?
 					</a>
 				</p>
@@ -55,17 +66,17 @@
 	<style>
 		@media screen and (max-width: 640px) {
 			.inscription-section {
-				background-image: url('{{ ' imageconnexionsm.png' |asset_url }}');
+				background-image: url('{{ 'wave_white_compte_mobile.svg' |asset_url }}');
 			}
 		}
 	</style>
-	<section style="background-image: url('{{ 'imageconnexion.png' |asset_url }}');"
+	<section style="background-image: url('{{ 'wave_white_compte.svg' |asset_url }}');"
 		class="inscription-section relative z-50 sm:h-[40rem] h-[27rem] text-_main_color_dark flex flex-col justify-center items-center gap-6 img-center mt-8 py-8 px-[10px]">
 		<h2 class="title">Nouveau chez Bahwai ?
 		</h2>
-		<p class="text-center ">Profitez de codes promo et de produits réservés aux membres en étant membre Bahwai</p>
+		<p class="text-center text-lg">Profitez de codes promo et de produits réservés aux membres en étant membre Bahwai</p>
 		<p>
-			<a href="{{ routes.account_register_url }}" class="btn">Créer mon compte
+			<a href="{{ routes.account_register_url }}" class="btn-red">Créer mon compte
 			</a>
 		</p>
 	</section>
