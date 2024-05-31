@@ -1469,6 +1469,10 @@ html {
   width: 100%;
 }
 
+.w-\[14rem\]{
+  width: 14rem;
+}
+
 .max-w-\[100\%\]{
   max-width: 100%;
 }
@@ -2522,6 +2526,11 @@ html {
   color: rgb(31 31 31 / var(--tw-text-opacity));
 }
 
+.text-\[\#456073\]{
+  --tw-text-opacity: 1;
+  color: rgb(69 96 115 / var(--tw-text-opacity));
+}
+
 .text-\[\#565656\]{
   --tw-text-opacity: 1;
   color: rgb(86 86 86 / var(--tw-text-opacity));
@@ -2615,15 +2624,6 @@ html {
 .text-yellow-300{
   --tw-text-opacity: 1;
   color: rgb(253 224 71 / var(--tw-text-opacity));
-}
-
-.text-\[\]{
-  color: ;
-}
-
-.text-\[\#456073\]{
-  --tw-text-opacity: 1;
-  color: rgb(69 96 115 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -2872,7 +2872,7 @@ body {
   font-family: Luckiest Guy;
   font-size: 24px;
   font-weight: 800;
-  font-style: italic;
+  text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgb(86 17 149 / var(--tw-text-opacity));
 }
@@ -3855,6 +3855,11 @@ tbody tr:last-child td{
   border-color: rgb(255 98 0 / var(--tw-border-opacity));
 }
 
+.focus\:border-_red_color:focus{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 49 49 / var(--tw-border-opacity));
+}
+
 .peer:checked ~ .peer-checked\:bg-_main_color_dark{
   --tw-bg-opacity: 1;
   background-color: rgb(86 17 149 / var(--tw-bg-opacity));
@@ -4128,6 +4133,10 @@ tbody tr:last-child td{
 
   .sm\:max-w-\[455px\]{
     max-width: 455px;
+  }
+
+  .sm\:max-w-\[794px\]{
+    max-width: 794px;
   }
 
   .sm\:max-w-\[80\%\]{

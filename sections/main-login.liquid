@@ -13,7 +13,7 @@
 		{%- form 'recover_customer_password' -%}
 		{% assign recover_success = form.posted_successfully? %}
 		<div class="field">
-			<input class="input mb-4 focus:border-_orange_color transition-all duration-300" type="email" value=""
+			<input class="input mb-4 focus:border-_red_color transition-all duration-300" type="email" value=""
 				name="email" id="RecoverEmail" autocorrect="off" autocapitalize="off" autocomplete="email" {% if
 				form.errors %} aria-invalid="true" aria-describedby="RecoverEmail-email-error" autofocus {% endif %}
 				placeholder="Email">
@@ -22,7 +22,7 @@
 		<p class="text-red-600 text-xl text-center">{{ form.errors.messages.form }}</p>
 		{%- endif -%}
 
-		<button type="submit" class="btn mb-4 py-2 text-white mx-auto mt-4">
+		<button type="submit" class="btn-red mb-4 py-2 text-white mx-auto mt-4">
 			Récupérer
 		</button>
 
@@ -41,12 +41,12 @@
 		<div id="form-connexion" class="w-full  flex flex-col items-center gap-4">
 			<div class="item w-full">
 				<label for="email" class="text-xs text-[#456073]">Adresse mail</label>
-				<input id="email" class="input focus:border-_orange_color transition-all duration-300" type="email"
+				<input id="email" class="input focus:border-_red_color transition-all duration-300" type="email"
 					placeholder="Adresse mail" name="customer[email]" required>
 			</div>
 			<div class="item w-full relative">
 				<label for="input-password" class="text-xs text-[#456073]">Mot de passe</label>
-				<input id="input-password" class="input focus:border-_orange_color transition-all duration-300"
+				<input id="input-password" class="input focus:border-_red_color transition-all duration-300"
 					type="password" placeholder="Mot de passe" name="customer[password]" required>
 				<i class="fas fa-eye absolute hover:cursor-pointer" id="eye-password"></i>
 			</div>

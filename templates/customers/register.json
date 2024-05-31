@@ -1,10 +1,18 @@
 {
   "sections": {
+    "header": {
+      "type": "header"
+    },
     "main": {
       "type": "main-register"
+    },
+    "footer": {
+      "type": "footer"
     }
   },
   "order": [
-    "main"
+    "header",
+    "main",
+    "footer"
   ]
 }

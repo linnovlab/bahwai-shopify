@@ -79,7 +79,7 @@ body {
   @apply text-[#456073;]
 }
 .title {
-  @apply font-litle text-_main_color_dark sm:text-[32px] text-[24px] text-center font-extrabold italic;
+  @apply font-litle text-_main_color_dark sm:text-[32px] text-[24px] text-center font-extrabold uppercase;
 }
 .title-white {
   @apply font-litle text-white sm:text-[32px] text-[28px] text-center font-normal;

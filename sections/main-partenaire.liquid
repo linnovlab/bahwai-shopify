@@ -46,115 +46,115 @@
       </p>
       {% form 'contact', class: "sm:max-w-[40rem] max-w-[100%] mx-auto w-full  flex flex-col items-center sm:gap-[30px] gap-4", id: "form-partenaire" %}
         {{ form.errors | default_errors }}
-        <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
-          <div class="item w-full">
-            <input
-              type="hidden"
-              name="contact[objet]"
-              value=""
-              id="sujetFormContact">
-            <label for="nom" class="text-xs font-semibold">Nom</label>
-            <input
-              class="input focus:border-_orange_color transition-all duration-300"
-              type="text"
-              placeholder="Nom*"
-              name="contact[nom]"
-              id="nom"
-              required>
-          </div>
-          <div class="item w-full">
-            <label for="prenom" class="text-xs font-semibold">Prenom</label>
-            <input
-              class="input focus:border-_orange_color transition-all duration-300"
-              type="text"
-              placeholder="Prénom*"
-              name="contact[prenom]"
-              id="prenom"
-              required>
-          </div>
-        </div>
-        <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
-          <div class="item w-full">
-            <label for="tel" class="text-xs font-semibold">Numéro de téléphone</label>
-            <input
-              class="input focus:border-_orange_color transition-all duration-300"
-              type="tel"
-              placeholder="Numéro de téléphone*"
-              name="contact[tel]"
-              id="tel"
-              required>
-          </div>
-          <div class="item w-full">
-            <label for="email" class="text-xs font-semibold">Addresse email</label>
-            <input
-              class="input focus:border-_orange_color transition-all duration-300"
-              type="email"
-              placeholder="Adresse mail*"
-              name="contact[email]"
-              required>
-          </div>
-        </div>
-        <div class="flex gap-4 w-full">
-          <div class="item w-full">
-            <label for="ville" class="text-xs font-semibold">Ville local ou commercial</label>
-            <input
-              class="input focus:border-_orange_color transition-all duration-300"
-              type="text"
-              placeholder="Ville du local commercial*"
-              name="contact[ville]"
-              id="ville"
-              required>
-          </div>
-          <div class="item w-full">
-            <label for="postal" class="text-xs font-semibold">Code postal</label>
-            <input
-              class="input focus:border-_orange_color transition-all duration-300"
-              type="text"
-              placeholder="Code postal*"
-              name="contact[code_postale]"
-              id="postal"
-              required>
-          </div>
-        </div>
-        <div class="item self-start w-full">
-          <div class="accordions">
-            <button
-              type="button"
-              id="btn-accordion"
-              class="rounded-md w-full px-3 ps-2 h-10  border border-[#999] flex justify-between items-center">
-              <span id="layout" class="text-[#999]">Choisissez un sujet*
-              </span>
-              <i class="fa-sharp fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="panel panel-selected hidden" id="panel-partenaire">
-              <ul>
-                <li data-value="Devenir ambassadeur">Devenir ambassadeur</li>
-                <li data-value="Communication et relation presse">Communication / Relation presse</li>
-                <li data-value="Proposer un évènement ou une collaboration">Proposer un évènement / une collab’</li>
-                <li class="selected" data-value="Devenir revendeur">Devenir revendeur</li>
-                <li data-value="Autre" class="rounded-b-[5px]">Autre</li>
-              </ul>
+          <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
+            <div class="item w-full">
+              <input
+                type="hidden"
+                name="contact[objet]"
+                value=""
+                id="sujetFormContact">
+              <label for="nom" class="text-xs font-semibold text-[#456073]">Nom</label>
+              <input
+                class="input focus:border-_orange_color transition-all duration-300"
+                type="text"
+                placeholder="Nom*"
+                name="contact[nom]"
+                id="nom"
+                required>
+            </div>
+            <div class="item w-full">
+              <label for="prenom" class="text-xs font-semibold text-[#456073]">Prenom</label>
+              <input
+                class="input focus:border-_orange_color transition-all duration-300"
+                type="text"
+                placeholder="Prénom*"
+                name="contact[prenom]"
+                id="prenom"
+                required>
             </div>
           </div>
-        </div>
-        <div class="item w-full">
-          <textarea
-            class="border rounded-[5px] border-[#999] w-full ps-4"
-            name="contact[body]"
-            id=""
-            rows="10"
-            placeholder="Dites nous tout !  "></textarea>
-        </div>
-        <div class="flex flex-col items-center">
-          <button
-            id="btn-partenaire"
-            type="submit"
-            class="btn-red mb-4 py-2 px-[5rem] text-white">Envoyer</button>
-        </div>
-
+          <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
+            <div class="item w-full">
+              <label for="tel" class="text-xs font-semibold text-[#456073]">Numéro de téléphone</label>
+              <input
+                class="input focus:border-_orange_color transition-all duration-300"
+                type="tel"
+                placeholder="Numéro de téléphone*"
+                name="contact[tel]"
+                id="tel"
+                required>
+            </div>
+            <div class="item w-full">
+              <label for="email" class="text-xs font-semibold text-[#456073]">Addresse email</label>
+              <input
+                class="input focus:border-_orange_color transition-all duration-300"
+                type="email"
+                placeholder="Adresse mail*"
+                name="contact[email]"
+                required>
+            </div>
+          </div>
+          <div class="flex gap-4 w-full">
+            <div class="item w-full">
+              <label for="ville" class="text-xs font-semibold text-[#456073]">Ville local ou commercial</label>
+              <input
+                class="input focus:border-_orange_color transition-all duration-300"
+                type="text"
+                placeholder="Ville du local commercial*"
+                name="contact[ville]"
+                id="ville"
+                required>
+            </div>
+            <div class="item w-full">
+              <label for="postal" class="text-xs font-semibold text-[#456073]">Code postal</label>
+              <input
+                class="input focus:border-_orange_color transition-all duration-300"
+                type="text"
+                placeholder="Code postal*"
+                name="contact[code_postale]"
+                id="postal"
+                required>
+            </div>
+          </div>
+          <div class="item self-start w-full">
+            <div class="accordions">
+              <button
+                type="button"
+                id="btn-accordion"
+                class="rounded-md w-full px-3 ps-2 h-10  border border-[#999] flex justify-between items-center">
+                <span id="layout" class="text-[#999]">Choisissez un sujet*
+                </span>
+                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="panel panel-selected hidden" id="panel-partenaire">
+                <ul>
+                  <li data-value="Devenir ambassadeur">Devenir ambassadeur</li>
+                  <li data-value="Communication et relation presse">Communication / Relation presse</li>
+                  <li data-value="Proposer un évènement ou une collaboration">Proposer un évènement / une collab’</li>
+                  <li class="selected" data-value="Devenir revendeur">Devenir revendeur</li>
+                  <li data-value="Autre" class="rounded-b-[5px]">Autre</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="item w-full">
+            <textarea
+              class="border rounded-[5px] border-[#999] w-full ps-4"
+              name="contact[body]"
+              id=""
+              rows="10"
+              placeholder="Dites nous tout !  "></textarea>
+          </div>
+          <div class="flex flex-col items-center">
+            <button
+              id="btn-partenaire"
+              type="submit"
+              class="btn-red mb-4 py-2 px-[5rem] text-white">Envoyer</button>
+          </div>
       {% endform %}
       <p class="mt-4 text-center text-[#565656]">En poursuivant, vous acceptez toutes les conditions générales 
-        d’utilisations et notre politique de confidentialité</p>
+        d’utilisations et notre politique de confidentialité
+      </p>
     </div>
   </div>
 </div>
