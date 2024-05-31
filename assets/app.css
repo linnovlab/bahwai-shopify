@@ -690,6 +690,10 @@ html {
   right: 20px;
 }
 
+.right-\[44px\]{
+  right: 44px;
+}
+
 .top-0{
   top: 0px;
 }
@@ -700,6 +704,10 @@ html {
 
 .top-\[-11px\]{
   top: -11px;
+}
+
+.top-\[-23px\]{
+  top: -23px;
 }
 
 .top-\[-24px\]{
@@ -957,8 +965,8 @@ html {
   margin-bottom: 110px;
 }
 
-.mb-\[172px\]{
-  margin-bottom: 172px;
+.mb-\[12px\]{
+  margin-bottom: 12px;
 }
 
 .mb-\[18px\]{
@@ -981,12 +989,20 @@ html {
   margin-bottom: 40px;
 }
 
+.mb-\[50px\]{
+  margin-bottom: 50px;
+}
+
 .mb-\[5px\]{
   margin-bottom: 5px;
 }
 
 .mb-\[5rem\]{
   margin-bottom: 5rem;
+}
+
+.mb-\[76px\]{
+  margin-bottom: 76px;
 }
 
 .mb-\[7rem\]{
@@ -1129,6 +1145,10 @@ html {
   margin-top: 30px;
 }
 
+.mt-\[40px\]{
+  margin-top: 40px;
+}
+
 .mt-\[42px\]{
   margin-top: 42px;
 }
@@ -1147,14 +1167,6 @@ html {
 
 .mt-\[90px\]{
   margin-top: 90px;
-}
-
-.mb-0{
-  margin-bottom: 0px;
-}
-
-.mb-\[76px\]{
-  margin-bottom: 76px;
 }
 
 .block{
@@ -1337,6 +1349,10 @@ html {
   width: 100%;
 }
 
+.w-\[100px\]{
+  width: 100px;
+}
+
 .w-\[10rem\]{
   width: 10rem;
 }
@@ -1367,10 +1383,6 @@ html {
 
 .w-\[20rem\]{
   width: 20rem;
-}
-
-.w-\[22rem\]{
-  width: 22rem;
 }
 
 .w-\[24px\]{
@@ -1949,6 +1961,11 @@ html {
   padding: 8px;
 }
 
+.px-0{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .px-1{
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2064,6 +2081,11 @@ html {
   padding-bottom: 2rem;
 }
 
+.py-\[10px\]{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .py-\[24px\]{
   padding-top: 24px;
   padding-bottom: 24px;
@@ -2167,6 +2189,10 @@ html {
   padding-bottom: 70px;
 }
 
+.pe-\[10px\]{
+  padding-inline-end: 10px;
+}
+
 .pe-\[7px\]{
   padding-inline-end: 7px;
 }
@@ -2189,6 +2215,10 @@ html {
 
 .ps-8{
   padding-inline-start: 2rem;
+}
+
+.ps-\[24px\]{
+  padding-inline-start: 24px;
 }
 
 .pt-12{
@@ -2243,20 +2273,12 @@ html {
   padding-top: 74px;
 }
 
-.pt-\[9rem\]{
-  padding-top: 9rem;
-}
-
-.pb-\[159px\]{
-  padding-bottom: 159px;
-}
-
-.pt-\[\]{
-  padding-top: ;
-}
-
 .pt-\[87px\]{
   padding-top: 87px;
+}
+
+.pt-\[9rem\]{
+  padding-top: 9rem;
 }
 
 .text-left{
@@ -2440,6 +2462,10 @@ html {
 
 .italic{
   font-style: italic;
+}
+
+.leading-\[1\.3\]{
+  line-height: 1.3;
 }
 
 .leading-\[1\]{
@@ -2716,6 +2742,23 @@ body {
   box-shadow: 1px 4px 8px -3px black;
 }
 
+.btn-red{
+  display: block;
+  height: 44px;
+  width: 224px;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 49 49 / var(--tw-bg-opacity));
+  padding-top: 10px;
+  text-align: center;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 1px 4px 8px -3px black;
+}
+
 .btn-secondaire{
   display: block;
   height: 44px;
@@ -2786,24 +2829,42 @@ body {
 }
 
 .input{
-  height: 2.5rem;
+  margin-top: 0.5rem;
+  height: 3rem;
   width: 100%;
+  border-radius: 0.375rem;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(153 153 153 / var(--tw-border-opacity));
   padding-inline-start: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(69 96 115 / var(--tw-text-opacity));
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.input::-moz-placeholder{
+  color: #456073;;
+}
+
+.input::placeholder{
+  color: #456073;;
 }
 
 .title{
   text-align: center;
   font-family: Luckiest Guy;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 800;
   font-style: italic;
   --tw-text-opacity: 1;
-  color: rgb(131 37 219 / var(--tw-text-opacity));
+  color: rgb(86 17 149 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px){
+  .title{
+    font-size: 32px;
+  }
 }
 
 .title-white{
@@ -3795,6 +3856,10 @@ tbody tr:last-child td{
 }
 
 @media (min-width: 640px){
+  .sm\:static{
+    position: static;
+  }
+
   .sm\:bottom-\[-142px\]{
     bottom: -142px;
   }
@@ -3873,6 +3938,10 @@ tbody tr:last-child td{
     margin-bottom: 10rem;
   }
 
+  .sm\:mb-\[172px\]{
+    margin-bottom: 172px;
+  }
+
   .sm\:me-8{
     margin-inline-end: 2rem;
   }
@@ -3909,8 +3978,16 @@ tbody tr:last-child td{
     margin-top: -9rem;
   }
 
+  .sm\:mt-\[104px\]{
+    margin-top: 104px;
+  }
+
   .sm\:mt-\[15rem\]{
     margin-top: 15rem;
+  }
+
+  .sm\:mt-\[215px\]{
+    margin-top: 215px;
   }
 
   .sm\:mt-\[21px\]{
@@ -3919,10 +3996,6 @@ tbody tr:last-child td{
 
   .sm\:mt-\[48px\]{
     margin-top: 48px;
-  }
-
-  .sm\:mb-\[172px\]{
-    margin-bottom: 172px;
   }
 
   .sm\:block{
@@ -4093,6 +4166,10 @@ tbody tr:last-child td{
     gap: 60px;
   }
 
+  .sm\:gap-\[30px\]{
+    gap: 30px;
+  }
+
   .sm\:border-none{
     border-style: none;
   }
@@ -4141,6 +4218,11 @@ tbody tr:last-child td{
     padding-right: 52px;
   }
 
+  .sm\:px-\[89px\]{
+    padding-left: 89px;
+    padding-right: 89px;
+  }
+
   .sm\:py-2{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -4154,16 +4236,16 @@ tbody tr:last-child td{
     padding-bottom: 0px;
   }
 
+  .sm\:pb-\[159px\]{
+    padding-bottom: 159px;
+  }
+
   .sm\:pb-\[192px\]{
     padding-bottom: 192px;
   }
 
   .sm\:ps-0{
     padding-inline-start: 0px;
-  }
-
-  .sm\:pb-\[159px\]{
-    padding-bottom: 159px;
   }
 
   .sm\:text-\[22px\]{

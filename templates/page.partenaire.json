@@ -1,14 +1,22 @@
 {
   "sections": {
+    "header": {
+      "type": "header"
+    },
     "partenaire": {
       "type": "main-partenaire",
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "footer": {
+      "type": "footer"
     }
   },
   "order": [
-    "partenaire"
+    "header",
+    "partenaire",
+    "footer"
   ]
 }

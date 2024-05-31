@@ -44,6 +44,10 @@ body {
   @apply font-normal block outline-none bg-_orange_color text-white text-center rounded-md w-[224px] h-[44px] pt-[10px];
   box-shadow: 1px 4px 8px -3px black;
 }
+.btn-red {
+  @apply font-normal block outline-none bg-_red_color text-white text-center rounded-md w-[224px] h-[44px] pt-[10px];
+  box-shadow: 1px 4px 8px -3px black;
+}
 .btn-secondaire {
   @apply font-semibold block outline-none bg-white text-_main_color_dark text-center rounded-lg w-[224px] h-[44px] pt-[10px];
   box-shadow: 1px 4px 8px -3px black;
@@ -69,10 +73,13 @@ body {
   @apply items-center justify-center;
 }
 .input {
-  @apply outline-none ps-2 h-10 w-full border border-[#999];
+  @apply outline-none ps-2 h-[3rem] w-full border border-[#999] mt-2 rounded-md text-[#456073];
+}
+.input::placeholder{
+  @apply text-[#456073;]
 }
 .title {
-  @apply font-litle text-_main_color_light text-[32px] text-center font-extrabold italic;
+  @apply font-litle text-_main_color_dark sm:text-[32px] text-[24px] text-center font-extrabold italic;
 }
 .title-white {
   @apply font-litle text-white sm:text-[32px] text-[28px] text-center font-normal;
