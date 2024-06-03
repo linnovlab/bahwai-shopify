@@ -2,9 +2,6 @@
   body{
     background-color: white !important;
   }
-  .right-content{
-    box-shadow: 45px 28px 54.6px 0px rgba(0, 0, 0, 0.30);
-  }
 </style>
 
 <div id="image-product-popup"
@@ -15,7 +12,7 @@
     <span id="img_show_up"></span>
   </div>
 </div>
-<section class="flex flex-wrap mx-0 mt-0 text-white lg:flex-nowrap sm:mt-12 desktop-width sm:mx-8 sm:px-8">
+<section class="flex flex-wrap mx-0 mt-0 text-_main_color_dark lg:flex-nowrap sm:mt-12 desktop-width sm:mx-8 sm:px-8">
   <div class="mx-auto mb-16 left lg:mr-16 lg:mb-0">
     <div class="flex flex-col gap-4 imgs">
       <div class="lg:w-[460px] w-full">
@@ -34,24 +31,12 @@
     </div>
   </div>
 
-  <div class="right-content w-full mx-4 right sm:mx-0 text-white bg-_main_color_light rounded-md sm:p-6 p-4">
+  <div class="w-full mx-4 right sm:mx-0 bg-_main_color_light">
     <div class="flex justify-between head">
-      <div class="w-full">
-        <div class="flex justify-between sm:gap-0 gap-2 sm:flex-nowrap flex-wrap w-full">
-          <h1 class="font-bold text-_orange_color sm:text-[24px] text-base sm:mb-3 capitalize">
-            {{ product.title }}
-          </h1>
-          <div class="flex items-center gap-2 w-[14.5rem]">
-              <div class="starts text-white text-xs">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p>26 avis</p>
-          </div>
-        </div>
+      <div class="">
+        <h1 class="font-bold text-_main_color_dark sm:text-[24px] text-base sm:mb-3 capitalize">
+          {{ product.title }}
+        </h1>
         <div class="flex items-center gap-3 mb-2 price">
           <div id="promo-price">
             {% if product.compare_at_price %}
@@ -59,56 +44,93 @@
             }}€
             {% endif %}
           </div>
-          <p class="text-lg font-medium text-_orange_color variantPrice">{{ product.price |
+          <p class="text-lg font-medium text-_main_color_dark variantPrice">{{ product.price |
             money_without_currency }}€
           </p>
           <span class="text-[#999999] text-base">le pack</span>
         </div>
+
+        <div class="avis flex gap-2 h-[1.1rem] mb-4">
+          <div id="prod-stars-container" class="flex stars text-_main_color_dark">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="border-_main_color_dark border-b-2 text-[14px]">
+            <a href="#avis-produit">
+              {%- if product.metafields.reviews.rating_count != null -%}
+              {{ product.metafields.reviews.rating_count }} avis
+              {%- endif -%}
+            </a>
+          </span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="hidden" id="msg-share">
+          <div class="flex items-center absolute left-[-140px] top-[-11px] text-center">
+            <span class="text-sm text-center text-white w-[8rem] p-[8px] bg-gray-900 rounded-md">le lien a bien été
+              copié  !</span>
+            <i class="fa-solid fa-caret-right text-[18px]"></i>
+          </div>
+        </div>
+        <span id="btn-share" onclick="shareProduct('{{ product.url }}', '{{ product.title }}')">
+          <img src="{{ 'Partager.svg' | asset_url }}" class="hover:cursor-pointer" alt="partager" title="Partager"
+            width="auto" height="auto" loading="lazy">
+        </span>
       </div>
     </div>
-
-    <div class="desc font-poppins">
-      <p class="text-white sm:text-base text-sm">{{ product.description | truncate: 300 }}
+    <div class="desc">
+      <p class="text-[#565656] sm:text-base text-sm">{{ product.description | truncate: 300 }}
+      </p>
+    </div>
+    <div class="w-[18rem] my-4 font-medium" id="btn-produit-desc">
+      <p class="flex items-center border-b text-_main_color_dark border-_main_color_dark hover:cursor-pointer">
+        <span class="text-2xl me-2">+</span>
+        <span>En savoir plus sur le produit</span>
       </p>
     </div>
 
     {% if product.variants.size > 1 %}
-      <ul id="variant-options" class="w-full flex flex-col gap-4 justify-center items-center mt-8">
-        {% for variant in product.variants %}
-        <li class="sm:w-[388px] w-full">
-          <input class="hidden peer" type="radio" id="variant-{{ variant.id }}" name="variant" value="{{ variant.id }}" {%
-            if variant.featured_image %} data-image="{{ variant.featured_image | image_url: width: 600, height: 600 }}" {%
-            else %} data-image="{{ product | image_url: width: 600, height: 600 }}" {% endif %}
-            data-price="{{ variant.price | money_without_currency }}€"
-            data-unitprice="{% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ {% endif %}"
-            {% if variant==product.selected_or_first_available_variant %}checked{% endif %}>
 
-          <label for="variant-{{ variant.id }}"
-            class="inline-flex items-center justify-center w-full p-4 text-sm font-medium text-_main_color_dark bg-white border border-_main_color_dark rounded-[5px] cursor-pointer peer-checked:text-white peer-checked:bg-_main_color_dark hover:text-gray-600 hover:bg-gray-100">{{
-            variant.title }} {% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ l'unité{%
-            endif %}</label><br>
-          {% endfor %}
-        </li>
-      </ul>
+    <ul id="variant-options" class="grid w-full gap-2 mb-4 md:grid-cols-2">
+      {% for variant in product.variants %}
+      <li>
+        <input class="hidden peer" type="radio" id="variant-{{ variant.id }}" name="variant" value="{{ variant.id }}" {%
+          if variant.featured_image %} data-image="{{ variant.featured_image | image_url: width: 600, height: 600 }}" {%
+          else %} data-image="{{ product | image_url: width: 600, height: 600 }}" {% endif %}
+          data-price="{{ variant.price | money_without_currency }}€"
+          data-unitprice="{% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ {% endif %}"
+          {% if variant==product.selected_or_first_available_variant %}checked{% endif %}>
+        <label for="variant-{{ variant.id }}"
+          class="inline-flex items-center justify-center w-full p-4 text-sm font-medium text-_main_color_dark bg-white border border-_main_color_dark rounded-[5px] cursor-pointer peer-checked:text-white peer-checked:bg-_main_color_dark hover:text-gray-600 hover:bg-gray-100">{{
+          variant.title }} {% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ l'unité{%
+          endif %}</label><br>
+        {% endfor %}
+      </li>
+    </ul>
+
     {% endif %}
 
     <div
-      class="font-poppins flex flex-col flex-wrap items-center justify-center gap-6 footer text-_main_color_dark sm:flex-wrap-reverse lg:flex-row">
+      class="flex flex-col flex-wrap items-center justify-center gap-6 footer text-_main_color_dark sm:flex-wrap-reverse lg:flex-row">
 
       <div class="flex flex-col items-center w-full right sm:w-auto">
         {%- form 'product', product, id: "form-command", class: "flex flex-col sm:w-auto w-full mt-4 " -%}
-          <input id="selectedVariant" type="hidden" name="id"
-            value="{{ product.selected_or_first_available_variant.id }}">
-          {{ form | payment_terms }}
+        <input id="selectedVariant" type="hidden" name="id"
+          value="{{ product.selected_or_first_available_variant.id }}">
+        {{ form | payment_terms }}
 
-          <div class="flex items-center justify-center gap-2 mt-6 mb-10 sm:gap-4">
-            <button type="button" id="down">-</button>
-            <input type="number" name="quantity" id="input-produit" data-product_id="{{ product.id }}" min="1" max="30"
-              value="1">
-            <button type="button" id="up">+</button>
-          </div>
-          <button id="btn-ajout-panier" class="h-[44px] sm:w-[344px] w-full btn-red-panier" type="submit">Ajouter au
-            panier</button>
+        <div class="flex items-center justify-center gap-2 mb-4 sm:gap-4">
+          <p class="text-base font-medium">Quantité</p>
+          <button type="button" id="down">-</button>
+          <input type="number" name="quantity" id="input-produit" data-product_id="{{ product.id }}" min="1" max="30"
+            value="1">
+          <button type="button" id="up">+</button>
+        </div>
+        <button id="btn-ajout-panier" class="h-[44px] sm:w-[344px] w-full btn-red-panier" type="submit">Ajouter au
+          panier</button>
 
         {%- endform -%}
         <form action="{{ routes.cart_url }}" method="post" class="w-full">
@@ -118,68 +140,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<section id="product-description-section" class="product-description-section sm:p-6 p-4 desktop-width">
-  <div class="content mt-[80px]">
-    <h4 class="title mb-8">Description</h4>
-    <div class="desc-content text-[#565656] relative height-hide-text font-poppins">
-      {{ product.description | replace: "<p>", "
-        <p class='mb-4 leading-normal text-[16px]'>" | replace: "
-        <h2>", "<h2 class='text-[16px] font-bold mb-4'>" }}
-      
-      <div id="shadow-hide-text" class="w-full h-[50px]"></div>
-    </div>
-    <div class="read-more flex justify-center items-center">
-        <p id="read-more-trigger" class="flex gap-2 text-_main_color_darker border-b-2 border-_main_color_darker pb-1 w-max cursor-pointer">
-          <i class="fas fa-plus text-[20px] pt-[3px]"></i>
-          <span>Voir plus</span>
-        </p>
-    </div>
-
-    {% comment %} second section {% endcomment %}
-    <div class="composition-section mt-[58px]">
-      <h4 class="title mb-8">Composition</h4>
-      <div class="composition-content text-[#565656] relative height-hide-text font-poppins">
-        Ingrédients :
-         Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudre de lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol, arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithine de tournesol), agent d’enrobage : gomme d’acacia
-         ***Ingrédients issus de l’agriculture biologique
-
-        Peut contenir des traces de fruits à coques A conserver dans un endroit sec et frais, à l’abri de la lumière
-         Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudre de lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol, arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithine de tournesol), agent d’enrobage : gomme d’acacia
-         ***Ingrédients issus de l’agriculture biologique
-
-        Peut contenir des traces de fruits à coques A conserver dans un endroit sec et frais, à l’abri de la lumière
-         Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudre de lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol, arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithine de tournesol), agent d’enrobage : gomme d’acacia
-         ***Ingrédients issus de l’agriculture biologique
-
-        Peut contenir des traces de fruits à coques A conserver dans un endroit sec et frais, à l’abri de la lumière
-         Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudre de lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol, arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithine de tournesol), agent d’enrobage : gomme d’acacia
-         ***Ingrédients issus de l’agriculture biologique
-
-        Peut contenir des traces de fruits à coques A conserver dans un endroit sec et frais, à l’abri de la lumière
-
-        <div id="shadow-hide-text" class="w-full h-[50px]"></div>
-      </div>
-      <div class="read-more flex justify-center items-center">
-          <p id="read-more-trigger" class="flex gap-2 text-_main_color_darker border-b-2 border-_main_color_darker pb-1 w-max cursor-pointer">
-            <i class="fas fa-plus text-[20px] pt-[3px]"></i>
-            <span>Voir plus</span>
-          </p>
-      </div>
-    </div>
-
-    <div class="tableau-desc mt-[56px]">
-      <h4 class="title mb-8">Valeur nutritionnelles</h4>
-      <div class="img flex justify-center">
-        <img src="{{ 'tableau.png' |  asset_url }}" alt="tableau" height="auto" width="auto">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="my-4 flex justify-center">
-  {% render 'notif-model-review' %}
 </section>
 
 <section class="mx-4 mt-12 footer text-_main_color_dark sm:mx-8 desktop-width sm:px-8">

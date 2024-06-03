@@ -320,6 +320,7 @@ module.exports = {
       litle: ['Luckiest Guy'],
       rubik: ["Rubik Mono One"],
       poetsen: ['Poetsen One'],
+      poppins: ['Poppins'],
       sans: [
         'ui-sans-serif',
         'system-ui',
