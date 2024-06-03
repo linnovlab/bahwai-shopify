@@ -15,12 +15,6 @@
         "titre": "titre rek"
       }
     },
-    "footer": {
-      "type": "footer",
-      "settings": {
-        "footer-text": "Voyager en une bouchée, Bahwai ?"
-      }
-    },
     "16883169510a0509e0": {
       "type": "apps",
       "blocks": {
@@ -37,6 +31,12 @@
         "include_margins": true
       }
     },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "footer-text": "Voyager en une bouchée, Bahwai ?"
+      }
+    },
     "16883173153a89c527": {
       "type": "apps",
       "disabled": true,
@@ -48,8 +48,8 @@
   "order": [
     "header",
     "main",
-    "footer",
     "16883169510a0509e0",
+    "footer",
     "16883173153a89c527"
   ]
 }
