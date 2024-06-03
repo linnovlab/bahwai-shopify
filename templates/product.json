@@ -1,7 +1,13 @@
 {
   "sections": {
-    "header":{
-      "type": "header"
+    "header": {
+      "type": "header",
+      "settings": {
+        "annonce": "Livraison offerte à partir de 20€",
+        "menu": "main-menu",
+        "logo_width": 100,
+        "video_url": ""
+      }
     },
     "main": {
       "type": "main-product",
@@ -9,31 +15,23 @@
         "titre": "titre rek"
       }
     },
-    "footer":{
-      "type": "footer"
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "footer-text": "Voyager en une bouchée, Bahwai ?"
+      }
     },
     "16883169510a0509e0": {
       "type": "apps",
       "blocks": {
-        "531d6219-3141-4114-a33c-d66b35703b2f": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+        "judge_me_reviews_review_widget_mTBc7J": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-          }
-        },
-        "4f8c2cba-99f4-486e-a0fc-0a028378006f": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-            "stars_fill_color": "#000000",
-            "star_size": 15,
-            "text_align": "center",
-            "product": "{{product}}",
-            "stars_text_empty": "No reviews"
           }
         }
       },
       "block_order": [
-        "531d6219-3141-4114-a33c-d66b35703b2f",
-        "4f8c2cba-99f4-486e-a0fc-0a028378006f"
+        "judge_me_reviews_review_widget_mTBc7J"
       ],
       "settings": {
         "include_margins": true
