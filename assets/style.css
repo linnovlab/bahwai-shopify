@@ -409,6 +409,28 @@ body {
   overflow: hidden;
 }
 
+/* css section review app */
+.jdgm-rev-widg__title, 
+.jdgm-rev-widg__summary,
+.jdgm-histogram,
+.jdgm-row-actions,
+.jdgm-rev-widg__body,
+.jdgm-form__title{
+  display: none !important;
+}
+#judgeme_product_reviews{
+  @apply sm:px-[47px] px-6;
+}
+.jdgm-rev-widg{
+  @apply bg-_main_color_dark sm:px-[47px] px-6 !font-poppins !mb-[80px] !rounded-b-lg;
+}
+.jdgm-write-rev-link{
+  @apply !bg-_red_color !rounded-[7px] !py-4;
+}
+.jdgm-form{
+  background-color: white !important;
+}
+
 /* footer */
 footer a {
   transition: all 0.4s;

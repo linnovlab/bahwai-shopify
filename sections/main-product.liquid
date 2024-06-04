@@ -49,7 +49,9 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
               </div>
-              <p>26 avis</p>
+              <a href="#avis-produit" class="border-b text-xs">
+                <p>{{ product.metafields.reviews.rating_count }} avis</p>
+              </a>
           </div>
         </div>
         <div class="flex items-center gap-3 mb-2 price">
@@ -190,8 +192,12 @@
   </div>
 </section>
 
-<h4 id="avis-produit" class="mx-4 mt-8 -mb-10 text-lg font-medium text-_main_color_dark sm:mx-8 desktop-width sm:px-8">
-  L'avis des kings</h4>
+<div class="header-content rounded-t-lg sm:px-[47px] px-6">
+  <div class="flex justify-center bg-_main_color_dark mt-[80px]">
+    <h4 id="avis-produit" class="title-white pt-6">
+    Avis clients</h4>
+  </div>  
+</div>
 
 <!-- description produit -->
 <div class="brightness-50"></div>

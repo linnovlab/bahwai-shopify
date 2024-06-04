@@ -883,10 +883,6 @@ html {
   margin-bottom: 80px;
 }
 
-.-mb-10{
-  margin-bottom: -2.5rem;
-}
-
 .-ms-8{
   margin-inline-start: -2rem;
 }
@@ -1796,6 +1792,11 @@ html {
 .rounded-t-\[5px\]{
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.rounded-t-lg{
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 .rounded-ee-lg{
@@ -3478,6 +3479,59 @@ body {
   overflow: hidden;
 }
 
+/* css section review app */
+
+.jdgm-rev-widg__title, 
+.jdgm-rev-widg__summary,
+.jdgm-histogram,
+.jdgm-row-actions,
+.jdgm-rev-widg__body,
+.jdgm-form__title{
+  display: none !important;
+}
+
+#judgeme_product_reviews{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px){
+  #judgeme_product_reviews{
+    padding-left: 47px;
+    padding-right: 47px;
+  }
+}
+
+.jdgm-rev-widg{
+  margin-bottom: 80px !important;
+  border-bottom-right-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+  --tw-bg-opacity: 1;
+  background-color: rgb(86 17 149 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-family: Poppins !important;
+}
+
+@media (min-width: 640px){
+  .jdgm-rev-widg{
+    padding-left: 47px;
+    padding-right: 47px;
+  }
+}
+
+.jdgm-write-rev-link{
+  border-radius: 7px !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 49 49 / var(--tw-bg-opacity)) !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.jdgm-form{
+  background-color: white !important;
+}
+
 /* footer */
 
 footer a {
@@ -4128,6 +4182,11 @@ tbody tr:last-child td{
   .sm\:px-\[40px\]{
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  .sm\:px-\[47px\]{
+    padding-left: 47px;
+    padding-right: 47px;
   }
 
   .sm\:px-\[48px\]{
