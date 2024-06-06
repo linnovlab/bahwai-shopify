@@ -143,24 +143,7 @@
     <div class="composition-section mt-[58px]">
       <h4 class="title mb-8">Composition</h4>
       <div class="composition-content text-[#565656] relative height-hide-text font-poppins">
-        Ingrédients :
-        Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia
-        ***Ingrédients issus de l’agriculture biologique
-
-        Peut contenir des traces de fruits à coquesA conserver dans un endroit sec et frais, à l’abri de la lumière
-        Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia
-        ***Ingrédients issus de l’agriculture biologique
-
-        Peut contenir des traces de fruits à coquesA conserver dans un endroit sec et frais, à l’abri de la lumière
-        Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia
-        ***Ingrédients issus de l’agriculture biologique
-
-        Peut contenir des traces de fruits à coquesA conserver dans un endroit sec et frais, à l’abri de la lumière
-        Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia
-        ***Ingrédients issus de l’agriculture biologique
-
-        Peut contenir des traces de fruits à coquesA conserver dans un endroit sec et frais, à l’abri de la lumière
-
+        {{ section.settings.compositions }}
         <div id="shadow-hide-text" class="w-full h-[50px]"></div>
       </div>
       <div class="read-more flex justify-center items-center">
@@ -192,8 +175,8 @@
   </div>
 </section>
 
-<div class="header-content rounded-t-lg sm:px-[47px] px-6">
-  <div class="flex justify-center bg-_main_color_dark mt-[80px]">
+<div class="header-content sm:px-[47px] px-6">
+  <div class="flex justify-center rounded-t-lg bg-_main_color_dark mt-[80px]">
     <h4 id="avis-produit" class="title-white pt-6">
     Avis clients</h4>
   </div>  
@@ -307,16 +290,22 @@
 
 {% schema %}
 {
-"name": "Section produit",
-"class": "section",
-"settings": [
-{
-"type": "text",
-"id": "titre",
-"label": "Titre",
-"default": "titre rek"
-}
-]
+  "name": "Section produit",
+  "class": "section",
+  "settings": [
+    {
+    "type": "text",
+    "id": "titre",
+    "label": "Titre",
+    "default": "titre rek"
+    },
+    {
+      "type": "html",
+      "id": "compositions",
+      "label": "Compositions du produit",
+      "default": "Ingrédients : <br> Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia"
+    }
+  ]
 }
 {% endschema %}
 

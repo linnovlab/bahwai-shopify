@@ -1092,8 +1092,12 @@ $(document).ready(() => {
     }
   });
 
+  // review design feat
+  $(".jdgm-carousel-wrapper").css('background', 'red !important');
+  // $(".jdgm-carousel-wrapper").parent().css('max-width', '100% !important');
+  console.log($(".jdgm-carousel-wrapper"))
 
-  
+
 });
 
 

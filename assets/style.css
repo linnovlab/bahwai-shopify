@@ -425,7 +425,7 @@ body {
   @apply sm:px-[47px] px-6;
 }
 .jdgm-rev-widg{
-  @apply bg-_main_color_dark sm:px-[47px] px-6 !font-poppins !mb-[80px] !rounded-b-lg;
+  @apply bg-_main_color_dark sm:px-[47px] px-6 !font-poppins;
 }
 .jdgm-write-rev-link{
   @apply !bg-_red_color !rounded-[7px] !py-4;
@@ -452,6 +452,33 @@ body {
 .jdgm-submit-rev{
   @apply !bg-_red_color !rounded-lg !border-none !w-[224px] !py-4;
 }
+
+/* css section review carousel */
+#shopify-block-judge_me_reviews_featured_carousel_kiKEkw div:first-child{
+  max-width: 100% !important;
+}
+.jdgm-carousel{
+  width: 100% !important;
+  margin: 0 0 5rem 0 !important;
+  padding: 0 47px !important;
+}
+.jdgm-carousel--compact-theme.jdgm-carousel{
+  float: none !important;
+}
+.jdgm-carousel-wrapper{
+  padding: 0 !important;
+}
+.jdgm-carousel__item-container{
+  padding: 0 123px 50px 123px !important;
+  @apply !bg-_main_color_dark !rounded-b-lg;
+}
+.jdgm-carousel-item{
+  background-color: white !important;
+  border-radius: 8px;
+  padding: 10px !important;
+}
+
+
 
 /* footer */
 footer a {
@@ -507,6 +534,13 @@ footer .items li {
 @media screen and (max-width: 720px) {
   .height-hide-text{
     height: 192px;
+  }
+  /* responsive review carousel */
+  .jdgm-carousel{
+    padding: 0 24px !important;
+  }
+  .jdgm-carousel__item-container{
+    padding: 0 !important;
   }
 }
 

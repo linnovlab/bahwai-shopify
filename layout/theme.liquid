@@ -57,7 +57,7 @@
   <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
   <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
+  
 
   {%- unless settings.type_body_font.system? -%}
   <link rel="preload_tag" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -133,7 +133,7 @@
   {% endif %} 
 {% endcomment %}
 
-
+  <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer="defer"></script>
   {% if template.name == 'index' %}
