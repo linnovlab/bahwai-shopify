@@ -95,7 +95,7 @@ body {
   @apply fixed top-0 z-50 w-full h-full max-h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y;
 }
 .btn-etre-prevenu {
-  @apply hover:cursor-pointer mb-4 sm:text-sm text-_main_color_dark font-bold text-center border-b-2 border-_red_color w-[21rem] sm:text-[12px] text-[10px] sm:w-[24rem] m-auto;
+  @apply hover:cursor-pointer hover:text-_red_color mb-4 sm:text-base text-[11.5px] text-white font-bold text-center border-b-2 border-white w-full;
 }
 .star-empty {
   @apply text-white;
@@ -415,7 +415,10 @@ body {
 .jdgm-histogram,
 .jdgm-row-actions,
 .jdgm-rev-widg__body,
-.jdgm-form__title{
+.jdgm-form__title,
+.jdgm-form__reviewer-name-format-container,
+.jdgm-form__fieldset p,
+.jdgm-cancel-rev{
   display: none !important;
 }
 #judgeme_product_reviews{
@@ -429,6 +432,25 @@ body {
 }
 .jdgm-form{
   background-color: white !important;
+  max-width: 100% !important;
+  @apply !rounded-lg;
+}
+.jdgm-form__fieldset label{
+  text-align: start !important;
+  width: 100% !important;
+  @apply !text-xs font-semibold !text-[#456073];
+}
+.jdgm-form__fieldset input:not([type="submit"]){
+  @apply input;
+}
+.jdgm-form input:not([type="submit"]), .jdgm-form textarea{
+  border-radius: 8px !important;
+}
+.jdgm-form__rating{
+  display: flex;
+}
+.jdgm-submit-rev{
+  @apply !bg-_red_color !rounded-lg !border-none !w-[224px] !py-4;
 }
 
 /* footer */
@@ -510,9 +532,7 @@ footer .items li {
 
 /* newsletter section */
 @media screen and (max-width: 322px) {
-  #btn-etre-prevenu {
-    width: 11rem !important;
-  }
+  
   #form-etre-prevenu .form-item {
     width: 100% !important;
   }

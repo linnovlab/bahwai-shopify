@@ -17,13 +17,16 @@
       border-radius: 8px;
       box-shadow: 4px 4px 3px 0px rgba(86, 17, 149, 0.15);
     }
+    #title-left span{
+      background-color: #561195;
+    }
 </style>
 <div class="partenaire-main-page text-_main_color_dark sm:mt-20 mt-[40px] sm:px-[89px] px-[20px]">
   <div class="content-partenaire-main-page flex sm:flex-row flex-col gap-[40px] mb-[50px]">
     <div class="left-side sm:w-[388px] w-full sm:px-8 px-0">
       <div class="desktop-content sm:block hidden">
-        <h3 class="title-white sm:mt-[215px] mt-0">
-          Nos snacking très <span class="bg-_main_color_light">gourmand</span> sans prise de <span class="bg-_main_color_light">poids</span>
+        <h3 id="title-left" class="title-white sm:mt-[215px] mt-0">
+          {{ section.settings.title-left }}
         </h3>
         <div class="img sm:mt-[104px] mt-0 sm:static absolute top-0 right-0">
           <img src="{{ 'sachet_chocolat.svg' | asset_url }}" alt="sachet_chocolat" height="auto" width="100%">
@@ -31,7 +34,7 @@
       </div>
       <div class="mobile-content relative sm:hidden block ps-[24px] py-[10px] pe-[10px]">
         <h3 class="font-litle text-white text-lg font-extrabold w-[10rem] text-center leading-[1.3]">
-          Nos snacking très <span class="bg-_main_color_light">gourmand</span> sans prise de <span class="bg-_main_color_light">poids</span>
+          {{ section.settings.title-left }}
         </h3>
         <div class="img absolute top-[-23px] right-[44px]">
           <img class=" w-[100px]" src="{{ 'sachet_chocolat.svg' | asset_url }}" alt="sachet_chocolat" height="auto" width="100%">
@@ -39,10 +42,9 @@
       </div>
     </div>
     <div class="right-side pb-[10rem]">
-      <h1 class="title mb-[12px]">Devenir partenaire</h1>
+      <h1 class="title mb-[12px]">{{ section.settings.title }} </h1>
       <p class="text-center  text-sm mb-8">
-        Envie de rejoindre l’aventure Bahwai ? <br>
-        Votre candidature sera analysée avec soin et transparence.
+        {{ section.settings.title-secondary }}
       </p>
       {% form 'contact', class: "sm:max-w-[40rem] max-w-[100%] mx-auto w-full  flex flex-col items-center sm:gap-[30px] gap-4", id: "form-partenaire" %}
         {{ form.errors | default_errors }}
@@ -179,3 +181,31 @@
 <div class="rte">
   {{ page.content }}
 </div>
+
+{% schema %}
+  {
+    "name": "Partenaire section",
+    "tag": "section",
+    "class": "partenaire-section",
+    "settings": [
+      {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Devenir partenaire"
+      },
+      {
+          "type": "html",
+          "id": "title-secondary",
+          "label": "Titre secondaire",
+          "default": "Envie de rejoindre l’aventure Bahwai ? <br> Votre candidature sera analysée avec soin et transparence."
+      },
+      {
+          "type": "html",
+          "id": "title-left",
+          "label": "Titre a gauche",
+          "default": "Nos snacking très <span>gourmand</span> sans prise de <span>poids</span>"
+      }
+    ]
+  }
+{% endschema %}

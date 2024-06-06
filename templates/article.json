@@ -1,11 +1,19 @@
 {
   "sections": {
+    "header": {
+      "type": "header"
+    },
     "main": {
       "type": "main-article",
       "settings": {}
+    },
+    "footer": {
+      "type": "footer"
     }
   },
   "order": [
-    "main"
+    "header",
+    "main",
+    "footer"
   ]
 }

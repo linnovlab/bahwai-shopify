@@ -1,6 +1,6 @@
 <p class="hidden text-green-700"></p>
 <section class="newsletter-1 mt-12">
-  <p id="btn-etre-prevenu" class="btn-etre-prevenu">{{ section.settings.title }}</p>
+  <p id="btn-etre-prevenu" class="btn-etre-prevenu">Je souhaite être prévenu des prochaines ouvertures +</p>
 
   <div>
     {% form 'contact', id: 'form-etre-prevenu', class: "hidden flex-col gap-4 align-justify-center" %}
@@ -75,20 +75,3 @@
     <h2 class="text-white font-bold text-lg">Bahwai family</h2>
   </div>
 </div>
-
-{% schema %}
-  {
-    "name": "Section",
-    "tag": "section",
-    "class": "section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Titre",
-        "default": "Je souhaite être prévenu des prochaines ouvertures +"
-      }
-
-    ]
-  }
-{% endschema %}

@@ -1,7 +1,7 @@
 <div class="aventure-section-content bg-_orange_color">
     <h1 class="pt-[40px] pb-[24px] text-center leading-[1]">
-        <span class="title-white block">Viens suivre l’aventure</span>
-        <span class="title !text-_main_color_darker block">@BahWAI.fr</span>
+        <span class="title-white block">{{ section.settings.titre-1 }} </span>
+        <span class="title !text-_main_color_darker block">{{ section.settings.titre-2 }}</span>
     </h1>
     <div class="imgs-content flex justify-center mb-6">
         <img class="sm:w-[223px] w-[140px]" src="{{ "aventure1.png" |  asset_url }}" alt="aventure" width="100%" height="auto">
@@ -28,7 +28,18 @@
       "tag": "section",
       "class": "aventure-section",
       "settings": [
-        
+        {
+          "type": "text",
+          "id": "titre-1",
+          "label": "Titre 1",
+          "default": "Viens suivre l’aventure"
+        },
+        {
+          "type": "text",
+          "id": "titre-2",
+          "label": "Titre 2",
+          "default": "@BahWAI.fr"
+        }
       ]
     }
 {% endschema %}

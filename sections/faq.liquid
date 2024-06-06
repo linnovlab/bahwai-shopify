@@ -2,10 +2,10 @@
   <div class="faq-content sm:w-[428px] w-full mx-auto">
     <h2 class="title-white mb-8">FAQ</h2>
     <div id="faq-links" class="menu-list flex items-center flex-wrap justify-center gap-2 text-white">
-      <a href="#qa_fabrication" class="faq-link active screen300:w-[11.5rem]">GARANTIE /QUALITE</a>
-      <a href="#qa_formulation" class="faq-link screen300:w-[11.5rem]">INGREDIENTS</a>
-      <a href="#qa_usage" class="faq-link screen300:w-[11.5rem]">UTILISATION</a>
-      <a href="#qa_localisation" class="faq-link screen300:w-[11.5rem]">NOUS TROUVER</a>
+      <a href="#qa_fabrication" class="faq-link active screen300:w-[11.5rem]">{{ section.settings.title-1 }}</a>
+      <a href="#qa_formulation" class="faq-link screen300:w-[11.5rem]">{{ section.settings.title-2 }}</a>
+      <a href="#qa_usage" class="faq-link screen300:w-[11.5rem]">{{ section.settings.title-3 }}</a>
+      <a href="#qa_localisation" class="faq-link screen300:w-[11.5rem]">{{ section.settings.title-4 }}</a>
     </div>
     <div class="questions-content text-white">
       <div id="qa_fabrication" class="accordions flex flex-col mt-4 mb-16 sm:mx-auto sm:max-w-[30rem] w-full">
@@ -442,3 +442,37 @@
     </div>
   </div>
 </section>
+
+{% schema %}
+  {
+    "name": "FAQ Section",
+    "tag": "section",
+    "class": "faq-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title-1",
+        "label": "Titre 1",
+        "default": "GARANTIE /QUALITE"
+      },
+      {
+        "type": "text",
+        "id": "title-2",
+        "label": "Titre 2",
+        "default": "INGREDIENTS"
+      },
+      {
+        "type": "text",
+        "id": "title-3",
+        "label": "Titre 3",
+        "default": "UTILISATION"
+      },
+      {
+        "type": "text",
+        "id": "title-4",
+        "label": "Titre 4",
+        "default": "NOUS TROUVER"
+      }
+    ]
+  }
+{% endschema %}

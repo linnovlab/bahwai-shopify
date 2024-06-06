@@ -65,9 +65,7 @@
     <div class="text-content flex justify-center">
         <div class="w-[342px] relative">
             <h1 class="title-white relative z-20">
-                Le Sain, <br>
-                Le Goût, <br>
-                Et c’est tout <br>
+                {{ section.settings.title-hero-section }}
             </h1>
             <img class="quote absolute top-[40%] right-0" src="{{ 'quote.svg' |  asset_url }}" alt="quote" width="auto" height="auto">
             <span class="h-[25px] w-full bg-_red_color absolute bottom-[5px] left-0 z-10"></span>
@@ -78,9 +76,7 @@
     </div>
     <div class="marqui-text">
         <marquee class="flex gap-[12px] font-rubik text-lg font-normal text-_red_color bg-white pt-[4px]">
-            <span>Riche en fibre diététique</span>
-            <span>Riche en fibre diététique 2</span>
-            <span>Riche en fibre diététique 3</span>
+            {{ section.settings.text-de-defilement }}
         </marquee>
     </div>
     <div class="wave-hero absolute bottom-0 right-0 -z-10">
@@ -99,7 +95,18 @@
       "tag": "section",
       "class": "hero-section",
       "settings": [
-        
+        {
+            "type": "html",
+            "id": "title-hero-section",
+            "label": "Titre du hero",
+            "default": "Le Sain, <br> Le Goût, <br> Et c’est tout <br>"
+        },
+        {
+            "type": "html",
+            "id": "text-de-defilement",
+            "label": "Text de defilement",
+            "default": "<span>Riche en fibre diététique</span><span>Riche en fibre diététique 2</span><span>Riche en fibre diététique 3</span>"
+        }
       ]
     }
 {% endschema %}

@@ -1,5 +1,5 @@
-<div class="qui-sommes-nous-content-section bg-_main_color_dark">
-  <h2 class="title-white pt-[74px] pb-8">QUI SOMMES NOUS ?</h2>
+<div id="qui-sommes-nous-section" class="qui-sommes-nous-content-section bg-_main_color_dark">
+  <h2 class="title-white pt-[74px] pb-8">{{ section.settings.titre }} </h2>
   <div class="emoji-content pb-[70px] text-white flex sm:flex-row flex-col justify-center items-center sm:gap-[60px] gap-[30px]">
     <div class="emoji-item flex items-center gap-[18px]">
       <div class="img sm:w-full w-[65px]">
@@ -7,7 +7,7 @@
       </div>
       <div class="desc relative max-w-[292px]">
         <p class="sm:text-base text-sm font-bold text-center">
-          Un jour, Christopher et Nora les deux  fondateurs (et couple dans la vie) ont  plaqué leurs jobs pour réaliser leurs rêves  « Rendre la gourmandise inoffensive pour la santé et proposer des activités sportives Super Fun »
+          {{ section.settings.description-femme }}
         </p>
         <div class="quote_r absolute top-[-24px] left-[-17px]">
           <img src="{{ 'quote_r.svg' |  asset_url }}" alt="quote" height="auto" width="100%">
@@ -20,9 +20,7 @@
       </div>
       <div class="desc relative max-w-[292px]">
         <p class="font-bold text-center sm:text-base text-sm">
-          Un pari de dingue se fait alors
-          « Viens, on fait des snacks sains, super Gourmands et très faibles en sucre » « Bahwai comme ça, 
-          les gens vont pouvoir kiffer sans prendre de poids » mais OUFF !!
+          {{ section.settings.description-homme }}
         </p>
         <div class="quote_r absolute bottom-[-7px] sm:right-[-35px] right-[-13px]">
           <img src="{{ 'quote.svg' |  asset_url }}" alt="quote" height="auto" width="27px">
@@ -41,7 +39,24 @@
       "tag": "section",
       "class": "qui-sommes-nous-section",
       "settings": [
-        
+        {
+          "type": "text",
+          "id": "titre",
+          "label": "Titre",
+          "default": "QUI SOMMES NOUS ?"
+        },
+        {
+          "type": "text",
+          "id": "description-femme",
+          "label": "Description Femme",
+          "default": "Un jour, Christopher et Nora les deux fondateurs (et couple dans la vie) ont plaqué leurs jobs pour réaliser leurs rêves « Rendre la gourmandise inoffensive pour la santé et proposer des activités sportives Super Fun »"
+        },
+        {
+          "type": "text",
+          "id": "description-homme",
+          "label": "Description Homme",
+          "default": " Un pari de dingue se fait alors « Viens, on fait des snacks sains, super Gourmands et très faibles en sucre » « Bahwai comme ça, les gens vont pouvoir kiffer sans prendre de poids » mais OUFF !!"
+        }
       ]
     }
 {% endschema %}

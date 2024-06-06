@@ -1,6 +1,6 @@
 <div class="what-else-content-section bg-_main_color_light sm:pb-[192px] pb-[107px] sm:px-0 px-[30px]">
     <div class="content-1 bg-_orange_color relative z-10 rounded-lg mt-[48px]">
-      <h2 class="title-white pt-8">WHAT ELSE ?</h2>
+      <h2 class="title-white pt-8">{{ section.settings.title }} </h2>
       <div class="hidden sm:flex gap-8 justify-center  flex-wrap mt-[50px] text-white pb-[214px]">
         <div class="else-item  ">
             <div class="flex gap-4">
@@ -105,7 +105,12 @@
       "tag": "section",
       "class": "qui-sommes-nous-section",
       "settings": [
-        
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "WHAT ELSE ?"
+        }
       ]
     }
 {% endschema %}
