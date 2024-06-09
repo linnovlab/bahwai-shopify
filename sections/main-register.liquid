@@ -73,7 +73,12 @@
               placeholder="Mot de passe*"
               name="customer[password]"
               required>
-            <i class="fas fa-eye absolute hover:cursor-pointer" id="eye-password"></i>
+              <div id="eye-password" class="eye absolute hover:cursor-pointer">
+                <img src="{{ 'eye.svg' | asset_url }}" alt="eye" height="auto" width="auto">
+              </div>
+              <div id="eye-slash-password" class="hidden eye-slash absolute hover:cursor-pointer">
+                <img src="{{ 'eye_slash.svg' | asset_url }}" alt="eye" height="auto" width="auto">
+              </div>
           </div>
           <div class="item w-full">
             <label for="code" class="text-xs font-semibold text-[#456073]">Code de parrainage</label>

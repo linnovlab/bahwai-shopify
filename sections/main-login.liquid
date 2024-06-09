@@ -48,7 +48,12 @@
 				<label for="input-password" class="text-xs text-[#456073]">Mot de passe</label>
 				<input id="input-password" class="input focus:border-_red_color transition-all duration-300"
 					type="password" placeholder="Mot de passe" name="customer[password]" required>
-				<i class="fas fa-eye absolute hover:cursor-pointer" id="eye-password"></i>
+				<div id="eye-password" class="eye absolute hover:cursor-pointer">
+					<img src="{{ 'eye.svg' | asset_url }}" alt="eye" height="auto" width="auto">
+				</div>
+				<div id="eye-slash-password" class="hidden eye-slash absolute hover:cursor-pointer">
+					<img src="{{ 'eye_slash.svg' | asset_url }}" alt="eye" height="auto" width="auto">
+				</div>
 			</div>
 			<div class="flex flex-col items-center mt-8">
 				<button type="submit" class="btn-red mb-4 py-2 text-white">Se connecter</button>

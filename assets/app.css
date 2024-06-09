@@ -3315,8 +3315,8 @@ body {
 
 /* connexion page */
 
-#eye-password {
-  top: 25px;
+#eye-password, #eye-slash-password {
+  top: 44px;
   right: 10px;
 }
 

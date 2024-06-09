@@ -66,13 +66,14 @@ $(document).ready(() => {
    * hide/show password
    */
   $('#eye-password').on('click', function () {
-    if ($(this).hasClass('fa-eye')) {
-      $(this).removeClass('fa-eye').addClass('fa-eye-slash');
-      $('#input-password').prop('type', 'text');
-    } else {
-      $(this).addClass('fa-eye').removeClass('fa-eye-slash');
-      $('#input-password').prop('type', 'password');
-    }
+    $(this).hide();
+    $('#eye-slash-password').show();
+    $('#input-password').prop('type', 'text');
+  });
+  $('#eye-slash-password').on('click', function () {
+    $(this).hide();
+    $('#eye-password').show();
+    $('#input-password').prop('type', 'password');
   });
 
   /**
