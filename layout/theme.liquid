@@ -127,12 +127,6 @@
 
   {% render 'footer-scripts' %}
 
-{% comment %} 
-  {% if template.name != '404' %}
-    {% render 'bh-footer-autre' %}
-  {% endif %} 
-{% endcomment %}
-
   <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer="defer"></script>
