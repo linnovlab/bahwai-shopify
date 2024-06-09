@@ -1093,10 +1093,20 @@ $(document).ready(() => {
   });
 
   // review design feat
-  $(".jdgm-carousel-wrapper").css('background', 'red !important');
+  // $(".jdgm-carousel-wrapper").css('background', 'red !important');
   // $(".jdgm-carousel-wrapper").parent().css('max-width', '100% !important');
-  console.log($(".jdgm-carousel-wrapper"))
+  // console.log($(".jdgm-carousel-wrapper"))
 
+  // voir plus feat
+  const voirPlus = (el)=>{
+    el.click(function(e){
+      $(this).hide();
+      $(this).parent().prev().removeClass('height-hide-text');
+      $(this).parent().prev().find('div#shadow-hide-text').hide();
+    });
+  }
+  voirPlus($("#read-more-trigger-desc"));
+  voirPlus($("#read-more-trigger-comp"));
 
 });
 

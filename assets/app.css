@@ -3625,6 +3625,7 @@ body {
 .jdgm-carousel-item{
   background-color: white !important;
   border-radius: 8px;
+  padding: 10px !important;
 }
 
 /* footer */
