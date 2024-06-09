@@ -1,14 +1,19 @@
 {
   "sections": {
     "header": {
-      "type": "header"
+      "type": "header",
+      "settings": {
+      }
     },
     "main": {
       "type": "main-article",
-      "settings": {}
+      "settings": {
+      }
     },
     "footer": {
-      "type": "footer"
+      "type": "footer",
+      "settings": {
+      }
     }
   },
   "order": [
