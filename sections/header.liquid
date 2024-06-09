@@ -174,72 +174,42 @@
 
 {% schema %}
 {
-"name": "Bahwai header",
-"class": "header-section",
-"tag": "section",
-"settings": [
-{
-"type": "text",
-"id": "annonce",
-"label": "Annonce",
-"default": "Livraison offerte à partir de 20€"
-},
-{
-"type": "link_list",
-"id": "menu",
-"default": "main-menu",
-"label": "Menu principale"
-},
-{
-"type": "image_picker",
-"id": "logo",
-"label": "Logo"
-},
-{
-"type": "range",
-"id": "logo_width",
-"min": 50,
-"max": 250,
-"step": 10,
-"default": 100,
-"unit": "px",
-"label": "largeur"
-},
-{
-"type": "url",
-"id": "video_url",
-"label": "Vidéo du hero"
-},
-{
-"type": "image_picker",
-"id": "image_1",
-"label": "Image 1"
-},
-{
-"type": "image_picker",
-"id": "image_2",
-"label": "Image 2"
-},
-{
-"type": "image_picker",
-"id": "image_3",
-"label": "Image 3"
-},
-{
-"type": "image_picker",
-"id": "image_4",
-"label": "Image 4"
-},
-{
-"type": "image_picker",
-"id": "image_5",
-"label": "Image 5"
-}
-],
-"blocks": [
-{
-"type": "@app"
-}
-]
+  "name": "Bahwai header",
+  "class": "header-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "annonce",
+      "label": "Annonce",
+      "default": "Livraison offerte à partir de 20€"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Menu principale"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 100,
+      "unit": "px",
+      "label": "largeur"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "@app"
+    }
+  ]
 }
 {% endschema %}

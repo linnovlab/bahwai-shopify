@@ -756,6 +756,14 @@ html {
   top: 42px;
 }
 
+.bottom-\[15\.5rem\]{
+  bottom: 15.5rem;
+}
+
+.right-\[8rem\]{
+  right: 8rem;
+}
+
 .isolate{
   isolation: isolate;
 }
