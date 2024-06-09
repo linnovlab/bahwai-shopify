@@ -5,9 +5,9 @@
 </style>
 <main class="main-cats">
 
-  <section class=" sm:pb-[159px] pb-[40px] pt-[87px] bg-_main_color_light desktop-width">
-    <div class="cats-content flex sm:gap-[192px] gap-6 justify-center items-center sm:flex-row flex-col sm:px-0 px-1">
-      <div class="cat-item relative z-10 bg-_chocolat_dark">
+  <section class=" sm:pb-[159px] pb-[40px] pt-[87px] bg-_main_color_light">
+    <div class="cats-content flex sm:gap-[192px] gap-6 justify-center items-baseline sm:flex-row flex-col sm:px-0 px-1 flex-wrap">
+      {% comment %} <div class="cat-item relative z-10 bg-_chocolat_dark">
         <div class="cat-item-content">
           <h4 class="text-[20px] font-normal font-poetsen text-white leading-[22px] mb-[5px]">Nos billes <br>
             chocolatées
@@ -46,14 +46,25 @@
             <img class="w-full rounded-ee-lg" src="{{ 'form2.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
           </div>
         </div>
-      </div>
+      </div> 
+      {% endcomment %}
+      {%- for collection in collections -%}
+        <div class="cat-item relative z-10 bg-_chocolat_light">
+          <div class="cat-item-content px-1">
+            <h4 class="text-[20px] font-normal font-poetsen text-white leading-[22px] mb-[5px]">
+              {{  collection.title }}
+            </h4>
+            <p class="text-_orange_color font-bold text-xs leading-[22px]">
+              {{ collection.description |  truncate: 100 }}
+            </p>
+            <div class="div-btn flex sm:justify-center justify-end sm:mr-0 mr-[44px] sm:mt-[48px] mt-0">
+              <a href="{{ collection.url }}" class="btn">Découvrir la collection</a>
+            </div>
+          </div>
+        </div> 
+      {%- endfor -%}
     </div>
-    {% comment %} 
-      <div class="grid sm:grid-cols-3 gap-8 mx-4">
-        {%- for collection in collections -%}
-        {%- endfor -%}
-      </div>
-     {% endcomment %}
+      
   </section>
 
 </main>

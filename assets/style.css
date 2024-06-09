@@ -18,6 +18,9 @@ body {
   @apply bg-_main_color_light;
   /* overflow-x: hidden !important; */
 }
+svg{
+  display: inline-block !important;
+}
 :root {
   --main-color-light: #561195;
   --main-color-dark: #240343;
@@ -422,13 +425,17 @@ body {
   display: none !important;
 }
 #judgeme_product_reviews{
-  @apply sm:px-[47px] px-6;
+  @apply sm:px-[47px] px-[14px] !mt-[-1px];
 }
 .jdgm-rev-widg{
   @apply bg-_main_color_dark sm:px-[47px] px-6 !font-poppins;
 }
 .jdgm-write-rev-link{
-  @apply !bg-_red_color !rounded-[7px] !py-4;
+  @apply !bg-_red_color !rounded-[7px] !py-4 !w-[195px];
+}
+.jdgm-write-rev-link.jdgm-write-rev-link:hover,
+.jdgm-write-rev-link:hover{
+  opacity: 1 !important;
 }
 .jdgm-form{
   background-color: white !important;
@@ -451,6 +458,9 @@ body {
 }
 .jdgm-submit-rev{
   @apply !bg-_red_color !rounded-lg !border-none !w-[224px] !py-4;
+}
+.jdgm-form__fieldset-actions{
+  justify-content: center !important;
 }
 
 /* css section review carousel */
@@ -476,6 +486,9 @@ body {
   background-color: white !important;
   border-radius: 8px;
   padding: 10px !important;
+}
+.jdgm-carousel__arrows{
+  width: 95% !important;
 }
 
 
@@ -537,10 +550,10 @@ footer .items li {
   }
   /* responsive review carousel */
   .jdgm-carousel{
-    padding: 0 24px !important;
+    padding: 0 14px !important;
   }
   .jdgm-carousel__item-container{
-    padding: 0 !important;
+    padding: 0 27px 50px 27px !important;
   }
 }
 

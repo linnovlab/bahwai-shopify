@@ -644,6 +644,10 @@ html {
   bottom: -7px;
 }
 
+.bottom-\[15\.5rem\]{
+  bottom: 15.5rem;
+}
+
 .bottom-\[5px\]{
   bottom: 5px;
 }
@@ -700,6 +704,10 @@ html {
   right: 44px;
 }
 
+.right-\[8rem\]{
+  right: 8rem;
+}
+
 .top-0{
   top: 0px;
 }
@@ -754,14 +762,6 @@ html {
 
 .top-\[42px\]{
   top: 42px;
-}
-
-.bottom-\[15\.5rem\]{
-  bottom: 15.5rem;
-}
-
-.right-\[8rem\]{
-  right: 8rem;
 }
 
 .isolate{
@@ -1637,6 +1637,10 @@ html {
   align-items: center;
 }
 
+.items-baseline{
+  align-items: baseline;
+}
+
 .items-stretch{
   align-items: stretch;
 }
@@ -2068,6 +2072,11 @@ html {
 .px-\[11px\]{
   padding-left: 11px;
   padding-right: 11px;
+}
+
+.px-\[14px\]{
+  padding-left: 14px;
+  padding-right: 14px;
 }
 
 .px-\[18px\]{
@@ -2750,6 +2759,10 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(131 37 219 / var(--tw-bg-opacity));
   /* overflow-x: hidden !important; */
+}
+
+svg{
+  display: inline-block !important;
 }
 
 :root {
@@ -3509,8 +3522,9 @@ body {
 }
 
 #judgeme_product_reviews{
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  margin-top: -1px !important;
+  padding-left: 14px;
+  padding-right: 14px;
 }
 
 @media (min-width: 640px){
@@ -3536,11 +3550,17 @@ body {
 }
 
 .jdgm-write-rev-link{
+  width: 195px !important;
   border-radius: 7px !important;
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 49 49 / var(--tw-bg-opacity)) !important;
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
+}
+
+.jdgm-write-rev-link.jdgm-write-rev-link:hover,
+.jdgm-write-rev-link:hover{
+  opacity: 1 !important;
 }
 
 .jdgm-form{
@@ -3602,6 +3622,10 @@ body {
   padding-bottom: 1rem !important;
 }
 
+.jdgm-form__fieldset-actions{
+  justify-content: center !important;
+}
+
 /* css section review carousel */
 
 #shopify-block-judge_me_reviews_featured_carousel_kiKEkw div:first-child{
@@ -3634,6 +3658,10 @@ body {
   background-color: white !important;
   border-radius: 8px;
   padding: 10px !important;
+}
+
+.jdgm-carousel__arrows{
+  width: 95% !important;
 }
 
 /* footer */
@@ -3711,11 +3739,11 @@ footer .items li {
   /* responsive review carousel */
 
   .jdgm-carousel{
-    padding: 0 24px !important;
+    padding: 0 14px !important;
   }
 
   .jdgm-carousel__item-container{
-    padding: 0 !important;
+    padding: 0 27px 50px 27px !important;
   }
 }
 

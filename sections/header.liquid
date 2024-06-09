@@ -21,17 +21,17 @@
                 <img src="{{ 'logo.svg' | asset_url }}" alt="BahWai" class="w-[45px]" width="auto" height="auto"
                   loading="lazy">
               </a>
-            </div>
+            </div> 
             <div class="nav-links-header">
               <ul class="content flex gap-8">
                 <li class="md:block hidden">
-                  <a href="#categorie-section" class="nav-link-header active" title="Shop">Shop</a>
+                  <a href="{{ shop.url }}#categorie-section" class="nav-link-header active" title="Shop">Shop</a>
                 </li>
                 <li class="md:block hidden">
-                  <a href="#qui-sommes-nous-section" class="nav-link-header active" title="La vrai story">La vrai story</a>
+                  <a href="{{ shop.url }}#qui-sommes-nous-section" class="nav-link-header active" title="La vrai story">La vrai story</a>
                 </li>
                 <li class="md:block hidden">
-                  <a href="#map-section" class="nav-link-header active" title="Où nous trouver">Où nous trouver</a>
+                  <a href="{{ shop.url }}#map-section" class="nav-link-header active" title="Où nous trouver">Où nous trouver</a>
                 </li>
                 <li>
                   <a href="{{ blogs.news.url }}" class="nav-link-header" title="Blog">Blog</a>
