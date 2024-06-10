@@ -62,10 +62,18 @@
             "question": "teste",
             "reponse": "rerere"
           }
+        },
+        "announcement_bCHNPn": {
+          "type": "announcement",
+          "settings": {
+            "question": "je teste la section",
+            "reponse": "reponserrerz..."
+          }
         }
       },
       "block_order": [
-        "announcement_7Mxz8G"
+        "announcement_7Mxz8G",
+        "announcement_bCHNPn"
       ],
       "settings": {
         "title-1": "GARANTIE\/QUALITE",
