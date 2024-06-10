@@ -50,6 +50,26 @@
     },
     "faq": {
       "type": "faq",
+      "blocks": {
+        "announcement_7Mxz8G": {
+          "type": "announcement",
+          "settings": {
+            "question": "teste",
+            "reponse": "rerere"
+          }
+        },
+        "announcement_bCHNPn": {
+          "type": "announcement",
+          "settings": {
+            "question": "je teste la section",
+            "reponse": "reponserrerz..."
+          }
+        }
+      },
+      "block_order": [
+        "announcement_7Mxz8G",
+        "announcement_bCHNPn"
+      ],
       "settings": {
         "title-1": "GARANTIE\/QUALITE",
         "title-2": "INGREDIENTS",
