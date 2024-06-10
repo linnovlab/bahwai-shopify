@@ -56,9 +56,14 @@ svg{
   @apply font-semibold block outline-none bg-white text-_main_color_dark text-center rounded-lg w-[224px] h-[44px] pt-[10px];
   box-shadow: 1px 4px 8px -3px black;
 }
-.btn-cat {
-  @apply rounded-lg outline-none bg-_orange_color;
+.btn-cat{
+  @apply btn;
+  width: 199px !important;
+  box-shadow: 1px 1px 6px -3px #000;
 }
+/* .btn-cat {
+  @apply rounded-lg outline-none bg-_orange_color;
+} */
 
 .cats-hover {
   @apply border-b-4 border-transparent pb-[5px] transition-all duration-300;
@@ -98,7 +103,7 @@ svg{
   @apply fixed top-0 z-50 w-full h-full max-h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y;
 }
 .btn-etre-prevenu {
-  @apply hover:cursor-pointer hover:text-_red_color mb-4 sm:text-base text-[11.5px] text-white font-bold text-center border-b-2 border-white w-full;
+  @apply hover:cursor-pointer hover:text-_red_color mb-4 sm:text-base text-[11px] text-white font-bold text-center border-b-2 border-white w-full;
 }
 .star-empty {
   @apply text-white;
@@ -132,6 +137,7 @@ svg{
 }
 .btn-aventure{
   @apply flex justify-center gap-2 font-bold sm:w-[275px] w-[175px] bg-_red_color rounded-lg py-3 ;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 .input-map-section{
   @apply w-full bg-transparent border-2 border-white rounded-lg ps-3 py-3;

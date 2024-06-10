@@ -1,5 +1,5 @@
 <div id="categorie-section" class="categories-content-section bg-_main_color_light pb-[42px] pt-[45px]">
-  <div class="cats-content flex sm:gap-[192px] gap-6 justify-center items-center sm:flex-row flex-col">
+  <div class="cats-content flex sm:gap-[192px] gap-6 justify-center items-center sm:flex-row flex-col sm:px-0 px-1">
     <div class="cat-item relative z-10 bg-_chocolat_dark">
       <div class="cat-item-content">
         <h4 class="text-[20px] font-normal font-poetsen text-white leading-[22px] mb-[5px]">Nos billes <br>
@@ -10,13 +10,14 @@
           GLYCÉMIQUE
         </p>
         <div class="div-btn flex sm:justify-center justify-end sm:mr-0 mr-[44px] sm:mt-[48px] mt-0">
-          <a href="#" class="btn">Découvrir la collection</a>
+          <a href="#" class="btn-cat">Découvrir la collection</a>
         </div>
-        <div class="absolute top-[-43px] sm:right-[-131px] right-0">
-          <img class="sm:w-full w-[259px]" src="{{ 'explosion_chocolat.png' |  asset_url }}" alt="explosion_chocolat" height="auto" width="auto">
+        <div class="absolute sm:top-[-43px] top-[-3px] sm:right-[-131px] right-0">
+          <img class="sm:w-full w-[221px]" src="{{ 'explosion_chocolat.png' |  asset_url }}" alt="explosion_chocolat" height="auto" width="auto">
         </div>
         <div class="courb-form absolute bottom-0 left-0 -z-10">
-          <img class="w-full rounded-s-lg" src="{{ 'form1.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
+          <img class="sm:block hidden w-full rounded-s-lg" src="{{ 'form1.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
+          <img class="sm:hidden block w-full rounded-s-lg" src="{{ 'form1_mobile.png' |  asset_url }}" alt="form1" height="auto" width="auto">
         </div>
       </div>
     </div>
@@ -30,13 +31,14 @@
           GLYCÉMIQUE
         </p>
         <div class="div-btn flex sm:justify-center justify-end sm:mr-0 mr-[44px] sm:mt-[48px] mt-0">
-          <a href="#" class="btn">Découvrir la collection</a>
+          <a href="#" class="btn-cat">Découvrir la collection</a>
         </div>
-        <div class="absolute sm:top-[15px] top-[-4px] sm:right-[-97px] right-0">
-          <img class="sm:w-full w-[259px]" src="{{ 'patte_chocolat.png' |  asset_url }}" alt="patte_chocolat" height="auto" width="auto">
+        <div class="absolute top-[8px] sm:top-[-4px] sm:right-[-97px] right-0">
+          <img class="sm:w-full w-[237px]" src="{{ 'patte_chocolat.png' |  asset_url }}" alt="patte_chocolat" height="auto" width="auto">
         </div>
         <div class="courb-form absolute bottom-0 left-0 -z-10">
-          <img class="w-full rounded-ee-lg" src="{{ 'form2.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
+          <img class="sm:block hidden w-full rounded-ee-lg" src="{{ 'form2.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
+          <img class="sm:hidden block w-full rounded-ee-lg" src="{{ 'form2_mobile.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
         </div>
       </div>
     </div>

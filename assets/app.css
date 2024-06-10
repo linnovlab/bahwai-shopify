@@ -640,8 +640,8 @@ html {
   bottom: -103px;
 }
 
-.bottom-\[-7px\]{
-  bottom: -7px;
+.bottom-\[-25px\]{
+  bottom: -25px;
 }
 
 .bottom-\[15\.5rem\]{
@@ -684,8 +684,8 @@ html {
   right: 0px;
 }
 
-.right-\[-13px\]{
-  right: -13px;
+.right-\[-3px\]{
+  right: -3px;
 }
 
 .right-\[13px\]{
@@ -722,6 +722,10 @@ html {
 
 .top-\[-24px\]{
   top: -24px;
+}
+
+.top-\[-3px\]{
+  top: -3px;
 }
 
 .top-\[-43px\]{
@@ -762,6 +766,10 @@ html {
 
 .top-\[42px\]{
   top: 42px;
+}
+
+.top-\[8px\]{
+  top: 8px;
 }
 
 .isolate{
@@ -1151,6 +1159,10 @@ html {
   margin-top: -6rem;
 }
 
+.mt-\[10px\]{
+  margin-top: 10px;
+}
+
 .mt-\[24px\]{
   margin-top: 24px;
 }
@@ -1351,6 +1363,10 @@ html {
   min-height: 88px;
 }
 
+.\!w-\[22rem\]{
+  width: 22rem !important;
+}
+
 .w-1\/3{
   width: 33.333333%;
 }
@@ -1395,10 +1411,6 @@ html {
   width: 14.5rem;
 }
 
-.w-\[140px\]{
-  width: 140px;
-}
-
 .w-\[147px\]{
   width: 147px;
 }
@@ -1417,6 +1429,14 @@ html {
 
 .w-\[20rem\]{
   width: 20rem;
+}
+
+.w-\[221px\]{
+  width: 221px;
+}
+
+.w-\[237px\]{
+  width: 237px;
 }
 
 .w-\[24px\]{
@@ -1487,10 +1507,6 @@ html {
   width: 61px;
 }
 
-.w-\[65px\]{
-  width: 65px;
-}
-
 .w-\[69px\]{
   width: 69px;
 }
@@ -1554,10 +1570,6 @@ html {
 
 .max-w-\[230px\]{
   max-width: 230px;
-}
-
-.max-w-\[292px\]{
-  max-width: 292px;
 }
 
 .max-w-\[40rem\]{
@@ -2861,12 +2873,26 @@ svg{
 }
 
 .btn-cat{
-  border-radius: 0.5rem;
+  display: block;
+  height: 44px;
+  border-radius: 0.375rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 98 0 / var(--tw-bg-opacity));
+  padding-top: 10px;
+  text-align: center;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
   outline: 2px solid transparent;
   outline-offset: 2px;
+  box-shadow: 1px 4px 8px -3px black;
+  width: 199px !important;
+  box-shadow: 1px 1px 6px -3px #000;
 }
+
+/* .btn-cat {
+  @apply rounded-lg outline-none bg-_orange_color;
+} */
 
 .cats-hover{
   border-bottom-width: 4px;
@@ -3022,7 +3048,7 @@ svg{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
   text-align: center;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -3156,6 +3182,10 @@ svg{
   .btn-aventure{
     width: 275px;
   }
+}
+
+.btn-aventure{
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .input-map-section{
@@ -3949,6 +3979,10 @@ tbody tr:last-child td{
     bottom: -142px;
   }
 
+  .sm\:bottom-\[-7px\]{
+    bottom: -7px;
+  }
+
   .sm\:left-\[42\%\]{
     left: 42%;
   }
@@ -3965,12 +3999,24 @@ tbody tr:last-child td{
     right: -97px;
   }
 
+  .sm\:top-\[-43px\]{
+    top: -43px;
+  }
+
   .sm\:top-\[15px\]{
     top: 15px;
   }
 
   .sm\:top-\[168px\]{
     top: 168px;
+  }
+
+  .sm\:top-\[8px\]{
+    top: 8px;
+  }
+
+  .sm\:top-\[-4px\]{
+    top: -4px;
   }
 
   .sm\:m-4{
@@ -4143,12 +4189,20 @@ tbody tr:last-child td{
     width: 11rem;
   }
 
+  .sm\:w-\[140px\]{
+    width: 140px;
+  }
+
   .sm\:w-\[223px\]{
     width: 223px;
   }
 
   .sm\:w-\[300px\]{
     width: 300px;
+  }
+
+  .sm\:w-\[322px\]{
+    width: 322px;
   }
 
   .sm\:w-\[341px\]{
@@ -4221,10 +4275,6 @@ tbody tr:last-child td{
 
   .sm\:max-w-none{
     max-width: none;
-  }
-
-  .sm\:grid-cols-3{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .sm\:flex-row{

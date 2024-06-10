@@ -1,12 +1,14 @@
 <div id="qui-sommes-nous-section" class="qui-sommes-nous-content-section bg-_main_color_dark">
-  <h2 class="title-white pt-[74px] pb-8">{{ section.settings.titre }} </h2>
-  <div class="emoji-content pb-[70px] text-white flex sm:flex-row flex-col justify-center items-center sm:gap-[60px] gap-[30px]">
+
+  <h2 class="title-white pt-[74px] pb-8 !w-[22rem] mx-auto">{{ section.settings.titre }} </h2>
+  {% comment %} flex sm:flex-row flex-col justify-center items-center  {% endcomment %}
+  <div class="emoji-content pb-[70px] text-white flex sm:gap-[60px] gap-[30px] flex-wrap justify-center sm:px-0 px-4">
     <div class="emoji-item flex items-center gap-[18px]">
-      <div class="img sm:w-full w-[65px]">
+      <div class="img sm:w-[140px] w-[100px]">
         <img class="bg-_main_color_darker rounded-lg" src="{{ 'emoji_nora.svg' |  asset_url }}" alt="emoji_nora" height="auto" width="100%">
       </div>
-      <div class="desc relative max-w-[292px]">
-        <p class="sm:text-base text-sm font-bold text-center">
+      <div class="desc relative sm:w-[322px] w-full">
+        <p class=" text-sm font-bold text-center">
           {{ section.settings.description-femme }}
         </p>
         <div class="quote_r absolute top-[-24px] left-[-17px]">
@@ -14,15 +16,15 @@
         </div>
       </div>
     </div>
-    <div class="emoji-item flex items-center gap-[18px]">
-      <div class="img sm:w-full w-[65px]">
+    <div class="emoji-item flex items-center gap-[18px] mt-4">
+      <div class="img sm:w-[140px] w-[100px]">
         <img class="bg-_main_color_darker rounded-lg" src="{{ 'emoji_kriss.svg' |  asset_url }}" alt="emoji_kriss" height="auto" width="100%">
       </div>
-      <div class="desc relative max-w-[292px]">
+      <div class="desc relative sm:w-[322px] w-full">
         <p class="font-bold text-center sm:text-base text-sm">
           {{ section.settings.description-homme }}
         </p>
-        <div class="quote_r absolute bottom-[-7px] sm:right-[-35px] right-[-13px]">
+        <div class="quote_r absolute sm:bottom-[-7px] bottom-[-25px] sm:right-[-35px] right-[-3px]">
           <img src="{{ 'quote.svg' |  asset_url }}" alt="quote" height="auto" width="27px">
         </div>
       </div>
@@ -43,7 +45,7 @@
           "type": "text",
           "id": "titre",
           "label": "Titre",
-          "default": "QUI SOMMES NOUS ?"
+          "default": "Notre Story, Sans langue de Bois ! "
         },
         {
           "type": "text",

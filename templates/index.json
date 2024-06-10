@@ -32,12 +32,7 @@
       }
     },
     "qui-sommes-nous": {
-      "type": "qui-sommes-nous",
-      "settings": {
-        "titre": "QUI SOMMES NOUS ?",
-        "description-femme": "Un jour, Christopher et Nora les deux fondateurs (et couple dans la vie) ont plaqué leurs jobs pour réaliser leurs rêves « Rendre la gourmandise inoffensive pour la santé et proposer des activités sportives Super Fun »",
-        "description-homme": "Un pari de dingue se fait alors « Viens, on fait des snacks sains, super Gourmands et très faibles en sucre » « Bahwai comme ça, les gens vont pouvoir kiffer sans prendre de poids » mais OUFF !!"
-      }
+      "type": "qui-sommes-nous"
     },
     "aventure-section": {
       "type": "aventure-section",
