@@ -19,16 +19,18 @@
   <div class="product-imgs-section mx-auto mb-16 left lg:mr-16 lg:mb-0 sm:px-8 px-4 sm:mt-0 mt-4">
     <div class="flex flex-col gap-4 imgs">
       <div class="lg:w-[460px] w-full">
-        <img class="rounded-lg" src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit" id="mainImg">
+        <img class="rounded-lg" src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit" id="mainImg" height="auto" width="auto">
       </div>
       <div id="product-images" class="flex justify-center gap-3 ">
         {% if product.images.size > 1 %}
-        {% for img in product.images %}
-        <img data-title="{{ product.title }}" class="w-[61px] cursor-pointer rounded-lg"
-          src="{{ img |image_url: width: 500, height: 500 }}" alt="produit">
-        {% endfor %}
-        {% else %}
-        <img class="w-[61px] cursor-pointer" src="{{ product |image_url: width: 500, height: 500 }}" alt="produit">
+          {% for img in product.images %}
+          <img data-title="{{ product.title }}" class="w-[61px] cursor-pointer rounded-lg"
+            src="{{ img |image_url: width: 500, height: 500 }}" alt="produit"
+            height="auto" width="auto">
+          {% endfor %}
+          {% else %}
+          <img class="w-[61px] cursor-pointer" src="{{ product |image_url: width: 500, height: 500 }}" alt="produit"
+          height="auto" width="auto">
         {% endif %}
       </div>
     </div>
@@ -73,24 +75,29 @@
       <p class="text-white sm:text-base text-sm">{{ product.description | truncate: 300 }}
       </p>
     </div>
+    
 
     {% if product.variants.size > 1 %}
       <ul id="variant-options" class="w-full flex flex-col gap-4 justify-center items-center mt-8 font-poppins">
         {% for variant in product.variants %}
-        <li class="sm:w-[388px] w-full">
-          <input class="hidden peer" type="radio" id="variant-{{ variant.id }}" name="variant" value="{{ variant.id }}" {%
-            if variant.featured_image %} data-image="{{ variant.featured_image | image_url: width: 600, height: 600 }}" {%
-            else %} data-image="{{ product | image_url: width: 600, height: 600 }}" {% endif %}
-            data-price="{{ variant.price | money_without_currency }}€"
-            data-unitprice="{% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ {% endif %}"
-            {% if variant==product.selected_or_first_available_variant %}checked{% endif %}>
+          <li class="sm:w-[388px] w-full">
+            <input class="hidden peer" type="radio" id="variant-{{ variant.id }}" name="variant" value="{{ variant.id }}" {%
+              if variant.featured_image %} data-image="{{ variant.featured_image | image_url: width: 600, height: 600 }}" {%
+              else %} data-image="{{ product | image_url: width: 600, height: 600 }}" {% endif %}
+              data-price="{{ variant.price | money_without_currency }}€"
+              data-unitprice="{% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ {% endif %}"
+              {% if variant==product.selected_or_first_available_variant %}checked{% endif %}>
 
-          <label for="variant-{{ variant.id }}"
-            class="inline-flex items-center justify-center w-full p-4 text-sm font-medium text-_main_color_dark bg-white border border-_main_color_dark rounded-[5px] cursor-pointer peer-checked:text-white peer-checked:bg-_main_color_darker hover:text-gray-600 hover:bg-gray-100">{{
-            variant.title }} {% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ l'unité{%
-            endif %}</label><br>
-          {% endfor %}
-        </li>
+            <label for="variant-{{ variant.id }}"
+              class="flex flex-col items-center justify-center gap-1 w-full p-4 text-sm font-medium
+               text-_main_color_dark bg-white border border-_main_color_dark 
+               rounded-[5px] cursor-pointer peer-checked:text-white
+                peer-checked:bg-_main_color_darker ">
+                <span>{{ variant.title }} </span>
+                <span class="text-sm text-[#128910] font-semibold">{{ variant.price | money_without_currency }}€</span>
+            </label>
+          </li>
+        {% endfor %}
       </ul>
     {% endif %}
 
