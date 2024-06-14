@@ -4020,6 +4020,10 @@ tbody tr:last-child td{
     top: 168px;
   }
 
+  .sm\:left-\[40\%\]{
+    left: 40%;
+  }
+
   .sm\:m-4{
     margin: 1rem;
   }
