@@ -1,4 +1,12 @@
 <section class="faq pt-12 pb-[40px] bg-_main_color_darker ">
+  {% for block in section.blocks %}
+    <div class="bg-white">
+      {{ block.settings.question }}
+    </div>
+    <div class="bg-white">
+      {{ block.settings.reponse }}
+    </div>
+  {% endfor %}
   <div class="faq-content sm:w-[428px] w-full mx-auto">
     <h2 class="title-white mb-8">FAQ</h2>
     <div id="faq-links" class="menu-list flex items-center flex-wrap justify-center gap-2 text-white">
@@ -478,7 +486,7 @@
     "blocks": [
       {
         "name": "faq-1",
-        "type": "announcement",
+        "type": "faq_1",
         "settings": [
           {
             "type": "text",
@@ -495,7 +503,7 @@
       },
       {
         "name": "faq-2",
-        "type": "announcement",
+        "type": "faq_2",
         "settings": [
           {
             "type": "text",
@@ -512,7 +520,7 @@
       },
       {
         "name": "faq-3",
-        "type": "announcement",
+        "type": "faq_3",
         "settings": [
           {
             "type": "text",
@@ -529,7 +537,7 @@
       },
       {
         "name": "faq-4",
-        "type": "announcement",
+        "type": "faq_4",
         "settings": [
           {
             "type": "text",
