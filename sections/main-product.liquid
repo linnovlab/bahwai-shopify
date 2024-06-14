@@ -15,16 +15,16 @@
     <span id="img_show_up"></span>
   </div>
 </div>
-<section class="flex flex-wrap mx-0 mt-0 text-white lg:flex-nowrap sm:mt-12 desktop-width sm:mx-8 sm:px-8">
-  <div class="mx-auto mb-16 left lg:mr-16 lg:mb-0">
+<section class="flex flex-wrap mx-0 mt-0 text-white lg:flex-nowrap sm:mt-12 desktop-width sm:mx-8 ">
+  <div class="product-imgs-section mx-auto mb-16 left lg:mr-16 lg:mb-0 sm:px-8 px-4 sm:mt-0 mt-4">
     <div class="flex flex-col gap-4 imgs">
       <div class="lg:w-[460px] w-full">
-        <img src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit" id="mainImg">
+        <img class="rounded-lg" src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit" id="mainImg">
       </div>
       <div id="product-images" class="flex justify-center gap-3 ">
         {% if product.images.size > 1 %}
         {% for img in product.images %}
-        <img data-title="{{ product.title }}" class="w-[61px] cursor-pointer"
+        <img data-title="{{ product.title }}" class="w-[61px] cursor-pointer rounded-lg"
           src="{{ img |image_url: width: 500, height: 500 }}" alt="produit">
         {% endfor %}
         {% else %}
@@ -38,10 +38,10 @@
     <div class="flex justify-between head">
       <div class="w-full">
         <div class="flex justify-between sm:gap-0 gap-2 sm:flex-nowrap flex-wrap w-full">
-          <h1 class="font-bold text-_orange_color sm:text-[24px] text-base sm:mb-3 capitalize">
+          <h1 class="font-litle font-bold text-_orange_color sm:text-[24px] text-base sm:mb-3 capitalize">
             {{ product.title }}
           </h1>
-          <div class="flex items-center justify-end gap-2 w-[14.5rem]">
+          <div class="flex items-center sm:justify-end justify-start gap-2 w-[14.5rem]">
               <div class="starts text-white text-xs">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -54,7 +54,7 @@
               </a>
           </div>
         </div>
-        <div class="flex items-center gap-3 mb-2 price">
+        <div class="hidden items-center gap-3 mb-2 price">
           <div id="promo-price">
             {% if product.compare_at_price %}
             {{ product.compare_at_price | money_without_currency
@@ -75,7 +75,7 @@
     </div>
 
     {% if product.variants.size > 1 %}
-      <ul id="variant-options" class="w-full flex flex-col gap-4 justify-center items-center mt-8">
+      <ul id="variant-options" class="w-full flex flex-col gap-4 justify-center items-center mt-8 font-poppins">
         {% for variant in product.variants %}
         <li class="sm:w-[388px] w-full">
           <input class="hidden peer" type="radio" id="variant-{{ variant.id }}" name="variant" value="{{ variant.id }}" {%
@@ -86,7 +86,7 @@
             {% if variant==product.selected_or_first_available_variant %}checked{% endif %}>
 
           <label for="variant-{{ variant.id }}"
-            class="inline-flex items-center justify-center w-full p-4 text-sm font-medium text-_main_color_dark bg-white border border-_main_color_dark rounded-[5px] cursor-pointer peer-checked:text-white peer-checked:bg-_main_color_dark hover:text-gray-600 hover:bg-gray-100">{{
+            class="inline-flex items-center justify-center w-full p-4 text-sm font-medium text-_main_color_dark bg-white border border-_main_color_dark rounded-[5px] cursor-pointer peer-checked:text-white peer-checked:bg-_main_color_darker hover:text-gray-600 hover:bg-gray-100">{{
             variant.title }} {% if variant.unit_price %} soit {{ variant.unit_price | money_without_currency }}€ l'unité{%
             endif %}</label><br>
           {% endfor %}
@@ -167,7 +167,7 @@
   {% comment %} {% render 'notif-model-review' %} {% endcomment %}
 </section>
 
-<section class="mx-4 mt-12 footer text-_main_color_dark sm:mx-8 desktop-width sm:px-8">
+<section class="hidden mx-4 mt-12 footer text-_main_color_dark sm:mx-8 desktop-width sm:px-8">
   <h2 class="mb-6 text-lg font-medium">Vous aimeriez également</h2>
   <div id="related-products"
     class="flex flex-wrap items-stretch justify-around gap-2 mt-2 text-sm content sm:justify-normal sm:gap-8">{% comment

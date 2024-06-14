@@ -133,7 +133,7 @@ svg{
   width: 100%;
 }
 .cat-item{
-  @apply sm:w-[345px] w-full flex flex-col justify-start sm:ps-[24px] ps-4 sm:pb-[34px] pb-[21px] pt-[44px] rounded-lg mx-[5px];
+  @apply sm:w-[345px] w-full flex flex-col justify-start sm:ps-[24px] ps-4 sm:pb-[34px] pb-[21px] pt-[44px] rounded-lg;
 }
 .btn-aventure{
   @apply flex justify-center gap-2 font-bold sm:w-[275px] w-[175px] bg-_red_color rounded-lg py-3 ;
@@ -385,11 +385,10 @@ svg{
   color: white;
 }
 .btn-red-panier {
+  @apply border-_red_color bg-_red_color;
   font-weight: 600;
-  border: 1px solid var(--red-color);
   border-radius: 5px;
   color: white;
-  background-color: var(--red-color);
 }
 .btn-white-panier {
   font-weight: 600;
@@ -408,7 +407,7 @@ svg{
   height: 1px;
   width: 100%;
   /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), gray); */
-  box-shadow: 0px -8px 6px 5px #cacacad4;
+  box-shadow: 0 -7px 6px 8px #fefefe;
 
 }
 
@@ -495,6 +494,14 @@ svg{
 }
 .jdgm-carousel__arrows{
   width: 95% !important;
+}
+.jdgm-carousel-wrapper .jdgm-carousel__left-arrow{
+  margin-top: -140.8px !important;
+  margin-left: -3px !important;
+}
+.jdgm-carousel-wrapper .jdgm-carousel__right-arrow{
+  margin-right: -3px !important;
+  margin-top: -140.8px !important;
 }
 
 
