@@ -1,6 +1,6 @@
-<section id="search-section" class="search-section hidden bg-white bg-opacity-50">
+<section id="search-section" class="search-section hidden bg-white font-poppins">
   <div class="content max-w-[958px] w-full ms-auto bg-[#FFFDF9] sm:px-20 px-4 py-8">
-    <div class="head text-_main_color_dark ">
+    <div class="head text-_main_color_dark font-poppins">
       <div class="flex justify-between flex-col-reverse sm:flex-row">
         <div class="search flex flex-col gap-4">
           <predictive-search>
@@ -10,7 +10,7 @@
               role="search"
               method="get"
               class="flex border-b-2 border-_main_color_dark">
-              <img src="{{ 'search violet.svg' |asset_url }}" alt="Recherche">
+              <img src="{{ 'search violet.svg' |asset_url }}" alt="Recherche" width="auto" height="auto">
               <input
                 id="input-popup-search"
                 value="{{ search.terms | escape }}"
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class="body mt-8">
+    <div class="body mt-8 font-poppins">
       <h2 class="text-gray-600 text-[1.2rem]">Les meilleures suggestions</h2>
       <div class="content flex justify-around sm:justify-normal flex-wrap gap-4 sm:gap-8 mt-2">
         {% for product in collections['suggestions'].products %}
@@ -53,7 +53,7 @@
                 <img
                   src="{{ product | image_url: width: 550, height: 600 }}"
                   alt="La gourmande aux noisettes"
-                  class="w-full">
+                  class="w-full" height="auto" width="auto">
               </div>
               <p class="font-semibold w-[10rem] text-center mt-2">{{ product.title }}</p>
               <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <div class="footer text-_main_color_dark mt-12">
+    <div class="footer text-_main_color_dark mt-12 font-poppins">
       <h2 class="font-bold">Ces produits pourraient vous plaire</h2>
       <div class="content flex flex-wrap items-center gap-8 text-sm mt-2">
         {% for product in collections['pourrait-vous-plaire'].products %}
@@ -98,7 +98,7 @@
                 <img
                   src="{{ product | image_url: width: 550, height: 600 }}"
                   alt="La gourmande aux noisettes"
-                  class="w-full">
+                  class="w-full" height="auto" width="auto">
               </div>
               <p class="font-semibold w-[10rem] text-center">{{ product.title }}</p>
               <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
@@ -121,7 +121,7 @@
                   {% endif %}
                 </span>
               </div>
-              <p class="font-medium">{{ product.price | money_without_currency }}€ le pack
+              <p class="font-medium">{{ product.price | money_without_currency }}€
               </p>
             </a>
           </div>

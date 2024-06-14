@@ -46,7 +46,7 @@
       <p class="text-center  text-sm mb-8">
         {{ section.settings.title-secondary }}
       </p>
-      {% form 'contact', class: "sm:max-w-[40rem] max-w-[100%] mx-auto w-full  flex flex-col items-center sm:gap-[30px] gap-4", id: "form-partenaire" %}
+      {% form 'contact', class: "font-poppins sm:max-w-[40rem] max-w-[100%] mx-auto w-full  flex flex-col items-center sm:gap-[30px] gap-4", id: "form-partenaire" %}
         {{ form.errors | default_errors }}
           <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
             <div class="item w-full">
@@ -154,7 +154,7 @@
               class="btn-red mb-4 py-2 px-[5rem] text-white">Envoyer</button>
           </div>
       {% endform %}
-      <p class="mt-4 text-center text-[#565656]">En poursuivant, vous acceptez toutes les conditions générales 
+      <p class="mt-4 text-center text-[#565656] font-poppins">En poursuivant, vous acceptez toutes les conditions générales 
         d’utilisations et notre politique de confidentialité
       </p>
     </div>
@@ -169,8 +169,6 @@
           <span>Fermer</span>
         </p>
       </div>
-
-
       <p class="text-white">Super, nous avons bien pris en compte ta demande, on revient vers toi dans les 48h ! (le temps de prendre un café, sortir le chien…) <br><br>
         Cordialement
       </p>

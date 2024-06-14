@@ -13,13 +13,13 @@
     }
   }
 </style>
-<div class="banner-blog img-center sm:h-[25rem] h-[17rem]"></div>
+<div class="banner-blog img-center sm:h-[25rem] h-[17rem] mt-4"></div>
 
 <div class="actualites-header flex flex-col justify-center items-center mb-6 mt-8 desktop-width">
   <h2 class="title text-2xl text-center">{{ section.settings.title }}</h2>
   <p class="text-center mb-4 text-_main_color_dark">{{ section.settings.title-title-secondary }}</p>
   <div class="cats-navigation  max-w-[50rem] w-full sm:max-w-none overflow-x-scroll overflow-y-hidden hide-scrolbar-x">
-    <nav id="nav-actualites" class="text-_main_color_dark mt-2 z-50 sm:w-full w-[40rem]">
+    <nav id="nav-actualites" class="text-_main_color_dark mt-2 z-50 sm:w-full w-[40rem] font-poppins">
       <ul class="flex justify-center gap-8 font-bold mb-1">
         <li>
           <a
@@ -61,9 +61,9 @@
   </div>
 </div>
 
-<div class="actu-container flex justify-around flex-wrap gap-8 mx-4 mb-[100px]">
+<div class="actu-container flex justify-around flex-wrap gap-8 mx-4 mb-[100px] font-poppins">
   {% for article in blogs.news.articles %}
-    <div class="actu-item sm:max-w-[17rem]">
+    <div class="actu-item sm:max-w-[17rem] font-poppins">
       <div style="background-image: url('{{ article.image | image_url: width: 900 }}');" class="img img-center flex items-end mb-4 h-[10rem]">
         <div class="flex w-full h-10 justify-between items-center text-white text-[12px] bg-[#ffffff4d] px-4">
           <p>{{ article.published_at | date: "%d/%m/%Y" }}</p>

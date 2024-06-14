@@ -724,8 +724,8 @@ html {
   top: -24px;
 }
 
-.top-\[-3px\]{
-  top: -3px;
+.top-\[-29px\]{
+  top: -29px;
 }
 
 .top-\[-43px\]{
@@ -766,10 +766,6 @@ html {
 
 .top-\[42px\]{
   top: 42px;
-}
-
-.top-\[8px\]{
-  top: 8px;
 }
 
 .isolate{
@@ -1427,12 +1423,8 @@ html {
   width: 20rem;
 }
 
-.w-\[221px\]{
-  width: 221px;
-}
-
-.w-\[237px\]{
-  width: 237px;
+.w-\[243px\]{
+  width: 243px;
 }
 
 .w-\[24px\]{
@@ -1441,6 +1433,10 @@ html {
 
 .w-\[259px\]{
   width: 259px;
+}
+
+.w-\[270px\]{
+  width: 270px;
 }
 
 .w-\[278px\]{
@@ -1723,6 +1719,10 @@ html {
 
 .gap-\[30px\]{
   gap: 30px;
+}
+
+.gap-\[3px\]{
+  gap: 3px;
 }
 
 .gap-\[40px\]{
@@ -2102,11 +2102,6 @@ html {
   padding-right: 24px;
 }
 
-.px-\[30px\]{
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
 .px-\[40px\]{
   padding-left: 40px;
   padding-right: 40px;
@@ -2294,6 +2289,10 @@ html {
 
 .ps-8{
   padding-inline-start: 2rem;
+}
+
+.ps-\[10px\]{
+  padding-inline-start: 10px;
 }
 
 .ps-\[24px\]{

@@ -9,7 +9,7 @@
 
 <div class="mt-20 text-_main_color_dark">
 
-	<div id="form-recover" class="content hidden sm:max-w-[25rem] max-w-[100%] mx-8 sm:mx-auto">
+	<div id="form-recover" class="content font-poppins hidden sm:max-w-[25rem] max-w-[100%] mx-8 sm:mx-auto">
 		{%- form 'recover_customer_password' -%}
 		{% assign recover_success = form.posted_successfully? %}
 		<div class="field">
@@ -19,7 +19,7 @@
 				placeholder="Email">
 		</div>
 		{%- if form.errors -%}
-		<p class="text-red-600 text-xl text-center">{{ form.errors.messages.form }}</p>
+			<p class="text-red-600 text-xl text-center">{{ form.errors.messages.form }}</p>
 		{%- endif -%}
 
 		<button type="submit" class="btn-red mb-4 py-2 text-white mx-auto mt-4">
@@ -34,7 +34,7 @@
 		{%- endform -%}
 	</div>
 
-	<div id="form-login" class="content sm:max-w-[25rem] max-w-[100%] mx-8 sm:mx-auto rounded-md sm:px-[40px] px-[18px] sm:py-[40px] py-8">
+	<div id="form-login" class="content font-poppins sm:max-w-[25rem] max-w-[100%] mx-8 sm:mx-auto rounded-md sm:px-[40px] px-[18px] sm:py-[40px] py-8">
 		<h1 class="title mb-8">Mon compte</h1>
 		{% form 'customer_login', novalidate: 'novalidate' %}
 		{{ form.errors | default_errors }}
@@ -76,7 +76,7 @@
 		}
 	</style>
 	<section style="background-image: url('{{ 'wave_white_compte.svg' |asset_url }}');"
-		class="inscription-section relative z-50 sm:h-[40rem] h-[27rem] text-_main_color_dark flex flex-col justify-center items-center gap-6 img-center mt-8 py-8 px-[10px]">
+		class="inscription-section font-poppins relative z-50 sm:h-[40rem] h-[27rem] text-_main_color_dark flex flex-col justify-center items-center gap-6 img-center mt-8 py-8 px-[10px]">
 		<h2 class="title">Nouveau chez Bahwai ?
 		</h2>
 		<p class="text-center text-lg">Profitez de codes promo et de produits réservés aux membres en étant membre Bahwai</p>

@@ -57,7 +57,7 @@
 </style>
 <p class="h-[61px] w-[61px] me-3 me-8 text-[37px] ms-8 text-red-600 sm:w-auto w-[50%] hidden"></p>
 <div
-  class="panier fixed top-0 w-full hidden z-50 bg-white bg-opacity-50"
+  class="panier fixed top-0 w-full hidden z-50 bg-white"
   id="panier"
   data-product1="{{ first_product.title }}"
   data-product2="{{ second_product.title }}"
@@ -72,7 +72,7 @@
   data-product2_img="{{ second_product | image_url }}"
   data-product3_img="{{ third_product | image_url }}">
 
-  <div class="content sm:max-w-[455px] w-full ms-auto me-0 bg-[#FFFDF9] max-h-screen h-screen overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
+  <div class="content font-poppins sm:max-w-[455px] w-full ms-auto me-0 bg-[#FFFDF9] max-h-screen h-screen overflow-x-hidden overflow-y-scroll hide-scrolbar-y">
     <div class="flex justify-end w-full mx-auto px-4 pt-6 pb-4">
       <p id="close-panier" class="flex items-center font-medium text-_main_color_dark hover:cursor-pointer">
         <i class="fas fa-xmark text-[18px] me-2"></i>
@@ -111,7 +111,7 @@
 
     </div>
 
-    <div class="items text-_main_color_dark">
+    <div class="items text-_main_color_dark font-poppins">
       <h2 class="font-medium my-4 px-5" id="vous_avez_ajoute">Vous avez ajouté :</h2>
       <div id="panier-items-container">{% comment %} items content {% endcomment %}
       </div>
@@ -147,7 +147,7 @@
     </div>
 
 
-    <div class="footer text-_main_color_dark px-2 my-8">
+    <div class="footer text-_main_color_dark px-2 my-8 font-poppins">
       <p class="font-medium text-_main_color_dark mt-3 ps-5">D’autres ont aussi achetés :</p>
       <div class="items flex gap-6 mt-5 justify-around">
         {%- for product in collections['suggestions-panier'].products -%}
@@ -189,7 +189,7 @@
                   </span>
                 </div>
               {%- endif -%}
-              <p class="font-medium text-center">{{ product.price | money_without_currency }}€ le pack
+              <p class="font-medium text-center">{{ product.price | money_without_currency }}€
               </p>
             </a>
           </div>

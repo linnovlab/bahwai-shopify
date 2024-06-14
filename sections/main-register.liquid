@@ -18,7 +18,7 @@
     </div>
     {% form 'create_customer', novalidate: 'novalidate', return_to: routes.root_url, id: 'form-register' %}
       {{ form.errors | default_errors }}
-      <div id="form-connexion" class="form-register rounded-md sm:px-[40px] px-4 py-[40px] sm:max-w-[794px] max-w-[100%] mx-auto w-full  flex flex-col items-center gap-4">
+      <div id="form-connexion" class="form-register font-poppins rounded-md sm:px-[40px] px-4 py-[40px] sm:max-w-[794px] max-w-[100%] mx-auto w-full  flex flex-col items-center gap-4">
         <div class="flex gap-4 flex-wrap sm:flex-nowrap w-full">
           <div class="item w-full">
             <label for="prenom" class="text-xs font-semibold text-[#456073]">Prénom*</label>
@@ -115,9 +115,9 @@
           </div>
         </div>
         <div class="flex flex-col items-center mt-4">
-          <button type="submit" class="btn-red mb-4 py-2 px-4 text-white">S’inscrire</button>
+          <button type="submit" class="btn-red mb-4 py-2 px-4 text-white font-poppins">S’inscrire</button>
         </div>
-        <p class="text-center text-[#565656] font-semibold text-[12px]">En poursuivant, vous acceptez toutes les conditions générales d’utilisations et notre politique de confidentialité</p>
+        <p class="text-center text-[#565656] font-semibold text-[12px] font-poppins">En poursuivant, vous acceptez toutes les conditions générales d’utilisations et notre politique de confidentialité</p>
       </div>
 
     {% endform %}
