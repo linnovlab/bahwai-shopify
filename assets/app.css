@@ -768,6 +768,14 @@ html {
   top: 42px;
 }
 
+.top-\[-34px\]{
+  top: -34px;
+}
+
+.right-\[47px\]{
+  right: 47px;
+}
+
 .isolate{
   isolation: isolate;
 }
@@ -1199,6 +1207,10 @@ html {
   margin-top: 90px;
 }
 
+.mb-0{
+  margin-bottom: 0px;
+}
+
 .block{
   display: block;
 }
@@ -1526,6 +1538,10 @@ html {
 .w-max{
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-\[14\.3rem\]{
+  width: 14.3rem;
 }
 
 .max-w-\[100\%\]{
@@ -2167,6 +2183,11 @@ html {
   padding-bottom: 48px;
 }
 
+.py-\[95px\]{
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+
 .\!pe-8{
   padding-inline-end: 2rem !important;
 }
@@ -2357,6 +2378,26 @@ html {
 
 .pt-\[9rem\]{
   padding-top: 9rem;
+}
+
+.pt-\[95px\]{
+  padding-top: 95px;
+}
+
+.pt-\[\]{
+  padding-top: ;
+}
+
+.pb-\[\]{
+  padding-bottom: ;
+}
+
+.pt-\[50px\]{
+  padding-top: 50px;
+}
+
+.pb-\[62px\]{
+  padding-bottom: 62px;
 }
 
 .text-left{
@@ -4024,6 +4065,10 @@ tbody tr:last-child td{
     left: 40%;
   }
 
+  .sm\:right-\[47px\]{
+    right: 47px;
+  }
+
   .sm\:m-4{
     margin: 1rem;
   }
@@ -4429,6 +4474,22 @@ tbody tr:last-child td{
 
   .sm\:ps-0{
     padding-inline-start: 0px;
+  }
+
+  .sm\:ps-\[318px\]{
+    padding-inline-start: 318px;
+  }
+
+  .sm\:pt-\[95px\]{
+    padding-top: 95px;
+  }
+
+  .sm\:pb-\[95px\]{
+    padding-bottom: 95px;
+  }
+
+  .sm\:pt-\[76px\]{
+    padding-top: 76px;
   }
 
   .sm\:text-\[22px\]{
