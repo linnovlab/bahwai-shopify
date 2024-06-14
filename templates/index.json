@@ -32,7 +32,12 @@
       }
     },
     "qui-sommes-nous": {
-      "type": "qui-sommes-nous"
+      "type": "qui-sommes-nous",
+      "settings": {
+        "titre": "Notre Story, Sans langue de Bois ! ",
+        "description-femme": "Un jour, Christopher et Nora les deux fondateurs (et couple dans la vie) ont plaqué leurs jobs pour réaliser leurs rêves « Rendre la gourmandise inoffensive pour la santé et proposer des activités sportives Super Fun »",
+        "description-homme": "Un pari de dingue se fait alors « Viens, on fait des snacks sains, super Gourmands et très faibles en sucre » « Bahwai comme ça, les gens vont pouvoir kiffer sans prendre de poids » mais OUFF !!"
+      }
     },
     "aventure-section": {
       "type": "aventure-section",
@@ -51,24 +56,40 @@
     "faq": {
       "type": "faq",
       "blocks": {
-        "announcement_7Mxz8G": {
-          "type": "announcement",
+        "faq_1_ibwyEm": {
+          "type": "faq_1",
           "settings": {
-            "question": "teste",
-            "reponse": "rerere"
+            "question": "question ?",
+            "reponse": "reponse..."
           }
         },
-        "announcement_bCHNPn": {
-          "type": "announcement",
+        "faq_2_twbf6V": {
+          "type": "faq_2",
           "settings": {
-            "question": "je teste la section",
-            "reponse": "reponserrerz..."
+            "question": "question ?",
+            "reponse": "reponse..."
+          }
+        },
+        "faq_3_xyR3wR": {
+          "type": "faq_3",
+          "settings": {
+            "question": "question ?",
+            "reponse": "reponse..."
+          }
+        },
+        "faq_4_p3p3ca": {
+          "type": "faq_4",
+          "settings": {
+            "question": "question ?",
+            "reponse": "reponse..."
           }
         }
       },
       "block_order": [
-        "announcement_7Mxz8G",
-        "announcement_bCHNPn"
+        "faq_1_ibwyEm",
+        "faq_2_twbf6V",
+        "faq_3_xyR3wR",
+        "faq_4_p3p3ca"
       ],
       "settings": {
         "title-1": "GARANTIE\/QUALITE",
