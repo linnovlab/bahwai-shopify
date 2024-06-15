@@ -1,42 +1,21 @@
 <div id="categorie-section" class="categories-content-section bg-_main_color_light pb-[42px] pt-[45px]">
   <div class="cats-content flex sm:gap-[192px] gap-6 justify-center items-center sm:flex-row flex-col sm:px-0 px-1">
-    {% for link in linklists['home-categories'].links %}
-      <div class="cat-item relative z-10 bg-_chocolat_dark">
-        <div class="cat-item-content">
-          <h4 class="text-[20px] font-normal font-poetsen text-white leading-[22px] mb-[5px]">
-            {{ link.title }}
-          </h4>
-          <p class="text-_orange_color font-bold text-xs leading-[22px]">
-            {{ collections[link.handle].metafields.custom.collection_desc }}
-          </p>
-          <div class="div-btn flex sm:justify-center justify-end sm:mr-0 mr-[44px] sm:mt-[48px] mt-0">
-            <a href="#" class="btn-cat">Découvrir la collection</a>
-          </div>
-          <div class="absolute sm:top-[-43px] top-[-29px] sm:right-[-131px] right-0">
-            <img class="sm:w-full w-[243px]" src="{{ 'explosion_chocolat.png' |  asset_url }}" alt="explosion_chocolat" height="auto" width="auto">
-          </div>
-          <div class="courb-form absolute bottom-0 left-0 -z-10">
-            <img class="sm:block hidden w-full rounded-s-lg" src="{{ 'form1.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
-            <img class="sm:hidden block w-full rounded-s-lg" src="{{ 'form1_mobile.png' |  asset_url }}" alt="form1" height="auto" width="auto">
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-    {% comment %} <div class="cat-item relative z-10 bg-_chocolat_dark">
+    {% comment %} {% for link in linklists['home-categeries'].links %}
+      
+    {% endfor %} {% endcomment %}
+    <div class="cat-item relative z-10 bg-_chocolat_dark">
       <div class="cat-item-content">
-        <h4 class="text-[20px] font-normal font-poetsen text-white leading-[22px] mb-[5px]">
-          Nos billes <br>
-          chocolatées
+        <h4 class="text-[20px] font-normal font-poetsen text-white leading-[22px] mb-[5px] w-[8rem]">
+          {{ collections['nos-billes-chocolatees'].title }}
         </h4>
-        <p class="text-_orange_color font-bold text-xs leading-[22px]">
-          FAIBLE INDICE <br>
-          GLYCÉMIQUE
+        <p class="text-_orange_color font-bold text-xs leading-[22px] w-[8rem]">
+          {{ collections['nos-billes-chocolatees'].metafields.custom.collection_desc }}
         </p>
         <div class="div-btn flex sm:justify-center justify-end sm:mr-0 mr-[44px] sm:mt-[48px] mt-0">
-          <a href="#" class="btn-cat">Découvrir la collection</a>
+          <a href="{{ collections['nos-billes-chocolatees'].url }}" class="btn-cat">Découvrir la collection</a>
         </div>
         <div class="absolute sm:top-[-43px] top-[-29px] sm:right-[-131px] right-0">
-          <img class="sm:w-full w-[243px]" src="{{ 'explosion_chocolat.png' |  asset_url }}" alt="explosion_chocolat" height="auto" width="auto">
+          <img class="sm:w-full w-[243px]" src="{{ collections['nos-billes-chocolatees'].metafields.custom.collection_img |  image_url: width: 300 }}" alt="{{ collections['nos-billes-chocolatees'].title }}" height="auto" width="auto">
         </div>
         <div class="courb-form absolute bottom-0 left-0 -z-10">
           <img class="sm:block hidden w-full rounded-s-lg" src="{{ 'form1.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
@@ -44,27 +23,27 @@
         </div>
       </div>
     </div>
+    
     <div class="cat-item relative z-10 bg-_chocolat_light">
       <div class="cat-item-content px-1">
-        <h4 class="text-[20px] font-normal font-poetsen text-white leading-[22px] mb-[5px]">
-          Nos pâtes à <br>tartiner
+        <h4 class="text-[20px] font-normal font-poetsen text-white leading-[22px] mb-[5px] w-[8rem]">
+          {{ collections['nos-pates-a-tartiner'].title }}
         </h4>
-        <p class="text-_orange_color font-bold text-xs leading-[22px]">
-          FAIBLE INDICE <br>
-          GLYCÉMIQUE
+        <p class="text-_orange_color font-bold text-xs leading-[22px] w-[8rem]">
+          {{ collections['nos-pates-a-tartiner'].metafields.custom.collection_desc }}
         </p>
         <div class="div-btn flex sm:justify-center justify-end sm:mr-0 mr-[44px] sm:mt-[48px] mt-0">
-          <a href="#" class="btn-cat">Découvrir la collection</a>
+          <a href="{{ collections['nos-pates-a-tartiner'].url }}" class="btn-cat">Découvrir la collection</a>
         </div>
         <div class="absolute top-[-24px] sm:top-[-4px] sm:right-[-97px] right-0">
-          <img class="sm:w-full w-[270px]" src="{{ 'patte_chocolat.png' |  asset_url }}" alt="patte_chocolat" height="auto" width="auto">
+          <img class="sm:w-full w-[270px]" src="{{ collections['nos-pates-a-tartiner'].metafields.custom.collection_img |  image_url: width: 300 }}" alt="{{ collections['nos-pates-a-tartiner'].title }}" height="auto" width="auto">
         </div>
         <div class="courb-form absolute bottom-0 left-0 -z-10">
           <img class="sm:block hidden w-full rounded-ee-lg" src="{{ 'form2.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
           <img class="sm:hidden block w-full rounded-ee-lg" src="{{ 'form2_mobile.svg' |  asset_url }}" alt="form1" height="auto" width="auto">
         </div>
       </div>
-    </div> {% endcomment %}
+    </div> 
   </div>
 </div>
 

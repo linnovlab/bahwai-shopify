@@ -728,6 +728,10 @@ html {
   top: -29px;
 }
 
+.top-\[-34px\]{
+  top: -34px;
+}
+
 .top-\[-43px\]{
   top: -43px;
 }
@@ -766,14 +770,6 @@ html {
 
 .top-\[42px\]{
   top: 42px;
-}
-
-.top-\[-34px\]{
-  top: -34px;
-}
-
-.right-\[47px\]{
-  right: 47px;
 }
 
 .isolate{
@@ -1207,10 +1203,6 @@ html {
   margin-top: 90px;
 }
 
-.mb-0{
-  margin-bottom: 0px;
-}
-
 .block{
   display: block;
 }
@@ -1411,6 +1403,10 @@ html {
   width: 130px;
 }
 
+.w-\[14\.3rem\]{
+  width: 14.3rem;
+}
+
 .w-\[14\.5rem\]{
   width: 14.5rem;
 }
@@ -1523,6 +1519,10 @@ html {
   width: 7rem;
 }
 
+.w-\[8rem\]{
+  width: 8rem;
+}
+
 .w-\[90\%\]{
   width: 90%;
 }
@@ -1538,10 +1538,6 @@ html {
 .w-max{
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-\[14\.3rem\]{
-  width: 14.3rem;
 }
 
 .max-w-\[100\%\]{
@@ -2183,11 +2179,6 @@ html {
   padding-bottom: 48px;
 }
 
-.py-\[95px\]{
-  padding-top: 95px;
-  padding-bottom: 95px;
-}
-
 .\!pe-8{
   padding-inline-end: 2rem !important;
 }
@@ -2274,6 +2265,10 @@ html {
 
 .pb-\[52px\]{
   padding-bottom: 52px;
+}
+
+.pb-\[62px\]{
+  padding-bottom: 62px;
 }
 
 .pb-\[6rem\]{
@@ -2368,6 +2363,10 @@ html {
   padding-top: 4px;
 }
 
+.pt-\[50px\]{
+  padding-top: 50px;
+}
+
 .pt-\[74px\]{
   padding-top: 74px;
 }
@@ -2378,26 +2377,6 @@ html {
 
 .pt-\[9rem\]{
   padding-top: 9rem;
-}
-
-.pt-\[95px\]{
-  padding-top: 95px;
-}
-
-.pt-\[\]{
-  padding-top: ;
-}
-
-.pb-\[\]{
-  padding-bottom: ;
-}
-
-.pt-\[50px\]{
-  padding-top: 50px;
-}
-
-.pb-\[62px\]{
-  padding-bottom: 62px;
 }
 
 .text-left{
@@ -4029,8 +4008,8 @@ tbody tr:last-child td{
     bottom: -7px;
   }
 
-  .sm\:left-\[42\%\]{
-    left: 42%;
+  .sm\:left-\[40\%\]{
+    left: 40%;
   }
 
   .sm\:right-\[-131px\]{
@@ -4043,6 +4022,10 @@ tbody tr:last-child td{
 
   .sm\:right-\[-97px\]{
     right: -97px;
+  }
+
+  .sm\:right-\[47px\]{
+    right: 47px;
   }
 
   .sm\:top-\[-43px\]{
@@ -4059,14 +4042,6 @@ tbody tr:last-child td{
 
   .sm\:top-\[168px\]{
     top: 168px;
-  }
-
-  .sm\:left-\[40\%\]{
-    left: 40%;
-  }
-
-  .sm\:right-\[47px\]{
-    right: 47px;
   }
 
   .sm\:m-4{
@@ -4121,10 +4096,6 @@ tbody tr:last-child td{
 
   .sm\:mb-\[172px\]{
     margin-bottom: 172px;
-  }
-
-  .sm\:me-8{
-    margin-inline-end: 2rem;
   }
 
   .sm\:mr-0{
@@ -4472,20 +4443,16 @@ tbody tr:last-child td{
     padding-bottom: 192px;
   }
 
+  .sm\:pb-\[95px\]{
+    padding-bottom: 95px;
+  }
+
   .sm\:ps-0{
     padding-inline-start: 0px;
   }
 
   .sm\:ps-\[318px\]{
     padding-inline-start: 318px;
-  }
-
-  .sm\:pt-\[95px\]{
-    padding-top: 95px;
-  }
-
-  .sm\:pb-\[95px\]{
-    padding-bottom: 95px;
   }
 
   .sm\:pt-\[76px\]{

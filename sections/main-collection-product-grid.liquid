@@ -11,15 +11,22 @@
 
         <div class="banner-collection-section relative z-10 rounded-t-lg bg-_chocolat_dark mb-[40px] desktop-width">
           <div class="content relative z-20 sm:pt-[76px] pt-[50px] sm:pb-[95px] pb-[62px] sm:ps-[318px] ps-4">
-            <h1 class="title-white !text-start">{{ collection.title }}</h1>
-            <span class="font-bold block sm:w-full w-[9rem] sm:text-base text-xs text-_orange_color">FAIBLE INDICE GLYCÉMIQUE</span>
+            <h1 class="title-white !text-start sm:w-full w-[14rem]">{{ collection.title }}</h1>
+            <span class="font-bold block sm:w-full w-[9rem] sm:text-base text-xs text-_orange_color">
+              {% if collection.metafields.custom.collection_desc %}
+                {{ collection.metafields.custom.collection_desc }}
+              {% endif %}
+              </span>
           </div>
           <div class="img-form-collection absolute bottom-0 left-0 w-full z-0">
             <img class="sm:block hidden" src="{{ 'form_banner_collection.svg' |  asset_url }}" alt="form_banner" width="100%" height="auto">
             <img class="sm:hidden block" src="{{ 'form_banner_collection_mobile.svg' |  asset_url }}" alt="form_banner" width="auto" height="auto">
           </div>
           <div class="img-form-explosion absolute sm:right-[47px] right-0 top-[-34px]">
-            <img class="sm:w-full w-[14.3rem]" src="{{ 'explosion_chocolat.png' |  asset_url }}" alt="explosion" width="auto" height="auto">
+            {% if collection.metafields.custom.collection_img %}
+             
+              <img class="sm:w-full w-[14.3rem]" src="{{ collection.metafields.custom.collection_img | image_url: width: 300 }}" alt="{{ collection.title }}" width="auto" height="auto">
+            {% endif %}
           </div>
         </div>
 
