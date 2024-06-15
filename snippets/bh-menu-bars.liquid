@@ -44,23 +44,22 @@
     <div class="accordion-item  w-full mx-auto my-2">
       <a href="{{ pages.partenaire.url }}">
         <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
-          <span>Devenir partenaire ?
+          <span>Devenir revendeur
           </span>
         </button>
       </a>
     </div>
     <div class="accordion-item  w-full mx-auto my-2">
-      <a href="{{ pages.contact.url }}">
+      <a href="
+        {%- if customer -%}
+          {{ routes.account_url }}
+        {%- else -%}
+          {{ routes.account_login_url }}
+        {%- endif -%}
+      ">
         <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
-          <span>Nous contacter
+          <span>Mon compte
           </span>
-        </button>
-      </a>
-    </div>
-    <div class="accordion-item  w-full mx-auto my-2">
-      <a href="#">
-        <button type="button" class="btn-accordion-header mb-4 border-b-2 border-gray-300">
-          <span>Espace pro</span>
         </button>
       </a>
     </div>
