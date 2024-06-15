@@ -1,18 +1,69 @@
 {
   "sections": {
     "header": {
-      "type": "header"
+      "type": "header",
+      "settings": {
+        "annonce": "Livraison offerte à partir de 20€",
+        "menu": "main-menu",
+        "logo_width": 100
+      }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
+        "products_per_page": "12"
       }
     },
-    "faq":{
-      "type": "faq"
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq_1_w8T9cK": {
+          "type": "faq_1",
+          "settings": {
+            "question": "Comment modifier ma commande ?",
+            "reponse": "reponse..."
+          }
+        },
+        "faq_2_EzQWJb": {
+          "type": "faq_2",
+          "settings": {
+            "question": "Comment modifier ma commande ?",
+            "reponse": "reponse..."
+          }
+        },
+        "faq_3_wabhaa": {
+          "type": "faq_3",
+          "settings": {
+            "question": "Comment modifier ma commande ?",
+            "reponse": "reponse..."
+          }
+        },
+        "faq_4_GbqqMV": {
+          "type": "faq_4",
+          "settings": {
+            "question": "Comment modifier ma commande ?",
+            "reponse": "reponse..."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1_w8T9cK",
+        "faq_2_EzQWJb",
+        "faq_3_wabhaa",
+        "faq_4_GbqqMV"
+      ],
+      "settings": {
+        "title-1": "GARANTIE\/QUALITE",
+        "title-2": "INGREDIENTS",
+        "title-3": "UTILISATION",
+        "title-4": "NOUS TROUVER"
+      }
     },
-    "footer":{
-      "type": "footer"
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "footer-text": "La pause préférée des gourmands, Bahwai !"
+      }
     }
   },
   "order": [
