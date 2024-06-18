@@ -24,7 +24,6 @@
           </div>
           <div class="img-form-explosion absolute sm:right-[47px] right-0 top-[-34px]">
             {% if collection.metafields.custom.collection_img %}
-             
               <img class="sm:w-full w-[14.3rem]" src="{{ collection.metafields.custom.collection_img | image_url: width: 300 }}" alt="{{ collection.title }}" width="auto" height="auto">
             {% endif %}
           </div>
@@ -33,13 +32,13 @@
         {% comment %} <p class="mb-8">{{ collection.metafields.custom.teasing_title }}</p> {% endcomment %}
 
         {%- paginate collection.products by section.settings.products_per_page -%}
-          <div id="collection-products-container" class="flex flex-wrap items-center justify-between gap-2 sm:gap-8">
+          <div id="collection-products-container" class="flex flex-wrap items-center justify-between gap-2 sm:gap-8 font-poppins">
             {% for product in collection.products %}
             {% comment %} getting rating value {% endcomment %}
             {%- assign rates = product.metafields.reviews.rating.value | split: '.' -%}
             {%- assign n = rates | first | plus: 0 -%}
 
-            <div class="content-item sm:w-auto w-[9rem] text-sm">
+            <div class="content-item sm:w-auto w-[182px] text-sm">
               <a href="{{ product.url }}"
                 class="item text-[12px] max-w-[230px] w-full m-1 flex flex-col gap-1">
                 <div class="w-full img">
@@ -50,13 +49,14 @@
                 <div class="avis flex gap-2 h-[1.1rem] mb-2">
                   <div class="flex text-sm stars text-_main_color_dark">
                     {% if product.metafields.reviews.rating_count != null %}
-                    {%- for i in (1..5) -%}
-                    {%- if i <= n -%} <i class="fas fa-star"></i>
-                      {%- else -%}
-                      <i class="fa-regular fa-star"></i>
-                      {%- endif -%}
+                      {%- for i in (1..5) -%}
+                        {%- if i <= n -%} 
+                          <i class="fas fa-star"></i>
+                        {%- else -%}
+                          <i class="fa-regular fa-star"></i>
+                        {%- endif -%}
                       {%- endfor -%}
-                      {%- endif -%}
+                    {%- endif -%}
                   </div>
                   <span class="border-_main_color_dark border-b-2 text-[11px]">
                     {% if product.metafields.reviews.rating_count == null %}

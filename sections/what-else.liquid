@@ -93,9 +93,18 @@
           </div>
         </div>
       </div>
-      <div class="courb-form absolute top-0 left-0 z-[-1] w-full">
-        <img class="rounded-lg sm:block hidden" src="{{ 'form_what_else.svg' |  asset_url }}" alt="courb-form" height="auto" width="100%">
-        <img class="rounded-lg sm:hidden block" src="{{ 'form_what_else_mobile.svg' |  asset_url }}" alt="courb-form" height="auto" width="100%">
+      <div class="courb-form absolute top-0 left-0 z-[-1] w-full h-full">
+        <style>
+            .courb-what{
+              background-image: url('{{ 'form_what_else.svg' |  asset_url }}');
+            }
+            @media screen and (max-width: 768px) {
+                .courb-what{
+                background-image: url('{{ 'form_what_else_mobile.svg' |  asset_url }}');
+              }
+            }
+        </style>
+        <div class="courb-what rounded-lg bg-cover bg-no-repeat w-full h-full"></div>
       </div>
       <div class="sachet-chocolat absolute sm:bottom-[-142px] bottom-[-103px] sm:left-[40%] left-[31%]">
         <img class="sm:w-full w-[147px]"  src="{{ 'sachet_chocolat_what_else.png' |  asset_url }}" alt="chocolat" height="auto" width="100%">

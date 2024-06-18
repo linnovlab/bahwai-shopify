@@ -772,6 +772,10 @@ html {
   top: 42px;
 }
 
+.top-\[-20px\]{
+  top: -20px;
+}
+
 .isolate{
   isolation: isolate;
 }
@@ -1538,6 +1542,14 @@ html {
 .w-max{
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-\[22rem\]{
+  width: 22rem;
+}
+
+.w-\[182px\]{
+  width: 182px;
 }
 
 .max-w-\[100\%\]{

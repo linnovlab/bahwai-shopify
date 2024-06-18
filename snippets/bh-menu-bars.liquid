@@ -7,7 +7,7 @@
     <span>Menu</span>
   </p>
   <hr class="border border-gray-300">
-  <div class="accordions text-_main_color_dark">
+  <div class="accordions text-_main_color_dark font-poppins">
     <div class="accordion-item w-full mx-auto my-2">
       <button
         type="button"
@@ -16,7 +16,7 @@
         <span>Catégories</span>
         <i class="fas fa-chevron-down transition-transform duration-500"></i>
       </button>
-      <div class="panel hidden pb-4">
+      <div class="panel hidden pb-4 font-poppins">
         <ul class="ps-4">
           {% for link in linklists['liens-categories'].links %}
             {% if link.title != 'Autres' %}

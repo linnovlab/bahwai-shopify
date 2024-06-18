@@ -76,7 +76,11 @@
       </p>
     </div>
     
-
+    <style>
+      #variant-options input:checked + label > span.the-price{
+        color: white;
+      }
+    </style>
     {% if product.variants.size > 1 %}
       <ul id="variant-options" class="w-full flex flex-col gap-4 justify-center items-center mt-8 font-poppins">
         {% for variant in product.variants %}
@@ -94,7 +98,7 @@
                rounded-[5px] cursor-pointer peer-checked:text-white
                 peer-checked:bg-_main_color_darker ">
                 <span>{{ variant.title }} </span>
-                <span class="text-sm text-[#128910] font-semibold">{{ variant.price | money_without_currency }}€</span>
+                <span class="the-price text-sm text-[#128910] font-semibold">{{ variant.price | money_without_currency }}€</span>
             </label>
           </li>
         {% endfor %}
