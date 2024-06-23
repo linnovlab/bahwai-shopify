@@ -166,7 +166,7 @@
                   width="auto"
                   height="auto">
               </div>
-              <p class="font-semibold text-center ">{{ product.title }}</p>
+              <p class="font-semibold text-center ">{{ product.title | truncate: 30 }}</p>
               {% if product.metafields.reviews.rating_count != null %}
                 <div class="avis flex items-center gap-2 h-[1.1rem] mb-2">
                   <div class="stars flex text-black text-sm">

@@ -45,7 +45,7 @@
                   <img src="{{ product |image_url: width: 600, height: 600 }}" alt="La gourmande aux noisettes"
                     class="w-full" width="auto" height="auto" loading="lazy">
                 </div>
-                <p class="font-semibold w-[10rem] mt-2">{{ product.title }}</p>
+                <p class="font-semibold w-[10rem] mt-2">{{ product.title |  truncate: 35 }}</p>
                 <div class="avis flex gap-2 h-[1.1rem] mb-2">
                   <div class="flex text-sm stars text-_main_color_dark">
                     {% if product.metafields.reviews.rating_count != null %}
