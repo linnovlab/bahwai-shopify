@@ -68,9 +68,14 @@
         </h1>
     </div>
     <div class="marqui-text">
-        <marquee scrollamount="20" class="flex gap-[12px] font-rubik text-lg font-normal text-_red_color bg-white pt-[4px]">
-            {{ section.settings.text-de-defilement }}
-        </marquee>
+        <div class="marquee-scroll flex gap-[12px] font-rubik text-lg font-normal text-_red_color bg-white pt-[4px]">
+            <div class="marquee-chield flex gap-[12px] items-center">
+                {{ section.settings.text-de-defilement }}
+            </div>
+            <div class="flex gap-[12px] items-center">
+                {{ section.settings.text-de-defilement }}
+            </div>
+        </div>
     </div>
     <div class="wave-hero absolute bottom-0 right-0 -z-10">
         <img class="w-full sm:block hidden" src="{{ 'wave_hero.svg' |  asset_url }} " alt="wave-hero" height="auto" width="auto">
