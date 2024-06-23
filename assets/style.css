@@ -667,7 +667,7 @@ tbody tr:last-child td {
   width: 180rem;
 }
 .marquee-scroll div{
-  animation: scroll 7s linear;
+  animation: scroll 13s linear;
   animation-play-state: running;
   animation-iteration-count: infinite;
 }

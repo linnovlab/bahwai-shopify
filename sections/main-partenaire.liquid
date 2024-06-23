@@ -19,6 +19,17 @@
     }
     #title-left span{
       background-color: #561195;
+      padding: 4px 0;
+    }
+
+    input#ville::placeholder{
+      font-size: 13px; 
+    }
+
+    @media screen and (max-width: 768px) {
+      #title-left span{
+        padding: 2px 0;
+      }
     }
 </style>
 <div class="partenaire-main-page text-_main_color_dark sm:mt-20 mt-[40px] sm:px-[89px] px-[20px]">
@@ -102,7 +113,7 @@
               <input
                 class="input focus:border-_orange_color transition-all duration-300"
                 type="text"
-                placeholder="Ville du local commercial*"
+                placeholder="Ville local ou commercial*"
                 name="contact[ville]"
                 id="ville"
                 required>
