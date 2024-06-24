@@ -84,8 +84,8 @@ svg{
 .input {
   @apply text-sm outline-none ps-2 h-[3rem] w-full border border-[#999] mt-2 rounded-md text-[#456073];
 }
-.input::placeholder{
-  @apply text-[#456073;]
+.input::placeholder, textarea::placeholder{
+  @apply text-[#456073]
 }
 .title {
   @apply font-litle text-_main_color_dark sm:text-[32px] text-[24px] text-center font-extrabold uppercase;

@@ -1900,8 +1900,8 @@ html {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.bg-\[\#0000007d\]{
-  background-color: #0000007d;
+.bg-\[\#0000009c\]{
+  background-color: #0000009c;
 }
 
 .bg-\[\#000000ad\]{
@@ -1979,10 +1979,6 @@ html {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#0000009c\]{
-  background-color: #0000009c;
 }
 
 .bg-opacity-50{
@@ -2984,12 +2980,14 @@ svg{
   outline-offset: 2px;
 }
 
-.input::-moz-placeholder{
-  color: #456073;;
+.input::-moz-placeholder, textarea::-moz-placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(69 96 115 / var(--tw-text-opacity));
 }
 
-.input::placeholder{
-  color: #456073;;
+.input::placeholder, textarea::placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(69 96 115 / var(--tw-text-opacity));
 }
 
 .title{
@@ -3656,11 +3654,13 @@ svg{
 }
 
 .jdgm-form__fieldset input:not([type="submit"])::-moz-placeholder{
-  color: #456073;;
+  --tw-text-opacity: 1;
+  color: rgb(69 96 115 / var(--tw-text-opacity));
 }
 
 .jdgm-form__fieldset input:not([type="submit"])::placeholder{
-  color: #456073;;
+  --tw-text-opacity: 1;
+  color: rgb(69 96 115 / var(--tw-text-opacity));
 }
 
 .jdgm-form input:not([type="submit"]), .jdgm-form textarea{
