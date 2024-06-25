@@ -73,6 +73,20 @@
             "reponse": "reponse..."
           }
         },
+        "faq_1_WcwNLY": {
+          "type": "faq_1",
+          "settings": {
+            "question": "Comment modifier ma commande ?",
+            "reponse": "reponse..."
+          }
+        },
+        "faq_1_tFKGLX": {
+          "type": "faq_1",
+          "settings": {
+            "question": "Comment modifier ma commande ?",
+            "reponse": "reponse..."
+          }
+        },
         "faq_2_twbf6V": {
           "type": "faq_2",
           "settings": {
@@ -97,6 +111,8 @@
       },
       "block_order": [
         "faq_1_ibwyEm",
+        "faq_1_WcwNLY",
+        "faq_1_tFKGLX",
         "faq_2_twbf6V",
         "faq_3_xyR3wR",
         "faq_4_p3p3ca"
