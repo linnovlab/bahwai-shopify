@@ -1596,10 +1596,6 @@ html {
   max-width: 948px;
 }
 
-.max-w-\[958px\]{
-  max-width: 958px;
-}
-
 .rotate-\[334deg\]{
   --tw-rotate: 334deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -4315,6 +4311,10 @@ tbody tr:last-child td{
 
   .sm\:max-w-\[80\%\]{
     max-width: 80%;
+  }
+
+  .sm\:max-w-\[958px\]{
+    max-width: 958px;
   }
 
   .sm\:max-w-none{

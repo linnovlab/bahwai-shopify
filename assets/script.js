@@ -1284,12 +1284,21 @@ function hasSeenPopup() {
 }
 
 // Set a cookie to indicate that the popup has been seen
-function setPopupSeenCookie() {
-  var expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getDate() + 30); // Cookie will expire in 30 days
-  document.cookie =
-    'popup_seen=true; expires=' + expirationDate.toUTCString() + '; path=/';
-}
+// function setPopupSeenCookie() {
+//   var expirationDate = new Date();
+//   expirationDate.setDate(expirationDate.getDate() + 30); // Cookie will expire in 30 days
+//   document.cookie =
+//     'popup_seen=true; expires=' + expirationDate.toUTCString() + '; path=/';
+// }
+
+// // function to go back to the previous page
+// // window.onpopstate = function(event) {
+// //   // alert("Vous avez cliqué sur le bouton de retour !");
+// //   console.log("Événement popstate déclenché:", event);
+// // };
+// window.onpopstate = function(event){
+//   console.log("Événement popstate déclenché:",event);
+// }
 
 // sending email
 // try {
