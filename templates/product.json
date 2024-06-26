@@ -38,17 +38,22 @@
             "maxwidth": 1080
           }
         },
-        "yotpo_product_reviews_ugc_reviews_LPhyJN": {
-          "type": "shopify:\/\/apps\/yotpo-product-reviews-ugc\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "rivyo_product_reviews_wc_product_review_badge_gQfRWF": {
+          "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-product-review-badge\/f1860e84-309f-40ca-a2df-188435a622f3",
           "settings": {
-            "product": "{{product}}"
+          }
+        },
+        "rivyo_product_reviews_wc_review_section_rnBRz6": {
+          "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-review-section\/f1860e84-309f-40ca-a2df-188435a622f3",
+          "settings": {
           }
         }
       },
       "block_order": [
         "judge_me_reviews_review_widget_mTBc7J",
         "judge_me_reviews_featured_carousel_kiKEkw",
-        "yotpo_product_reviews_ugc_reviews_LPhyJN"
+        "rivyo_product_reviews_wc_product_review_badge_gQfRWF",
+        "rivyo_product_reviews_wc_review_section_rnBRz6"
       ],
       "settings": {
         "include_margins": true
