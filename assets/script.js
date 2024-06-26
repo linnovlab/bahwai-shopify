@@ -1110,7 +1110,7 @@ $(document).ready(() => {
   voirPlus($("#read-more-trigger-comp"));
 
   // translation of the date of the review
-  console.log($(".wc_review_date"))
+  
 
 
 });

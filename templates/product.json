@@ -24,41 +24,16 @@
         "compositions": "Ingrédients : <br> Chocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***,  riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia\nChocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***, riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia.\nChocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***, riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia\n\nChocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***, riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia\n\nChocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***, riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia\nChocolat au lait aux fibres diététiques (61%) (fibres diététiques - oligofructose- , pâte de cacao, beurre de cacao, poudrede lait entier en poudre, lait écrémé en poudre, sucre(1%), poudre de cacao dégraissé, émulsifiant : lécithine de tournesol,arôme naturel de vanille), bille croustillante (20%) (lentilles corail***, riz complet***, protéine de lait, émulsifiant : lécithinede tournesol), agent d’enrobage : gomme d’acacia"
       }
     },
-    "16883169510a0509e0": {
-      "type": "apps",
-      "blocks": {
-        "rivyo_product_reviews_wc_review_section_rnBRz6": {
-          "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-review-section\/f1860e84-309f-40ca-a2df-188435a622f3",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "rivyo_product_reviews_wc_review_section_rnBRz6"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
     "footer": {
       "type": "footer",
       "settings": {
         "footer-text": "Voyager en une bouchée, Bahwai ?"
-      }
-    },
-    "16883173153a89c527": {
-      "type": "apps",
-      "disabled": true,
-      "settings": {
-        "include_margins": true
       }
     }
   },
   "order": [
     "header",
     "main",
-    "16883169510a0509e0",
-    "footer",
-    "16883173153a89c527"
+    "footer"
   ]
 }

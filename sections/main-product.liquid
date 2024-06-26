@@ -328,7 +328,7 @@ convertion string en integer
 {%- assign n = rates | first | plus: 0 -%}
 {% endcomment %}
 
-<script>
+<script type="text/javascript" defer="defer">
   // Get all radio buttons by name
   var radioButtons = document.getElementsByName('variant');
   var formInputSelectedVariant = document.getElementById('selectedVariant');
@@ -439,6 +439,9 @@ convertion string en integer
         console.error('Error adding to cart:', error);
       });
   });
+
+  var list = document.querySelectorAll(".wc_review_content_ul li")
+  console.log(list)
 
 
 
