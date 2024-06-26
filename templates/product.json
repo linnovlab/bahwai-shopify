@@ -29,25 +29,12 @@
       "blocks": {
         "rivyo_product_reviews_wc_review_section_9erEUD": {
           "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-review-section\/f1860e84-309f-40ca-a2df-188435a622f3",
-          "disabled": true,
-          "settings": {
-          }
-        },
-        "opinew_reviews_product_widget_AigQPp": {
-          "type": "shopify:\/\/apps\/opinew-reviews\/blocks\/product-widget\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
-          "settings": {
-          }
-        },
-        "opinew_reviews_carousel_wBKceG": {
-          "type": "shopify:\/\/apps\/opinew-reviews\/blocks\/carousel\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
           "settings": {
           }
         }
       },
       "block_order": [
-        "rivyo_product_reviews_wc_review_section_9erEUD",
-        "opinew_reviews_product_widget_AigQPp",
-        "opinew_reviews_carousel_wBKceG"
+        "rivyo_product_reviews_wc_review_section_9erEUD"
       ],
       "settings": {
         "include_margins": true
