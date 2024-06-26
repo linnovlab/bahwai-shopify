@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "header": {
@@ -5,8 +14,7 @@
       "settings": {
         "annonce": "Livraison offerte à partir de 20€",
         "menu": "main-menu",
-        "logo_width": 100,
-        "video_url": ""
+        "logo_width": 100
       }
     },
     "main": {
@@ -29,11 +37,18 @@
           "settings": {
             "maxwidth": 1080
           }
+        },
+        "yotpo_product_reviews_ugc_reviews_LPhyJN": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews-ugc\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
         }
       },
       "block_order": [
         "judge_me_reviews_review_widget_mTBc7J",
-        "judge_me_reviews_featured_carousel_kiKEkw"
+        "judge_me_reviews_featured_carousel_kiKEkw",
+        "yotpo_product_reviews_ugc_reviews_LPhyJN"
       ],
       "settings": {
         "include_margins": true
