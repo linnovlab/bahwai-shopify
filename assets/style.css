@@ -418,93 +418,84 @@ svg{
 }
 
 /* css section review app */
-.jdgm-rev-widg__title, 
-.jdgm-rev-widg__summary,
-.jdgm-histogram,
-.jdgm-row-actions,
-.jdgm-rev-widg__body,
-.jdgm-form__title,
-.jdgm-form__reviewer-name-format-container,
-.jdgm-form__fieldset p,
-.jdgm-cancel-rev{
+
+.wc_review_top_title,
+.wc_review_count,
+.wc_average_review_stars,
+.wc_review_listing_select,
+.wc_review_graph,
+.wc_tab_links.wc_wf_cls,
+.wc_grid_social_sharing.wc_wf_cls,
+.wc_review_form_btns ul li:last-child,
+.wc_review_form_ctm_image,
+.wc_review_form_recommend_product
+{
   display: none !important;
 }
-#judgeme_product_reviews{
-  @apply sm:px-[47px] px-[14px] !mt-[-1px];
+.wc_review_main_content{
+  @apply !px-[47px] !py-0 !font-poppins mb-[80px];
 }
-.jdgm-rev-widg{
-  @apply bg-_main_color_dark sm:px-[47px] px-6 !font-poppins;
+.wc_overall_review.wc_review_layout_1, .wc_review_layout_section.wc_wf_cls{
+  @apply bg-_main_color_dark;
 }
-.jdgm-write-rev-link{
-  @apply !bg-_red_color !rounded-[7px] !py-4 !w-[195px];
+.wc_review_layout_section.wc_wf_cls{
+  @apply rounded-b-lg;
 }
-.jdgm-write-rev-link.jdgm-write-rev-link:hover,
-.jdgm-write-rev-link:hover{
-  opacity: 1 !important;
-}
-.jdgm-form{
-  background-color: white !important;
-  max-width: 100% !important;
-  @apply !rounded-lg;
-}
-.jdgm-form__fieldset label{
-  text-align: start !important;
-  width: 100% !important;
-  @apply !text-xs font-semibold !text-[#456073];
-}
-.jdgm-form__fieldset input:not([type="submit"]){
-  @apply input;
-}
-.jdgm-form input:not([type="submit"]), .jdgm-form textarea{
-  border-radius: 8px !important;
-}
-.jdgm-form__rating{
+.wc_overall_review{
+  @apply !font-poppins;
+  border: none !important;
   display: flex;
+  justify-content: center;
+  padding: 0 0 !important;
 }
-.jdgm-submit-rev{
-  @apply !bg-_red_color !rounded-lg !border-none !w-[224px] !py-4;
+.wc_review_layout_section.wc_wf_cls{
+  @apply !font-poppins;
 }
-.jdgm-form__fieldset-actions{
-  justify-content: center !important;
-}
-
-/* css section review carousel */
-#shopify-block-judge_me_reviews_featured_carousel_kiKEkw div:first-child{
-  max-width: 100% !important;
-}
-.jdgm-carousel{
-  width: 100% !important;
-  margin: 0 0 5rem 0 !important;
-  padding: 0 47px !important;
-}
-.jdgm-carousel--compact-theme.jdgm-carousel{
+.wc_review_form_btns ul{
   float: none !important;
+  @apply !flex justify-center;
 }
-.jdgm-carousel-wrapper{
-  padding: 0 !important;
+.wc_review_form_btns ul li{
+  min-width: 100%;
 }
-.jdgm-carousel__item-container{
-  padding: 0 123px 50px 123px !important;
-  @apply !bg-_main_color_dark !rounded-b-lg;
+.wc_review_main_content a, .wc_review_submit_btn.wc_review_btn{
+  @apply !bg-_red_color !rounded-[7px] !py-4 !w-[195px] !font-poppins font-semibold !text-base;
 }
-.jdgm-carousel-item{
-  background-color: white !important;
-  border-radius: 8px;
-  padding: 10px !important;
-  margin-right: 2rem !important;
+.wc_grid_main_section{
+  @apply !bg-white !rounded-lg;
 }
-.jdgm-carousel__arrows{
-  width: 95% !important;
+.wc_review_author_name, .wc_review_date{
+  @apply !text-xs !text-[#474747];
 }
-.jdgm-carousel-wrapper .jdgm-carousel__left-arrow{
-  margin-top: -140.8px !important;
-  margin-left: -3px !important;
-}
-.jdgm-carousel-wrapper .jdgm-carousel__right-arrow{
-  margin-right: -3px !important;
-  margin-top: -140.8px !important;
+.wc_review_layout_section ul.wc_grid_review_main_ul{
+  margin: 0 !important;
 }
 
+/* modal form review */
+.wc_form_container.wc_wf_cls{
+  @apply !font-poppins;
+}
+.wc_review_form_submit.wc_wf_cls{
+  @apply flex justify-center;
+}
+#wc_product_review_form_popup .wc_form_container{
+  @apply hide-scrolbar-y;
+}
+#wc_submit_review label, #wc_submit_review textarea::placeholder, #wc_submit_review input::placeholder{
+  @apply !text-[#456073];
+}
+#wc_submit_review label{
+  padding-bottom: 14px !important;
+}
+#wc_product_review_form_popup .wc_review_form_filed .wc_input_filed{
+  padding: 15px 12px !important;
+}
+#wc_product_review_form_popup .wc_review_btn{
+  margin-top: 24px !important;
+}
+#wc_product_review_form_popup .wc_review_form_filed{
+  padding-bottom: 24px !important;
+}
 
 
 /* footer */
@@ -563,11 +554,8 @@ footer .items li {
     height: 192px;
   }
   /* responsive review carousel */
-  .jdgm-carousel{
-    padding: 0 14px !important;
-  }
-  .jdgm-carousel__item-container{
-    padding: 0 27px 50px 27px !important;
+  .wc_review_main_content{
+    @apply !px-6;
   }
 }
 
