@@ -1292,14 +1292,18 @@ function hasSeenPopup() {
 // }
 
 // // function to go back to the previous page
-// // window.onpopstate = function(event) {
-// //   // alert("Vous avez cliqué sur le bouton de retour !");
-// //   console.log("Événement popstate déclenché:", event);
-// // };
-// window.onpopstate = function(event){
-//   console.log("Événement popstate déclenché:",event);
-// }
-
+document.addEventListener('DOMContentLoaded', function() {  
+  if (document.querySelector('section#product')) {
+      let previousUrl = document.referrer; // donne l'url de la page de provenance
+      if(this.location.hash !== ''){
+          window.addEventListener('popstate', function(event) {
+              // This code will run when the back button is pressed.
+              // console.log('Back button pressed. : '+window.location.hash);
+              window.location.href = previousUrl;
+          });
+      }
+  }
+});
 // sending email
 // try {
 //   $('#form_test').on('click', function () {

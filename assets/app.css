@@ -3253,7 +3253,7 @@ svg{
 }
 
 .swiper-button-prev::after {
-  font-size: 21px !important;
+  font-size: 24px !important;
   background-color: var(--red-color);
   padding: 5px 10px;
   border-radius: 10px;
@@ -3582,6 +3582,11 @@ svg{
   background-color: rgb(86 17 149 / var(--tw-bg-opacity));
 }
 
+.wc_overall_review.wc_review_layout_1{
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
 .wc_review_layout_section.wc_wf_cls{
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -3603,6 +3608,8 @@ svg{
   float: none !important;
   display: flex !important;
   justify-content: center;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(86 17 149 / var(--tw-bg-opacity)) !important;
 }
 
 .wc_review_form_btns ul li{
@@ -3637,6 +3644,10 @@ svg{
 
 .wc_review_layout_section ul.wc_grid_review_main_ul{
   margin: 0 !important;
+}
+
+.review_rating_section.needsclick label{
+  padding-right: 5px !important;
 }
 
 /* modal form review */
@@ -3682,6 +3693,33 @@ svg{
 
 #wc_product_review_form_popup .wc_review_form_filed{
   padding-bottom: 24px !important;
+}
+
+/* carousel reviews */
+
+.swiper-button-prev, .swiper-button-next{
+  background: transparent !important;
+}
+
+.swiper-button-prev svg, .swiper-button-next svg{
+  height: 0px !important;
+  width: 0px !important;
+}
+
+.wc_review_main_content .slider-btn, .wc_testimonial_section .slider-btn{
+  top: 65% !important;
+}
+
+#wc_reviews_tab{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 640px){
+  #wc_reviews_tab{
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
 }
 
 /* footer */
@@ -3759,8 +3797,8 @@ footer .items li {
   /* responsive review carousel */
 
   .wc_review_main_content{
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 }
 
