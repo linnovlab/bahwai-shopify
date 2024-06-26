@@ -261,14 +261,14 @@
         }
       },
       "opinew-global-code": {
-        "type": "shopify:\/\/apps\/opinew-product-reviews-app\/blocks\/global\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
-        "disabled": false,
+        "type": "shopify:\/\/apps\/opinew-reviews\/blocks\/global\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
+        "disabled": true,
         "settings": {
         }
       },
       "18306912302550125850": {
         "type": "shopify:\/\/apps\/opinew-reviews\/blocks\/rich-snippet\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
-        "disabled": false,
+        "disabled": true,
         "settings": {
         }
       }
