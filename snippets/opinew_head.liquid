@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://cdn.opinew.com/styles/opw-icons/style.css">
+<style id='opinew_product_plugin_css'>{{shop.metafields.opinew['opinew_product_plugin_css']}}</style>
+<div id='opinew_config_container' style='display:none;' data-opwconfig='{{shop.metafields.opinew['opinew_config']}}'></div>
+<script> 
+  var OPW_PUBLIC_KEY = "XN1BNXB1TWVN5O8J0RQP";
+  var OPW_API_ENDPOINT = "https://api.opinew.com";
+  var OPW_CHECKER_ENDPOINT = "https://shop-status.opinew.cloud";
+  var OPW_BACKEND_VERSION = "24.24.1-0-g9bd752e50";
+</script>
+<script src="https://cdn.opinew.com/shop-widgets/static/js/index.3138161d.js" defer></script>
+{% if shop.metafields.opinew['opinew_floating_widget'] == 'enabled' %}
+<div data-opw-prodreviews="{{ shop.metafields.opinew['opinew_all_reviews'] }}">
+  <span id="opinew_product_floating_widget"></span>
+</div>
+{% endif %}
