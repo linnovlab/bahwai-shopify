@@ -254,12 +254,6 @@
 
     ],
     "blocks": {
-      "14060646107696862457": {
-        "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "16789939927838974014": {
         "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/app-embed\/f1860e84-309f-40ca-a2df-188435a622f3",
         "disabled": false,
