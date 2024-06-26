@@ -1307,7 +1307,7 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       }
   }
-  console.log($("#wc_review_section").find('div'))
+  // console.log($("#wc_review_section").find('div'))
 
   
 });
