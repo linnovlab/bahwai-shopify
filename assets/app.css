@@ -3071,7 +3071,6 @@ svg{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
   text-align: center;
-  font-size: 11px;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -3081,13 +3080,6 @@ svg{
   cursor: pointer;
   --tw-text-opacity: 1;
   color: rgb(255 49 49 / var(--tw-text-opacity));
-}
-
-@media (min-width: 640px){
-  .btn-etre-prevenu{
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
 }
 
 .star-empty{
@@ -4480,6 +4472,10 @@ tbody tr:last-child td{
 
   .sm\:pt-\[76px\]{
     padding-top: 76px;
+  }
+
+  .sm\:text-\[13px\]{
+    font-size: 13px;
   }
 
   .sm\:text-\[22px\]{

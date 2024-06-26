@@ -103,7 +103,7 @@ svg{
   @apply fixed top-0 z-50 w-full h-full max-h-full overflow-x-hidden overflow-y-scroll hide-scrolbar-y;
 }
 .btn-etre-prevenu {
-  @apply hover:cursor-pointer hover:text-_red_color mb-4 sm:text-base text-[11px] text-white font-bold text-center border-b-2 border-white w-full;
+  @apply hover:cursor-pointer hover:text-_red_color mb-4 text-white font-bold text-center border-b-2 border-white w-full;
 }
 .star-empty {
   @apply text-white;
