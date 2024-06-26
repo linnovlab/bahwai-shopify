@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "header": {
@@ -5,8 +14,7 @@
       "settings": {
         "annonce": "Livraison offerte à partir de 20€",
         "menu": "main-menu",
-        "logo_width": 100,
-        "video_url": ""
+        "logo_width": 100
       }
     },
     "main": {
@@ -21,19 +29,33 @@
       "blocks": {
         "judge_me_reviews_review_widget_mTBc7J": {
           "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
           }
         },
         "judge_me_reviews_featured_carousel_kiKEkw": {
           "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
             "maxwidth": 1080
+          }
+        },
+        "rivyo_product_reviews_wc_product_review_badge_gQfRWF": {
+          "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-product-review-badge\/f1860e84-309f-40ca-a2df-188435a622f3",
+          "settings": {
+          }
+        },
+        "rivyo_product_reviews_wc_review_section_rnBRz6": {
+          "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-review-section\/f1860e84-309f-40ca-a2df-188435a622f3",
+          "settings": {
           }
         }
       },
       "block_order": [
         "judge_me_reviews_review_widget_mTBc7J",
-        "judge_me_reviews_featured_carousel_kiKEkw"
+        "judge_me_reviews_featured_carousel_kiKEkw",
+        "rivyo_product_reviews_wc_product_review_badge_gQfRWF",
+        "rivyo_product_reviews_wc_review_section_rnBRz6"
       ],
       "settings": {
         "include_margins": true
