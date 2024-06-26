@@ -27,19 +27,6 @@
     "16883169510a0509e0": {
       "type": "apps",
       "blocks": {
-        "judge_me_reviews_review_widget_mTBc7J": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "disabled": true,
-          "settings": {
-          }
-        },
-        "judge_me_reviews_featured_carousel_kiKEkw": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "disabled": true,
-          "settings": {
-            "maxwidth": 1080
-          }
-        },
         "rivyo_product_reviews_wc_review_section_rnBRz6": {
           "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-review-section\/f1860e84-309f-40ca-a2df-188435a622f3",
           "settings": {
@@ -47,8 +34,6 @@
         }
       },
       "block_order": [
-        "judge_me_reviews_review_widget_mTBc7J",
-        "judge_me_reviews_featured_carousel_kiKEkw",
         "rivyo_product_reviews_wc_review_section_rnBRz6"
       ],
       "settings": {
