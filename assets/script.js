@@ -1307,6 +1307,8 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       }
   }
+
+  console.log(document.querySelector(".wc_write_review_form"))
 });
 // sending email
 // try {
