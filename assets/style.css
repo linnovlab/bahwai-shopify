@@ -478,6 +478,9 @@ svg{
 .review_rating_section.needsclick label{
   padding-right: 5px !important;
 }
+.wc_empty_review_text p{
+  @apply !text-white text-lg text-center;
+}
 
 /* modal form review */
 .wc_form_container.wc_wf_cls{

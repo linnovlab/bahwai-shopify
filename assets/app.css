@@ -3650,6 +3650,14 @@ svg{
   padding-right: 5px !important;
 }
 
+.wc_empty_review_text p{
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
 /* modal form review */
 
 .wc_form_container.wc_wf_cls{
