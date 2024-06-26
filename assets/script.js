@@ -1111,7 +1111,7 @@ $(document).ready(() => {
 
   // translation of the date of the review
   
-
+  
 
 });
 
@@ -1307,8 +1307,9 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       }
   }
+  console.log($("#wc_review_section").find('div'))
 
-  console.log(document.querySelector(".wc_write_review_form"))
+  
 });
 // sending email
 // try {

@@ -3616,7 +3616,7 @@ svg{
   min-width: 100%;
 }
 
-.wc_review_main_content a, .wc_review_submit_btn.wc_review_btn{
+.wc_review_submit_btn.wc_review_btn, .wc_write_review_form.wc_review_btn{
   width: 195px !important;
   border-radius: 7px !important;
   --tw-bg-opacity: 1 !important;
@@ -3656,6 +3656,48 @@ svg{
   line-height: 1.75rem;
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.wc_page a{
+  height: 35px !important;
+  width: 37px !important;
+  border-left-width: 1px !important;
+  border-right-width: 1px !important;
+  --tw-border-opacity: 1;
+  border-left-color: rgb(230 237 245 / var(--tw-border-opacity));
+  border-right-color: rgb(230 237 245 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.wc_page.wc_active_page a{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 49 49 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.wc_review_app_paginate{
+  display: flex !important;
+  justify-content: center;
+}
+
+.wc_review_app_paginate .wc_wf_cls li:first-child a{
+  border-start-start-radius: 0.5rem;
+  border-end-start-radius: 0.5rem;
+}
+
+.wc_review_app_paginate .wc_wf_cls li:last-child a{
+  border-start-end-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
+}
+
+.wc_review_app_paginate .wc_wf_cls li:not(:first-child) a, .wc_review_app_paginate .wc_wf_cls li:not(:last-child) a{
+  padding-top: 3px !important;
 }
 
 /* modal form review */
@@ -3701,6 +3743,10 @@ svg{
 
 #wc_product_review_form_popup .wc_review_form_filed{
   padding-bottom: 24px !important;
+}
+
+.wc_review_app_paginate ul li{
+  width: 40px;
 }
 
 /* carousel reviews */

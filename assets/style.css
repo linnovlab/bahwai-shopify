@@ -463,7 +463,7 @@ svg{
 .wc_review_form_btns ul li{
   min-width: 100%;
 }
-.wc_review_main_content a, .wc_review_submit_btn.wc_review_btn{
+.wc_review_submit_btn.wc_review_btn, .wc_write_review_form.wc_review_btn{
   @apply !bg-_red_color !rounded-[7px] !py-4 !w-[195px] !font-poppins font-semibold !text-base;
 }
 .wc_grid_main_section{
@@ -481,6 +481,26 @@ svg{
 .wc_empty_review_text p{
   @apply !text-white text-lg text-center;
 }
+
+.wc_page a{
+  @apply text-black !text-lg !border-x border-x-[#E6EDF5] !w-[37px] !h-[35px] bg-white;
+}
+.wc_page.wc_active_page a{
+  @apply !text-white bg-_red_color;
+}
+.wc_review_app_paginate {
+  @apply !flex justify-center;
+}
+.wc_review_app_paginate .wc_wf_cls li:first-child a{
+  @apply rounded-s-lg;
+}
+.wc_review_app_paginate .wc_wf_cls li:last-child a{
+  @apply rounded-e-lg;
+}
+.wc_review_app_paginate .wc_wf_cls li:not(:first-child) a, .wc_review_app_paginate .wc_wf_cls li:not(:last-child) a{
+  @apply !pt-[3px];
+}
+
 
 /* modal form review */
 .wc_form_container.wc_wf_cls{
@@ -506,6 +526,9 @@ svg{
 }
 #wc_product_review_form_popup .wc_review_form_filed{
   padding-bottom: 24px !important;
+}
+.wc_review_app_paginate ul li{
+  @apply w-[40px];
 }
 
 /* carousel reviews */
