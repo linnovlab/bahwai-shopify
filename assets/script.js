@@ -1307,10 +1307,18 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       }
   }
-  // console.log($("#wc_review_section").find('div'))
 
   
 });
+
+// feat to translate the btn text in the review section
+// when the entire page is loaded, external css, javascript etc.. files will be loaded
+window.onload = (e) =>{
+  console.log("onload");
+  console.log($("a.wc_write_review_form").text("Rédiger un avis"))
+}
+
+
 // sending email
 // try {
 //   $('#form_test').on('click', function () {
