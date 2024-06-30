@@ -417,8 +417,8 @@ svg{
   overflow: hidden;
 }
 
-/* css section review app */
 
+/* css section review app */
 .wc_review_top_title,
 .wc_review_count,
 .wc_average_review_stars,
@@ -481,7 +481,9 @@ svg{
 .wc_empty_review_text p{
   @apply !text-white text-lg text-center;
 }
-
+.wc_empty_review_text p{
+  @apply !text-center !text-lg;
+}
 .wc_page a{
   @apply text-black !text-lg !border-x border-x-[#E6EDF5] !w-[37px] !h-[35px] bg-white;
 }
