@@ -2375,6 +2375,10 @@ html {
   padding-top: 9rem;
 }
 
+.pt-\[20rem\]{
+  padding-top: 20rem;
+}
+
 .text-left{
   text-align: left;
 }

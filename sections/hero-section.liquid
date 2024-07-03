@@ -8,72 +8,7 @@
         }
     }
 </style>
-<div class="content-hero-home img-center sm:mt-[-9rem] mt-[-6rem] relative -z-0">
-    <style>
-        .choc-img-item{
-            /* background-image: url("{{ 'chocolat_long.png' |  asset_url }}"); */
-            margin-right: -1px;
-        }
-        .bulle_1{
-            position: absolute;
-            left: 50px;
-            bottom: -21px;
-        }
-        .bulle_2{
-            position: absolute;
-            bottom: 2px;
-            left: 205px;
-        }
-        .bulle_3{
-            position: absolute;
-            bottom: 96px;
-            left: 212px;
-        }
-        .bulle_4{
-            position: absolute;
-            bottom: 92px;
-            left: 265px;
-        }
-        .chocolat_court{
-            background-image: url('{{ 'chocolat_court.png' |  asset_url }}');
-        }
-        .chocolat_long{
-            background-image: url('{{ 'chocolat_long.png' |  asset_url }}');
-        }
-        .chocolat_mobile{
-            background-image: url('{{ 'chocolat_mobile.png' |  asset_url }}');
-        }
-        @media screen and (max-width: 768px) {
-            .bulle_1{
-                left: -10px;
-                bottom: -87px;
-            }
-            .bulle_3{
-                bottom: 65px;
-                left: 141px;
-            }
-            .bulle_2, .bulle_4{
-                display: none;
-            }
-        }
-    </style>
-    <div class="relative img-chocolat ">
-        <div class=" relative z-10">
-            <div class="chocolat_court h-[106px] w-full sm:block hidden"></div>
-            <div class="chocolat_long h-[240px] w-full sm:block hidden"></div>
-            <div class="chocolat_mobile h-[240px] w-full sm:hidden block"></div>
-        </div>
-{% comment %} 
-        <div class="absolute top-[42px] left-[-13px] -z-0">
-            <img class="sm:w-full w-[11rem]" src="{{ 'hero_img.jpg' |  asset_url }}" alt="" height="auto" width="auto">
-            <img class="bulle_1" src="{{ 'bulle_1.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
-            <img class="bulle_2" src="{{ 'bulle_2.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
-            <img class="bulle_3" src="{{ 'bulle_3.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
-            <img class="bulle_4" src="{{ 'bulle_4.png' |  asset_url }}" alt="bulle_chocolat" height="auto" width="auto">
-        </div>
-         {% endcomment %}
-    </div>
-
+<div class="content-hero-home img-center sm:mt-[-9rem] mt-[-6rem] relative -z-0 pt-[20rem]">
     <div class="text-content flex justify-center">
         <div class="w-[342px] relative">
             <h1 class="title-white !text-[#F4D5C4] relative z-20 leading-[1]">
