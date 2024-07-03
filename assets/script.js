@@ -1312,7 +1312,19 @@ document.addEventListener('DOMContentLoaded', function() {
 // feat to translate the btn text in the review section
 // when the entire page is loaded, external css, javascript etc.. files will be loaded
 window.onload = (e) =>{
-  $("a.wc_write_review_form").text("Rédiger un avis")
+  $("a.wc_write_review_form").text("Rédiger un avis");
+
+  // rating count display feat
+  let ratting_count = $("div.wc_reviews_tabs ul.wc_tab_links li span").text();
+  let avis = ratting_count + " avis";
+  $("a#avis-produit p").text(avis);
+
+  // fix rating  count displaying on the listing product
+  // fetch('https://bahwai.com/products/crousty-ball', )
+  // .then(res => res.text())
+  // .then((body) => console.log(body));
+
+
 }
 
 

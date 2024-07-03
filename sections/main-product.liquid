@@ -6,6 +6,7 @@
     box-shadow: 45px 28px 54.6px 0px rgba(0, 0, 0, 0.30);
   }
 </style>
+
 <div id="image-product-popup"
   class="bg-[#000000ad] absolute top-[167px] left-0 w-full h-screen justify-center items-center hidden">
   <div class="relative p-2 border rounded-md ">
@@ -50,15 +51,8 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
               </div>
-              <a href="#avis-produit" class="border-b text-xs">
-                <p>
-                  {% if product.metafields.reviews.rating_count %}
-                    {{ product.metafields.reviews.rating_count }} 
-                  {% else %}
-                      0
-                  {% endif %}
-                  avis
-                </p>
+              <a id="avis-produit" href="#avis-produit" class="border-b text-xs">
+                <p></p>
               </a>
           </div>
         </div>
