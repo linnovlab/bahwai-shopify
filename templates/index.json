@@ -12,7 +12,7 @@
     "header": {
       "type": "header",
       "settings": {
-        "annonce": "Livraison offerte à partir de 20€",
+        "annonce": "Livraison offerte à partir de 50€",
         "menu": "main-menu",
         "logo_width": 100
       }
@@ -69,7 +69,7 @@
         "faq_1_ibwyEm": {
           "type": "faq_1",
           "settings": {
-            "question": "question ?",
+            "question": "L",
             "reponse": "reponse..."
           }
         },
@@ -118,10 +118,10 @@
         "faq_4_p3p3ca"
       ],
       "settings": {
-        "title-1": "GARANTIE\/QUALITE",
-        "title-2": "INGREDIENTS",
-        "title-3": "UTILISATION",
-        "title-4": "NOUS TROUVER"
+        "title-1": "Garanti\/Qualité",
+        "title-2": "Ingrédients",
+        "title-3": "Utilisation",
+        "title-4": "Où Nous trouver ?"
       }
     },
     "footer": {
