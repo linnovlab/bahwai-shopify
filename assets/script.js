@@ -1307,11 +1307,13 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       }
   }
-
-  
 });
 
-
+// feat to translate the btn text in the review section
+// when the entire page is loaded, external css, javascript etc.. files will be loaded
+window.onload = (e) =>{
+  console.log($("a.wc_write_review_form").text("Rédiger un avis"))
+}
 
 
 // sending email
