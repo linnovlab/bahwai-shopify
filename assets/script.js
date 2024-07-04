@@ -1115,7 +1115,7 @@ $(document).ready(() => {
 
 });
 
-
+/* 
 try {
 
   new Swiper('.swiper-photos', {
@@ -1249,7 +1249,7 @@ try {
 } catch (e) {
   console.log('erreur de swiper, non accessible dans cette page');
 }
-
+*/
 function getUrlParameter(sParam) {
   var sPageURL = window.location.search.substring(1),
     sURLVariables = sPageURL.split('&'),
