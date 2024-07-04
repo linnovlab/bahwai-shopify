@@ -80,9 +80,8 @@
     if (Shopify.designMode) {
       document.documentElement.classList.add('shopify-design-mode');
     }
-    // var markerImageUrl = ...
+    var markerImageUrl = '{{ "300DPI.png" | asset_url }}';
   </script>
-  {% comment %} // var markerImageUrl = '{{ "70dPI.png" | asset_url }}'; {% endcomment %}
 
 {% render 'opinew_head' %}
 </head>
