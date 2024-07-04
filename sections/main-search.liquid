@@ -34,7 +34,7 @@
             <a href="{{ item.url }}"
               class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
               <div class="w-full img">
-                <img src="{{ item | image_url: width: 800 }}" alt="La gourmande aux noisettes"
+                <img loading="lazy" src="{{ item | image_url: width: 800 }}" alt="La gourmande aux noisettes"
                   class="w-full object-cover h-[220px]" width="auto" height="auto">
               </div>
               <p class="font-semibold w-[10rem] text-center mt-2">{{ item.title | escape |  truncate: 35 }}</p>

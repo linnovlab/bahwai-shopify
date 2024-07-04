@@ -19,17 +19,17 @@
   <div class="product-imgs-section mx-auto mb-16 left lg:mr-16 lg:mb-0 sm:px-8 px-4 sm:mt-0 mt-4">
     <div class="flex flex-col gap-4 imgs">
       <div class="lg:w-[460px] w-full">
-        <img class="rounded-lg" src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit" id="mainImg" height="auto" width="auto">
+        <img loading="lazy" class="rounded-lg" src="{{ product |image_url: width: 600, height: 600 }}  " alt="produit" id="mainImg" height="auto" width="auto">
       </div>
       <div id="product-images" class="flex justify-center gap-3 ">
         {% if product.images.size > 1 %}
           {% for img in product.images %}
-          <img data-title="{{ product.title }}" class="w-[61px] cursor-pointer rounded-lg"
+          <img loading="lazy" data-title="{{ product.title }}" class="w-[61px] cursor-pointer rounded-lg"
             src="{{ img |image_url: width: 500, height: 500 }}" alt="produit"
             height="auto" width="auto">
           {% endfor %}
           {% else %}
-          <img class="w-[61px] cursor-pointer" src="{{ product |image_url: width: 500, height: 500 }}" alt="produit"
+          <img loading="lazy" class="w-[61px] cursor-pointer" src="{{ product |image_url: width: 500, height: 500 }}" alt="produit"
           height="auto" width="auto">
         {% endif %}
       </div>
@@ -174,7 +174,7 @@
     <div class="tableau-desc mt-[56px]">
       <h4 class="title mb-8">Valeur nutritionnelles</h4>
       <div class="img flex justify-center">
-        <img src="{{ 'tableau.png' |  asset_url }}" alt="tableau" height="auto" width="auto">
+        <img loading="lazy" src="{{ 'tableau.png' |  asset_url }}" alt="tableau" height="auto" width="auto">
       </div>
     </div>
   </div>
@@ -374,7 +374,7 @@ convertion string en integer
               <a href="/products/${product.handle
           }" class="item w-full m-1 flex items-center flex-col text-[12px]">
                 <div class="w-full img">
-                  <img src="${product.featured_image
+                  <img loading="lazy" src="${product.featured_image
           }" alt="${product.title
           }" class="w-full h-[143px] object-cover">
                 </div>

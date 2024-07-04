@@ -19,12 +19,12 @@
               </span>
           </div>
           <div class="img-form-collection absolute bottom-0 left-0 w-full z-0">
-            <img class="sm:block hidden" src="{{ 'form_banner_collection.svg' |  asset_url }}" alt="form_banner" width="100%" height="auto">
-            <img class="sm:hidden block" src="{{ 'form_banner_collection_mobile.svg' |  asset_url }}" alt="form_banner" width="auto" height="auto">
+            <img loading="lazy" class="sm:block hidden" src="{{ 'form_banner_collection.svg' |  asset_url }}" alt="form_banner" width="100%" height="auto">
+            <img loading="lazy" class="sm:hidden block" src="{{ 'form_banner_collection_mobile.svg' |  asset_url }}" alt="form_banner" width="auto" height="auto">
           </div>
           <div class="img-form-explosion absolute sm:right-[47px] right-0 top-[-34px]">
             {% if collection.metafields.custom.collection_img %}
-              <img class="sm:w-full w-[14.3rem]" src="{{ collection.metafields.custom.collection_img | image_url: width: 300 }}" alt="{{ collection.title }}" width="auto" height="auto">
+              <img loading="lazy" class="sm:w-full w-[14.3rem]" src="{{ collection.metafields.custom.collection_img | image_url: width: 300 }}" alt="{{ collection.title }}" width="auto" height="auto">
             {% endif %}
           </div>
         </div>
@@ -42,7 +42,7 @@
               <a href="{{ product.url }}"
                 class="item text-[12px] max-w-[230px] w-full m-1 flex flex-col gap-1">
                 <div class="w-full img">
-                  <img src="{{ product |image_url: width: 600, height: 600 }}" alt="La gourmande aux noisettes"
+                  <img loading="lazy" src="{{ product |image_url: width: 600, height: 600 }}" alt="La gourmande aux noisettes"
                     class="w-full" width="auto" height="auto" loading="lazy">
                 </div>
                 <p class="font-semibold w-[10rem] mt-2">{{ product.title |  truncate: 35 }}</p>

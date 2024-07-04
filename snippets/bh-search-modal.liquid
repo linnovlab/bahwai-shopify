@@ -10,7 +10,7 @@
               role="search"
               method="get"
               class="flex border-b-2 border-_main_color_dark">
-              <img src="{{ 'search violet.svg' |asset_url }}" alt="Recherche" width="auto" height="auto">
+              <img loading="lazy" src="{{ 'search violet.svg' |asset_url }}" alt="Recherche" width="auto" height="auto">
               <input
                 id="input-popup-search"
                 value="{{ search.terms | escape }}"
@@ -50,7 +50,7 @@
           <div class="item w-[9rem] sm:w-[11rem]">
             <a href="{{ product.url }}" class="item text-_main_color_dark text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
               <div class="img w-full">
-                <img
+                <img loading="lazy"
                   src="{{ product | image_url: width: 550, height: 600 }}"
                   alt="La gourmande aux noisettes"
                   class="w-full" height="auto" width="auto">
@@ -95,7 +95,7 @@
           <div class="item max-w-[143px] w-full">
             <a href="{{ product.url }}" class="item text-[12px] max-w-[230px] w-full m-1 flex items-center flex-col gap-1">
               <div class="img w-full">
-                <img
+                <img loading="lazy"
                   src="{{ product | image_url: width: 550, height: 600 }}"
                   alt="La gourmande aux noisettes"
                   class="w-full" height="auto" width="auto">
