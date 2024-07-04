@@ -44,7 +44,7 @@
 
   <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
   {% # theme-check-disable ParserBlockingScriptTag %}
-  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  <script src="{{ 'option_selection.js' | shopify_asset_url }}" defer="defer" async></script>
   {% # theme-check-enable ParserBlockingScriptTag %}
 
 
@@ -54,8 +54,8 @@
   {% comment %}
   <script src="https://smtpjs.com/v3/smtp.js"></script> {% endcomment %}
   <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
-  <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}">
-  <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+  {% comment %} <link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}"> {% endcomment %}
+  {% comment %} <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script> {% endcomment %}
   <script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
   
 
@@ -69,7 +69,7 @@
 
 
   <script>
-    // redirection from from cart to home
+    // redirection from cart to home
     if (window.location.pathname === '/cart') {
       window.location.href = '/';
 
@@ -80,8 +80,9 @@
     if (Shopify.designMode) {
       document.documentElement.classList.add('shopify-design-mode');
     }
-    var markerImageUrl = '{{ "70dPI.png" | asset_url }}';
+    // var markerImageUrl = ...
   </script>
+  {% comment %} // var markerImageUrl = '{{ "70dPI.png" | asset_url }}'; {% endcomment %}
 
 {% render 'opinew_head' %}
 </head>
@@ -93,32 +94,6 @@
 
   <main id="MainContent" role="main" tabindex="-1">
     {{ content_for_layout }}
-
-    {% comment %} {% section 'bh-nouveautes' %} {% endcomment %}
-
-    {% comment %} {% if template.name == 'index' %} {% endcomment %}
-
-     {% comment %} {% section 'one-page' %}  {% endcomment %}
-
- {% comment %}
-
-      {% section 'bh-nouveautes' %}
-      {% section 'site-info-section' %}
-      {% render 'bh-categories' %}
-      {% section 'bh-pour-un-monde' %}
-      {% section 'bh-map' %}
-      {% section 'bh-newsletter' %}
-      {% render 'bh-faq' %}
-      {% section 'bh-avis' %}
-      {% render 'bh-rejoignez-nous' %}
-      {% section 'bh-actualites' %}
-      {% section 'bh-partenaire' %}
-    {% endif %}
-
-    
-    {% render 'bh-panier-modal' %}
-    {% render 'bh-popup' %} 
- {% endcomment %}
   </main>
 
   <ul hidden>
@@ -130,12 +105,12 @@
 
   <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer="defer"></script>
+  {% comment %} <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer="defer" async></script> {% endcomment %}
   {% if template.name == 'index' %}
-  <script src="{{ 'googlemap.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'googlemap.js' | asset_url }}" defer="defer" async></script>
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU2NnP3FkoMo1ueJWlC_VlmNLVl1r8im4&libraries=places,geometry"
-    defer="defer"></script>
+    defer="defer" async></script>
   {% endif %}
 </body>
 
