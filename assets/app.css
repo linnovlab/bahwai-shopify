@@ -3519,6 +3519,7 @@ svg{
 
 #panier-items-container button#up{
   background-color: #EA4038 !important;
+  border-color: #EA4038 !important;
 }
 
 #panier-items-container button#down{
