@@ -384,6 +384,18 @@ svg{
   width: 40px;
   color: white;
 }
+#panier-items-container button#down{
+  background-color: #EA4038 !important;
+}
+#panier-items-container button#down{
+  color: #240343 !important;
+  border-color: #240343 !important;
+}
+#panier-items-container input#input-produit{
+  color: #240343 !important;
+  width: 4rem !important;
+  margin-left: 3rem;
+}
 .btn-red-panier {
   @apply border-_red_color bg-_red_color;
   font-weight: 600;

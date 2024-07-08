@@ -2335,6 +2335,10 @@ html {
   padding-top: 100px;
 }
 
+.pt-\[20rem\]{
+  padding-top: 20rem;
+}
+
 .pt-\[28px\]{
   padding-top: 28px;
 }
@@ -2373,10 +2377,6 @@ html {
 
 .pt-\[9rem\]{
   padding-top: 9rem;
-}
-
-.pt-\[20rem\]{
-  padding-top: 20rem;
 }
 
 .text-left{
@@ -3515,6 +3515,18 @@ svg{
   height: 40px;
   width: 40px;
   color: white;
+}
+
+#panier-items-container button#down{
+  background-color: #EA4038 !important;
+  color: #240343 !important;
+  border-color: #240343 !important;
+}
+
+#panier-items-container input#input-produit{
+  color: #240343 !important;
+  width: 4rem !important;
+  margin-left: 3rem;
 }
 
 .btn-red-panier{
