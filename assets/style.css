@@ -384,7 +384,7 @@ svg{
   width: 40px;
   color: white;
 }
-#panier-items-container button#down{
+#panier-items-container button#up{
   background-color: #EA4038 !important;
 }
 #panier-items-container button#down{

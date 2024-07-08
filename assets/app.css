@@ -3517,8 +3517,11 @@ svg{
   color: white;
 }
 
-#panier-items-container button#down{
+#panier-items-container button#up{
   background-color: #EA4038 !important;
+}
+
+#panier-items-container button#down{
   color: #240343 !important;
   border-color: #240343 !important;
 }
