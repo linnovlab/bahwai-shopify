@@ -316,7 +316,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
-      body: ['Comic Sans MS'],
+      body: ['Comic Neue'],
       litle: ['Luckiest Guy'],
       rubik: ["Rubik Mono One"],
       poetsen: ['Poetsen One'],
