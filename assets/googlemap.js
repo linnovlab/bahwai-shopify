@@ -262,7 +262,7 @@ async function initMap() {
     map.setCenter(shops[0].location);
   }
 
-  autocomplete = new google.maps.places.Autocomplete(
+  autocomplete = await new google.maps.places.Autocomplete(
     document.getElementById('userAddress'),
     { types: ['geocode'] },
   );
@@ -294,12 +294,13 @@ function updateMapAndMarkers() {
     addMarker(nearestShop);
   }
 }
-function findNearestShop(userLocation) {
+
+async function findNearestShop(userLocation) {
   var nearestShop = null;
   var nearestDistance = Number.MAX_VALUE;
 
   for (var i = 0; i < shops.length; i++) {
-    var shopLocation = new google.maps.LatLng(
+    var shopLocation = await new google.maps.LatLng(
       shops[i].location.lat,
       shops[i].location.lng,
     );
@@ -324,14 +325,14 @@ function removeAllMarkers() {
   markers = [];
 }
 
-function addMarker(shop) {
+async function addMarker(shop) {
   // Construct the URL to your marker image
 
   var markerImage = {
     url: markerImageUrl,
-    scaledSize: new google.maps.Size(40, 40),
+    scaledSize: await new google.maps.Size(40, 40),
   };
-  var marker = new google.maps.Marker({
+  var marker = await new google.maps.Marker({
     map: map,
     position: shop.location,
     title: shop.name,
@@ -339,7 +340,7 @@ function addMarker(shop) {
   });
 
   // Add click event listener to display info window when a user clicks on the marker
-  marker.addListener('click', function () {
+  marker.addListener('click', async function () {
     var content =
       '<div>' +
       '<h2>' +
@@ -353,7 +354,7 @@ function addMarker(shop) {
       '" width="200" height="150">' +
       '</div>';
 
-    var infowindow = new google.maps.InfoWindow({
+    var infowindow = await new google.maps.InfoWindow({
       content: content,
     });
     infowindow.open(map, marker);
