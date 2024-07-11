@@ -247,7 +247,7 @@ var map;
 var autocomplete;
 var markers = [];
 
-function initMap() {
+async function initMap() {
   $('#staticMap').addClass('hidden');
   $('#map').removeClass('hidden');
 
@@ -329,7 +329,7 @@ function addMarker(shop) {
     url: markerImageUrl,
     scaledSize: new google.maps.Size(40, 40),
   };
-  var marker = new google.maps.Marker({
+  var marker = new google.maps.marker.AdvancedMarkerElement({
     map: map,
     position: shop.location,
     title: shop.name,
