@@ -270,7 +270,7 @@ async function initMap() {
   autocomplete.addListener('place_changed', updateMapAndMarkers);
 }
 
-$(function () {
+$( async function () {
   initMap();
 });
 
