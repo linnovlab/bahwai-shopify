@@ -240,9 +240,7 @@ var shops = [
   },
 ];
 
-$(function () {
-  initMap();
-});
+
 var map;
 var autocomplete;
 var markers = [];
@@ -271,6 +269,10 @@ async function initMap() {
 
   autocomplete.addListener('place_changed', updateMapAndMarkers);
 }
+
+$(function () {
+  initMap();
+});
 
 function updateMapAndMarkers() {
   var place = autocomplete.getPlace();
@@ -329,7 +331,7 @@ function addMarker(shop) {
     url: markerImageUrl,
     scaledSize: new google.maps.Size(40, 40),
   };
-  var marker = new google.maps.marker.AdvancedMarkerElement({
+  var marker = new google.maps.Marker({
     map: map,
     position: shop.location,
     title: shop.name,
