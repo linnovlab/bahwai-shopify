@@ -249,7 +249,7 @@ async function initMap() {
   $('#staticMap').addClass('hidden');
   $('#map').removeClass('hidden');
 
-  map = new google.maps.Map(document.getElementById('map'), {
+  map = await new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
   });
 
